@@ -7,11 +7,26 @@ import { Router } from '@angular/router';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
+ 
   title = 'portfolio';
+  setDark: string = "";
+  setLight: string = "";
 
   constructor(private router: Router) {}
 
   ngOnInit() {
     this.router.navigate(['']);
+    this.setDark = "setVisible";
+    this.setLight = "setHidden";
+  }
+
+  setDarkMode() {
+    this.setDark = "setVisible";
+    this.setLight = "setHidden";
+  }
+
+  setLightMode() {
+    this.setDark = "setHidden";
+    this.setLight = "setVisible";
   }
 }

@@ -1,7 +1,48 @@
 h1 {
-    color: var(--bordeau-red);
+    color: var(--darkmode3-pink1);
 }
 
-a {
+span {
     padding: 0px 10px 0px 10px;
+    font-size: 20px;
 }
+
+.nav-bar span {
+    text-align:right;
+}
+
+.nav-bar li {
+    vertical-align: middle;
+    display: inline;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 0px 10px 0px 10px;
+
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#nav-logo {
+    width:70px;
+}
+
+#nav-darkmode {
+    color: var(--darkmode2-grey1);
+}
+
+#nav-lightmode {
+    color: var(--tangerine-yellow);
+}
+
+.setVisible {
+    visibility: visible;
+    display: inline;
+}
+
+.setHidden {
+    visibility:hidden;
+    display: none;
+}
+  
+  
