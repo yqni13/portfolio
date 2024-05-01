@@ -1,7 +1,15 @@
 
 
 <main class="main">
-    <h1>{{title}}, welcome!</h1>
+    <h1>{{title}}, welcome</h1>
+    <mat-toolbar>
+        <span>navigation bar</span>
+
+        <a [routerLink]="['home']">home</a>
+        <a [routerLink]="['about']">about</a>
+        <a [routerLink]="['cv']">cv</a>
+        <a [routerLink]="['portfolio']">portfolio</a>
+    </mat-toolbar>
 </main>
 
 
