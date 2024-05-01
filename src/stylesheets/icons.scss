@@ -1,0 +1,24 @@
+/* Google Fonts Icons */
+
+i {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+}
+
+.icon-DarkMode:before {
+    font-family: "Material Icons";
+    content:  "\ea46";
+}
+.icon-LightMode:before {
+    font-family: "Material Icons";
+    content:  "\e518";
+}
+.icon-Language:before {
+    font-family: "Material Icons";
+    content:  "\e894";
+}
+.icon-Translate:before {
+    font-family: "Material Icons";
+    content:  "\e8e2";
+}
