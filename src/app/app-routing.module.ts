@@ -4,6 +4,9 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { CvComponent } from './cv/cv.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
+import { PortfolioFrontendComponent } from './portfolio/frontend/portfolio-frontend.component';
+import { PortfolioMiniComponent } from './portfolio/mini/portfolio-mini.component';
+import { PortfolioAllComponent } from './portfolio/all/portfolio-all.component';
 
 const routes: Routes = [
   {
@@ -29,7 +32,26 @@ const routes: Routes = [
   {
     path: 'portfolio',
     component: PortfolioComponent,
-    title: 'Portfolio'
+    title: 'Portfolio',
+    children: [
+      {
+        path: '',
+        redirectTo: '/portfolio/all',
+        pathMatch: 'full'
+      },
+      {
+        path: 'all',
+        component: PortfolioAllComponent,
+      },
+      {
+        path: 'frontend',
+        component: PortfolioFrontendComponent,
+      },
+      {
+        path: 'mini',
+        component: PortfolioMiniComponent
+      }
+    ]
   }
 ];
 
