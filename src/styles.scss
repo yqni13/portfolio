@@ -2,3 +2,12 @@
 
 @import "./stylesheets/colors.scss";
 @import "./stylesheets/media.scss";
+@import "./stylesheets/icons.scss";
+
+body {
+    text-align: center;
+}
+
+mat-toolbar {
+    justify-content: center;    
+}

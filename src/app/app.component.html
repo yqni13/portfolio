@@ -1,7 +1,31 @@
 
 
 <main class="main">
-    <h1>{{title}}, welcome!</h1>
+    <h1>{{title}}, welcome</h1>
+    <mat-toolbar class="nav-bar">
+        <ul>
+            <li>
+                <img id="nav-logo" src="../assets/img/yqni13-small.png" alt="no logo">
+            </li>
+            <li>
+                <span [routerLink]="['home']">Home</span>
+            </li>
+            <li>
+                <span [routerLink]="['about']">About</span>
+            </li>
+            <li>
+                <span [routerLink]="['cv']">CV</span>
+            </li>
+            <li>
+                <span [routerLink]="['portfolio']">Portfolio</span>
+            </li>            
+            <li>
+                <span [ngClass]="setDark" (click)="setLightMode()"><i class="icon-DarkMode" [ngClass]="setDark" id="nav-darkmode"></i></span>
+                <span [ngClass]="setLight" (click)="setDarkMode()"><i class="icon-LightMode" [ngClass]="setLight" id="nav-lightmode"></i></span>
+            </li>
+        </ul>
+
+    </mat-toolbar>
 </main>
 
 

@@ -2,7 +2,10 @@
 
 @media screen and (min-width: 1440px) { /* large desktop devices */
     body {
-        background-color: #4A516D;
+        background-color: var(--midnight-blue);
+    }
+    p, a, span {
+        color: var(--darkmode6-grey3);
     }
 }
 
