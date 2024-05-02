@@ -67,3 +67,23 @@
     --formel1-red: #910001;
     --tangerine-yellow: #FFCD03;
 }
+
+$textColor_dark: var(--darkmode6-grey2);
+$textColor_light: var(--deepnavy-blue);
+
+$bgColor_dark: var(--midnight-blue);
+$bgColor_light: var(--darkmode3-pink3);
+
+@mixin darken() {
+    // --bgColor: var(--midnight-blue);
+    // --textColor: var(--darkmode6-grey2);
+    --bgColor: #{$bgColor_dark};
+    --textColor: #{$textColor_dark};
+}
+
+@mixin lighten() {
+    // --bgColor: var(--darkmode3-pink3);
+    // --textColor: var(--deepnavy-blue);
+    --bgColor: #{$bgColor_light};
+    --textColor: #{$textColor_light};
+}
