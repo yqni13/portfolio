@@ -2,9 +2,26 @@ h1 {
     color: var(--darkmode3-pink1);
 }
 
+
+
 span {
     padding: 0px 10px 0px 10px;
     font-size: 20px;
+}
+
+.nav-bar {
+    justify-content: left;
+    display: block;
+}
+
+.nav-bar ul {
+    height: 100%;
+    overflow: auto;
+    position: fixed;
+    padding: 0px;
+    margin: -30px 0px 0px -25px;
+    width: 12.5%;
+    border: solid 3px var(--alice-blue);
 }
 
 .nav-bar span {
@@ -12,11 +29,10 @@ span {
 }
 
 .nav-bar li {
-    vertical-align: middle;
-    display: inline;
+    display: block;
     text-decoration: none;
     cursor: pointer;
-    padding: 0px 10px 0px 10px;
+    padding: 30px 10px 0px 10px;
 
     -webkit-user-select: none;
     -ms-user-select: none;
@@ -24,7 +40,7 @@ span {
 }
 
 #nav-logo {
-    width:70px;
+    width:65%;
 }
 
 #nav-darkmode {
