@@ -1,0 +1,59 @@
+.portfolio-frontend {
+    overflow: auto;
+    box-sizing: border-box;
+    margin: 0px 75px 0px 75px;
+}
+
+.column {
+    float: left;
+    // width: 33.33%;
+    height: 100%;
+    // padding: 0px 2.5px 0px 2.5px;
+}
+
+.quad {
+    width:30%;
+}
+
+.landscape {
+    width:35%;
+    padding: 0px 10px;
+}
+
+.column div {
+    height: 300px;
+    margin: 10px 0 10px 0px;
+}
+
+// .card {
+//     width: 200px;
+//     height: 200px;
+// }
+
+// .small img {
+//     max-width: calc((100vw - 12.5vw)*0.20);
+//     height: auto;
+// }
+
+// .medium img{
+//     max-width: calc((100vw - 12.5vw)*0.3);
+//     height: auto;
+// }
+
+// .big img {
+//     width: auto;
+//     height: 350px;
+// }
+
+#web_stopwatch {
+    background-image: url(../../../assets/img/web_stopwatch.jpg);
+    background-size: 100% 100%;
+}
+#web_todo {
+    background-image: url(../../../assets/img/web_todo.png);
+    background-size: 100% 100%;
+}
+#web_music {
+    background-image: url(../../../assets/img/web_music.jpg);
+    background-size: 100% 100%;
+}

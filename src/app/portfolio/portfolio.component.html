@@ -1,13 +1,16 @@
-<div class="page-header">
-    <div [routerLink]="['all']" class="portfolio-page">
-        <span>ALL</span>
+<div class="container portfolio">
+    <h2>Portfolio.</h2>
+    <div class="page-header">
+        <div [routerLink]="['all']" class="portfolio-page">
+            <span>ALL</span>
+        </div>
+        <div [routerLink]="['frontend']" class="portfolio-page">
+            <span>FRONTEND</span>
+        </div>
+        <div [routerLink]="['mini']" class="portfolio-page">
+            <span>MINI</span>
+        </div>
     </div>
-    <div [routerLink]="['frontend']" class="portfolio-page">
-        <span>FRONTEND</span>
-    </div>
-    <div [routerLink]="['mini']" class="portfolio-page">
-        <span>MINI</span>
-    </div>
+    
+    <router-outlet></router-outlet>
 </div>
-
-<router-outlet></router-outlet>
