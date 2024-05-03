@@ -7,6 +7,7 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 import { PortfolioFrontendComponent } from './portfolio/frontend/portfolio-frontend.component';
 import { PortfolioMiniComponent } from './portfolio/mini/portfolio-mini.component';
 import { PortfolioAllComponent } from './portfolio/all/portfolio-all.component';
+import { PortfolioFullstackComponent } from './portfolio/fullstack/portfolio-fullstack.component';
 
 const routes: Routes = [
   {
@@ -46,6 +47,10 @@ const routes: Routes = [
       {
         path: 'frontend',
         component: PortfolioFrontendComponent,
+      },
+      {
+        path: 'fullstack',
+        component: PortfolioFullstackComponent,
       },
       {
         path: 'mini',
