@@ -30,11 +30,17 @@ h2 {
 
 /* only for portfolio card-text */
 h4 {
-    font-size:30px;
+    font-size:34px;
     color: var(--alice-blue);
     margin-block-end: -10px;
     text-align: left;
     padding-left: 50px;
+}
+
+h5 {
+    font-size:28px;
+    color: var(--alice-blue);
+    text-align:left;
 }
 
 .container {

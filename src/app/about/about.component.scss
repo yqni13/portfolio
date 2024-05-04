@@ -1,0 +1,108 @@
+.column {
+    display: inline-table;
+}
+
+#about_left_info {
+    width: 55%;
+}
+
+#about_right_info {
+    width: 45%;
+}
+
+#about_left_info p {
+    text-align: justify;
+    font-size: 18px;
+    margin-left: 100px;
+}
+
+#about_left_info h5 {
+    margin: 50px 0px 25px 100px;
+}
+
+#about_right_info h5 {
+    margin: 50px 0px 25px 120px;
+}
+
+.profile_picture {
+    text-align: left;
+    margin: 0px 0px 15px 120px;
+}
+
+.profile_picture img {
+    width: 40%;
+    height: auto;
+}
+
+#info_form,
+.download_button {
+    text-align: left;
+    padding-left: 120px;
+    font-size: 18px;
+}
+
+#info_form label {
+    color: var(--alice-blue);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#info_form input {
+    color: var(--acting-grey);
+    padding-left: 10px;
+    border: none;
+    background-color: transparent;
+    font-size: 18px;
+    font-family: TimesNewRoman;
+}
+
+#info_form div {
+    padding: 5px 0px;
+}
+
+.download_button button {
+    margin-top: 15px;
+    width:40%;
+    height: 40px;
+    background: transparent;
+    color: var(--yqni13-pink);
+    border-color: var(--yqni13-pink);
+    font-weight: bold;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+.download_button button:hover {
+    background-color: var(--yqni13-pink);
+    color: var(--alice-blue);
+}
+
+#about_service h5{
+    text-align: center;
+    margin: 150px 0px 50px 0px;
+}
+
+.column_service h6 {
+    font-size:20px;
+    color: var(--alice-blue);
+    margin:10px 0px 20px 0px;
+}
+
+.column_service {
+    width: 33.33%;
+    display: inline-table;
+    text-align: -webkit-center;
+}
+
+.column_service i {
+    background-image: var(--yqni13-gradient);
+    width:50px;
+    height:50px;
+}
+
+.column_service p {
+    text-align: center;
+    margin-left: 0px;
+    max-width: 60%;
+    font-size: 18px;
+}
