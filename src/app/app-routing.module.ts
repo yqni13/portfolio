@@ -57,7 +57,12 @@ const routes: Routes = [
         component: PortfolioMiniComponent
       }
     ]
-  }
+  },
+  {
+    path: '**', // if parameter is unknown (manually changed)
+    redirectTo: '/home',
+    title: 'Home'
+  },
 ];
 
 @NgModule({
