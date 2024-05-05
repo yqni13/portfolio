@@ -1,3 +1,7 @@
+.about {
+    overflow-y: auto;
+}
+
 .column {
     display: inline-table;
 }
@@ -75,6 +79,7 @@
 .download_button button:hover {
     background-color: var(--yqni13-pink);
     color: var(--alice-blue);
+    opacity: 0.6;
 }
 
 #about_service h5{

@@ -1,7 +1,7 @@
 
 
-<main class="main">
-    <mat-toolbar class="nav-bar">
+<!-- <main class="main"> -->
+    <nav class="nav-bar">
         <ul>
             <li>
                 <img id="nav-logo" src="../assets/img/yqni13-small.png" alt="no logo">
@@ -22,20 +22,20 @@
                 <span [ngClass]="setDark" (click)="setLightMode()"><i class="icon-DarkMode" [ngClass]="setDark" id="nav-darkmode"></i></span>
                 <span [ngClass]="setLight" (click)="setDarkMode()"><i class="icon-LightMode" [ngClass]="setLight" id="nav-lightmode"></i></span>
             </li>
-            <li id="last_li">
+            <li>
                 <div class="link_icons">
                     <a href="https://github.com/yqni13" target="_blank"><i class="icon-GitHub"></i></a>
                     <a href="https://app.daily.dev/yqni13" target="_blank"><img src="../assets/img/dailydev.png"></a>
                     <a href="https://leetcode.com/u/yqni13/" target="_blank"><i class="icon-LeetCode"></i></a>
                     <a href="https://www.linkedin.com/in/lukas-varga-59532b228/" target="_blank"><i class="icon-LinkedIn"></i></a>
                 </div>
-                <p><i class="icon-CopyRight" id="nav-copyright"></i> Lukas Varga</p>
+                <p><i class="icon-CopyRight" id="nav-copyright"></i>2024 Lukas Varga</p>
             </li>
         </ul>
         
 
-    </mat-toolbar>
-</main>
+    </nav>
+<!-- </main> -->
 
 
-<router-outlet />
+<router-outlet><router-outlet />

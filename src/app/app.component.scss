@@ -2,11 +2,16 @@ h1 {
     color: var(--darkmode3-pink1);
 }
 
-
-
 span {
     padding: 0px 10px 0px 10px;
-    font-size: 20px;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color: var(--darkmode3-pink2);
+}
+
+span:hover {
+    color: var(--yqni13-pink);
+    opacity: 0.6;
 }
 
 .nav-bar {
@@ -18,10 +23,15 @@ span {
     height: 100%;
     overflow: auto;
     position: fixed;
-    padding: 0px;
-    margin: -30px 0px 0px -25px;
+    margin: 0;
+    padding: 0;
+    scrollbar-width: none;
     width: 12.5%;
-    border: solid 3px var(--alice-blue);
+    background-color: rgb(41, 39, 39);
+
+    display: flex;
+    flex-direction: column;
+    width: 12.5%;
 }
 
 .nav-bar span {
@@ -39,10 +49,9 @@ span {
     user-select: none;
 }
 
-#last_li {
-    position: absolute;
-    bottom: 0;
-    margin-bottom: 20px;
+ul>:last-child {
+    margin-top: auto;
+    margin-bottom: 5%;
     text-align: center;
 }
 
@@ -70,14 +79,21 @@ span {
   
 .link_icons i {
     color: grey;
+    width: 20px;
+    height: 20px;
     margin: 0px 8.5px;
 }
 
 .link_icons img {
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     color: grey;
     margin: 0px 8.5px;
+}
+
+.link_icons i:hover,
+.link_icons img:hover {
+    opacity: 0.4;
 }
 
 #nav-copyright {
@@ -88,7 +104,7 @@ span {
     vertical-align: top;
 }
 
-#last_li p {
+ul>:last-child p {
     color: grey;
     font-size: 12px;
 }
