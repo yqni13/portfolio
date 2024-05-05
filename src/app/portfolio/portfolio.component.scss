@@ -14,6 +14,10 @@
     user-select: none;
 }
 
+span {
+    color: var(--alice-blue);
+}
+
 .row {
     display: flex;
     justify-content: center;
@@ -86,4 +90,8 @@
 @keyframes github-animation {
     to { transform: scale(1.5) };
     to { transform: rotate(360deg) };
+}
+
+.icon-GitHub:hover {
+    opacity:0.4;
 }

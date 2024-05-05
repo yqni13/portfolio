@@ -1,9 +1,11 @@
 .home {
     vertical-align: middle;
+    height: 100vh;
+    margin-left: 12.5%;
+    background-image: url("../../assets/img/workspace.png");
+    background-size: cover;  
     overflow-y: auto;  
 }
-
-
 
 .first-name {
     font-weight: bolder;
