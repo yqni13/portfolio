@@ -1,5 +1,6 @@
 .about {
     overflow-y: auto;
+    margin-left: 12.5%;
 }
 
 .column {
@@ -96,10 +97,13 @@
     border-style: inset;
 }
 
-#about_service h5,
-#about_funfacts h5 {
-    text-align: center;
-    margin: 150px 0px 50px 0px;
+.about_service,
+.about_funfacts {
+    h5 {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    margin: 150px 100px 25px 100px;
 }
 
 .column_service h6,
@@ -107,6 +111,11 @@
     font-size:20px;
     color: var(--alice-blue);
     margin:10px 0px 20px 0px;
+}
+
+.about_service p,
+.about_funfacts p {
+    width: 75%;
 }
 
 .column_service {
