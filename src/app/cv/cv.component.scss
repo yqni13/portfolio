@@ -1,3 +1,36 @@
 .cv {
     overflow-y: auto;
+    height: 100vh;
+    margin-left: 12.5%;
 }
+
+h4, p {
+    padding:0;
+    margin:0;
+}
+
+.wrapper_cv {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    text-align: left;
+}
+
+h4, p {
+    margin-left: 100px;
+}
+
+.left_exp {
+    
+}
+
+.right_edu {
+
+}
+
+ul li {
+    color: var(--alice-blue);
+    display: inline;
+}
+
+
+

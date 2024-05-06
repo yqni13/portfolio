@@ -1,12 +1,9 @@
-h1 {
-    color: var(--darkmode3-pink1);
-}
-
 span {
     padding: 0px 10px 0px 10px;
     font-size: 1.5rem;
     font-weight: bolder;
-    color: var(--darkmode3-pink2);
+    color: var(--alice-blue);
+    opacity: 0.8;
 }
 
 span:hover {
@@ -26,12 +23,11 @@ span:hover {
     margin: 0;
     padding: 0;
     scrollbar-width: none;
-    width: 12.5%;
-    background-color: rgb(41, 39, 39);
+    background-color: var(--rich-black);
 
     display: flex;
     flex-direction: column;
-    width: 12.5%;
+    width: 10%;
 }
 
 .nav-bar span {
@@ -57,6 +53,7 @@ ul>:last-child {
 
 #nav-logo {
     width:65%;
+    cursor: default;
 }
 
 #nav-darkmode {
