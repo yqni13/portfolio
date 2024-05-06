@@ -7,8 +7,10 @@ span {
 }
 
 span:hover {
-    color: var(--yqni13-pink);
-    opacity: 0.6;
+    background: var(--yqni13-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 1;
 }
 
 .nav-bar {

@@ -7,6 +7,17 @@
     display: inline-flex;
 }
 
+.page-header span {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.page-header span:hover {
+    background: var(--yqni13-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .portfolio-page {
     padding:25px;
     cursor: pointer;
