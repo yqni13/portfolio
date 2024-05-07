@@ -23,15 +23,12 @@
 
 #about_second_info p {
     text-align: justify;
-    font-size: 20px;
+    font-size: 16px;
     padding-top: 5px;
     margin-left: 50px;
 }
 
-#about_second_info h5 {
-    margin: 0px 0px 25px 50px;
-}
-
+#about_second_info h5,
 #about_third_info h5 {
     margin: 0px 0px 25px 50px;
 }
@@ -44,6 +41,8 @@
     width: 75%;
     height: auto;
     margin: 0px 0px 0px 100px;
+    box-shadow: 20px -20px 55px var(--yqni13-purple);
+    border-radius: 50%;
 }
 
 #info_form,
@@ -64,7 +63,7 @@
     padding-left: 10px;
     border: none;
     background-color: transparent;
-    font-size: 18px;
+    font-size: 16px;
     font-family: TimesNewRoman;
 }
 
@@ -116,6 +115,7 @@
 .about_service p,
 .about_funfacts p {
     width: 75%;
+    font-size: 16px;
 }
 
 .column_service {
@@ -135,7 +135,6 @@
     text-align: center;
     margin-left: 0px;
     max-width: 60%;
-    font-size: 18px;
 }
 
 .column_funfacts {
