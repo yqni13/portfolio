@@ -1,1 +1,19 @@
-<p>portfolio works!</p>
+<div class="portfolio">
+    <h2>Portfolio.</h2>
+    <div class="page-header">
+        <div [routerLink]="['all']" class="portfolio-page">
+            <span>ALL</span>
+        </div>
+        <div [routerLink]="['frontend']" class="portfolio-page">
+            <span>FRONTEND</span>
+        </div>
+        <div [routerLink]="['fullstack']" class="portfolio-page">
+            <span>FULLSTACK</span>
+        </div>
+        <div [routerLink]="['mini']" class="portfolio-page">
+            <span>MINI</span>
+        </div>
+    </div>
+    
+    <router-outlet></router-outlet>
+</div>

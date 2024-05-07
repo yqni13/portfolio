@@ -66,6 +66,11 @@
     --bordeau-red: #420116;
     --formel1-red: #910001;
     --tangerine-yellow: #FFCD03;
+    --acting-grey: #7e7e7e;
+
+    /* BACKGROUND-IMAGE LINEAR-GRADIENT */
+    --yqni13-gradient: linear-gradient(167deg, #650D88 42%, #BC0C79 90%);
+    --yqni13-webgradient: -webkit-linear-gradient(303deg, #bc0c79 0%, #650d88 70% 70%)
 }
 
 $textColor_dark: var(--darkmode6-grey2);
@@ -87,3 +92,4 @@ $bgColor_light: var(--darkmode3-pink3);
     --bgColor: #{$bgColor_light};
     --textColor: #{$textColor_light};
 }
+
