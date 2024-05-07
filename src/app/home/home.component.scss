@@ -1,12 +1,70 @@
-.home-div {
-    vertical-align: middle;
+.home {
+    height: 100vh;
+    margin-left: 10%;
+    align-content: center;    
+    width: 100%;
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    z-index: 1;
 }
 
-h2 {
-    color: var(--darkmode6-grey3);
-    font-size: 36px;
+.home::before {
+    background-image: url("../../assets/img/wallpaper3.png");
+    background-size: cover;
+    background-position-y: 20%;
+    opacity: 0.25;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    content: '';
+    position: absolute;
 }
 
-.first-name {
-    font-weight: bolder;
+.left {
+    align-self: center;
+    text-align: left;
+}
+
+.left h2 {
+    margin:0px 0px 0px 100px;
+    font-size: 55px;
+    text-transform: uppercase;
+    border-bottom: none;
+}
+
+#frontend {
+    background: var(--yqni13-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.left p {
+    margin-left: 100px;
+    font-size: 24px;
+}
+
+.hexagon-shape {
+    position: relative;
+    overflow: hidden;
+    background: transparent;
+    border-radius: 1em/.5em;
+    width: 500px;
+    height: 500px;
+    transform: rotate(-30deg) skewX(30deg) scaleY(.866);
+    margin-left: 50px;
+}
+.hexagon-shape:before {
+    position: absolute;
+    right: 6.7%;
+    bottom: 0;
+    left: 6.7%;
+    top: 0;
+    transform: scaleY(1.155) skewX(-30deg) rotate(30deg);
+    background-image: url("../../assets/img/profile2.jpg");
+    background-size: cover;
+    border-radius: inherit;
+    background-repeat: no-repeat;
+    // background-position-y: 30%;
+    content: '';
 }

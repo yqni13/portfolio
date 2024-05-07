@@ -1,0 +1,144 @@
+.about {
+    overflow-y: auto;
+    margin-left: 12.5%;
+}
+
+.column {
+    display: inline-table;
+    margin-top: 100px;
+}
+
+#about_first_info {
+    width: 30%;
+    float: left;
+}
+
+#about_second_info {
+    width: 40%;
+}
+
+#about_third_info {
+    width: 30%;
+}
+
+#about_second_info p {
+    text-align: justify;
+    font-size: 16px;
+    padding-top: 5px;
+    margin-left: 50px;
+}
+
+#about_second_info h5,
+#about_third_info h5 {
+    margin: 0px 0px 25px 50px;
+}
+
+.profile_picture {
+    text-align: left;
+}
+
+.profile_picture img {
+    width: 75%;
+    height: auto;
+    margin: 0px 0px 0px 100px;
+    box-shadow: 20px -20px 55px var(--yqni13-purple);
+    border-radius: 50%;
+}
+
+#info_form,
+.download_button {
+    text-align: left;
+    margin-left: 50px;
+    font-size: 18px;
+}
+
+#info_form label {
+    color: var(--alice-blue);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#info_form input {
+    color: var(--acting-grey);
+    padding-left: 10px;
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+    font-family: TimesNewRoman;
+}
+
+#info_form div {
+    padding: 5px 0px;
+}
+
+.download_button {
+    margin-top: 15px;
+}
+
+.download_button a {
+    padding: 5px 15px;
+    border: solid var(--yqni13-pink) 1px;
+    text-decoration: none;
+    background: transparent;
+    color: var(--yqni13-pink);
+    border-color: var(--yqni13-pink);
+    border-style: outset;
+    font-weight: bold;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+.download_button a:hover {
+    background-color: var(--yqni13-pink);
+    color: var(--alice-blue);
+    opacity: 0.6;
+    border: solid var(--yqni13-pink) 1px;
+    border-style: inset;
+}
+
+.about_service,
+.about_funfacts {
+    h5 {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    margin: 150px 100px 25px 100px;
+}
+
+.column_service h6,
+.column_funfacts h6 {
+    font-size:20px;
+    color: var(--alice-blue);
+    margin:10px 0px 20px 0px;
+}
+
+.about_service p,
+.about_funfacts p {
+    width: 75%;
+    font-size: 16px;
+}
+
+.column_service {
+    width: 33.33%;
+    display: inline-table;
+    text-align: -webkit-center;
+}
+
+.column_service i,
+.column_funfacts i {
+    background-image: var(--yqni13-gradient);
+    width:50px;
+    height:50px;
+}
+
+.column_service p {
+    text-align: center;
+    margin-left: 0px;
+    max-width: 60%;
+}
+
+.column_funfacts {
+    width: 25%;
+    display: inline-table;
+    text-align: -webkit-center;
+}
