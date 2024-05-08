@@ -7,6 +7,9 @@
 html {
     scrollbar-width: none;
     cursor: context-menu;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 body {
@@ -14,6 +17,7 @@ body {
     width:100vw;
     height:100vh;
     margin:0;
+    background-color: var(--body-bg)
 }
 
 mat-toolbar {
@@ -23,20 +27,19 @@ mat-toolbar {
 h1, h2, h3, h4, h5 {
     margin-block-start: 0px;
     margin-block-end: 0px;
+    color: var(--header-color);
 }
 
 h2 {
-    color: var(--darkmode6-grey3);
     font-size: 48px;
     text-align: left;
     margin: 50px 100px 0px 100px;
-    border-bottom: solid var(--alice-blue);
+    border-bottom: solid var(--border-line);
 }
 
 /* only for portfolio card-text */
 h4 {
     font-size:34px;
-    color: var(--alice-blue);
     margin-block-end: -10px;
     text-align: left;
     padding-left: 50px;
@@ -44,10 +47,13 @@ h4 {
 
 h5 {
     font-size:28px;
-    color: var(--alice-blue);
     text-align:left;
 }
 
 .container {
     margin-left: 12.5%;
+}
+
+p {
+    color: var(--text-color);
 }
