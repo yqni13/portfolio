@@ -1,15 +1,21 @@
 /* media queries for responsive design regarding devices */
 
 @media screen and (min-width: 1440px) { /* large desktop devices */
-
+    .box { margin-left: 180px; }
+    .nav-bar ul { width: 180px; }
+    p { font-size: 16px; }
 }
 
 @media screen and (max-width: 1440px) { /* small desktop devices */
-
+    .box { margin-left: 180px; }
+    .nav-bar ul { width: 180px; }
+    p { font-size: 14px; }
 }
 
 @media screen and (max-width: 1024px) { /* tablet device [landscape] */
-
+    .box { margin-left: 180px; }
+    .nav-bar ul { width: 180px; }
+    p { font-size: 14px; }
 }
 
 @media screen and (max-width: 768px) { /* mobile devices [landscape] */
