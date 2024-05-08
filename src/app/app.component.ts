@@ -11,6 +11,7 @@ export class AppComponent implements OnInit {
   title = 'portfolio';
   setDark: string = "";
   setLight: string = "";
+  isLightTheme = true;
 
   constructor(private router: Router) {}
 
@@ -23,10 +24,12 @@ export class AppComponent implements OnInit {
   setDarkMode() {
     this.setDark = "setVisible";
     this.setLight = "setHidden";
+    document.body.setAttribute("data-theme", 'dark');
   }
-
+  
   setLightMode() {
     this.setDark = "setHidden";
     this.setLight = "setVisible";
+    document.body.setAttribute("data-theme", 'light');
   }
 }

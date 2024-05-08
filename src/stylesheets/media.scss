@@ -1,34 +1,21 @@
 /* media queries for responsive design regarding devices */
 
 @media screen and (min-width: 1440px) { /* large desktop devices */
-    body {
-        background-color: var(--midnight-blue);
-    }
-    p, a {
-        color: var(--darkmode6-grey3);
-    }
+
 }
 
 @media screen and (max-width: 1440px) { /* small desktop devices */
-    body {
-        background-color: #d6f5d6;
-    }
+
 }
 
 @media screen and (max-width: 1024px) { /* tablet device [landscape] */
-    body {
-        background-color: #9999ff;
-    }
+
 }
 
 @media screen and (max-width: 768px) { /* mobile devices [landscape] */
-    body {
-        background-color: #ffb3cc;
-    }
 
 }
+
 @media screen and (max-width: 480px) { /* mobile devices [portrait] */
-    body {
-        background-color: #ffcc99;
-    }
+
 }

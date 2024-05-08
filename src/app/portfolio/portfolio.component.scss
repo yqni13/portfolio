@@ -28,7 +28,7 @@
 }
 
 span {
-    color: var(--alice-blue);
+    color: var(--header-color);
 }
 
 .row {
@@ -47,7 +47,7 @@ span {
 }
 
 .quad img {
-    border: solid black 5px;
+    // border: solid var(--special-color1) 2px;
     width: 400px;
     height: 300px;
     margin: 0px 2px 0px 2px;

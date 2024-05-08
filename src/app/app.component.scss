@@ -2,7 +2,7 @@ span {
     padding: 0px 10px 0px 10px;
     font-size: 1.5rem;
     font-weight: bolder;
-    color: var(--alice-blue);
+    color: var(--header-color);
     opacity: 0.8;
 }
 
@@ -10,7 +10,6 @@ span:hover {
     background: var(--yqni13-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    opacity: 1;
 }
 
 .nav-bar {
@@ -25,7 +24,7 @@ span:hover {
     margin: 0;
     padding: 0;
     scrollbar-width: none;
-    background-color: var(--rich-black);
+    background-color: var(--navbar-bg);
 
     display: flex;
     flex-direction: column;
@@ -47,6 +46,14 @@ span:hover {
     user-select: none;
 }
 
+#nav-darkmode {
+    color: var(--darkmode6-grey2);
+}
+
+#nav-lightmode {
+    color: var(--tangerine-yellow);
+}
+
 ul>:last-child {
     margin-top: auto;
     margin-bottom: 5%;
@@ -56,14 +63,6 @@ ul>:last-child {
 #nav-logo {
     width:65%;
     cursor: default;
-}
-
-#nav-darkmode {
-    color: var(--darkmode2-grey1);
-}
-
-#nav-lightmode {
-    color: var(--tangerine-yellow);
 }
 
 .setVisible {
@@ -77,7 +76,7 @@ ul>:last-child {
 }
   
 .link_icons i {
-    color: grey;
+    color: var(--navbar-content);
     width: 20px;
     height: 20px;
     margin: 0px 8.5px;
@@ -86,7 +85,7 @@ ul>:last-child {
 .link_icons img {
     width: 20px;
     height: 20px;
-    color: grey;
+    color: var(--navbar-content);
     margin: 0px 8.5px;
 }
 
@@ -98,12 +97,12 @@ ul>:last-child {
 #nav-copyright {
     width:12px;
     height: 12px;
-    color: grey;
+    color: var(--navbar-content);
     margin-right: 5px;
     vertical-align: top;
 }
 
 ul>:last-child p {
-    color: grey;
+    color: var(--navbar-content);
     font-size: 12px;
 }
