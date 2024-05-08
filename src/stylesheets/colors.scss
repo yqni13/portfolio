@@ -16,14 +16,12 @@
     --obsidian-black: #0B1215; // nr 1
     --charcoal-grey: #171717;
     --oil-black: #0C0C0C;
-    --darkslate-grey: #0D1717;
-    
+    --darkslate-grey: #0D1717;    
     
     /* dark blue type colors */
     --midnight-blue: #101720;
     --deepnavy-blue: #011222;
     --rich-black: #020D19;
-
 
     /* dark mode theme#1 dark-red */
     --darkmode1-black1: #000000;
@@ -61,6 +59,13 @@
     --darkmode6-grey2: #5C5470;
     --darkmode6-grey3: #DBD8E3;
 
+    /* white mode theme1 grey/brown/beige */
+    --whitemode1-champagne: #F6F0CB;
+    --whitemode1-sand: #EECAAB;
+    --whitemode1-grey: #E9E6DB;
+    --whitemode1-cultured: #FBF7F4;
+    --whitemode1-pink: #ca7394;
+
     /* other defined colors */
     --phtalo-green: #0D413A;
     --bordeau-red: #420116;
@@ -73,23 +78,18 @@
     --yqni13-webgradient: -webkit-linear-gradient(303deg, #bc0c79 0%, #650d88 70% 70%)
 }
 
-$textColor_dark: var(--darkmode6-grey2);
-$textColor_light: var(--deepnavy-blue);
-
-$bgColor_dark: var(--midnight-blue);
-$bgColor_light: var(--darkmode3-pink3);
-
-@mixin darken() {
-    // --bgColor: var(--midnight-blue);
-    // --textColor: var(--darkmode6-grey2);
-    --bgColor: #{$bgColor_dark};
-    --textColor: #{$textColor_dark};
+[data-theme="light"] {
+    --navbar-bg: var(--whitemode1-champagne);
+    --body-bg: var(--whitemode1-cultured);
+    --header-color: var(--whitemode1-pink);
+    --text-color: var(--whitemode1-sand);
 }
 
-@mixin lighten() {
-    // --bgColor: var(--darkmode3-pink3);
-    // --textColor: var(--deepnavy-blue);
-    --bgColor: #{$bgColor_light};
-    --textColor: #{$textColor_light};
+[data-theme="dark"] {
+    --navbar-bg: var(--deepnavy-blue);
+    --body-bg: var(--midnight-blue);
+    --header-color: var(--alice-blue);
+    --text-color: var(--alice-blue);
 }
+
 

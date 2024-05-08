@@ -16,19 +16,6 @@ body {
     margin:0;
 }
 
-// blueprint: https://dev.to/pahanperera/implement-light-dark-mode-in-angular-42ff
-
-// body.dark {
-//     @include darken();
-// }
-// body.light {
-//     @include lighten();
-// }
-// main {
-//     background-color: var(--bgColor);
-//     color: var(--textColor);
-// }
-
 mat-toolbar {
     justify-content: center;    
 }

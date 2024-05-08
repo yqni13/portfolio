@@ -2,7 +2,7 @@ span {
     padding: 0px 10px 0px 10px;
     font-size: 1.5rem;
     font-weight: bolder;
-    color: var(--alice-blue);
+    color: var(--header-color);
     opacity: 0.8;
 }
 
@@ -10,7 +10,6 @@ span:hover {
     background: var(--yqni13-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    opacity: 1;
 }
 
 .nav-bar {
@@ -25,7 +24,7 @@ span:hover {
     margin: 0;
     padding: 0;
     scrollbar-width: none;
-    background-color: var(--rich-black);
+    background-color: var(--navbar-bg);
 
     display: flex;
     flex-direction: column;
@@ -56,14 +55,6 @@ ul>:last-child {
 #nav-logo {
     width:65%;
     cursor: default;
-}
-
-#nav-darkmode {
-    color: var(--darkmode2-grey1);
-}
-
-#nav-lightmode {
-    color: var(--tangerine-yellow);
 }
 
 .setVisible {
