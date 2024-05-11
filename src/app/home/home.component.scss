@@ -1,9 +1,14 @@
 .home {
     height: 100vh;
     align-content: center;    
-    overflow-y: auto;
-    display: grid;
-    grid-template-columns: 50% 50%;
+    // overflow-y: auto;
+    // display: grid;
+    // grid-template-columns: 50% 50%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
     z-index: 1;
     background-color: transparent;
 }
@@ -20,9 +25,15 @@
     position: fixed;
 }
 
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
 .left {
     align-self: center;
     text-align: left;
+    max-width: 55%;
 }
 
 .left h2 {
