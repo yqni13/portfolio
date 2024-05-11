@@ -60,7 +60,7 @@
     --darkmode6-grey3: #DBD8E3;
 
     /* white mode theme1 grey/brown/beige */
-    --whitemode1-champagne: #F6F0CB;
+    --whitemode1-champagne: #8fd0b8;
     --whitemode1-sand: #EECAAB;
     --whitemode1-grey: #E9E6DB;
     --whitemode1-cultured: #FBF7F4;
@@ -70,7 +70,7 @@
     --phtalo-green: #0D413A;
     --bordeau-red: #420116;
     --formel1-red: #910001;
-    --tangerine-yellow: #ffd738;
+    --tangerine-yellow: #f3b20e;
     --acting-grey: #7e7e7e;
 
     /* BACKGROUND-IMAGE LINEAR-GRADIENT */
@@ -79,7 +79,7 @@
 }
 
 [data-theme="light"] {
-    --navbar-bg: var(--whitemode1-champagne);
+    --navbar-bg: var(--whitemode1-sand);
     --navbar-content: var(--rich-black);
     --body-bg: var(--darkmode6-grey3);
     --header-color: var(--darkmode6-grey1);
