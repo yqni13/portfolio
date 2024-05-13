@@ -1,27 +1,78 @@
 /* media queries for responsive design regarding devices */
 
 @media screen and (min-width: 1440px) { /* large desktop devices */
-    .box { margin-left: 180px; }
-    .nav-bar ul { width: 180px; }
+    .box { margin-left: var(--block-margin); }
+    #nav-logo { width: var(--nav-logo); }
+    .nav-bar ul { width: var(--nav-width); }
+    .nav-collapse { display: none!important; }
     p { font-size: 16px; }
 }
 
 @media screen and (max-width: 1440px) { /* small desktop devices */
-    .box { margin-left: 180px; }
-    .nav-bar ul { width: 180px; }
+    .box { margin-left: var(--block-margin); }
+    #nav-logo { width: var(--nav-logo); }
+    .nav-bar ul { width: var(--nav-width); }
+    .nav-collapse { display: none!important; }
     p { font-size: 14px; }
+    .nav-full { display: var(--nav-full)!important; }
 }
 
 @media screen and (max-width: 1024px) { /* tablet device [landscape] */
-    .box { margin-left: 180px; }
-    .nav-bar ul { width: 180px; }
+    .box { margin-left: var(--block-margin); }
+    #nav-logo { width: var(--nav-logo); }
+    .nav-bar ul { width: var(--nav-width); }
+    .nav-collapse { display: none!important; }
     p { font-size: 14px; }
 }
 
 @media screen and (max-width: 768px) { /* mobile devices [landscape] */
-
+    .box { margin-left: var(--block-margin); }
+    #nav-unfold { display: block!important; }
+    #nav-copyright { margin: var(--nav-copyright); }
+    #nav-logo { width: var(--nav-logo); }
+    .nav-bar ul { 
+        width: var(--nav-width);
+        z-index: var(--nav-z);
+    }
+    .nav-full { display: var(--nav-full)!important; }
 }
 
 @media screen and (max-width: 480px) { /* mobile devices [portrait] */
+    .box { margin-left: var(--block-margin); }
+    #nav-unfold { display: block!important; }
+    #nav-copyright { margin: var(--nav-copyright); }
+    #nav-logo { width: var(--nav-logo); }
+    .nav-bar ul { 
+        width: var(--nav-width);
+        z-index: var(--nav-z);
+    }
+    .nav-full { display: var(--nav-full)!important; }
+}
 
+// window.screen.width <= 768px
+[data-nav="navMobileExtended"] {
+    --nav-width: 100%;
+    --nav-z: 1;
+    --nav-copyright: 0 0 5px 0;
+    --nav-full: block;
+    --block-margin: 60px;
+    --nav-logo: 100px;
+}
+
+// window.screen.width <= 768px
+[data-nav="navMobileCollapsed"] {
+    --nav-width: 60px;
+    --nav-z: 0;
+    --nav-copyright: 5px;
+    --nav-full: none;
+    --block-margin: 60px;
+}
+
+[data-nav="navDesktop"] {
+    --nav-width: 180px;
+    --nav-z: 0;
+    --nav-copyright: 0 0 5px 0;
+    --nav-full: block;
+    --block-margin: 180px;
+    --nav-logo: 100px;
 }
