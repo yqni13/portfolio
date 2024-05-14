@@ -1,6 +1,12 @@
 .portfolio {
     overflow-y: auto;
-    margin-left: 12.5%;
+}
+
+.portfolio-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px 100px 25px 100px;
+    justify-content: center;
 }
 
 .page-header {
@@ -31,12 +37,7 @@ span {
     color: var(--header-color);
 }
 
-.row {
-    display: flex;
-    justify-content: center;
-}
-
-.quad {
+.card {
     position: relative;
     display:flex;
     flex-direction: column;
@@ -46,20 +47,19 @@ span {
     margin-top: 4px;
 }
 
-.quad img {
+.card img {
     // border: solid var(--special-color1) 2px;
-    width: 400px;
-    height: 300px;
+    height: auto;
     margin: 0px 2px 0px 2px;
     color: var(--alice-blue);
 }
 
-.quad img:hover
+.card img:hover
 {
     opacity: 0.25;
 }
 
-.quad:hover .card-text {
+.card:hover .card-text {
     opacity: 1;
 }
 
@@ -80,22 +80,14 @@ span {
 
 .card-text p {
     color: var(--alice-blue);
-    font-size: 16px;
-    padding: 10px 50px 0px 50px;
     text-align: justify;
 }
 
-.card-technology {
-    padding-left: 50px;
-}
-
 .card-technology i {
-    margin: 0px 20px 10px 0px;
-    width: 24px;
-    height: 24px;
+    margin: 10px 20px 10px 0px;
 }
 
-.quad:hover .icon-GitHub {
+.card:hover .icon-GitHub {
     animation-name: github-animation;
     animation-duration: 2s;
 }
@@ -107,4 +99,8 @@ span {
 
 .icon-GitHub:hover {
     opacity:0.4;
+}
+
+.a-github {
+    color: var(--alice-blue);
 }

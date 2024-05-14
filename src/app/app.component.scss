@@ -1,7 +1,6 @@
 span {
     padding: 0px 10px 0px 10px;
     font-size: 1.5rem;
-    font-weight: bolder;
     color: var(--header-color);
     opacity: 0.8;
 }
@@ -10,6 +9,7 @@ span:hover {
     background: var(--yqni13-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    
 }
 
 .nav-bar {
@@ -28,7 +28,6 @@ span:hover {
 
     display: flex;
     flex-direction: column;
-    width: 10%;
 }
 
 .nav-bar span {
@@ -46,6 +45,12 @@ span:hover {
     user-select: none;
 }
 
+.nav-collapse {
+    align-self: center;
+    padding-top: 0px;
+    color: var(--text-color);
+}
+
 #nav-darkmode {
     color: var(--darkmode6-grey2);
 }
@@ -61,7 +66,6 @@ ul>:last-child {
 }
 
 #nav-logo {
-    width:65%;
     cursor: default;
 }
 
@@ -74,19 +78,26 @@ ul>:last-child {
     visibility:hidden;
     display: none;
 }
+
+.active-route {
+    background: var(--yqni13-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bolder;
+}
   
 .link_icons i {
     color: var(--navbar-content);
     width: 20px;
     height: 20px;
-    margin: 0px 8.5px;
+    margin: 5px 8.5px;
 }
 
 .link_icons img {
     width: 20px;
     height: 20px;
     color: var(--navbar-content);
-    margin: 0px 8.5px;
+    margin: 5px 8.5px;
 }
 
 .link_icons i:hover,
@@ -106,3 +117,4 @@ ul>:last-child p {
     color: var(--navbar-content);
     font-size: 12px;
 }
+

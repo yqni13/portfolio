@@ -1,6 +1,5 @@
 .about {
     overflow-y: auto;
-    margin-left: 12.5%;
 }
 
 .column {
@@ -8,23 +7,30 @@
     margin-top: 100px;
 }
 
+.wrapper_about_profile {
+    margin: 0px 100px;
+    display: flex;
+}
+
 #about_first_info {
     width: 30%;
     float: left;
+    order: 1;
 }
 
 #about_second_info {
     width: 40%;
+    order: 2;
 }
 
 #about_third_info {
     width: 30%;
+    order: 3;
 }
 
 #about_second_info p {
     text-align: justify;
     font-size: 16px;
-    padding-top: 5px;
     margin-left: 50px;
 }
 
@@ -38,9 +44,9 @@
 }
 
 .profile_picture img {
-    width: 75%;
+    width: 85%;
+    max-width: 330px;
     height: auto;
-    margin: 0px 0px 0px 100px;
     box-shadow: 20px -20px 55px var(--special-color1);
     border-radius: 50%;
 }
@@ -72,11 +78,11 @@
 }
 
 .download_button {
-    margin-top: 15px;
+    margin-top: 25px;
 }
 
 .download_button a {
-    padding: 5px 15px;
+    padding: 10px 25px;
     border: solid var(--special-color1) 1px;
     text-decoration: none;
     background: transparent;
@@ -107,6 +113,7 @@
 
 .column_service h6,
 .column_funfacts h6 {
+    text-transform: uppercase;
     font-size:20px;
     color: var(--header-color);
     margin:10px 0px 20px 0px;
