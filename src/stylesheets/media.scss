@@ -3,6 +3,7 @@
 @import "./defines.scss";
 
 @media screen and (min-width: $desktop-width) {
+
     // BASIC
     .box { 
         margin-left: var(--block-margin); 
@@ -26,7 +27,7 @@
     .left {
         max-width: 55%;
         h2 {
-            font-size: 48px;
+            font-size: 50px;
             margin:0px 0px 12px 100px;
         }
         p {
@@ -39,14 +40,31 @@
         height: 450px;
         margin-left: 50px;
     }
+
     // ABOUT
 
     // CV
+    .left_exp {
+        margin-left: 200px!important;
+    }
+    .right_edu {
+        margin-right: 200px!important;
+    }
+    .wrapper_techstack h4 {
+        margin: 0px 100px;
+    }
+    .wrapper_ul {
+        margin: 0px 100px;
+        ul {
+            width: 75%;
+        }
+    }
 
     // PORTFOLIO
 }
 
 @media screen and (max-width: $desktop-width) {
+
     // BASIC
     .box { 
         margin-left: var(--block-margin); 
@@ -73,7 +91,7 @@
     .left {
         max-width: 55%;
         h2 {
-            font-size: 40px;
+            font-size: 45px;
             margin:0px 0px 12px 100px;
         }
         p {
@@ -86,14 +104,31 @@
         height: 350px;
         margin-left: 50px;
     }
+
     // ABOUT
     
     // CV
-    
+    .left_exp {
+        margin-left: 100px!important;
+    }
+    .right_edu {
+        margin-right: 100px!important;
+    }
+    .wrapper_techstack h4 {
+        margin: 0px 100px;
+    }
+    .wrapper_ul {
+        margin: 0px 100px;
+        ul {
+            width: 100%;
+        }
+    }
+
     // PORTFOLIO
 }
 
 @media screen and (max-width: $tablet-landscape-width) {
+
     // BASIC
     .box { 
         margin-left: var(--block-margin); 
@@ -124,7 +159,7 @@
         max-width: 75%;
         padding-bottom: 50px;
         h2 {
-            font-size: 35px;
+            font-size: 40px;
             margin: 0px 50px 12px 50px;
         }
         p {
@@ -138,14 +173,35 @@
         height: 300px;
         margin-left: 0;
     }
+
     // ABOUT
 
     // CV
+    .left_exp {
+        margin-left: 50px!important;
+    }
+    .right_edu {
+        margin-right: 50px!important;
+    }
+    .wrapper_techstack h4 {
+        margin: 0px 100px;
+    }
+    .wrapper_ul {
+        margin: 0px 50px;
+        ul {
+            width: 100%;
+        }
+    }
+    .wrapper_ul i {
+        width: 50px!important;
+        height: 50px!important;
+    }
 
     // PORTFOLIO
 }
 
 @media screen and (max-width: $phone-landscape-width) {
+
     // BASIC
     .box { 
         margin-left: var(--block-margin); 
@@ -173,9 +229,6 @@
     }
 
     // HOME
-    .home {
-        justify-content: center;
-    }
     .home::before {
         background-position-x:25%;
     }
@@ -192,28 +245,55 @@
             text-align: justify;
         }
     }
-    .hexagon-shape {
-        width: 300px;
-        height: 300px;
-        margin-left: 0;
-    }
+
     // ABOUT
 
     // CV
+    .cv h2 {
+        margin: 50px 50px 0px 50px!important;
+    }
+    .cv_download {
+        margin: 50px 0px!important;
+    }
+    .wrapper_cv {
+        margin: 0!important;
+        display: inline-block!important;
+    }
+    .left_exp {
+        margin: 0px 0px 50px 0px!important;
+    }
+    .right_edu {
+        margin: 0px 0px 100px 0px!important;
+        text-align: left!important;
+        h4 {
+            text-align: left!important;
+        }
+    }
+    .wrapper_techstack {
+        margin: 0 50px!important;
+    }
+    .wrapper_ul {
+        margin: 0;
+        ul {
+            width: 100%;
+        }
+    }
+    .wrapper_ul i {
+        width: 40px!important;
+        height: 40px!important;
+    }
 
     // PORTFOLIO
 }
 
 @media screen and (max-width: $phone-portrait-width) {
+
     // BASIC
     .box { 
         margin-left: var(--block-margin); 
     }
     
     // NAV
-    #nav-unfold { 
-        display: block!important; 
-    }
     #nav-copyright { 
         margin: var(--nav-copyright); 
     }
@@ -229,33 +309,15 @@
     }
 
     // HOME
-    .home {
-        justify-content: center;
-    }
-    .home::before {
-        background-position-x:25%;
-    }
-    .left {
-        max-width: 100%;
-        padding-bottom: 50px;
-        h2 {
-            font-size: 35px;
-            margin: 0px 50px 12px 50px;
-        }
-        p {
-            margin: 0px 50px;
-            font-size: 18px;
-            text-align: justify;
-        }
-    }
     .hexagon-shape {
         width: 200px;
         height: 200px;
         margin-left: 0;
     }
+    
     // ABOUT
 
-    // CV
+    // CV - data same as next media query
 
     // PORTFOLIO
 }

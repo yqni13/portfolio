@@ -46,14 +46,24 @@ h4, p {
 .wrapper_cv {
     display: grid;
     grid-template-columns: 50% 50%;
-    text-align: left;
     margin-left: 100px;
     margin-right: 100px;
 }
 
-.left_exp,
+.left_exp {
+    margin-left: 50px;
+    text-align: left;
+    h4 {
+        text-align: left;
+    }
+}
+
 .right_edu {
-    margin-left: 35%;
+    margin-right: 50px;
+    text-align: right;
+    h4 {
+        text-align: right;
+    }
 }
 
 .wrapper_techstack {
@@ -61,18 +71,14 @@ h4, p {
 }
 
 .wrapper_techstack h4, ul {
-    margin-left: 100px;
-    margin-right: 100px;
     text-align: center;
 }
 
 .wrapper_ul {
-    margin: 0px 100px;
     text-align: -webkit-center;
 }
 
 .wrapper_ul ul {
-    width: 75%;
     padding-inline-start: 0;
 }
 
