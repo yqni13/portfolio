@@ -1,9 +1,6 @@
 .home {
     height: 100vh;
-    align-content: center;    
-    // overflow-y: auto;
-    // display: grid;
-    // grid-template-columns: 50% 50%;
+    align-content: center;
     overflow: hidden;
     display: flex;
     flex-direction: row;
@@ -42,11 +39,9 @@
 .left {
     align-self: center;
     text-align: left;
-    max-width: 55%;
 }
 
 .left h2 {
-    margin:0px 0px 0px 100px;
     text-transform: uppercase;
     border-bottom: none;
 }
@@ -59,8 +54,6 @@
 
 .left p {
     color: var(--header-color);
-    margin-left: 100px;
-    font-size: 24px;
 }
 
 .hexagon-shape {
@@ -68,10 +61,7 @@
     overflow: hidden;
     background: transparent;
     border-radius: 1em/.5em;
-    width: 500px;
-    height: 500px;
     transform: rotate(-30deg) skewX(30deg) scaleY(.866);
-    margin-left: 50px;
 }
 .hexagon-shape:before {
     position: absolute;

@@ -1,0 +1,38 @@
+
+
+/* width devices */
+$desktop-width: 1440px;
+$tablet-landscape-width: 1024px;
+$phone-landscape-width: 768px;
+$phone-portrait-width: 480px;
+
+
+/* window.screen.width <= 768px */
+[data-nav="navMobileExtended"] {
+    --nav-width: 100%;
+    --nav-z: 1;
+    --nav-copyright: 0 0 5px 0;
+    --nav-full: block;
+    --block-margin: 60px;
+    --nav-logo: 100px;
+}
+
+/* window.screen.width <= 768px */
+[data-nav="navMobileCollapsed"] {
+    --nav-width: 60px;
+    --nav-z: 0;
+    --nav-copyright: 5px;
+    --nav-full: none;
+    --block-margin: 60px;
+}
+
+[data-nav="navDesktop"] {
+    --nav-width: 180px;
+    --nav-z: 0;
+    --nav-copyright: 0 0 5px 0;
+    --nav-full: block;
+    --block-margin: 180px;
+    --nav-logo: 100px;
+}
+
+
