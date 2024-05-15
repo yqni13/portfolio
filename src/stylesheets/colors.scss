@@ -79,8 +79,9 @@
 }
 
 [data-theme="light"] {
-    --navbar-bg: var(--whitemode1-sand);
-    --navbar-content: var(--rich-black);
+    --navbar-bg: var(--deepnavy-blue);
+    --navbar-content: var(--acting-grey);
+    --navbar-text: var(--alice-blue);
     --body-bg: var(--darkmode6-grey3);
     --header-color: var(--darkmode6-grey1);
     --text-color: var(--darkmode6-grey2);
@@ -93,6 +94,7 @@
 [data-theme="dark"] {
     --navbar-bg: var(--deepnavy-blue);
     --navbar-content: var(--acting-grey);
+    --navbar-text: var(--alice-blue);
     --body-bg: var(--midnight-blue);
     --header-color: var(--alice-blue);
     --text-color: var(--alice-blue);

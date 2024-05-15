@@ -12,11 +12,12 @@
 
 .cv_download a {
     padding: 10px 25px;
-    border: solid var(--yqni13-pink) 1px;
     text-decoration: none;
     background: transparent;
     color: var(--yqni13-pink);
+    border: solid var(--yqni13-pink) 1px;
     border-style: outset;
+    border-radius: 10px;
     font-weight: bold;
     cursor: pointer;
     letter-spacing: 1px;

@@ -5,6 +5,7 @@
 @import "./stylesheets/defines.scss";
 @import "./stylesheets/colors.scss";
 
+$font-selection: system-ui;
 
 html {
     scrollbar-width: none;
@@ -12,6 +13,7 @@ html {
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    font-family: $font-selection;
 }
 
 body {
@@ -58,6 +60,10 @@ h5 {
 
 p {
     color: var(--text-color);
+}
+
+input {
+    font-family: $font-selection!important;
 }
 
 

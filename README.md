@@ -26,7 +26,18 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
-
 ## Technology
 
-Google Fonts; Angular Material; Angular;
+Angular, Google Fonts, Underscore.js
+
+## Responsive Design
+
+For a responsive design, media queries for 5 devices/situations were defined:
+- min-width 1440px (higher resolution desktop)
+- max-width 1440px (standard desktop)
+- max-width 1024px (tablet landscape)
+- max-width 768px (phone landscape)
+- max-width 480px (phone portrait)
+
+In combination with a flexbox layout and the media queries, 5 resolutions in a responsive design have been implemented.
+
