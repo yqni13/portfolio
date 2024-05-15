@@ -32,6 +32,7 @@
     text-align: justify;
     font-size: 16px;
     margin-left: 50px;
+    opacity: 0.7;
 }
 
 #about_second_info h5,
@@ -40,15 +41,30 @@
 }
 
 .profile_picture {
-    text-align: left;
+    text-align: center;
+}
+
+.wrapper_img {
+    position: relative;
+
+    &:before {
+        content: '';
+        position: absolute;
+        inset: 5px;
+        transform: translate(15%, -15px);
+        z-index: -1;
+        background: var(--yqni13-gradient);
+        filter: blur(15px);
+        width: 82%;
+    }
 }
 
 .profile_picture img {
     width: 85%;
     max-width: 330px;
     height: auto;
-    box-shadow: 20px -20px 55px var(--special-color1);
-    border-radius: 50%;
+    // box-shadow: 20px -20px 25px var(--special-color1);
+    border-radius: 20px;
 }
 
 #info_form,
@@ -65,7 +81,8 @@
 }
 
 #info_form input {
-    color: var(--acting-grey);
+    color: var(--text-color);
+    opacity: 0.7;
     padding-left: 10px;
     border: none;
     background-color: transparent;
@@ -75,6 +92,7 @@
 
 #info_form div {
     padding: 5px 0px;
+    width: max-content;
 }
 
 .download_button {
@@ -108,6 +126,8 @@
     h5 {
         text-align: center;
         margin-bottom: 50px;
+        font-style: italic;
+        letter-spacing: 3px;
     }
     margin: 150px 100px 25px 100px;
 }
@@ -120,10 +140,14 @@
     margin:10px 0px 20px 0px;
 }
 
-.about_service p,
-.about_funfacts p {
-    width: 75%;
-    font-size: 16px;
+.about_service,
+.about_funfacts {
+    p {
+        width: 75%;
+        font-size: 16px;
+        opacity: 0.7;
+        text-align: justify;
+    }
 }
 
 .column_service {
@@ -140,7 +164,6 @@
 }
 
 .column_service p {
-    text-align: center;
     margin-left: 0px;
     max-width: 60%;
 }

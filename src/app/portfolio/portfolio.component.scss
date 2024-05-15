@@ -1,3 +1,5 @@
+$card-border: 10px;
+
 .portfolio {
     overflow-y: auto;
 }
@@ -44,7 +46,22 @@ span {
     text-align: left; /* added technology symbols otherwise centered */
     align-items: center;
     justify-content: end;
-    margin-top: 4px;
+    margin: 4px;
+
+    $border-width: 3px;
+    background-clip: padding-box;
+    border: solid $border-width transparent;
+    border-radius: 10px;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0; right: 0; bottom: 0; left: 0;
+        z-index: -1;
+        margin: -$border-width;
+        border-radius: inherit;
+        background: var(--yqni13-gradient);
+    }
 }
 
 .card img {
@@ -52,6 +69,10 @@ span {
     height: auto;
     margin: 0px 2px 0px 2px;
     color: var(--alice-blue);
+
+    // TODO: decide for better padding and adapt card too
+    border-radius: $card-border;
+    // border: solid 2px var(--alice-blue);
 }
 
 .card img:hover
@@ -64,7 +85,7 @@ span {
 }
 
 .card-text a.a-github {
-    vertical-align: sub;
+    vertical-align: middle;
     margin-left: 10px;
 }
 
@@ -76,6 +97,7 @@ span {
     height: 100%;
     align-content: end;
     backdrop-filter: blur(2px) brightness(0.5);
+    border-radius: $card-border;
 }
 
 .card-text p {

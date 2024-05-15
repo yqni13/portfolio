@@ -33,6 +33,13 @@
 
 .block {
     margin-bottom: 100px;
+    h4 {
+        font-style: italic;
+        letter-spacing: 3px;
+    }
+    p {
+        opacity: 0.7;
+    }
 }
 
 h4, p {
@@ -71,7 +78,8 @@ h4, p {
     margin: 0px 100px;
 }
 
-.wrapper_techstack h4, ul {
+.wrapper_techstack h4 {
+    // TODO: Technical Skills h4 in portrait modus phone not centered
     text-align: center;
 }
 

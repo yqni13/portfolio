@@ -26,7 +26,7 @@
 
     .home {
         .left {
-            max-width: 55%;
+            max-width: 57.5%;
             h2 {
                 font-size: 50px;
                 margin:0px 0px 12px 100px;
@@ -36,14 +36,19 @@
                 font-size: 24px;
             }
         }
-        .hexagon-shape {
-            width: 450px;
-            height: 450px;
+        .profile-picture {
+            width: 400px;
+            height: 400px;
             margin-left: 50px;
         }
     }
 
     .cv {
+        .wrapper_cv {
+            p {
+                font-size: 24px;
+            }
+        }
         .left_exp {
             margin-left: 200px!important;
         }
@@ -121,7 +126,7 @@
                 font-size: 22px;
             }
         }
-        .hexagon-shape {
+        .profile-picture {
             width: 350px;
             height: 350px;
             margin-left: 50px;
@@ -162,6 +167,11 @@
     }
 
     .cv {
+        .wrapper_cv {
+            p {
+                font-size: 20px;
+            }
+        }
         .left_exp {
             margin-left: 100px!important;
         }
@@ -186,7 +196,7 @@
                 margin: 0px 25px 10px 25px!important;
             }
             p {
-                font-size:14px;
+                font-size:12px;
                 margin: 5px 25px 0px 25px;
             }
             img {
@@ -243,7 +253,7 @@
                 text-align: justify;
             }
         }
-        .hexagon-shape {
+        .profile-picture {
             width: 300px;
             height: 300px;
             margin-left: 0;
@@ -392,8 +402,21 @@
             }
             p {
                 font-size: 14px!important;
-                // text-align: justify!important;
             }
+        }
+        .about_funfacts {
+            display: flex!important;
+            flex-wrap: wrap!important;
+            h5 {
+                width: 100%!important;
+            }
+            .column_funfacts {
+                width: 50%!important;
+            }
+            #about_fact1 { order: 1; }
+            #about_fact2 { order: 2; }
+            #about_fact3 { order: 4; }
+            #about_fact4 { order: 3; }
         }
     }
 
@@ -468,7 +491,7 @@
     }
 
     .home {
-        .hexagon-shape {
+        .profile-picture {
             width: 200px;
             height: 200px;
             margin-left: 0;
@@ -511,20 +534,6 @@
             #about_service3 {
                 width: 100%!important;
             }
-        }
-        .about_funfacts {
-            display: flex!important;
-            flex-wrap: wrap!important;
-            h5 {
-                width: 100%!important;
-            }
-            .column_funfacts {
-                width: 50%!important;
-            }
-            #about_fact1 { order: 1; }
-            #about_fact2 { order: 2; }
-            #about_fact3 { order: 4; }
-            #about_fact4 { order: 3; }
         }
     }
 }
