@@ -10,6 +10,11 @@ h2 {
     }
 }
 
+h4 {
+    // portfolio cards h4 always stay white due to structure!
+    color: var(--alice-blue)!important;
+}
+
 .portfolio-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -28,7 +33,7 @@ h2 {
 }
 
 .page-header span:hover {
-    background: var(--yqni13-gradient);
+    background: var(--active-link);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -54,7 +59,7 @@ span {
     justify-content: end;
     margin: 4px;
 
-    $border-width: 3px;
+    $border-width: 2px;
     background-clip: padding-box;
     border: solid $border-width transparent;
     border-radius: 10px;
@@ -66,19 +71,16 @@ span {
         z-index: -1;
         margin: -$border-width;
         border-radius: inherit;
-        background: var(--yqni13-gradient);
+        background: var(--portfolio-card);
+        // background: var(--yqni13-gradient);
     }
 }
 
 .card img {
-    // border: solid var(--special-color1) 2px;
     height: auto;
     margin: 0px 2px 0px 2px;
     color: var(--alice-blue);
-
-    // TODO: decide for better padding and adapt card too
     border-radius: $card-border;
-    // border: solid 2px var(--alice-blue);
 }
 
 .card img:hover
@@ -91,7 +93,6 @@ span {
 }
 
 .card-text a.a-github {
-    vertical-align: middle;
     margin-left: 10px;
 }
 

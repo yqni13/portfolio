@@ -21,7 +21,9 @@ body {
     width:100vw;
     height:100vh;
     margin:0;
-    background-color: var(--body-bg)
+    background: var(--body-bg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 
 mat-toolbar {
@@ -47,8 +49,7 @@ h2 {
     border-bottom: solid var(--border-line);
     &:after {
         font-size: 80px;
-        color: grey;
-        opacity: 0.25;
+        color: var(--highlight-grey);
         position: absolute;
         top: 17px;
         left: 210px;
@@ -82,7 +83,7 @@ input {
 }
 
 .active-route {
-    background: var(--yqni13-gradient);
+    background: var(--active-link);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: bolder;

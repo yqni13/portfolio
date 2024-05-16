@@ -116,7 +116,7 @@
     .home {
         .left {
             max-width: 55%;
-            h2 {
+            h1 {
                 font-size: 45px;
                 margin:0px 0px 12px 100px;
             }
@@ -205,6 +205,9 @@
                 width: 20px;
                 height: 20px;
             }
+            a.a-github {
+                vertical-align: middle;
+            }
             .card-technology {
                 margin-left: 25px;
             }
@@ -242,7 +245,7 @@
         .left {
             max-width: 75%;
             padding-bottom: 50px;
-            h2 {
+            h1 {
                 font-size: 40px;
                 margin: 0px 50px 12px 50px;
             }
@@ -294,7 +297,7 @@
         }
         .about_service,
         .about_funfacts {
-            margin: 150px 50px 25px 50px!important;
+            margin: 100px 50px 25px 50px!important;
             h6 {
                 font-size: 18px!important;
             }
@@ -339,6 +342,11 @@
     }
     h2 {
         font-size: 35px;
+        &::after {
+            font-size: 70px!important;
+            top: 13px!important;
+            left: 85px;
+        }
     }
     
     .nav-bar {
@@ -373,7 +381,7 @@
         .left {
             max-width: 100%;
             padding-bottom: 50px;
-            h2 {
+            h1 {
                 font-size: 35px;
                 margin: 0px 50px 12px 50px;
             }
@@ -539,6 +547,12 @@
             #about_service3 {
                 width: 100%!important;
             }
+        }
+    }
+
+    .cv {
+        .wrapper_techstack h4 {
+            margin: 0!important;
         }
     }
 }
