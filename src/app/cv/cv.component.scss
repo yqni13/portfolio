@@ -4,6 +4,12 @@
     scrollbar-width: none;
 }
 
+h2 {
+    &:after {
+        content: 'RESUME';
+    }
+}
+
 .cv_download {
     text-align: center;
     margin: 50px 100px;

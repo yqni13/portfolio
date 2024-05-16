@@ -4,6 +4,12 @@ $card-border: 10px;
     overflow-y: auto;
 }
 
+h2 {
+    &:after {
+        content: 'MY WORK';
+    }
+}
+
 .portfolio-wrapper {
     display: flex;
     flex-wrap: wrap;
