@@ -359,6 +359,12 @@
         .nav-full { 
             display: var(--nav-full)!important; 
         }
+        .nav-bar li {
+            padding: 30px 0px 0px 0px!important;
+        }
+        ul>:last-child p {
+            padding: 0 10px!important;
+        }
     }
 
     .home {

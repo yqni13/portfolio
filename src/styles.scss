@@ -66,4 +66,9 @@ input {
     font-family: $font-selection!important;
 }
 
-
+.active-route {
+    background: var(--yqni13-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bolder;
+}
