@@ -41,11 +41,6 @@
     text-align: left;
 }
 
-.left h2 {
-    text-transform: uppercase;
-    border-bottom: none;
-}
-
 #frontend {
     background: var(--home-frontend);
     -webkit-background-clip: text;
@@ -56,24 +51,12 @@
     color: var(--header-color);
 }
 
-.hexagon-shape {
-    position: relative;
-    overflow: hidden;
-    background: transparent;
-    border-radius: 1em/.5em;
-    transform: rotate(-30deg) skewX(30deg) scaleY(.866);
-}
-.hexagon-shape:before {
-    position: absolute;
-    right: 6.7%;
-    bottom: 0;
-    left: 6.7%;
-    top: 0;
-    transform: scaleY(1.155) skewX(-30deg) rotate(30deg);
-    background-image: url("../../assets/img/profile2.jpg");
-    background-size: cover;
-    border-radius: inherit;
-    background-repeat: no-repeat;
-    // background-position-y: 30%;
-    content: '';
+.profile-picture {
+    rotate: -5deg;
+    border-radius: 25px;
+    img {
+        background-image: var(--home-img);
+        border-radius:30px;
+        border: solid var(--navbar-border) 2px;
+    }
 }

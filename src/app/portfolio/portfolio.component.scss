@@ -1,5 +1,18 @@
+$card-border: 10px;
+
 .portfolio {
     overflow-y: auto;
+}
+
+h2 {
+    &:after {
+        content: 'MY WORK';
+    }
+}
+
+h4 {
+    // portfolio cards h4 always stay white due to structure!
+    color: var(--alice-blue)!important;
 }
 
 .portfolio-wrapper {
@@ -20,7 +33,7 @@
 }
 
 .page-header span:hover {
-    background: var(--yqni13-gradient);
+    background: var(--active-link);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -44,14 +57,30 @@ span {
     text-align: left; /* added technology symbols otherwise centered */
     align-items: center;
     justify-content: end;
-    margin-top: 4px;
+    margin: 4px;
+
+    $border-width: 2px;
+    background-clip: padding-box;
+    border: solid $border-width transparent;
+    border-radius: 10px;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0; right: 0; bottom: 0; left: 0;
+        z-index: -1;
+        margin: -$border-width;
+        border-radius: inherit;
+        background: var(--portfolio-card);
+        // background: var(--yqni13-gradient);
+    }
 }
 
 .card img {
-    // border: solid var(--special-color1) 2px;
     height: auto;
     margin: 0px 2px 0px 2px;
     color: var(--alice-blue);
+    border-radius: $card-border;
 }
 
 .card img:hover
@@ -64,7 +93,6 @@ span {
 }
 
 .card-text a.a-github {
-    vertical-align: sub;
     margin-left: 10px;
 }
 
@@ -76,6 +104,7 @@ span {
     height: 100%;
     align-content: end;
     backdrop-filter: blur(2px) brightness(0.5);
+    border-radius: $card-border;
 }
 
 .card-text p {

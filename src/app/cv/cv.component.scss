@@ -1,7 +1,11 @@
 .cv {
     overflow-y: auto;
-    height: 100vh;
-    scrollbar-width: none;
+}
+
+h2 {
+    &:after {
+        content: 'RESUME';
+    }
 }
 
 .cv_download {
@@ -12,11 +16,12 @@
 
 .cv_download a {
     padding: 10px 25px;
-    border: solid var(--yqni13-pink) 1px;
     text-decoration: none;
     background: transparent;
     color: var(--yqni13-pink);
+    border: solid var(--yqni13-pink) 3px;
     border-style: outset;
+    border-radius: 10px;
     font-weight: bold;
     cursor: pointer;
     letter-spacing: 1px;
@@ -32,6 +37,13 @@
 
 .block {
     margin-bottom: 100px;
+    h4 {
+        font-style: italic;
+        letter-spacing: 3px;
+    }
+    p {
+        opacity: 0.7;
+    }
 }
 
 h4, p {
@@ -55,6 +67,13 @@ h4, p {
     text-align: left;
     h4 {
         text-align: left;
+        padding-left: 15px;
+    }
+    p {
+        padding-left: 15px;
+        border-left-width: 4px;
+        border-left-color: var(--yqni13-pink);
+        border-left-style: double;
     }
 }
 
@@ -63,6 +82,13 @@ h4, p {
     text-align: right;
     h4 {
         text-align: right;
+        padding-right: 15px;
+    }
+    p {
+        padding-right: 15px;
+        border-right-width: 4px;
+        border-right-color: var(--yqni13-pink);
+        border-right-style: double;
     }
 }
 
@@ -70,7 +96,7 @@ h4, p {
     margin: 0px 100px;
 }
 
-.wrapper_techstack h4, ul {
+.wrapper_techstack h4 {
     text-align: center;
 }
 
@@ -98,7 +124,7 @@ h4, p {
 }
 
 #black_fill {
-    background-color: var(--alice-blue);
+    background-color: var(--github-color);
 }
 
 

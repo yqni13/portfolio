@@ -2,6 +2,12 @@
     overflow-y: auto;
 }
 
+h2 {
+    &:after {
+        content: 'WHAT I DO';
+    }
+}
+
 .column {
     display: inline-table;
     margin-top: 100px;
@@ -32,6 +38,7 @@
     text-align: justify;
     font-size: 16px;
     margin-left: 50px;
+    opacity: 0.7;
 }
 
 #about_second_info h5,
@@ -40,15 +47,43 @@
 }
 
 .profile_picture {
-    text-align: left;
+    text-align: center;
+}
+
+#signature_img {
+    // TODO: first vers only for 1440px width!!
+    // width: 200px;
+    position: absolute;
+    top: 85%;
+    left: 30%;
+    filter: var(--signature-color);
+}
+
+.wrapper_img {
+    position: relative;
+
+    &:before {
+        content: '';
+        position: absolute;
+        inset: 5px;
+        transform: translate(15%, -15px);
+        z-index: -1;
+        background: var(--about-shadow);
+        // background: var(--yqni13-gradient);
+        filter: blur(15px);
+        width: 82%;
+    }
 }
 
 .profile_picture img {
     width: 85%;
     max-width: 330px;
     height: auto;
-    box-shadow: 20px -20px 55px var(--special-color1);
-    border-radius: 50%;
+    border-radius: 20px;
+}
+
+#profile_img {
+    background-image: var(--about-imgbg);
 }
 
 #info_form,
@@ -65,7 +100,8 @@
 }
 
 #info_form input {
-    color: var(--acting-grey);
+    color: var(--text-color);
+    opacity: 0.7;
     padding-left: 10px;
     border: none;
     background-color: transparent;
@@ -75,6 +111,7 @@
 
 #info_form div {
     padding: 5px 0px;
+    width: max-content;
 }
 
 .download_button {
@@ -83,22 +120,23 @@
 
 .download_button a {
     padding: 10px 25px;
-    border: solid var(--special-color1) 1px;
+    border: solid var(--button-color) 3px;
     text-decoration: none;
     background: transparent;
-    color: var(--special-color1);
-    border-color: var(--special-color1);
+    color: var(--button-color);
+    border-color: var(--button-color);
     border-style: outset;
+    border-radius: 10px;
     font-weight: bold;
     cursor: pointer;
     letter-spacing: 1px;
 }
 
 .download_button a:hover {
-    background-color: var(--special-color1);
+    background-color: var(--button-color);
     color: var(--alice-blue);
     opacity: 0.6;
-    border: solid var(--special-color1) 1px;
+    border: solid var(--button-color) 1px;
     border-style: inset;
 }
 
@@ -107,8 +145,10 @@
     h5 {
         text-align: center;
         margin-bottom: 50px;
+        font-style: italic;
+        letter-spacing: 3px;
     }
-    margin: 150px 100px 25px 100px;
+    margin: 100px 100px 25px 100px;
 }
 
 .column_service h6,
@@ -119,10 +159,14 @@
     margin:10px 0px 20px 0px;
 }
 
-.about_service p,
-.about_funfacts p {
-    width: 75%;
-    font-size: 16px;
+.about_service,
+.about_funfacts {
+    p {
+        width: 75%;
+        font-size: 16px;
+        opacity: 0.7;
+        text-align: justify;
+    }
 }
 
 .column_service {
@@ -139,7 +183,6 @@
 }
 
 .column_service p {
-    text-align: center;
     margin-left: 0px;
     max-width: 60%;
 }
