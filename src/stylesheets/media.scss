@@ -26,7 +26,7 @@
 
     .home {
         .left {
-            max-width: 57.5%;
+            max-width: 55%;
             h1 {
                 margin:0px 0px 12px 100px;
             }
@@ -36,9 +36,17 @@
             }
         }
         .profile-picture {
-            width: 400px;
-            height: 400px;
-            margin-left: 50px;
+            img {
+                width: 400px;
+                height: auto;
+                margin-left: 50px;
+            }
+        }
+    }
+
+    .about {
+        #signature_img {
+            width: 200px;
         }
     }
 
@@ -49,10 +57,10 @@
             }
         }
         .left_exp {
-            margin-left: 200px!important;
+            margin-left: 150px!important;
         }
         .right_edu {
-            margin-right: 200px!important;
+            margin-right: 150px!important;
         }
         .wrapper_techstack h4 {
             margin: 0px 100px;
@@ -126,9 +134,11 @@
             }
         }
         .profile-picture {
-            width: 350px;
-            height: 350px;
-            margin-left: 50px;
+            img {
+                width: 350px;
+                height: auto;
+                margin-left: 50px;
+            }
         }
     }
 
@@ -162,6 +172,9 @@
         #about_third_info {
             width: 50%!important;
             order: 2!important;
+        }
+        #signature_img {
+            width:200px;
         }
     }
 
@@ -256,9 +269,11 @@
             }
         }
         .profile-picture {
-            width: 300px;
-            height: 300px;
-            margin-left: 0;
+            img {
+                width: 300px;
+                height: auto;
+                margin-left: 0;
+            }
         }
     }
 
@@ -294,6 +309,9 @@
         }
         #about_third_info {
             width: 60%!important;
+        }
+        #signature_img {
+            width: 150px;
         }
         .about_service,
         .about_funfacts {
@@ -452,6 +470,14 @@
             text-align: left!important;
             h4 {
                 text-align: left!important;
+                padding: 0 0 0 15px!important;
+            }
+            p {
+                padding: 0 0 0 15px!important;
+                border-right: none!important;
+                border-left-width: 4px!important;
+                border-left-color: var(--yqni13-pink)!important;
+                border-left-style: double!important;
             }
         }
         .wrapper_techstack {
@@ -505,9 +531,11 @@
 
     .home {
         .profile-picture {
-            width: 200px;
-            height: 200px;
-            margin-left: 0;
+            img {
+                width: 200px;
+                height: auto;
+                margin-left: 0;
+            }
         }
     }
 
@@ -528,6 +556,9 @@
                 text-align: center!important;
                 margin-left: 0px!important;
             }
+        }
+        #signature_img {
+            width: 200px;
         }
         .about_service,
         .about_funfacts {

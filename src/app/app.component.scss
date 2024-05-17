@@ -8,8 +8,7 @@ span {
 span:hover {
     background: var(--active-link);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    
+    -webkit-text-fill-color: transparent;    
 }
 
 .nav-bar {
@@ -25,7 +24,7 @@ span:hover {
     padding: 0;
     scrollbar-width: none;
     background-color: var(--navbar-bg);
-    border-right: solid var(--navbar-border) 2px;
+    border-right: solid var(--navbar-border) 3px;
 
     display: flex;
     flex-direction: column;

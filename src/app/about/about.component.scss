@@ -50,11 +50,12 @@ h2 {
     text-align: center;
 }
 
-.signature {
+#signature_img {
     // TODO: first vers only for 1440px width!!
-    width: 400px;
+    // width: 200px;
     position: absolute;
-    top: 450px;
+    top: 85%;
+    left: 30%;
     filter: var(--signature-color);
 }
 
@@ -67,7 +68,8 @@ h2 {
         inset: 5px;
         transform: translate(15%, -15px);
         z-index: -1;
-        background: var(--yqni13-gradient);
+        background: var(--about-shadow);
+        // background: var(--yqni13-gradient);
         filter: blur(15px);
         width: 82%;
     }
@@ -77,8 +79,11 @@ h2 {
     width: 85%;
     max-width: 330px;
     height: auto;
-    // box-shadow: 20px -20px 25px var(--special-color1);
     border-radius: 20px;
+}
+
+#profile_img {
+    background-image: var(--about-imgbg);
 }
 
 #info_form,
@@ -115,11 +120,11 @@ h2 {
 
 .download_button a {
     padding: 10px 25px;
-    border: solid var(--special-color1) 1px;
+    border: solid var(--button-color) 3px;
     text-decoration: none;
     background: transparent;
-    color: var(--special-color1);
-    border-color: var(--special-color1);
+    color: var(--button-color);
+    border-color: var(--button-color);
     border-style: outset;
     border-radius: 10px;
     font-weight: bold;
@@ -128,10 +133,10 @@ h2 {
 }
 
 .download_button a:hover {
-    background-color: var(--special-color1);
+    background-color: var(--button-color);
     color: var(--alice-blue);
     opacity: 0.6;
-    border: solid var(--special-color1) 1px;
+    border: solid var(--button-color) 1px;
     border-style: inset;
 }
 

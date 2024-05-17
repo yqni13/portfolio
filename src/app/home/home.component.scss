@@ -52,9 +52,11 @@
 }
 
 .profile-picture {
-    rotate: 5deg;
-    background-image: url("../../assets/img/fake_profile1.png");
-    background-size: cover;
-    background-repeat: no-repeat;
+    rotate: -5deg;
     border-radius: 25px;
+    img {
+        background-image: var(--home-img);
+        border-radius:30px;
+        border: solid var(--navbar-border) 2px;
+    }
 }
