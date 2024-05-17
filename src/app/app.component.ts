@@ -12,15 +12,13 @@ export class AppComponent implements OnInit {
   title = 'portfolio';
   setDark: string = "";
   setLight: string = "";
-  isLightTheme = true;
   mobileNavExpended = false;
 
   constructor(private router: Router) {}
 
   ngOnInit() {
     this.router.navigate(['home']);
-    this.setDark = "setVisible";
-    this.setLight = "setHidden";
+    this.checkThemeCookie();
     this.setNavWidthDynamically(window.screen.width);
     var widthRequestSlowedDown = _.debounce( () => {
       this.setNavWidthDynamically(window.screen.width);
@@ -31,12 +29,14 @@ export class AppComponent implements OnInit {
   setDarkMode() {
     this.setDark = "setVisible";
     this.setLight = "setHidden";
+    localStorage.setItem("theme", "dark");
     document.body.setAttribute("data-theme", 'dark');
   }
   
   setLightMode() {
     this.setDark = "setHidden";
     this.setLight = "setVisible";
+    localStorage.setItem("theme", "light");
     document.body.setAttribute("data-theme", 'light');
   }
 
@@ -63,6 +63,20 @@ export class AppComponent implements OnInit {
         document.body.setAttribute("data-nav", 'navMobileExtended')
         this.mobileNavExpended = true;
       }
+    }
+  }
+
+  checkThemeCookie() {
+    let theme = localStorage.getItem("theme");
+    if(!theme) {
+      this.setDarkMode();      
+      return;
+    }
+
+    if(theme === 'dark') {
+      this.setDarkMode();
+    } else if (theme === 'light') {
+      this.setLightMode();
     }
   }
 
