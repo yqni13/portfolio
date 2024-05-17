@@ -82,6 +82,12 @@
     --bg-gradientdark: conic-gradient(from 0deg at 0% 0%,#f0f8ff 2% 6%, 7%, #101720 47% 9%);
     --bg-gradientlight: conic-gradient(from 0deg at 0% 0%,#fffafa 17% 28%, 36%, #fd9 100%);
     --gradient-pink: conic-gradient(from 0deg at 0% 0%,#ff8ba0 28% 0%, 38%, #ff8ba0 46% 99%);
+
+    /* filter to change color of png */
+    --signature-white: invert(88%) sepia(99%) saturate(0%) hue-rotate(182deg) brightness(110%) contrast(97%); // white #ffffff
+    --signature-aliceblue: invert(100%) sepia(59%) saturate(5190%) hue-rotate(179deg) brightness(107%) contrast(107%); // white --alice-blue
+    --signature-grey: invert(13%) sepia(4%) saturate(5509%) hue-rotate(216deg) brightness(99%) contrast(82%); // grey --darkmode6-grey1
+
 }
 
 [data-theme="light"] {
@@ -96,6 +102,7 @@
     --border-line: var(--darkmode3-pink3);
     --home-frontend: var(--gradient-pink);
     --portfolio-card: var(--gradient-pink);
+    --signature-color: var(--signature-grey);
     --active-link: var(--gradient-pink);
     --opacity-bg: 0.45;
 }
@@ -112,6 +119,7 @@
     --border-line: var(--alice-blue);
     --home-frontend: var(--yqni13-gradient);
     --portfolio-card: var(--portfolio-gradientdark);
+    --signature-color: var(--signature-aliceblue);
     --active-link: var(--yqni13-gradient);
     --opacity-bg: 0.25;
 }

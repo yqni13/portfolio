@@ -50,6 +50,14 @@ h2 {
     text-align: center;
 }
 
+.signature {
+    // TODO: first vers only for 1440px width!!
+    width: 400px;
+    position: absolute;
+    top: 450px;
+    filter: var(--signature-color);
+}
+
 .wrapper_img {
     position: relative;
 
