@@ -1,0 +1,51 @@
+[
+    {
+        "order": 0,
+        "title": "Music Player",
+        "version": "1.0",
+        "type": "frontend",
+        "text": "Simple music player, displaying playlist and current playing song in seperate areas. Songs can be played randomly or in loop while pausing and adjusting time and volume."
+    },
+    {
+        "order": 1,
+        "title": "Tourplanner",
+        "version": "1.0",
+        "type": "fullstack",
+        "text": "App to plan tours was built with C# in a layer-based architecture meanwhile the UI was implemented via WPF. It enables to create tours with some information, multiple logs for a single tour and a graphical visualization."
+    },
+    {
+        "order": 2,
+        "title": "ToDo-List",
+        "version": "1.2",
+        "type": "mini",
+        "text": "Mini web-project for a tool: the todo-list. Tasks can be entered via the input field by clicking the 'add'-button or hit enter key. Created tasks or whole list can be removed or highlighted as done by clicking on the entry itself."
+    },
+    {
+        "order": 3,
+        "title": "Game",
+        "version": "1.0",
+        "type": "mini",
+        "text": "Mini web-project for a game user vs. random-generator. The user can choose a 'figure' and play against random choice. A counter shows the score of user and the system and additionally a message for win, loose or draw is shown after each game play."
+    },
+    {
+        "order": 4,
+        "title": "Rating",
+        "version": "1.0",
+        "type": "mini",
+        "text": "Mini web-project to take a rating from 1 to 5 stars. Rating can be done by clicking on a star from left to right which fill up the stars with color (white equals not selected)."
+    },
+    {
+        "order": 5,
+        "title": "Tik Tak",
+        "version": "1.0",
+        "type": "mini",
+        "text": "Mini web-project to show the current time of your time-zone and date."
+    },
+    {
+        "order": 6,
+        "title": "Stopwatch",
+        "version": "1.0",
+        "type": "mini",
+        "text": "Mini web-project to stop the time you take to do anything. For a simple logic the user can start the timer, pause it and reset."
+    }
+]
