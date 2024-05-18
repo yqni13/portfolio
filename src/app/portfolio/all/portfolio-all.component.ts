@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 
 interface MyProjectJSON {
     order: number
@@ -12,7 +12,7 @@ interface MyProjectJSON {
     templateUrl: './portfolio-all.component.html',
     styleUrl: '../portfolio.component.scss'
 })
-export class PortfolioAllComponent implements OnInit {
+export class PortfolioAllComponent {
     
     projectJSONData = require("../../../json/project-data.json");
     projectData: MyProjectJSON[];
@@ -21,7 +21,4 @@ export class PortfolioAllComponent implements OnInit {
         this.projectData = this.projectJSONData;
     }
     
-    ngOnInit() {
-        // console.log("project json: ", this.projectData[0].title);
-    }
 }
