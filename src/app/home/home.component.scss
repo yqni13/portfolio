@@ -1,0 +1,62 @@
+.home {
+    height: 100vh;
+    align-content: center;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+    z-index: 1;
+    background-color: transparent;
+}
+
+// img {
+//     width:100vw;
+//     height: 100vh;
+//     position: fixed;
+//     z-index:-1;
+//     mix-blend-mode: screen;
+//     opacity:0.25;
+// }
+
+.home::before {
+    background-image: url("../../assets/img/wallpaper3.png");
+    background-size: cover;
+    background-position-y: 20%;
+    opacity: var(--opacity-bg);
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    content: '';
+    position: fixed;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.left {
+    align-self: center;
+    text-align: left;
+}
+
+#frontend {
+    background: var(--home-frontend);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.left p {
+    color: var(--header-color);
+}
+
+.profile-picture {
+    rotate: -5deg;
+    border-radius: 25px;
+    img {
+        background-image: var(--home-img);
+        border-radius:30px;
+        border: solid var(--navbar-border) 2px;
+    }
+}

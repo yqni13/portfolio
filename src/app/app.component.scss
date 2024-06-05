@@ -1,3 +1,118 @@
-h1 {
-    color: var(--phtalo-green);
+span {
+    padding: 0px 10px 0px 10px;
+    font-size: 1.5rem;
+    color: var(--navbar-text);
+    opacity: 0.8;
 }
+
+span:hover {
+    background: var(--active-link);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;    
+}
+
+.nav-bar {
+    justify-content: left;
+    display: block;
+}
+
+.nav-bar ul {
+    height: 100%;
+    overflow: auto;
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    scrollbar-width: none;
+    background-color: var(--navbar-bg);
+    border-right: solid var(--navbar-border) 3px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-bar span {
+    text-align:right;
+}
+
+.nav-bar li {
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 30px 0px 0px 0px;
+
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.nav-collapse {
+    align-self: center;
+    padding-top: 0px;
+    color: var(--navbar-text);
+}
+
+#nav-darkmode {
+    color: var(--darkmode6-grey2);
+}
+
+#nav-lightmode {
+    color: var(--tangerine-yellow);
+}
+
+ul>:last-child {
+    margin-top: auto;
+    margin-bottom: 5%;
+    text-align: center;
+}
+
+#nav-logo {
+    cursor: default;
+}
+
+.setVisible {
+    visibility: visible;
+    display: inline;
+}
+
+.setHidden {
+    visibility:hidden;
+    display: none;
+}
+  
+.link_icons i {
+    color: var(--navbar-content);
+    width: 20px;
+    height: 20px;
+    margin: 5px 8.5px;
+}
+
+.link_icons img {
+    width: 20px;
+    height: 20px;
+    color: var(--navbar-content);
+    margin: 5px 8.5px;
+}
+
+.link_icons i:hover,
+.link_icons img:hover {
+    opacity: 0.4;
+}
+
+#nav-darkmode {
+    padding-left: 5px;
+}
+
+#nav-copyright {
+    width:12px;
+    height: 12px;
+    color: var(--navbar-content);
+    margin-right: 5px;
+    vertical-align: top;
+    height: 16px;
+}
+
+ul>:last-child p {
+    color: var(--navbar-content);
+    font-size: 12px;
+}
+

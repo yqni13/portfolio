@@ -1,0 +1,19 @@
+<section class="box portfolio">
+    <h2>Portfolio.</h2>
+    <div class="page-header">
+        <div [routerLink]="['all']" routerLinkActive="active-route" class="portfolio-page">
+            <span>ALL</span>
+        </div>
+        <div [routerLink]="['frontend']" routerLinkActive="active-route" class="portfolio-page">
+            <span>FRONTEND</span>
+        </div>
+        <div [routerLink]="['fullstack']" routerLinkActive="active-route" class="portfolio-page">
+            <span>FULLSTACK</span>
+        </div>
+        <div [routerLink]="['mini']" routerLinkActive="active-route" class="portfolio-page">
+            <span>MINI</span>
+        </div>
+    </div>
+    
+    <router-outlet></router-outlet>
+</section>

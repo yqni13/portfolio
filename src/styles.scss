@@ -1,4 +1,90 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import "./stylesheets/colors.scss";
 @import "./stylesheets/media.scss";
+@import "./stylesheets/icons.scss";
+@import "./stylesheets/defines.scss";
+@import "./stylesheets/colors.scss";
+
+$font-selection: system-ui;
+
+html {
+    scrollbar-width: none;
+    cursor: context-menu;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-family: $font-selection;
+}
+
+body {
+    text-align: center;
+    width:100vw;
+    height:100vh;
+    margin:0;
+    background: var(--body-bg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+mat-toolbar {
+    justify-content: center;    
+}
+
+h1, h2, h3, h4, h5 {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    color: var(--header-color);
+}
+
+h1 {
+    font-size: 50px;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 48px;
+    text-align: left;
+    margin: 50px 100px 0px 100px;
+    border-bottom: solid var(--border-line);
+    &:after {
+        font-size: 80px;
+        color: var(--highlight-grey);
+        position: absolute;
+        top: 17px;
+        left: 210px;
+        z-index: -1;
+    }
+}
+
+/* only for portfolio card-text */
+h4 {
+    font-size:34px;
+    margin-block-end: -10px;
+    text-align: left;
+    margin-left: 50px;
+}
+
+h5 {
+    font-size:28px;
+    text-align:left;
+}
+
+.container {
+    margin-left: 12.5%;
+}
+
+p {
+    color: var(--text-color);
+}
+
+input {
+    font-family: $font-selection!important;
+}
+
+.active-route {
+    background: var(--active-link);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bolder;
+}

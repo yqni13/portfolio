@@ -1,31 +1,590 @@
 /* media queries for responsive design regarding devices */
 
-@media screen and (min-width: 1440px) { /* large desktop devices */
-    body {
-        background-color: #4A516D;
+@import "./defines.scss";
+
+@media screen and (min-width: $desktop-width) {
+
+    // BASIC
+    .box { 
+        margin-left: var(--block-margin); 
+    }
+    p { 
+        font-size: 16px; 
+    }
+
+    .nav-bar {
+        #nav-logo { 
+            width: var(--nav-logo); 
+        }
+        ul { 
+            width: var(--nav-width); 
+        }
+        .nav-collapse { 
+            display: none!important; 
+        }
+    }
+
+    .home {
+        .left {
+            max-width: 55%;
+            h1 {
+                margin:0px 0px 12px 100px;
+            }
+            p {
+                margin: 0px 0px 0px 100px;
+                font-size: 24px;
+            }
+        }
+        .profile-picture {
+            img {
+                width: 400px;
+                height: auto;
+                margin-left: 50px;
+            }
+        }
+    }
+
+    .about {
+        #signature_img {
+            width: 200px;
+        }
+    }
+
+    .cv {
+        .wrapper_cv {
+            p {
+                font-size: 24px;
+            }
+        }
+        .left_exp {
+            margin-left: 150px!important;
+        }
+        .right_edu {
+            margin-right: 150px!important;
+        }
+        .wrapper_techstack h4 {
+            margin: 0px 100px;
+        }
+        .wrapper_ul {
+            margin: 0px 100px;
+            ul {
+                width: 75%;
+            }
+        }
+    }
+
+    .portfolio {
+        .card {
+            h4 {
+                margin-bottom: 10px!important;
+            }
+            p {
+                font-size:16px;
+                margin: 10px 50px 0px 50px;
+            }
+            img {
+                width: 400px;
+            }
+            i {
+                width: 24px;
+                height: 24px;
+            }
+            .card-technology {
+                margin-left: 50px;
+            }
+        }
     }
 }
 
-@media screen and (max-width: 1440px) { /* small desktop devices */
-    body {
-        background-color: #d6f5d6;
+@media screen and (max-width: $desktop-width) {
+
+    // BASIC
+    .box { 
+        margin-left: var(--block-margin); 
+    }
+    p { 
+        font-size: 14px; 
+    }
+    
+    .nav-bar {
+        #nav-logo { 
+            width: var(--nav-logo); 
+        }
+        ul { 
+            width: var(--nav-width); 
+        }
+        .nav-collapse { 
+            display: none!important; 
+        }
+        .nav-full { 
+            display: var(--nav-full)!important; 
+        }
+    }
+    
+    .home {
+        .left {
+            max-width: 55%;
+            h1 {
+                font-size: 45px;
+                margin:0px 0px 12px 100px;
+            }
+            p {
+                margin: 0px 0px 0px 100px;
+                font-size: 22px;
+            }
+        }
+        .profile-picture {
+            img {
+                width: 350px;
+                height: auto;
+                margin-left: 50px;
+            }
+        }
+    }
+
+    .about {
+        .wrapper_about_profile {
+            display: flex;
+            flex-wrap: wrap;
+            h5 {
+                margin: 0px 50px 25px 50px!important;
+            }
+            p, form, img {
+                font-size: 20px!important;
+                margin: 0px 50px!important;
+            }
+            label {
+                font-size:24px!important;
+            }
+            input {
+                font-size: 20px!important;
+            }
+        }
+        #about_first_info {
+            width: 50%!important;
+            order: 1!important;
+            text-align: center!important;
+        }
+        #about_second_info {
+            width: 100%!important;
+            order: 3!important;
+        }
+        #about_third_info {
+            width: 50%!important;
+            order: 2!important;
+        }
+        #signature_img {
+            width:200px;
+        }
+    }
+
+    .cv {
+        .wrapper_cv {
+            p {
+                font-size: 20px;
+            }
+        }
+        .left_exp {
+            margin-left: 100px!important;
+        }
+        .right_edu {
+            margin-right: 100px!important;
+        }
+        .wrapper_techstack h4 {
+            margin: 0px 100px;
+        }
+        .wrapper_ul {
+            margin: 0px 100px;
+            ul {
+                width: 100%;
+            }
+        }
+    }
+
+    .portfolio {
+        .card {
+            h4 {
+                font-size: 24px!important;
+                margin: 0px 25px 10px 25px!important;
+            }
+            p {
+                font-size:12px;
+                margin: 5px 25px 0px 25px;
+            }
+            img {
+                width: 300px;
+            }
+            i {
+                width: 20px;
+                height: 20px;
+            }
+            a.a-github {
+                vertical-align: middle;
+            }
+            .card-technology {
+                margin-left: 25px;
+            }
+        }        
     }
 }
 
-@media screen and (max-width: 1024px) { /* tablet device [landscape] */
-    body {
-        background-color: #9999ff;
+@media screen and (max-width: $tablet-landscape-width) {
+
+    // BASIC
+    .box { 
+        margin-left: var(--block-margin); 
+    }
+    p { 
+        font-size: 14px; 
+    }
+    
+    .nav-bar {
+        #nav-logo { 
+            width: var(--nav-logo); 
+        }
+        ul { 
+            width: var(--nav-width); 
+        }
+        .nav-collapse { 
+            display: none!important; 
+        }
+        .nav-full { 
+            display: var(--nav-full)!important; 
+        }
+    }
+
+    .home {
+        justify-content: center;
+        .left {
+            max-width: 75%;
+            padding-bottom: 50px;
+            h1 {
+                font-size: 40px;
+                margin: 0px 50px 12px 50px;
+            }
+            p {
+                margin: 0px 50px;
+                font-size: 20px;
+                text-align: justify;
+            }
+        }
+        .profile-picture {
+            img {
+                width: 300px;
+                height: auto;
+                margin-left: 0;
+            }
+        }
+    }
+
+    .about {
+        .wrapper_about_profile {
+            h5 {
+                margin: 0px 0px 25px 50px!important;
+            }
+            p, form {
+                font-size: 18px!important;
+                margin: 0px 0px 0px 50px!important;
+            }
+            img {
+                margin: 0px!important;
+            }
+            label {
+                font-size:20px!important;
+            }
+            input {
+                font-size: 16px!important;
+            }
+        }
+        #about_first_info {
+            width: 40%!important;
+        }
+        #about_second_info {
+            h5 {
+                margin: 0px 50px 25px 50px!important;
+            }
+            p {
+                margin: 0px 50px!important;
+            }
+        }
+        #about_third_info {
+            width: 60%!important;
+        }
+        #signature_img {
+            width: 150px;
+        }
+        .about_service,
+        .about_funfacts {
+            margin: 100px 50px 25px 50px!important;
+            h6 {
+                font-size: 18px!important;
+            }
+            p {
+                font-size: 16px!important;
+            }
+            i {
+                width: 40px!important;
+                height: 40px!important;
+            }
+        }
+    }
+
+    .cv {
+        .left_exp {
+            margin-left: 50px!important;
+        }
+        .right_edu {
+            margin-right: 50px!important;
+        }
+        .wrapper_techstack h4 {
+            margin: 0px 100px;
+        }
+        .wrapper_ul {
+            margin: 0px 50px;
+            ul {
+                width: 100%;
+            }
+        }
+        .wrapper_ul i {
+            width: 50px!important;
+            height: 50px!important;
+        }
     }
 }
 
-@media screen and (max-width: 768px) { /* mobile devices [landscape] */
-    body {
-        background-color: #ffb3cc;
+@media screen and (max-width: $phone-landscape-width) {
+
+    // BASIC
+    .box { 
+        margin-left: var(--block-margin); 
+    }
+    h2 {
+        font-size: 35px;
+        &::after {
+            font-size: 70px!important;
+            top: 13px!important;
+            left: 85px;
+        }
+    }
+    
+    .nav-bar {
+        #nav-unfold { 
+            display: block!important; 
+        }
+        #nav-copyright { 
+            margin: var(--nav-copyright); 
+        }
+        #nav-logo { 
+            width: var(--nav-logo); 
+        }
+        ul { 
+            width: var(--nav-width);
+            z-index: var(--nav-z);
+        }
+        .nav-full { 
+            display: var(--nav-full)!important; 
+        }
+        .nav-bar li {
+            padding: 30px 0px 0px 0px!important;
+        }
+        ul>:last-child p {
+            padding: 0 10px!important;
+        }
     }
 
-}
-@media screen and (max-width: 480px) { /* mobile devices [portrait] */
-    body {
-        background-color: #ffcc99;
+    .home {
+        &::before {
+            background-position-x:25%;
+        }
+        .left {
+            max-width: 100%;
+            padding-bottom: 50px;
+            h1 {
+                font-size: 35px;
+                margin: 0px 50px 12px 50px;
+            }
+            p {
+                margin: 0px 50px;
+                font-size: 18px;
+                text-align: justify;
+            }
+        }
+    }
+
+    .about {
+        h2 {
+            margin: 50px 50px 0px 50px!important;
+        }
+        .wrapper_about_profile {
+            margin: 0px 50px!important;
+        }
+        #about_second_info {
+            h5 {
+                margin: 0px 0px 25px 0px!important;
+            }
+            p {
+                margin: 0!important;
+            }
+        }
+        .about_service,
+        .about_funfacts {
+            h6 {
+                font-size: 16px!important;
+            }
+            p {
+                font-size: 14px!important;
+            }
+        }
+        .about_funfacts {
+            display: flex!important;
+            flex-wrap: wrap!important;
+            h5 {
+                width: 100%!important;
+            }
+            .column_funfacts {
+                width: 50%!important;
+            }
+            #about_fact1 { order: 1; }
+            #about_fact2 { order: 2; }
+            #about_fact3 { order: 4; }
+            #about_fact4 { order: 3; }
+        }
+    }
+
+    .cv {
+        h2 {
+            margin: 50px 50px 0px 50px!important;
+        }
+        .cv_download {
+            margin: 50px 0px!important;
+        }
+        .wrapper_cv {
+            margin: 0!important;
+            display: inline-block!important;
+        }
+        .left_exp {
+            margin: 0px 0px 50px 0px!important;
+        }
+        .right_edu {
+            margin: 0px 0px 100px 0px!important;
+            text-align: left!important;
+            h4 {
+                text-align: left!important;
+                padding: 0 0 0 15px!important;
+            }
+            p {
+                padding: 0 0 0 15px!important;
+                border-right: none!important;
+                border-left-width: 4px!important;
+                border-left-color: var(--yqni13-pink)!important;
+                border-left-style: double!important;
+            }
+        }
+        .wrapper_techstack {
+            margin: 0 50px!important;
+        }
+        .wrapper_ul {
+            margin: 0;
+            ul {
+                width: 100%;
+            }
+        }
+        .wrapper_ul i {
+            width: 40px!important;
+            height: 40px!important;
+        }
+    }
+
+    .portfolio {
+        h2 {
+            margin: 50px 50px 0px 50px!important;
+        }
+        .page-header {
+            display: flex!important;
+            flex-wrap: wrap!important;
+            justify-content: center;
+            margin: 0px 50px!important;
+        }
+        .portfolio-wrapper {
+            margin: 0px 50px 25px 50px!important;
+        }
     }
 }
+
+@media screen and (max-width: $phone-portrait-width) {
+    
+    .nav-bar {
+        #nav-copyright { 
+            margin: var(--nav-copyright); 
+        }
+        #nav-logo { 
+            width: var(--nav-logo); 
+        }
+        ul { 
+            width: var(--nav-width);
+            z-index: var(--nav-z);
+        }
+        .nav-full { 
+            display: var(--nav-full)!important; 
+        }
+    }
+
+    .home {
+        .profile-picture {
+            img {
+                width: 200px;
+                height: auto;
+                margin-left: 0;
+            }
+        }
+    }
+
+    .about {
+        #about_first_info {
+            width: 100%!important;
+            margin-top: 50px!important;
+        }
+        #about_third_info {
+            width: 100%!important;
+            h5 {
+                margin-left: 0px!important;
+            }
+            form {
+                margin: 0px!important;
+            }
+            .download_button {
+                text-align: center!important;
+                margin-left: 0px!important;
+            }
+        }
+        #signature_img {
+            width: 200px;
+        }
+        .about_service,
+        .about_funfacts {
+            margin: 100px 25px 25px 25px!important;
+            h5 {
+                margin-bottom: 25px!important;
+            }
+            i {
+                margin-top: 25px!important;
+            }
+        }
+        .about_service {
+            #about_service1,
+            #about_service2 {
+                width: 50%!important;
+            }
+            #about_service3 {
+                width: 100%!important;
+            }
+        }
+    }
+
+    .cv {
+        .wrapper_techstack h4 {
+            margin: 0!important;
+        }
+    }
+}
+
