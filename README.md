@@ -11,9 +11,13 @@ $\texttt{\color{teal}{v1.0.0}}$
     <img src="https://img.shields.io/badge/Angular-%23DD0031.svg?logo=angular&logoColor=white">
     <img alt="Google Fonts" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flogos-world.net%2Fwp-content%2Fuploads%2F2021%2F03%2FGoogle-Fonts-Logo.png&f=1&nofb=1&ipt=570b1eadbf10850285149faa90b47496e415ec5daf70efb973248c194025a6a5&ipo=images" style="height:auto; width:5%">Google Fonts
 </div>
-<br><br>
+<br>
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.6.
+
+### <a href="https://yqni13.github.io/portfolio/home">TRY LIVE DEMO</a>
+
+<br>
 
 ## How to:
 
@@ -22,13 +26,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 Get startet with `npm install` to create necessary modules and run `ng serve` to start on local dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ### BUILD & DEPLOY
-To host the application on GitHub directly from CLI, install the regarding package globally (only once necessary) via `ng add angular-cli-ghpages`. See <a href="https://docs.angular.lat/guide/deployment">list of packages</a> for different hosting platforms deployed by command. Run `ng build --configuration production --base-href https://<username>.github.io/<projectname>`. For deployment, run `ng deploy --dir=dist/<projectname>/browser`
-
-in progress<br>
-Build: `ng build --configuration production --base-href https://yqni13.github.io/portfolio`<br>
-Deploy: `ng deploy --dir=dist/portfolio/browser` and/or `ng deploy --base-href=/portfolio/`<br>
-result: project is deployed, but ressources not reachable (img, etc)<br>
-in progress
+To host the application on GitHub Pages directly from CLI, install the regarding package via `ng add angular-cli-ghpages`. See <a href="https://docs.angular.lat/guide/deployment">list of packages</a> for different hosting platforms deployed by command. Firstly, try the production build locally via command `ng serve --configuration production` to see, if there are differences between development and production build. Run `ng build --configuration production --base-href https://<username>.github.io/<projectname>` to create a deployable build in the folder /dist. For deployment, run `ng deploy --base-href=/<projectname>/` to push the necessary code automatically and trigger the workflow starting until README.md on "https://username.github.io/projectname" and project on "https://username.github.io/projectname/home" are deployed. In contrast to my non-framework projects, the deployment will happen for angular projects on the "gh-pages" branch due to the CLI-deployment instead of a "production" branch.
 <br><br>
 
 ## Features
@@ -68,6 +66,7 @@ My portfolio comes with two theme settings: $\textsf{\color{gray}{Dark mode}}$ &
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <img src="./src/assets/readme_img/readme_light_mode.png">
 </div>
+<br><br>
 
 ## Updates
 
@@ -78,6 +77,7 @@ My portfolio comes with two theme settings: $\textsf{\color{gray}{Dark mode}}$ &
     <dd>- improve data binding</dd>
     <dd>- create portfolio cards in html via *ngFor</dd>
     <dd>- navigate to home component by clicking on logo in navbar</dd>
+    <dd>- move navbar in mobile version from vertical left to horizontal bottom</dd>
 </dl>
 <br>
 
