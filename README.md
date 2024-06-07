@@ -15,9 +15,20 @@ $\texttt{\color{teal}{v1.0.0}}$
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.6.
 
-## Development server
+## How to:
 
-Get startet with `npm install` and to start run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### START
+
+Get startet with `npm install` to create necessary modules and run `ng serve` to start on local dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+
+### BUILD & DEPLOY
+To host the application on GitHub directly from CLI, install the regarding package globally (only once necessary) via `ng add angular-cli-ghpages`. See <a href="https://docs.angular.lat/guide/deployment">list of packages</a> for different hosting platforms deployed by command. Run `ng build --configuration production --base-href https://<username>.github.io/<projectname>`. For deployment, run `ng deploy --dir=dist/<projectname>/browser`
+
+in progress<br>
+Build: `ng build --configuration production --base-href https://yqni13.github.io/portfolio`<br>
+Deploy: `ng deploy --dir=dist/portfolio/browser` and/or `ng deploy --base-href=/portfolio/`<br>
+result: project is deployed, but ressources not reachable (img, etc)<br>
+in progress
 <br><br>
 
 ## Features
@@ -66,6 +77,7 @@ My portfolio comes with two theme settings: $\textsf{\color{gray}{Dark mode}}$ &
     <dd>- error handling for images failing to load</dd>
     <dd>- improve data binding</dd>
     <dd>- create portfolio cards in html via *ngFor</dd>
+    <dd>- navigate to home component by clicking on logo in navbar</dd>
 </dl>
 <br>
 
