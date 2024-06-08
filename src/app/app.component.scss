@@ -65,8 +65,11 @@ ul>:last-child {
     text-align: center;
 }
 
-#nav-logo {
-    cursor: default;
+li:nth-child(2) {
+    cursor: default!important;
+    #nav-logo {
+        cursor: pointer;
+    }
 }
 
 .setVisible {

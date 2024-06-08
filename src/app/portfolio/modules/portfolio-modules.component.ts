@@ -2,11 +2,11 @@ import { Component } from "@angular/core";
 import { JsonProjectDataRequest } from "../../../api/model/jsonProjectDataRequest";
 
 @Component({
-    selector: 'app-portfolio-all',
-    templateUrl: './portfolio-all.component.html',
+    selector: 'app-portfolio-modules',
+    templateUrl: './portfolio-modules.component.html',
     styleUrl: '../portfolio.component.scss'
 })
-export class PortfolioAllComponent {
+export class PortfolioModulesComponent {
     
     projectJSONData = require("../../../api/json/project-data.json");
     projectData: JsonProjectDataRequest[];
@@ -14,5 +14,5 @@ export class PortfolioAllComponent {
     constructor() {
         this.projectData = this.projectJSONData;
     }
-    
+
 }

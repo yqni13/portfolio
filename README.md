@@ -1,5 +1,5 @@
 # yqni13 portfolio
-$\texttt{\color{teal}{v1.0.0}}$
+$\texttt{\color{teal}{v1.1.2}}$
 
 <div>
     <img src="./src/assets/readme_img/readme_responsive_demonstration.png">
@@ -26,7 +26,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 Get startet with `npm install` to create necessary modules and run `ng serve` to start on local dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ### BUILD & DEPLOY
-To host the application on GitHub Pages directly from CLI, install the regarding package via `ng add angular-cli-ghpages`. See <a href="https://docs.angular.lat/guide/deployment">list of packages</a> for different hosting platforms deployed by command. Firstly, try the production build locally via command `ng serve --configuration production` to see, if there are differences between development and production build. Run `ng build --configuration production --base-href https://<username>.github.io/<projectname>` to create a deployable build in the folder /dist. For deployment, run `ng deploy --base-href=/<projectname>/` to push the necessary code automatically and trigger the workflow starting until README.md on "https://username.github.io/projectname" and project on "https://username.github.io/projectname/home" are deployed. In contrast to my non-framework projects, the deployment will happen for angular projects on the "gh-pages" branch due to the CLI-deployment instead of a "production" branch.
+To host the application on GitHub Pages directly from CLI, install the regarding package via `ng add angular-cli-ghpages`. See <a href="https://docs.angular.lat/guide/deployment">list of packages</a> for different hosting platforms deployed by command. Firstly, try the production build locally via command `ng serve --configuration production` to see, if there are differences between development and production build. Run `ng build --configuration production --base-href https://<username>.github.io/<projectname>` to create a deployable build in the folder /dist. For deployment, run `ng deploy --base-href=/<projectname>/` to push the necessary code automatically and trigger the workflow starting until project on 'https://username.github.io/projectname' is deployed. In contrast to my non-framework projects, the deployment will happen for angular projects on the 'gh-pages' branch due to the CLI-deployment instead of a 'production' branch.
 <br><br>
 
 ## Features
@@ -39,7 +39,7 @@ To host the application on GitHub Pages directly from CLI, install the regarding
 
 ## Portfolio
 
-The portfolio component splits up to different $\textsf{\color{limegreen}{menu options}}$. The overview "all" displays all projects regarding my work as a frontend-developer. Additionally I split the projects to different types like "frontend"-only, "fullstack" and smaller "modules".
+The portfolio component splits up to different $\textsf{\color{limegreen}{menu options}}$. The overview 'all' displays all projects regarding my work as a frontend-developer. Additionally I split the projects to different types like 'frontend'-only, 'fullstack' and smaller 'modules'.
 <br>
 
 <div align="center">
@@ -70,14 +70,25 @@ My portfolio comes with two theme settings: $\textsf{\color{gray}{Dark mode}}$ &
 
 ## Updates
 
+[list of all updates](src/docs/update_protocol.md)
+### $\textsf{last\ update\ 1.0.0\ >>\ {\color{pink}1.1.2}}$
+
+- $\textsf{\color{green}Addition:}$ New content added to 'Portfolio' component.
+- $\textsf{\color{orange}Change:}$ Logo in navbar redirects to 'Home' component.
+- $\textsf{\color{orange}Change:}$ Portfolio cards show keywords instead of text for easier search/highlighting.
+- $\textsf{\color{orange}Change:}$ Screen resolution detection checks now for change in zoom level too.
+- $\textsf{\color{red}Bugfix:}$ Portfolio project 'Tourplanner' displays correct data on details card. [Before: Details card for project 'Tourplanner' was showing data from another project.]
+- $\textsf{\color{red}Bugfix:}$ Application stays on current component after reload. [Before: Application always redirected to 'Home' component from everywhere after reload.]
+
+<br>
+
 ### Aimed objectives for next $\textsf{\color{green}minor}$ update:
 <dl>
-    <dd>- changing portfolio cards from description text to keywords</dd>
     <dd>- error handling for images failing to load</dd>
     <dd>- improve data binding</dd>
     <dd>- create portfolio cards in html via *ngFor</dd>
-    <dd>- navigate to home component by clicking on logo in navbar</dd>
-    <dd>- move navbar in mobile version from vertical left to horizontal bottom</dd>
+    <dd>- move navbar in mobile version from vertical left to horizontal top</dd>
+    <dd>- customized error page</dd>
 </dl>
 <br>
 
@@ -85,5 +96,5 @@ My portfolio comes with two theme settings: $\textsf{\color{gray}{Dark mode}}$ &
 <dl>
     <dd>- translation option to switch between german/english</dd>
     <dd>- responsive design > 1440px width</dd>
-    <dd>- customized error page</dd>
+    <dd>- deploy a Web Application Manifest to make webpage a progressive web app (PWA)</dd>
 </dl>
