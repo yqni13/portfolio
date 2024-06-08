@@ -2,11 +2,11 @@
 
 <nav class="nav-bar" data-media="mobile">
     <ul>       
-        <li class="nav-collapse"  id="nav-unfold">
+        <li class="nav-collapse" id="nav-unfold">
             <i class="icon-BurgerMenu nav-mobile" (click)="expandNavMobile()"></i>
         </li>
         <li class="nav-full">
-            <img id="nav-logo" src="assets/img/yqni13-small.png" alt="no logo">
+            <img id="nav-logo" src="assets/img/yqni13-small.png" alt="no logo" [routerLink]="['home']">
         </li>
         <li class="nav-full">
             <span [routerLink]="['home']" routerLinkActive="active-route" (click)="expandNavMobile(true)">Home</span>

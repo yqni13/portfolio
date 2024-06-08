@@ -1,5 +1,5 @@
 import { NgModule } from "@angular/core";
-import { PortfolioMiniComponent } from "./mini/portfolio-mini.component";
+import { PortfolioModulesComponent } from "./mini/portfolio-modules.component";
 import { PortfolioFrontendComponent } from "./frontend/portfolio-frontend.component";
 import { PortfolioRoutingModule } from "./portfolio-routing.module";
 import { CommonModule } from "@angular/common";
@@ -9,7 +9,7 @@ import { PortfolioFullstackComponent } from "./fullstack/portfolio-fullstack.com
 @NgModule({
     declarations: [
         PortfolioAllComponent,
-        PortfolioMiniComponent,
+        PortfolioModulesComponent,
         PortfolioFrontendComponent,
         PortfolioFullstackComponent
     ],

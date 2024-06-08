@@ -5,7 +5,7 @@ import { AboutComponent } from './about/about.component';
 import { CvComponent } from './cv/cv.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { PortfolioFrontendComponent } from './portfolio/frontend/portfolio-frontend.component';
-import { PortfolioMiniComponent } from './portfolio/mini/portfolio-mini.component';
+import { PortfolioModulesComponent } from './portfolio/mini/portfolio-modules.component';
 import { PortfolioAllComponent } from './portfolio/all/portfolio-all.component';
 import { PortfolioFullstackComponent } from './portfolio/fullstack/portfolio-fullstack.component';
 
@@ -53,8 +53,8 @@ const routes: Routes = [
         component: PortfolioFullstackComponent,
       },
       {
-        path: 'mini',
-        component: PortfolioMiniComponent
+        path: 'modules',
+        component: PortfolioModulesComponent
       }
     ]
   },
