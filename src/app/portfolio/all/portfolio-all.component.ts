@@ -1,12 +1,6 @@
 import { Component } from "@angular/core";
+import { JsonProjectDataRequest } from "../../../api/model/jsonProjectDataRequest";
 
-interface MyProjectJSON {
-    order: number
-    title: string
-    version: string
-    type: string
-    text: string
-}
 @Component({
     selector: 'app-portfolio-all',
     templateUrl: './portfolio-all.component.html',
@@ -14,8 +8,8 @@ interface MyProjectJSON {
 })
 export class PortfolioAllComponent {
     
-    projectJSONData = require("../../../json/project-data.json");
-    projectData: MyProjectJSON[];
+    projectJSONData = require("../../../api/json/project-data.json");
+    projectData: JsonProjectDataRequest[];
 
     constructor() {
         this.projectData = this.projectJSONData;

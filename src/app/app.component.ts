@@ -13,17 +13,27 @@ export class AppComponent implements OnInit {
   setDark: string = "";
   setLight: string = "";
   mobileNavExpended = false;
+  collapseNavbarWidth = 780; // add buffer because of error-prone screen width detection
 
   constructor(private router: Router) {}
 
   ngOnInit() {
-    // this.router.navigate(['home']);
     this.checkThemeCookie();
+    
     this.setNavWidthDynamically(window.screen.width);
-    var widthRequestSlowedDown = _.debounce( () => {
+    this.setNavWidthDynamically(document.body.clientWidth);
+
+    // adapt to device screen resolution
+    var screenWidthRequestSlowedDown = _.debounce( () => {
       this.setNavWidthDynamically(window.screen.width);
-    }, 125)
-    window.addEventListener("resize", widthRequestSlowedDown, false);
+    }, 250)
+    window.addEventListener("resize", screenWidthRequestSlowedDown, false);
+    
+    // adapt to zoom level
+    var clientWidthRequestSlowedDown = _.debounce( () => {
+      this.setNavWidthDynamically(document.body.clientWidth);
+    }, 250)
+    window.addEventListener("resize", clientWidthRequestSlowedDown, false);
   }
   
   setDarkMode() {
@@ -43,7 +53,7 @@ export class AppComponent implements OnInit {
   setNavWidthDynamically(width: number): void {
     // sets data attribute for body and in media.scss style settings are applied
 
-    if(width > 768) {
+    if(width > this.collapseNavbarWidth) {
       document.body.setAttribute("data-nav", 'navDesktop');
     } else {
       document.body.setAttribute("data-nav", 'navMobileCollapsed');
@@ -52,10 +62,10 @@ export class AppComponent implements OnInit {
 
   expandNavMobile(closeAfterRouting = false): void {
     const screenWidth = window.screen.width;
-    if(screenWidth <= 768 && closeAfterRouting)  this.mobileNavExpended = true;
-    if(screenWidth > 768 && !closeAfterRouting) return;
+    if(screenWidth <= this.collapseNavbarWidth && closeAfterRouting)  this.mobileNavExpended = true;
+    if(screenWidth > this.collapseNavbarWidth && !closeAfterRouting) return;
 
-    if(screenWidth <= 768) {
+    if(screenWidth <= this.collapseNavbarWidth) {
       if(this.mobileNavExpended) {
         document.body.setAttribute("data-nav", 'navMobileCollapsed')
         this.mobileNavExpended = false;
