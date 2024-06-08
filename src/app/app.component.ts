@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit() {
-    this.router.navigate(['home']);
+    // this.router.navigate(['home']);
     this.checkThemeCookie();
     this.setNavWidthDynamically(window.screen.width);
     var widthRequestSlowedDown = _.debounce( () => {
