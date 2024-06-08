@@ -1,6 +1,6 @@
 import { RouterModule, Routes } from "@angular/router";
 import { NgModule } from "@angular/core";
-import { PortfolioModulesComponent } from "./mini/portfolio-modules.component";
+import { PortfolioModulesComponent } from "./modules/portfolio-modules.component";
 import { PortfolioFrontendComponent } from "./frontend/portfolio-frontend.component";
 import { PortfolioAllComponent } from "./all/portfolio-all.component";
 import { PortfolioFullstackComponent } from "./fullstack/portfolio-fullstack.component";

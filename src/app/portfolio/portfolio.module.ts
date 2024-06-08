@@ -1,5 +1,5 @@
 import { NgModule } from "@angular/core";
-import { PortfolioModulesComponent } from "./mini/portfolio-modules.component";
+import { PortfolioModulesComponent } from "./modules/portfolio-modules.component";
 import { PortfolioFrontendComponent } from "./frontend/portfolio-frontend.component";
 import { PortfolioRoutingModule } from "./portfolio-routing.module";
 import { CommonModule } from "@angular/common";
