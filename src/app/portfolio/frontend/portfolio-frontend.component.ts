@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { JsonProjectDataRequest } from "../../../api/model/jsonProjectDataRequest";
+import { JsonItem } from "../../../api/model/jsonProjectDataRequest";
 
 @Component({
     selector: 'app-portfolio-frontend',
@@ -9,7 +9,7 @@ import { JsonProjectDataRequest } from "../../../api/model/jsonProjectDataReques
 export class PortfolioFrontendComponent {
     
     projectJSONData = require("../../../api/json/project-data.json");
-    projectData: JsonProjectDataRequest[];
+    projectData: JsonItem;
 
     constructor() {
         this.projectData = this.projectJSONData;

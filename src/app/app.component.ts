@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
   setDark: string = "";
   setLight: string = "";
   mobileNavExpended = false;
-  collapseNavbarWidth = 780; // add buffer because of error-prone screen width detection
+  collapseNavbarWidth = 768;
 
   constructor(private router: Router) {}
 
