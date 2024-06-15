@@ -1,5 +1,7 @@
 # yqni13 portfolio
-$\texttt{\color{teal}{v1.1.2}}$
+$\texttt{\color{teal}{v1.3.1}}$
+
+<br>
 
 <div>
     <img src="./src/assets/readme_img/readme_responsive_demonstration.png">
@@ -71,23 +73,18 @@ My portfolio comes with two theme settings: $\textsf{\color{gray}{Dark mode}}$ &
 ## Updates
 
 [list of all updates](src/docs/update_protocol.md)
-### $\textsf{last\ update\ 1.0.0\ >>\ {\color{pink}1.1.2}}$
+### $\textsf{last\ update\ 1.1.2\ >>\ {\color{pink}1.3.1}}$
 
-- $\textsf{\color{green}Addition:}$ New content added to 'Portfolio' component.
-- $\textsf{\color{orange}Change:}$ Logo in navbar redirects to 'Home' component.
-- $\textsf{\color{orange}Change:}$ Portfolio cards show keywords instead of text for easier search/highlighting.
-- $\textsf{\color{orange}Change:}$ Screen resolution detection checks now for change in zoom level too.
-- $\textsf{\color{red}Bugfix:}$ Portfolio project 'Tourplanner' displays correct data on details card. [Before: Details card for project 'Tourplanner' was showing data from another project.]
-- $\textsf{\color{red}Bugfix:}$ Application stays on current component after reload. [Before: Application always redirected to 'Home' component from everywhere after reload.]
+- $\textsf{\color{green}Change:}$ Navbar in mobile version is displayed on top instead on the left to give more space for the content in smaller viewports.
+- $\textsf{\color{green}Change:}$ Json data binding improved. Adapted with project-name as key for the regarding data object for easier maintenance.
+- $\textsf{\color{red}Bugfix:}$ GitHub link in the projects 'Clock' and 'Rating' from 'Portfolio' component navigate to the regarding repository. [Before: Links were missing and navigating back to Portfolio page.]
 
 <br>
 
 ### Aimed objectives for next $\textsf{\color{green}minor}$ update:
 <dl>
     <dd>- error handling for images failing to load</dd>
-    <dd>- improve data binding</dd>
     <dd>- create portfolio cards in html via *ngFor</dd>
-    <dd>- move navbar in mobile version from vertical left to horizontal top</dd>
     <dd>- customized error page</dd>
 </dl>
 <br>
