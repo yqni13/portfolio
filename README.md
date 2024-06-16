@@ -11,7 +11,9 @@ $\texttt{\color{teal}{v1.3.1}}$
 
 <div style="display:flex; align-items:center;">    
     <img src="https://img.shields.io/badge/Angular-%23DD0031.svg?logo=angular&logoColor=white">
-    <img alt="Google Fonts" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flogos-world.net%2Fwp-content%2Fuploads%2F2021%2F03%2FGoogle-Fonts-Logo.png&f=1&nofb=1&ipt=570b1eadbf10850285149faa90b47496e415ec5daf70efb973248c194025a6a5&ipo=images" style="height:auto; width:5%">Google Fonts
+    <img alt="Google Fonts" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flogos-world.net%2Fwp-content%2Fuploads%2F2021%2F03%2FGoogle-Fonts-Logo.png&f=1&nofb=1&ipt=570b1eadbf10850285149faa90b47496e415ec5daf70efb973248c194025a6a5&ipo=images" style="height:auto; width:5%">
+    <img src="./src/assets/readme_img/logo_ico/rxjs_logo32.ico" alt="RxJS">&nbsp;&nbsp;
+    <img src="./src/assets/readme_img/logo_ico/json_logo28.ico" alt="JSON">
 </div>
 <br>
 
@@ -70,13 +72,28 @@ My portfolio comes with two theme settings: $\textsf{\color{gray}{Dark mode}}$ &
 </div>
 <br><br>
 
+## Testing
+
+### Cross-browser testing
+
+<center>
+
+<img src="src/assets/readme_img/logo_ico/firefox_logo50.ico"> | <img src="src/assets/readme_img/logo_ico/chrome_logo50.ico"> | <img src="src/assets/readme_img/logo_ico/opera_logo50.ico"> | <img src="src/assets/readme_img/logo_ico/edge_logo50.ico"> | <img src="src/assets/readme_img/logo_ico/duckduckgo_logo50.ico"> | <img src="src/assets/readme_img/logo_ico/brave_logo50.ico">
+|:------:|:------:|:------:|:------:|:------:|:------:|
+|Firefox | Chrome | Opera  | Edge   | DuckGo | Brave  |
+|Yes     | Yes    | Yes    | Yes    | Yes    | Yes    |
+
+</center>
+
+<br>
+
 ## Updates
 
 [list of all updates](src/docs/update_protocol.md)
 ### $\textsf{last\ update\ 1.1.2\ >>\ {\color{pink}1.3.1}}$
 
 - $\textsf{\color{green}Change:}$ Navbar in mobile version is displayed on top instead on the left to give more space for the content in smaller viewports.
-- $\textsf{\color{green}Change:}$ Json data binding improved. Adapted with project-name as key for the regarding data object for easier maintenance.
+- $\textsf{\color{green}Change:}$ Data binding between components improved. Json data is now handled centralized in portfolio parent component and adapted with project-name as key for the regarding data object for easier maintenance.
 - $\textsf{\color{red}Bugfix:}$ GitHub link in the projects 'Clock' and 'Rating' from 'Portfolio' component navigate to the regarding repository. [Before: Links were missing and navigating back to Portfolio page.]
 
 <br>
