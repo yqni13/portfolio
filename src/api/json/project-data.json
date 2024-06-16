@@ -1,58 +1,44 @@
-[
-    {
-        "order": 0,
-        "title": "Stopwatch",
-        "version": "1.0.0",
-        "type": "module",
-        "keywords": "stopwatch mm:ss.msms | english | simple design | fixed style"
-    },
-    {
-        "order": 1,
+{
+    "Clock": {
         "title": "Clock",
-        "version": "1.0.0",
+        "version": "2.1.4",
         "type": "module",
-        "keywords": "time hh:mm:ss | date dd.mm.yyyy | german | real-life update | simple design | fixed style"
+        "keywords": "live demo | english | ES6Modules | analog or digital time | multiple date formats | live changing settings | reducible navbar | responsive design | partly customizable"
     },
-    {
-        "order": 2,
+    "Rating": {
         "title": "Rating",
         "version": "1.0.0",
         "type": "module",
         "keywords": "rating 5-star system | english | simple design | fixed style"
     },
-    {
-        "order": 3,
+    "RockPaperScissors": {
         "title": "Game",
         "version": "1.0.0",
         "type": "module",
         "keywords": "game rock-paper-scissors | english | mode: random | results: victory-loss-draw | simple design | fixed style"
     },
-    {
-        "order": 4,
+    "ToDo": {
         "title": "ToDo-List",
         "version": "1.2.0",
         "type": "module",
         "keywords": "to-do list | english | adding: single | removing: single/all | strikethrough done items | submit via enter-key | simple design | fixed style"
     },
-    {
-        "order": 5,
+    "Tourplanner": {
         "title": "Tourplanner",
         "version": "1.0.0",
         "type": "fullstack",
         "keywords": "Frontend: WPF | Backend: C# | DB: postgres | MapQuestAPI | WeatherAPI | english | layer-based architecture | create/display tours | logging | Import (JSON) | Export (PDF) | fixed style"
     },
-    {
-        "order": 6,
+    "MusicPlayer": {
         "title": "Music Player",
         "version": "1.1.3",
         "type": "frontend",
         "keywords": "live demo | music | music-player | english | customized | text-animation | meta-data  | sliders | play-modes | pre-defined music | dblclick | fixed style"
     },
-    {
-        "order": 7,
+    "HeavensEdge": {
         "title": "Heavens Edge",
         "version": "1.1.1",
         "type": "frontend",
         "keywords": "live demo | clone | hotel representation | english | responsive | slideshow | carousel | animation | partly customized | fixed style"
     }
-]
+}

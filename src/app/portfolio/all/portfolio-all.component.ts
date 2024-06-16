@@ -1,18 +1,27 @@
-import { Component } from "@angular/core";
-import { JsonProjectDataRequest } from "../../../api/model/jsonProjectDataRequest";
+import { Component, OnDestroy, OnInit } from "@angular/core";
+import { JsonItem } from "../../../api/model/jsonProjectDataRequest";
+import { SharedDataService } from "../../../api/service/shared-data.service";
 
 @Component({
     selector: 'app-portfolio-all',
     templateUrl: './portfolio-all.component.html',
     styleUrl: '../portfolio.component.scss'
 })
-export class PortfolioAllComponent {
+export class PortfolioAllComponent implements OnInit, OnDestroy {
     
-    projectJSONData = require("../../../api/json/project-data.json");
-    projectData: JsonProjectDataRequest[];
+    projectData: JsonItem = {};
+    subscription$: any;
 
-    constructor() {
-        this.projectData = this.projectJSONData;
+    constructor(private sharedDataService: SharedDataService) {}
+
+    ngOnInit() {        
+        this.subscription$ = this.sharedDataService.dataJSON$.subscribe(data => {
+            this.projectData = data;
+        })
+    }
+
+    ngOnDestroy() {
+        this.subscription$.unsubscribe();
     }
     
 }

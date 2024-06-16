@@ -9,27 +9,41 @@ $phone-portrait-width: 480px;
 
 /* window.screen.width <= 768px */
 [data-nav="navMobileExtended"] {
-    --nav-width: 100%;
-    --nav-z: 1;
-    --nav-copyright: 0 0 5px 0;
+    --nav-size: 100%;
+    --nav-direction: column;
+    --nav-z: 2;
+    --nav-padding: 30px 0px 0px 0px;
+    --copyright-margin: auto 0 5% 0;
+    --copyright-display: block;
     --nav-full: block;
     --block-margin: 60px;
-    --nav-logo: 100px;
+    --nav-logo: 150px;
+    --burgermenu-size: 50px;
+    --linkicons-size: 30px;
+    --navtext-size: 2rem;
 }
 
 /* window.screen.width <= 768px */
 [data-nav="navMobileCollapsed"] {
-    --nav-width: 60px;
-    --nav-z: 0;
-    --nav-copyright: 5px;
+    --nav-size: 60px;
+    --nav-direction: row-reverse;
+    --nav-z: 1;
+    --nav-padding: 0 30px 0 0;
+    --copyright-margin: 0 auto 0 5%;
+    --copyright-display: none;
     --nav-full: none;
     --block-margin: 60px;
+    --burgermenu-size: 30px;
+    --linkicons-size: 20px;
+    --navtext-size: 25px;
 }
 
 [data-nav="navDesktop"] {
-    --nav-width: 180px;
+    --nav-size: 180px;
     --nav-z: 0;
-    --nav-copyright: 0 0 5px 0;
+    --nav-padding: 30px 0px 0px 0px;
+    --copyright-margin: 0 0 5px 0;
+    --copyright-display: block;
     --nav-full: block;
     --block-margin: 180px;
     --nav-logo: 100px;
