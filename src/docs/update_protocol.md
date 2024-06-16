@@ -7,7 +7,7 @@
 ### 2024/6/16 - $\textsf{update\ 1.1.2\ >>\ {\color{pink}1.3.1}}$
 
 - $\textsf{\color{green}Change:}$ Navbar in mobile version is displayed on top instead on the left to give more space for the content in smaller viewports.
-- $\textsf{\color{green}Change:}$ Json data binding improved. Adapted with project-name as key for the regarding data object for easier maintenance.
+- $\textsf{\color{green}Change:}$ Data binding between components improved. Json data is now handled centralized in portfolio parent component and adapted with project-name as key for the regarding data object for easier maintenance.
 - $\textsf{\color{red}Bugfix:}$ GitHub link in the projects 'Clock' and 'Rating' from 'Portfolio' component navigate to the regarding repository. [Before: Links were missing and navigating back to Portfolio page.]
 
 ### 2024/6/8 - $\textsf{update\ 1.0.0\ >>\ {\color{pink}1.1.2}}$
