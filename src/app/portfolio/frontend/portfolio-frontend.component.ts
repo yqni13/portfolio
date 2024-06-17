@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
-import { JsonItem } from "../../../api/model/jsonProjectDataRequest";
+import { IJsonItem } from "../../../api/model/jsonProjectDataRequest";
 import { SharedDataService } from "../../../api/service/shared-data.service";
 
 @Component({
@@ -9,7 +9,7 @@ import { SharedDataService } from "../../../api/service/shared-data.service";
 })
 export class PortfolioFrontendComponent implements OnInit, OnDestroy {
     
-    projectData: JsonItem = {};
+    projectData: IJsonItem = {};
     subscription$: any;
 
     constructor(private sharedDataService: SharedDataService) {}

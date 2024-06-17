@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedDataService } from '../../api/service/shared-data.service';
-import { JsonItem } from '../../api/model/jsonProjectDataRequest';
+import { IJsonItem } from '../../api/model/jsonProjectDataRequest';
 import { SearchFilterService } from '../../api/service/search-filter.service';
 
 @Component({
@@ -12,7 +12,7 @@ export class PortfolioComponent implements OnInit {
 
 
   projectJSONData = require("../../api/json/project-data.json");
-  projectData: JsonItem;
+  projectData: IJsonItem;
   keywordInput: string = '';
 
   constructor(
@@ -20,10 +20,11 @@ export class PortfolioComponent implements OnInit {
     private searchFilterService: SearchFilterService
   ) {
     this.projectData = this.projectJSONData;
+    this.searchFilterService.initializeResults();
   }
 
   ngOnInit() {
-    this.setDataJSONPortfolioAll();
+    this.setDataJSONPortfolio();
     this.searchFilterService.setSource(this.projectData);
   }
   
@@ -32,7 +33,7 @@ export class PortfolioComponent implements OnInit {
     this.searchFilterService.loopSource();
   }
 
-  setDataJSONPortfolioAll() {
+  setDataJSONPortfolio() {
     this.sharedDataService.setDataJson(this.projectData);
   }
 }
