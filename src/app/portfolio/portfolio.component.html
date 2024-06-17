@@ -1,6 +1,6 @@
 <section class="box portfolio">
     <h2>Portfolio.</h2>
-    <div class="page-header">
+    <nav class="page-header">
         <div [routerLink]="['all']" routerLinkActive="active-route" class="portfolio-page">
             <span>ALL</span>
         </div>
@@ -13,6 +13,10 @@
         <div [routerLink]="['modules']" routerLinkActive="active-route" class="portfolio-page">
             <span>MODULES</span>
         </div>
+    </nav>
+    <div>
+        <input type="text" id="keywords" name="keywords" placeholder="keywords" #keywordInput>
+        <button (click)="filterResults(keywordInput.value)">GO</button>
     </div>
     
     <router-outlet></router-outlet>
