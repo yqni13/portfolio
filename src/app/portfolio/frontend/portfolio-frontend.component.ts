@@ -15,7 +15,7 @@ export class PortfolioFrontendComponent implements OnInit, OnDestroy {
     constructor(private sharedDataService: SharedDataService) {}
 
     ngOnInit() {        
-        this.subscription$ = this.sharedDataService.dataJSON$.subscribe(data => {
+        this.subscription$ = this.sharedDataService.data$.subscribe(data => {
             this.projectData = data;
         })
     }

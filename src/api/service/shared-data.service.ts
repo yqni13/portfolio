@@ -9,11 +9,11 @@ export class SharedDataService {
     // private dataStringSubject = new BehaviorSubject<string>('Initial data');
     // dataString$ = this.dataStringSubject.asObservable();
 
-    private dataJSONSubject = new ReplaySubject<IJsonItem>(1);
-    dataJSON$ = this.dataJSONSubject.asObservable();
+    private dataSubject = new ReplaySubject<any>(1);
+    data$ = this.dataSubject.asObservable();
 
-    setDataJson (data: IJsonItem) {
-        this.dataJSONSubject.next(data);
+    setData<T>(data: T) {
+        this.dataSubject.next(data);
     }
 
     /// No use currently, keep for learning

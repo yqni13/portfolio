@@ -24,7 +24,7 @@ export class PortfolioComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.setDataJSONPortfolio();
+    this.setPortfolioCardData();
     this.searchFilterService.setSource(this.projectData);
   }
   
@@ -33,7 +33,7 @@ export class PortfolioComponent implements OnInit {
     this.searchFilterService.loopSource();
   }
 
-  setDataJSONPortfolio() {
-    this.sharedDataService.setDataJson(this.projectData);
+  setPortfolioCardData() {
+    this.sharedDataService.setData(this.projectData);
   }
 }
