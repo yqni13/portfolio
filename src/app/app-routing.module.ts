@@ -4,7 +4,6 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { CvComponent } from './cv/cv.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
-import { PortfolioAllComponent } from './portfolio/all/portfolio-all.component';
 
 const routes: Routes = [
   {
@@ -28,21 +27,9 @@ const routes: Routes = [
     title: 'CV'
   },
   {
-    path: 'portfolio',
+    path: 'mywork',
     component: PortfolioComponent,
     title: 'Portfolio',
-    children: [
-      {
-        path: '',
-        redirectTo: '/portfolio/all',
-        pathMatch: 'full'
-      },
-      {
-        path: 'all',
-        component: PortfolioAllComponent,
-      },
-      
-    ]
   },
   {
     path: '**', // if parameter is unknown (manually changed)
