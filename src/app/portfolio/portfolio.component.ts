@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedDataService } from '../../api/service/shared-data.service';
 import { IJsonItem } from '../../api/model/jsonProjectDataRequest';
-import { FilteredJSONService } from '../../api/service/search-filter.service';
+import { FilterJSONService } from '../../api/service/filter-json.service';
 
 @Component({
   selector: 'app-portfolio',
@@ -23,28 +23,36 @@ export class PortfolioComponent implements OnInit {
 
   constructor(
     private sharedDataService: SharedDataService,
-    private searchFilterService: FilteredJSONService
+    private filterJsonService: FilterJSONService
   ) {
     this.projectData = this.projectJSONData;
-    this.searchFilterService.initializeResults();
+    this.filterJsonService.initializeResults();
   }
 
   ngOnInit() {
-    this.setPortfolioCardData();
-    this.searchFilterService.setExceptionKeys(this.exceptionProperties);
-    this.searchFilterService.setSource(this.projectData);
-    this.searchFilterService.loopSource();
-    this.numberOfTechnologies = this.searchFilterService.getNumberOfTechnologies();
+    this.setPortfolioCardData(); // dont need later on
+    this.filterJsonService.setSource(this.projectData);
+    this.filterForType('all');
+    this.filterJsonService.setExceptionKeys(this.exceptionProperties);
+    this.filterJsonService.loopSource('');
+    // does this stay in memory?
+    this.numberOfTechnologies = this.filterJsonService.getNumberOfTechnologies();
   }
   
   filterResults(val: string) {
-    this.searchFilterService.setKeyword(val);
-    this.searchFilterService.loopSource();
-    this.numberOfTechnologies = this.searchFilterService.getNumberOfTechnologies();
+    this.filterJsonService.loopSource(val);
+    this.numberOfTechnologies = this.filterJsonService.getNumberOfTechnologies();
   }
 
-  setPortfolioCardData() {
-    this.sharedDataService.setData(this.projectData);
-    // this.sharedDataService.setData(this.)
+  // TODO remove!
+  setPortfolioCardData() { 
+    this.sharedDataService.setSourceData(this.projectData);
   }
+
+  filterForType(type: string) {
+    this.filterJsonService.setTypeFilter(type);
+    this.filterJsonService.loopSource(this.keywordInput);
+    this.numberOfTechnologies = this.filterJsonService.getNumberOfTechnologies();
+  }
+
 }

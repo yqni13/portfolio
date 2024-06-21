@@ -6,10 +6,16 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class SharedDataService {
 
-    private dataSubject = new BehaviorSubject<any>(1);
-    data$ = this.dataSubject.asObservable();
+    private sourceDataSubject = new BehaviorSubject<any>(1);
+    private nextDataSubject = new BehaviorSubject<any>(1);
+    sourceData$ = this.sourceDataSubject.asObservable();
+    nextData$ = this.nextDataSubject.asObservable();
 
-    setData<T>(data: T) {
-        this.dataSubject.next(data);
+    setSourceData<T>(data: T) {
+        this.sourceDataSubject.next(data);
+    }
+
+    setNextData<T>(data: T) {
+        this.nextDataSubject.next(data);
     }
 }

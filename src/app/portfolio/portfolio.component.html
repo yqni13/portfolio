@@ -4,20 +4,22 @@
         <div [routerLink]="['all']" routerLinkActive="active-route" class="portfolio-page">
             <span>ALL</span>
         </div>
-        <div [routerLink]="['frontend']" routerLinkActive="active-route" class="portfolio-page">
+        <a (click)="filterForType('frontend')" routerLinkActive="active-route" class="portfolio-page">
             <span>FRONTEND</span>
-        </div>
-        <div [routerLink]="['fullstack']" routerLinkActive="active-route" class="portfolio-page">
+        </a>
+        <a (click)="filterForType('fullstack')" routerLinkActive="active-route" class="portfolio-page">
             <span>FULLSTACK</span>
-        </div>
-        <div [routerLink]="['modules']" routerLinkActive="active-route" class="portfolio-page">
+        </a>
+        <a (click)="filterForType('module')" routerLinkActive="active-route" class="portfolio-page">
             <span>MODULES</span>
-        </div>
+        </a>
     </nav>
     <div>
         <input type="text" id="keywords" name="keywords" placeholder="keywords" #keywordInput>
         <button (click)="filterResults(keywordInput.value)">GO</button>
     </div>
-    
-    <router-outlet></router-outlet>
+    <div class="portfolio-wrapper">
+        <template-portfolio-card></template-portfolio-card>
+    </div>
+    <!-- <router-outlet></router-outlet> -->
 </section>

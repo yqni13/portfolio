@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
 import { IJsonItem } from "../../../api/model/jsonProjectDataRequest";
 import { SharedDataService } from "../../../api/service/shared-data.service";
-import { FilteredJSONService } from "../../../api/service/search-filter.service";
+import { FilterJSONService } from "../../../api/service/filter-json.service";
 
 @Component({
     selector: 'app-portfolio-all',
@@ -15,14 +15,14 @@ export class PortfolioAllComponent implements OnInit, OnDestroy {
 
     constructor(
         private sharedDataService: SharedDataService,
-        private filterJsonService: FilteredJSONService
+        private filterJsonService: FilterJSONService
     ) {}
 
     ngOnInit() {        
-        this.subscription$ = this.sharedDataService.data$.subscribe(data => {
+        this.subscription$ = this.sharedDataService.sourceData$.subscribe(data => {
             this.projectData = data;
         })
-        
+
     }
 
     ngOnDestroy() {
