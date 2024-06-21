@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedDataService } from '../../api/service/shared-data.service';
 import { IJsonItem } from '../../api/model/jsonProjectDataRequest';
-import { SearchFilterService } from '../../api/service/search-filter.service';
+import { FilteredJSONService } from '../../api/service/search-filter.service';
 
 @Component({
   selector: 'app-portfolio',
@@ -9,15 +9,21 @@ import { SearchFilterService } from '../../api/service/search-filter.service';
   styleUrl: './portfolio.component.scss'
 })
 export class PortfolioComponent implements OnInit {
-
-
+  
   projectJSONData = require("../../api/json/project-data.json");
   projectData: IJsonItem;
   keywordInput: string = '';
+  numberOfTechnologies: {[key: string]: number} = {};
+  exceptionProperties: string[] = [
+    "githublink",
+    "cardScreenPath",
+    "techURLs",
+    "techImgClasses"
+  ]
 
   constructor(
     private sharedDataService: SharedDataService,
-    private searchFilterService: SearchFilterService
+    private searchFilterService: FilteredJSONService
   ) {
     this.projectData = this.projectJSONData;
     this.searchFilterService.initializeResults();
@@ -25,15 +31,20 @@ export class PortfolioComponent implements OnInit {
 
   ngOnInit() {
     this.setPortfolioCardData();
+    this.searchFilterService.setExceptionKeys(this.exceptionProperties);
     this.searchFilterService.setSource(this.projectData);
+    this.searchFilterService.loopSource();
+    this.numberOfTechnologies = this.searchFilterService.getNumberOfTechnologies();
   }
   
   filterResults(val: string) {
     this.searchFilterService.setKeyword(val);
     this.searchFilterService.loopSource();
+    this.numberOfTechnologies = this.searchFilterService.getNumberOfTechnologies();
   }
 
   setPortfolioCardData() {
     this.sharedDataService.setData(this.projectData);
+    // this.sharedDataService.setData(this.)
   }
 }
