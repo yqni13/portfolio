@@ -9,17 +9,21 @@ export class FilterJSONService {
 
     private source: IJsonItem = {};
     private typeFilter: string = '';
-    private resultKeys: string[] = []; // TODO: can be removed, because numberOfTech... has all data necessary
-    private numberOfTechnologyPerProject: {[key: string]: number} = {};
+    private resultKeys: string[] = []; // TODO: solution without this temp guide?
     private exceptionKeys: string[] = [];
 
-    loopSource(keyword: string) {
+    loopSource(keyword: string): IJsonItem {
         this.clearResultsArray();
+        if(this.typeFilter == 'all' && !keyword)
+            return this.source;
+
+        var filteredSource: IJsonItem = {};
         Object.entries(this.source).forEach(([outerKey, outerValue]) => {
 
             // NO filter && NO keyword >> no inner loop necessary
             if(this.typeFilter == 'all' && !keyword) {
                 this.resultKeys.push(outerKey);
+                
             } else {
                 var isFilteredType: boolean = false;
                 Object.entries(outerValue).forEach(([innerKey, innerValue]) => {
@@ -30,14 +34,14 @@ export class FilterJSONService {
                             ? isFilteredType = true
                             : isFilteredType = false;
 
-                    if(isFilteredType && !this.exceptionKeys.includes(innerKey) && innerValue.toLowerCase().includes(keyword) && !this.resultKeys.includes(outerKey))
+                    if(isFilteredType && !this.exceptionKeys.includes(innerKey) && innerValue.toLowerCase().includes(keyword) && !this.resultKeys.includes(outerKey)) {
                         this.resultKeys.push(outerKey);
+                        Object.assign(filteredSource, {[outerKey]: outerValue})
+                    }
                 })
             }
-            if(this.resultKeys.includes(outerKey) && !Object.keys(this.numberOfTechnologyPerProject).includes(outerKey)) {
-                Object.assign(this.numberOfTechnologyPerProject, {[outerKey]: outerValue.techURLs.length});
-            }
         })
+        return filteredSource;
     }
 
     setSource(data: IJsonItem) {
@@ -51,32 +55,13 @@ export class FilterJSONService {
     setExceptionKeys(data: string[]) {
         this.exceptionKeys = data;
     }
-
-    getNumberOfTechnologies() {
-        return this.numberOfTechnologyPerProject;
-    }
-
-    // addKeywordToArray(entry: string) {
-    //     if(!this.keywords.includes(entry)) this.keywords.push(entry);
-    // }
-
-    // removeKeywordFromArray(entry: string) {
-    //     const index = this.keywords.indexOf(entry);
-    //     if (index > -1)
-    //         this.keywords.splice(index, 1);
-    // }
-
-    // clearKeywordsArray() {
-    //     this.keywords = [];
-    // }
     
     clearResultsArray() {
         this.resultKeys = [];
-        this.numberOfTechnologyPerProject = {};
     }
 
     initializeResults() {
-        Object.entries(this.source).forEach(([outerKey, outerValue]) => {
+        Object.keys(this.source).forEach((outerKey) => {
             this.resultKeys.push(outerKey);
         })
     }

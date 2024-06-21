@@ -1,7 +1,7 @@
 import { Component, Input, OnDestroy, OnInit } from "@angular/core";
 import { IJsonItem } from "../../../api/model/jsonProjectDataRequest";
 import { SharedDataService } from "../../../api/service/shared-data.service";
-import { FilterJSONService } from "../../../api/service/filter-json.service";
+import { Observable, of } from "rxjs";
 
 @Component({
     selector: 'template-portfolio-card',
@@ -10,31 +10,21 @@ import { FilterJSONService } from "../../../api/service/filter-json.service";
 })
 export class TemplatePortfolioCardComponent implements OnInit, OnDestroy{
 
-    projectData: IJsonItem = {};
-    projectKeys: {[key:string]: number} = {};
+    projectData: Observable<IJsonItem> = new Observable<IJsonItem>;
     subscriptionSource$: any;
-    subscriptionNext$: any;
 
-    constructor(
-        private sharedDataService: SharedDataService,
-        private filterJsonService: FilterJSONService
-    ) {
+    constructor(private sharedDataService: SharedDataService) {
         
     }
 
-
     ngOnInit() {
         this.subscriptionSource$ = this.sharedDataService.sourceData$.subscribe(data => {
-            this.projectData = data;
-        })
-        this.subscriptionNext$ = this.sharedDataService.nextData$.subscribe(data => {
-            this.projectKeys = data;
+            this.projectData = of(data);
         })
     }
 
     ngOnDestroy() {
-        this.subscriptionSource$.unsubscribe(); 
-        this.subscriptionNext$.unsubscribe();
+        this.subscriptionSource$.unsubscribe();
     }
 
     

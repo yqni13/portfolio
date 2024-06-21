@@ -1,15 +1,5 @@
 $card-border: 10px;
 
-.portfolio {
-    overflow-y: auto;
-}
-
-h2 {
-    &:after {
-        content: 'MY WORK';
-    }
-}
-
 h4 {
     // portfolio cards h4 always stay white due to structure!
     color: var(--alice-blue)!important;
@@ -18,7 +8,7 @@ h4 {
 .portfolio-wrapper {
     display: flex;
     flex-wrap: wrap;
-    margin: 0px 100px 25px 100px;
+    margin: 50px 100px;
     justify-content: center;
 }
 
@@ -72,7 +62,6 @@ span {
         margin: -$border-width;
         border-radius: inherit;
         background: var(--portfolio-card);
-        // background: var(--yqni13-gradient);
     }
 }
 

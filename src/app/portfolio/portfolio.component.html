@@ -1,23 +1,27 @@
 <section class="box portfolio">
     <h2>Portfolio.</h2>
     <nav class="page-header">
-        <div (click)="filterForType('all')" routerLinkActive="active-route" class="portfolio-page">
+        <div (click)="filterForType(portfolioType.all)"class="portfolio-page" 
+        [ngClass]="activeType === portfolioType.all ? 'active-route' : ''">
             <span>ALL</span>
         </div>
-        <a (click)="filterForType('frontend')" routerLinkActive="active-route" class="portfolio-page">
+        <a (click)="filterForType(portfolioType.frontend)" class="portfolio-page"
+        [ngClass]="activeType === portfolioType.frontend ? 'active-route' : ''">
             <span>FRONTEND</span>
         </a>
-        <a (click)="filterForType('fullstack')" routerLinkActive="active-route" class="portfolio-page">
+        <a (click)="filterForType(portfolioType.fullstack)" class="portfolio-page"
+        [ngClass]="activeType === portfolioType.fullstack ? 'active-route' : ''">
             <span>FULLSTACK</span>
         </a>
-        <a (click)="filterForType('module')" routerLinkActive="active-route" class="portfolio-page">
+        <a (click)="filterForType(portfolioType.module)" class="portfolio-page"
+        [ngClass]="activeType === portfolioType.module ? 'active-route' : ''">
             <span>MODULES</span>
         </a>
     </nav>
-    <div>
-        <input type="text" id="keywords" name="keywords" placeholder="keywords" #keywordInput>
-        <button (click)="filterResults(keywordInput.value)">GO</button>
+    <div class="keyword-wrapper">
+        <input type="text" id="keywords" name="keywords" placeholder="Search keywords" (input)="sendKeywordInput($event)" #keywordInputField>
+        <a (click)="filterResults(keywordInputField.value)"><i class="icon-Search"></i></a>
+        <a (click)="removeKeyword()" [ngClass]="hasInput ? 'remove-active' : ''" class="keyword-remove"><i class="icon-Close"></i></a>
     </div>
     <template-portfolio-card></template-portfolio-card>
-    <!-- <router-outlet></router-outlet> -->
 </section> 

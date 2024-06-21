@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { SharedDataService } from '../../api/service/shared-data.service';
 import { IJsonItem } from '../../api/model/jsonProjectDataRequest';
 import { FilterJSONService } from '../../api/service/filter-json.service';
+import { PortfolioType } from '../../api/static/portfolio-type.enum';
 
 @Component({
   selector: 'app-portfolio',
@@ -9,11 +10,15 @@ import { FilterJSONService } from '../../api/service/filter-json.service';
   styleUrl: './portfolio.component.scss'
 })
 export class PortfolioComponent implements OnInit {
+
+  @ViewChild('keywordInputField') keywordInputField!: ElementRef; 
   
+  portfolioType = PortfolioType; // need to use in html
+  activeType: PortfolioType = 'all';
+  hasInput: boolean = false;
   projectJSONData = require("../../api/json/project-data.json");
   projectData: IJsonItem;
   keywordInput: string = '';
-  numberOfTechnologies: {[key: string]: number} = {};
   exceptionProperties: string[] = [
     "githublink",
     "cardScreenPath",
@@ -30,29 +35,39 @@ export class PortfolioComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.setPortfolioCardData(); // dont need later on
     this.filterJsonService.setSource(this.projectData);
-    this.filterForType('all');
+    this.filterForType(PortfolioType.all);
     this.filterJsonService.setExceptionKeys(this.exceptionProperties);
-    this.filterJsonService.loopSource('');
-    // does this stay in memory?
-    this.numberOfTechnologies = this.filterJsonService.getNumberOfTechnologies();
+    this.projectData = this.filterJsonService.loopSource('');
+    this.setPortfolioCards();
   }
   
   filterResults(val: string) {
-    this.filterJsonService.loopSource(val);
-    this.numberOfTechnologies = this.filterJsonService.getNumberOfTechnologies();
+    this.projectData = this.filterJsonService.loopSource(val);
+    this.setPortfolioCards();
   }
-
-  // TODO remove!
-  setPortfolioCardData() { 
+  
+  setPortfolioCards() { 
     this.sharedDataService.setSourceData(this.projectData);
   }
-
-  filterForType(type: string) {
+  
+  filterForType(type: PortfolioType) {
+    this.activeType = type;
     this.filterJsonService.setTypeFilter(type);
-    this.filterJsonService.loopSource(this.keywordInput);
-    this.numberOfTechnologies = this.filterJsonService.getNumberOfTechnologies();
+    this.projectData = this.filterJsonService.loopSource(this.keywordInput);
+    this.setPortfolioCards();
   }
 
+  sendKeywordInput(event: any) {
+    event.target.value ? this.hasInput = true : this.hasInput = false;
+    this.keywordInput = event.target.value;
+    console.log("keyword: ", this.keywordInput);
+    console.log("hasInput: ", this.hasInput);
+  }
+
+  removeKeyword() {
+    this.keywordInputField.nativeElement.value = '';
+    this.hasInput = false;
+    this.filterResults('');
+  }
 }
