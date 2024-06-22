@@ -10,19 +10,19 @@ import { Observable, of } from "rxjs";
 })
 export class TemplatePortfolioCardComponent implements OnInit, OnDestroy{
 
-    projectData: Observable<IJsonItem> = new Observable<IJsonItem>;
-    subscriptionSource$: any;
+    public projectData: Observable<IJsonItem> = new Observable<IJsonItem>;
+    private subscription$: any;
 
     constructor(private sharedDataService: SharedDataService) { }
 
     ngOnInit() {
-        this.subscriptionSource$ = this.sharedDataService.sourceData$.subscribe(data => {
+        this.subscription$ = this.sharedDataService.sourceData$.subscribe(data => {
             this.projectData = of(data);
         })
     }
 
     ngOnDestroy() {
-        this.subscriptionSource$.unsubscribe();
+        this.subscription$.unsubscribe();
     }    
 
 }

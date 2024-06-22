@@ -1,7 +1,7 @@
 <section class="box portfolio">
     <h2>Portfolio.</h2>
     <nav class="page-header">
-        <div (click)="filterForType(portfolioType.all)"class="portfolio-page" 
+        <div (click)="filterForType(portfolioType.all)" class="portfolio-page" 
         [ngClass]="activeType === portfolioType.all ? 'active-route' : ''">
             <span>ALL</span>
         </div>
@@ -19,9 +19,17 @@
         </a>
     </nav>
     <div class="keyword-wrapper">
-        <input type="text" id="keywords" name="keywords" placeholder="Search keywords" (input)="detectKeywordInput($event)" (keydown.enter)="filterResults(keywordInputField.value)" #keywordInputField>
+        <input 
+        type="text" 
+        id="keywords" 
+        name="keywords" 
+        placeholder="Search keywords" 
+        (input)="detectKeywordInput($event)" 
+        (keydown.enter)="filterResults(keywordInputField.value)" 
+        #keywordInputField
+        >
         <a (click)="filterResults(keywordInputField.value)"><i class="icon-Search"></i></a>
-        <a (click)="removeKeyword()" [ngClass]="hasInput ? 'remove-active' : ''" class="keyword-remove"><i class="icon-Close"></i></a>
+        <a (click)="removeKeyword()" *ngIf="hasInput"><i class="icon-Close"></i></a>
     </div>
     <template-portfolio-card></template-portfolio-card>
 </section> 

@@ -1,21 +1,21 @@
 <div class="portfolio-wrapper">
-    <div *ngFor="let obj of (projectData | async) | keyvalue" class="card">
-        <img src='{{obj.value.cardScreenPath}}'>
+    <div *ngFor="let project of (projectData | async) | keyvalue" class="card">
+        <img src='{{project.value.cardScreenPath}}'>
         <div class="card-text">
-            <h4>{{obj.value.title}}
-                <a href="{{obj.value.githublink}}" target="_blank" class="a-github">
+            <h4>{{project.value.title}}
+                <a href="{{project.value.githublink}}" target="_blank" class="a-github">
                     <i class="icon-GitHub"></i>
                 </a>
             </h4>
             <p>
                 keywords:<br>
-                {{obj.value.keywords}}
+                {{project.value.keywords}}
                 <br><br>
-                v{{obj.value.version}}
+                v{{project.value.version}}
             </p>
             <div  class="card-technology">
-                <a *ngFor="let tech of obj.value.techURLs; index as i" href="{{tech}}" target="_blank">
-                    <i class="{{obj.value.techImgClasses[i]}}"></i>
+                <a *ngFor="let url of project.value.techURLs; index as i" href="{{url}}" target="_blank">
+                    <i class="{{project.value.techImgClasses[i]}}"></i>
                 </a>
             </div>
         </div>

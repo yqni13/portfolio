@@ -18,9 +18,9 @@ export class FilterJSONService {
             return this.source;
 
         var filteredSource: IJsonItem = {};
+        keyword = keyword.toLowerCase();
         Object.entries(this.source).forEach(([outerKey, outerValue]) => {
 
-            // NO filter && NO keyword >> no inner loop necessary
             if(this.typeFilter == 'all' && !keyword) {
                 this.resultKeys.push(outerKey);
                 
@@ -30,7 +30,7 @@ export class FilterJSONService {
 
                     // check first property if type is correct or all types wanted
                     if(innerKey == 'type')
-                        (this.typeFilter == 'all' || this.typeFilter == innerValue) 
+                        (this.typeFilter == 'all' || this.typeFilter == innerValue)
                             ? isFilteredType = true
                             : isFilteredType = false;
 
@@ -60,9 +60,4 @@ export class FilterJSONService {
         this.resultKeys = [];
     }
 
-    initializeResults() {
-        Object.keys(this.source).forEach((outerKey) => {
-            this.resultKeys.push(outerKey);
-        })
-    }
 }

@@ -1,5 +1,5 @@
 # yqni13 portfolio
-$\texttt{\color{teal}{v2.1.0}}$
+$\texttt{\color{teal}{v2.2.1}}$
 
 <br>
 
@@ -100,10 +100,13 @@ My portfolio comes with two theme settings: $\textsf{\color{gray}{Dark mode}}$ &
 ## Updates
 
 [list of all updates](src/docs/update_protocol.md)
-### $\textsf{last\ update\ 1.3.1\ >>\ {\color{pink}2.1.0}}$
+### $\textsf{last\ update\ 1.3.1\ >>\ {\color{pink}2.2.1}}$
 
+
+- $\textsf{\color{green}Change:}$ The number for age in 'about' component is now displayed as calculated value.
 - $\textsf{\color{green}Change:}$ Removed individual portfolio components and implemented template to display portfolio cards via ngFor. 
 - $\textsf{\color{cyan}Change:}$ Portfolio cards/projects can be filtered by type (all/frontend/fullstack/module). Additionally, users can filter by keywords below the type menu. Clicking on magnifier symbol filters data and displays all results containing current keyword. Unless the filter-input is not empty, a red "x" is available to click on and removes keyword and automatically resets filter and displays everything on default settings.
+- $\textsf{\color{red}Bugfix:}$ Portfolio component is navigated to by pathname 'mywork' in URL. [Before: Pathname for 'portfolio' component was 'portfolio' and misleading due to hosted URL which also ends in 'portfolio' => '...github.io/portfolio/portfolio'.]
 
 <br>
 

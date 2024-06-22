@@ -16,8 +16,7 @@ export class PortfolioComponent implements OnInit {
   portfolioType = PortfolioType; // need to use in html
   activeType: PortfolioType = 'all';
   hasInput: boolean = false;
-  projectJSONData = require("../../api/json/project-data.json");
-  projectData: IJsonItem;
+  projectData: IJsonItem = require("../../api/json/project-data.json");
   keywordInput: string = '';
   exceptionProperties: string[] = [
     "githublink",
@@ -29,10 +28,7 @@ export class PortfolioComponent implements OnInit {
   constructor(
     private sharedDataService: SharedDataService,
     private filterJsonService: FilterJSONService
-  ) {
-    this.projectData = this.projectJSONData;
-    this.filterJsonService.initializeResults();
-  }
+  ) { }
 
   ngOnInit() {
     this.filterJsonService.setSource(this.projectData);
