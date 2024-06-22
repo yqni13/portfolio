@@ -21,8 +21,8 @@
             <span [routerLink]="['mywork']" routerLinkActive="active-route" (click)="expandNavMobile(true)">Portfolio</span>
         </li>            
         <li>
-            <span [ngClass]="setDark" (click)="setLightMode()"><i class="icon-DarkMode" [ngClass]="setDark" id="nav-darkmode"></i></span>
-            <span [ngClass]="setLight" (click)="setDarkMode()"><i class="icon-LightMode" [ngClass]="setLight" id="nav-lightmode"></i></span>
+            <span [ngClass]="setDark" (click)="setLightMode()"><i class="icon-DarkMode" id="nav-darkmode"></i></span>
+            <span [ngClass]="setLight" (click)="setDarkMode()"><i class="icon-LightMode" id="nav-lightmode"></i></span>
         </li>
         <li>
             <div class="link_icons">
@@ -31,7 +31,7 @@
                 <a href="https://leetcode.com/u/yqni13/" target="_blank"><i class="icon-LeetCode"></i></a>
                 <a href="https://www.xing.com/profile/Lukas_Varga2" target="_blank"><i class="icon-Xing"></i></a>
             </div>
-            <p><i class="icon-CopyRight" id="nav-copyright"></i> 2024 Lukas Varga</p>
+            <p><i class="icon-CopyRight" id="nav-copyright"></i> {{copyrightYear}}, Lukas Varga<br>v{{version}}</p>
         </li>
     </ul>
     

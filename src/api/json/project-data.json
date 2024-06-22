@@ -137,5 +137,24 @@
             "icon-Javascript",
             "icon-Leaflet"
         ]
+    },
+    "Portfolio": {
+        "type": "frontend",
+        "title": "Portfolio",
+        "version": "2.2.2",
+        "keywords": "live demo | portfolio | angular framework | english | responsive | custom design | dark/light theme | animation | custom search filter | template | multi page layout",
+        "technology": "Angular | RxJS | JSON",
+        "cardScreenPath": "assets/img/web_portfolio.jpg",
+        "githublink": "https://github.com/yqni13/portfolio",
+        "techURLs": [
+            "https://angular.dev/",
+            "https://rxjs.dev/",
+            "https://www.json.org/json-en.html"
+        ],
+        "techImgClasses": [
+            "icon-Angular",
+            "icon-RxJS",
+            "icon-JSON"
+        ]
     }
 }

@@ -25,11 +25,14 @@
         name="keywords" 
         placeholder="Search keywords" 
         (input)="detectKeywordInput($event)" 
-        (keydown.enter)="filterResults(keywordInputField.value)" 
+        (keydown.enter)="filterForKeyword(keywordInputField.value)" 
         #keywordInputField
         >
-        <a (click)="filterResults(keywordInputField.value)"><i class="icon-Search"></i></a>
+        <a (click)="filterForKeyword(keywordInputField.value)"><i class="icon-Search"></i></a>
         <a (click)="removeKeyword()" *ngIf="hasInput"><i class="icon-Close"></i></a>
     </div>
     <template-portfolio-card></template-portfolio-card>
+    <div *ngIf="!hasOutput" class="empty-search-wrapper">
+        <p>No data found for this parameter.</p>
+    </div>
 </section> 
