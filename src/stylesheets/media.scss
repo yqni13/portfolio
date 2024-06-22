@@ -2,7 +2,7 @@
 
 @import "defines.scss";
 
-@media screen and (min-width: $desktop-width) {
+@media screen and (width >= $desktop-width) {
 
     // BASIC
     .box { 
@@ -97,7 +97,7 @@
     }
 }
 
-@media screen and (max-width: $desktop-width) {
+@media screen and (width <= $desktop-width) {
 
     // BASIC
     .box { 
@@ -230,7 +230,7 @@
     }
 }
 
-@media screen and (max-width: $tablet-landscape-width) {
+@media screen and (width <= $tablet-landscape-width) {
 
     // BASIC
     .box { 
@@ -354,7 +354,7 @@
     }
 }
 
-@media screen and (max-width: $phone-landscape-width) {
+@media screen and (width <= $phone-landscape-width) {
 
     // BASIC
     .box { 
@@ -535,28 +535,12 @@
             margin: 0px 50px!important;
         }
         .portfolio-wrapper {
-            margin: 0px 50px 25px 50px!important;
+            margin: 50px 50px 25px 50px!important;
         }
     }
 }
 
-@media screen and (max-width: $phone-portrait-width) {
-    
-    // .nav-bar {
-    //     #nav-copyright { 
-    //         margin: var(--copyright-margin); 
-    //     }
-    //     #nav-logo { 
-    //         width: var(--nav-logo); 
-    //     }
-    //     ul { 
-    //         width: var(--nav-size);
-    //         z-index: var(--nav-z);
-    //     }
-    //     .nav-full { 
-    //         display: var(--nav-full)!important; 
-    //     }
-    // }
+@media screen and (width <= $phone-portrait-width) {
 
     .home {
         .profile-picture {

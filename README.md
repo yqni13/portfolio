@@ -1,5 +1,5 @@
 # yqni13 portfolio
-$\texttt{\color{teal}{v1.3.1}}$
+$\texttt{\color{teal}{v2.2.1}}$
 
 <br>
 
@@ -51,6 +51,16 @@ The portfolio component splits up to different $\textsf{\color{limegreen}{menu o
 </div>
 <br><br>
 
+Besides the type filtering (all/frontend/fullstack/module), the portfolio projects can be filtered by keywords. The entered keyword is compared to the different properties like title, descriptional keywords, version and technology and respective results are displayed. The click on the magnifier or hitting key "enter" enables the filtration by the current keyword and with the red "x" all keywords are removed and filtering resets.
+<br>
+
+<div align="center">
+    <img src="./src/assets/readme_img/readme_filter_active.png">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <img src="./src/assets/readme_img/readme_filter_empty.png">
+</div>
+<br><br>
+
 Every project is displayed in card-style, containing a screenshot of the project user-interface and on hovering more information appear. The title, keywords, version and used technology icons will give a quick overview. Additionally, every project-card has a $\textsf{\color{red}{direct link}}$ to the regarding repository $\textsf{\color{red}{via github icon}}$ to open in a new tab.
 
 <div align="center">
@@ -90,19 +100,21 @@ My portfolio comes with two theme settings: $\textsf{\color{gray}{Dark mode}}$ &
 ## Updates
 
 [list of all updates](src/docs/update_protocol.md)
-### $\textsf{last\ update\ 1.1.2\ >>\ {\color{pink}1.3.1}}$
+### $\textsf{last\ update\ 1.3.1\ >>\ {\color{pink}2.2.1}}$
 
-- $\textsf{\color{green}Change:}$ Navbar in mobile version is displayed on top instead on the left to give more space for the content in smaller viewports.
-- $\textsf{\color{green}Change:}$ Data binding between components improved. Json data is now handled centralized in portfolio parent component and adapted with project-name as key for the regarding data object for easier maintenance.
-- $\textsf{\color{red}Bugfix:}$ GitHub link in the projects 'Clock' and 'Rating' from 'Portfolio' component navigate to the regarding repository. [Before: Links were missing and navigating back to Portfolio page.]
+
+- $\textsf{\color{green}Change:}$ The number for age in 'about' component is now displayed as calculated value.
+- $\textsf{\color{green}Change:}$ Removed individual portfolio components and implemented template to display portfolio cards via ngFor. 
+- $\textsf{\color{cyan}Change:}$ Portfolio cards/projects can be filtered by type (all/frontend/fullstack/module). Additionally, users can filter by keywords below the type menu. Clicking on magnifier symbol filters data and displays all results containing current keyword. Unless the filter-input is not empty, a red "x" is available to click on and removes keyword and automatically resets filter and displays everything on default settings.
+- $\textsf{\color{red}Bugfix:}$ Portfolio component is navigated to by pathname 'mywork' in URL. [Before: Pathname for 'portfolio' component was 'portfolio' and misleading due to hosted URL which also ends in 'portfolio' => '...github.io/portfolio/portfolio'.]
 
 <br>
 
 ### Aimed objectives for next $\textsf{\color{green}minor}$ update:
 <dl>
     <dd>- error handling for images failing to load</dd>
-    <dd>- create portfolio cards in html via *ngFor</dd>
     <dd>- customized error page</dd>
+    <dd>- enable filtering portfolio cards with multiple keywords</dd>
 </dl>
 <br>
 

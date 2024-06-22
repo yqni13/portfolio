@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { CvComponent } from './cv/cv.component';
+import { TemplatePortfolioCardComponent } from './templates/portfolio-card/template-portfolio-card.component';
 
 
 @NgModule({
@@ -16,8 +17,9 @@ import { CvComponent } from './cv/cv.component';
     AppComponent,
     HomeComponent,
     AboutComponent,
+    CvComponent,
     PortfolioComponent,
-    CvComponent
+    TemplatePortfolioCardComponent
   ],
   imports: [
     BrowserModule,

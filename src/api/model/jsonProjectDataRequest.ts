@@ -1,10 +1,15 @@
-export interface JsonProjectDataRequest {
+export interface IJsonProjectDataRequest {
     title: string
     version: string
     type: string
     keywords: string
+    technology?: never,
+    cardScreenPath: string,
+    githublink: string,
+    techURLs: string[],
+    techImgClasses: string[]
 }
 
-export interface JsonItem {
-    [key: string]: JsonProjectDataRequest;
+export interface IJsonItem {
+    [key: string]: IJsonProjectDataRequest;
 }

@@ -1,19 +1,35 @@
 <section class="box portfolio">
     <h2>Portfolio.</h2>
-    <div class="page-header">
-        <div [routerLink]="['all']" routerLinkActive="active-route" class="portfolio-page">
+    <nav class="page-header">
+        <div (click)="filterForType(portfolioType.all)" class="portfolio-page" 
+        [ngClass]="activeType === portfolioType.all ? 'active-route' : ''">
             <span>ALL</span>
         </div>
-        <div [routerLink]="['frontend']" routerLinkActive="active-route" class="portfolio-page">
+        <a (click)="filterForType(portfolioType.frontend)" class="portfolio-page"
+        [ngClass]="activeType === portfolioType.frontend ? 'active-route' : ''">
             <span>FRONTEND</span>
-        </div>
-        <div [routerLink]="['fullstack']" routerLinkActive="active-route" class="portfolio-page">
+        </a>
+        <a (click)="filterForType(portfolioType.fullstack)" class="portfolio-page"
+        [ngClass]="activeType === portfolioType.fullstack ? 'active-route' : ''">
             <span>FULLSTACK</span>
-        </div>
-        <div [routerLink]="['modules']" routerLinkActive="active-route" class="portfolio-page">
+        </a>
+        <a (click)="filterForType(portfolioType.module)" class="portfolio-page"
+        [ngClass]="activeType === portfolioType.module ? 'active-route' : ''">
             <span>MODULES</span>
-        </div>
+        </a>
+    </nav>
+    <div class="keyword-wrapper">
+        <input 
+        type="text" 
+        id="keywords" 
+        name="keywords" 
+        placeholder="Search keywords" 
+        (input)="detectKeywordInput($event)" 
+        (keydown.enter)="filterResults(keywordInputField.value)" 
+        #keywordInputField
+        >
+        <a (click)="filterResults(keywordInputField.value)"><i class="icon-Search"></i></a>
+        <a (click)="removeKeyword()" *ngIf="hasInput"><i class="icon-Close"></i></a>
     </div>
-    
-    <router-outlet></router-outlet>
-</section>
+    <template-portfolio-card></template-portfolio-card>
+</section> 
