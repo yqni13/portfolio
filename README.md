@@ -39,6 +39,8 @@ To host the application on GitHub Pages directly from CLI, install the regarding
     <dd>:book: Multi-Page Layout (main navigation and portfolio menu)</dd>
     <dd>:new_moon_with_face:/:sun_with_face: Dark/Light mode</dd>
     <dd>:art: Customized style</dd>
+    <dd>:mag: Customized filter search</dd>
+    <dd>:busts_in_silhouette: Customized template (portfolio cards)</dd>
 </dl>
 
 ## Portfolio
