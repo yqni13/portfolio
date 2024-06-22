@@ -1,0 +1,105 @@
+$card-border: 10px;
+$icon-opacity: 0.4;
+
+h4 {
+    // portfolio cards h4 always stay white due to structure!
+    color: var(--alice-blue)!important;
+}
+
+.portfolio-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 50px 100px;
+    justify-content: center;
+}
+
+.card {
+    position: relative;
+    display:flex;
+    flex-direction: column;
+    text-align: left; /* added technology symbols otherwise centered */
+    align-items: center;
+    justify-content: end;
+    margin: 4px;
+
+    $border-width: 2px;
+    background-clip: padding-box;
+    border: solid $border-width transparent;
+    border-radius: 10px;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0; right: 0; bottom: 0; left: 0;
+        z-index: -1;
+        margin: -$border-width;
+        border-radius: inherit;
+        background: var(--portfolio-card);
+    }
+}
+
+.card img {
+    height: auto;
+    margin: 0px 2px 0px 2px;
+    color: var(--alice-blue);
+    border-radius: $card-border;
+}
+
+.card img:hover
+{
+    opacity: 0.25;
+}
+
+.card:hover .card-text {
+    opacity: 1;
+}
+
+.card-text h4 {
+    position: absolute;
+    top:10%;
+}
+
+.card-text a.a-github {
+    margin-left: 10px;
+}
+
+
+.card-text {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    align-content: end;
+    backdrop-filter: blur(2px) brightness(0.5);
+    border-radius: $card-border;
+}
+
+.card-text p {
+    color: var(--alice-blue);
+    text-align: justify;
+}
+
+.card-technology i {
+    margin: 10px 20px 10px 0px;
+    &:hover {
+        opacity: $icon-opacity;
+    }
+}
+
+.card:hover .icon-GitHub {
+    animation-name: github-animation;
+    animation-duration: 2s;
+}
+
+@keyframes github-animation {
+    to { transform: scale(1.5) };
+    to { transform: rotate(360deg) };
+}
+
+.icon-GitHub:hover {
+    opacity: $icon-opacity;
+}
+
+.a-github {
+    color: var(--alice-blue);
+}

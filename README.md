@@ -1,5 +1,5 @@
 # yqni13 portfolio
-$\texttt{\color{teal}{v1.3.1}}$
+$\texttt{\color{teal}{v2.2.2}}$
 
 <br>
 
@@ -39,6 +39,8 @@ To host the application on GitHub Pages directly from CLI, install the regarding
     <dd>:book: Multi-Page Layout (main navigation and portfolio menu)</dd>
     <dd>:new_moon_with_face:/:sun_with_face: Dark/Light mode</dd>
     <dd>:art: Customized style</dd>
+    <dd>:mag: Customized filter search</dd>
+    <dd>:busts_in_silhouette: Customized template (portfolio cards)</dd>
 </dl>
 
 ## Portfolio
@@ -48,6 +50,16 @@ The portfolio component splits up to different $\textsf{\color{limegreen}{menu o
 
 <div align="center">
     <img src="./src/assets/readme_img/readme_portfolio_menu.png">
+</div>
+<br><br>
+
+Besides the type filtering (all/frontend/fullstack/module), the portfolio projects can be filtered by keywords. The entered keyword is compared to the different properties like title, descriptional keywords, version and technology and respective results are displayed. The click on the magnifier or hitting key "enter" enables the filtration by the current keyword and with the red "x" all keywords are removed and filtering resets.
+<br>
+
+<div align="center">
+    <img src="./src/assets/readme_img/readme_filter_active.png">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <img src="./src/assets/readme_img/readme_filter_empty.png">
 </div>
 <br><br>
 
@@ -90,19 +102,18 @@ My portfolio comes with two theme settings: $\textsf{\color{gray}{Dark mode}}$ &
 ## Updates
 
 [list of all updates](src/docs/update_protocol.md)
-### $\textsf{last\ update\ 1.1.2\ >>\ {\color{pink}1.3.1}}$
+### $\textsf{last\ update\ 2.2.1\ >>\ {\color{pink}2.2.2}}$
 
-- $\textsf{\color{green}Change:}$ Navbar in mobile version is displayed on top instead on the left to give more space for the content in smaller viewports.
-- $\textsf{\color{green}Change:}$ Data binding between components improved. Json data is now handled centralized in portfolio parent component and adapted with project-name as key for the regarding data object for easier maintenance.
-- $\textsf{\color{red}Bugfix:}$ GitHub link in the projects 'Clock' and 'Rating' from 'Portfolio' component navigate to the regarding repository. [Before: Links were missing and navigating back to Portfolio page.]
+- $\textsf{\color{teal}Addition:}$ New content added to 'Portfolio' component.
+- $\textsf{\color{red}Bugfix:}$ An explaining msg is shown if results were empty for searching. [Before: Empty search results did not show anything.]
 
 <br>
 
 ### Aimed objectives for next $\textsf{\color{green}minor}$ update:
 <dl>
     <dd>- error handling for images failing to load</dd>
-    <dd>- create portfolio cards in html via *ngFor</dd>
     <dd>- customized error page</dd>
+    <dd>- enable filtering portfolio cards with multiple keywords</dd>
 </dl>
 <br>
 
