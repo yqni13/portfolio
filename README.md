@@ -51,7 +51,7 @@ The portfolio component splits up to different $\textsf{\color{limegreen}{menu o
 </div>
 <br><br>
 
-Besides the type filtering (all/frontend/fullstack/module), the portfolio projects can also be filtered by keywords. The entered keyword is compared to the different properties like title, descriptional keywords, version and technology and respective results displayed. The click on the magnifier enables the filtration by the current keyword and with the red "x" all keywords are removed and filtering resets.
+Besides the type filtering (all/frontend/fullstack/module), the portfolio projects can be filtered by keywords. The entered keyword is compared to the different properties like title, descriptional keywords, version and technology and respective results are displayed. The click on the magnifier or hitting key "enter" enables the filtration by the current keyword and with the red "x" all keywords are removed and filtering resets.
 <br>
 
 <div align="center">

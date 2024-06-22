@@ -13,9 +13,7 @@ export class TemplatePortfolioCardComponent implements OnInit, OnDestroy{
     projectData: Observable<IJsonItem> = new Observable<IJsonItem>;
     subscriptionSource$: any;
 
-    constructor(private sharedDataService: SharedDataService) {
-        
-    }
+    constructor(private sharedDataService: SharedDataService) { }
 
     ngOnInit() {
         this.subscriptionSource$ = this.sharedDataService.sourceData$.subscribe(data => {
@@ -25,8 +23,6 @@ export class TemplatePortfolioCardComponent implements OnInit, OnDestroy{
 
     ngOnDestroy() {
         this.subscriptionSource$.unsubscribe();
-    }
-
-    
+    }    
 
 }

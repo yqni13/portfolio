@@ -11,7 +11,7 @@ import { PortfolioType } from '../../api/static/portfolio-type.enum';
 })
 export class PortfolioComponent implements OnInit {
 
-  @ViewChild('keywordInputField') keywordInputField!: ElementRef; 
+  @ViewChild('keywordInputField') keywordInputField!: ElementRef;
   
   portfolioType = PortfolioType; // need to use in html
   activeType: PortfolioType = 'all';
@@ -58,16 +58,21 @@ export class PortfolioComponent implements OnInit {
     this.setPortfolioCards();
   }
 
-  sendKeywordInput(event: any) {
-    event.target.value ? this.hasInput = true : this.hasInput = false;
+  detectKeywordInput(event: any) {
+    if(event.target.value) 
+      this.hasInput = true
+    else {
+      this.hasInput = false;
+      this.filterResults('');
+    }
     this.keywordInput = event.target.value;
-    console.log("keyword: ", this.keywordInput);
-    console.log("hasInput: ", this.hasInput);
   }
 
   removeKeyword() {
     this.keywordInputField.nativeElement.value = '';
+    this.keywordInput = '';
     this.hasInput = false;
     this.filterResults('');
   }
+
 }

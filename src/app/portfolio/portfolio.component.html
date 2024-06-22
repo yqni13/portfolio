@@ -19,7 +19,7 @@
         </a>
     </nav>
     <div class="keyword-wrapper">
-        <input type="text" id="keywords" name="keywords" placeholder="Search keywords" (input)="sendKeywordInput($event)" #keywordInputField>
+        <input type="text" id="keywords" name="keywords" placeholder="Search keywords" (input)="detectKeywordInput($event)" (keydown.enter)="filterResults(keywordInputField.value)" #keywordInputField>
         <a (click)="filterResults(keywordInputField.value)"><i class="icon-Search"></i></a>
         <a (click)="removeKeyword()" [ngClass]="hasInput ? 'remove-active' : ''" class="keyword-remove"><i class="icon-Close"></i></a>
     </div>
