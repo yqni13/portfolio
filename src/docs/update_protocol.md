@@ -4,6 +4,11 @@
 
 <br>
 
+### 2024/6/22 - $\textsf{update\ 2.2.1\ >>\ {\color{pink}2.2.2}}$
+
+- $\textsf{\color{teal}Addition:}$ New content added to 'Portfolio' component.
+- $\textsf{\color{red}Bugfix:}$ An explaining msg is shown if results were empty for searching. [Before: Empty search results did not show anything.]
+
 ### 2024/6/22 - $\textsf{update\ 1.3.1\ >>\ {\color{pink}2.2.1}}$
 
 - $\textsf{\color{green}Change:}$ The number for age in 'about' component is now displayed as calculated value.

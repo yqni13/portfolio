@@ -8,13 +8,15 @@ import _ from 'underscore';
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit {
- 
-  title = 'portfolio';
-  setDark: string = "";
-  setLight: string = "";
-  mobileNavExpended = false;
-  collapseNavbarWidth = 768;
 
+  public version: string = '2.2.2';
+  public copyrightYear: number = new Date().getFullYear();
+  public setDark: string = "";
+  public setLight: string = "";
+  
+  private mobileNavExpended = false;
+  private collapseNavbarWidth = 768;
+  
   constructor(private router: Router) {}
 
   ngOnInit() {

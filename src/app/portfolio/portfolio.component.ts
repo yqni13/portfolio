@@ -16,6 +16,7 @@ export class PortfolioComponent implements OnInit {
   portfolioType = PortfolioType; // need to use in html
   activeType: PortfolioType = 'all';
   hasInput: boolean = false;
+  hasOutput: boolean = true;
   projectData: IJsonItem = require("../../api/json/project-data.json");
   keywordInput: string = '';
   exceptionProperties: string[] = [
@@ -35,11 +36,13 @@ export class PortfolioComponent implements OnInit {
     this.filterForType(PortfolioType.all);
     this.filterJsonService.setExceptionKeys(this.exceptionProperties);
     this.projectData = this.filterJsonService.loopSource('');
+    this.checkForEmptyResults();
     this.setPortfolioCards();
   }
   
-  filterResults(val: string) {
+  filterForKeyword(val: string) {
     this.projectData = this.filterJsonService.loopSource(val);
+    this.checkForEmptyResults();
     this.setPortfolioCards();
   }
   
@@ -51,6 +54,7 @@ export class PortfolioComponent implements OnInit {
     this.activeType = type;
     this.filterJsonService.setTypeFilter(type);
     this.projectData = this.filterJsonService.loopSource(this.keywordInput);
+    this.checkForEmptyResults();
     this.setPortfolioCards();
   }
 
@@ -59,7 +63,7 @@ export class PortfolioComponent implements OnInit {
       this.hasInput = true
     else {
       this.hasInput = false;
-      this.filterResults('');
+      this.filterForKeyword('');
     }
     this.keywordInput = event.target.value;
   }
@@ -68,7 +72,11 @@ export class PortfolioComponent implements OnInit {
     this.keywordInputField.nativeElement.value = '';
     this.keywordInput = '';
     this.hasInput = false;
-    this.filterResults('');
+    this.filterForKeyword('');
+  }
+
+  checkForEmptyResults() {
+    (Object.keys(this.projectData).length) ? this.hasOutput = true : this.hasOutput = false ;
   }
 
 }

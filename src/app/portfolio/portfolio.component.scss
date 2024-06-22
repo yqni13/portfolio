@@ -74,3 +74,9 @@ h4 {
 span {
     color: var(--header-color);
 }
+
+.empty-search-wrapper p {
+    font-size: 2em;
+    opacity: 0.3;
+    font-style: italic;
+}
