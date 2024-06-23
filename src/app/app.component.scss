@@ -160,7 +160,7 @@ ul>:last-child p {
     
         a {
             font-size: 1.5em;
-            background-color: #127412;
+            background-color: var(--accept-green);
             color: var(--alice-blue);
             padding: 10px 20px;
             border-radius: 5px;
@@ -178,7 +178,7 @@ ul>:last-child p {
         }
     
         .green-msg {
-            color: #127412;
+            color: var(--accept-green);
             font-weight: bolder;
         }
     }

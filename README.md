@@ -4,7 +4,7 @@ $\texttt{\color{teal}{v2.3.2}}$
 <br>
 
 $\texttt{\color{red}{!\ !\ !\ }}$<br>
-<b>Currently deployment via angular-cli-ghpages does NOT work for this portfolio. That is why the production is running by the 'production' branch instead of the 'gh-pages' branch, which DOES NOT SUPPORT multi page applications. Refreshing the webpage will lead to 404 and homepage must be navigated to https://yqni13.github.io/portfolio again. The new version is build into '/docs' folder (hosting is set to check all necessary files in there) and then normally merged into 'production' branch. Please note that I am working on this issue parallel to some security vulnerabilities and updating to Angular 18.
+<b>Currently deployment via angular-cli-ghpages does NOT work for this portfolio. That is why the deployment is running on the 'production' branch instead of the 'gh-pages' branch, which apparently DOES NOT SUPPORT angular multi page applications. Refreshing the webpage will lead to 404 and homepage must be navigated to https://yqni13.github.io/portfolio again. The new version is build into '/docs' folder (hosting is set to check all necessary files in there) and normally merged into 'production' branch. Please note that I am working on this issue parallel to some security vulnerabilities and updating to Angular 18.
 </b><br>
 $\texttt{\color{red}{!\ !\ !\ }}$
 <br><br>
@@ -111,7 +111,7 @@ My portfolio comes with two theme settings: $\textsf{\color{gray}{Dark mode}}$ &
 [list of all updates](src/docs/update_protocol.md)
 ### $\textsf{last\ update\ 2.2.2\ >>\ {\color{pink}2.3.2}}$
 
-- $\textsf{\color{green}Change:}$ New issue alert added. Warnings will be shown automatically when webpage is firstly navigated to since new problem was issued and reading will be saved in local storage. To see if issue is still ongoing or re-read warning, new menu item '-current issues-' was added to bottom of navigation menu.
+- $\textsf{\color{green}Change:}$ New issue alert added. Warnings will be shown automatically when webpage is firstly navigated to since a new warning was issued and reading will be saved in local storage. To see if any issue is still ongoing or to re-read the warning, a new menu item '-current issues-' was added to bottom of navigation menu.
 
 <br>
 
@@ -119,6 +119,7 @@ My portfolio comes with two theme settings: $\textsf{\color{gray}{Dark mode}}$ &
 <dl>
     <dd>- error handling for images failing to load</dd>
     <dd>- customized error page</dd>
+    <dd>- css animations for extending/hiding elements</dd>
     <dd>- enable filtering portfolio cards with multiple keywords</dd>
 </dl>
 <br>
