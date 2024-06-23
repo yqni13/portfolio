@@ -4,6 +4,10 @@
 
 <br>
 
+### 2024/6/23 - $\textsf{update\ 2.2.2\ >>\ {\color{pink}2.3.2}}$
+
+- $\textsf{\color{green}Change:}$ New issue alert added. Warnings will be shown automatically when webpage is firstly navigated to since a new warning was issued and reading will be saved in local storage. To see if any issue is still ongoing or to re-read the warning, a new menu item '-current issues-' was added to bottom of navigation menu.
+
 ### 2024/6/22 - $\textsf{update\ 2.2.1\ >>\ {\color{pink}2.2.2}}$
 
 - $\textsf{\color{teal}Addition:}$ New content added to 'Portfolio' component.

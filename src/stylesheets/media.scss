@@ -255,6 +255,17 @@
         }
     }
 
+    .error-msg-box {
+        .error-wrapper {
+            p {
+                font-size: 1.5em!important;
+            }
+            a {
+                font-size:1em!important;
+            }
+        }
+    }
+
     .home {
         justify-content: center;
         .left {
@@ -417,6 +428,16 @@
             i {
                 width: 12px!important;
                 height: 12px!important;
+            }
+        }
+    }
+
+    .error-msg-box {
+        .error-wrapper {
+            width: 80vw!important;
+            padding-bottom: 25px!important;
+            p {
+                font-size: 1.2em!important;
             }
         }
     }
