@@ -9,10 +9,11 @@ import _ from 'underscore';
 })
 export class AppComponent implements OnInit {
 
-  public version: string = '2.2.2';
+  public version: string = '2.3.2';
   public copyrightYear: number = new Date().getFullYear();
   public setDark: string = "";
   public setLight: string = "";
+  public isAccepted: boolean = false;
   
   private mobileNavExpended = false;
   private collapseNavbarWidth = 768;
@@ -21,6 +22,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.checkThemeCookie();
+    this.checkAlertCookie();
     
     this.setNavWidthDynamically(window.screen.width);
     this.setNavWidthDynamically(document.body.clientWidth);
@@ -90,6 +92,29 @@ export class AppComponent implements OnInit {
     } else if (theme === 'light') {
       this.setLightMode();
     }
+  }
+
+  checkAlertCookie() {
+    let alertCookie = localStorage.getItem("yqni13-alert");
+    switch(alertCookie) {
+      case 'true':
+        this.isAccepted = true;
+        break;
+      case 'false':
+        this.isAccepted = false;
+        break;
+      default:
+        this.isAccepted = false;
+    }
+  }
+
+  openAlertMsg() {
+    this.isAccepted = false;
+  }
+
+  closeAlertMsg() {
+    this.isAccepted = true;
+    localStorage.setItem('yqni13-alert', 'true');
   }
 
 
