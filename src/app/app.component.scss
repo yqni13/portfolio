@@ -72,6 +72,16 @@ li:nth-child(2) {
     }
 }
 
+.nav-issues {
+    font-size: 0.75rem!important;
+    font-style: italic;
+    
+    &:hover {
+        color: var(--warning-red)!important;
+        opacity: 0.7!important;
+    }
+}
+
 .setVisible {
     visibility: visible;
     display: inline;
@@ -119,3 +129,57 @@ ul>:last-child p {
     font-size: 12px;
 }
 
+
+/* --- ALERT STYLING --- */
+
+.error-msg-box {
+    width: calc(100% - 4.5px);
+    height: calc(100% - 4.5px);
+    border: solid 2px var(--text-color);
+    position: fixed;
+    top: 0;
+    background-color: var(--deepnavy-blue);
+    align-content: center;
+    z-index: 100;
+    text-align: -webkit-center;
+    text-align: -moz-center;
+    overflow: scroll;
+    scrollbar-width: none;
+
+    .error-wrapper {
+        border: solid 1px var(--alice-blue);
+        border-radius: 10px;
+        padding-bottom: 50px;
+        width: 50vw;
+
+        p {
+            font-size: 2em;
+            padding: 0 25px;
+            margin-bottom: 50px;
+        }
+    
+        a {
+            font-size: 1.5em;
+            background-color: #127412;
+            color: var(--alice-blue);
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            &:hover {
+                opacity: 0.7;
+                border: solid 1px var(--alice-blue);
+            }
+        }
+    
+        .red-msg {
+            text-transform: uppercase;
+            color: var(--warning-red);
+            font-weight: bolder;
+        }
+    
+        .green-msg {
+            color: #127412;
+            font-weight: bolder;
+        }
+    }
+}
