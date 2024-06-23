@@ -25,6 +25,7 @@
             <span [ngClass]="setLight" (click)="setDarkMode()"><i class="icon-LightMode" id="nav-lightmode"></i></span>
         </li>
         <li>
+            <p class="nav-full nav-issues" (click)="openAlertMsg()">-current issues-</p>
             <div class="link_icons">
                 <a href="https://github.com/yqni13" target="_blank"><i class="icon-GitHub"></i></a>
                 <a href="https://app.daily.dev/yqni13" target="_blank"><img src="assets/img/dailydev.png"></a>
@@ -37,6 +38,14 @@
     
 
 </nav>
+<div class="error-msg-box" *ngIf="!isAccepted">
+    <div class="error-wrapper">
+        <p>
+            There are currently problems with the hosting of this project on GitHub => normal navigating by nav-menu works perfectly, <span class="red-msg">refreshing (F5)</span> will lead to <span class="red-msg">Error: 404</span>. I am currently working on this issue. Until issue is closed, this message is available in nav-menu '-current issues-'<br><span class="green-msg">Accept to continue.</span><br>Started: 22.06.2024, v2.2.2<br>
+        </p>
+        <a (click)="closeAlertMsg()">ACCEPT</a>
+    </div>
+</div>
 
 
 <router-outlet><router-outlet />
