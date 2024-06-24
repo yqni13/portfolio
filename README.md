@@ -1,5 +1,5 @@
 # yqni13 portfolio
-$\texttt{\color{teal}{v2.3.2}}$
+$\texttt{\color{teal}{v2.4.3}}$
 
 <br>
 
@@ -109,10 +109,10 @@ My portfolio comes with two theme settings: $\textsf{\color{gray}{Dark mode}}$ &
 ## Updates
 
 [list of all updates](src/docs/update_protocol.md)
-### $\textsf{last\ update\ 2.2.2\ >>\ {\color{pink}2.3.?}}$
+### $\textsf{last\ update\ 2.3.2\ >>\ {\color{pink}2.4.3}}$
 
-
-- $\textsf{\color{red}Bugfix:}$ Demo text. [Before: Demo text.]
+- $\textsf{\color{green}Change:}$ Upgraded from Angular v17 to Angular v18.
+- $\textsf{\color{red}Bugfix:}$ Colored text in warning issues have no inherited hover effects. [Before: Text that has used 'span' tags had inherited hover effects from navbar items and misleading styling.]
 - $\textsf{\color{red}Bugfix:}$ Only the message part from an issue warning has now a background-color and rest of it has blurred effect to see scheme of webpage. [Before: The warning message would cover the complete display and mislead the user to thinking that the webpage would not be working at all.]
 - $\textsf{\color{red}Bugfix:}$ Clicking on the logo navigates to the 'home' component and closes the unfolded navbar in the mobile version. [Before: The logo was missing logic to close the unfolded navbar in the mobile version, so it navigated to the 'home' component but didn't close.]
 

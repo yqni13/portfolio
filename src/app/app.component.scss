@@ -171,6 +171,10 @@ ul>:last-child p {
                 border: solid 1px var(--alice-blue);
             }
         }
+
+        span {
+            pointer-events: none;
+        }
     
         .red-msg {
             text-transform: uppercase;
