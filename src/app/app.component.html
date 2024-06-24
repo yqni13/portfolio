@@ -6,7 +6,7 @@
             <i class="icon-BurgerMenu nav-mobile" (click)="expandNavMobile()"></i>
         </li>
         <li class="nav-full">
-            <img id="nav-logo" src="assets/img/yqni13-small.png" alt="no logo" [routerLink]="['home']">
+            <img id="nav-logo" src="assets/img/yqni13-small.png" alt="no logo" [routerLink]="['home']" (click)="expandNavMobile(true)">
         </li>
         <li class="nav-full">
             <span [routerLink]="['home']" routerLinkActive="active-route" (click)="expandNavMobile(true)">Home</span>
@@ -25,7 +25,7 @@
             <span [ngClass]="setLight" (click)="setDarkMode()"><i class="icon-LightMode" id="nav-lightmode"></i></span>
         </li>
         <li>
-            <p class="nav-full nav-issues" (click)="openAlertMsg()">-current issues-</p>
+            <p class="nav-full nav-issues" (click)="openAlertMsg(); expandNavMobile(true)">-current issues-</p>
             <div class="link_icons">
                 <a href="https://github.com/yqni13" target="_blank"><i class="icon-GitHub"></i></a>
                 <a href="https://app.daily.dev/yqni13" target="_blank"><img src="assets/img/dailydev.png"></a>
