@@ -9,7 +9,7 @@ import _ from 'underscore';
 })
 export class AppComponent implements OnInit {
 
-  public version: string = '2.3.2';
+  public version: string = '2.4.3';
   public copyrightYear: number = new Date().getFullYear();
   public setDark: string = "";
   public setLight: string = "";
