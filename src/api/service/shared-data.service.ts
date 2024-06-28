@@ -6,7 +6,8 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class SharedDataService {
 
-    private sourceDataSubject = new BehaviorSubject<any>(1);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    private sourceDataSubject = new BehaviorSubject<any>('');
     sourceData$ = this.sourceDataSubject.asObservable();
 
     setSourceData<T>(data: T) {

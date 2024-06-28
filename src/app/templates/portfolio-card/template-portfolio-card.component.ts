@@ -1,7 +1,7 @@
-import { Component, Input, OnDestroy, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit } from "@angular/core";
 import { IJsonItem } from "../../../api/model/jsonProjectDataRequest";
 import { SharedDataService } from "../../../api/service/shared-data.service";
-import { Observable, of } from "rxjs";
+import { Observable, Subscription, of } from "rxjs";
 
 @Component({
     selector: 'template-portfolio-card',
@@ -11,7 +11,7 @@ import { Observable, of } from "rxjs";
 export class TemplatePortfolioCardComponent implements OnInit, OnDestroy{
 
     public projectData: Observable<IJsonItem> = new Observable<IJsonItem>;
-    private subscription$: any;
+    private subscription$ = new Subscription();
 
     constructor(private sharedDataService: SharedDataService) { }
 

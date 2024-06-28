@@ -9,11 +9,11 @@ import _ from 'underscore';
 })
 export class AppComponent implements OnInit {
 
-  public version: string = '2.4.3';
+  public version = '2.4.3';
   public copyrightYear: number = new Date().getFullYear();
-  public setDark: string = "";
-  public setLight: string = "";
-  public isAccepted: boolean = false;
+  public setDark = "";
+  public setLight = "";
+  public isAccepted = false;
   
   private mobileNavExpended = false;
   private collapseNavbarWidth = 768;
@@ -28,13 +28,13 @@ export class AppComponent implements OnInit {
     this.setNavWidthDynamically(document.body.clientWidth);
 
     // adapt to device screen resolution
-    var screenWidthRequestSlowedDown = _.debounce( () => {
+    const screenWidthRequestSlowedDown = _.debounce( () => {
       this.setNavWidthDynamically(window.screen.width);
     }, 250)
     window.addEventListener("resize", screenWidthRequestSlowedDown, false);
     
     // adapt to zoom level
-    var clientWidthRequestSlowedDown = _.debounce( () => {
+    const clientWidthRequestSlowedDown = _.debounce( () => {
       this.setNavWidthDynamically(document.body.clientWidth);
     }, 250)
     window.addEventListener("resize", clientWidthRequestSlowedDown, false);
@@ -81,7 +81,7 @@ export class AppComponent implements OnInit {
   }
 
   checkThemeCookie() {
-    let theme = localStorage.getItem("theme");
+    const theme = localStorage.getItem("theme");
     if(!theme) {
       this.setDarkMode();      
       return;
@@ -95,7 +95,7 @@ export class AppComponent implements OnInit {
   }
 
   checkAlertCookie() {
-    let alertCookie = localStorage.getItem("yqni13-alert");
+    const alertCookie = localStorage.getItem("yqni13-alert");
     switch(alertCookie) {
       case 'true':
         this.isAccepted = true;

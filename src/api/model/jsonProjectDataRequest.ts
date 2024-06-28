@@ -3,13 +3,11 @@ export interface IJsonProjectDataRequest {
     version: string
     type: string
     keywords: string
-    technology?: never,
+    technology: string,
     cardScreenPath: string,
     githublink: string,
     techURLs: string[],
     techImgClasses: string[]
 }
 
-export interface IJsonItem {
-    [key: string]: IJsonProjectDataRequest;
-}
+export type IJsonItem = Record<string, IJsonProjectDataRequest>;

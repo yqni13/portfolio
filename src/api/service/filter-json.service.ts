@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { ReplaySubject } from 'rxjs';
 import { IJsonItem } from '../model/jsonProjectDataRequest';
 
 @Injectable({
@@ -8,7 +7,7 @@ import { IJsonItem } from '../model/jsonProjectDataRequest';
 export class FilterJSONService {
 
     private source: IJsonItem = {};
-    private typeFilter: string = '';
+    private typeFilter = '';
     private resultKeys: string[] = []; // TODO: solution without this temp guide?
     private exceptionKeys: string[] = [];
 
@@ -17,7 +16,7 @@ export class FilterJSONService {
         if(this.typeFilter == 'all' && !keyword)
             return this.source;
 
-        var filteredSource: IJsonItem = {};
+        const filteredSource: IJsonItem = {};
         keyword = keyword.toLowerCase();
         Object.entries(this.source).forEach(([outerKey, outerValue]) => {
 
@@ -25,14 +24,15 @@ export class FilterJSONService {
                 this.resultKeys.push(outerKey);
                 
             } else {
-                var isFilteredType: boolean = false;
+                let isFilteredType = false;
                 Object.entries(outerValue).forEach(([innerKey, innerValue]) => {
 
                     // check first property if type is correct or all types wanted
                     if(innerKey == 'type')
-                        (this.typeFilter == 'all' || this.typeFilter == innerValue)
-                            ? isFilteredType = true
-                            : isFilteredType = false;
+                        if (this.typeFilter == 'all' || this.typeFilter == innerValue)
+                            isFilteredType = true
+                        else 
+                            isFilteredType = false;
 
                     if(isFilteredType && !this.exceptionKeys.includes(innerKey) && innerValue.toLowerCase().includes(keyword) && !this.resultKeys.includes(outerKey)) {
                         this.resultKeys.push(outerKey);

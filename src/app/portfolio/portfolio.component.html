@@ -1,19 +1,20 @@
+<!-- eslint-disable @angular-eslint/template/interactive-supports-focus -->
 <section class="box portfolio">
     <h2>Portfolio.</h2>
     <nav class="page-header">
-        <div (click)="filterForType(portfolioType.all)" class="portfolio-page" 
+        <div (click)="filterForType(portfolioType.all)" (keydown.enter)="filterForType(portfolioType.all)" class="portfolio-page" 
         [ngClass]="activeType === portfolioType.all ? 'active-route' : ''">
             <span>ALL</span>
         </div>
-        <a (click)="filterForType(portfolioType.frontend)" class="portfolio-page"
+        <a (click)="filterForType(portfolioType.frontend)" (keydown.enter)="filterForType(portfolioType.frontend)" class="portfolio-page"
         [ngClass]="activeType === portfolioType.frontend ? 'active-route' : ''">
             <span>FRONTEND</span>
         </a>
-        <a (click)="filterForType(portfolioType.fullstack)" class="portfolio-page"
+        <a (click)="filterForType(portfolioType.fullstack)" (keydown.enter)="filterForType(portfolioType.fullstack)" class="portfolio-page"
         [ngClass]="activeType === portfolioType.fullstack ? 'active-route' : ''">
             <span>FULLSTACK</span>
         </a>
-        <a (click)="filterForType(portfolioType.module)" class="portfolio-page"
+        <a (click)="filterForType(portfolioType.module)" (keydown.enter)="filterForType(portfolioType.module)" class="portfolio-page"
         [ngClass]="activeType === portfolioType.module ? 'active-route' : ''">
             <span>MODULES</span>
         </a>
@@ -28,8 +29,8 @@
         (keydown.enter)="filterForKeyword(keywordInputField.value)" 
         #keywordInputField
         >
-        <a (click)="filterForKeyword(keywordInputField.value)"><i class="icon-Search"></i></a>
-        <a (click)="removeKeyword()" *ngIf="hasInput"><i class="icon-Close"></i></a>
+        <a (click)="filterForKeyword(keywordInputField.value)" (keydown.enter)="filterForKeyword(keywordInputField.value)"><i class="icon-Search"></i></a>
+        <a (click)="removeKeyword()" (keydown.enter)="removeKeyword()" *ngIf="hasInput"><i class="icon-Close"></i></a>
     </div>
     <template-portfolio-card></template-portfolio-card>
     <div *ngIf="!hasOutput" class="empty-search-wrapper">
