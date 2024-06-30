@@ -33,3 +33,5 @@ jobs:
         with:
           target_branch: gh-pages
           build_dir: dist/portfolio
+        env:
+          GH_PAT: ${{ secrets.PORTFOLIO_PAT }}
