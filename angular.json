@@ -24,7 +24,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "docs/portfolio",
+            "outputPath": "dist/portfolio",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -110,11 +110,23 @@
         },
         "deploy": {
           "builder": "angular-cli-ghpages:deploy"
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
   "cli": {
-    "analytics": false
+    "analytics": false,
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ]
   }
 }

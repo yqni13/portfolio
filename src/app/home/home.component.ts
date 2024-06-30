@@ -12,7 +12,7 @@ export class HomeComponent {
     alias: "yqni13"
   }
   
-  constructor() {}
-
-
+  constructor() { 
+    // comment to avoid triggering eslint
+  }
 }

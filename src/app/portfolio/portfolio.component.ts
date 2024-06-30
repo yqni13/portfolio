@@ -3,6 +3,7 @@ import { SharedDataService } from '../../api/service/shared-data.service';
 import { IJsonItem } from '../../api/model/jsonProjectDataRequest';
 import { FilterJSONService } from '../../api/service/filter-json.service';
 import { PortfolioType } from '../../api/static/portfolio-type.enum';
+import {default as jsonData } from '../../api/json/project-data.json';
 
 @Component({
   selector: 'app-portfolio',
@@ -15,10 +16,10 @@ export class PortfolioComponent implements OnInit {
   
   portfolioType = PortfolioType; // need to use in html
   activeType: PortfolioType = 'all';
-  hasInput: boolean = false;
-  hasOutput: boolean = true;
-  projectData: IJsonItem = require("../../api/json/project-data.json");
-  keywordInput: string = '';
+  hasInput = false;
+  hasOutput = true;
+  projectData: IJsonItem;
+  keywordInput = '';
   exceptionProperties: string[] = [
     "githublink",
     "cardScreenPath",
@@ -29,7 +30,9 @@ export class PortfolioComponent implements OnInit {
   constructor(
     private sharedDataService: SharedDataService,
     private filterJsonService: FilterJSONService
-  ) { }
+  ) { 
+    this.projectData = jsonData;
+  }
 
   ngOnInit() {
     this.filterJsonService.setSource(this.projectData);
@@ -58,6 +61,7 @@ export class PortfolioComponent implements OnInit {
     this.setPortfolioCards();
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   detectKeywordInput(event: any) {
     if(event.target.value) 
       this.hasInput = true
@@ -76,7 +80,9 @@ export class PortfolioComponent implements OnInit {
   }
 
   checkForEmptyResults() {
-    (Object.keys(this.projectData).length) ? this.hasOutput = true : this.hasOutput = false ;
+    if(Object.keys(this.projectData).length) 
+      this.hasOutput = true 
+    else 
+      this.hasOutput = false ;
   }
-
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationStart, Router } from '@angular/router';
 import _ from 'underscore';
 
 @Component({
@@ -9,16 +9,21 @@ import _ from 'underscore';
 })
 export class AppComponent implements OnInit {
 
-  public version: string = '2.4.3';
+  public version = '2.5.0';
   public copyrightYear: number = new Date().getFullYear();
-  public setDark: string = "";
-  public setLight: string = "";
-  public isAccepted: boolean = false;
+  public setDark = "";
+  public setLight = "";
+  public isAccepted = false;
   
   private mobileNavExpended = false;
   private collapseNavbarWidth = 768;
   
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
+    router.events.subscribe(e => {
+      if(e instanceof NavigationStart)
+        window.scrollTo(0,0)
+    })
+  }
 
   ngOnInit() {
     this.checkThemeCookie();
@@ -28,13 +33,13 @@ export class AppComponent implements OnInit {
     this.setNavWidthDynamically(document.body.clientWidth);
 
     // adapt to device screen resolution
-    var screenWidthRequestSlowedDown = _.debounce( () => {
+    const screenWidthRequestSlowedDown = _.debounce( () => {
       this.setNavWidthDynamically(window.screen.width);
     }, 250)
     window.addEventListener("resize", screenWidthRequestSlowedDown, false);
     
     // adapt to zoom level
-    var clientWidthRequestSlowedDown = _.debounce( () => {
+    const clientWidthRequestSlowedDown = _.debounce( () => {
       this.setNavWidthDynamically(document.body.clientWidth);
     }, 250)
     window.addEventListener("resize", clientWidthRequestSlowedDown, false);
@@ -81,7 +86,7 @@ export class AppComponent implements OnInit {
   }
 
   checkThemeCookie() {
-    let theme = localStorage.getItem("theme");
+    const theme = localStorage.getItem("theme");
     if(!theme) {
       this.setDarkMode();      
       return;
@@ -95,7 +100,7 @@ export class AppComponent implements OnInit {
   }
 
   checkAlertCookie() {
-    let alertCookie = localStorage.getItem("yqni13-alert");
+    const alertCookie = localStorage.getItem("yqni13-alert");
     switch(alertCookie) {
       case 'true':
         this.isAccepted = true;

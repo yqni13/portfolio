@@ -4,6 +4,10 @@
 
 <br>
 
+### 2024/6/28 - $\textsf{update\ 2.4.3\ >>\ {\color{pink}2.5.0}}$
+
+- $\textsf{\color{green}Change:}$ Added 'angular-eslint' and fixed all lint errors.
+
 ### 2024/6/24 - $\textsf{update\ 2.3.2\ >>\ {\color{pink}2.4.3}}$
 
 - $\textsf{\color{green}Change:}$ Upgraded from Angular v17 to Angular v18.
