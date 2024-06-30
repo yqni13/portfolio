@@ -26,7 +26,7 @@ module.exports = tseslint.config(
         "error",
         {
           type: "element",
-          prefix: ["app", "template"],
+          prefix: ["app", "ng-template"],
           style: "kebab-case",
         },
       ],

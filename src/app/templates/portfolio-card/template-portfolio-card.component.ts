@@ -4,7 +4,7 @@ import { SharedDataService } from "../../../api/service/shared-data.service";
 import { Observable, Subscription, of } from "rxjs";
 
 @Component({
-    selector: 'template-portfolio-card',
+    selector: 'ng-template-portfolio-card',
     templateUrl: './template-portfolio-card.component.html',
     styleUrl: './template-portfolio-card.component.scss'
 })

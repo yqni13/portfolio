@@ -17,14 +17,14 @@ export class AppComponent implements OnInit {
   
   private mobileNavExpended = false;
   private collapseNavbarWidth = 768;
-  title: string;
+  owner: string;
   
   constructor(private router: Router) {
     router.events.subscribe(e => {
       if(e instanceof NavigationStart)
         window.scrollTo(0,0)
     })
-    this.title = 'portfolio';
+    this.owner = 'Lukas Varga';
   }
 
   ngOnInit() {
