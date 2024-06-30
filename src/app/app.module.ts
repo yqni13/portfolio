@@ -9,7 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { CvComponent } from './cv/cv.component';
-import { TemplatePortfolioCardComponent } from './templates/portfolio-card/template-portfolio-card.component';
+import { TemplateModule } from './templates/template.module';
 
 
 @NgModule({
@@ -18,14 +18,14 @@ import { TemplatePortfolioCardComponent } from './templates/portfolio-card/templ
     HomeComponent,
     AboutComponent,
     CvComponent,
-    PortfolioComponent,
-    TemplatePortfolioCardComponent
+    PortfolioComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
+    TemplateModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

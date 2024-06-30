@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PortfolioComponent } from './portfolio.component';
+import { TemplateModule } from '../templates/template.module';
+import { SharedDataService } from '../../api/service/shared-data.service';
+import { FilterJSONService } from '../../api/service/filter-json.service';
 
 describe('PortfolioComponent', () => {
   let component: PortfolioComponent;
@@ -8,7 +11,12 @@ describe('PortfolioComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [PortfolioComponent]
+      imports: [TemplateModule],
+      declarations: [PortfolioComponent],
+      providers: [
+        SharedDataService,
+        FilterJSONService
+      ]
     })
     .compileComponents();
     
