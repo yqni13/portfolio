@@ -118,9 +118,10 @@ To optimize work I use the VS Code extension 'ESLint' from Microsoft.
 ## Updates
 
 [list of all updates](src/docs/update_protocol.md)
-### $\textsf{last\ update\ 2.4.3\ >>\ {\color{pink}2.5.0}}$
+### $\textsf{last\ update\ 2.5.0\ >>\ {\color{pink}2.5.?}}$
 
-- $\textsf{\color{green}Change:}$ Added 'angular-eslint' and fixed all lint errors.
+- $\textsf{\color{red}Bugfix:}$ Navigating to other page in menu resets scroll to top position (refresh gets back to current scroll position). [Before: Scroll position was used for next page so that it didn't start at top.]
+- $\textsf{\color{red}Bugfix:}$ The component 'portfolio' shows the correct number of cards with the regarding data. [Before: Due to change of ESLint errors, json data was fetched by import but loaded single objects additional to default collection of objects. Needed adaption in import command to load data only from default.]
 
 <br>
 

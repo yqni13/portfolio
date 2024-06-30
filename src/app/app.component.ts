@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationStart, Router } from '@angular/router';
 import _ from 'underscore';
 
 @Component({
@@ -18,7 +18,12 @@ export class AppComponent implements OnInit {
   private mobileNavExpended = false;
   private collapseNavbarWidth = 768;
   
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
+    router.events.subscribe(e => {
+      if(e instanceof NavigationStart)
+        window.scrollTo(0,0)
+    })
+  }
 
   ngOnInit() {
     this.checkThemeCookie();

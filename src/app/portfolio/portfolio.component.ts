@@ -3,7 +3,7 @@ import { SharedDataService } from '../../api/service/shared-data.service';
 import { IJsonItem } from '../../api/model/jsonProjectDataRequest';
 import { FilterJSONService } from '../../api/service/filter-json.service';
 import { PortfolioType } from '../../api/static/portfolio-type.enum';
-import * as jsonData from '../../api/json/project-data.json';
+import {default as jsonData } from '../../api/json/project-data.json';
 
 @Component({
   selector: 'app-portfolio',
@@ -18,7 +18,7 @@ export class PortfolioComponent implements OnInit {
   activeType: PortfolioType = 'all';
   hasInput = false;
   hasOutput = true;
-  projectData: IJsonItem = jsonData;
+  projectData: IJsonItem;
   keywordInput = '';
   exceptionProperties: string[] = [
     "githublink",
@@ -30,7 +30,9 @@ export class PortfolioComponent implements OnInit {
   constructor(
     private sharedDataService: SharedDataService,
     private filterJsonService: FilterJSONService
-  ) { }
+  ) { 
+    this.projectData = jsonData;
+  }
 
   ngOnInit() {
     this.filterJsonService.setSource(this.projectData);
