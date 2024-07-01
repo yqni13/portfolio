@@ -30,7 +30,7 @@ jobs:
 
       - name: Deploy to GitHub Pages
         run:
-          npx angular-cli-ghpages --dir=dist/portfolio --repo=https://github.com/yqni13/portfolio.git --base-href=/portfolio/ --branch=production
+          npx angular-cli-ghpages --dir=dist/portfolio --repo=https://github.com/yqni13/portfolio.git --branch=production
 
         env:
           GH_PAT: ${{ secrets.PORTFOLIO_PAT }}
