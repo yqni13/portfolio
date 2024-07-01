@@ -19,20 +19,26 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Lint
-        run: npm run lint
-
-      - name: Tests
-        run: npm run test:prod
-
       - name: Build
         run: npm run build:prod
 
       - name: List build directory for debugging
         run: ls -al dist/portfolio/browser
 
-      - name: Deploy to GitHub Pages
+      - name: Lint
+        run: npm run lint
+
+      - name: Tests
+        run: npm run test:prod
+
+      - name: Configure Git
         run:
-          npx angular-cli-ghpages --dir=dist/portfolio/browser --repo=https://github.com/yqni13/portfolio.git --branch=production --no-silent
+          git config --global user.email "yqni13@protonmail.com"
+          git config --global user.name "yqni13"
+
+      - name: Deploy to GitHub Pages
         env:
           GH_PAT: ${{ secrets.PORTFOLIO_PAT }}
+        run:
+          npx angular-cli-ghpages --dir=dist/portfolio/browser --repo=https://github.com/yqni13/portfolio.git --branch=production --no-silent
+        
