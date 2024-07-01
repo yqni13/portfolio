@@ -9,11 +9,11 @@ import _ from 'underscore';
 })
 export class AppComponent implements OnInit {
 
-  public version = '2.5.0';
+  public version = '2.5.5';
   public copyrightYear: number = new Date().getFullYear();
   public setDark = "";
   public setLight = "";
-  public isAccepted = false;
+  // public isAccepted = false;
   
   private mobileNavExpended = false;
   private collapseNavbarWidth = 768;
@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.checkThemeCookie();
-    this.checkAlertCookie();
+    // this.checkAlertCookie(); // TODO: disabled unless hotfix necessary
     
     this.setNavWidthDynamically(window.screen.width);
     this.setNavWidthDynamically(document.body.clientWidth);
@@ -101,28 +101,28 @@ export class AppComponent implements OnInit {
     }
   }
 
-  checkAlertCookie() {
-    const alertCookie = localStorage.getItem("yqni13-alert");
-    switch(alertCookie) {
-      case 'true':
-        this.isAccepted = true;
-        break;
-      case 'false':
-        this.isAccepted = false;
-        break;
-      default:
-        this.isAccepted = false;
-    }
-  }
+  // checkAlertCookie() {
+  //   const alertCookie = localStorage.getItem("yqni13-alert");
+  //   switch(alertCookie) {
+  //     case 'true':
+  //       this.isAccepted = true;
+  //       break;
+  //     case 'false':
+  //       this.isAccepted = false;
+  //       break;
+  //     default:
+  //       this.isAccepted = false;
+  //   }
+  // }
 
-  openAlertMsg() {
-    this.isAccepted = false;
-  }
+  // openAlertMsg() {
+  //   this.isAccepted = false;
+  // }
 
-  closeAlertMsg() {
-    this.isAccepted = true;
-    localStorage.setItem('yqni13-alert', 'true');
-  }
+  // closeAlertMsg() {
+  //   this.isAccepted = true;
+  //   localStorage.setItem('yqni13-alert', 'true');
+  // }
 
 
 }
