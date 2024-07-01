@@ -142,7 +142,7 @@
         "type": "frontend",
         "title": "Portfolio",
         "version": "2.5.5",
-        "keywords": "live demo | portfolio | angular framework | english | responsive | custom design | dark/light theme | animation | custom search filter | template | multi page layout | custom alert | ESLint | CI/CD Workflow",
+        "keywords": "live demo | portfolio | angular framework | english | responsive | custom design | dark/light theme | animation | custom search filter | template | multi page layout | custom alert | ESLint | CI/CD workflow",
         "technology": "Angular | RxJS | JSON",
         "cardScreenPath": "assets/img/web_portfolio.jpg",
         "githublink": "https://github.com/yqni13/portfolio",

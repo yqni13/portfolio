@@ -20,7 +20,7 @@ $\texttt{\color{teal}{v2.5.5}}$
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.6.
 
-### <a href="https://yqni13.github.io/portfolio">TRY LIVE DEMO</a>
+### <a href="https://yqni13.github.io/portfolio/home">TRY LIVE DEMO</a>
 
 <br>
 
@@ -31,11 +31,14 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 Get startet with `npm install` to create necessary modules and run `ng serve` to start on local dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ### BUILD & DEPLOY
-Hosting an Angular project via GitHub-Pages needs a bit more effort. Firstly, install the regarding package via `ng add angular-cli-ghpages`. See <a href="https://docs.angular.lat/guide/deployment">list of packages</a> for different hosting platforms deployed by cli. Run tests locally to avoid failed deployments ([see 'Testing'](#testing)). To host the application on GitHub, a customized CI/CD workflow is used which automatically starts when code changes are merged into the 'master' branch. By adding 'deploy.yml' to .github/workflows folder (folder starts from same level as angular.json), the run script will execute tests (ESLint and Angular unit-tests) before building the project and deploying it via angular-cli-ghpages on the predefined 'production' branch. All commands to run are keys in 'deploy.yml' and full commands as value for the keys in 'package.json' to find.
+Hosting an Angular project via GitHub-Pages needs a bit more effort. Firstly, install the regarding package via `ng add angular-cli-ghpages`. See <a href="https://docs.angular.lat/guide/deployment">list of packages</a> for different hosting platforms deployed by cli. Run tests locally to avoid failed deployments ([see 'Testing'](#testing)). To host the application on GitHub, a customized CI/CD workflow is used which automatically starts when code changes are merged into the 'master' branch. By adding 'deploy.yml' to .github/workflows folder (folder starts from same level as angular.json), the script will be executed in the workflow and run tests (ESLint and Angular unit-tests) before building the project and deploying it via angular-cli-ghpages on the 'gh-pages' branch. All commands to run are keys in 'deploy.yml' and full commands as value for the keys in 'package.json' to find.
+<br><br>
+Please consider for deploying the Angular project on GitHub via GitHub-Workflow, it is necessary to identify as user for the intern commits and to use a PAT (Personal Access Token, place as repository secret) for the git remote url (1x git remote config, 1x repo option deploy command) [see deploy.yml](.github/workflows/deploy.yml). 
 <br><br>
 build:prod >> `ng build --configuration production --base-href https://<username>.github.com/<projectname>`
 <br>
-deploy >> `npx angular-cli-ghpages --dir=dist/<projectname> --repo=https://github.com/<username>/<projectname>.git --base-href=/<projectname>/ --branch=production`
+deploy >> `npx angular-cli-ghpages --dir=dist/<projectname>/browser --repo=https://${{ secrets.PORTFOLIO_PAT }}@github.com/<username>/<projectname>.git --no-silent`
+<br>
 
 <br><br>
 
@@ -47,6 +50,7 @@ deploy >> `npx angular-cli-ghpages --dir=dist/<projectname> --repo=https://githu
     <dd>:art: Customized style</dd>
     <dd>:mag: Customized filter search</dd>
     <dd>:busts_in_silhouette: Customized template (portfolio cards)</dd>
+    <dd>:repeat: Using GitHub CI/CD workflow for automatic build & deployment</dd>
 </dl>
 <br>
 
