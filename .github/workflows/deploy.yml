@@ -41,5 +41,5 @@ jobs:
           GH_PAT: ${{ secrets.PORTFOLIO_PAT }}
         run: |
           git remote set-url origin https://${{ secrets.PORTFOLIO_PAT }}@github.com/yqni13/portfolio.git
-          npx gh-pages -d dist/portfolio/browser -b production -r https://${{ secrets.PORTFOLIO_PAT }}@github.com/yqni13/portfolio.git --message "Deploy to production" --no-silent
+          npx gh-pages -d dist/portfolio/browser -b production -r https://${{ secrets.PORTFOLIO_PAT }}@github.com/yqni13/portfolio.git --message "Deploy to production"
         
