@@ -28,6 +28,9 @@ jobs:
       - name: Build
         run: npm run build:prod
 
+      - name: List build directory for debugging
+        run: ls -al dist/portfolio/browser
+
       - name: Deploy to GitHub Pages
         run:
           npx angular-cli-ghpages --dir=dist/portfolio/browser --repo=https://github.com/yqni13/portfolio.git --branch=production
