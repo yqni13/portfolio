@@ -39,6 +39,7 @@ jobs:
       - name: Deploy to GitHub Pages
         env:
           GH_PAT: ${{ secrets.PORTFOLIO_PAT }}
-        run:
+        run: |
+          git remote set-url origin https://${{ secrets.PORTFOLIO_PAT }}@github.com/yqni13/portfolio.git
           npx angular-cli-ghpages --dir=dist/portfolio/browser --repo=https://github.com/yqni13/portfolio.git --branch=production --no-silent
         
