@@ -1,12 +1,7 @@
 # yqni13 portfolio
-$\texttt{\color{teal}{v2.5.0}}$
+$\texttt{\color{teal}{v2.5.5}}$
 
-<br>
 
-$\texttt{\color{red}{!\ !\ !\ }}$<br>
-<b>Currently deployment via angular-cli-ghpages does NOT work for this portfolio. That is why the deployment is running on the 'production' branch instead of the 'gh-pages' branch, which apparently DOES NOT SUPPORT angular multi page applications. Refreshing the webpage will lead to 404 and homepage must be navigated to https://yqni13.github.io/portfolio again. The new version is build into '/docs' folder (hosting is set to check all necessary files in there) and normally merged into 'production' branch. Please note that I am working on this issue parallel to some security vulnerabilities and updating to Angular 18.
-</b><br>
-$\texttt{\color{red}{!\ !\ !\ }}$
 <br><br>
 
 <div>
@@ -36,7 +31,12 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 Get startet with `npm install` to create necessary modules and run `ng serve` to start on local dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ### BUILD & DEPLOY
-To host the application on GitHub Pages directly from CLI, install the regarding package via `ng add angular-cli-ghpages`. See <a href="https://docs.angular.lat/guide/deployment">list of packages</a> for different hosting platforms deployed by command. Firstly, try the production build locally via command `ng serve --configuration production` to see, if there are differences between development and production build. Run `ng build --configuration production --base-href https://<username>.github.io/<projectname>` to create a deployable build in the folder /dist. For deployment, run `ng deploy --base-href=/<projectname>/` to push the necessary code automatically and trigger the workflow starting until project on 'https://username.github.io/projectname' is deployed. In contrast to my non-framework projects, the deployment will happen for angular projects on the 'gh-pages' branch due to the CLI-deployment instead of a 'production' branch.
+Hosting an Angular project via GitHub-Pages needs a bit more effort. Firstly, install the regarding package via `ng add angular-cli-ghpages`. See <a href="https://docs.angular.lat/guide/deployment">list of packages</a> for different hosting platforms deployed by cli. Run tests locally to avoid failed deployments ([see 'Testing'](#testing)). To host the application on GitHub, a customized CI/CD workflow is used which automatically starts when code changes are merged into the 'master' branch. By adding 'deploy.yml' to .github/workflows folder (folder starts from same level as angular.json), the run script will execute tests (ESLint and Angular unit-tests) before building the project and deploying it via angular-cli-ghpages on the predefined 'production' branch. All commands to run are keys in 'deploy.yml' and full commands as value for the keys in 'package.json' to find.
+<br><br>
+build:prod >> `ng build --configuration production --base-href https://<username>.github.com/<projectname>`
+<br>
+deploy >> `npx angular-cli-ghpages --dir=dist/<projectname> --repo=https://github.com/<username>/<projectname>.git --base-href=/<projectname>/ --branch=production`
+
 <br><br>
 
 ## Features
@@ -115,11 +115,21 @@ To optimize work I use the VS Code extension 'ESLint' from Microsoft.
 
 <br>
 
+### Angular unit tests & other tests
+
+Specified unit tests in xyz.component.spec.ts files or other tests are my last step of testing locally and in the CI/CD workflow. Run the following command in Powershell/Terminal:<br>
+`ng test --browsers=ChromeHeadless --watch=false --code-coverage`
+
+<br>
+
 ## Updates
 
 [list of all updates](src/docs/update_protocol.md)
-### $\textsf{last\ update\ 2.5.0\ >>\ {\color{pink}2.5.?}}$
+### $\textsf{last\ update\ 2.5.0\ >>\ {\color{pink}2.5.5}}$
 
+- $\textsf{\color{red}Patch:}$ Addressing webpage stability issues: Disabled error alert because of fixed hosting.
+- $\textsf{\color{red}Bugfix:}$ Default unit tests have all necessary declarations and imports. [Before: Template was not recognised as existing component because unit tests were missing the regarding declarations and imports.]
+- $\textsf{\color{red}Bugfix:}$ Hosting works again (refreshing does not lead to error 404) and CI/CD pipeline adapted. [Before: Necessary options in deployment command missing. Customized workflow was missing.]
 - $\textsf{\color{red}Bugfix:}$ Navigating to other page in menu resets scroll to top position (refresh gets back to current scroll position). [Before: Scroll position was used for next page so that it didn't start at top.]
 - $\textsf{\color{red}Bugfix:}$ The component 'portfolio' shows the correct number of cards with the regarding data. [Before: Due to change of ESLint errors, json data was fetched by import but loaded single objects additional to default collection of objects. Needed adaption in import command to load data only from default.]
 

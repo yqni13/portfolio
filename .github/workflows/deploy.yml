@@ -29,9 +29,8 @@ jobs:
         run: npm run build:prod
 
       - name: Deploy to GitHub Pages
-        uses: crazy-max/ghaction-github-pages@v4
-        with:
-          target_branch: gh-pages
-          build_dir: dist/portfolio
+        run:
+          npx angular-cli-ghpages --dir=dist/portfolio --repo=https://github.com/yqni13/portfolio.git --base-href=/portfolio/ --branch=production
+
         env:
           GH_PAT: ${{ secrets.PORTFOLIO_PAT }}
