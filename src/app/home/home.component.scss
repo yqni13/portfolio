@@ -11,7 +11,7 @@
 }
 
 .home::before {
-    background-image: url("../../assets/img/wallpaper3.png");
+    background-image: url(../../assets/img/wallpaper3.png);
     background-size: cover;
     background-position-y: 20%;
     opacity: var(--opacity-bg);
@@ -27,19 +27,18 @@
     flex-direction: column;
 }
 
-.left {
+.introduction {
     align-self: center;
     text-align: left;
+    p {
+        color: var(--header-color);
+    }
 }
 
 .frontend {
     background: var(--home-frontend);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-}
-
-.left p {
-    color: var(--header-color);
 }
 
 .profile-picture {

@@ -1,7 +1,8 @@
 /* media queries for responsive design regarding devices */
 
-@import "defines.scss";
+@import 'defines.scss';
 
+// TODO(yqni13): adapt styling to avoid !important declarations
 @media screen and (width >= $desktop-width) {
 
     // BASIC
@@ -25,7 +26,7 @@
     }
 
     .home {
-        .left {
+        .introduction {
             max-width: 55%;
             h1 {
                 margin:0px 0px 12px 100px;
@@ -56,16 +57,16 @@
                 font-size: 24px;
             }
         }
-        .left-exp {
+        .experience-list {
             margin-left: 150px!important;
         }
-        .right-edu {
+        .education-list {
             margin-right: 150px!important;
         }
         .wrapper-techstack h4 {
             margin: 0px 100px;
         }
-        .wrapper-ul {
+        .techstack-list {
             margin: 0px 100px;
             ul {
                 width: 75%;
@@ -123,7 +124,7 @@
     }
     
     .home {
-        .left {
+        .introduction {
             max-width: 55%;
             h1 {
                 font-size: 45px;
@@ -185,16 +186,16 @@
                 font-size: 20px;
             }
         }
-        .left-exp {
+        .experience-list {
             margin-left: 100px!important;
         }
-        .right-edu {
+        .education-list {
             margin-right: 100px!important;
         }
         .wrapper-techstack h4 {
             margin: 0px 100px;
         }
-        .wrapper-ul {
+        .techstack-list {
             margin: 0px 100px;
             ul {
                 width: 100%;
@@ -268,7 +269,7 @@
 
     .home {
         justify-content: center;
-        .left {
+        .introduction {
             max-width: 75%;
             padding-bottom: 50px;
             h1 {
@@ -343,22 +344,22 @@
     }
 
     .cv {
-        .left-exp {
+        .experience-list {
             margin-left: 50px!important;
         }
-        .right-edu {
+        .education-list {
             margin-right: 50px!important;
         }
         .wrapper-techstack h4 {
             margin: 0px 100px;
         }
-        .wrapper-ul {
+        .techstack-list {
             margin: 0px 50px;
             ul {
                 width: 100%;
             }
         }
-        .wrapper-ul i {
+        .techstack-list i {
             width: 50px!important;
             height: 50px!important;
         }
@@ -446,7 +447,7 @@
         &::before {
             background-position-x:25%;
         }
-        .left {
+        .introduction {
             max-width: 100%;
             padding-bottom: 50px;
             h1 {
@@ -505,17 +506,17 @@
         h2 {
             margin: 50px 50px 0px 50px!important;
         }
-        .cv-download {
+        .btn-download .cv{
             margin: 50px 0px!important;
         }
         .wrapper-cv {
             margin: 0!important;
             display: inline-block!important;
         }
-        .left-exp {
+        .experience-list {
             margin: 0px 0px 50px 0px!important;
         }
-        .right-edu {
+        .education-list {
             margin: 0px 0px 100px 0px!important;
             text-align: left!important;
             h4 {
@@ -533,13 +534,13 @@
         .wrapper-techstack {
             margin: 0 50px!important;
         }
-        .wrapper-ul {
+        .techstack-list {
             margin: 0;
             ul {
                 width: 100%;
             }
         }
-        .wrapper-ul i {
+        .techstack-list i {
             width: 40px!important;
             height: 40px!important;
         }
@@ -555,7 +556,7 @@
             justify-content: center;
             margin: 0px 50px!important;
         }
-        .portfolio-wrapper {
+        .wrapper-portfolio {
             margin: 50px 50px 25px 50px!important;
         }
     }
@@ -586,7 +587,7 @@
             form {
                 margin: 0px!important;
             }
-            .download-button {
+            .btn-download .about{
                 text-align: center!important;
                 margin-left: 0px!important;
             }

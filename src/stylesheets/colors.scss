@@ -3,103 +3,42 @@
     --yqni13-purple: #650d88;
     --yqni13-pink: #bc0c79;
 
-    /* white type colors */
-    --snow-white: #fffafa;
-    --ghost-white: #f8f8ff;
+    /* basic colors */
     --alice-blue: #f0f8ff;
-    --antiflesh-white: #fafafa;
-    --gainsboro-white: #f1eff2;
-    --off-white: #fbfbfb;
-    --ivory-white: #fffff0;
-
-    /* black type colors */
-    --obsidian-black: #0b1215; // nr 1
-    --charcoal-grey: #171717;
-    --oil-black: #0c0c0c;
-    --darkslate-grey: #0d1717;    
-    
-    /* dark blue type colors */
-    --midnight-blue: #101720;
     --deepnavy-blue: #011222;
     --rich-black: #020d19;
 
-    /* dark mode theme#1 dark-red */
-    --darkmode1-black1: #000000;
-    --darkmode1-red1: #3d0000;
-    --darkmode1-red2: #950101;
-    --darkmode1-red3: #ff0000;
-
-    /* dark mode theme#2 dark-orange */
-    --darkmode2-black1: #222831;
-    --darkmode2-grey1: #393e46;
-    --darkmode2-orange1: #fd7014;
-    --darkmode2-white1: #eeeeee;
-
-    /* dark mode theme#3 dark-pink */
-    --darkmode3-black1: #000000;
-    --darkmode3-pink1: #86003c;
-    --darkmode3-pink2: #e41f7b;
-    --darkmode3-pink3: #ff8ba0;
-
-    /* dark mode theme#4 dark-turquoise */
-    --darkmode4-black1: #222831;
-    --darkmode4-grey1: #393e46;
-    --darkmode4-torquoise1: #00adb5;
-    --darkmode4-torquoise2: #00fff5;
-
-    /* dark mode theme#5 dark-purple */
-    --darkmode5-black1: #000000;
-    --darkmode5-purple1: #3e065f;
-    --darkmode5-purple2: #700b97;
-    --darkmode5-purple3: #8e05c2;
-
-    /* dark mode theme6 dark-grey */
-    --darkmode6-black1: #2a2438;
-    --darkmode6-grey1: #352f44;
-    --darkmode6-grey2: #5c5470;
-    --darkmode6-grey3: #dbd8e3;
-
-    /* white mode theme1 grey/brown/beige */
-    --whitemode1-champagne: #8fd0b8;
-    --whitemode1-sand: #eecaab;
-    --whitemode1-grey: #e9e6db;
-    --whitemode1-cultured: #fbf7f4;
-    --whitemode1-pink: #ca7394;
-
     /* other defined colors */
-    --phtalo-green: #0d413a;
-    --bordeau-red: #420116;
-    --tangerine-yellow: #f3b20e;
-    --acting-grey: #7e7e7e;
-    --highlight-grey: rgba(128, 128, 128, 0.4);
-    --tyrian-purple: #33002a;
-    --close-red: #901919;
-    --warning-red: #ca2b2b;
     --accept-green: #127412;
-    --teal-color: #1c6e5e;
+    --darktext-grey: #5c5470;
+    --header-grey: #352f44;
+    --light-pink: #ca7394;
+    --lightopacity-grey: rgba(128, 128, 128, 0.4);
+    --lighttext-grey: #7e7e7e;
+    --tangerine-yellow: #f3b20e;
+    --tyrian-purple: #33002a;
+    --warning-red: #ca2b2b;
 
     /* BACKGROUND-IMAGE LINEAR-GRADIENT */
-    --yqni13-gradient: linear-gradient(167deg, #650d88 42%, #bc0c79 90%);
-    --portfolio-deepnavyblue: conic-gradient(from 0deg at 0% 0%,#f0f8ff 2% 6%, 7%, #011222 47% 9%);
     --bg-gradientdark: conic-gradient(from 0deg at 0% 0%,#f0f8ff 2% 6%, 7%, #101720 47% 9%);
     --gradient-tyrianpurple: conic-gradient(from 0deg at 0% 0%,#f0f8ff 0%, 25%, #33002a 47% 0%);
-        
+    --portfolio-deepnavyblue: conic-gradient(from 0deg at 0% 0%,#f0f8ff 2% 6%, 7%, #011222 47% 9%);
+    --yqni13-gradient: linear-gradient(167deg, #650d88 42%, #bc0c79 90%);
+
     /* filter to change color of png */
-    // white --alice-blue
-    --signature-aliceblue: invert(100%) sepia(59%) saturate(5190%) hue-rotate(179deg) brightness(107%) contrast(107%);
-    // grey --highlight-grey
     --signature-grey: invert(33%) sepia(9%) saturate(1336%) hue-rotate(216deg) brightness(94%) contrast(85%);
+    --signature-white: invert(100%) sepia(59%) saturate(5190%) hue-rotate(179deg) brightness(107%) contrast(107%);
 }
 
-[data-theme="light"] {
+[data-theme='light'] {
     --navbar-bg: var(--tyrian-purple);
-    --navbar-content: var(--acting-grey);
+    --navbar-content: var(--lighttext-grey);
     --navbar-text: var(--alice-blue);
     --navbar-border: var(--yqni13-pink);
     --body-bg: var(--alice-blue);
-    --header-color: var(--darkmode6-grey1);
-    --text-color: var(--darkmode6-grey2);
-    --button-color: var(--whitemode1-pink);
+    --header-color: var(--header-grey);
+    --text-color: var(--darktext-grey);
+    --button-color: var(--light-pink);
     --border-line: var(--yqni13-pink);
     --home-img: var(--gradient-tyrianpurple);
     --home-frontend: var(--yqni13-gradient);
@@ -112,11 +51,11 @@
     --opacity-bg: 0.45;
 }
 
-[data-theme="dark"] {
+[data-theme='dark'] {
     --navbar-bg: var(--deepnavy-blue);
-    --navbar-content: var(--acting-grey);
+    --navbar-content: var(--lighttext-grey);
     --navbar-text: var(--alice-blue);
-    --navbar-border: var(--highlight-grey);
+    --navbar-border: var(--lightopacity-grey);
     --body-bg: var(--bg-gradientdark);
     --header-color: var(--alice-blue);
     --text-color: var(--alice-blue);
@@ -127,7 +66,7 @@
     --about-imgbg: var(--portfolio-deepnavyblue);
     --about-shadow: var(--yqni13-gradient);
     --portfolio-card: var(--portfolio-deepnavyblue);
-    --signature-color: var(--signature-aliceblue);
+    --signature-color: var(--signature-white);
     --github-color: var(--alice-blue);
     --active-link: var(--yqni13-gradient);
     --opacity-bg: 0.25;

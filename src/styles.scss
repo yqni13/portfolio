@@ -1,39 +1,43 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import "stylesheets/media.scss";
-@import "stylesheets/icons.scss";
-@import "stylesheets/defines.scss";
-@import "stylesheets/colors.scss";
+@import 'stylesheets/media.scss';
+@import 'stylesheets/icons.scss';
+@import 'stylesheets/defines.scss';
+@import 'stylesheets/colors.scss';
 
 $font-selection: system-ui;
 
 html {
-    scrollbar-width: none;
     cursor: context-menu;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
     font-family: $font-selection;
+    scrollbar-width: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 body {
-    text-align: center;
-    width:100vw;
-    height:100vh;
-    margin:0;
     background: var(--body-bg);
     background-attachment: fixed;
     background-repeat: no-repeat;
+    height:100vh;
+    margin:0;
+    text-align: center;
+    width:100vw;
 }
 
 mat-toolbar {
     justify-content: center;    
 }
 
-h1, h2, h3, h4, h5 {
+h1, 
+h2, 
+h3, 
+h4, 
+h5 {
+    color: var(--header-color);
     margin-block-start: 0px;
     margin-block-end: 0px;
-    color: var(--header-color);
 }
 
 h1 {
@@ -43,16 +47,16 @@ h1 {
 }
 
 h2 {
-    font-size: 48px;
-    text-align: left;
-    margin: 50px 100px 0px 100px;
     border-bottom: solid var(--border-line);
+    font-size: 48px;
+    margin: 50px 100px 0px 100px;
+    text-align: left;
     &:after {
+        color: var(--lightopacity-grey);
         font-size: 80px;
-        color: var(--highlight-grey);
+        left: 210px;
         position: absolute;
         top: 17px;
-        left: 210px;
         z-index: -1;
     }
 }
@@ -61,8 +65,8 @@ h2 {
 h4 {
     font-size:34px;
     margin-block-end: -10px;
-    text-align: left;
     margin-left: 50px;
+    text-align: left;
 }
 
 h5 {
@@ -84,7 +88,30 @@ input {
 
 .active-route {
     background: var(--active-link);
+    font-weight: bolder;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-weight: bolder;
+}
+
+.btn-download {
+    text-transform: uppercase;
+    
+    a {
+        background: transparent;
+        border: outset var(--button-color) 3px;
+        border-radius: 10px;
+        color: var(--button-color);
+        cursor: pointer;
+        font-weight: bold;
+        letter-spacing: 1px;
+        padding: 10px 25px;
+        text-decoration: none;
+        
+        &:hover {
+            background-color: var(--button-color);
+            border: inset var(--button-color) 1px;
+            color: var(--alice-blue);
+            opacity: 0.6;
+        }
+    }
 }

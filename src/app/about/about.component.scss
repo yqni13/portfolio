@@ -22,6 +22,13 @@ h2 {
     width: 30%;
     float: left;
     order: 1;
+    text-align: center;
+    img {
+        width: 85%;
+        max-width: 330px;
+        height: auto;
+        border-radius: 20px;
+    }
 }
 
 .about-second-info {
@@ -44,10 +51,6 @@ h2 {
 .about-second-info h5,
 .about-third-info h5 {
     margin: 0px 0px 25px 50px;
-}
-
-.profile-picture {
-    text-align: center;
 }
 
 .signature-img {
@@ -75,25 +78,19 @@ h2 {
     }
 }
 
-.profile-picture img {
-    width: 85%;
-    max-width: 330px;
-    height: auto;
-    border-radius: 20px;
-}
-
 .profile-img {
     background-image: var(--about-imgbg);
 }
 
 .info-form,
-.download-button {
+.btn-download {
     text-align: left;
     margin-left: 50px;
     font-size: 18px;
 }
 
 .info-form {
+    padding-bottom: 25px;
     label {
         color: var(--header-color);
         font-weight: bold;
@@ -116,31 +113,7 @@ h2 {
     }
 }
 
-.download-button {
-    margin-top: 25px;
-}
 
-.download-button a {
-    padding: 10px 25px;
-    border: solid var(--button-color) 3px;
-    text-decoration: none;
-    background: transparent;
-    color: var(--button-color);
-    border-color: var(--button-color);
-    border-style: outset;
-    border-radius: 10px;
-    font-weight: bold;
-    cursor: pointer;
-    letter-spacing: 1px;
-}
-
-.download-button a:hover {
-    background-color: var(--button-color);
-    color: var(--alice-blue);
-    opacity: 0.6;
-    border: solid var(--button-color) 1px;
-    border-style: inset;
-}
 
 .about-service,
 .about-funfacts {

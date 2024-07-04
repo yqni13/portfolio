@@ -1,4 +1,4 @@
-<div class="portfolio-wrapper">
+<div class="wrapper-portfolio">
     <div *ngFor="let project of (projectData | async) | keyvalue" class="card">
         <img src="{{project.value.cardScreenPath}}" alt="screenshot of project missing">
         <div class="card-text">
