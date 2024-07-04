@@ -1,84 +1,85 @@
 :root {
     /* yqni13 colors */
-    --yqni13-purple: #650D88;
-    --yqni13-pink: #BC0C79;
+    --yqni13-purple: #650d88;
+    --yqni13-pink: #bc0c79;
 
     /* white type colors */
-    --snow-white: #FFFAFA;
-    --ghost-white: #F8F8FF;
-    --alice-blue: #F0F8FF;
-    --antiflesh-white: #FAFAFA;
-    --gainsboro-white: #F1EFF2;
-    --off-white: #FBFBFB;
-    --ivory-white: #FFFFF0;
+    --snow-white: #fffafa;
+    --ghost-white: #f8f8ff;
+    --alice-blue: #f0f8ff;
+    --antiflesh-white: #fafafa;
+    --gainsboro-white: #f1eff2;
+    --off-white: #fbfbfb;
+    --ivory-white: #fffff0;
 
     /* black type colors */
-    --obsidian-black: #0B1215; // nr 1
+    --obsidian-black: #0b1215; // nr 1
     --charcoal-grey: #171717;
-    --oil-black: #0C0C0C;
-    --darkslate-grey: #0D1717;    
+    --oil-black: #0c0c0c;
+    --darkslate-grey: #0d1717;    
     
     /* dark blue type colors */
     --midnight-blue: #101720;
     --deepnavy-blue: #011222;
-    --rich-black: #020D19;
+    --rich-black: #020d19;
 
     /* dark mode theme#1 dark-red */
     --darkmode1-black1: #000000;
-    --darkmode1-red1: #3D0000;
+    --darkmode1-red1: #3d0000;
     --darkmode1-red2: #950101;
-    --darkmode1-red3: #FF0000;
+    --darkmode1-red3: #ff0000;
 
     /* dark mode theme#2 dark-orange */
     --darkmode2-black1: #222831;
-    --darkmode2-grey1: #393E46;
-    --darkmode2-orange1: #FD7014;
-    --darkmode2-white1: #EEEEEE;
+    --darkmode2-grey1: #393e46;
+    --darkmode2-orange1: #fd7014;
+    --darkmode2-white1: #eeeeee;
 
     /* dark mode theme#3 dark-pink */
     --darkmode3-black1: #000000;
-    --darkmode3-pink1: #86003C;
-    --darkmode3-pink2: #E41F7B;
-    --darkmode3-pink3: #FF8BA0;
+    --darkmode3-pink1: #86003c;
+    --darkmode3-pink2: #e41f7b;
+    --darkmode3-pink3: #ff8ba0;
 
     /* dark mode theme#4 dark-turquoise */
     --darkmode4-black1: #222831;
-    --darkmode4-grey1: #393E46;
-    --darkmode4-torquoise1: #00ADB5;
-    --darkmode4-torquoise2: #00FFF5;
+    --darkmode4-grey1: #393e46;
+    --darkmode4-torquoise1: #00adb5;
+    --darkmode4-torquoise2: #00fff5;
 
     /* dark mode theme#5 dark-purple */
     --darkmode5-black1: #000000;
-    --darkmode5-purple1: #3E065F;
-    --darkmode5-purple2: #700B97;
-    --darkmode5-purple3: #8E05C2;
+    --darkmode5-purple1: #3e065f;
+    --darkmode5-purple2: #700b97;
+    --darkmode5-purple3: #8e05c2;
 
     /* dark mode theme6 dark-grey */
-    --darkmode6-black1: #2A2438;
-    --darkmode6-grey1: #352F44;
-    --darkmode6-grey2: #5C5470;
-    --darkmode6-grey3: #DBD8E3;
+    --darkmode6-black1: #2a2438;
+    --darkmode6-grey1: #352f44;
+    --darkmode6-grey2: #5c5470;
+    --darkmode6-grey3: #dbd8e3;
 
     /* white mode theme1 grey/brown/beige */
     --whitemode1-champagne: #8fd0b8;
-    --whitemode1-sand: #EECAAB;
-    --whitemode1-grey: #E9E6DB;
-    --whitemode1-cultured: #FBF7F4;
+    --whitemode1-sand: #eecaab;
+    --whitemode1-grey: #e9e6db;
+    --whitemode1-cultured: #fbf7f4;
     --whitemode1-pink: #ca7394;
 
     /* other defined colors */
-    --phtalo-green: #0D413A;
+    --phtalo-green: #0d413a;
     --bordeau-red: #420116;
     --tangerine-yellow: #f3b20e;
     --acting-grey: #7e7e7e;
     --highlight-grey: rgba(128, 128, 128, 0.4);
-    --tyrian-purple: #33002A;
+    --tyrian-purple: #33002a;
     --close-red: #901919;
     --warning-red: #ca2b2b;
     --accept-green: #127412;
+    --teal-color: #1c6e5e;
 
     /* BACKGROUND-IMAGE LINEAR-GRADIENT */
-    --yqni13-gradient: linear-gradient(167deg, #650D88 42%, #BC0C79 90%);
+    --yqni13-gradient: linear-gradient(167deg, #650d88 42%, #bc0c79 90%);
     --portfolio-deepnavyblue: conic-gradient(from 0deg at 0% 0%,#f0f8ff 2% 6%, 7%, #011222 47% 9%);
     --bg-gradientdark: conic-gradient(from 0deg at 0% 0%,#f0f8ff 2% 6%, 7%, #101720 47% 9%);
     --gradient-tyrianpurple: conic-gradient(from 0deg at 0% 0%,#f0f8ff 0%, 25%, #33002a 47% 0%);

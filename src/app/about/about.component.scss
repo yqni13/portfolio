@@ -13,45 +13,45 @@ h2 {
     margin-top: 100px;
 }
 
-.wrapper_about_profile {
+.wrapper-about-profile {
     margin: 0px 100px;
     display: flex;
 }
 
-#about_first_info {
+.about-first-info {
     width: 30%;
     float: left;
     order: 1;
 }
 
-#about_second_info {
+.about-second-info {
     width: 40%;
     order: 2;
+
+    p {
+        text-align: justify;
+        font-size: 16px;
+        margin-left: 50px;
+        opacity: 0.7;
+    }
 }
 
-#about_third_info {
+.about-third-info {
     width: 30%;
     order: 3;
 }
 
-#about_second_info p {
-    text-align: justify;
-    font-size: 16px;
-    margin-left: 50px;
-    opacity: 0.7;
-}
-
-#about_second_info h5,
-#about_third_info h5 {
+.about-second-info h5,
+.about-third-info h5 {
     margin: 0px 0px 25px 50px;
 }
 
-.profile_picture {
+.profile-picture {
     text-align: center;
 }
 
-#signature_img {
-    // TODO: first vers only for 1440px width!!
+.signature-img {
+    // TODO(yqni13): first vers only for 1440px width!!
     // width: 200px;
     position: absolute;
     top: 85%;
@@ -59,7 +59,7 @@ h2 {
     filter: var(--signature-color);
 }
 
-.wrapper_img {
+.wrapper-img {
     position: relative;
 
     &:before {
@@ -75,50 +75,52 @@ h2 {
     }
 }
 
-.profile_picture img {
+.profile-picture img {
     width: 85%;
     max-width: 330px;
     height: auto;
     border-radius: 20px;
 }
 
-#profile_img {
+.profile-img {
     background-image: var(--about-imgbg);
 }
 
-#info_form,
-.download_button {
+.info-form,
+.download-button {
     text-align: left;
     margin-left: 50px;
     font-size: 18px;
 }
 
-#info_form label {
-    color: var(--header-color);
-    font-weight: bold;
-    font-size: 20px;
+.info-form {
+    label {
+        color: var(--header-color);
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    input {
+        color: var(--text-color);
+        opacity: 0.7;
+        padding-left: 10px;
+        border: none;
+        background-color: transparent;
+        font-size: 16px;
+        font-family: TimesNewRoman;
+    }
+
+    div {
+        padding: 5px 0px;
+        width: max-content;
+    }
 }
 
-#info_form input {
-    color: var(--text-color);
-    opacity: 0.7;
-    padding-left: 10px;
-    border: none;
-    background-color: transparent;
-    font-size: 16px;
-    font-family: TimesNewRoman;
-}
-
-#info_form div {
-    padding: 5px 0px;
-    width: max-content;
-}
-
-.download_button {
+.download-button {
     margin-top: 25px;
 }
 
-.download_button a {
+.download-button a {
     padding: 10px 25px;
     border: solid var(--button-color) 3px;
     text-decoration: none;
@@ -132,7 +134,7 @@ h2 {
     letter-spacing: 1px;
 }
 
-.download_button a:hover {
+.download-button a:hover {
     background-color: var(--button-color);
     color: var(--alice-blue);
     opacity: 0.6;
@@ -140,8 +142,8 @@ h2 {
     border-style: inset;
 }
 
-.about_service,
-.about_funfacts {
+.about-service,
+.about-funfacts {
     h5 {
         text-align: center;
         margin-bottom: 50px;
@@ -151,16 +153,16 @@ h2 {
     margin: 100px 100px 25px 100px;
 }
 
-.column_service h6,
-.column_funfacts h6 {
+.column-service h6,
+.column-funfacts h6 {
     text-transform: uppercase;
     font-size:20px;
     color: var(--header-color);
     margin:10px 0px 20px 0px;
 }
 
-.about_service,
-.about_funfacts {
+.about-service,
+.about-funfacts {
     p {
         width: 75%;
         font-size: 16px;
@@ -169,25 +171,25 @@ h2 {
     }
 }
 
-.column_service {
+.column-service {
     width: 33.33%;
     display: inline-table;
     text-align: -webkit-center;
 }
 
-.column_service i,
-.column_funfacts i {
+.column-service i,
+.column-funfacts i {
     background-image: var(--yqni13-gradient);
     width:50px;
     height:50px;
 }
 
-.column_service p {
+.column-service p {
     margin-left: 0px;
     max-width: 60%;
 }
 
-.column_funfacts {
+.column-funfacts {
     width: 25%;
     display: inline-table;
     text-align: -webkit-center;

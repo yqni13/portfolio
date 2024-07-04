@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.checkThemeCookie();
-    // this.checkAlertCookie(); // TODO: disabled unless hotfix necessary
+    // this.checkAlertCookie(); // TODO(yqni13): disabled unless hotfix necessary
     
     this.setNavWidthDynamically(window.screen.width);
     this.setNavWidthDynamically(document.body.clientWidth);

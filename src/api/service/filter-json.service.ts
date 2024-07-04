@@ -8,7 +8,7 @@ export class FilterJSONService {
 
     private source: IJsonItem = {};
     private typeFilter = '';
-    private resultKeys: string[] = []; // TODO: solution without this temp guide?
+    private resultKeys: string[] = []; // TODO(yqni13): solution without this temp guide?
     private exceptionKeys: string[] = [];
 
     loopSource(keyword: string): IJsonItem {

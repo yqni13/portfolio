@@ -8,13 +8,13 @@ h2 {
     }
 }
 
-.cv_download {
+.cv-download {
     text-align: center;
     margin: 50px 100px;
     text-transform: uppercase;
 }
 
-.cv_download a {
+.cv-download a {
     padding: 10px 25px;
     text-decoration: none;
     background: transparent;
@@ -27,7 +27,7 @@ h2 {
     letter-spacing: 1px;
 }
 
-.cv_download a:hover {
+.cv-download a:hover {
     background-color: var(--yqni13-pink);
     color: var(--alice-blue);
     opacity: 0.6;
@@ -50,18 +50,18 @@ h4, p {
     margin:0;
 }
 
-.wrapper_cv h4 {
+.wrapper-cv h4 {
     margin-bottom: 25px;
 }
 
-.wrapper_cv {
+.wrapper-cv {
     display: grid;
     grid-template-columns: 50% 50%;
     margin-left: 100px;
     margin-right: 100px;
 }
 
-.left_exp {
+.left-exp {
     margin-left: 50px;
     text-align: left;
     h4 {
@@ -76,7 +76,7 @@ h4, p {
     }
 }
 
-.right_edu {
+.right-edu {
     margin-right: 50px;
     text-align: right;
     h4 {
@@ -91,39 +91,39 @@ h4, p {
     }
 }
 
-.wrapper_techstack {
+.wrapper-techstack {
     margin: 0px 100px;
 }
 
-.wrapper_techstack h4 {
+.wrapper-techstack h4 {
     margin-top: 100px;
     text-align: center;
 }
 
-.wrapper_ul {
+.wrapper-ul {
     text-align: -webkit-center;
 }
 
-.wrapper_ul ul {
+.wrapper-ul ul {
     padding-inline-start: 0;
 }
 
-.wrapper_ul li {
+.wrapper-ul li {
     display: inline;
 }
 
-.wrapper_ul i {
+.wrapper-ul i {
     width: 60px;
     height: 60px;
     margin: 25px 25px;
 }
 
-#horizontal {
+.horizontal {
     height: 60px;
     width:90px!important;
 }
 
-#black_fill {
+.black-fill {
     background-color: var(--github-color);
 }
 
