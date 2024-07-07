@@ -22,10 +22,14 @@ h2 {
     width: 30%;
     float: left;
     order: 1;
+
     text-align: center;
-    img {
+    text-align: -webkit-center;
+    text-align: -moz-center;
+    
+    .profile-img {
         width: 85%;
-        max-width: 330px;
+        max-width: 300px;
         height: auto;
         border-radius: 20px;
     }
@@ -54,8 +58,6 @@ h2 {
 }
 
 .signature-img {
-    // TODO(yqni13): first vers only for 1440px width!!
-    // width: 200px;
     position: absolute;
     top: 85%;
     left: 30%;
@@ -64,6 +66,7 @@ h2 {
 
 .wrapper-img {
     position: relative;
+    max-width: 330px;
 
     &:before {
         content: '';

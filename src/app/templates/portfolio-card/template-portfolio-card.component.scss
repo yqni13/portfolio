@@ -26,6 +26,7 @@ h4 {
     background-clip: padding-box;
     border: solid $border-width transparent;
     border-radius: 10px;
+    overflow: hidden;
 
     &:before {
         content: '';
@@ -45,12 +46,8 @@ h4 {
     border-radius: $card-border;
 }
 
-.card img:hover
-{
-    opacity: 0.25;
-}
-
 .card:hover .card-text {
+    animation: dimension 0.5s ease-in;
     opacity: 1;
 }
 
@@ -86,12 +83,18 @@ h4 {
     }
 }
 
-.card:hover .icon-GitHub {
-    animation-name: github-animation;
-    animation-duration: 2s;
+.card:hover {
+    .icon-GitHub {
+        animation-name: github-animation;
+        animation-duration: 2s;
+    }
 }
 
 @keyframes github-animation {
+    to { transform: scale(1.5) };
+    to { transform: rotate(360deg) };
+}
+@-webkit-keyframes github-animation {
     to { transform: scale(1.5) };
     to { transform: rotate(360deg) };
 }
@@ -102,4 +105,11 @@ h4 {
 
 .a-github {
     color: var(--alice-blue);
+}
+
+@keyframes dimension {
+    from { transform: rotateX(-90deg); }
+}
+@-webkit-keyframes dimension {
+    from { transform: rotateX(-90deg); }
 }

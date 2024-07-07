@@ -47,7 +47,7 @@
 
     .about {
         .signature-img {
-            width: 200px;
+            width: 12.5vw;
         }
     }
 
@@ -163,7 +163,8 @@
             }
         }
         .about-first-info {
-            width: 50%!important;
+            max-width: 400px;
+            width: calc(40% + 1vw)!important;
             order: 1!important;
             text-align: center!important;
         }
