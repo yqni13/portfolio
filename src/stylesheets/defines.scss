@@ -34,6 +34,7 @@ $phone-portrait-width: 480px;
     --nav-size: 60px;
     --nav-z: 1;
     --navtext-size: 25px;
+    --scroll-margin: 10px;
 }
 
 [data-nav='navDesktop'] {
@@ -45,6 +46,7 @@ $phone-portrait-width: 480px;
     --nav-padding: 30px 0px 0px 0px;
     --nav-size: 180px;
     --nav-z: 0;
+    --scroll-margin: 200px;
 }
 
 

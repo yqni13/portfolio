@@ -1,6 +1,7 @@
 <!-- eslint-disable @angular-eslint/template/interactive-supports-focus -->
 <section class="box portfolio">
     <h2>Portfolio.</h2>
+    <i *ngIf="!isBottomScrolled" class="icon-ScrollArrow scroll-indication"></i>
     <nav class="page-header">
         <a 
             (click)="filterForType(portfolioType.all)" 

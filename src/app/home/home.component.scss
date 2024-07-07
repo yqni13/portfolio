@@ -48,7 +48,7 @@ $quotecount: 22;
     rotate: -5deg;
     border-radius: 25px;
     opacity: 0;
-    animation: fade-in 8s forwards;
+    animation: fade-in 3s forwards;
     
     img {
         background-image: var(--home-img);
@@ -77,13 +77,13 @@ $quotecount: 22;
 
 @for $i from 1 through $headercount {
     .#{fading-header} span:nth-child(#{$i}) {
-        animation: fade-in 0.8s #{calc($i / 10)}s forwards cubic-bezier(0.11, 0, 0.5, 0);
+        animation: fade-in 0.8s #{calc($i / 5)}s forwards cubic-bezier(0.11, 0, 0.5, 0);
     }
 }
 
 @for $i from 1 through $quotecount {
     .#{fading-quote} span:nth-child(#{$i}) {
-        animation: fade-in 0.8s #{calc(($i / 10) + 1.5)}s forwards cubic-bezier(0.11, 0, 0.5, 0);
+        animation: fade-in 0.8s #{calc($i / 10)}s forwards cubic-bezier(0.11, 0, 0.5, 0);
     }
 }
 

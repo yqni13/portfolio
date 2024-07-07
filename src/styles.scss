@@ -115,3 +115,18 @@ input {
         }
     }
 }
+
+.scroll-indication {
+    position: fixed;
+    color: var(--text-color);
+    bottom: 15px;
+    left: var(--scroll-margin);
+    opacity: 0.75;
+    animation: indicatescroll 2s infinite;
+}
+
+@keyframes indicatescroll {
+    0% { transform: translateY(-5px); };
+    50% { transform: translateY(5px); };
+    100% { transform: translateY(-5px); };
+}
