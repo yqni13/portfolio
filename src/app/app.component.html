@@ -17,7 +17,7 @@
             <span 
                 [routerLink]="['home']" 
                 routerLinkActive="active-route" 
-                (click)="expandNavMobile(true)"
+                (click)="expandNavMobile(true); navigateWithData()"
                 (keydown.enter)="expandNavMobile(true)"
             >Home</span>
         </li>

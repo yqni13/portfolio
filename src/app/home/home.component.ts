@@ -1,18 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, OnDestroy } from '@angular/core';
+import { DefaultUserData, IUserData } from '../../api/model/userData';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent {
-  user = {
-    firstname: "Lukas",
-    lastname: "Varga",
-    alias: "yqni13"
-  }
+export class HomeComponent implements OnDestroy {
+  public user: IUserData = DefaultUserData;
   
-  constructor() { 
-    // comment to avoid triggering eslint
+  constructor(private elementRef: ElementRef) { 
+    if(history.state?.data)
+      this.user = history.state?.data;
+  }
+
+  ngOnDestroy() {
+    this.elementRef.nativeElement.remove();
   }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationStart, Router } from '@angular/router';
 import _ from 'underscore';
+import { IUserData } from '../api/model/userData';
 
 @Component({
   selector: 'app-root',
@@ -14,22 +15,27 @@ export class AppComponent implements OnInit {
   public setDark = "";
   public setLight = "";
   // public isAccepted = false;
+  public user: IUserData = {
+    firstname: "Lukas",
+    lastname: "Varga",
+    alias: "yqni13"
+  }
   
   private mobileNavExpended = false;
   private collapseNavbarWidth = 768;
-  owner: string;
+  public readonly owner: string;
   
   constructor(private router: Router) {
     router.events.subscribe(e => {
       if(e instanceof NavigationStart)
         window.scrollTo(0,0)
     })
-    this.owner = 'Lukas Varga';
+    this.owner = `${this.user.firstname} ${this.user.lastname}`;
   }
 
   ngOnInit() {
     this.checkThemeCookie();
-    // this.checkAlertCookie(); // TODO(yqni13): disabled unless hotfix necessary
+    // this.checkAlertCookie(); // TODO(yqni13): create service for custom alert
     
     this.setNavWidthDynamically(window.screen.width);
     this.setNavWidthDynamically(document.body.clientWidth);
@@ -45,6 +51,10 @@ export class AppComponent implements OnInit {
       this.setNavWidthDynamically(document.body.clientWidth);
     }, 250)
     window.addEventListener("resize", clientWidthRequestSlowedDown, false);
+  }
+
+  navigateWithData() {
+    this.router.navigate(['/home'], {state: { data: this.user }});
   }
   
   setDarkMode() {
@@ -63,7 +73,6 @@ export class AppComponent implements OnInit {
 
   setNavWidthDynamically(width: number): void {
     // sets data attribute for body and in media.scss style settings are applied
-
     if(width > this.collapseNavbarWidth) {
       document.body.setAttribute("data-nav", 'navDesktop');
     } else {
