@@ -1,9 +1,9 @@
-<section class="box home">
+<section class="box home" *yqni13NgVar="user$ | async as userData">
     <div class="column introduction">
         <h1 class="fading-header">
             <span>Hi, </span>
             <span>I'm </span>
-            <span>{{user.firstname}}!</span>
+            <span>{{(userData.firstname)}}!</span>
             <br>
             <span class="frontend">Frontend</span>
             <span>-Developer</span>

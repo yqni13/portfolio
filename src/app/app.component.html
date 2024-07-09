@@ -9,16 +9,16 @@
                 class="nav-logo" 
                 src="assets/img/yqni13-small.png" 
                 alt="no logo" [routerLink]="['home']" 
-                (click)="expandNavMobile(true)" 
-                (keydown.enter)="expandNavMobile(true)"
+                (click)="expandNavMobile(true); shareDataWithHomeComp();" 
+                (keydown.enter)="expandNavMobile(true); shareDataWithHomeComp();"
             >
         </li>
         <li class="nav-full">
             <span 
                 [routerLink]="['home']" 
                 routerLinkActive="active-route" 
-                (click)="expandNavMobile(true); navigateWithData()"
-                (keydown.enter)="expandNavMobile(true)"
+                (click)="expandNavMobile(true); shareDataWithHomeComp();"
+                (keydown.enter)="expandNavMobile(true); shareDataWithHomeComp();"
             >Home</span>
         </li>
         <li class="nav-full">

@@ -48,7 +48,7 @@
         <a (click)="filterForKeyword(keywordInputField.value)" (keydown.enter)="filterForKeyword(keywordInputField.value)"><i class="icon-Search"></i></a>
         <a (click)="removeKeyword()" (keydown.enter)="removeKeyword()" *ngIf="hasInput"><i class="icon-Close"></i></a>
     </div>
-    <ng-template-portfolio-card></ng-template-portfolio-card>
+    <yqni13-template-portfolio-card></yqni13-template-portfolio-card>
     <div *ngIf="!hasOutput" class="wrapper-empty-search">
         <p>No data found for this parameter.</p>
     </div>

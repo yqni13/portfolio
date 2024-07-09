@@ -10,6 +10,7 @@ import { AboutComponent } from './about/about.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { CvComponent } from './cv/cv.component';
 import { TemplateModule } from './templates/template.module';
+import { Yqni13CommonModule } from '../api/common/yqni13-common.modules';
 
 
 @NgModule({
@@ -18,7 +19,7 @@ import { TemplateModule } from './templates/template.module';
     HomeComponent,
     AboutComponent,
     CvComponent,
-    PortfolioComponent
+    PortfolioComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,6 +27,7 @@ import { TemplateModule } from './templates/template.module';
     BrowserAnimationsModule,
     MatToolbarModule,
     TemplateModule,
+    Yqni13CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

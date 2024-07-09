@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
   public setDark = "";
   public setLight = "";
   // public isAccepted = false;
-  public user: IUserData = {
+  protected user: IUserData = {
     firstname: "Lukas",
     lastname: "Varga",
     alias: "yqni13"
@@ -25,7 +25,10 @@ export class AppComponent implements OnInit {
   private collapseNavbarWidth = 768;
   public readonly owner: string;
   
-  constructor(private router: Router) {
+  constructor(
+    private router: Router,
+    private sharedDataService: SharedDataService
+  ) {
     router.events.subscribe(e => {
       if(e instanceof NavigationStart)
         window.scrollTo(0,0)
@@ -53,8 +56,11 @@ export class AppComponent implements OnInit {
     window.addEventListener("resize", clientWidthRequestSlowedDown, false);
   }
 
-  navigateWithData() {
-    this.router.navigate(['/home'], {state: { data: this.user }});
+    this.shareDataWithHomeComp();
+  }
+  
+  shareDataWithHomeComp() {
+    this.sharedDataService.setSourceData(this.user);
   }
   
   setDarkMode() {
