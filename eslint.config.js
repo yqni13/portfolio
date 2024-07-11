@@ -18,7 +18,7 @@ module.exports = tseslint.config(
         "error",
         {
           type: "attribute",
-          prefix: ["app", "yqni13NgVar"],
+          prefix: ["app", "yqni13Var"],
           style: "camelCase",
         },
       ],
