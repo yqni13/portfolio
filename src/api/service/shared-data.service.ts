@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
@@ -6,11 +7,10 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class SharedDataService {
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    private sourceDataSubject = new BehaviorSubject<any>('');
-    sourceData$ = this.sourceDataSubject.asObservable();
+    private sharedDataSubject = new BehaviorSubject<any>('');
+    sharedData$ = this.sharedDataSubject.asObservable();
 
-    setSourceData<T>(data: T) {
-        this.sourceDataSubject.next(data);
+    setSharedData<T>(data: T) {
+        this.sharedDataSubject.next(data);
     }
 }

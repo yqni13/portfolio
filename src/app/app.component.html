@@ -47,13 +47,13 @@
         </li>            
         <li>
             <span 
-                [ngClass]="setDark" 
+                [ngClass]="darkMode" 
                 (click)="setLightMode()" 
                 (keydown.enter)="setLightMode()"
                 ><i class="icon-DarkMode nav-darkmode"></i>
             </span>
             <span 
-                [ngClass]="setLight"
+                [ngClass]="lightMode"
                 (click)="setDarkMode()"
                 (keydown.enter)="setDarkMode()"
                 ><i class="icon-LightMode nav-lightmode"></i>
@@ -68,7 +68,7 @@
                 <a href="https://leetcode.com/u/yqni13/" target="_blank"><i class="icon-LeetCode"></i></a>
                 <a href="https://www.xing.com/profile/Lukas_Varga2" target="_blank"><i class="icon-Xing"></i></a>
             </div>
-            <p class="footer-verification"><i class="icon-CopyRight nav-copyright"></i> {{copyrightYear}}, {{owner}}<br>v{{version}}</p>
+            <p class="footer-verification"><i class="icon-CopyRight nav-copyright"></i> {{copyrightYear}}, {{OWNER}}<br>v{{version}}</p>
         </li>
     </ul>
     

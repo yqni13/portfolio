@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnDestroy, OnInit } from '@angular/core';
-import { IUserData } from '../../api/model/userData';
+import { UserDataModel } from '../../api/model/userData';
 import { SharedDataService } from '../../api/service/shared-data.service';
 import { Observable, of, Subscription } from 'rxjs';
 
@@ -9,7 +9,7 @@ import { Observable, of, Subscription } from 'rxjs';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent implements OnInit, OnDestroy {
-  protected user$: Observable<IUserData> = new Observable<IUserData>;
+  protected user$: Observable<UserDataModel> = new Observable<UserDataModel>;
   private subscription$ = new Subscription();
 
   constructor(
@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
   
   ngOnInit() {
-    this.subscription$ = this.sharedDataService.sourceData$.subscribe(data => {
+    this.subscription$ = this.sharedDataService.sharedData$.subscribe(data => {
       this.user$ = of(data);
     })  
   }

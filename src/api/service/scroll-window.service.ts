@@ -6,7 +6,9 @@ import { Injectable } from "@angular/core";
 })
 export class ScrollService {
 
-    getScrollMaxHeight(body: any, html: any, currentWindow: any): number {        
+    getScrollMaxHeight(): number {        
+        const body = document.body;
+        const html = document.documentElement;
     
         const documentHeight = Math.max(
             body.scrollHeight,
@@ -16,7 +18,7 @@ export class ScrollService {
             html.clientHeight
         );
 
-        const windowHeight = currentWindow.innerHeight;
+        const windowHeight = window.innerHeight;
         
         return documentHeight - windowHeight;
     }

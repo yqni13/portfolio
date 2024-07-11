@@ -8,22 +8,21 @@ import { ScrollService } from '../../api/service/scroll-window.service';
 })
 export class CvComponent implements AfterViewInit, OnDestroy {
 
-  public isBottomScrolled = false;
+  isBottomScrolled = false;
 
   constructor(private scrollService: ScrollService, private elementRef: ElementRef) {
     //
   }
 
   ngAfterViewInit() {
-    const body = document.body;
-    const html = document.documentElement;
-    const scrollMaxHeight = this.scrollService.getScrollMaxHeight(body, html, window);
+    const scrollMaxHeight = this.scrollService.getScrollMaxHeight();
     window.onscroll = () => {
       if (Math.ceil(document.documentElement.scrollTop) >= scrollMaxHeight || 
       Math.ceil(document.body.scrollTop) >= scrollMaxHeight) {
           this.isBottomScrolled = true;
-      } else 
+      } else {
         this.isBottomScrolled = false;
+      }
     };
   }
 

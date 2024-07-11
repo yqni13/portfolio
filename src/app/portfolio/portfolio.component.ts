@@ -1,10 +1,11 @@
 import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { SharedDataService } from '../../api/service/shared-data.service';
-import { IJsonItem } from '../../api/model/jsonProjectDataRequest';
+import { JsonItem } from '../../api/model/jsonProjectDataRequest';
 import { FilterJSONService } from '../../api/service/filter-json.service';
 import { PortfolioType } from '../../api/static/portfolio-type.enum';
 import {default as jsonData } from '../../api/json/project-data.json';
 import { ScrollService } from '../../api/service/scroll-window.service';
+import { ErrorService } from '../../api/service/error.service';
 
 @Component({
   selector: 'app-portfolio',
@@ -13,20 +14,20 @@ import { ScrollService } from '../../api/service/scroll-window.service';
 })
 export class PortfolioComponent implements OnInit, AfterViewInit, OnDestroy {
 
-  @ViewChild('keywordInputField') keywordInputField!: ElementRef;
-  @ViewChild('portfolioScroll') portfolioScroll!: ElementRef;
+  @ViewChild("keywordInputField") keywordInputField!: ElementRef;
+  @ViewChild("portfolioScroll") portfolioScroll!: ElementRef;
   
-  portfolioType = PortfolioType; // need to use in html
-  activeType: PortfolioType = 'all';
-  hasInput = false;
-  hasOutput = true;
-  projectData: IJsonItem;
-  keywordInput = '';
-  exceptionProperties: string[] = [
-    "githublink",
-    "cardScreenPath",
-    "techURLs",
-    "techImgClasses"
+  protected portfolioType = PortfolioType; // need to use in html
+  protected activeType: PortfolioType = 'all';
+  protected hasInput = false;
+  protected hasOutput: boolean;
+  protected projectData: JsonItem;
+  protected keywordInput = '';
+  private exceptionProperties: string[] = [
+    'githublink',
+    'cardScreenPath',
+    'techURLs',
+    'techImgClasses'
   ]
   isBottomScrolled = false;
 
@@ -34,30 +35,36 @@ export class PortfolioComponent implements OnInit, AfterViewInit, OnDestroy {
     private sharedDataService: SharedDataService,
     private filterJsonService: FilterJSONService,
     private scrollService: ScrollService,
-    private elementRef: ElementRef
+    private elementRef: ElementRef,
+    private errorService: ErrorService
   ) { 
-    this.projectData = jsonData;
+    try {
+      this.projectData = jsonData;
+      this.hasOutput = true;
+    } catch (e: unknown) {
+      this.projectData = {};
+      this.hasOutput = false;
+      this.errorService.handle(e);
+    }
   }
 
   ngOnInit() {
     this.filterJsonService.setSource(this.projectData);
-    this.filterForType(PortfolioType.all);
     this.filterJsonService.setExceptionKeys(this.exceptionProperties);
     this.projectData = this.filterJsonService.loopSource('');
     this.checkForEmptyResults();
-    this.setPortfolioCards();
+    this.filterForType(PortfolioType.all);
   }
 
   ngAfterViewInit() {
-    const body = document.body;
-    const html = document.documentElement;
-    const scrollMaxHeight = this.scrollService.getScrollMaxHeight(body, html, window);
+    const scrollMaxHeight = this.scrollService.getScrollMaxHeight();
     window.onscroll = () => {
       if (Math.ceil(document.documentElement.scrollTop) >= scrollMaxHeight || 
       Math.ceil(document.body.scrollTop) >= scrollMaxHeight) {
           this.isBottomScrolled = true;
-      } else 
+      } else {
         this.isBottomScrolled = false;
+      }
     };
   }
 
@@ -68,7 +75,7 @@ export class PortfolioComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   setPortfolioCards() { 
-    this.sharedDataService.setSourceData(this.projectData);
+    this.sharedDataService.setSharedData(this.projectData);
   }
 
   filterForType(type: PortfolioType) {
@@ -81,8 +88,9 @@ export class PortfolioComponent implements OnInit, AfterViewInit, OnDestroy {
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   detectKeywordInput(event: any) {
-    if(event.target.value) 
+    if(event.target.value) {
       this.hasInput = true
+    }
     else {
       this.hasInput = false;
       this.filterForKeyword('');
@@ -98,10 +106,12 @@ export class PortfolioComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   checkForEmptyResults() {
-    if(Object.keys(this.projectData).length) 
+    if(Object.keys(this.projectData).length) {
       this.hasOutput = true 
-    else 
+    }
+    else {
       this.hasOutput = false ;
+    }
   }
 
   ngOnDestroy() {

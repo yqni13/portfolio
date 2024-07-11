@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
-import { IJsonItem } from "../../../api/model/jsonProjectDataRequest";
+import { JsonItem } from "../../../api/model/jsonProjectDataRequest";
 import { SharedDataService } from "../../../api/service/shared-data.service";
 import { Observable, Subscription, of } from "rxjs";
 
@@ -10,19 +10,19 @@ import { Observable, Subscription, of } from "rxjs";
 })
 export class TemplatePortfolioCardComponent implements OnInit, OnDestroy{
 
-    public projectData: Observable<IJsonItem> = new Observable<IJsonItem>;
+    projectData$: Observable<JsonItem> = new Observable<JsonItem>;
     private subscription$ = new Subscription();
 
     constructor(private sharedDataService: SharedDataService) { }
 
     ngOnInit() {
-        this.subscription$ = this.sharedDataService.sourceData$.subscribe(data => {
-            this.projectData = of(data);
+        this.subscription$ = this.sharedDataService.sharedData$.subscribe(data => {
+            this.projectData$ = of(data);
         })
     }
 
     ngOnDestroy() {
         this.subscription$.unsubscribe();
-    }    
+    }
 
 }
