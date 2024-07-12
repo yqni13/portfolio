@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, SecurityContext, ViewChild } from '@angular/core';
 import { SharedDataService } from '../../api/service/shared-data.service';
 import { JsonItem } from '../../api/model/jsonProjectDataRequest';
 import { FilterJSONService } from '../../api/service/filter-json.service';
@@ -6,6 +6,7 @@ import { PortfolioType } from '../../api/static/portfolio-type.enum';
 import {default as jsonData } from '../../api/json/project-data.json';
 import { ScrollService } from '../../api/service/scroll-window.service';
 import { ErrorService } from '../../api/service/error.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-portfolio',
@@ -15,7 +16,6 @@ import { ErrorService } from '../../api/service/error.service';
 export class PortfolioComponent implements OnInit, AfterViewInit, OnDestroy {
 
   @ViewChild("keywordInputField") keywordInputField!: ElementRef;
-  @ViewChild("portfolioScroll") portfolioScroll!: ElementRef;
   
   protected portfolioType = PortfolioType; // need to use in html
   protected activeType: PortfolioType;
@@ -31,7 +31,8 @@ export class PortfolioComponent implements OnInit, AfterViewInit, OnDestroy {
     private filterJsonService: FilterJSONService,
     private scrollService: ScrollService,
     private elementRef: ElementRef,
-    private errorService: ErrorService
+    private errorService: ErrorService,
+    private domSanitizer: DomSanitizer
   ) { 
     try {
       this.projectData = jsonData;
@@ -75,9 +76,9 @@ export class PortfolioComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   filterForKeyword(val: string) {
-    this.projectData = this.filterJsonService.loopSource(val);
-    this.checkForEmptyResults();
-    this.setPortfolioCards();
+      this.projectData = this.filterJsonService.loopSource(this.domSanitizer.sanitize(SecurityContext.HTML, val));
+      this.checkForEmptyResults();
+      this.setPortfolioCards();
   }
 
   setPortfolioCards() { 

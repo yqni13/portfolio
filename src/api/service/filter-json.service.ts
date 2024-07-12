@@ -12,13 +12,13 @@ export class FilterJSONService {
     private resultKeys: string[] = []; // TODO(yqni13): solution without this temp guide?
     private exceptionKeys: string[] = [];
 
-    loopSource(keyword: string): JsonItem {
+    loopSource(keyword: string | null): JsonItem {
         this.clearResultsArray();
-        if(this.typeFilter === PortfolioType.all && !keyword)
+        if(this.typeFilter === PortfolioType.all && (!keyword || keyword == null))
             return this.source;
 
         const filteredSource: JsonItem = {};
-        keyword = keyword.toLowerCase();
+        if(keyword != null) keyword = keyword.toLowerCase();
         Object.entries(this.source).forEach(([outerKey, outerValue]) => {
 
             if(this.typeFilter === PortfolioType.all && !keyword) {
