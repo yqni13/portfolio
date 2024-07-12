@@ -18,8 +18,6 @@ $\texttt{\color{teal}{v2.5.5}}$
 </div>
 <br>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.6.
-
 ### <a href="https://yqni13.github.io/portfolio/home">TRY LIVE DEMO</a>
 
 <br>
@@ -45,7 +43,7 @@ deploy >> `npx angular-cli-ghpages --dir=dist/<projectname>/browser --repo=https
 ## Features
 <dl>
     <dd>:iphone: Responsive design 480px > width < 1440px via flexbox and media queries</dd>
-    <dd>:book: Multi-Page Layout (main navigation and portfolio menu)</dd>
+    <dd>:page_facing_up: SPA (Single-Page-Application)</dd>
     <dd>:new_moon_with_face:/:sun_with_face: Dark/Light mode</dd>
     <dd>:art: Customized style</dd>
     <dd>:mag: Customized filter search</dd>
@@ -129,22 +127,25 @@ Specified unit tests in xyz.component.spec.ts files or other tests are my last s
 ## Updates
 
 [list of all updates](src/docs/update_protocol.md)
-### $\textsf{last\ update\ 2.5.0\ >>\ {\color{pink}2.5.5}}$
+### $\textsf{last\ update\ 2.5.5\ >>\ {\color{pink}2.?.?}}$
 
-- $\textsf{\color{red}Patch:}$ Addressing webpage stability issues: Disabled error alert because of fixed hosting.
-- $\textsf{\color{red}Bugfix:}$ Default unit tests have all necessary declarations and imports. [Before: Template was not recognised as existing component because unit tests were missing the regarding declarations and imports.]
-- $\textsf{\color{red}Bugfix:}$ Hosting works again (refreshing does not lead to error 404) and CI/CD pipeline adapted. [Before: Necessary options in deployment command missing. Customized workflow was missing.]
-- $\textsf{\color{red}Bugfix:}$ Navigating to other page in menu resets scroll to top position (refresh gets back to current scroll position). [Before: Scroll position was used for next page so that it didn't start at top.]
-- $\textsf{\color{red}Bugfix:}$ The component 'portfolio' shows the correct number of cards with the regarding data. [Before: Due to change of ESLint errors, json data was fetched by import but loaded single objects additional to default collection of objects. Needed adaption in import command to load data only from default.]
+- $\textsf{\color{green}Change:}$ Added page scroll indicators (white arrow animation, left bottom) for the components 'about', 'cv' and 'portfolio'.
+- $\textsf{\color{red}Patch:}$ Refactored code in terms of Google Guidelines HTML/CSS.
+- $\textsf{\color{red}Patch:}$ Refactored code in terms of Google Guidelines Typescript.
+- $\textsf{\color{red}Patch:}$ Refactored code in terms of Angular Best Practices (Style Guide).
+- $\textsf{\color{red}Patch:}$ Refactored code to reuse user-data from parent in child component and reduce redundancy.
+- $\textsf{\color{red}Bugfix:}$ Navigating to base url redirects to 'home' component and activates nav-menu item accordingly. [Before: Redirecting to 'home' component didn't set 'Home' nav-menu item active.]
 
 <br>
 
 ### Aimed objectives for next $\textsf{\color{green}minor}$ update:
 <dl>
     <dd>- error handling for images failing to load</dd>
+    <dd>- error handling for exceptional cases/processes</dd>
     <dd>- customized error page</dd>
     <dd>- css animations for extending/hiding elements</dd>
     <dd>- enable filtering portfolio cards with multiple keywords</dd>
+    <dd>- unit tests for all components</dd>
 </dl>
 <br>
 

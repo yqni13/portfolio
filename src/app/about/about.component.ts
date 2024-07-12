@@ -8,11 +8,12 @@ import { ScrollService } from '../../api/service/scroll-window.service';
 })
 export class AboutComponent implements OnInit, AfterViewInit, OnDestroy {
 
-  protected userAge = 0;
-  isBottomScrolled = false;
+  protected userAge: number;
+  protected isBottomScrolled: boolean;
 
   constructor(private scrollService: ScrollService, private elementRef: ElementRef) {
-    //
+    this.userAge = 0;
+    this.isBottomScrolled = false;
   }
   
   ngOnInit() {
@@ -45,5 +46,4 @@ export class AboutComponent implements OnInit, AfterViewInit, OnDestroy {
   ngOnDestroy() {
     this.elementRef.nativeElement.remove();
   }
-
 }

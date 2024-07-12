@@ -1,11 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PortfolioComponent } from './portfolio.component';
-import { TemplateModule } from '../templates/template.module';
 import { SharedDataService } from '../../api/service/shared-data.service';
 import { FilterJSONService } from '../../api/service/filter-json.service';
 import { ScrollService } from '../../api/service/scroll-window.service';
 import { ErrorService } from '../../api/service/error.service';
+import { SharedModule } from '../shared/shared.module';
 
 describe('PortfolioComponent', () => {
   let component: PortfolioComponent;
@@ -13,7 +13,7 @@ describe('PortfolioComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TemplateModule],
+      imports: [SharedModule],
       declarations: [PortfolioComponent],
       providers: [
         SharedDataService,

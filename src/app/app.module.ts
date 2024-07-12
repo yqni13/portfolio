@@ -9,8 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { CvComponent } from './cv/cv.component';
-import { TemplateModule } from './templates/template.module';
-import { Yqni13CommonModule } from '../api/common/yqni13-common.modules';
+import { SharedModule } from './shared/shared.module';
 
 
 @NgModule({
@@ -26,8 +25,7 @@ import { Yqni13CommonModule } from '../api/common/yqni13-common.modules';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    TemplateModule,
-    Yqni13CommonModule
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -18,18 +18,13 @@ export class PortfolioComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild("portfolioScroll") portfolioScroll!: ElementRef;
   
   protected portfolioType = PortfolioType; // need to use in html
-  protected activeType: PortfolioType = 'all';
-  protected hasInput = false;
+  protected activeType: PortfolioType;
+  protected hasInput: boolean;
   protected hasOutput: boolean;
   protected projectData: JsonItem;
-  protected keywordInput = '';
-  private exceptionProperties: string[] = [
-    'githublink',
-    'cardScreenPath',
-    'techURLs',
-    'techImgClasses'
-  ]
-  isBottomScrolled = false;
+  protected keywordInput: string;
+  protected isBottomScrolled: boolean;
+  private exceptionProperties: string[];
 
   constructor(
     private sharedDataService: SharedDataService,
@@ -46,6 +41,17 @@ export class PortfolioComponent implements OnInit, AfterViewInit, OnDestroy {
       this.hasOutput = false;
       this.errorService.handle(e);
     }
+
+    this.hasInput = false;
+    this.isBottomScrolled = false;
+    this.keywordInput = '';
+    this.exceptionProperties = [
+      'githublink',
+      'cardScreenPath',
+      'techURLs',
+      'techImgClasses'
+    ];
+    this.activeType = PortfolioType.all;
   }
 
   ngOnInit() {
@@ -117,5 +123,4 @@ export class PortfolioComponent implements OnInit, AfterViewInit, OnDestroy {
   ngOnDestroy() {
     this.elementRef.nativeElement.remove();
   }
-
 }

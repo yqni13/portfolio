@@ -11,20 +11,15 @@ import { SharedDataService } from '../api/service/shared-data.service';
 })
 export class AppComponent implements OnInit {
 
-  protected version = '2.5.5';
-  protected copyrightYear: number = new Date().getFullYear();
-  darkMode = '';
-  lightMode = '';
-  // isAccepted = false;
-  protected author: UserDataModel = {
-    firstname: 'Lukas',
-    lastname: 'Varga',
-    alias: 'yqni13'
-  }
-  
-  private mobileNavExpanded = false;
-  private collapseNavbarWidth = 768;
+  protected version: string;
+  protected copyrightYear: number;
+  protected darkMode: string;
+  protected lightMode: string;
+  protected author: UserDataModel;
+  private mobileNavExpanded: boolean;
+  private collapseNavbarWidth: number;
   readonly OWNER: string;
+  // isAccepted = false;
   
   constructor(
     private router: Router,
@@ -35,7 +30,20 @@ export class AppComponent implements OnInit {
         window.scrollTo(0,0);
       }
     })
+
+    this.version = '2.?.?';
+    this.darkMode = '';
+    this.lightMode = '';
+    this.copyrightYear = new Date().getFullYear();
+    this.author = {
+      firstname: 'Lukas',
+      lastname: 'Varga',
+      alias: 'yqni13'
+    };
     this.OWNER = `${this.author.firstname} ${this.author.lastname}`;
+    this.mobileNavExpanded = false;
+    this.collapseNavbarWidth = 768;
+
   }
 
   ngOnInit() {

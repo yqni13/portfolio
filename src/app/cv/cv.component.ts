@@ -8,10 +8,10 @@ import { ScrollService } from '../../api/service/scroll-window.service';
 })
 export class CvComponent implements AfterViewInit, OnDestroy {
 
-  isBottomScrolled = false;
+  protected isBottomScrolled: boolean;
 
   constructor(private scrollService: ScrollService, private elementRef: ElementRef) {
-    //
+    this.isBottomScrolled = false;
   }
 
   ngAfterViewInit() {
@@ -29,5 +29,4 @@ export class CvComponent implements AfterViewInit, OnDestroy {
   ngOnDestroy() {
     this.elementRef.nativeElement.remove();
   }
-
 }
