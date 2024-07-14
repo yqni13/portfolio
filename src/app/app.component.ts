@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationStart, Router } from '@angular/router';
 import _ from 'underscore';
-import { UserDataModel } from '../api/model/userData';
-import { SharedDataService } from '../api/service/shared-data.service';
+import { UserDataModel } from './shared/interface/userData';
+import { SharedDataService } from './shared/service/shared-data.service';
 
 @Component({
   selector: 'app-root',
@@ -31,7 +31,7 @@ export class AppComponent implements OnInit {
       }
     })
 
-    this.version = '2.?.?';
+    this.version = '2.6.5';
     this.darkMode = '';
     this.lightMode = '';
     this.copyrightYear = new Date().getFullYear();

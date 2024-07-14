@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
-import { JsonItem } from "../../../api/model/jsonProjectDataRequest";
-import { SharedDataService } from "../../../api/service/shared-data.service";
+import { JsonItem } from "../../shared/interface/jsonProjectDataRequest";
+import { SharedDataService } from "../../shared/service/shared-data.service";
 import { Observable, Subscription, of } from "rxjs";
 
 @Component({

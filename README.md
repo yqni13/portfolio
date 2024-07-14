@@ -102,7 +102,9 @@ My portfolio comes with two theme settings: $\textsf{\color{gray}{Dark mode}}$ &
 <img src="src/assets/readme_img/logo_ico/firefox_logo50.ico"> | <img src="src/assets/readme_img/logo_ico/chrome_logo50.ico"> | <img src="src/assets/readme_img/logo_ico/opera_logo50.ico"> | <img src="src/assets/readme_img/logo_ico/edge_logo50.ico"> | <img src="src/assets/readme_img/logo_ico/duckduckgo_logo50.ico"> | <img src="src/assets/readme_img/logo_ico/brave_logo50.ico">
 |:------:|:------:|:------:|:------:|:------:|:------:|
 |Firefox | Chrome | Opera  | Edge   | DuckGo | Brave  |
-|Yes     | Yes    | Yes    | Yes    | Yes    | Yes    |
+|Yes     | Yes    | Yes    | Yes    | Yes*   | Yes    |
+
+* This browser has problems displaying certain animations.
 
 </center>
 <br>
@@ -127,12 +129,12 @@ Specified unit tests in xyz.component.spec.ts files or other tests are my last s
 ## Updates
 
 [list of all updates](src/docs/update_protocol.md)
-### $\textsf{last\ update\ 2.5.5\ >>\ {\color{pink}2.?.?}}$
+### $\textsf{last\ update\ 2.5.5\ >>\ {\color{pink}2.6.5}}$
 
 - $\textsf{\color{green}Change:}$ Added page scroll indicators (white arrow animation, left bottom) for the components 'about', 'cv' and 'portfolio'.
 - $\textsf{\color{red}Patch:}$ Refactored code in terms of Google Guidelines HTML/CSS.
 - $\textsf{\color{red}Patch:}$ Refactored code in terms of Google Guidelines Typescript.
-- $\textsf{\color{red}Patch:}$ Refactored code in terms of Angular Best Practices (Style Guide).
+- $\textsf{\color{red}Patch:}$ Refactored code in terms of Angular Best Practices.
 - $\textsf{\color{red}Patch:}$ Refactored code to reuse user-data from parent in child component and reduce redundancy.
 - $\textsf{\color{red}Bugfix:}$ Navigating to base url redirects to 'home' component and activates nav-menu item accordingly. [Before: Redirecting to 'home' component didn't set 'Home' nav-menu item active.]
 
@@ -143,7 +145,6 @@ Specified unit tests in xyz.component.spec.ts files or other tests are my last s
     <dd>- error handling for images failing to load</dd>
     <dd>- error handling for exceptional cases/processes</dd>
     <dd>- customized error page</dd>
-    <dd>- css animations for extending/hiding elements</dd>
     <dd>- enable filtering portfolio cards with multiple keywords</dd>
     <dd>- unit tests for all components</dd>
 </dl>

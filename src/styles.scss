@@ -123,6 +123,9 @@ input {
     left: var(--scroll-margin);
     opacity: 0.75;
     animation: indicatescroll 2s infinite;
+    -webkit-animation: indicatescroll 2s infinite;
+    -moz-animation: indicatescroll 2s infinite;
+    -o-animation: indicatescroll 2s infinite;
 }
 
 @keyframes indicatescroll {

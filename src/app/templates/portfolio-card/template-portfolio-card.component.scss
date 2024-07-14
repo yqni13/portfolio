@@ -48,6 +48,9 @@ h4 {
 
 .card:hover .card-text {
     animation: dimension 0.5s ease-in;
+    -webkit-animation: dimension 0.5s ease-in;
+    -moz-animation: dimension 0.5s ease-in;
+    -o-animation: dimension 0.5s ease-in;
     opacity: 1;
 }
 
@@ -85,16 +88,14 @@ h4 {
 
 .card:hover {
     .icon-GitHub {
-        animation-name: github-animation;
-        animation-duration: 2s;
+        animation: github-animation 2s;
+        -webkit-animation: github-animation 2s;
+        -moz-animation: github-animation 2s;
+        -o-animation: github-animation 2s;
     }
 }
 
 @keyframes github-animation {
-    to { transform: scale(1.5) };
-    to { transform: rotate(360deg) };
-}
-@-webkit-keyframes github-animation {
     to { transform: scale(1.5) };
     to { transform: rotate(360deg) };
 }
@@ -108,8 +109,5 @@ h4 {
 }
 
 @keyframes dimension {
-    from { transform: rotateX(-90deg); }
-}
-@-webkit-keyframes dimension {
     from { transform: rotateX(-90deg); }
 }

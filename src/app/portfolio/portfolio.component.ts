@@ -1,11 +1,11 @@
 import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, SecurityContext, ViewChild } from '@angular/core';
-import { SharedDataService } from '../../api/service/shared-data.service';
-import { JsonItem } from '../../api/model/jsonProjectDataRequest';
-import { FilterJSONService } from '../../api/service/filter-json.service';
-import { PortfolioType } from '../../api/static/portfolio-type.enum';
-import {default as jsonData } from '../../api/json/project-data.json';
-import { ScrollService } from '../../api/service/scroll-window.service';
-import { ErrorService } from '../../api/service/error.service';
+import { SharedDataService } from '../shared/service/shared-data.service';
+import { JsonItem } from '../shared/interface/jsonProjectDataRequest';
+import { FilterJSONService } from '../shared/service/filter-json.service';
+import { PortfolioType } from '../shared/enums/portfolio-type.enum';
+import {default as jsonData } from '../shared/data/project-data.json';
+import { ScrollService } from '../shared/service/scroll-window.service';
+import { ErrorService } from '../shared/service/error.service';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({

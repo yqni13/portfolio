@@ -49,6 +49,9 @@ $quotecount: 22;
     border-radius: 25px;
     opacity: 0;
     animation: fade-in 3s forwards;
+    -webkit-animation: fade-in 3s forwards;
+    -moz-animation: fade-in 3s forwards;
+    -o-animation: fade-in 3s forwards;
     
     img {
         background-image: var(--home-img);
@@ -60,6 +63,10 @@ $quotecount: 22;
 .fading-header {
     transform: scale(0.94);
     animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+    -webkit-animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+    -moz-animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+    -o-animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+
     span {
         opacity: 0;
         filter: blur(4px); 
@@ -69,6 +76,10 @@ $quotecount: 22;
 .fading-quote {
     transform: scale(0.94);
     animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+    -webkit-animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+    -moz-animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+    -o-animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+
     span {
         opacity: 0;
         filter: blur(4px); 
@@ -78,12 +89,18 @@ $quotecount: 22;
 @for $i from 1 through $headercount {
     .#{fading-header} span:nth-child(#{$i}) {
         animation: fade-in 0.8s #{calc($i / 5)}s forwards cubic-bezier(0.11, 0, 0.5, 0);
+        -webkit-animation: fade-in 0.8s #{calc($i / 5)}s forwards cubic-bezier(0.11, 0, 0.5, 0);
+        -moz-animation: fade-in 0.8s #{calc($i / 5)}s forwards cubic-bezier(0.11, 0, 0.5, 0);
+        -o-animation: fade-in 0.8s #{calc($i / 5)}s forwards cubic-bezier(0.11, 0, 0.5, 0);
     }
 }
 
 @for $i from 1 through $quotecount {
     .#{fading-quote} span:nth-child(#{$i}) {
         animation: fade-in 0.8s #{calc($i / 10)}s forwards cubic-bezier(0.11, 0, 0.5, 0);
+        -webkit-animation: fade-in 0.8s #{calc($i / 10)}s forwards cubic-bezier(0.11, 0, 0.5, 0);
+        -moz-animation: fade-in 0.8s #{calc($i / 10)}s forwards cubic-bezier(0.11, 0, 0.5, 0);
+        -o-animation: fade-in 0.8s #{calc($i / 10)}s forwards cubic-bezier(0.11, 0, 0.5, 0);
     }
 }
 

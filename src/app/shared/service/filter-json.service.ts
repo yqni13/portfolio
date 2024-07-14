@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { JsonItem } from '../model/jsonProjectDataRequest';
-import { PortfolioType } from '../static/portfolio-type.enum';
+import { JsonItem } from '../interface/jsonProjectDataRequest';
+import { PortfolioType } from '../enums/portfolio-type.enum';
 
 @Injectable({
     providedIn: 'root'

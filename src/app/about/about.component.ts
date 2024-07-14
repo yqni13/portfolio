@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit } from '@angular/core';
-import { ScrollService } from '../../api/service/scroll-window.service';
+import { ScrollService } from '../shared/service/scroll-window.service';
 
 @Component({
   selector: 'app-about',

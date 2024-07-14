@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnDestroy, OnInit } from '@angular/core';
-import { UserDataModel } from '../../api/model/userData';
-import { SharedDataService } from '../../api/service/shared-data.service';
+import { UserDataModel } from '../shared/interface/userData';
+import { SharedDataService } from '../shared/service/shared-data.service';
 import { Observable, of, Subscription } from 'rxjs';
 
 @Component({
