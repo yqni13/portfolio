@@ -10,7 +10,7 @@ import { Observable, Subscription, of } from "rxjs";
 })
 export class TemplatePortfolioCardComponent implements OnInit, OnDestroy{
 
-    projectData$: Observable<JsonItem> = new Observable<JsonItem>;
+    protected projectData$: Observable<JsonItem> = new Observable<JsonItem>;
     private subscription$ = new Subscription();
 
     constructor(private sharedDataService: SharedDataService) { }

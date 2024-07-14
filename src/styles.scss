@@ -93,7 +93,7 @@ input {
     -webkit-text-fill-color: transparent;
 }
 
-.btn-download {
+.btn-action-extern {
     text-transform: uppercase;
     
     a {
@@ -107,10 +107,12 @@ input {
         padding: 10px 25px;
         text-decoration: none;
         
-        &:hover {
+        &:active {
             background-color: var(--button-color);
             border: inset var(--button-color) 1px;
             color: var(--alice-blue);
+        }
+        &:hover {
             opacity: 0.6;
         }
     }

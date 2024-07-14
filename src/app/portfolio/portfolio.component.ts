@@ -76,6 +76,7 @@ export class PortfolioComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   filterForKeyword(val: string) {
+    // 'sanitize' user input because we can only filter to get a string at this point
       this.projectData = this.filterJsonService.loopSource(this.domSanitizer.sanitize(SecurityContext.HTML, val));
       this.checkForEmptyResults();
       this.setPortfolioCards();
