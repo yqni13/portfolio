@@ -1,4 +1,5 @@
-export interface IJsonProjectDataRequest {
+// Use declared interface to represent server-side JSON
+export declare interface JsonProjectDataRequest {
     title: string
     version: string
     type: string
@@ -10,4 +11,4 @@ export interface IJsonProjectDataRequest {
     techImgClasses: string[]
 }
 
-export type IJsonItem = Record<string, IJsonProjectDataRequest>;
+export type JsonItem = Record<string, JsonProjectDataRequest>;

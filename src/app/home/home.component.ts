@@ -1,18 +1,32 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, OnDestroy, OnInit } from '@angular/core';
+import { UserDataModel } from '../shared/interface/userData';
+import { SharedDataService } from '../shared/service/shared-data.service';
+import { Observable, of, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent {
-  user = {
-    firstname: "Lukas",
-    lastname: "Varga",
-    alias: "yqni13"
+export class HomeComponent implements OnInit, OnDestroy {
+  protected user$: Observable<UserDataModel> = new Observable<UserDataModel>;
+  private subscription$ = new Subscription();
+
+  constructor(
+    private elementRef: ElementRef,
+    private sharedDataService: SharedDataService
+  ) { 
+    //
   }
   
-  constructor() { 
-    // comment to avoid triggering eslint
+  ngOnInit() {
+    this.subscription$ = this.sharedDataService.sharedData$.subscribe(data => {
+      this.user$ = of(data);
+    })  
+  }
+
+  ngOnDestroy() {
+    this.elementRef.nativeElement.remove();
+    this.subscription$.unsubscribe();
   }
 }

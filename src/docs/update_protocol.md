@@ -4,6 +4,15 @@
 
 <br>
 
+### 2024/07/14 - $\textsf{update\ 2.5.5\ >>\ {\color{pink}2.6.5}}$
+
+- $\textsf{\color{green}Change:}$ Added page scroll indicators (white arrow animation, left bottom) for the components 'about', 'cv' and 'portfolio'.
+- $\textsf{\color{red}Patch:}$ Refactored code in terms of Google Guidelines HTML/CSS.
+- $\textsf{\color{red}Patch:}$ Refactored code in terms of Google Guidelines Typescript.
+- $\textsf{\color{red}Patch:}$ Refactored code in terms of Angular Best Practices.
+- $\textsf{\color{red}Patch:}$ Refactored code to reuse user-data from parent in child component and reduce redundancy.
+- $\textsf{\color{red}Bugfix:}$ Navigating to base url redirects to 'home' component and activates nav-menu item accordingly. [Before: Redirecting to 'home' component didn't set 'Home' nav-menu item active.]
+
 ### 2024/07/01 - $\textsf{update\ 2.5.0\ >>\ {\color{pink}2.5.5}}$
 
 - $\textsf{\color{red}Patch:}$ Addressing webpage stability issues: Disabled error alert because of fixed hosting.
