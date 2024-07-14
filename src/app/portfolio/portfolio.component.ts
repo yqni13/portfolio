@@ -1,58 +1,91 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { SharedDataService } from '../../api/service/shared-data.service';
-import { IJsonItem } from '../../api/model/jsonProjectDataRequest';
-import { FilterJSONService } from '../../api/service/filter-json.service';
-import { PortfolioType } from '../../api/static/portfolio-type.enum';
-import {default as jsonData } from '../../api/json/project-data.json';
+import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, SecurityContext, ViewChild } from '@angular/core';
+import { SharedDataService } from '../shared/service/shared-data.service';
+import { JsonItem } from '../shared/interface/jsonProjectDataRequest';
+import { FilterJSONService } from '../shared/service/filter-json.service';
+import { PortfolioType } from '../shared/enums/portfolio-type.enum';
+import {default as jsonData } from '../shared/data/project-data.json';
+import { ScrollService } from '../shared/service/scroll-window.service';
+import { ErrorService } from '../shared/service/error.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-portfolio',
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.scss'
 })
-export class PortfolioComponent implements OnInit {
+export class PortfolioComponent implements OnInit, AfterViewInit, OnDestroy {
 
-  @ViewChild('keywordInputField') keywordInputField!: ElementRef;
+  @ViewChild("keywordInputField") keywordInputField!: ElementRef;
   
-  portfolioType = PortfolioType; // need to use in html
-  activeType: PortfolioType = 'all';
-  hasInput = false;
-  hasOutput = true;
-  projectData: IJsonItem;
-  keywordInput = '';
-  exceptionProperties: string[] = [
-    "githublink",
-    "cardScreenPath",
-    "techURLs",
-    "techImgClasses"
-  ]
+  protected portfolioType = PortfolioType; // need to use in html
+  protected activeType: PortfolioType;
+  protected hasInput: boolean;
+  protected hasOutput: boolean;
+  protected projectData: JsonItem;
+  protected keywordInput: string;
+  protected isBottomScrolled: boolean;
+  private exceptionProperties: string[];
 
   constructor(
     private sharedDataService: SharedDataService,
-    private filterJsonService: FilterJSONService
+    private filterJsonService: FilterJSONService,
+    private scrollService: ScrollService,
+    private elementRef: ElementRef,
+    private errorService: ErrorService,
+    private domSanitizer: DomSanitizer
   ) { 
-    this.projectData = jsonData;
+    try {
+      this.projectData = jsonData;
+      this.hasOutput = true;
+    } catch (e: unknown) {
+      this.projectData = {};
+      this.hasOutput = false;
+      this.errorService.handle(e);
+    }
+
+    this.hasInput = false;
+    this.isBottomScrolled = false;
+    this.keywordInput = '';
+    this.exceptionProperties = [
+      'githublink',
+      'cardScreenPath',
+      'techURLs',
+      'techImgClasses'
+    ];
+    this.activeType = PortfolioType.all;
   }
 
   ngOnInit() {
     this.filterJsonService.setSource(this.projectData);
-    this.filterForType(PortfolioType.all);
     this.filterJsonService.setExceptionKeys(this.exceptionProperties);
     this.projectData = this.filterJsonService.loopSource('');
     this.checkForEmptyResults();
-    this.setPortfolioCards();
+    this.filterForType(PortfolioType.all);
   }
-  
+
+  ngAfterViewInit() {
+    const scrollMaxHeight = this.scrollService.getScrollMaxHeight();
+    window.onscroll = () => {
+      if (Math.ceil(document.documentElement.scrollTop) >= scrollMaxHeight || 
+      Math.ceil(document.body.scrollTop) >= scrollMaxHeight) {
+          this.isBottomScrolled = true;
+      } else {
+        this.isBottomScrolled = false;
+      }
+    };
+  }
+
   filterForKeyword(val: string) {
-    this.projectData = this.filterJsonService.loopSource(val);
-    this.checkForEmptyResults();
-    this.setPortfolioCards();
+    // 'sanitize' user input because we can only filter to get a string at this point
+      this.projectData = this.filterJsonService.loopSource(this.domSanitizer.sanitize(SecurityContext.HTML, val));
+      this.checkForEmptyResults();
+      this.setPortfolioCards();
   }
-  
+
   setPortfolioCards() { 
-    this.sharedDataService.setSourceData(this.projectData);
+    this.sharedDataService.setSharedData(this.projectData);
   }
-  
+
   filterForType(type: PortfolioType) {
     this.activeType = type;
     this.filterJsonService.setTypeFilter(type);
@@ -63,8 +96,9 @@ export class PortfolioComponent implements OnInit {
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   detectKeywordInput(event: any) {
-    if(event.target.value) 
+    if(event.target.value) {
       this.hasInput = true
+    }
     else {
       this.hasInput = false;
       this.filterForKeyword('');
@@ -80,9 +114,15 @@ export class PortfolioComponent implements OnInit {
   }
 
   checkForEmptyResults() {
-    if(Object.keys(this.projectData).length) 
+    if(Object.keys(this.projectData).length) {
       this.hasOutput = true 
-    else 
+    }
+    else {
       this.hasOutput = false ;
+    }
+  }
+
+  ngOnDestroy() {
+    this.elementRef.nativeElement.remove();
   }
 }

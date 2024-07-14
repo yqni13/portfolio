@@ -1,6 +1,6 @@
-<div class="portfolio-wrapper">
-    <div *ngFor="let project of (projectData | async) | keyvalue" class="card">
-        <img src='{{project.value.cardScreenPath}}' alt='screenshot of project missing'>
+<div class="wrapper-portfolio">
+    <div *ngFor="let project of (projectData$ | async) | keyvalue" class="card">
+        <img src="{{project.value.cardScreenPath}}" alt="screenshot of project missing">
         <div class="card-text">
             <h4>{{project.value.title}}
                 <a href="{{project.value.githublink}}" target="_blank" class="a-github">

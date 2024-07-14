@@ -33,13 +33,13 @@ jobs:
 
       - name: Configure Git
         run: |
-          git config --global user.email "yqni13@protonmail.com"
-          git config --global user.name "yqni13"
+          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+          git config --global user.name "${{ github.actor }}"
+          git remote set-url origin https://${{ secrets.PORTFOLIO_PAT }}@github.com/${{ github.repository }}.git
 
       - name: Deploy to GitHub Pages
         env:
           GH_PAT: ${{ secrets.PORTFOLIO_PAT }}
         run: |
-          git remote set-url origin https://${{ secrets.PORTFOLIO_PAT }}@github.com/yqni13/portfolio.git
-          npx angular-cli-ghpages --dir=dist/portfolio/browser --repo=https://${{ secrets.PORTFOLIO_PAT }}@github.com/yqni13/portfolio.git --no-silent
+          npx angular-cli-ghpages --dir=dist/portfolio/browser --repo=https://${{ secrets.PORTFOLIO_PAT }}@github.com/${{ github.repository }}.git --no-silent
         

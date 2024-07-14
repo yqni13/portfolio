@@ -1,44 +1,74 @@
 <!-- eslint-disable @angular-eslint/template/interactive-supports-focus -->
-
-
 <nav class="nav-bar" data-media="mobile">
     <ul>       
-        <li class="nav-collapse" id="nav-unfold">
+        <li class="nav-collapse nav-unfold">
             <i class="icon-BurgerMenu nav-mobile" (click)="expandNavMobile()" (keydown.enter)="expandNavMobile()"></i>
         </li>
         <li class="nav-full">
-            <img id="nav-logo" src="assets/img/yqni13-small.png" alt="no logo" [routerLink]="['home']" (click)="expandNavMobile(true)" (keydown.enter)="expandNavMobile(true)">
+            <img 
+                class="nav-logo" 
+                src="assets/img/yqni13-small.png" 
+                alt="no logo" [routerLink]="['home']" 
+                (click)="expandNavMobile(true); shareDataWithHomeComp();" 
+                (keydown.enter)="expandNavMobile(true); shareDataWithHomeComp();"
+            >
         </li>
         <li class="nav-full">
-            <span [routerLink]="['home']" routerLinkActive="active-route" (click)="expandNavMobile(true)"
-            (keydown.enter)="expandNavMobile(true)">Home</span>
+            <span 
+                [routerLink]="['home']" 
+                routerLinkActive="active-route" 
+                (click)="expandNavMobile(true); shareDataWithHomeComp();"
+                (keydown.enter)="expandNavMobile(true); shareDataWithHomeComp();"
+            >Home</span>
         </li>
         <li class="nav-full">
-            <span [routerLink]="['about']" routerLinkActive="active-route" (click)="expandNavMobile(true)"
-            (keydown.enter)="expandNavMobile(true)">About</span>
+            <span 
+                [routerLink]="['about']" 
+                routerLinkActive="active-route" 
+                (click)="expandNavMobile(true)"
+                (keydown.enter)="expandNavMobile(true)"
+            >About</span>
         </li>
         <li class="nav-full">
-            <span [routerLink]="['cv']" routerLinkActive="active-route" (click)="expandNavMobile(true)"
-            (keydown.enter)="expandNavMobile(true)">CV</span>
+            <span 
+                [routerLink]="['cv']" 
+                routerLinkActive="active-route" 
+                (click)="expandNavMobile(true)"
+                (keydown.enter)="expandNavMobile(true)"
+            >CV</span>
         </li>
         <li class="nav-full">
-            <span [routerLink]="['mywork']" routerLinkActive="active-route" (click)="expandNavMobile(true)"
-            (keydown.enter)="expandNavMobile(true)">Portfolio</span>
+            <span 
+                [routerLink]="['mywork']" 
+                routerLinkActive="active-route" 
+                (click)="expandNavMobile(true)"
+                (keydown.enter)="expandNavMobile(true)"
+            >Portfolio</span>
         </li>            
         <li>
-            <span [ngClass]="setDark" (click)="setLightMode()" (keydown.enter)="setLightMode()"><i class="icon-DarkMode" id="nav-darkmode"></i></span>
-            <span [ngClass]="setLight" (click)="setDarkMode()" (keydown.enter)="setDarkMode()"><i class="icon-LightMode" id="nav-lightmode"></i></span>
+            <span 
+                [ngClass]="darkMode" 
+                (click)="setLightMode()" 
+                (keydown.enter)="setLightMode()"
+                ><i class="icon-DarkMode nav-darkmode"></i>
+            </span>
+            <span 
+                [ngClass]="lightMode"
+                (click)="setDarkMode()"
+                (keydown.enter)="setDarkMode()"
+                ><i class="icon-LightMode nav-lightmode"></i>
+            </span>
         </li>
         <li>
             <!-- <p class="nav-full nav-issues" (click)="openAlertMsg(); expandNavMobile(true)"
             (keydown.enter)="openAlertMsg(); expandNavMobile(true)">-current issues-</p> -->
-            <div class="link_icons">
+            <div class="link-icons">
                 <a href="https://github.com/yqni13" target="_blank"><i class="icon-GitHub"></i></a>
                 <a href="https://app.daily.dev/yqni13" target="_blank"><img src="assets/img/dailydev.png" alt="#"></a>
                 <a href="https://leetcode.com/u/yqni13/" target="_blank"><i class="icon-LeetCode"></i></a>
                 <a href="https://www.xing.com/profile/Lukas_Varga2" target="_blank"><i class="icon-Xing"></i></a>
             </div>
-            <p class="footer-verification"><i class="icon-CopyRight" id="nav-copyright"></i> {{copyrightYear}}, {{owner}}<br>v{{version}}</p>
+            <p class="footer-verification"><i class="icon-CopyRight nav-copyright"></i> {{copyrightYear}}, {{OWNER}}<br>v{{version}}</p>
         </li>
     </ul>
     

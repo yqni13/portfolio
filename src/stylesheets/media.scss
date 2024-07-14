@@ -1,7 +1,8 @@
 /* media queries for responsive design regarding devices */
 
-@import "defines.scss";
+@import 'defines.scss';
 
+// TODO(yqni13): adapt styling to avoid !important declarations
 @media screen and (width >= $desktop-width) {
 
     // BASIC
@@ -13,7 +14,7 @@
     }
 
     .nav-bar {
-        #nav-logo { 
+        .nav-logo { 
             width: var(--nav-logo); 
         }
         ul { 
@@ -25,7 +26,7 @@
     }
 
     .home {
-        .left {
+        .introduction {
             max-width: 55%;
             h1 {
                 margin:0px 0px 12px 100px;
@@ -45,27 +46,27 @@
     }
 
     .about {
-        #signature_img {
-            width: 200px;
+        .signature-img {
+            width: 12.5vw;
         }
     }
 
     .cv {
-        .wrapper_cv {
+        .wrapper-cv {
             p {
                 font-size: 24px;
             }
         }
-        .left_exp {
+        .experience-list {
             margin-left: 150px!important;
         }
-        .right_edu {
+        .education-list {
             margin-right: 150px!important;
         }
-        .wrapper_techstack h4 {
+        .wrapper-techstack h4 {
             margin: 0px 100px;
         }
-        .wrapper_ul {
+        .techstack-list {
             margin: 0px 100px;
             ul {
                 width: 75%;
@@ -108,7 +109,7 @@
     }
     
     .nav-bar {
-        #nav-logo { 
+        .nav-logo { 
             width: var(--nav-logo); 
         }
         ul { 
@@ -123,7 +124,7 @@
     }
     
     .home {
-        .left {
+        .introduction {
             max-width: 55%;
             h1 {
                 font-size: 45px;
@@ -144,7 +145,7 @@
     }
 
     .about {
-        .wrapper_about_profile {
+        .wrapper-about-profile {
             display: flex;
             flex-wrap: wrap;
             h5 {
@@ -161,40 +162,41 @@
                 font-size: 20px!important;
             }
         }
-        #about_first_info {
-            width: 50%!important;
+        .about-first-info {
+            max-width: 400px;
+            width: calc(40% + 1vw)!important;
             order: 1!important;
             text-align: center!important;
         }
-        #about_second_info {
+        .about-second-info {
             width: 100%!important;
             order: 3!important;
         }
-        #about_third_info {
+        .about-third-info {
             width: 50%!important;
             order: 2!important;
         }
-        #signature_img {
+        .signature-img {
             width:200px;
         }
     }
 
     .cv {
-        .wrapper_cv {
+        .wrapper-cv {
             p {
                 font-size: 20px;
             }
         }
-        .left_exp {
+        .experience-list {
             margin-left: 100px!important;
         }
-        .right_edu {
+        .education-list {
             margin-right: 100px!important;
         }
-        .wrapper_techstack h4 {
+        .wrapper-techstack h4 {
             margin: 0px 100px;
         }
-        .wrapper_ul {
+        .techstack-list {
             margin: 0px 100px;
             ul {
                 width: 100%;
@@ -241,7 +243,7 @@
     }
     
     .nav-bar {
-        #nav-logo { 
+        .nav-logo { 
             width: var(--nav-logo); 
         }
         ul { 
@@ -268,7 +270,7 @@
 
     .home {
         justify-content: center;
-        .left {
+        .introduction {
             max-width: 75%;
             padding-bottom: 50px;
             h1 {
@@ -291,7 +293,7 @@
     }
 
     .about {
-        .wrapper_about_profile {
+        .wrapper-about-profile {
             h5 {
                 margin: 0px 0px 25px 50px!important;
             }
@@ -309,10 +311,10 @@
                 font-size: 16px!important;
             }
         }
-        #about_first_info {
+        .about-first-info {
             width: 40%!important;
         }
-        #about_second_info {
+        .about-second-info {
             h5 {
                 margin: 0px 50px 25px 50px!important;
             }
@@ -320,14 +322,14 @@
                 margin: 0px 50px!important;
             }
         }
-        #about_third_info {
+        .about-third-info {
             width: 60%!important;
         }
-        #signature_img {
+        .signature-img {
             width: 150px;
         }
-        .about_service,
-        .about_funfacts {
+        .about-service,
+        .about-funfacts {
             margin: 100px 50px 25px 50px!important;
             h6 {
                 font-size: 18px!important;
@@ -343,22 +345,22 @@
     }
 
     .cv {
-        .left_exp {
+        .experience-list {
             margin-left: 50px!important;
         }
-        .right_edu {
+        .education-list {
             margin-right: 50px!important;
         }
-        .wrapper_techstack h4 {
+        .wrapper-techstack h4 {
             margin: 0px 100px;
         }
-        .wrapper_ul {
+        .techstack-list {
             margin: 0px 50px;
             ul {
                 width: 100%;
             }
         }
-        .wrapper_ul i {
+        .techstack-list i {
             width: 50px!important;
             height: 50px!important;
         }
@@ -385,17 +387,17 @@
         display: flex!important;
         position: relative;
         z-index: var(--nav-z);
-        #nav-unfold { 
+        .nav-unfold { 
             display: block!important; 
         }
         .nav-mobile {
             width: var(--burgermenu-size);
             height: var(--burgermenu-size);
         }
-        #nav-copyright { 
+        .nav-copyright { 
             margin: 0; 
         }
-        #nav-logo { 
+        .nav-logo { 
             width: var(--nav-logo); 
         }
         ul { 
@@ -446,7 +448,7 @@
         &::before {
             background-position-x:25%;
         }
-        .left {
+        .introduction {
             max-width: 100%;
             padding-bottom: 50px;
             h1 {
@@ -465,10 +467,10 @@
         h2 {
             margin: 50px 50px 0px 50px!important;
         }
-        .wrapper_about_profile {
+        .wrapper-about-profile {
             margin: 0px 50px!important;
         }
-        #about_second_info {
+        .about-second-info {
             h5 {
                 margin: 0px 0px 25px 0px!important;
             }
@@ -476,8 +478,8 @@
                 margin: 0!important;
             }
         }
-        .about_service,
-        .about_funfacts {
+        .about-service,
+        .about-funfacts {
             h6 {
                 font-size: 16px!important;
             }
@@ -485,19 +487,19 @@
                 font-size: 14px!important;
             }
         }
-        .about_funfacts {
+        .about-funfacts {
             display: flex!important;
             flex-wrap: wrap!important;
             h5 {
                 width: 100%!important;
             }
-            .column_funfacts {
+            .column-funfacts {
                 width: 50%!important;
             }
-            #about_fact1 { order: 1; }
-            #about_fact2 { order: 2; }
-            #about_fact3 { order: 4; }
-            #about_fact4 { order: 3; }
+            .about-fact1 { order: 1; }
+            .about-fact2 { order: 2; }
+            .about-fact3 { order: 4; }
+            .about-fact4 { order: 3; }
         }
     }
 
@@ -505,17 +507,17 @@
         h2 {
             margin: 50px 50px 0px 50px!important;
         }
-        .cv_download {
+        .btn-download .cv{
             margin: 50px 0px!important;
         }
-        .wrapper_cv {
+        .wrapper-cv {
             margin: 0!important;
             display: inline-block!important;
         }
-        .left_exp {
+        .experience-list {
             margin: 0px 0px 50px 0px!important;
         }
-        .right_edu {
+        .education-list {
             margin: 0px 0px 100px 0px!important;
             text-align: left!important;
             h4 {
@@ -530,16 +532,16 @@
                 border-left-style: double!important;
             }
         }
-        .wrapper_techstack {
+        .wrapper-techstack {
             margin: 0 50px!important;
         }
-        .wrapper_ul {
+        .techstack-list {
             margin: 0;
             ul {
                 width: 100%;
             }
         }
-        .wrapper_ul i {
+        .techstack-list i {
             width: 40px!important;
             height: 40px!important;
         }
@@ -555,7 +557,7 @@
             justify-content: center;
             margin: 0px 50px!important;
         }
-        .portfolio-wrapper {
+        .wrapper-portfolio {
             margin: 50px 50px 25px 50px!important;
         }
     }
@@ -574,11 +576,11 @@
     }
 
     .about {
-        #about_first_info {
+        .about-first-info {
             width: 100%!important;
             margin-top: 50px!important;
         }
-        #about_third_info {
+        .about-third-info {
             width: 100%!important;
             h5 {
                 margin-left: 0px!important;
@@ -586,16 +588,16 @@
             form {
                 margin: 0px!important;
             }
-            .download_button {
+            .btn-download .about{
                 text-align: center!important;
                 margin-left: 0px!important;
             }
         }
-        #signature_img {
+        .signature-img {
             width: 200px;
         }
-        .about_service,
-        .about_funfacts {
+        .about-service,
+        .about-funfacts {
             margin: 100px 25px 25px 25px!important;
             h5 {
                 margin-bottom: 25px!important;
@@ -604,19 +606,19 @@
                 margin-top: 25px!important;
             }
         }
-        .about_service {
-            #about_service1,
-            #about_service2 {
+        .about-service {
+            .about-service1,
+            .about-service2 {
                 width: 50%!important;
             }
-            #about_service3 {
+            .about-service3 {
                 width: 100%!important;
             }
         }
     }
 
     .cv {
-        .wrapper_techstack h4 {
+        .wrapper-techstack h4 {
             margin: 0!important;
         }
     }

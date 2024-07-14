@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationStart, Router } from '@angular/router';
 import _ from 'underscore';
+import { UserDataModel } from './shared/interface/userData';
+import { SharedDataService } from './shared/service/shared-data.service';
 
 @Component({
   selector: 'app-root',
@@ -9,27 +11,44 @@ import _ from 'underscore';
 })
 export class AppComponent implements OnInit {
 
-  public version = '2.5.5';
-  public copyrightYear: number = new Date().getFullYear();
-  public setDark = "";
-  public setLight = "";
-  // public isAccepted = false;
+  protected version: string;
+  protected copyrightYear: number;
+  protected darkMode: string;
+  protected lightMode: string;
+  protected author: UserDataModel;
+  private mobileNavExpanded: boolean;
+  private collapseNavbarWidth: number;
+  readonly OWNER: string;
+  // isAccepted = false;
   
-  private mobileNavExpended = false;
-  private collapseNavbarWidth = 768;
-  owner: string;
-  
-  constructor(private router: Router) {
+  constructor(
+    private router: Router,
+    private sharedDataService: SharedDataService
+  ) {
     router.events.subscribe(e => {
-      if(e instanceof NavigationStart)
-        window.scrollTo(0,0)
+      if(e instanceof NavigationStart) {
+        window.scrollTo(0,0);
+      }
     })
-    this.owner = 'Lukas Varga';
+
+    this.version = '2.6.5';
+    this.darkMode = '';
+    this.lightMode = '';
+    this.copyrightYear = new Date().getFullYear();
+    this.author = {
+      firstname: 'Lukas',
+      lastname: 'Varga',
+      alias: 'yqni13'
+    };
+    this.OWNER = `${this.author.firstname} ${this.author.lastname}`;
+    this.mobileNavExpanded = false;
+    this.collapseNavbarWidth = 768;
+
   }
 
   ngOnInit() {
     this.checkThemeCookie();
-    // this.checkAlertCookie(); // TODO: disabled unless hotfix necessary
+    // this.checkAlertCookie(); // TODO(yqni13): create service for custom alert
     
     this.setNavWidthDynamically(window.screen.width);
     this.setNavWidthDynamically(document.body.clientWidth);
@@ -45,25 +64,30 @@ export class AppComponent implements OnInit {
       this.setNavWidthDynamically(document.body.clientWidth);
     }, 250)
     window.addEventListener("resize", clientWidthRequestSlowedDown, false);
+
+    this.shareDataWithHomeComp();
+  }
+  
+  shareDataWithHomeComp() {
+    this.sharedDataService.setSharedData(this.author);
   }
   
   setDarkMode() {
-    this.setDark = "setVisible";
-    this.setLight = "setHidden";
-    localStorage.setItem("theme", "dark");
+    this.darkMode = 'setVisible';
+    this.lightMode = 'setHidden';
+    localStorage.setItem("theme", 'dark');
     document.body.setAttribute("data-theme", 'dark');
   }
   
   setLightMode() {
-    this.setDark = "setHidden";
-    this.setLight = "setVisible";
-    localStorage.setItem("theme", "light");
+    this.darkMode = 'setHidden';
+    this.lightMode = 'setVisible';
+    localStorage.setItem("theme", 'light');
     document.body.setAttribute("data-theme", 'light');
   }
 
   setNavWidthDynamically(width: number): void {
     // sets data attribute for body and in media.scss style settings are applied
-
     if(width > this.collapseNavbarWidth) {
       document.body.setAttribute("data-nav", 'navDesktop');
     } else {
@@ -73,22 +97,28 @@ export class AppComponent implements OnInit {
 
   expandNavMobile(closeAfterRouting = false): void {
     const screenWidth = window.screen.width;
-    if(screenWidth <= this.collapseNavbarWidth && closeAfterRouting)  this.mobileNavExpended = true;
-    if(screenWidth > this.collapseNavbarWidth && !closeAfterRouting) return;
+
+    if(screenWidth <= this.collapseNavbarWidth && closeAfterRouting) {
+      this.mobileNavExpanded = true;
+    }
+    
+    if(screenWidth > this.collapseNavbarWidth && !closeAfterRouting) {
+      return;
+    }
 
     if(screenWidth <= this.collapseNavbarWidth) {
-      if(this.mobileNavExpended) {
+      if(this.mobileNavExpanded) {
         document.body.setAttribute("data-nav", 'navMobileCollapsed')
-        this.mobileNavExpended = false;
+        this.mobileNavExpanded = false;
       } else {
-        document.body.setAttribute("data-nav", 'navMobileExtended')
-        this.mobileNavExpended = true;
+        document.body.setAttribute("data-nav", 'navMobileExpanded')
+        this.mobileNavExpanded = true;
       }
     }
   }
 
   checkThemeCookie() {
-    const theme = localStorage.getItem("theme");
+    const theme = localStorage.getItem('theme');
     if(!theme) {
       this.setDarkMode();      
       return;

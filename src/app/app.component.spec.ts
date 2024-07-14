@@ -25,7 +25,7 @@ describe('AppComponent', () => {
   it(`should have as owner 'Lukas Varga'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.owner).toEqual('Lukas Varga');
+    expect(app.OWNER).toEqual('Lukas Varga');
   });
 
   it('should render owner name', () => {

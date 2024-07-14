@@ -8,31 +8,8 @@ h2 {
     }
 }
 
-.cv_download {
-    text-align: center;
-    margin: 50px 100px;
-    text-transform: uppercase;
-}
-
-.cv_download a {
-    padding: 10px 25px;
-    text-decoration: none;
-    background: transparent;
-    color: var(--yqni13-pink);
-    border: solid var(--yqni13-pink) 3px;
-    border-style: outset;
-    border-radius: 10px;
-    font-weight: bold;
-    cursor: pointer;
-    letter-spacing: 1px;
-}
-
-.cv_download a:hover {
-    background-color: var(--yqni13-pink);
-    color: var(--alice-blue);
-    opacity: 0.6;
-    border: solid var(--yqni13-pink) 1px;
-    border-style: inset;
+.btn-cv {
+    margin-top: 50px;
 }
 
 .block {
@@ -45,23 +22,24 @@ h2 {
     }
 }
 
-h4, p {
+h4, 
+p {
     padding:0;
     margin:0;
 }
 
-.wrapper_cv h4 {
+.wrapper-cv h4 {
     margin-bottom: 25px;
 }
 
-.wrapper_cv {
+.wrapper-cv {
     display: grid;
     grid-template-columns: 50% 50%;
-    margin-left: 100px;
-    margin-right: 100px;
+    margin: 0 100px;
+    padding-top: 50px;
 }
 
-.left_exp {
+.experience-list {
     margin-left: 50px;
     text-align: left;
     h4 {
@@ -76,7 +54,7 @@ h4, p {
     }
 }
 
-.right_edu {
+.education-list {
     margin-right: 50px;
     text-align: right;
     h4 {
@@ -91,39 +69,39 @@ h4, p {
     }
 }
 
-.wrapper_techstack {
+.wrapper-techstack {
     margin: 0px 100px;
 }
 
-.wrapper_techstack h4 {
+.wrapper-techstack h4 {
     margin-top: 100px;
     text-align: center;
 }
 
-.wrapper_ul {
+.techstack-list {
     text-align: -webkit-center;
 }
 
-.wrapper_ul ul {
+.techstack-list ul {
     padding-inline-start: 0;
 }
 
-.wrapper_ul li {
+.techstack-list li {
     display: inline;
 }
 
-.wrapper_ul i {
+.techstack-list i {
     width: 60px;
     height: 60px;
     margin: 25px 25px;
 }
 
-#horizontal {
+.horizontal {
     height: 60px;
     width:90px!important;
 }
 
-#black_fill {
+.black-fill {
     background-color: var(--github-color);
 }
 
