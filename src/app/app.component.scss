@@ -57,7 +57,13 @@ span:hover {
 }
 
 .nav-lightmode {
-    color: var(--tangerine-yellow);
+    color: var(--lightmode-yellow);
+}
+
+nav-lightmode,
+nav-darkmode {
+    width: var(--linkicons-size)!important;
+    height: var(--linkicons-size)!important;
 }
 
 ul>:last-child {
@@ -84,31 +90,21 @@ li:nth-child(2) {
 }
 
 .setVisible {
-    visibility: visible;
     display: inline;
 }
 
 .setHidden {
-    visibility:hidden;
     display: none;
 }
 
 .link-icons i {
     color: var(--navbar-content);
-    width: 20px;
-    height: 20px;
+    width: var(--linkicons-size);
+    height: var(--linkicons-size);
     margin: 5px 8.5px;
 }
 
-.link-icons img {
-    width: 20px;
-    height: 20px;
-    color: var(--navbar-content);
-    margin: 5px 8.5px;
-}
-
-.link-icons i:hover,
-.link-icons img:hover {
+.link-icons i:hover {
     opacity: 0.4;
 }
 
