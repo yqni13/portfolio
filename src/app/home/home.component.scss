@@ -35,7 +35,6 @@ video {
     left: var(--nav-size);
     align-self: center;
     text-align: left;
-    // opacity: 0;
     animation: appear 3s ease-in-out;
 
     h1 span:not(.frontend) {
@@ -57,10 +56,8 @@ video {
 @keyframes appear {
     0% {
         opacity: 0;
-        // text-shadow: 0 0 1em white;
     }    
     100% {
         opacity: 1;
-        // text-shadow: 0 0 0 white;
     }
 }
