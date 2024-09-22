@@ -103,8 +103,8 @@
     "Portfolio": {
         "type": "frontend",
         "title": "Portfolio",
-        "version": "2.6.5",
-        "keywords": "live demo | portfolio | angular framework | english | responsive | custom design | dark/light theme | animation | custom search filter | template | single page application | custom alert | ESLint | CI/CD workflow",
+        "version": "2.6.7",
+        "keywords": "live demo | portfolio | angular framework | english | responsive | custom design | dark/light theme | animation | custom search filter | single page application | ESLint | CI/CD workflow",
         "technology": "Angular | RxJS | JSON",
         "cardScreenPath": "assets/img/web_portfolio.jpg",
         "githublink": "https://github.com/yqni13/portfolio",
@@ -117,6 +117,29 @@
             "icon-Angular",
             "icon-RxJS",
             "icon-JSON"
+        ]
+    },
+    "ArtCreation": {
+        "type": "frontend",
+        "title": "Art-Gallery",
+        "version": "1.0.0-beta.4",
+        "keywords": "live demo | angular 18 | customer order | responsive | custom design | dark/light theme | custom lazy loading | i18n | gallery | custom form | http interception | services | pipes | directives | nested routing",
+        "technology": "Angular | RxJS | JSON | i18n | nodejs",
+        "cardScreenPath": "assets/img/web_artcreation.jpg",
+        "githublink": "https://github.com/yqni13/art-gallery-FE-only",
+        "techURLs": [
+            "https://angular.dev/",
+            "https://rxjs.dev/",
+            "https://www.json.org/json-en.html",
+            "https://www.i18next.com/",
+            "https://nodejs.org/en"
+        ],
+        "techImgClasses": [
+            "icon-Angular",
+            "icon-RxJS",
+            "icon-JSON",
+            "icon-i18n",
+            "icon-NodeJS"
         ]
     }
 }

@@ -8,7 +8,8 @@
             <img 
                 class="nav-logo" 
                 src="assets/img/yqni13-small.png" 
-                alt="no logo" [routerLink]="['home']" 
+                alt="no logo" 
+                [routerLink]="['home']" 
                 (click)="expandNavMobile(true); shareDataWithHomeComp();" 
                 (keydown.enter)="expandNavMobile(true); shareDataWithHomeComp();"
             >
@@ -46,42 +47,29 @@
             >Portfolio</span>
         </li>            
         <li>
-            <span 
+            <div 
                 [ngClass]="darkMode" 
                 (click)="setLightMode()" 
                 (keydown.enter)="setLightMode()"
                 ><i class="icon-DarkMode nav-darkmode"></i>
-            </span>
-            <span 
+            </div>
+            <div 
                 [ngClass]="lightMode"
                 (click)="setDarkMode()"
                 (keydown.enter)="setDarkMode()"
                 ><i class="icon-LightMode nav-lightmode"></i>
-            </span>
+            </div>
         </li>
         <li>
-            <!-- <p class="nav-full nav-issues" (click)="openAlertMsg(); expandNavMobile(true)"
-            (keydown.enter)="openAlertMsg(); expandNavMobile(true)">-current issues-</p> -->
             <div class="link-icons">
                 <a href="https://github.com/yqni13" target="_blank"><i class="icon-GitHub"></i></a>
-                <a href="https://app.daily.dev/yqni13" target="_blank"><img src="assets/img/dailydev.png" alt="#"></a>
-                <a href="https://leetcode.com/u/yqni13/" target="_blank"><i class="icon-LeetCode"></i></a>
+                <a href="https://app.daily.dev/yqni13" target="_blank"><i class="icon-DailyDev3"></i></a>
                 <a href="https://www.xing.com/profile/Lukas_Varga2" target="_blank"><i class="icon-Xing"></i></a>
             </div>
             <p class="footer-verification"><i class="icon-CopyRight nav-copyright"></i> {{copyrightYear}}, {{OWNER}}<br>v{{version}}</p>
         </li>
-    </ul>
-    
-
+    </ul>  
 </nav>
-<!-- <div class="error-msg-box" *ngIf="!isAccepted">
-    <div class="error-wrapper">
-        <p>
-            There are currently problems with the hosting of this project on GitHub => normal navigating by nav-menu works perfectly, <span class="red-msg">refreshing (F5)</span> will lead to <span class="red-msg">Error: 404</span>. I am currently working on this issue. Until issue is closed, this message is available in nav-menu '-current issues-'<br><span class="green-msg">Accept to continue.</span><br>Started: 22.06.2024, v2.2.2<br>
-        </p>
-        <a (click)="closeAlertMsg()" (keydown.enter)="closeAlertMsg()">ACCEPT</a>
-    </div>
-</div> -->
 
 
 <router-outlet><router-outlet />

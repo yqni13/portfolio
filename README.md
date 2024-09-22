@@ -1,5 +1,5 @@
 # yqni13 portfolio
-$\texttt{\color{teal}{v2.5.5}}$
+$\texttt{\color{teal}{v2.6.7}}$
 
 
 <br><br>
@@ -18,7 +18,7 @@ $\texttt{\color{teal}{v2.5.5}}$
 </div>
 <br>
 
-### <a href="https://yqni13.github.io/portfolio/home">TRY LIVE DEMO</a>
+### <a href="https://yqni13.com">WEBPAGE</a>
 
 <br>
 
@@ -104,7 +104,7 @@ My portfolio comes with two theme settings: $\textsf{\color{gray}{Dark mode}}$ &
 |Firefox | Chrome | Opera  | Edge   | DuckGo | Brave  |
 |Yes     | Yes    | Yes    | Yes    | Yes*   | Yes    |
 
-* This browser has problems displaying certain animations.
+*This browser has problems displaying certain animations.
 
 </center>
 <br>
@@ -129,14 +129,14 @@ Specified unit tests in xyz.component.spec.ts files or other tests are my last s
 ## Updates
 
 [list of all updates](src/docs/update_protocol.md)
-### $\textsf{last\ update\ 2.5.5\ >>\ {\color{pink}2.6.5}}$
+### $\textsf{last\ update\ 2.6.5\ >>\ {\color{pink}2.6.7}}$
 
-- $\textsf{\color{green}Change:}$ Added page scroll indicators (white arrow animation, left bottom) for the components 'about', 'cv' and 'portfolio'.
-- $\textsf{\color{red}Patch:}$ Refactored code in terms of Google Guidelines HTML/CSS.
-- $\textsf{\color{red}Patch:}$ Refactored code in terms of Google Guidelines Typescript.
-- $\textsf{\color{red}Patch:}$ Refactored code in terms of Angular Best Practices.
-- $\textsf{\color{red}Patch:}$ Refactored code to reuse user-data from parent in child component and reduce redundancy.
-- $\textsf{\color{red}Bugfix:}$ Navigating to base url redirects to 'home' component and activates nav-menu item accordingly. [Before: Redirecting to 'home' component didn't set 'Home' nav-menu item active.]
+- $\textsf{\color{green}Change:}$ Added video to landingpage and removed single profile picture for gentle appearance.
+- $\textsf{\color{green}Change:}$ Changed color of lightmode button to decrease multiple color influence in webpage color theme.
+- $\textsf{\color{green}Change:}$ Increased information link icon sizes in footer.
+- $\textsf{\color{green}Change:}$ Added portfolio card hover/touch indicator (logo coloured hand icon, left top).
+- $\textsf{\color{teal}Addition:}$ New content added to 'Portfolio' component.
+
 
 <br>
 

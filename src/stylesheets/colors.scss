@@ -2,20 +2,21 @@
     /* yqni13 colors */
     --yqni13-purple: #650d88;
     --yqni13-pink: #bc0c79;
-
+    
     /* basic colors */
     --alice-blue: #f0f8ff;
     --deepnavy-blue: #011222;
     --rich-black: #020d19;
-
+    
     /* other defined colors */
+    --lightmode-purple: #990066;
     --accept-green: #127412;
     --darktext-grey: #5c5470;
     --header-grey: #352f44;
     --light-pink: #ca7394;
     --lightopacity-grey: rgba(128, 128, 128, 0.4);
     --lighttext-grey: #7e7e7e;
-    --tangerine-yellow: #f3b20e;
+    --lightmode-yellow: #e7ce8d;
     --tyrian-purple: #33002a;
     --warning-red: #ca2b2b;
 
@@ -24,6 +25,7 @@
     --gradient-tyrianpurple: conic-gradient(from 0deg at 0% 0%,#f0f8ff 0%, 25%, #33002a 47% 0%);
     --portfolio-deepnavyblue: conic-gradient(from 0deg at 0% 0%,#f0f8ff 2% 6%, 7%, #011222 47% 9%);
     --yqni13-gradient: linear-gradient(167deg, #650d88 42%, #bc0c79 90%);
+    --gradient-grey: linear-gradient(133deg, #7e7e7e 53% 0%, #5c5470 100% 97%);
 
     /* filter to change color of png */
     --signature-grey: invert(33%) sepia(9%) saturate(1336%) hue-rotate(216deg) brightness(94%) contrast(85%);
@@ -31,24 +33,26 @@
 }
 
 [data-theme='light'] {
-    --navbar-bg: var(--tyrian-purple);
-    --navbar-content: var(--lighttext-grey);
-    --navbar-text: var(--alice-blue);
-    --navbar-border: var(--yqni13-pink);
+    --navbar-bg: var(--lighttext-grey);
+    --navbar-content: var(--rich-black);
+    --navbar-text: var(--rich-black);
+    --navbar-border: var(--lightmode-purple);
     --body-bg: var(--alice-blue);
     --header-color: var(--header-grey);
-    --text-color: var(--darktext-grey);
-    --button-color: var(--light-pink);
-    --border-line: var(--yqni13-pink);
-    --home-img: var(--gradient-tyrianpurple);
+    --text-color: var(--rich-black);
+    --button-color: var(--lightmode-purple);
+    --border-line: var(--lightmode-purple);
+    --home-img: var(--gradient-grey);
     --home-frontend: var(--yqni13-gradient);
-    --about-imgbg: var(--gradient-tyrianpurple);
+    --about-imgbg: var(--gradient-grey);
     --about-shadow: var(--portfolio-deepnavyblue);
     --portfolio-card: var(--yqni13-gradient);
-    --signature-color: var(--signature-grey);
+    --signature-color: var(--rich-black);
     --github-color: var(--rich-black);
-    --active-link: var(--yqni13-pink);
-    --opacity-bg: 0.45;
+    --active-link: var(--lightmode-purple);
+    --opacity-bg: 0.75;
+    --home-brightness: 0.1;
+    --home-grayscale: 1;
 }
 
 [data-theme='dark'] {
@@ -69,7 +73,9 @@
     --signature-color: var(--signature-white);
     --github-color: var(--alice-blue);
     --active-link: var(--yqni13-gradient);
-    --opacity-bg: 0.25;
+    --opacity-bg: 0.35;
+    --home-brightness: 1;
+    --home-grayscale: 0;
 }
 
 

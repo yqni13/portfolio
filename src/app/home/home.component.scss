@@ -1,6 +1,3 @@
-$headercount: 6;
-$quotecount: 22;
-
 .home {
     height: 100vh;
     align-content: center;
@@ -13,27 +10,39 @@ $quotecount: 22;
     background-color: transparent;
 }
 
-.home::before {
-    background-image: url(../../assets/img/wallpaper3.png);
-    background-size: cover;
-    background-position-y: 20%;
-    opacity: var(--opacity-bg);
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    content: '';
-    position: fixed;
-}
-
 .column {
     display: flex;
     flex-direction: column;
 }
 
+.home-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: left;
+}
+
+video {
+    filter: grayscale(var(--home-grayscale));
+    width: 100%;
+    height: 100vh;
+    opacity: var(--opacity-bg);
+    object-fit: cover;
+}
+
 .introduction {
+    position: absolute;
+    top: 125px;
+    left: var(--nav-size);
     align-self: center;
     text-align: left;
+    animation: appear 3s ease-in-out;
+
+    h1 span:not(.frontend) {
+        filter: brightness(var(--home-brightness));
+    }
+    
     p {
+        filter: brightness(var(--home-brightness));
         color: var(--header-color);
     }
 }
@@ -44,70 +53,11 @@ $quotecount: 22;
     -webkit-text-fill-color: transparent;
 }
 
-.profile-picture {
-    rotate: -5deg;
-    border-radius: 25px;
-    opacity: 0;
-    animation: fade-in 3s forwards;
-    -webkit-animation: fade-in 3s forwards;
-    -moz-animation: fade-in 3s forwards;
-    -o-animation: fade-in 3s forwards;
-    
-    img {
-        background-image: var(--home-img);
-        border-radius:30px;
-        border: solid var(--navbar-border) 2px;
-    }
-}
-
-.fading-header {
-    transform: scale(0.94);
-    animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
-    -webkit-animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
-    -moz-animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
-    -o-animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
-
-    span {
+@keyframes appear {
+    0% {
         opacity: 0;
-        filter: blur(4px); 
+    }    
+    100% {
+        opacity: 1;
     }
-}
-
-.fading-quote {
-    transform: scale(0.94);
-    animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
-    -webkit-animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
-    -moz-animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
-    -o-animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
-
-    span {
-        opacity: 0;
-        filter: blur(4px); 
-    }
-}
-
-@for $i from 1 through $headercount {
-    .#{fading-header} span:nth-child(#{$i}) {
-        animation: fade-in 0.8s #{calc($i / 5)}s forwards cubic-bezier(0.11, 0, 0.5, 0);
-        -webkit-animation: fade-in 0.8s #{calc($i / 5)}s forwards cubic-bezier(0.11, 0, 0.5, 0);
-        -moz-animation: fade-in 0.8s #{calc($i / 5)}s forwards cubic-bezier(0.11, 0, 0.5, 0);
-        -o-animation: fade-in 0.8s #{calc($i / 5)}s forwards cubic-bezier(0.11, 0, 0.5, 0);
-    }
-}
-
-@for $i from 1 through $quotecount {
-    .#{fading-quote} span:nth-child(#{$i}) {
-        animation: fade-in 0.8s #{calc($i / 10)}s forwards cubic-bezier(0.11, 0, 0.5, 0);
-        -webkit-animation: fade-in 0.8s #{calc($i / 10)}s forwards cubic-bezier(0.11, 0, 0.5, 0);
-        -moz-animation: fade-in 0.8s #{calc($i / 10)}s forwards cubic-bezier(0.11, 0, 0.5, 0);
-        -o-animation: fade-in 0.8s #{calc($i / 10)}s forwards cubic-bezier(0.11, 0, 0.5, 0);
-    }
-}
-
-@keyframes fade-in {
-    100% { opacity: 1; filter: blur(0); }
-}
-
-@keyframes scale {
-    100% { transform: scale(1); }
 }
