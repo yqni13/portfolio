@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Component, OnInit } from '@angular/core';
 import { NavigationStart, Router } from '@angular/router';
 import _ from 'underscore';
@@ -19,7 +20,7 @@ export class AppComponent implements OnInit {
   private mobileNavExpanded: boolean;
   private collapseNavbarWidth: number;
   readonly OWNER: string;
-  // isAccepted = false;
+
   
   constructor(
     private router: Router,
@@ -31,7 +32,7 @@ export class AppComponent implements OnInit {
       }
     })
 
-    this.version = '2.6.5';
+    this.version = '2.6.7';
     this.darkMode = '';
     this.lightMode = '';
     this.copyrightYear = new Date().getFullYear();
@@ -48,7 +49,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.checkThemeCookie();
-    // this.checkAlertCookie(); // TODO(yqni13): create service for custom alert
     
     this.setNavWidthDynamically(window.screen.width);
     this.setNavWidthDynamically(document.body.clientWidth);
@@ -130,30 +130,5 @@ export class AppComponent implements OnInit {
       this.setLightMode();
     }
   }
-
-  // checkAlertCookie() {
-  //   const alertCookie = localStorage.getItem("yqni13-alert");
-  //   switch(alertCookie) {
-  //     case 'true':
-  //       this.isAccepted = true;
-  //       break;
-  //     case 'false':
-  //       this.isAccepted = false;
-  //       break;
-  //     default:
-  //       this.isAccepted = false;
-  //   }
-  // }
-
-  // openAlertMsg() {
-  //   this.isAccepted = false;
-  // }
-
-  // closeAlertMsg() {
-  //   this.isAccepted = true;
-  //   localStorage.setItem('yqni13-alert', 'true');
-  // }
-
-
 }
 

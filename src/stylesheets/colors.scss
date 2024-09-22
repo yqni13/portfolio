@@ -50,7 +50,9 @@
     --signature-color: var(--rich-black);
     --github-color: var(--rich-black);
     --active-link: var(--lightmode-purple);
-    --opacity-bg: 0.45;
+    --opacity-bg: 0.75;
+    --home-brightness: 0.1;
+    --home-grayscale: 1;
 }
 
 [data-theme='dark'] {
@@ -71,7 +73,9 @@
     --signature-color: var(--signature-white);
     --github-color: var(--alice-blue);
     --active-link: var(--yqni13-gradient);
-    --opacity-bg: 0.25;
+    --opacity-bg: 0.35;
+    --home-brightness: 1;
+    --home-grayscale: 0;
 }
 
 

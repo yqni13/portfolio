@@ -1,6 +1,3 @@
-$headercount: 6;
-$quotecount: 22;
-
 .home {
     height: 100vh;
     align-content: center;
@@ -13,27 +10,40 @@ $quotecount: 22;
     background-color: transparent;
 }
 
-.home::before {
-    background-image: url(../../assets/img/wallpaper3.png);
-    background-size: cover;
-    background-position-y: 20%;
-    opacity: var(--opacity-bg);
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    content: '';
-    position: fixed;
-}
-
 .column {
     display: flex;
     flex-direction: column;
 }
 
+.home-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: left;
+}
+
+video {
+    filter: grayscale(var(--home-grayscale));
+    width: 100%;
+    height: 100vh;
+    opacity: var(--opacity-bg);
+    object-fit: cover;
+}
+
 .introduction {
+    position: absolute;
+    top: 125px;
+    left: var(--nav-size);
     align-self: center;
     text-align: left;
+    // opacity: 0;
+    animation: appear 3s ease-in-out;
+
+    h1 span:not(.frontend) {
+        filter: brightness(var(--home-brightness));
+    }
+    
     p {
+        filter: brightness(var(--home-brightness));
         color: var(--header-color);
     }
 }
@@ -44,29 +54,13 @@ $quotecount: 22;
     -webkit-text-fill-color: transparent;
 }
 
-.profile-picture {
-    rotate: -5deg;
-    border-radius: 25px;
-    
-    img {
-        background-image: var(--home-img);
-        border-radius:30px;
-        border: solid var(--navbar-border) 2px;
-    }
-}
-
-p,
-h1,
-.profile-picture {
-    transform-origin: left;
-    animation: appearance 1s linear;
-}
-
-@keyframes appearance {
-    from {
-        transform: scaleX(0);
-    }
-    to {
-        transform: scaleX(1);
+@keyframes appear {
+    0% {
+        opacity: 0;
+        // text-shadow: 0 0 1em white;
+    }    
+    100% {
+        opacity: 1;
+        // text-shadow: 0 0 0 white;
     }
 }
