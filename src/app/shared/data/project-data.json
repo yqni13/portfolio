@@ -122,7 +122,7 @@
     "ArtCreation": {
         "type": "frontend",
         "title": "Art-Gallery",
-        "version": "1.0.0-beta.4",
+        "version": "1.0.0-beta.7",
         "keywords": "live demo | angular 18 | customer order | responsive | custom design | dark/light theme | custom lazy loading | i18n | gallery | custom form | http interception | services | pipes | directives | nested routing",
         "technology": "Angular | RxJS | JSON | i18n | nodejs",
         "cardScreenPath": "assets/img/web_artcreation.jpg",
