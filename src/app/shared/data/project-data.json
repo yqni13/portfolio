@@ -103,7 +103,7 @@
     "Portfolio": {
         "type": "frontend",
         "title": "Portfolio",
-        "version": "2.6.7",
+        "version": "2.6.8",
         "keywords": "live demo | portfolio | angular framework | english | responsive | custom design | dark/light theme | animation | custom search filter | single page application | ESLint | CI/CD workflow",
         "technology": "Angular | RxJS | JSON",
         "cardScreenPath": "assets/img/web_portfolio.jpg",

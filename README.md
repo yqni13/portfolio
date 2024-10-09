@@ -1,5 +1,5 @@
 # yqni13 portfolio
-$\texttt{\color{teal}{v2.6.7}}$
+$\texttt{\color{teal}{v2.6.8}}$
 
 
 <br><br>
@@ -129,14 +129,9 @@ Specified unit tests in xyz.component.spec.ts files or other tests are my last s
 ## Updates
 
 [list of all updates](src/docs/update_protocol.md)
-### $\textsf{last\ update\ 2.6.5\ >>\ {\color{pink}2.6.7}}$
+### $\textsf{last\ update\ 2.6.7\ >>\ {\color{pink}2.6.8}}$
 
-- $\textsf{\color{green}Change:}$ Added video to landingpage and removed single profile picture for gentle appearance.
-- $\textsf{\color{green}Change:}$ Changed color of lightmode button to decrease multiple color influence in webpage color theme.
-- $\textsf{\color{green}Change:}$ Increased information link icon sizes in footer.
-- $\textsf{\color{green}Change:}$ Added portfolio card hover/touch indicator (logo coloured hand icon, left top).
-- $\textsf{\color{teal}Addition:}$ New content added to 'Portfolio' component.
-
+- $\textsf{\color{red}Patch:}$ Addressing github dependabot alerts: adapted/removed dependencies.
 
 <br>
 
