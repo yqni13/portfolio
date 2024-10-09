@@ -4,6 +4,10 @@
 
 <br>
 
+### 2024/10/09 - $\textsf{update\ 2.6.7\ >>\ {\color{pink}2.6.8}}$
+
+- $\textsf{\color{red}Patch:}$ Addressing github dependabot alerts: adapted/removed dependencies.
+
 ### 2024/09/22 - $\textsf{update\ 2.6.5\ >>\ {\color{pink}2.6.7}}$
 
 - $\textsf{\color{green}Change:}$ Added video to landingpage and removed single profile picture for gentle appearance.
