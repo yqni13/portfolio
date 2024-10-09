@@ -31,7 +31,7 @@ export class AppComponent implements OnInit {
       }
     })
 
-    this.version = '2.6.7';
+    this.version = '2.6.8';
     this.darkMode = '';
     this.lightMode = '';
     this.copyrightYear = new Date().getFullYear();
