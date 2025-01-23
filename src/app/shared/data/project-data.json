@@ -122,11 +122,11 @@
     "ArtCreation": {
         "type": "frontend",
         "title": "Art-Gallery",
-        "version": "1.0.0-beta.7",
-        "keywords": "live demo | angular 18 | customer order | responsive | custom design | dark/light theme | custom lazy loading | i18n | gallery | custom form | http interception | services | pipes | directives | nested routing",
+        "version": "1.0.0-beta.10",
+        "keywords": "live demo | angular 18 | customer order | responsive | custom design | dark/light theme | custom lazy loading | i18n | gallery | custom forms/validation | http interception | services | pipes | directives | nested routing | nodemailer",
         "technology": "Angular | RxJS | JSON | i18n | nodejs",
         "cardScreenPath": "assets/img/web_artcreation.jpg",
-        "githublink": "https://github.com/yqni13/art-gallery-FE-only",
+        "githublink": "https://github.com/yqni13/artcreation-dv",
         "techURLs": [
             "https://angular.dev/",
             "https://rxjs.dev/",
@@ -140,6 +140,31 @@
             "icon-JSON",
             "icon-i18n",
             "icon-NodeJS"
+        ]
+    },
+    "TaxiVarga": {
+        "type": "fullstack",
+        "title": "Taxi-Varga",
+        "version": "1.0.0-beta.2",
+        "keywords": "live demo | angular 18 | customer order | responsive | custom design | dark/light theme | Google Routes/Places API | i18n | taxi services | custom forms/validation | http interception | nested routing | nodemailer",
+        "technology": "Angular | RxJS | NodeJS | Express | i18n | Google API",
+        "cardScreenPath": "assets/img/web_taxi-varga.jpg",
+        "githublink": "https://github.com/yqni13/taxi-varga",
+        "techURLs": [
+            "https://angular.dev/",
+            "https://rxjs.dev/",
+            "https://nodejs.org/en",
+            "https://expressjs.com",
+            "https://www.i18next.com/",
+            "https://mapsplatform.google.com/maps-products/"
+        ],
+        "techImgClasses": [
+            "icon-Angular",
+            "icon-RxJS",
+            "icon-NodeJS",
+            "icon-ExpressJS",
+            "icon-i18n",
+            "icon-GoogleAPI"
         ]
     }
 }
