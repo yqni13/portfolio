@@ -1,0 +1,158 @@
+{
+    "cv-skills": {
+        "skills": {
+            "entry0": {
+                "title": "HTML5",
+                "path": "https://developer.mozilla.org/en-US/docs/Web/HTML",
+                "icon": "icon-HTML5"
+            },
+            "entry1": {
+                "title": "CSS3",
+                "path": "https://developer.mozilla.org/en-US/docs/Web/CSS?retiredLocale=de",
+                "icon": "icon-CSS3"
+            },
+            "entry2": {
+                "title": "Javascript",
+                "path": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+                "icon": "icon-Javascript"
+            },
+            "entry3": {
+                "title": "Typescript",
+                "path": "https://www.typescriptlang.org/",
+                "icon": "icon-Typescript"
+            },
+            "entry4": {
+                "title": "Angular",
+                "path": "https://angular.io/",
+                "icon": "icon-Angular"
+            },
+            "entry5": {
+                "title": "Git",
+                "path": "https://git-scm.com/",
+                "icon": "icon-Git"
+            },
+            "entry6": {
+                "title": "GitHub",
+                "path": "https://github.com/",
+                "icon": "icon-GitHub black-fill"
+            },
+            "entry7": {
+                "title": "GitExtensions",
+                "path": "https://gitextensions.github.io/",
+                "icon": "icon-GitExtensions"
+            },
+            "entry8": {
+                "title": "Notion",
+                "path": "https://www.notion.so/product",
+                "icon": "icon-Notion"
+            },
+            "entry9": {
+                "title": "Atlassian",
+                "path": "https://www.atlassian.com/",
+                "icon": "icon-Atlassian"
+            },
+            "entry10": {
+                "title": "JSON",
+                "path": "https://json.org/",
+                "icon": "icon-JSON"
+            },
+            "entry11": {
+                "title": "i18n",
+                "path": "https://www.i18next.com/",
+                "icon": "icon-i18n"
+            },
+            "entry12": {
+                "title": "SaSS",
+                "path": "https://sass-lang.com/",
+                "icon": "icon-Sass"
+            },
+            "entry13": {
+                "title": "NodeJS",
+                "path": "https://nodejs.org/en",
+                "icon": "icon-NodeJS"
+            },
+            "entry14": {
+                "title": "npm",
+                "path": "https://www.npmjs.com/",
+                "icon": "icon-npm"
+            },
+            "entry15": {
+                "title": "VSCode",
+                "path": "https://code.visualstudio.com/",
+                "icon": "icon-vscode"
+            },
+            "entry16": {
+                "title": "PostgreSQL",
+                "path": "https://www.postgresql.org/",
+                "icon": "icon-PostgreSQL"
+            },
+            "entry17": {
+                "title": "Neon",
+                "path": "https://neon.tech/",
+                "icon": "icon-Neon"
+            },
+            "entry18": {
+                "title": "RxJS",
+                "path": "https://rxjs.dev",
+                "icon": "icon-RxJS"
+            },
+            "entry19": {
+                "title": "Postman",
+                "path": "https://www.postman.com/",
+                "icon": "icon-Postman"
+            },
+            "entry20": {
+                "title": "Cloudflare",
+                "path": "https://www.cloudflare.com/",
+                "icon": "icon-Cloudflare"
+            }
+        },
+        "experience": {
+            "entry0": {
+                "title": "CI/CD",
+                "path": "https://resources.github.com/devops/ci-cd/",
+                "icon": "icon-CiCd"
+            },
+            "entry1": {
+                "title": "C#",
+                "path": "https://dotnet.microsoft.com/en-us/languages/csharp",
+                "icon": "icon-CSharp"
+            },
+            "entry2": {
+                "title": "Bootstrap",
+                "path": "https://getbootstrap.com/",
+                "icon": "icon-Bootstrap"
+            },
+            "entry3": {
+                "title": "GitLab",
+                "path": "https://about.gitlab.com/",
+                "icon": "icon-GitLab"
+            },
+            "entry6": {
+                "title": "Docker",
+                "path": "https://www.docker.com/",
+                "icon": "icon-Docker"
+            },
+            "entry7": {
+                "title": "MySQL",
+                "path": "https://www.mysql.com/",
+                "icon": "icon-MySQL horizontal"
+            },
+            "entry9": {
+                "title": "Jenkins",
+                "path": "https://www.jenkins.io/",
+                "icon": "icon-Jenkins"
+            },
+            "entry10": {
+                "title": "BetterStack",
+                "path": "https://betterstack.com/",
+                "icon": "icon-BetterStack"
+            },
+            "entry11": {
+                "title": "php",
+                "path": "https://www.php.net/",
+                "icon": "icon-php"
+            }
+        }
+    }
+}

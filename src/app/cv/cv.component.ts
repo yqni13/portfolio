@@ -1,5 +1,7 @@
 import { AfterViewInit, Component, ElementRef, OnDestroy } from '@angular/core';
 import { ScrollService } from '../shared/service/scroll-window.service';
+import * as content from '../shared/data/cv-skill-data.json';
+import { CVSkillLogo } from '../shared/interface/cv-skill.interface';
 
 @Component({
   selector: 'app-cv',
@@ -9,9 +11,13 @@ import { ScrollService } from '../shared/service/scroll-window.service';
 export class CvComponent implements AfterViewInit, OnDestroy {
 
   protected isBottomScrolled: boolean;
+  protected skillList: CVSkillLogo[];
+  protected experienceList: CVSkillLogo[];
 
   constructor(private scrollService: ScrollService, private elementRef: ElementRef) {
     this.isBottomScrolled = false;
+    this.skillList = Object.values(content['cv-skills']['skills']);
+    this.experienceList = Object.values(content['cv-skills']['experience']);
   }
 
   ngAfterViewInit() {

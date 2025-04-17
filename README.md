@@ -1,5 +1,5 @@
-# yqni13 portfolio
-$\texttt{\color{teal}{v2.6.8}}$
+# yqni13 | portfolio
+$\texttt{\color{teal}{v2.6.9}}$
 
 
 <br><br>
@@ -18,8 +18,7 @@ $\texttt{\color{teal}{v2.6.8}}$
 </div>
 <br>
 
-### <a href="https://yqni13.com">WEBPAGE</a>
-(no more demo on gh-pages)
+### visit the <a href="https://yqni13.com">WEBPAGE</a>
 
 <br>
 
@@ -130,9 +129,10 @@ Specified unit tests in xyz.component.spec.ts files or other tests are my last s
 ## Updates
 
 [list of all updates](src/docs/update_protocol.md)
-### $\textsf{last\ update\ 2.6.7\ >>\ {\color{pink}2.6.8}}$
+### $\textsf{last\ update\ 2.6.8\ >>\ {\color{pink}2.6.9}}$
 
-- $\textsf{\color{red}Patch:}$ Addressing github dependabot alerts: adapted/removed dependencies.
+- $\textsf{\color{red}Patch:}$ Refactor code and remove redundancies.
+- $\textsf{\color{green}Change:}$ Added new content to portfolio and updated data.
 
 <br>
 

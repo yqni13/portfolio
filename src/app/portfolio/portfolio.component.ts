@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, SecurityContext, ViewChild } from '@angular/core';
 import { SharedDataService } from '../shared/service/shared-data.service';
-import { JsonItem } from '../shared/interface/jsonProjectDataRequest';
+import { JsonItem } from '../shared/interface/jsonProjectDataRequest.interface';
 import { FilterJSONService } from '../shared/service/filter-json.service';
 import { PortfolioType } from '../shared/enums/portfolio-type.enum';
 import {default as jsonData } from '../shared/data/project-data.json';

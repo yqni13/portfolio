@@ -28,7 +28,7 @@
             <div class="education-list-item">
                 <p>
                     Certificates.dev<br>
-                    09/2024 - currently<br>
+                    04/2025 - currently<br>
                     Mid-Level Angular Developer<br>
                     online certificate
                 </p>
@@ -39,194 +39,24 @@
             <h4>Technical skills</h4>
         <div class="techstack-list">
             <ul>
-                <li>
-                    <a 
-                        title="HTML5" 
-                        href="https://developer.mozilla.org/en-US/docs/Web/HTML" 
+                <li *ngFor="let entry of skillList">
+                    <a
+                        title="{{entry.title}}"
+                        href="{{entry.path}}"
                         target="_blank"
-                    ><i class="icon-HTML5"></i></a>
-                </li>
-                <li>
-                    <a 
-                        title="CSS3" 
-                        href="https://developer.mozilla.org/en-US/docs/Web/CSS?retiredLocale=de" 
-                        target="_blank"
-                    ><i class="icon-CSS3"></i></a>
-                </li>
-                <li>
-                    <a 
-                        title="Javascript" 
-                        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" 
-                        target="_blank"
-                    ><i class="icon-Javascript"></i></a>
-                </li>
-                <li>
-                    <a 
-                        title="Typescript" 
-                        href="https://www.typescriptlang.org/" 
-                        target="_blank"
-                    ><i class="icon-Typescript"></i></a>
-                </li>
-                <li>
-                    <a 
-                        title="Angular" 
-                        href="https://angular.io/" 
-                        target="_blank"
-                    ><i class="icon-Angular"></i></a>
-                </li>
-                
-                <li>
-                    <a 
-                        title="Git" 
-                        href="https://git-scm.com/" 
-                        target="_blank"
-                    ><i class="icon-git"></i></a>
-                </li>
-                <li>
-                    <a 
-                        title="GitHub" 
-                        href="https://github.com/" 
-                        target="_blank"
-                    ><i class="icon-GitHub black-fill"></i></a>
-                </li>
-                
-                <li>
-                    <a 
-                        title="GitExtensions" 
-                        href="https://gitextensions.github.io/" 
-                        target="_blank"
-                    ><i class="icon-GitExtensions"></i></a>
-                </li>
-                <li>
-                    <a 
-                        title="Notion" 
-                        href="https://www.notion.so/product" 
-                        target="_blank"
-                    ><i class="icon-Notion"></i></a>
-                </li>
-                <li>
-                    <a 
-                        title="Atlassian" 
-                        href="https://www.atlassian.com/" 
-                        target="_blank"
-                    ><i class="icon-Atlassian"></i></a>
-                </li>
-                <li>
-                    <a 
-                        title="JSON"
-                        href="https://json.org/"
-                        target="_blank"
-                    ><i class="icon-JSON"></i></a>
-                </li>
-                <li>
-                    <a 
-                        title="i18n"
-                        href="https://json.org/"
-                        target="_blank"
-                    ><i class="icon-i18n"></i></a>
-                </li>
-                <li>
-                    <a 
-                        title="SaSS" 
-                        href="https://sass-lang.com/" 
-                        target="_blank"
-                    ><i class="icon-Sass"></i></a>
-                </li>
-                <li>
-                    <a 
-                        title="NodeJS" 
-                        href="https://nodejs.org/en" 
-                        target="_blank"
-                    ><i class="icon-NodeJS"></i></a>
-                </li>
-                <li>
-                    <a 
-                        title="NPM" 
-                        href="https://www.npmjs.com/" 
-                        target="_blank"
-                    ><i class="icon-npm"></i></a>
-                </li>
-                <li>
-                    <a 
-                        title="VSCode" 
-                        href="https://code.visualstudio.com/" 
-                        target="_blank"
-                    ><i class="icon-vscode"></i></a>
+                    ><i class="{{entry.icon}}"></i></a>
                 </li>
             </ul>
         </div>
         <h4>First Experiences</h4>
         <div class="techstack-list">
             <ul>
-                <li>
-                    <a 
-                        title="CI/CD" 
-                        href="https://resources.github.com/devops/ci-cd/" 
+                <li *ngFor="let entry of experienceList">
+                    <a
+                        title="{{entry.title}}"
+                        href="{{entry.path}}"
                         target="_blank"
-                    ><i class="icon-CiCd"></i></a>
-                </li>
-                <li>
-                    <a 
-                        title="C#" 
-                        href="https://dotnet.microsoft.com/en-us/languages/csharp" 
-                        target="_blank"
-                    ><i class="icon-CSharp"></i></a>
-                </li>
-                <li>
-                    <a 
-                        title="Bootstrap" 
-                        href="https://getbootstrap.com/" 
-                        target="_blank"
-                    ><i class="icon-Bootstrap"></i></a>
-                </li>
-                <li>
-                    <a 
-                        title="GitLab" 
-                        href="https://about.gitlab.com/" 
-                        target="_blank"
-                    ><i class="icon-GitLab"></i></a>
-                </li>
-                <li>
-                    <a 
-                        title="RxJS" 
-                        href="https://rxjs.dev" 
-                        target="_blank"
-                    ><i class="icon-RxJS"></i></a>
-                </li>
-                <li>
-                    <a 
-                        title="Postman" 
-                        href="https://www.postman.com/" 
-                        target="_blank"
-                    ><i class="icon-Postman"></i></a>
-                </li>
-                <li>
-                    <a 
-                        title="Docker" 
-                        href="https://www.docker.com/" 
-                        target="_blank"
-                    ><i class="icon-Docker"></i></a>
-                </li>
-                <li>
-                    <a 
-                        title="MySQL" 
-                        href="https://www.mysql.com/" 
-                        target="_blank"
-                    ><i class="icon-MySQL horizontal"></i></a>
-                </li>
-                <li>
-                    <a 
-                        title="PostgreSQL" 
-                        href="https://www.postgresql.org/" 
-                        target="_blank"
-                    ><i class="icon-PostgreSQL"></i></a>
-                </li>
-                <li>
-                    <a 
-                        title="Jenkins" 
-                        href="https://www.jenkins.io/" 
-                        target="_blank"
-                    ><i class="icon-Jenkins"></i></a>
+                    ><i class="{{entry.icon}}"></i></a>
                 </li>
             </ul>
         </div>
