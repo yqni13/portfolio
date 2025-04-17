@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationStart, Router } from '@angular/router';
 import _ from 'underscore';
-import { UserDataModel } from './shared/interface/userData';
+import { UserDataModel } from './shared/interface/userData.interface';
 import { SharedDataService } from './shared/service/shared-data.service';
 
 @Component({

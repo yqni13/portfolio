@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { JsonItem } from '../interface/jsonProjectDataRequest';
+import { JsonItem } from '../interface/jsonProjectDataRequest.interface';
 import { PortfolioType } from '../enums/portfolio-type.enum';
 
 @Injectable({

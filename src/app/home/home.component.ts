@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnDestroy, OnInit } from '@angular/core';
-import { UserDataModel } from '../shared/interface/userData';
+import { UserDataModel } from '../shared/interface/userData.interface';
 import { SharedDataService } from '../shared/service/shared-data.service';
 import { Observable, of, Subscription } from 'rxjs';
 

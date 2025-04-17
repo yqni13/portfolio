@@ -1,7 +1,7 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { AfterViewInit, Component, ElementRef, OnDestroy } from '@angular/core';
 import { ScrollService } from '../shared/service/scroll-window.service';
 import * as content from '../shared/data/cv-skill-data.json';
+import { CVSkillLogo } from '../shared/interface/cv-skill.interface';
 
 @Component({
   selector: 'app-cv',
@@ -11,8 +11,8 @@ import * as content from '../shared/data/cv-skill-data.json';
 export class CvComponent implements AfterViewInit, OnDestroy {
 
   protected isBottomScrolled: boolean;
-  protected skillList: any;
-  protected experienceList: any;
+  protected skillList: CVSkillLogo[];
+  protected experienceList: CVSkillLogo[];
 
   constructor(private scrollService: ScrollService, private elementRef: ElementRef) {
     this.isBottomScrolled = false;
