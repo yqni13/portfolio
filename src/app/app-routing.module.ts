@@ -8,11 +8,6 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/home',
-    pathMatch: 'full'
-  },
-  {
-    path: 'home',
     component: HomeComponent,
     title: 'Home'
   },
@@ -33,7 +28,7 @@ const routes: Routes = [
   },
   {
     path: '**', // if parameter is unknown (manually changed)
-    redirectTo: '/home',
+    redirectTo: '',
     title: 'Home'
   },
 ];

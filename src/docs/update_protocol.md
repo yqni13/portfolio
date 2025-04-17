@@ -4,6 +4,11 @@
 
 <br>
 
+### 2025/04/17 - $\textsf{update\ 2.6.8\ >>\ {\color{pink}2.6.9}}$
+
+- $\textsf{\color{red}Patch:}$ Refactor code and remove redundancies.
+- $\textsf{\color{green}Change:}$ Added new content to portfolio and updated data.
+
 ### 2024/10/09 - $\textsf{update\ 2.6.7\ >>\ {\color{pink}2.6.8}}$
 
 - $\textsf{\color{red}Patch:}$ Addressing github dependabot alerts: adapted/removed dependencies.
