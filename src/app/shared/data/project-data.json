@@ -104,7 +104,7 @@
         "type": "frontend",
         "title": "Portfolio",
         "version": "2.6.8",
-        "keywords": "live demo | portfolio | angular framework | english | responsive | custom design | dark/light theme | animation | custom search filter | single page application | ESLint | CI/CD workflow",
+        "keywords": "live demo | portfolio | angular 17 | english | responsive | custom design | dark/light theme | animation | custom search filter | single page application | ESLint | CI/CD workflow",
         "technology": "Angular | RxJS | JSON",
         "cardScreenPath": "assets/img/web_portfolio.jpg",
         "githublink": "https://github.com/yqni13/portfolio",
@@ -120,51 +120,55 @@
         ]
     },
     "ArtCreation": {
-        "type": "frontend",
+        "type": "fullstack",
         "title": "Art-Gallery",
-        "version": "1.0.0-beta.10",
-        "keywords": "live demo | angular 18 | customer order | responsive | custom design | dark/light theme | custom lazy loading | i18n | gallery | custom forms/validation | http interception | services | pipes | directives | nested routing | nodemailer",
+        "version": "1.0.2",
+        "keywords": "live demo | angular 19 | customer order | responsive | custom design | dark/light theme | custom lazy loading | i18n | custom forms/validation | http interception | nested routing | nodemailer | PostgreSQL | Neon | Cloudflare",
         "technology": "Angular | RxJS | JSON | i18n | nodejs",
-        "cardScreenPath": "assets/img/web_artcreation.jpg",
+        "cardScreenPath": "assets/img/web_artcreation-dv.jpg",
         "githublink": "https://github.com/yqni13/artcreation-dv",
         "techURLs": [
             "https://angular.dev/",
-            "https://rxjs.dev/",
-            "https://www.json.org/json-en.html",
-            "https://www.i18next.com/",
-            "https://nodejs.org/en"
+            "https://nodejs.org/en",
+            "https://www.postgresql.org/",
+            "https://neon.tech/",
+            "https://www.cloudflare.com/",
+            "https://betterstack.com/",
+            "https://www.i18next.com/"
         ],
         "techImgClasses": [
             "icon-Angular",
-            "icon-RxJS",
-            "icon-JSON",
-            "icon-i18n",
-            "icon-NodeJS"
+            "icon-NodeJS",
+            "icon-PostgreSQL",
+            "icon-Neon",
+            "icon-Cloudflare",
+            "icon-BetterStack",
+            "icon-i18n"
         ]
     },
     "TaxiVarga": {
         "type": "fullstack",
         "title": "Taxi-Varga",
-        "version": "1.0.0-beta.2",
+        "version": "1.0.5",
         "keywords": "live demo | angular 18 | customer order | responsive | custom design | dark/light theme | Google Routes/Places API | i18n | taxi services | custom forms/validation | http interception | nested routing | nodemailer",
         "technology": "Angular | RxJS | NodeJS | Express | i18n | Google API",
         "cardScreenPath": "assets/img/web_taxi-varga.jpg",
         "githublink": "https://github.com/yqni13/taxi-varga",
         "techURLs": [
             "https://angular.dev/",
-            "https://rxjs.dev/",
             "https://nodejs.org/en",
             "https://expressjs.com",
-            "https://www.i18next.com/",
-            "https://mapsplatform.google.com/maps-products/"
+            "https://mapsplatform.google.com/maps-products/",
+            "https://rxjs.dev/",
+            "https://www.i18next.com/"
         ],
         "techImgClasses": [
             "icon-Angular",
-            "icon-RxJS",
             "icon-NodeJS",
             "icon-ExpressJS",
-            "icon-i18n",
-            "icon-GoogleAPI"
+            "icon-GoogleAPI",
+            "icon-RxJS",
+            "icon-i18n"
         ]
     }
 }
