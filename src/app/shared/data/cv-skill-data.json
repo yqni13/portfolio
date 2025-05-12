@@ -2,74 +2,74 @@
     "cv-skills": {
         "skills": {
             "entry0": {
-                "title": "HTML5",
-                "path": "https://developer.mozilla.org/en-US/docs/Web/HTML",
-                "icon": "icon-HTML5"
-            },
-            "entry1": {
-                "title": "CSS3",
-                "path": "https://developer.mozilla.org/en-US/docs/Web/CSS?retiredLocale=de",
-                "icon": "icon-CSS3"
-            },
-            "entry2": {
-                "title": "Javascript",
-                "path": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
-                "icon": "icon-Javascript"
-            },
-            "entry3": {
-                "title": "Typescript",
-                "path": "https://www.typescriptlang.org/",
-                "icon": "icon-Typescript"
-            },
-            "entry4": {
                 "title": "Angular",
                 "path": "https://angular.io/",
                 "icon": "icon-Angular"
             },
+            "entry1": {
+                "title": "NodeJS",
+                "path": "https://nodejs.org/en",
+                "icon": "icon-NodeJS"
+            },
+            "entry2": {
+                "title": "HTML5",
+                "path": "https://developer.mozilla.org/en-US/docs/Web/HTML",
+                "icon": "icon-HTML5"
+            },
+            "entry3": {
+                "title": "CSS3",
+                "path": "https://developer.mozilla.org/en-US/docs/Web/CSS?retiredLocale=de",
+                "icon": "icon-CSS3"
+            },
+            "entry4": {
+                "title": "Javascript",
+                "path": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+                "icon": "icon-Javascript"
+            },
             "entry5": {
+                "title": "Typescript",
+                "path": "https://www.typescriptlang.org/",
+                "icon": "icon-Typescript"
+            },
+            "entry6": {
                 "title": "Git",
                 "path": "https://git-scm.com/",
                 "icon": "icon-Git"
             },
-            "entry6": {
+            "entry7": {
                 "title": "GitHub",
                 "path": "https://github.com/",
                 "icon": "icon-GitHub black-fill"
             },
-            "entry7": {
+            "entry8": {
                 "title": "GitExtensions",
                 "path": "https://gitextensions.github.io/",
                 "icon": "icon-GitExtensions"
             },
-            "entry8": {
+            "entry9": {
                 "title": "Notion",
                 "path": "https://www.notion.so/product",
                 "icon": "icon-Notion"
             },
-            "entry9": {
+            "entry10": {
                 "title": "Atlassian",
                 "path": "https://www.atlassian.com/",
                 "icon": "icon-Atlassian"
             },
-            "entry10": {
+            "entry11": {
                 "title": "JSON",
                 "path": "https://json.org/",
                 "icon": "icon-JSON"
             },
-            "entry11": {
+            "entry12": {
                 "title": "i18n",
                 "path": "https://www.i18next.com/",
                 "icon": "icon-i18n"
             },
-            "entry12": {
+            "entry13": {
                 "title": "SaSS",
                 "path": "https://sass-lang.com/",
                 "icon": "icon-Sass"
-            },
-            "entry13": {
-                "title": "NodeJS",
-                "path": "https://nodejs.org/en",
-                "icon": "icon-NodeJS"
             },
             "entry14": {
                 "title": "npm",
