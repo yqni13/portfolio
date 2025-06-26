@@ -32,76 +32,81 @@
                 "icon": "icon-Typescript"
             },
             "entry6": {
+                "title": "Jest",
+                "path": "https://jestjs.io/",
+                "icon": "icon-Jest"
+            },
+            "entry7": {
                 "title": "Git",
                 "path": "https://git-scm.com/",
                 "icon": "icon-Git"
             },
-            "entry7": {
+            "entry8": {
                 "title": "GitHub",
                 "path": "https://github.com/",
                 "icon": "icon-GitHub black-fill"
             },
-            "entry8": {
+            "entry9": {
                 "title": "GitExtensions",
                 "path": "https://gitextensions.github.io/",
                 "icon": "icon-GitExtensions"
             },
-            "entry9": {
+            "entry10": {
                 "title": "Notion",
                 "path": "https://www.notion.so/product",
                 "icon": "icon-Notion"
             },
-            "entry10": {
+            "entry11": {
                 "title": "Atlassian",
                 "path": "https://www.atlassian.com/",
                 "icon": "icon-Atlassian"
             },
-            "entry11": {
+            "entry12": {
                 "title": "JSON",
                 "path": "https://json.org/",
                 "icon": "icon-JSON"
             },
-            "entry12": {
+            "entry13": {
                 "title": "i18n",
                 "path": "https://www.i18next.com/",
                 "icon": "icon-i18n"
             },
-            "entry13": {
+            "entry14": {
                 "title": "SaSS",
                 "path": "https://sass-lang.com/",
                 "icon": "icon-Sass"
             },
-            "entry14": {
+            "entry15": {
                 "title": "npm",
                 "path": "https://www.npmjs.com/",
                 "icon": "icon-npm"
             },
-            "entry15": {
+            "entry16": {
                 "title": "VSCode",
                 "path": "https://code.visualstudio.com/",
                 "icon": "icon-vscode"
             },
-            "entry16": {
+            "entry17": {
                 "title": "PostgreSQL",
                 "path": "https://www.postgresql.org/",
                 "icon": "icon-PostgreSQL"
             },
-            "entry17": {
+            "entry18": {
                 "title": "Neon",
                 "path": "https://neon.tech/",
                 "icon": "icon-Neon"
             },
-            "entry18": {
+            "entry19": {
                 "title": "RxJS",
                 "path": "https://rxjs.dev",
                 "icon": "icon-RxJS"
             },
-            "entry19": {
+            "entry20": {
                 "title": "Postman",
                 "path": "https://www.postman.com/",
                 "icon": "icon-Postman"
             },
-            "entry20": {
+            "entry21": {
                 "title": "Cloudflare",
                 "path": "https://www.cloudflare.com/",
                 "icon": "icon-Cloudflare"
@@ -152,6 +157,11 @@
                 "title": "php",
                 "path": "https://www.php.net/",
                 "icon": "icon-php"
+            },
+            "entry12": {
+                "title": "Microsoft SQL-Server",
+                "path": "https://www.microsoft.com/de-de/sql-server/",
+                "icon": "icon-SqlServer"
             }
         }
     }
