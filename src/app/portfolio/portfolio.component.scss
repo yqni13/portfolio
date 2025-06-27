@@ -32,6 +32,12 @@ h4 {
     }
 }
 
+.icon-Search:hover,
+.icon-Close:hover {
+    opacity: 0.6;
+    cursor: pointer;
+}
+
 .icon-Search {
     color: var(--text-color);
     width: 25px;

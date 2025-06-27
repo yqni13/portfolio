@@ -2,106 +2,111 @@
     "cv-skills": {
         "skills": {
             "entry0": {
-                "title": "HTML5",
-                "path": "https://developer.mozilla.org/en-US/docs/Web/HTML",
-                "icon": "icon-HTML5"
-            },
-            "entry1": {
-                "title": "CSS3",
-                "path": "https://developer.mozilla.org/en-US/docs/Web/CSS?retiredLocale=de",
-                "icon": "icon-CSS3"
-            },
-            "entry2": {
-                "title": "Javascript",
-                "path": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
-                "icon": "icon-Javascript"
-            },
-            "entry3": {
-                "title": "Typescript",
-                "path": "https://www.typescriptlang.org/",
-                "icon": "icon-Typescript"
-            },
-            "entry4": {
                 "title": "Angular",
                 "path": "https://angular.io/",
                 "icon": "icon-Angular"
             },
-            "entry5": {
-                "title": "Git",
-                "path": "https://git-scm.com/",
-                "icon": "icon-Git"
-            },
-            "entry6": {
-                "title": "GitHub",
-                "path": "https://github.com/",
-                "icon": "icon-GitHub black-fill"
-            },
-            "entry7": {
-                "title": "GitExtensions",
-                "path": "https://gitextensions.github.io/",
-                "icon": "icon-GitExtensions"
-            },
-            "entry8": {
-                "title": "Notion",
-                "path": "https://www.notion.so/product",
-                "icon": "icon-Notion"
-            },
-            "entry9": {
-                "title": "Atlassian",
-                "path": "https://www.atlassian.com/",
-                "icon": "icon-Atlassian"
-            },
-            "entry10": {
-                "title": "JSON",
-                "path": "https://json.org/",
-                "icon": "icon-JSON"
-            },
-            "entry11": {
-                "title": "i18n",
-                "path": "https://www.i18next.com/",
-                "icon": "icon-i18n"
-            },
-            "entry12": {
-                "title": "SaSS",
-                "path": "https://sass-lang.com/",
-                "icon": "icon-Sass"
-            },
-            "entry13": {
+            "entry1": {
                 "title": "NodeJS",
                 "path": "https://nodejs.org/en",
                 "icon": "icon-NodeJS"
             },
+            "entry2": {
+                "title": "HTML5",
+                "path": "https://developer.mozilla.org/en-US/docs/Web/HTML",
+                "icon": "icon-HTML5"
+            },
+            "entry3": {
+                "title": "CSS3",
+                "path": "https://developer.mozilla.org/en-US/docs/Web/CSS?retiredLocale=de",
+                "icon": "icon-CSS3"
+            },
+            "entry4": {
+                "title": "Javascript",
+                "path": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+                "icon": "icon-Javascript"
+            },
+            "entry5": {
+                "title": "Typescript",
+                "path": "https://www.typescriptlang.org/",
+                "icon": "icon-Typescript"
+            },
+            "entry6": {
+                "title": "Jest",
+                "path": "https://jestjs.io/",
+                "icon": "icon-Jest"
+            },
+            "entry7": {
+                "title": "Git",
+                "path": "https://git-scm.com/",
+                "icon": "icon-Git"
+            },
+            "entry8": {
+                "title": "GitHub",
+                "path": "https://github.com/",
+                "icon": "icon-GitHub black-fill"
+            },
+            "entry9": {
+                "title": "GitExtensions",
+                "path": "https://gitextensions.github.io/",
+                "icon": "icon-GitExtensions"
+            },
+            "entry10": {
+                "title": "Notion",
+                "path": "https://www.notion.so/product",
+                "icon": "icon-Notion"
+            },
+            "entry11": {
+                "title": "Atlassian",
+                "path": "https://www.atlassian.com/",
+                "icon": "icon-Atlassian"
+            },
+            "entry12": {
+                "title": "JSON",
+                "path": "https://json.org/",
+                "icon": "icon-JSON"
+            },
+            "entry13": {
+                "title": "i18n",
+                "path": "https://www.i18next.com/",
+                "icon": "icon-i18n"
+            },
             "entry14": {
+                "title": "SaSS",
+                "path": "https://sass-lang.com/",
+                "icon": "icon-Sass"
+            },
+            "entry15": {
                 "title": "npm",
                 "path": "https://www.npmjs.com/",
                 "icon": "icon-npm"
             },
-            "entry15": {
+            "entry16": {
                 "title": "VSCode",
                 "path": "https://code.visualstudio.com/",
                 "icon": "icon-vscode"
             },
-            "entry16": {
+            "entry17": {
                 "title": "PostgreSQL",
                 "path": "https://www.postgresql.org/",
                 "icon": "icon-PostgreSQL"
             },
-            "entry17": {
+            "entry18": {
                 "title": "Neon",
                 "path": "https://neon.tech/",
                 "icon": "icon-Neon"
             },
-            "entry18": {
+            "entry19": {
                 "title": "RxJS",
                 "path": "https://rxjs.dev",
                 "icon": "icon-RxJS"
             },
-            "entry19": {
+            "entry20": {
                 "title": "Postman",
                 "path": "https://www.postman.com/",
                 "icon": "icon-Postman"
             },
-            "entry20": {
+            "entry21": {
                 "title": "Cloudflare",
                 "path": "https://www.cloudflare.com/",
                 "icon": "icon-Cloudflare"
@@ -152,6 +157,11 @@
                 "title": "php",
                 "path": "https://www.php.net/",
                 "icon": "icon-php"
+            },
+            "entry12": {
+                "title": "Microsoft SQL-Server",
+                "path": "https://www.microsoft.com/de-de/sql-server/",
+                "icon": "icon-SqlServer"
             }
         }
     }

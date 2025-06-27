@@ -1,5 +1,5 @@
 {
-    "Clock": {
+    "Priority3_Clock": {
         "type": "module",
         "title": "Clock",
         "version": "2.1.4",
@@ -18,7 +18,7 @@
             "icon-Javascript"
         ]
     },
-    "ToDo": {
+    "Priority4_ToDo": {
         "type": "module",
         "title": "ToDo-List",
         "version": "1.2.0",
@@ -37,7 +37,7 @@
             "icon-Javascript"
         ]
     },
-    "Tourplanner": {
+    "Priority3_Tourplanner": {
         "type": "fullstack",
         "title": "Tourplanner",
         "version": "1.0.0",
@@ -60,7 +60,7 @@
             "icon-JSON"
         ]
     },
-    "MusicPlayer": {
+    "Priority3_MusicPlayer": {
         "type": "frontend",
         "title": "Music Player",
         "version": "1.5.0",
@@ -79,7 +79,7 @@
             "icon-Javascript"
         ]
     },
-    "HeavensEdge": {
+    "Priority4_HeavensEdge": {
         "type": "frontend",
         "title": "Heavens Edge",
         "version": "1.1.2",
@@ -100,11 +100,11 @@
             "icon-Leaflet"
         ]
     },
-    "Portfolio": {
+    "Priority2_Portfolio": {
         "type": "frontend",
         "title": "Portfolio",
         "version": "2.6.8",
-        "keywords": "live demo | portfolio | angular 18 | english | responsive | custom design | dark/light theme | animation | custom search filter | single page application | ESLint | CI/CD workflow",
+        "keywords": "live | portfolio | angular 18 | english | responsive | custom design | dark/light theme | animation | custom search filter | single page application | ESLint | CI/CD workflow",
         "technology": "Angular | RxJS | JSON",
         "cardScreenPath": "assets/img/web_portfolio.jpg",
         "githublink": "https://github.com/yqni13/portfolio",
@@ -119,12 +119,12 @@
             "icon-JSON"
         ]
     },
-    "ArtCreation": {
+    "Priority1_ArtCreation": {
         "type": "fullstack",
         "title": "Art-Gallery",
-        "version": "1.0.2",
-        "keywords": "live demo | angular 19 | customer order | responsive | custom design | dark/light theme | custom lazy loading | i18n | custom forms/validation | http interception | nested routing | nodemailer | PostgreSQL | Neon | Cloudflare",
-        "technology": "Angular | RxJS | JSON | i18n | nodejs",
+        "version": "1.2.5",
+        "keywords": "live | Angular v19 | customer order | responsive | custom design | dark/light theme | custom lazy loading | i18n | custom forms/validation | http interception | nested routing | nodemailer | PostgreSQL | Neon | Cloudflare",
+        "technology": "Angular | NodeJS | RxJS | JSON | i18n",
         "cardScreenPath": "assets/img/web_artcreation-dv.jpg",
         "githublink": "https://github.com/yqni13/artcreation-dv",
         "techURLs": [
@@ -146,11 +146,11 @@
             "icon-i18n"
         ]
     },
-    "TaxiVarga": {
+    "Priority1_TaxiVarga": {
         "type": "fullstack",
         "title": "Taxi-Varga",
-        "version": "1.0.5",
-        "keywords": "live demo | angular 18 | customer order | responsive | custom design | dark/light theme | Google Routes/Places API | i18n | taxi services | custom forms/validation | http interception | nested routing | nodemailer",
+        "version": "1.3.4",
+        "keywords": "live | Angular v18 | customer order | responsive | custom design | dark/light theme | Google Routes/Places API | i18n | taxi services | custom forms/validation | http interception | nested routing | nodemailer | Jest",
         "technology": "Angular | RxJS | NodeJS | Express | i18n | Google API",
         "cardScreenPath": "assets/img/web_taxi-varga.jpg",
         "githublink": "https://github.com/yqni13/taxi-varga",
@@ -160,7 +160,8 @@
             "https://expressjs.com",
             "https://mapsplatform.google.com/maps-products/",
             "https://rxjs.dev/",
-            "https://www.i18next.com/"
+            "https://www.i18next.com/",
+            "https://jestjs.io/"
         ],
         "techImgClasses": [
             "icon-Angular",
@@ -168,7 +169,8 @@
             "icon-ExpressJS",
             "icon-GoogleAPI",
             "icon-RxJS",
-            "icon-i18n"
+            "icon-i18n",
+            "icon-Jest"
         ]
     }
 }
