@@ -60,11 +60,16 @@ h4 {
     margin-left: 10px;
 }
 
-.icon-HoverMe {
+.yqni13-portfoliocard-hovericon-wrapper {
+    display: flex;
     position: absolute;
-    top: 5px;
+    bottom: 5px;
     left: 5px;
-    background-image: var(--yqni13-gradient);
+    padding: 5px;
+    i {
+        background-color: var(--button-color);
+        filter: brightness(110%);
+    }
 }
 
 .card:hover .icon-HoverMe {

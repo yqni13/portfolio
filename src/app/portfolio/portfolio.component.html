@@ -38,14 +38,19 @@
     </nav>
     <div class="wrapper-keyword">
         <input 
-        type="text" 
-        name="keywords" 
-        placeholder="Search keywords" 
-        (input)="detectKeywordInput($event)" 
-        (keydown.enter)="filterForKeyword(keywordInputField.value)" 
-        #keywordInputField
+            type="text" 
+            name="keywords" 
+            placeholder="Search keywords" 
+            (input)="detectKeywordInput($event)" 
+            (keydown.enter)="filterForKeyword(keywordInputField.value)" 
+            #keywordInputField
         >
-        <a (click)="filterForKeyword(keywordInputField.value)" (keydown.enter)="filterForKeyword(keywordInputField.value)"><i class="icon-Search"></i></a>
+        <a
+            (click)="filterForKeyword(keywordInputField.value)"
+            (keydown.enter)="filterForKeyword(keywordInputField.value)"
+        >
+            <i class="icon-Search"></i>
+        </a>
         <a (click)="removeKeyword()" (keydown.enter)="removeKeyword()" *ngIf="hasInput"><i class="icon-Close"></i></a>
     </div>
 
