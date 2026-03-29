@@ -1,0 +1,26 @@
+/* CUSTOM DEVICE SIZES */
+$device-desktop-xk: 1440px;
+$device-tablet-landscape: 1024px;
+$device-phone-landscape: 768px;
+$device-phone-portrait: 500px;
+$device-small-any: 400px;
+
+
+/* CUSTOM COLORS */
+$color-ice-white: #f0f8ff;
+$color-deep-blue: #011222;
+
+
+/* CUSTOM SIZES */
+$space5: 5px;
+$space15: 15px;
+$space25: 25px;
+$space50: 50px;
+$space100: 100px;
+
+
+/* CUSTOM FONTS */
+@font-face {
+    font-family: 'Custom-RonySiswadi';
+    src: url('/fonts/ronysiswadi/RonysiswadiArchitect6-X3V9G.ttf') format('truetype');
+}
