@@ -1,0 +1,21 @@
+@use 'stylesheets/utilities' as sass;
+
+@import 'stylesheets/defines.scss';
+
+
+html {
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    cursor: context-menu;
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+}
+
+body {
+    color: var(--theme-body-text);
+    background-color: var(--theme-body-bg);
+    width: 100vw;
+    height: 100%;
+}
