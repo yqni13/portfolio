@@ -1,0 +1,8 @@
+@use '../../../stylesheets/utilities' as sass;
+
+
+.contact {
+    flex-direction: column;
+    height: 85vh;
+    border: 2px solid rgb(35, 186, 148);
+}
