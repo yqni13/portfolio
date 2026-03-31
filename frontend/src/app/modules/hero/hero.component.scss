@@ -1,0 +1,9 @@
+@use '../../../stylesheets/utilities' as sass;
+
+
+.hero {
+    flex-direction: column;
+    height: calc(100vh - var(--comp-nav-height));
+    margin-top: var(--comp-nav-height);
+    border: 2px solid rgb(19, 101, 179);
+}

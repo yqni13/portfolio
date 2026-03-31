@@ -1,0 +1,19 @@
+<nav class="navbar">
+    <div class="navbar-logo-wrapper">
+        <img src="yqni13_logo256.ico" alt="yqni13 logo">
+    </div>
+    <div class="navbar-content-wrapper">
+        <a>
+            <i
+                class="icon-base"
+                ngClass="{{selectedTheme === themeEnum.DARK ? 'icon-darkMode' : 'icon-lightMode'}}"
+                (click)="setThemeByUser()"
+                #themeIcon
+            ></i>
+        </a>
+        <a href="#">Work</a>
+        <a href="#">Skills</a>
+        <a href="#">About</a>
+        <a href="#"></a>
+    </div>
+</nav>
