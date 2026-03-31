@@ -1,6 +1,7 @@
 @use 'stylesheets/utilities' as sass;
 
-@import 'stylesheets/defines.scss';
+@use 'stylesheets/defines.scss';
+@use 'stylesheets/icons.scss';
 
 
 html {
@@ -18,4 +19,11 @@ body {
     background-color: var(--theme-body-bg);
     width: 100vw;
     height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+div,
+section {
+    display: flex;
 }

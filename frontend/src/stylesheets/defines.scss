@@ -1,13 +1,27 @@
 @use 'utilities' as sass;
 
 
+/* NAVIGATION MODE STYLING */
+[data-nav='mobileMode'] {
+    --comp-nav-height: 60px;
+}
+
+[data-nav='desktopMode'] {
+    --comp-nav-height: 75px;
+}
+
+
 /* THEME OPTIONS */
 [data-theme='lightMode'] {
     --theme-body-bg: #{sass.$color-ice-white};
     --theme-body-text: #{sass.$color-deep-blue};
+    --theme-nav-border: #{sass.$color-dark-grey};
+    --theme-error: #{sass.$color-lightmode-error};
 }
 
 [data-theme='darkMode'] {
-    --theme-body-bg: #{sass.$color-deep-blue};
+    --theme-body-bg: #{sass.$color-special-blue};
     --theme-body-text: #{sass.$color-ice-white};
+    --theme-nav-border: #{sass.$color-light-grey};
+    --theme-error: #{sass.$color-darkmode-error};
 }
