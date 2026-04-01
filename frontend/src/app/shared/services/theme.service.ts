@@ -37,6 +37,7 @@ export class ThemeHandlerService {
             if(theme) {
                 localStorage.setItem(`${this.url}-theme`, theme);
                 this.document.body.setAttribute("data-theme", theme);
+                this.document.body.setAttribute("class", theme === ThemeOption.DARK ? "bg-dark" : "bg-light");
                 this.observe.setThemeOption(theme);
                 return;
             }
@@ -44,6 +45,7 @@ export class ThemeHandlerService {
         
         this.observe.setThemeOption(ThemeOption.DARK);
         this.document.body.setAttribute("data-theme", 'darkMode');
+        this.document.body.setAttribute("class", "bg-dark");
     }
 
     switchTheme(theme: ThemeOption): ThemeOption {

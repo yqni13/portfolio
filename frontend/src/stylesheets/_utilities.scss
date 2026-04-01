@@ -7,17 +7,45 @@ $device-small-any: 400px;
 
 
 /* CUSTOM COLORS */
+$color-darkmode-bg: #080c1a;
+$color-lightmode-bg: #fff;
+
 $color-ice-white: #f0f8ff;
+$color-rich-black: #020d19;
 $color-deep-blue: #011222;
-$color-special-blue: #1c1e24;
+$color-special-blue: #0f1320;
 $color-dark-grey: rgb(47, 46, 46);
 $color-light-grey: rgb(75, 75, 75);
+
+$yqni13-lightmode-purple: #ae34e2;
+$yqni13-darkmode-purple: #4e1066;
+
+$yqni13-lightmode-pink: #de1f62;
+$yqni13-darkmode-pink: #d82a67;
 
 $color-theme-sun: rgb(219, 166, 5);
 $color-theme-moon: #888888c3;
 
+$color-lightmode-grey: #e4eaed;
+$color-darkmode-grey: #252933;
+
 $color-lightmode-error: #b91c1c;
 $color-darkmode-error: #ba3131;
+
+// $color-lightmode-primary: #0b6da5;
+// $color-lightmode-primary: #e87131;
+$color-lightmode-primary: #0ba56f;
+$color-darkmode-primary: $yqni13-darkmode-pink;
+
+// $color-lightmode-secondary: #0ba56f;
+$color-lightmode-secondary: #0b6da5;
+$color-darkmode-secondary: #ce5819;
+
+$yqni13-lightmode-gradient: linear-gradient(160deg, $color-lightmode-primary, $color-lightmode-primary 100%);
+$yqni13-darkmode-gradient: linear-gradient(160deg, $yqni13-darkmode-purple, $yqni13-darkmode-pink 100%);
+
+$bg-lightmode-gradient: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+$bg-darkmode-gradient: conic-gradient(from 0deg at 0% 0%,#f0f8ff 2% 6%, 7%, $color-darkmode-bg 48% 9%);
 
 
 /* CUSTOM SIZES */
@@ -27,9 +55,10 @@ $space25: 25px;
 $space50: 50px;
 $space100: 100px;
 
-
-/* CUSTOM FONTS */
-@font-face {
-    font-family: 'Custom-RonySiswadi';
-    src: url('/fonts/ronysiswadi/RonysiswadiArchitect6-X3V9G.ttf') format('truetype');
+.roboto-custom-font {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
 }
+

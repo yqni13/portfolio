@@ -14,7 +14,7 @@ nav {
     width: 100%;
     height: calc(var(--comp-nav-height) - $border-width);
     border-bottom: $border-width solid var(--theme-nav-border);
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(5px);
 
     .navbar-logo-wrapper {
         height: 100%;
@@ -23,6 +23,9 @@ nav {
 
         img {
             padding: 10px;
+            &:hover {
+                cursor: pointer;
+            }
         }
     }
 
@@ -30,15 +33,25 @@ nav {
         flex-direction: row;
         align-items: center;
         height: 100%;
-        width: 250px;
         margin-left: auto;
-        margin-right: sass.$space50;
+        margin-right: sass.$space25;
 
         a {
             color: var(--theme-body-text);
             text-decoration: none;
-            margin: 0 sass.$space15;
+            margin: sass.$space15;
             cursor: pointer;
+            font-weight: 400;
+        }
+        .navbar-links>i {
+            transition: transform 300ms ease-in-out;
+            &:hover {
+                transform: scale(1.3);
+            }
+        }
+        .navbar-menu:hover {
+            border-bottom: 2px solid var(--theme-primary);
+            color: var(--theme-primary);
         }
     }
 }
@@ -49,4 +62,12 @@ nav {
 
 .icon-darkMode {
     color: sass.$color-theme-moon;
+}
+
+.symbol-light {
+    color: sass.$color-rich-black;
+}
+
+.symbol-dark {
+    color: sass.$color-ice-white;
 }

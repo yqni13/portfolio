@@ -1,4 +1,5 @@
-import { Component } from "@angular/core";
+import { Component, DOCUMENT, Inject } from "@angular/core";
+import { NavigationService } from "../../shared/services/navigation.service";
 
 @Component({
     selector: 'app-hero',
@@ -8,7 +9,26 @@ import { Component } from "@angular/core";
 })
 export class HeroComponent {
 
-    constructor() {
-        //
+    protected data: any;
+    protected cv: any;
+
+    constructor(
+        private readonly navigate: NavigationService,
+        @Inject(DOCUMENT) private document: Document,
+    ) {
+        this.data = {
+            intro: 'Hi, I\'m',
+            name: 'Lukas Varga',
+            title: 'Full-Stack Developer',
+            text: 'I build scalable end-to-end applications with Angular, Node.js, Express.js and PostgreSQL. My focus is on clean architecture, maintainability and testability for production-ready results.'
+        };
+        this.cv = {
+            path: 'assets/pdf/CV_LukasVarga_portfolio.pdf',
+            name: 'CV_LukasVarga'
+        }
+    }
+
+    scrollToHeader(id: string) {
+        this.navigate.navigateToHeader(id, this.document);
     }
 }
