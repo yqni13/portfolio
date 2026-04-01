@@ -3,6 +3,23 @@
 
 .work {
     flex-direction: column;
-    height: 85vh;
-    border: 2px solid rgb(60, 129, 35);
+    align-items: center;
+    margin: sass.$space100 0; // media.scss
+    height: 50vh;
+
+    h2 {
+        font-size: 55px;
+        font-weight: 300;
+        margin: 0 0 sass.$space15 0;
+        background: var(--theme-yqni13);
+        color: transparent;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    span {
+        font-size: 25px;
+        font-weight: 300;
+        color: var(--theme-nav-border);
+    }
 }
