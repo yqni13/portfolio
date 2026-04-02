@@ -14,7 +14,7 @@ $color-ice-white: #f0f8ff;
 $color-rich-black: #020d19;
 $color-deep-blue: #011222;
 $color-special-blue: #0f1320;
-$color-dark-grey: rgb(47, 46, 46);
+$color-dark-grey: rgb(162, 161, 161);
 $color-light-grey: rgb(75, 75, 75);
 
 $yqni13-lightmode-purple: #ae34e2;
@@ -32,14 +32,11 @@ $color-darkmode-grey: #252933;
 $color-lightmode-error: #b91c1c;
 $color-darkmode-error: #ba3131;
 
-// $color-lightmode-primary: #0b6da5;
-// $color-lightmode-primary: #e87131;
 $color-lightmode-primary: #0ba56f;
 $color-darkmode-primary: $yqni13-darkmode-pink;
 
-// $color-lightmode-secondary: #0ba56f;
 $color-lightmode-secondary: #0b6da5;
-$color-darkmode-secondary: #ce5819;
+$color-darkmode-secondary: #129a93;
 
 $yqni13-lightmode-gradient: linear-gradient(160deg, $color-lightmode-primary, $color-lightmode-primary 100%);
 $yqni13-darkmode-gradient: linear-gradient(160deg, $yqni13-darkmode-purple, $yqni13-darkmode-pink 100%);

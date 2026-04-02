@@ -35,6 +35,23 @@ section {
     scroll-margin-top: calc(var(--comp-nav-height) + sass.$space25);
 }
 
+h3 {
+    font-size: 55px; // media.scss
+    font-weight: 300;
+    margin: 0 0 sass.$space15 0;
+    background: var(--theme-yqni13);
+    color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.head-text {
+    font-size: 25px; // media.scss
+    font-weight: 300;
+    color: var(--theme-nav-border);
+}
+
 .btn-primary {
     display: flex;
     align-items: center;

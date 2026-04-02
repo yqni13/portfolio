@@ -22,6 +22,7 @@ export class Navbar implements OnInit, AfterViewInit{
     protected selectedTheme: ThemeOption;
     protected deviceOption: DeviceOption;
     protected links: any;
+    protected menu: string[];
 
     private maxMobileScreenWidth: number;
     private window: any;
@@ -40,6 +41,7 @@ export class Navbar implements OnInit, AfterViewInit{
             linkedin: 'https://linkedin.com/in/lukas-varga-59532b228',
             mail: 'lukas.varga@yqni13.com'
         };
+        this.menu = ['Work', 'Skills', 'About', 'Experience', 'Contact'];
 
         this.maxMobileScreenWidth = 1024;
         this.window = this.document.defaultView;
@@ -97,5 +99,9 @@ export class Navbar implements OnInit, AfterViewInit{
 
     scrollToHeader(id: string) {
         this.navigate.navigateToHeader(id, this.document);
+    }
+
+    convertMenuHeader(title: string): string {
+        return title.toLowerCase();
     }
 }

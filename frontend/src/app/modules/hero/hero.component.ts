@@ -20,7 +20,7 @@ export class HeroComponent {
             intro: 'Hi, I\'m',
             name: 'Lukas Varga',
             title: 'Full-Stack Developer',
-            text: 'I build scalable end-to-end applications with Angular, Node.js, Express.js and PostgreSQL. My focus is on clean architecture, maintainability and testability for production-ready results.'
+            text: 'I build scalable end-to-end applications with Angular, Node.js, Express.js, and PostgreSQL. My focus is on clean architecture, maintainability, testability and production-ready quality.'
         };
         this.cv = {
             path: 'assets/pdf/CV_LukasVarga_portfolio.pdf',

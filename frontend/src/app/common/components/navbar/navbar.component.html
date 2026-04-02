@@ -29,9 +29,8 @@
                 #themeIcon
             ></i>
         </a>
-        <a class="navbar-menu" (click)="scrollToHeader('head-work')">Work</a>
-        <a class="navbar-menu" (click)="scrollToHeader('head-skills')">Skills</a>
-        <a class="navbar-menu" (click)="scrollToHeader('head-about')">About</a>
-        <a class="navbar-menu" (click)="scrollToHeader('head-contact')">Contact</a>
+        @for(page of menu; track $index) {
+            <a class="navbar-menu" (click)="scrollToHeader('head-' + convertMenuHeader(page))">{{page}}</a>
+        }
     </div>
 </nav>

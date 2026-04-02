@@ -1,15 +1,15 @@
 [
     {
-        "title": "Languages & Databases",
+        "title": "Languages",
         "skills": [
             {
                 "icon": "icon-Javascript",
-                "name": "Javascript",
+                "name": "JavaScript",
                 "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
             },
             {
                 "icon": "icon-Typescript",
-                "name": "Typescript",
+                "name": "TypeScript",
                 "link": "https://www.typescriptlang.org/"
             },
             {
@@ -31,11 +31,6 @@
                 "icon": "icon-Sass",
                 "name": "Sass",
                 "link": "https://sass-lang.com/"
-            },
-            {
-                "icon": "icon-PostgreSQL",
-                "name": "PostgreSQL",
-                "link": "https://www.postgresql.org/"
             }
         ]
     },
@@ -71,11 +66,6 @@
                 "icon": "icon-i18n",
                 "name": "i18n",
                 "link": "https://www.i18next.com/"
-            },
-            {
-                "icon": "icon-Bootstrap",
-                "name": "Bootstrap",
-                "link": "https://getbootstrap.com/"
             }
         ]
     },
@@ -88,6 +78,11 @@
                 "link": "https://git-scm.com/"
             },
             {
+                "icon": "icon-PostgreSQL",
+                "name": "PostgreSQL",
+                "link": "https://www.postgresql.org/"
+            },
+            {
                 "icon": "icon-Docker",
                 "name": "Docker",
                 "link": "https://www.docker.com/"
@@ -97,6 +92,11 @@
                 "name": "GitHub",
                 "link": "https://github.com/",
                 "customStyle": true
+            },
+            {
+                "icon": "icon-GoogleMapsPlatform",
+                "name": "Google Maps Platform",
+                "link": "https://mapsplatform.google.com/maps-products/"
             },
             {
                 "icon": "icon-Netlify",
@@ -170,6 +170,11 @@
                 "link": "https://www.mysql.com/"
             },
             {
+                "icon": "icon-Bootstrap",
+                "name": "Bootstrap",
+                "link": "https://getbootstrap.com/"
+            },
+            {
                 "icon": "icon-MSQLServer",
                 "name": "Microsoft SQL Server",
                 "link": "https://www.microsoft.com/de-de/sql-server/"
@@ -178,6 +183,11 @@
                 "icon": "icon-Jenkins",
                 "name": "Jenkins",
                 "link": "https://www.jenkins.io/"
+            },
+            {
+                "icon": "icon-Leaflet",
+                "name": "Leaflet",
+                "link": "https://leafletjs.com"
             }
         ]
     }
