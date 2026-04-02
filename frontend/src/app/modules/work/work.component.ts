@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { BaseComponent } from "../base.component";
 
 @Component({
     selector: 'app-work',
@@ -6,9 +7,13 @@ import { Component } from "@angular/core";
     styleUrl: './work.component.scss',
     imports: []
 })
-export class WorkComponent {
+export class WorkComponent extends BaseComponent {
 
     constructor() {
-        //
+        super();
+        this.data = {
+            title: 'Selected Work',
+            subTitle: 'High-impact applications built with precision and care.'
+        }
     }
 }

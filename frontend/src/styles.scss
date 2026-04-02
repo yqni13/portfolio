@@ -1,5 +1,6 @@
 @use 'stylesheets/utilities' as sass;
 
+@use 'stylesheets/backgrounds.scss';
 @use 'stylesheets/defines.scss';
 @use 'stylesheets/icons.scss';
 
@@ -16,7 +17,9 @@ html {
 
 body {
     color: var(--theme-body-text);
-    background-color: var(--theme-body-bg);
+    background: var(--theme-body-bg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     width: 100vw;
     height: 100%;
     margin: 0;
@@ -26,4 +29,65 @@ body {
 div,
 section {
     display: flex;
+}
+
+section {
+    scroll-margin-top: calc(var(--comp-nav-height) + sass.$space25);
+}
+
+h3 {
+    font-size: 55px; // media.scss
+    font-weight: 300;
+    margin: 0 0 sass.$space15 0;
+    background: var(--theme-yqni13);
+    color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.head-text {
+    font-size: 25px; // media.scss
+    font-weight: 300;
+    color: var(--theme-nav-border);
+}
+
+.btn-primary {
+    display: flex;
+    align-items: center;
+    padding: 10px sass.$space25; // media.scss
+    border: 1px outset transparent;
+    border-radius: 7px;
+    cursor: pointer;
+    color: sass.$color-ice-white;
+    background-color: var(--theme-primary);
+    text-decoration: none;
+    &:hover {
+        box-shadow: 1px 1px 3px var(--theme-body-text);
+    }
+    i {
+        margin-left: sass.$space5;
+        width: 25px;
+        height: 25px;
+    }
+}
+
+.btn-secondary {
+    display: flex;
+    align-items: center;
+    padding: 10px sass.$space25; // media.scss
+    border: 1px solid var(--theme-nav-border);
+    border-radius: 7px;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--theme-body-text);
+    background-color: var(--theme-grey);
+    &:hover {
+        box-shadow: 1px 1px 3px var(--theme-nav-border);
+    }
+    i {
+        margin-left: sass.$space5;
+        width: 25px;
+        height: 25px;
+    }
 }

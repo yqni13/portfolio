@@ -4,6 +4,7 @@ import _ from "underscore";
 import { ThemeHandlerService } from "../../../shared/services/theme.service";
 import { DeviceOption } from "../../../shared/enums/device-option.enum";
 import { CommonModule } from "@angular/common";
+import { NavigationService } from "../../../shared/services/navigation.service";
 
 @Component({
     selector: 'app-navbar',
@@ -20,11 +21,14 @@ export class Navbar implements OnInit, AfterViewInit{
     protected themeEnum = ThemeOption;
     protected selectedTheme: ThemeOption;
     protected deviceOption: DeviceOption;
+    protected links: any;
+    protected menu: string[];
 
     private maxMobileScreenWidth: number;
     private window: any;
 
     constructor(
+        private readonly navigate: NavigationService,
         @Inject(DOCUMENT) private document: Document,
         private readonly themeHandler: ThemeHandlerService,
     ) {
@@ -32,6 +36,13 @@ export class Navbar implements OnInit, AfterViewInit{
         this.themeHandler.setThemeSettings(this.selectedTheme);
 
         this.deviceOption = DeviceOption.DESKTOP;
+        this.links = {
+            github: 'https://github.com/yqni13',
+            linkedin: 'https://linkedin.com/in/lukas-varga-59532b228',
+            mail: 'lukas.varga@yqni13.com'
+        };
+        this.menu = ['Work', 'Skills', 'About', 'Experience', 'Contact'];
+
         this.maxMobileScreenWidth = 1024;
         this.window = this.document.defaultView;
     }
@@ -80,5 +91,17 @@ export class Navbar implements OnInit, AfterViewInit{
             this.document.body.setAttribute("data-nav", 'mobileMode');
             this.deviceOption = DeviceOption.MOBILE;
         }
+    }
+
+    scrollToTop() {
+        this.navigate.navigateToTop(this.document);
+    }
+
+    scrollToHeader(id: string) {
+        this.navigate.navigateToHeader(id, this.document);
+    }
+
+    convertMenuHeader(title: string): string {
+        return title.toLowerCase();
     }
 }

@@ -1,3 +1,21 @@
-<section class="skills">
-    <span>I am skills component.</span>
+<section class="skills" id="head-skills">
+    <h3>{{data.title}}</h3>
+    <span class="head-text">{{data.subTitle}}</span>
+    <div id="skills-content">
+        @for(skillset of skills; track $index) {
+            <div class="skills-wrapper">
+                <h4>{{skillset.title}}</h4>
+                <div class="skills-badge-wrapper">
+                    @for(skill of skillset.skills; track $index) {
+                        <app-badge
+                            [icon]="skill.icon"
+                            [name]="skill.name"
+                            [link]="skill.link"
+                            [hasBlackWhiteBg]="skill.customStyle ?? false"
+                        ></app-badge>
+                    }
+                </div>
+            </div>
+        }
+    </div>
 </section>

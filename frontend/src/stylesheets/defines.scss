@@ -13,15 +13,29 @@
 
 /* THEME OPTIONS */
 [data-theme='lightMode'] {
+    // --theme-body-bg: #{sass.$bg-lightmode-gradient};
     --theme-body-bg: #{sass.$color-ice-white};
     --theme-body-text: #{sass.$color-deep-blue};
     --theme-nav-border: #{sass.$color-dark-grey};
     --theme-error: #{sass.$color-lightmode-error};
+    --theme-primary: #{sass.$color-lightmode-primary};
+    --theme-secondary: #{sass.$color-lightmode-secondary};
+    --theme-yqni13: #{sass.$yqni13-lightmode-gradient};
+    --theme-yqni13-purple: #{sass.$yqni13-lightmode-purple};
+    --theme-yqni13-pink: #{sass.$yqni13-lightmode-pink};
+    --theme-grey: #{sass.$color-lightmode-grey};
 }
 
 [data-theme='darkMode'] {
+    // --theme-body-bg: #{sass.$bg-darkmode-gradient};
     --theme-body-bg: #{sass.$color-special-blue};
     --theme-body-text: #{sass.$color-ice-white};
     --theme-nav-border: #{sass.$color-light-grey};
     --theme-error: #{sass.$color-darkmode-error};
+    --theme-primary: #{sass.$color-darkmode-primary};
+    --theme-secondary: #{sass.$color-darkmode-secondary};
+    --theme-yqni13: #{sass.$yqni13-darkmode-gradient};
+    --theme-yqni13-purple: #{sass.$yqni13-darkmode-purple};
+    --theme-yqni13-pink: #{sass.$yqni13-darkmode-pink};
+    --theme-grey: #{sass.$color-darkmode-grey};
 }
