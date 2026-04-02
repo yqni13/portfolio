@@ -7,22 +7,7 @@
     width: 100%;
     margin: sass.$space100 0; // media.scss
 
-    h2 {
-        font-size: 55px;
-        font-weight: 300;
-        margin: 0 0 sass.$space15 0;
-        background: var(--theme-yqni13);
-        color: transparent;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-    }
-    span {
-        font-size: 25px;
-        font-weight: 300;
-        color: var(--theme-nav-border);
-    }
-    h3 {
+    h4 {
         font-size: 30px;
         font-weight: 300;
         margin: 40px 0 10px 0;
