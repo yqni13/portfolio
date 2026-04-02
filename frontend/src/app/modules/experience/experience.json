@@ -1,0 +1,51 @@
+[
+    {
+        "title": "Full-Stack Developer",
+        "time": "Mar 2024 - Mar 2026",
+        "institute": {
+            "name": "Freelance"
+        },
+        "type": "Remote",
+        "core": [
+            "Integrated rate-limiting, API authentication and penalty systems",
+            "Designed reusable, responsive components for multiple projects",
+            "Implemented real-time validation and conditional logic in form builders",
+            "Build multiple end-to-end applications, hosting on different services (Netlify, Vercel, Render, Neon)",
+            "Supporting german and english for translation options",
+            "Enabling responsive design for mobile and desktop devices"
+        ],
+        "keys": ["Angular", "Node.js", "PostgreSQL", "Docker", "S3 Storage", "CI/CD", "Jira"]
+    },
+    {
+        "title": "Junior Software Developer",
+        "time": "Jul 2022 - Dec 2023",
+        "institute": {
+            "name": "Evolit GmbH",
+            "link": "https://evolit.com/"
+        },
+        "type": "Hybrid",
+        "core": [
+            "Attributed to development of terminal operating system 'smartTOS' from early development to production release",
+            "Used Leaflet for outdoor storage administration via custom map images",
+            "Assisting team in code reviews and manual testing (Usability, UI, Functional)"
+        ],
+        "keys": ["Angular", "C#", "Docker", "MySQL", "Agile", "Jira", "GitLab", "Testing"]
+    },
+    {
+        "title": "Bachelor of Science in Computer Science",
+        "time": "Sep 2020 - Jun 2023",
+        "institute": {
+            "name": "University of Applied Sciences Vienna | FH Technikum Wien",
+            "link": "https://www.technikum-wien.at/en/programs/bachelor-computer-science/"
+        },
+        "type": "Hybrid",
+        "core": [
+            "Requirement engineering, design and CI/CD of software systems",
+            "Programming principles, algorithms, testing and data structures",
+            "Basic cybersecurity, usability, and data management",
+            "Capacity for teamwork (often as group leader) within real projects",
+            "Specialization in software architecture and app development"
+        ],
+        "keys": ["Algorithms", "Architecture", "Data structures", "Web development", "UX", "C", "C++", "C#"]
+    }
+]
