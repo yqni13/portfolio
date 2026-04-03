@@ -3,7 +3,61 @@
 
 .work {
     flex-direction: column;
+    position: relative;
     align-items: center;
     margin: sass.$space100 0; // media.scss
-    height: 50vh;
+
+    .work-content {
+        width: 66vw;
+        max-width: 1200px;
+        margin: sass.$space50 0 sass.$space15 0;
+    }
+    #work-all-repo-link {
+        display: flex;
+        margin: 0 auto;
+        align-items: center;
+        text-decoration: none;
+        color: var(--theme-primary);
+        transition: transform 300ms ease-in-out;
+
+        i {
+            margin-left: sass.$space5;
+            $size: 15px;
+            width: $size;
+            height: $size;
+        }
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+}
+
+.workcard-preview {
+    height: 100%;
+    max-height: 400px;
+    aspect-ratio: 1/1;
+    flex-direction: column;
+    border: 1px solid var(--theme-nav-grey);
+    border-radius: 10px;
+    padding: sass.$space25;
+    margin: sass.$space15;
+
+    #workcard-preview-links {
+        flex-direction: column;
+        margin-top: auto;
+        a {
+            display: flex;
+            align-items: center;
+            margin-top: 5px;
+            text-decoration: none;
+            color: var(--theme-grey);
+
+            i {
+                margin-left: 5px;
+                $size: 15px;
+                width: $size;
+                height: $size;
+            }
+        }
+    }
 }

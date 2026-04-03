@@ -1,0 +1,32 @@
+@use '../../../../stylesheets/utilities' as sass;
+
+
+.workcard-detail {
+    border: 1px solid white;
+    z-index: 1000;
+    position: fixed;
+    overflow: scroll;
+    scrollbar-width: none;
+    top: 0;
+    left: 0;
+    width: calc(100vw - 2px);
+    height: 100vh;
+    backdrop-filter: blur(3px);
+    .workcard-detail-content {
+        flex-direction: column;
+        width: 66%; // media.scss
+        max-width: 700px; // media.scss
+        margin: 0 auto;
+        border: 1px solid var(--theme-nav-grey);
+        border-radius: 5px;
+        padding: 25px;
+        .workcard-detail-techstack {
+            flex-direction: row;
+        }
+    }
+    .workcard-detail-close {
+        display: flex;
+        border: 1px solid var(--theme-body-text);
+        cursor: pointer;
+    }
+}
