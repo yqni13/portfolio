@@ -1,8 +1,8 @@
 import { Component } from "@angular/core";
-import { default as skillset } from "./skills.json";
-import { SkillCollection } from "../../shared/interfaces/skill.interface";
-import { BadgeComponent } from "../../common/components/badge/badge.component";
+import { default as skillset } from "../../../data/skills.json";
+import { BadgeComponent } from "../../common/badge/badge.component";
 import { BaseComponent } from "../base.component";
+import { SkillCollection } from "../../../utils/interfaces/skill.interface";
 
 @Component({
     selector: 'app-skills',

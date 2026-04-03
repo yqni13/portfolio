@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { BaseComponentData } from "../shared/interfaces/base-data.interface";
+import { BaseComponentData } from "../../utils/interfaces/base-data.interface";
 
 @Component({
     selector: 'app-base',

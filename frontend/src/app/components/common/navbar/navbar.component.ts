@@ -1,10 +1,10 @@
 import { AfterViewInit, Component, DOCUMENT, ElementRef, Inject, OnInit, ViewChild } from "@angular/core";
-import { ThemeOption } from "../../../shared/enums/theme-option.enum";
+import { ThemeOption } from "../../../utils/enums/theme-option.enum";
 import _ from "underscore";
-import { ThemeHandlerService } from "../../../shared/services/theme.service";
-import { DeviceOption } from "../../../shared/enums/device-option.enum";
+import { ThemeHandlerService } from "../../../services/theme.service";
+import { DeviceOption } from "../../../utils/enums/device-option.enum";
 import { CommonModule } from "@angular/common";
-import { NavigationService } from "../../../shared/services/navigation.service";
+import { NavigationService } from "../../../services/navigation.service";
 
 @Component({
     selector: 'app-navbar',

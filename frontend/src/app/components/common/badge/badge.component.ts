@@ -1,6 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { Component, Input, OnInit } from "@angular/core";
-import { ThemeOption } from "../../../shared/enums/theme-option.enum";
+import { ThemeOption } from "../../../utils/enums/theme-option.enum";
 
 @Component({
     selector: 'app-badge',

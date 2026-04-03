@@ -1,8 +1,8 @@
 import { Component } from "@angular/core";
-import { BaseComponent } from "../base.component";
-import { Experience } from "../../shared/interfaces/experience.interface";
-import { default as expCollection } from "./experience.json";
+import { default as expCollection } from "../../../data/experience.json";
 import { CommonModule } from "@angular/common";
+import { BaseComponent } from "../base.component";
+import { Experience } from "../../../utils/interfaces/experience.interface";
 
 @Component({
     selector: 'app-experience',

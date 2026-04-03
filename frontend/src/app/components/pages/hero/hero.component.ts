@@ -1,5 +1,5 @@
 import { Component, DOCUMENT, Inject } from "@angular/core";
-import { NavigationService } from "../../shared/services/navigation.service";
+import { NavigationService } from "../../../services/navigation.service";
 
 @Component({
     selector: 'app-hero',
