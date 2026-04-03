@@ -10,6 +10,7 @@ footer {
 
     .footer-dialog-wrapper {
         align-items: center;
+        height: 70%;
         i,
         img {
             width: 35px;
@@ -19,8 +20,32 @@ footer {
             margin: 0 3px;
         }
         #love {
-            margin: 0 6px;
+            margin: 0 3px;
             color: var(--theme-error);
+        }
+        a {
+            text-decoration: none;
+            background: sass.$yqni13-darkmode-gradient;
+            color: transparent;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 0 1px 0 10px;
+        }
+    }
+    #footnote {
+        align-items: center;
+        color: var(--theme-nav-grey);
+        height: 30%;
+        a {
+            display: flex;
+            align-items: center;
+            i {
+                $size: 20px;
+                width: $size;
+                height: $size;
+                margin-right: 5px;
+            }
         }
     }
 }

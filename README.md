@@ -1,5 +1,5 @@
 # yqni13 | $\texttt{\color{blueviolet}{PORTFOLIO}}$
-### $\textsf{\color{brown}{v0.2.0}}$
+### $\textsf{\color{brown}{v0.3.0}}$
 
 <br>
 
@@ -43,5 +43,5 @@ which will open automatically on `https://localhost:4200/`.
 ## 📈 $\textsf{\color{salmon}Updates}$
 [see changelog for all updates](./docs/CHANGELOG.md)
 
-$\textsf{[v0.1.0\ =>\ {\textbf{\color{brown}v0.2.0}]}}$ app
-- $\textsf{\color{teal}Addition:}$ Added base layout as SPA, theme settings, and navbar/footer basics.
+$\textsf{[v0.2.0\ =>\ {\textbf{\color{brown}v0.3.0}]}}$ app
+- $\textsf{\color{teal}Addition:}$ Added context for components 'hero', 'skills' and 'experience'.

@@ -13,7 +13,7 @@ $card-padding: sass.$space25;
         width: 55vw; // media.scss
         max-width: 1000px; // media.scss
         flex-direction: column;
-        margin: sass.$space50 auto 0 auto;
+        margin: 75px auto 0 auto;
 
         .experience-content-wrapper {
             flex-direction: row;
@@ -66,7 +66,7 @@ $card-padding: sass.$space25;
     width: 100%;
     padding: $card-padding;
     margin-bottom: sass.$space25;
-    border: 1px solid var(--theme-nav-border);
+    border: 1px solid var(--theme-nav-grey);
     border-radius: 20px;
 
     .experience-card-link {
@@ -87,7 +87,7 @@ $card-padding: sass.$space25;
             }
         }
         span {
-            color: var(--theme-nav-border);
+            color: var(--theme-nav-grey);
         }
     }
 
@@ -101,7 +101,7 @@ $card-padding: sass.$space25;
         }
         span {
             margin-left: auto;
-            color: var(--theme-nav-border);
+            color: var(--theme-nav-grey);
         }
     }
 
@@ -111,7 +111,7 @@ $card-padding: sass.$space25;
             margin-bottom: 7.5px;
             &::marker {
                 content: '+';
-                color: var(--theme-nav-border);
+                color: var(--theme-nav-grey);
             }
             span {
                 margin-left: 7.5px;
@@ -123,7 +123,7 @@ $card-padding: sass.$space25;
         span {
             font-size: 14px; // media.scss
             opacity: 0.5;
-            border: 1px solid var(--theme-nav-border);
+            border: 1px solid var(--theme-nav-grey);
             border-radius: 15px;
             padding: 5px 10px;
             margin-right: 7.5px;

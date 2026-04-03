@@ -1,8 +1,15 @@
 ## 📜 $\textsf{\color{salmon}{List\ of\ updates}}$
 
+### $\textsf{\color{skyblue}2026/04/02}$
+
+$\textsf{[v0.2.0\ =>\ {\textbf{\color{brown}v0.3.0}]}}$ app
+- $\textsf{\color{teal}Addition:}$ Added context for components 'hero', 'skills' and 'experience'.
+
+<br>
+
 ### $\textsf{\color{skyblue}2026/03/31}$
 
-$\textsf{[v0.1.0\ =>\ {\textbf{\color{brown}v0.2.0}]}}$ app
+$\textsf{[v0.1.0\ =>\ v0.2.0]}$ app
 - $\textsf{\color{teal}Addition:}$ Added base layout as SPA, theme settings, and navbar/footer basics.
 
 <br>

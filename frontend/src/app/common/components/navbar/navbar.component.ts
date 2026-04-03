@@ -41,7 +41,7 @@ export class Navbar implements OnInit, AfterViewInit{
             linkedin: 'https://linkedin.com/in/lukas-varga-59532b228',
             mail: 'lukas.varga@yqni13.com'
         };
-        this.menu = ['Work', 'Skills', 'About', 'Experience', 'Contact'];
+        this.menu = ['Home', 'Work', 'Skills', 'About', 'Experience', 'Contact'];
 
         this.maxMobileScreenWidth = 1024;
         this.window = this.document.defaultView;
