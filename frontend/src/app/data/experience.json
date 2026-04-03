@@ -14,7 +14,7 @@
             "Supporting german and english for translation options",
             "Enabling responsive design for mobile and desktop devices"
         ],
-        "keys": ["Angular", "Node.js", "PostgreSQL", "Docker", "S3 Storage", "CI/CD", "Jira"]
+        "keys": ["Angular", "Node.js", "PostgreSQL", "Docker", "Cloudflare R2 (Object Storage)", "CI/CD", "Jira"]
     },
     {
         "title": "Junior Software Developer",

@@ -1,0 +1,66 @@
+[
+    {
+        "thumbnail": "/assets/img/thumbnail_support.jpg",
+        "name": "Support-Hub",
+        "type": "backend",
+        "intro": "Ticketing system, support request platform, helpdesk web application",
+        "description": "Handles feedback, ratings and bug/support tickets including file attachments across multiple applications via REST API.",
+        "impact": [
+            "potential SaaS extension",
+            "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut",
+            "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut",
+            "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut",
+            "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut"
+        ],
+        "techstack": [
+            "Node.js", "Express.js", "PostgreSQL", "Jest", "Testcontainers", "Cloudflare R2 (Object Storage)", "CI/CD"
+        ],
+        "links": {
+            "repo": "https://github.com/yqni13/support"
+        }
+    },
+    {
+        "thumbnail": "/assets/img/thumbnail_taxi-varga.jpg",
+        "name": "Taxi service",
+        "type": "full stack",
+        "intro": "Service platform, booking & fare calculation (taxi) web application",
+        "description": "Taxi service web application for booking & fare calculations for different categories. Using Google Maps Platform API for real-time data regarding 'Places', 'Routes' and 'Geolocation'.",
+        "impact": [
+            "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut",
+            "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut",
+            "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut",
+            "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut",
+            "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut",
+            "Supporting translations for german/english and themes for dark/light mode"
+        ],
+        "techstack": [
+            "Angular", "Node.js", "Google Maps Platform", "RxJS", "Express.js", "i18n", "Jest", "CI/CD"
+        ],
+        "links": {
+            "repo": "https://github.com/yqni13/taxi-varga",
+            "live": "https://taxi-varga.at"
+        }
+    },
+    {
+        "thumbnail": "/assets/img/thumbnail_artcreation-dv.jpg",
+        "name": "Art gallery",
+        "type": "full stack",
+        "intro": "Artist showcase platform, gallery/portfolio web application",
+        "description": "Artist portfolio web application and showcase platform to manage and display artwork, news and other resources.",
+        "impact": [
+            "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut",
+            "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut",
+            "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut",
+            "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut",
+            "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut",
+            "Supporting translations for german/english and themes for dark/light mode"
+        ],
+        "techstack": [
+            "Angular", "Node.js", "PostgreSQL", "RxJS", "Express.js", "i18n", "Jest", "CI/CD", "Cloudflare R2 (Object Storage)"
+        ],
+        "links": {
+            "repo": "https://github.com/yqni13/artcreation-dv",
+            "live": "https://artcreation-dv.at"
+        }
+    }
+]
