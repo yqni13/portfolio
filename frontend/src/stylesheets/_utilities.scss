@@ -8,7 +8,7 @@ $device-small-any: 400px;
 
 /* CUSTOM COLORS */
 $color-darkmode-bg: #080c1a;
-$color-lightmode-bg: #fff;
+$color-lightmode-bg: #ebfcf7;
 
 $color-ice-white: #f0f8ff;
 $color-rich-black: #020d19;
@@ -26,8 +26,11 @@ $yqni13-darkmode-pink: #d82a67;
 $color-theme-sun: rgb(219, 166, 5);
 $color-theme-moon: #888888c3;
 
-$color-lightmode-grey: #e4eaed;
-$color-darkmode-grey: #252933;
+$color-lightmode-comp-grey: #e4eaed;
+$color-darkmode-comp-grey: #252933;
+
+$color-lightmode-grey: #818283;
+$color-darkmode-grey: #5e5f63;
 
 $color-lightmode-error: #b91c1c;
 $color-darkmode-error: #ba3131;
@@ -36,14 +39,16 @@ $color-lightmode-primary: #0ba56f;
 $color-darkmode-primary: $yqni13-darkmode-pink;
 
 $color-lightmode-secondary: #0b6da5;
-$color-darkmode-secondary: #129a93;
+$color-darkmode-secondary: #723a88;
 
 $yqni13-lightmode-gradient: linear-gradient(160deg, $color-lightmode-primary, $color-lightmode-primary 100%);
 $yqni13-darkmode-gradient: linear-gradient(160deg, $yqni13-darkmode-purple, $yqni13-darkmode-pink 100%);
 
-$bg-lightmode-gradient: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
-$bg-darkmode-gradient: conic-gradient(from 0deg at 0% 0%,#f0f8ff 2% 6%, 7%, $color-darkmode-bg 48% 9%);
+// TODO(yqni13): remove in design phase when decided what background to use
+// $bg-lightmode-gradient: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+// $bg-darkmode-gradient: conic-gradient(from 0deg at 0% 0%,#f0f8ff 2% 6%, 7%, $color-darkmode-bg 48% 9%);
 
+$signature-white: invert(100%) sepia(59%) saturate(5190%) hue-rotate(179deg) brightness(107%) contrast(107%);
 
 /* CUSTOM SIZES */
 $space5: 5px;

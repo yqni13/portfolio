@@ -1,0 +1,9 @@
+@use '../../../../stylesheets/utilities' as sass;
+
+
+.contact {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: sass.$space100 0;
+}

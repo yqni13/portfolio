@@ -1,0 +1,70 @@
+@use '../../../../stylesheets/utilities' as sass;
+
+
+.about {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: sass.$space100 0;
+
+    .about-content {
+        flex-direction: row;
+        width: 80vw;
+        max-width: 1000px;
+        margin: 75px 0;
+        
+        .about-content-img {
+            width: 34%;
+            aspect-ratio: 12/16;
+            max-height: 75vh;
+            position: relative;
+            /* Background-image dynamically set in .ts theme-subscription */
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 25px;
+            #signature-img {
+                position: absolute;
+                bottom: 15px;
+                rotate: -15deg;
+                right: 15px;
+                width: 50%;
+                filter: var(--theme-signature);
+            }
+        }
+        .about-content-description {
+            width: 66%;
+            #description-wrapper {
+                flex-direction: column;
+                width: 75%;
+                margin-left: auto;
+                h4 {
+                    font-size: 26px;
+                    font-weight: 400;
+                    color: var(--theme-body-text);
+                    margin: sass.$space25 0 0 0;
+                }
+                p {
+                    white-space: pre-line;
+                    color: var(--theme-grey);
+                }
+                #hint-wrapper {
+                    flex-direction: row;
+                    white-space: pre-line;
+                    margin: auto 0 sass.$space25 0;
+                    span {
+                        color: var(--theme-body-text);
+                    }
+                    a {
+                        text-decoration: none;
+                        margin: 0 5px;
+                        background: sass.$yqni13-darkmode-gradient;
+                        color: transparent;
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        background-clip: text;
+                    }
+                }
+            }
+        }
+    }
+}

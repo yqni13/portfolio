@@ -1,0 +1,34 @@
+@use '../../../../stylesheets/utilities' as sass;
+
+
+.skills {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: sass.$space100 0; // media.scss
+
+    h4 {
+        font-size: 30px;
+        font-weight: 300;
+        margin: 50px 0 10px 0;
+    }
+    #skills-content {
+        flex-direction: column;
+        height: 100%;
+        max-width: 70vw;
+        margin-top: sass.$space25;
+
+        .skills-wrapper {
+            flex-direction: column;
+
+            .skills-badge-wrapper {
+                flex-direction: row;
+                flex-wrap: wrap;
+
+                app-badge {
+                    margin: 5px 15px 5px 0;
+                }
+            }
+        }
+    }
+}

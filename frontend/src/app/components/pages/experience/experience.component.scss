@@ -1,0 +1,139 @@
+@use '../../../../stylesheets/utilities' as sass;
+
+
+$card-padding: sass.$space25;
+
+.experience {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: sass.$space100 0; // media.scss
+
+    .experience-content {
+        width: 55vw; // media.scss
+        max-width: 1000px; // media.scss
+        flex-direction: column;
+        margin: 75px auto 0 auto;
+
+        .experience-content-wrapper {
+            flex-direction: row;
+
+            .experience-timeline {
+                position: relative;
+                margin-right: 25px;
+                opacity: 0.6;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 3px;
+                    height: 100%;
+                    background: var(--theme-primary);
+                }
+
+                .timeline-marker {
+                    $size: 10px;
+                    $border: 2px;
+                    width: $size;
+                    height: $size;
+                    border: $border solid var(--theme-primary);
+                    border-radius: 50%;
+                    position: absolute;
+                    top: $card-padding;
+                    left: calc(0px - (($size + $border) / 2));
+                    background-color: var(--theme-body-bg);
+                }
+            }
+        }
+
+        /* Add fading effect to start and end of timeline. */
+        .experience-content-wrapper:first-child {
+            .experience-timeline::before {
+                background: linear-gradient(to top, var(--theme-primary) 0%, var(--theme-body-bg) 110%);
+            }
+        }
+        .experience-content-wrapper:last-child {
+            .experience-timeline::before {
+                background: linear-gradient(to bottom, var(--theme-primary) 0%, var(--theme-body-bg) 100%);
+            }
+        }
+    }
+}
+
+.experience-card {
+    flex-direction: column;
+    width: 100%;
+    padding: $card-padding;
+    margin-bottom: sass.$space25;
+    border: 1px solid var(--theme-nav-grey);
+    border-radius: 20px;
+
+    .experience-card-link {
+        align-items: center;
+        margin: 0 0 sass.$space15 0;
+        a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--theme-body-text);
+            margin-right: sass.$space5;
+            opacity: 0.85;
+            transition: transform 300ms ease-in-out;
+            i {
+                $size: 15px;
+                width: $size;
+                height: $size;
+                margin-left: sass.$space5;
+            }
+        }
+        .cursor-pointer:hover {
+            transform: scale(1.1);
+            color: var(--theme-primary);
+            backdrop-filter: blur(3px);
+        }
+        span {
+            color: var(--theme-nav-grey);
+        }
+    }
+
+    .experience-card-head {
+        align-items: center;
+        h4 {
+            font-weight: 300;
+            font-size: 22px; // media.scss
+            margin: 0;
+            color: var(--theme-secondary);
+        }
+        span {
+            margin-left: auto;
+            color: var(--theme-nav-grey);
+        }
+    }
+
+    ul {
+        padding: 0 0 0 sass.$space25;
+        li {
+            margin-bottom: 7.5px;
+            padding-left: 7.5px;
+            &::marker {
+                content: '+';
+                color: var(--theme-primary);
+            }
+            span {
+                color: var(--theme-grey);
+            }
+        }
+    }
+
+    .experience-card-keys {
+        span {
+            font-size: 14px; // media.scss
+            opacity: 0.5;
+            border: 1px solid var(--theme-nav-grey);
+            border-radius: 10px;
+            padding: 5px 10px;
+            margin-right: 7.5px;
+        }
+    }
+}
