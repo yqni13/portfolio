@@ -53,7 +53,7 @@ h3 {
     align-items: center;
     padding: 10px sass.$space25; // media.scss
     border: 1px outset transparent;
-    border-radius: 7px;
+    border-radius: 10px;
     cursor: pointer;
     color: sass.$color-ice-white;
     background-color: var(--theme-primary);
@@ -73,7 +73,7 @@ h3 {
     align-items: center;
     padding: 10px sass.$space25; // media.scss
     border: 1px solid var(--theme-nav-grey);
-    border-radius: 7px;
+    border-radius: 10px;
     cursor: pointer;
     text-decoration: none;
     color: var(--theme-body-text);

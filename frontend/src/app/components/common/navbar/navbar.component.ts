@@ -5,6 +5,8 @@ import { ThemeHandlerService } from "../../../services/theme.service";
 import { DeviceOption } from "../../../utils/enums/device-option.enum";
 import { CommonModule } from "@angular/common";
 import { NavigationService } from "../../../services/navigation.service";
+import { NavMenu } from "../../../utils/interfaces/nav-menu.interface";
+import { default as menuData } from "../../../data/menu.json";
 
 @Component({
     selector: 'app-navbar',
@@ -18,11 +20,13 @@ export class Navbar implements OnInit, AfterViewInit{
 
     @ViewChild("themeIcon") themeIcon!: ElementRef;
 
+    activeMenu!: any;
+
     protected themeEnum = ThemeOption;
     protected selectedTheme: ThemeOption;
     protected deviceOption: DeviceOption;
     protected links: any;
-    protected menu: string[];
+    protected menu: NavMenu[];
 
     private maxMobileScreenWidth: number;
     private window: any;
@@ -34,14 +38,14 @@ export class Navbar implements OnInit, AfterViewInit{
     ) {
         this.selectedTheme = this.themeHandler.checkThemeSettings();
         this.themeHandler.setThemeSettings(this.selectedTheme);
-
+        this.activeMenu = this.navigate.activeSection$;
         this.deviceOption = DeviceOption.DESKTOP;
         this.links = {
             github: 'https://github.com/yqni13',
             linkedin: 'https://linkedin.com/in/lukas-varga-59532b228',
             mail: 'lukas.varga@yqni13.com'
         };
-        this.menu = ['Home', 'Work', 'Skills', 'About', 'Experience', 'Contact'];
+        this.menu = menuData;
 
         this.maxMobileScreenWidth = 1024;
         this.window = this.document.defaultView;

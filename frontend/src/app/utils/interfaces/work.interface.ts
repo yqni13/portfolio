@@ -1,7 +1,7 @@
 export interface Project {
     thumbnail: string,
     name: string,
-    type: string,
+    type: ProjectTypes,
     intro: string,
     description: string,
     impact: string[],
@@ -13,4 +13,9 @@ interface ProjectLinks {
     repo: string,
     demo?: string,
     live?: string
+}
+
+interface ProjectTypes {
+    stack: string,
+    mandate: ProjectMandate
 }

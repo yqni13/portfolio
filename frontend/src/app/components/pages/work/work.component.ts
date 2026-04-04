@@ -12,11 +12,14 @@ import { CommonModule } from "@angular/common";
     imports: [
         CommonModule,
         WorkCardComponent
-    ]
+    ],
+    host: {
+        '(click)': 'preventOpenDetails($event)'
+    }
 })
 export class WorkComponent extends BaseComponent {
 
-    protected projects: Project[] = projectData;
+    protected projects: Project[];
     protected allRepoLink: string;
     protected cardDetails: Project | null;
 
@@ -26,6 +29,7 @@ export class WorkComponent extends BaseComponent {
             title: 'Selected Work',
             subTitle: 'High-impact applications built with precision and care.'
         }
+        this.projects = this.toProjectArray(projectData);
         this.allRepoLink = 'https://github.com/yqni13?tab=repositories';
         this.cardDetails = null;
     }
@@ -40,5 +44,43 @@ export class WorkComponent extends BaseComponent {
             this.cardDetails = null;
             this.document.body.style.setProperty('overflow', 'auto');
         }
+    }
+
+    preventOpenDetails($event: any) {
+        const classname = $event.target.className;
+        if(classname === 'prevent-details' || classname.includes('prevent-details')) {
+            this.closeDetails(true as any);
+        }
+    }
+
+    private toProjectArray(data: any[]): Project[] {
+        const arr: Project[] = [];
+        data.forEach(project => {
+            const entry = {
+                thumbnail: project.thumbnail,
+                name: project.name,
+                type: {
+                    stack: project.type.stack,
+                    mandate: project.type.mandate as ProjectMandate
+                },
+                intro: project.intro,
+                description: project.description,
+                impact: project.impact,
+                links: {
+                    repo: project.links.repo,
+                    demo: project.links.demo ?? null,
+                    live: project.links.live ?? null,
+                },
+                techstack: project.techstack
+            };
+            if(!entry.links.demo) {
+                delete entry.links.demo;
+            }
+            if(!entry.links.live) {
+                delete entry.links.live;
+            }
+            arr.push(entry);
+        })
+        return arr;
     }
 }

@@ -39,12 +39,12 @@ $color-lightmode-primary: #0ba56f;
 $color-darkmode-primary: $yqni13-darkmode-pink;
 
 $color-lightmode-secondary: #0b6da5;
-// $color-darkmode-secondary: #0d7a74;
 $color-darkmode-secondary: #723a88;
 
 $yqni13-lightmode-gradient: linear-gradient(160deg, $color-lightmode-primary, $color-lightmode-primary 100%);
 $yqni13-darkmode-gradient: linear-gradient(160deg, $yqni13-darkmode-purple, $yqni13-darkmode-pink 100%);
 
+// TODO(yqni13): remove in design phase when decided what background to use
 // $bg-lightmode-gradient: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
 // $bg-darkmode-gradient: conic-gradient(from 0deg at 0% 0%,#f0f8ff 2% 6%, 7%, $color-darkmode-bg 48% 9%);
 

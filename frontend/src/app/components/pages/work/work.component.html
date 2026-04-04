@@ -1,25 +1,29 @@
 <ng-template #workCard let-i="i" let-data="data">
     <div class="workcard-preview" (click)="openDetails(data)">
-        <span id="workcard-preview-type">{{data.type}}</span>
+        <span id="workcard-preview-type">{{data.type.stack}}</span>
         <h4>{{data.name}}</h4>
         <span id="workcard-preview-intro">{{data.intro}}</span>
         <p>{{data.description}}</p>
+        <a id="workcard-preview-hint">
+            <span>View more details</span>
+            <i class="icon-base icon-Click"></i>
+        </a>
         <div id="workcard-preview-links">
             @if(data.links.demo) {
-                <a href="{{data.links.demo}}">
-                    <span>Demo</span>
-                    <i class="icon-base icon-GoTo"></i>
+                <a href="{{data.links.demo}}" target="_blank" class="prevent-details">
+                    <span class="prevent-details">Demo</span>
+                    <i class="icon-base icon-GoTo prevent-details"></i>
                 </a>
             }
             @if(data.links.live) {
-                <a href="{{data.links.live}}">
-                    <span>Live</span>
-                    <i class="icon-base icon-GoTo"></i>
+                <a href="{{data.links.live}}" target="_blank" class="prevent-details">
+                    <span class="prevent-details">Live</span>
+                    <i class="icon-base icon-GoTo prevent-details"></i>
                 </a>
             }
-            <a href="{{data.links.repo}}">
-                <span>Repository</span>
-                <i class="icon-base icon-GitHub"></i>
+            <a href="{{data.links.repo}}" target="_blank" class="prevent-details">
+                <span class="prevent-details">Repository</span>
+                <i class="icon-base icon-GitHub prevent-details"></i>
             </a>
         </div>
     </div>

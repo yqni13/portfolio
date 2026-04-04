@@ -1,16 +1,23 @@
 <ng-template #expCard let-i="i" let-data="data">
     <div class="experience-card">
         <div class="experience-card-link">
-            <a
-                href="{{data.institute.link ?? null}}"
-                target="_blank"
-                [ngStyle]="data.institute.link ? {'cursor': 'pointer'} : {'cursor': 'default'}"
-            >
-                {{data.institute.name}}
-                @if(data.institute.link) {
-                    <i class="icon-base icon-GoTo"></i>
-                }
-            </a>
+            @if(data.institute.link) {
+                <a
+                    href="{{data.institute.link ?? null}}"
+                    target="_blank"
+                    [ngStyle]="{'cursor': 'pointer'}"
+                    class="cursor-pointer"
+                >
+                    {{data.institute.name}}
+                    @if(data.institute.link) {
+                        <i class="icon-base icon-GoTo"></i>
+                    }
+                </a>
+            } @else {
+                <a [ngStyle]="{'cursor': 'default'}">
+                    {{data.institute.name}}
+                </a>
+            }
             <span>{{'| ' + data.type}}</span>
         </div>
         <div class="experience-card-head">
@@ -42,7 +49,7 @@
                     <div class="timeline-marker"></div>
                 </div>
                 <ng-container 
-                    *ngTemplateOutlet="expCard; context: { i: $index, data: card}"
+                    *ngTemplateOutlet="expCard; context: { i: $index, data: card }"
                 ></ng-container>
             </div>
         }

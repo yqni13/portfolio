@@ -1,0 +1,26 @@
+[
+    {
+        "id": "head-home",
+        "name": "Home"
+    },
+    {
+        "id": "head-work",
+        "name": "Work"
+    },
+    {
+        "id": "head-skills",
+        "name": "Skills"
+    },
+    {
+        "id": "head-about",
+        "name": "About"
+    },
+    {
+        "id": "head-experience",
+        "name": "Experience"
+    },
+    {
+        "id": "head-contact",
+        "name": "Contact"
+    }
+]

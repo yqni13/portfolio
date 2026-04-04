@@ -6,7 +6,7 @@
     flex-direction: row;
     align-items: center;
     padding: sass.$space15 sass.$space25; // media.scss
-    border: 1px solid var(--theme-body-text);
+    border: 1px solid var(--theme-grey);
     border-radius: 10px;
     background-color: var(--theme-component);
     text-decoration: none;
@@ -18,7 +18,7 @@
         color: var(--theme-body-text);
     }
     &:hover {
-        box-shadow: 2px 2px 4px white;
+        box-shadow: 2px 2px 4px var(--theme-body-text);
     }
 }
 

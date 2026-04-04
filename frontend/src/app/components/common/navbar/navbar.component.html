@@ -30,7 +30,13 @@
             ></i>
         </a>
         @for(page of menu; track $index) {
-            <a class="navbar-menu" (click)="scrollToHeader('head-' + convertMenuHeader(page))">{{page}}</a>
+            <a
+                class="navbar-menu"
+                (click)="scrollToHeader('head-' + convertMenuHeader(page.name))"
+                [ngClass]="activeMenu() === page.id ? 'active-menu' : ''"
+            >
+                {{page.name}}
+            </a>
         }
     </div>
 </nav>

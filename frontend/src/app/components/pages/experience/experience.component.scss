@@ -79,12 +79,18 @@ $card-padding: sass.$space25;
             color: var(--theme-body-text);
             margin-right: sass.$space5;
             opacity: 0.85;
+            transition: transform 300ms ease-in-out;
             i {
                 $size: 15px;
                 width: $size;
                 height: $size;
                 margin-left: sass.$space5;
             }
+        }
+        .cursor-pointer:hover {
+            transform: scale(1.1);
+            color: var(--theme-primary);
+            backdrop-filter: blur(3px);
         }
         span {
             color: var(--theme-nav-grey);
@@ -109,12 +115,13 @@ $card-padding: sass.$space25;
         padding: 0 0 0 sass.$space25;
         li {
             margin-bottom: 7.5px;
+            padding-left: 7.5px;
             &::marker {
                 content: '+';
-                color: var(--theme-nav-grey);
+                color: var(--theme-primary);
             }
             span {
-                margin-left: 7.5px;
+                color: var(--theme-grey);
             }
         }
     }
@@ -124,7 +131,7 @@ $card-padding: sass.$space25;
             font-size: 14px; // media.scss
             opacity: 0.5;
             border: 1px solid var(--theme-nav-grey);
-            border-radius: 15px;
+            border-radius: 10px;
             padding: 5px 10px;
             margin-right: 7.5px;
         }
