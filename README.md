@@ -1,5 +1,5 @@
 # yqni13 | $\texttt{\color{blueviolet}{PORTFOLIO}}$
-### $\textsf{\color{brown}{v0.4.0}}$
+### $\textsf{\color{brown}{v0.5.0}}$
 
 <br>
 
@@ -43,5 +43,6 @@ which will open automatically on `https://localhost:4200/`.
 ## 📈 $\textsf{\color{salmon}Updates}$
 [see changelog for all updates](./docs/CHANGELOG.md)
 
-$\textsf{[v0.3.0\ =>\ {\textbf{\color{brown}v0.4.0}]}}$ app
-- $\textsf{\color{teal}Addition:}$ Added context for components 'work' and'about'.
+$\textsf{[v0.4.0\ =>\ {\textbf{\color{brown}v0.6.0}]}}$ app
+- $\textsf{\color{teal}Addition:}$ Added custom input, select and validation components.
+- $\textsf{\color{teal}Addition:}$ Added context for component 'contact'.

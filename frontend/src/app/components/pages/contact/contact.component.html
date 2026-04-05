@@ -1,4 +1,67 @@
 <section class="contact" id="head-contact">
     <h3>{{data.title}}</h3>
     <span class="head-text">{{data.subTitle}}</span>
+    <div class="contact-content">
+        <div class="contact-form-wrapper">
+            <h4>Send a message</h4>
+            <form [formGroup]="contactForm">
+                <app-select-input
+                    [name]="'contactForm-salutation'"
+                    [formControl]="contactForm.get('salutation') | controlCast"
+                    [placeholder]="'How should I address you?*'"
+                    [fieldName]="'salutation'"
+                    [options]="{female: 'Ms.', male: 'Mr.'}"
+                    [customStyle]="getCustomInputStyle()"
+                    [readonlyStyle]="getCustomReadonlyStyle()"
+                    [icon]="'Salutation'"
+                ></app-select-input>
+                <app-text-input
+                    [formControl]="contactForm.get('name') | controlCast"
+                    [placeholder]="'Your name*'"
+                    [fieldName]="'name'"
+                    [name]="'contactForm-name'"
+                    [customStyle]="getCustomInputStyle()"
+                    [icon]="'User'"
+                ></app-text-input>
+                <app-text-input
+                    [formControl]="contactForm.get('email') | controlCast"
+                    [placeholder]="'Your email*'"
+                    [fieldName]="'email'"
+                    [name]="'contactForm-email'"
+                    [customStyle]="getCustomInputStyle()"
+                    [icon]="'MailThin'"
+                ></app-text-input>
+                <app-text-input
+                    [formControl]="contactForm.get('subject') | controlCast"
+                    [placeholder]="'What topic is it about?*'"
+                    [fieldName]="'subject'"
+                    [name]="'contactForm-subject'"
+                    [customStyle]="getCustomInputStyle()"
+                    [icon]="'Subject'"
+                ></app-text-input>
+                <app-textarea-input
+                    [name]="'contactForm-message'"
+                    [fieldName]="'message'"
+                    [formControl]="contactForm.get('message') | controlCast"
+                    [placeholder]="'What are we talking about?*'"
+                    [customStyle]="getCustomInputStyle()"
+                    [icon]="'Message'"
+                    [rows]="7"
+                    [maxLength]="messageLength+1"
+                ></app-textarea-input>
+                @if(contactForm.get('message')?.value.length <= messageLength) {
+                    <span id="contact-message-length">
+                        {{(messageLength - contactForm.get('message')?.value.length) + ' / ' + messageLength}}
+                    </span>
+                }
+                <a class="btn-primary" (click)="onSubmit()">
+                    <span>Send message</span>
+                    <i class="icon-base icon-Send"></i>
+                </a>
+                <span id="contact-hint">
+                    I value your privacy. Your information will never be shared with third parties.
+                </span>
+            </form>
+        </div>
+    </div>
 </section>

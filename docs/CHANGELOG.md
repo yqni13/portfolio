@@ -1,5 +1,13 @@
 ## 📜 $\textsf{\color{salmon}{List\ of\ updates}}$
 
+### $\textsf{\color{skyblue}2026/04/05}$
+
+$\textsf{[v0.4.0\ =>\ {\textbf{\color{brown}v0.6.0}]}}$ app
+- $\textsf{\color{teal}Addition:}$ Added custom input, select and validation components.
+- $\textsf{\color{teal}Addition:}$ Added context for component 'contact'.
+
+<br>
+
 ### $\textsf{\color{skyblue}2026/04/03}$
 
 $\textsf{[v0.3.0\ =>\ {\textbf{\color{brown}v0.4.0}]}}$ app

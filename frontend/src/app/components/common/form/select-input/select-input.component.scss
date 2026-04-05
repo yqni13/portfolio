@@ -1,0 +1,58 @@
+@use '../../../../../stylesheets/utilities' as sass;
+
+
+$icon-margin-custom: 7.5px;
+$icon-margin-error: 7.5px;
+$icon-size-custom: 20px;
+$icon-size-warning: 30px;
+$icon-padding-custom: calc(($icon-margin-custom * 2) + $icon-size-custom);
+$icon-padding-error: calc(($icon-margin-error * 2) + $icon-size-warning);
+$border: 2px;
+
+.selectinput {
+    display: grid;
+    position: relative;
+
+    select {
+        width: 100%;
+        padding: 10px $icon-padding-error 10px calc($icon-padding-custom - 3px);
+        border-radius: calc(sass.$space5 + 1px);
+        text-overflow: ellipsis;
+        border: $border outset var(--theme-nav-grey);
+        option {
+            text-overflow: ellipsis;
+        }
+    }
+}
+
+app-validation-input {
+    position: relative;
+    bottom: 0;
+    left: 0;
+}
+
+#custom-icon {
+    $size: 20px;
+    position: absolute;
+    top: calc(($size / 2) + 2px);
+    margin: 0 $icon-margin-custom 0 calc($icon-margin-custom + $border);
+    width: 20px;
+    height: 20px;
+    color: var(--theme-grey);
+}
+
+#error-icon {
+    display: flex;
+    position: absolute;
+    justify-self: end;
+    bottom: 5px;
+    color: var(--theme-error);
+}
+
+.warning-input-text {
+    position: absolute;
+    align-self: center;
+    justify-content: end;
+    margin-right: 17.5px;
+    // margin-right: 7.5px;
+}
