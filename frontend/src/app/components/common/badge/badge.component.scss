@@ -11,10 +11,13 @@
     background-color: var(--theme-component);
     text-decoration: none;
     i {
+        $size: 20px;
+        width: $size;
+        height: $size;
         margin-right: 12.5px;
     }
     span {
-        font-size: 20px;
+        font-size: 16px;
         color: var(--theme-body-text);
     }
     &:hover {
