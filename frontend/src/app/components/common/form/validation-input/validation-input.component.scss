@@ -1,0 +1,9 @@
+@use '../../../../../stylesheets/utilities' as sass;
+
+
+.validation-errors {
+    color: var(--theme-error);
+    font-size: 10px;
+    font-weight: 400;
+    padding: 2px 7px;
+}
