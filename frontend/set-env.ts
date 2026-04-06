@@ -17,6 +17,8 @@ const envConfigFile = `import { Environment } from "./environment.model";
 
 export const environment: Environment = {
     ENV_MODE: '${process.env['ENV_MODE']}',
+    NOTIFY_ADMIN_ID: '${process.env['NOTIFY_ADMIN_ID']}',
+    NOTIFY_BOT_KEY: '${process.env['NOTIFY_BOT_KEY']}',
 };
 `;
 fs.writeFileSync(targetPath, envConfigFile);
