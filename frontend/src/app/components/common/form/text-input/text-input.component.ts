@@ -1,6 +1,6 @@
 import { CommonModule } from "@angular/common";
-import { Component, EventEmitter, forwardRef, Input, OnDestroy, OnInit, Output } from "@angular/core";
-import { FormControl, NG_VALUE_ACCESSOR, ReactiveFormsModule } from "@angular/forms";
+import { Component, forwardRef, Input, OnDestroy, OnInit } from "@angular/core";
+import { NG_VALUE_ACCESSOR, ReactiveFormsModule } from "@angular/forms";
 import { ValidationInputComponent } from "../validation-input/validation-input.component";
 import { AbstractInputComponent } from "../abstract.component";
 import { Subscription } from "rxjs";
@@ -8,7 +8,10 @@ import { Subscription } from "rxjs";
 @Component({
     selector: 'app-text-input',
     templateUrl: './text-input.component.html',
-    styleUrl: './text-input.component.scss',
+    styleUrls: [
+        '../abstract.component.scss',
+        './text-input.component.scss'
+    ],
     imports: [
         CommonModule,
         ReactiveFormsModule,
@@ -22,36 +25,21 @@ import { Subscription } from "rxjs";
         }
     ],
     host: {
-        '(click)': 'clickListening($event)',
-        '(document:keydown)': 'keyListening($event)'
+        '(click)': 'clickOutside($event)',
+        '(document:keydown)': 'tabOutside($event)'
     }
 })
 export class TextInputComponent extends AbstractInputComponent implements OnInit, OnDestroy {
 
-    @Input() fieldName: string;
-    @Input() formControl: FormControl;
     @Input() inputType: string;
-    @Input() placeholder: string;
-    @Input() name: string;
-    @Input() ngClass: string;
-    @Input() customStyle: any;
     @Input() icon: string;
-
-    @Output() byChange: EventEmitter<any>;
 
     private subscription$: Subscription;
 
     constructor() {
         super();
-        this.fieldName = '';
-        this.formControl = new FormControl();
         this.inputType = '';
-        this.placeholder = '';
-        this.name = '';
-        this.ngClass = '';
-        this.customStyle = {};
         this.icon = '';
-        this.byChange = new EventEmitter<any>();
 
         this.subscription$ = new Subscription();
     }
@@ -61,14 +49,6 @@ export class TextInputComponent extends AbstractInputComponent implements OnInit
             this.byChange.emit(change);
             this.isFocused = true;
         })
-    }
-
-    clickListening($event: any) {
-        this.clickOutside($event, this.fieldName);
-    }
-
-    keyListening($event: any) {
-        this.tabOutside($event, this.fieldName);
     }
 
     ngOnDestroy() {

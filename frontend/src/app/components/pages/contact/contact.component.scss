@@ -48,6 +48,7 @@
                     justify-content: center;
                     align-items: center;
                     margin-top: 25px;
+                    border-radius: 7px; // consistent with input components
                     i {
                         $size: 15px;
                         width: $size;

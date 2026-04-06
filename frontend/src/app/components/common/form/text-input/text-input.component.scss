@@ -1,53 +1,16 @@
 @use '../../../../../stylesheets/utilities' as sass;
+@use '../abstract.component.scss' as inherit;
 
-
-$icon-margin-custom: 7.5px;
-$icon-margin-error: 7.5px;
-$icon-size-custom: 20px;
-$icon-size-warning: 30px;
-$icon-padding-custom: calc(($icon-margin-custom * 2) + $icon-size-custom);
-$icon-padding-error: calc(($icon-margin-error * 2) + $icon-size-warning);
-$border: 2px;
 
 .textinput {
     display: grid;
     position: relative;
     input {
-        $indent: calc($icon-padding-custom + $icon-padding-error + ($border * 2));
+        $indent: calc(inherit.$icon-padding-custom + inherit.$icon-padding-error + (inherit.$border * 2));
         width: calc(100% - $indent);
-        padding: 10px $icon-padding-error 10px $icon-padding-custom;
-        border-radius: calc(sass.$space5 + 1px);
+        padding: 10px inherit.$icon-padding-error 10px inherit.$icon-padding-custom;
+        border-radius: calc(sass.$space5 + inherit.$border);
         text-overflow: ellipsis;
-        border: $border outset var(--theme-nav-grey);
+        border: inherit.$border outset var(--theme-nav-grey);
     }
-}
-
-app-validation-input {
-    position: relative;
-    bottom: 0;
-    left: 0;
-}
-
-#custom-icon {
-    position: absolute;
-    align-self: center;
-    margin: 0 $icon-margin-custom 0 calc($icon-margin-custom + $border);
-    $size: 20px;
-    width: 20px;
-    height: 20px;
-    color: var(--theme-grey);
-}
-
-#error-icon {
-    display: flex;
-    position: absolute;
-    justify-self: end;
-    color: var(--theme-error);
-}
-
-.warning-input-text {
-    position: absolute;
-    align-self: center;
-    justify-content: end;
-    margin-right: 7.5px;
 }

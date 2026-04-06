@@ -85,5 +85,6 @@ export class ContactComponent extends BaseComponent implements OnInit {
         }
         this.isLoading = true;
         let data: any;
+        // TODO(yqni13): process data with notification api at YQNI13-18-notification-service
     }
 }
