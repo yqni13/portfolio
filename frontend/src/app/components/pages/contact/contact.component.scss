@@ -5,5 +5,66 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    margin: sass.$space100 0;
+    margin: sass.$space100 0 75px 0;
+
+    .contact-content {
+        min-width: 330px;
+        max-width: 450px;
+        width: 66vw;
+        margin-top: 75px;
+        padding: sass.$space25;
+        border: 1px solid var(--theme-grey);
+        border-radius: 20px;
+
+        .contact-form-wrapper {
+            flex-direction: column;
+            width: 100%;
+
+            h4 {
+                font-weight: 300;
+                font-size: 26px; // media.scss
+                margin: 0 auto 25px auto;
+                color: var(--theme-secondary);
+            }
+
+            form {
+
+                app-text-input,
+                app-select-input {
+                    display: block;
+                    width: 100%;
+                    margin-bottom: 25px;
+                }
+                app-textarea-input {
+                    display: block;
+                    width: 100%;
+                }
+                #contact-message-length {
+                    font-size: 12px;
+                    color: var(--theme-grey);
+                    margin: 0 0 0 7.5px;
+                }
+                .btn-primary {
+                    justify-content: center;
+                    align-items: center;
+                    margin-top: 25px;
+                    border-radius: 7px; // consistent with input components
+                    i {
+                        $size: 15px;
+                        width: $size;
+                        height: $size;
+                        margin-left: 7.5px;
+                    }
+                }
+                #contact-hint {
+                    display: block;
+                    text-align: center;
+                    margin-top: 10px;
+                    color: var(--theme-body-text);
+                    font-size: 11px;
+                    opacity: 0.6;
+                }
+            }
+        }
+    }
 }

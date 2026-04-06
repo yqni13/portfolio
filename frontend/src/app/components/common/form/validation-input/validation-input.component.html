@@ -1,0 +1,13 @@
+<ng-container *yqni13Var="ngControl as control">
+    @if(control.invalid && (control.dirty || control.touched)) {
+        <div class="validation-errors">
+            @for(entry of validations; track $index) {
+                @if(control.hasError(entry.error)) {
+                    <div class="validation-message">
+                        {{entry.mapping ? mapErrorValues(entry.msg, entry.mapping) : entry.msg}}
+                    </div>
+                }
+            }
+        </div>
+    }
+</ng-container>

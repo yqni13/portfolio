@@ -1,0 +1,26 @@
+@use '../../../../../stylesheets/utilities' as sass;
+@use '../abstract.component.scss' as inherit;
+
+
+.textareainput {
+    display: grid;
+    position: relative;
+
+    textarea {
+        $indent: calc(inherit.$icon-padding-custom + inherit.$icon-padding-error + (inherit.$border * 2));
+        width: calc(100% - $indent);
+        padding: 10px inherit.$icon-padding-error 10px inherit.$icon-padding-custom;
+        border-radius: calc(sass.$space5 + inherit.$border);
+        text-overflow: ellipsis;
+        border: inherit.$border outset var(--theme-nav-grey);
+        scrollbar-width: none;
+    }
+}
+
+#custom-icon {
+    top: calc((inherit.$icon-size-custom / 2) + 2px);
+}
+
+#error-icon {
+    bottom: 5px;
+}

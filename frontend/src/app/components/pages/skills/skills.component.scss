@@ -8,14 +8,15 @@
     margin: sass.$space100 0; // media.scss
 
     h4 {
-        font-size: 30px;
+        font-size: 26px;
         font-weight: 300;
         margin: 50px 0 10px 0;
     }
     #skills-content {
         flex-direction: column;
         height: 100%;
-        max-width: 70vw;
+        width: 66vw;
+        max-width: 1000px;
         margin-top: sass.$space25;
 
         .skills-wrapper {

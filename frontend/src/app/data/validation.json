@@ -1,0 +1,12 @@
+[
+    {
+        "error": "required",
+        "msg": "Field '{{VAL_0}}' is required.",
+        "mapping": ["fieldName"]
+    },
+    {
+        "error": "maxlength",
+        "msg": "Content '{{VAL_0}}' must not be longer than {{VAL_1}} characters.",
+        "mapping": ["fieldName", "fieldMax"]
+    }
+]
