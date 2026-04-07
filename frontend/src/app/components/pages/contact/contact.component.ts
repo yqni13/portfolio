@@ -8,6 +8,8 @@ import { TextareaInputComponent } from "../../common/form/textarea-input/textare
 import { SelectInputComponent } from "../../common/form/select-input/select-input.component";
 import { NotificationApiService } from "../../../api/services/notification.api.service";
 import { NotificationParams } from "../../../api/interfaces/notification.api.interface";
+import { NotifyModalService } from "../../../services/notify-modal.service";
+import { NotifyModalType } from "../../../utils/enums/notify-modal.enum";
 
 @Component({
     selector: 'app-contact',
@@ -30,6 +32,7 @@ export class ContactComponent extends BaseComponent implements OnInit {
 
     constructor(
         private readonly fb: FormBuilder,
+        private readonly notifyModal: NotifyModalService,
         private readonly notifyApi: NotificationApiService
     ) {
         super();
@@ -84,7 +87,13 @@ export class ContactComponent extends BaseComponent implements OnInit {
 
     async onSubmit() {
         if(this.contactForm.invalid) {
-            // TODO(yqni13): display SnackbarMessage for invalid input
+            this.notifyModal.notify({
+                title: 'Invalid input!',
+                text: 'Check for missing / invalid input and the active validations.',
+                type: NotifyModalType.WARNING,
+                autoClose: true,
+                displayTimeInMilliseconds: 4000
+            });
             return;
         }
         this.isLoading = true;
