@@ -2,8 +2,9 @@ import { Component, DOCUMENT, Inject } from "@angular/core";
 import { BaseComponent } from "../base.component";
 import { default as projectData } from "../../../data/work.json";
 import { Project } from "../../../utils/interfaces/work.interface";
-import { WorkCardComponent } from "../../common/work-card/work-card.component";
 import { CommonModule } from "@angular/common";
+import { WorkCardComponent } from "../../common/modal/work-card/work-card.component";
+import { ProjectMandate } from "../../../utils/enums/work.enum";
 
 @Component({
     selector: 'app-work',

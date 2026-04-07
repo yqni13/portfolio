@@ -32,15 +32,30 @@ $color-darkmode-comp-grey: #252933;
 $color-lightmode-grey: #818283;
 $color-darkmode-grey: #5e5f63;
 
-$color-lightmode-error: #b91c1c;
-$color-darkmode-error: #ba3131;
 
+/* HIGHLIGHT COLORS */
 $color-lightmode-primary: #0ba56f;
 $color-darkmode-primary: $yqni13-darkmode-pink;
 
 $color-lightmode-secondary: #0b6da5;
 $color-darkmode-secondary: #723a88;
 
+
+/* MODE COLORS */
+$color-lightmode-error: #ee1b1b;
+$color-darkmode-error: #ba3131;
+
+$color-lightmode-info: $color-lightmode-secondary;
+$color-darkmode-info: #3778d8;
+
+$color-lightmode-warning: #f5900c;
+$color-darkmode-warning: #b17a0b;
+
+$color-lightmode-success: $color-lightmode-primary;
+$color-darkmode-success: #118b17;
+
+
+/* GRADIENT COLORS */
 $yqni13-lightmode-gradient: linear-gradient(160deg, $color-lightmode-primary, $color-lightmode-primary 100%);
 $yqni13-darkmode-gradient: linear-gradient(160deg, $yqni13-darkmode-purple, $yqni13-darkmode-pink 100%);
 

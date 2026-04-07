@@ -16,7 +16,10 @@
     --theme-body-bg: #{sass.$color-lightmode-bg};
     --theme-body-text: #{sass.$color-deep-blue};
     --theme-nav-grey: #{sass.$color-dark-grey};
+    --theme-info: #{sass.$color-lightmode-info};
     --theme-error: #{sass.$color-lightmode-error};
+    --theme-success: #{sass.$color-lightmode-success};
+    --theme-warning: #{sass.$color-lightmode-warning};
     --theme-primary: #{sass.$color-lightmode-primary};
     --theme-secondary: #{sass.$color-lightmode-secondary};
     --theme-yqni13: #{sass.$yqni13-lightmode-gradient};
@@ -31,7 +34,10 @@
     --theme-body-bg: #{sass.$color-special-blue};
     --theme-body-text: #{sass.$color-ice-white};
     --theme-nav-grey: #{sass.$color-light-grey};
+    --theme-info: #{sass.$color-darkmode-info};
     --theme-error: #{sass.$color-darkmode-error};
+    --theme-success: #{sass.$color-darkmode-success};
+    --theme-warning: #{sass.$color-darkmode-warning};
     --theme-primary: #{sass.$color-darkmode-primary};
     --theme-secondary: #{sass.$color-darkmode-secondary};
     --theme-yqni13: #{sass.$yqni13-darkmode-gradient};
