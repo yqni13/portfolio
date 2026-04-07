@@ -9,12 +9,16 @@ import { SkillsComponent } from './components/pages/skills/skills.component';
 import { ExperienceComponent } from './components/pages/experience/experience.component';
 import { ContactComponent } from './components/pages/contact/contact.component';
 import { NavigationService } from './services/navigation.service';
+import { NotifyModalComponent } from './components/common/modal/notify-modal/notify-modal.component';
+import { NotifyModalService } from './services/notify-modal.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
 	selector: 'app-root',
 	templateUrl: './app.html',
 	styleUrl: './app.scss',
 	imports: [
+		CommonModule,
 		Navbar,
 		HeroComponent,
 		WorkComponent,
@@ -23,7 +27,8 @@ import { NavigationService } from './services/navigation.service';
 		ExperienceComponent,
 		ContactComponent,
 		Footer,
-		RouterOutlet
+		RouterOutlet,
+		NotifyModalComponent
 	],
 })
 export class App implements OnInit {
@@ -32,6 +37,7 @@ export class App implements OnInit {
 	private sectionIds: string[];
 
 	constructor(
+		public readonly notifyModal: NotifyModalService,
 		private readonly navigate: NavigationService
 	) {
 		this.sectionIds = ["head-home", "head-work", "head-skills", "head-about", "head-experience", "head-contact"];

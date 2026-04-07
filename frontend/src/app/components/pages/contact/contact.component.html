@@ -54,7 +54,12 @@
                         {{(messageLength - contactForm.get('message')?.value.length) + ' / ' + messageLength}}
                     </span>
                 }
-                <a class="btn-primary" (click)="onSubmit()">
+                <a
+                    class="btn-primary"
+                    (click)="onSubmit()"
+                    (keydown.enter)="onSubmit()"
+                    [attr.tabindex]="0"
+                >
                     <span>Send message</span>
                     <i class="icon-base icon-Send"></i>
                 </a>

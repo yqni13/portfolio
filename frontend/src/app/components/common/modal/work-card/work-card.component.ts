@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
-import { Project } from "../../../utils/interfaces/work.interface";
 import { CommonModule } from "@angular/common";
+import { Project } from "../../../../utils/interfaces/work.interface";
+import { ProjectMandate } from "../../../../utils/enums/work.enum";
 
 @Component({
     selector: 'app-workcard',

@@ -1,8 +1,9 @@
-import { Component, forwardRef, Input } from "@angular/core";
+import { Component, forwardRef, Input, OnDestroy, OnInit } from "@angular/core";
 import { NG_VALUE_ACCESSOR, ReactiveFormsModule } from "@angular/forms";
 import { AbstractInputComponent } from "../abstract.component";
 import { CommonModule } from "@angular/common";
 import { ValidationInputComponent } from "../validation-input/validation-input.component";
+import { Subscription } from "rxjs";
 
 @Component({
     selector: 'app-select-input',
@@ -28,13 +29,15 @@ import { ValidationInputComponent } from "../validation-input/validation-input.c
         '(document:keydown)': 'tabOutside($event)'
     }
 })
-export class SelectInputComponent extends AbstractInputComponent {
+export class SelectInputComponent extends AbstractInputComponent implements OnInit, OnDestroy {
 
     @Input() readonlyStyle: any;
     @Input() options: any;
     @Input() icon: string;
 
     protected isSelected: boolean;
+
+    private subscription$: Subscription;
 
     constructor() {
         super();
@@ -43,11 +46,25 @@ export class SelectInputComponent extends AbstractInputComponent {
         this.icon = '';
 
         this.isSelected = false;
+
+        this.subscription$ = new Subscription();
+    }
+
+    ngOnInit() {
+        this.subscription$ = this.formControl.valueChanges.subscribe(val => {
+            if(!val || val === '') {
+                this.isSelected = false;
+            }
+        })
     }
 
     selectOption(event: Event) {
         this.byChange.emit(event);
         this.isFocused = false;
         this.isSelected = true;
+    }
+
+    ngOnDestroy() {
+        this.subscription$.unsubscribe();
     }
 }

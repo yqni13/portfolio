@@ -46,7 +46,7 @@ export class ValidationInputComponent {
                 return control.errors.maxlength.requiredLength;
             }
             default: 
-                return '';
+                return this.ngControl.value;
         }
     }
 }

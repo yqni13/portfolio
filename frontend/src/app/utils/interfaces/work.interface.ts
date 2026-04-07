@@ -1,3 +1,5 @@
+import { ProjectMandate } from "../enums/work.enum"
+
 export interface Project {
     thumbnail: string,
     name: string,

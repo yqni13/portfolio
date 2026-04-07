@@ -153,6 +153,11 @@
                 "icon": "icon-Notion",
                 "name": "Notion",
                 "link": "https://www.notion.com/"
+            },
+            {
+                "icon": "icon-Telegram",
+                "name": "Telegram",
+                "link": "https://core.telegram.org/bots/tutorial"
             }
         ]
     },
