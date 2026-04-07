@@ -6,6 +6,8 @@ import { TextInputComponent } from "../../common/form/text-input/text-input.comp
 import { CommonModule } from "@angular/common";
 import { TextareaInputComponent } from "../../common/form/textarea-input/textarea-input.component";
 import { SelectInputComponent } from "../../common/form/select-input/select-input.component";
+import { NotificationApiService } from "../../../api/services/notification.api.service";
+import { NotificationParams } from "../../../api/interfaces/notification.api.interface";
 
 @Component({
     selector: 'app-contact',
@@ -28,6 +30,7 @@ export class ContactComponent extends BaseComponent implements OnInit {
 
     constructor(
         private readonly fb: FormBuilder,
+        private readonly notifyApi: NotificationApiService
     ) {
         super();
         this.data = {
@@ -48,7 +51,7 @@ export class ContactComponent extends BaseComponent implements OnInit {
         this.contactForm = this.fb.group({
             salutation: new FormControl('', Validators.required),
             name: new FormControl('', [Validators.required, Validators.maxLength(100)]),
-            email: new FormControl('', [Validators.required, Validators.maxLength(100)]),
+            email: new FormControl('', [Validators.required, Validators.email, Validators.maxLength(100)]),
             subject: new FormControl('', [Validators.required, Validators.maxLength(100)]),
             message: new FormControl('', [Validators.required, Validators.maxLength(this.messageLength)])
         });
@@ -79,12 +82,21 @@ export class ContactComponent extends BaseComponent implements OnInit {
         };
     }
 
-    onSubmit() {
+    async onSubmit() {
         if(this.contactForm.invalid) {
+            // TODO(yqni13): display SnackbarMessage for invalid input
             return;
         }
         this.isLoading = true;
-        let data: any;
-        // TODO(yqni13): process data with notification api at YQNI13-18-notification-service
+        const params: NotificationParams = this.notifyApi.toNotificationParams(this.contactForm.getRawValue());
+        await this.notifyApi.sendMessage(params).finally(() => {
+            this.reset();
+            this.isLoading = false;
+        });
+    }
+
+    private reset() {
+        this.contactForm.reset();
+        this.initEdit();
     }
 }
