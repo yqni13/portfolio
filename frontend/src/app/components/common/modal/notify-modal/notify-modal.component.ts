@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, Input } from "@angular/core";
 import { NotifyModalService } from "../../../../services/notify-modal.service";
 import { NotifyModalMessage } from "../../../../utils/interfaces/notify-modal.interface";
 import { NotifyModalType } from "../../../../utils/enums/notify-modal.enum";
@@ -15,11 +15,9 @@ import { NotifyModalType } from "../../../../utils/enums/notify-modal.enum";
         '(document:keydown.escape)': 'closeOnEscape()'
     }
 })
-export class NotifyModalComponent implements OnInit {
+export class NotifyModalComponent {
 
     @Input() notification: NotifyModalMessage;
-
-    protected notifyClass: NotifyModalType;
 
     constructor(
         public readonly notifyModal: NotifyModalService
@@ -28,11 +26,6 @@ export class NotifyModalComponent implements OnInit {
             title: '',
             type: NotifyModalType.INFO
         };
-        this.notifyClass = NotifyModalType.INFO;
-    }
-
-    ngOnInit() {
-        this.notifyClass = this.notification.type;
     }
 
     closeOnEscape() {

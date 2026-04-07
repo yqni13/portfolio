@@ -37,7 +37,7 @@ export class App implements OnInit {
 	private sectionIds: string[];
 
 	constructor(
-		public readonly notify: NotifyModalService,
+		public readonly notifyModal: NotifyModalService,
 		private readonly navigate: NavigationService
 	) {
 		this.sectionIds = ["head-home", "head-work", "head-skills", "head-about", "head-experience", "head-contact"];

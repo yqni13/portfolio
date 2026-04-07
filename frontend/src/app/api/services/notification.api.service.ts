@@ -32,10 +32,10 @@ export class NotificationApiService {
                 type: NotifyModalType.SUCCESS
             });
         } catch(err: any) {
-            console.log("yqni13_portfolio_error: ", err);
+            console.log("notification_api_notify_error: ", err);
             this.notifyModal.notify({
                 title: 'Technical problem',
-                text: 'Your message was NOT sent due to technical reasons. Please send me a message via Email to:',
+                text: 'Your message was NOT sent due to technical reasons. Please send me a message via Email instead to:',
                 mail: 'lukas.varga@yqni13.com',
                 type: NotifyModalType.ERROR,
                 autoClose: false,

@@ -1,4 +1,4 @@
-<div class="notifymodal-container" [ngClass]="'notifymodal-' + notifyClass">
+<div class="notifymodal-container" [ngClass]="'notifymodal-' + notification.type">
     <div
         class="notifymodal-content"
         [ngClass]="!!notification.text ? 'notifymodal-multiline' : 'notifymodal-singleline'"

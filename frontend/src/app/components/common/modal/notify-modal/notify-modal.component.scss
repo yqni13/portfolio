@@ -14,7 +14,7 @@
 
 .notifymodal-error {
     border: 2px solid var(--theme-error);
-    box-shadow: 1px 1px 15px 1px var(--theme-error);
+    box-shadow: 1px 1px 5px 1px var(--theme-error);
     span,
     i {
         color: var(--theme-error);
@@ -29,7 +29,7 @@
 }
 .notifymodal-info {
     border: 2px solid var(--theme-info);
-    box-shadow: 1px 1px 15px 1px var(--theme-info);
+    box-shadow: 1px 1px 5px 1px var(--theme-info);
     span,
     i {
         color: var(--theme-info);
@@ -44,7 +44,7 @@
 }
 .notifymodal-success {
     border: 2px solid var(--theme-success);
-    box-shadow: 1px 1px 15px 1px var(--theme-success);
+    box-shadow: 1px 1px 5px 1px var(--theme-success);
     span,
     i {
         color: var(--theme-success);
@@ -59,7 +59,7 @@
 }
 .notifymodal-warning {
     border: 2px solid var(--theme-warning);
-    box-shadow: 1px 1px 15px 1px var(--theme-warning);
+    box-shadow: 1px 1px 5px 1px var(--theme-warning);
     span,
     i {
         color: var(--theme-warning);
