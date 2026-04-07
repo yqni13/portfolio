@@ -8,7 +8,7 @@ $device-small-any: 400px;
 
 /* CUSTOM COLORS */
 $color-darkmode-bg: #080c1a;
-$color-lightmode-bg: #ebfcf7;
+$color-lightmode-bg: #f2fefa;
 
 $color-ice-white: #f0f8ff;
 $color-rich-black: #020d19;
@@ -16,6 +16,8 @@ $color-deep-blue: #011222;
 $color-special-blue: #0f1320;
 $color-dark-grey: rgb(162, 161, 161);
 $color-light-grey: rgb(75, 75, 75);
+$color-loader-teal: #119d8d;
+$color-loader-blue: #11889d;
 
 $yqni13-lightmode-purple: #ae34e2;
 $yqni13-darkmode-purple: #4e1066;
@@ -56,7 +58,7 @@ $color-darkmode-success: #118b17;
 
 
 /* GRADIENT COLORS */
-$yqni13-lightmode-gradient: linear-gradient(160deg, $color-lightmode-primary, $color-lightmode-primary 100%);
+$yqni13-lightmode-gradient: linear-gradient(160deg, $color-lightmode-primary, $color-lightmode-secondary 100%);
 $yqni13-darkmode-gradient: linear-gradient(160deg, $yqni13-darkmode-purple, $yqni13-darkmode-pink 100%);
 
 // TODO(yqni13): remove in design phase when decided what background to use

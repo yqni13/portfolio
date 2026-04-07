@@ -1,0 +1,77 @@
+@use '../../../../stylesheets/utilities' as sass;
+
+
+.loader-wrapper {
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    position: fixed;
+    overflow: scroll;
+    scrollbar-width: none;
+    top: 0;
+    left: 0;
+    backdrop-filter: contrast(0.8) blur(3px);
+    align-items: center;
+    justify-content: center;
+}
+
+/* Thanks to the creator 'mobinkakei' from https://uiverse.io for this loading animation */ 
+.loader {
+    width: 100px;
+    height: 100px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    border-top: 5px solid var(--theme-loader1);
+    position: relative;
+    animation: load 2s linear infinite;
+}
+
+.loader::before,.loader::after {
+    content: '';
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    box-sizing: border-box;
+    border-radius: 50%;
+}
+
+.loader::before {
+    border-top: 5px solid var(--theme-loader2);
+    transform: rotate(120deg);
+}
+
+.loader::after {
+    border-top: 5px solid var(--theme-loader3);
+    transform: rotate(240deg);
+}
+
+.loader span {
+    position: absolute;
+    font-size: 15px;
+    font-weight: 400;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    animation: a2 2s linear infinite;
+
+    background: var(--theme-yqni13);
+    color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+@keyframes load {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes a2 {
+    to {
+        transform: rotate(-360deg);
+    }
+}
