@@ -14,7 +14,7 @@
     backdrop-filter: blur(3px);
     .workcard-detail-content {
         flex-direction: column;
-        width: 66%; // media.scss
+        width: 75%; // media.scss
         max-width: 800px; // media.scss
         margin: 0 auto;
         border: 1px solid var(--theme-nav-grey);
@@ -61,32 +61,34 @@
             }
             .workcard-detail-header {
                 margin-bottom: 10px;
-                align-items: center;
-                h4 {
-                    font-size: 30px; // media.scss
-                    font-weight: 400;
-                    margin: 0;
-                    color: var(--theme-secondary);
-                }
-                a {
-                    display: flex;
-                    align-items: center;
-                    margin-left: 15px;
-                    text-decoration: none;
-                    transition: transform 300ms ease-in-out;
-                    color: var(--theme-grey);
-                    i {
-                        $size: 25px;
-                        width: $size;
-                        height: $size;
+                .workcard-detail-header-split {
+                    flex-direction: row;
+                    h4 {
+                        font-size: 30px; // media.scss
+                        font-weight: 400;
+                        margin: 0;
+                        color: var(--theme-secondary);
                     }
-                    &:hover {
-                        color: var(--theme-primary);
-                        transform: scale(1.1);
+                    a {
+                        display: flex;
+                        align-items: center;
+                        margin-left: 15px;
+                        text-decoration: none;
+                        transition: transform 300ms ease-in-out;
+                        color: var(--theme-grey);
+                        i {
+                            $size: 25px;
+                            width: $size;
+                            height: $size;
+                        }
+                        &:hover {
+                            color: var(--theme-primary);
+                            transform: scale(1.1);
+                        }
                     }
                 }
                 span {
-                    margin-left: auto;
+                    // margin-left: auto;
                     font-weight: 300;
                     text-transform: uppercase;
                     font-size: 13px;
@@ -125,11 +127,9 @@
                 flex-direction: row;
                 flex-wrap: wrap;
                 span {
-                    padding: 7.5px 15px;
                     border: 1px solid var(--theme-grey);
                     background-color: var(--theme-component);
                     color: var(--theme-secondary);
-                    margin: 5px 10px 5px 0;
                 }
             }
             #workcard-detail-links {

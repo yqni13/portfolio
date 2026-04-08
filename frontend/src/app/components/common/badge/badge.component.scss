@@ -1,21 +1,14 @@
 @use '../../../../stylesheets/utilities' as sass;
 
 
-.badge-wrapper {
+.badge {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 10px 20px; // media.scss
     border: 1px solid var(--theme-grey);
     border-radius: 10px;
     background-color: var(--theme-component);
     text-decoration: none;
-    i {
-        $size: 25px;
-        width: $size;
-        height: $size;
-        margin-right: 12.5px;
-    }
     span {
         font-size: 16px;
         color: var(--theme-body-text);

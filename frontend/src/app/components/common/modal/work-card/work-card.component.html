@@ -10,14 +10,14 @@
             <div class="workcard-detail-content-wrapper">
                 <div id="workcard-detail-thumbnail">
                     <img src="{{data.thumbnail}}" alt="thumbnail">
-                    <!-- <div id="thumbnail" [ngStyle]="{'background-image': 'url(' + data.thumbnail +')'}"></div> -->
                 </div>
                 <div class="workcard-detail-header">
-                    <h4>{{data.name}}</h4>
-                    <a href="{{data.links.repo}}" target="_blank">
-                        <!-- <span>Repository</span> -->
-                        <i class="icon-base icon-GitHub"></i>
-                    </a>
+                    <div class="workcard-detail-header-split">
+                        <h4>{{data.name}}</h4>
+                        <a href="{{data.links.repo}}" target="_blank">
+                            <i class="icon-base icon-GitHub"></i>
+                        </a>
+                    </div>
                     <span>type : {{data.type.mandate}}</span>
                 </div>
                 <span id="workcard-detail-intro">{{data.intro}}</span>

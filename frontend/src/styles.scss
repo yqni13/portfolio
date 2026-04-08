@@ -2,6 +2,7 @@
 
 @use 'stylesheets/defines.scss';
 @use 'stylesheets/icons.scss';
+@use 'stylesheets/media.scss';
 
 
 html {
@@ -35,9 +36,9 @@ section {
 }
 
 h3 {
-    font-size: 55px; // media.scss
+    font-size: clamp(45px, 11vw, 55px);
     font-weight: 300;
-    margin: 0 0 sass.$space15 0;
+    margin: 0;
     background: var(--theme-yqni13);
     color: transparent;
     -webkit-background-clip: text;
@@ -46,9 +47,16 @@ h3 {
 }
 
 .head-text {
-    font-size: 25px; // media.scss
+    text-align: center;
+    font-size: clamp(20px, 4vw, 25px);
     font-weight: 300;
     color: var(--theme-nav-grey);
+}
+
+.page-head-wrapper {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
 .btn-primary {
@@ -88,5 +96,18 @@ h3 {
         margin-left: sass.$space5;
         width: 25px;
         height: 25px;
+    }
+}
+
+.btn-close {
+    text-decoration: none;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    i {
+        $size: 25px;
+        width: $size;
+        height: $size;
+        padding: 5px;
     }
 }

@@ -1,5 +1,5 @@
 # yqni13 | $\texttt{\color{blueviolet}{PORTFOLIO}}$
-### $\textsf{\color{brown}{v0.8.0}}$
+### $\textsf{\color{brown}{v0.9.0}}$
 
 <br>
 
@@ -43,6 +43,5 @@ which will open automatically on `https://localhost:4200/`.
 ## 📈 $\textsf{\color{salmon}Updates}$
 [see changelog for all updates](./docs/CHANGELOG.md)
 
-$\textsf{[v0.6.0\ =>\ {\textbf{\color{brown}v0.8.0}]}}$ app
-- $\textsf{\color{teal}Addition:}$ Added notification modal component + service.
-- $\textsf{\color{teal}Addition:}$ Added notification api service for sending messages to admin via Telegram API.
+$\textsf{[v0.8.0\ =>\ {\textbf{\color{brown}v0.9.0}]}}$ app
+- $\textsf{\color{teal}Addition:}$ Added responsive design for smartphone portrait-mode size.

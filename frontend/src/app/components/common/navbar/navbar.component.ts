@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, DOCUMENT, ElementRef, Inject, OnInit, ViewChild } from "@angular/core";
+import { AfterViewInit, Component, DOCUMENT, ElementRef, Inject, OnInit, signal, ViewChild } from "@angular/core";
 import { ThemeOption } from "../../../utils/enums/theme-option.enum";
 import _ from "underscore";
 import { ThemeHandlerService } from "../../../services/theme.service";
@@ -24,9 +24,12 @@ export class Navbar implements OnInit, AfterViewInit{
 
     protected themeEnum = ThemeOption;
     protected selectedTheme: ThemeOption;
-    protected deviceOption: DeviceOption;
+    protected deviceOption = signal<DeviceOption>(DeviceOption.MOBILE);
+    protected deviceEnum = DeviceOption;
+    protected activeMobileMenu: boolean;
     protected links: any;
     protected menu: NavMenu[];
+    protected logo: any;
 
     private maxMobileScreenWidth: number;
     private window: any;
@@ -39,13 +42,14 @@ export class Navbar implements OnInit, AfterViewInit{
         this.selectedTheme = this.themeHandler.checkThemeSettings();
         this.themeHandler.setThemeSettings(this.selectedTheme);
         this.activeMenu = this.navigate.activeSection$;
-        this.deviceOption = DeviceOption.DESKTOP;
+        this.activeMobileMenu = false;
         this.links = {
             github: 'https://github.com/yqni13',
             linkedin: 'https://linkedin.com/in/lukas-varga-59532b228',
             mail: 'lukas.varga@yqni13.com'
         };
         this.menu = menuData;
+        this.logo = new Image().src = 'yqni13_logo256.ico';
 
         this.maxMobileScreenWidth = 1024;
         this.window = this.document.defaultView;
@@ -90,10 +94,10 @@ export class Navbar implements OnInit, AfterViewInit{
     private setNavWidthDynamically(width: number) {
         if(width > this.maxMobileScreenWidth) {
             this.document.body.setAttribute("data-nav", 'desktopMode');
-            this.deviceOption = DeviceOption.DESKTOP;
+            this.deviceOption.update(_ => DeviceOption.DESKTOP);
         } else {
             this.document.body.setAttribute("data-nav", 'mobileMode');
-            this.deviceOption = DeviceOption.MOBILE;
+            this.deviceOption.update(_ => DeviceOption.MOBILE);
         }
     }
 
@@ -107,5 +111,15 @@ export class Navbar implements OnInit, AfterViewInit{
 
     convertMenuHeader(title: string): string {
         return title.toLowerCase();
+    }
+
+    openFullMenuOnMobile() {
+        this.activeMobileMenu = true;
+        this.document.body.style.setProperty('overflow', 'hidden');
+    }
+
+    closeFullMenuOnMobile() {
+        this.activeMobileMenu = false;
+        this.document.body.style.setProperty('overflow', 'auto');
     }
 }

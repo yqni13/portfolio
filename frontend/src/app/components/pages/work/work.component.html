@@ -30,8 +30,10 @@
 </ng-template>
 
 <section class="work" id="head-work">
-    <h3>{{data.title}}</h3>
-    <span class="head-text">{{data.subTitle}}</span>
+    <div class="page-head-wrapper">
+        <h3>{{data.title}}</h3>
+        <span class="head-text">{{data.subTitle}}</span>
+    </div>
     <div class="work-content">
         @for(card of projects; track $index) {
             <ng-container 

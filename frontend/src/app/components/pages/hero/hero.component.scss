@@ -4,20 +4,19 @@
 .hero {
     flex-direction: row; // media.scss
     width: 100%;
-    height: calc(100vh - var(--comp-nav-height));
-    margin-top: var(--comp-nav-height);
+    min-height: calc(100vh - var(--comp-nav-height));
+    margin-top: var(--comp-nav-height)!important;
+    overflow: hidden;
 
     .hero-primary {
         flex-direction: column;
-        place-content: center;
+        margin: auto 0;
         width: 100%; // media.scss
         height: 100%; // media.scss
         #hero-header-wrapper {
             flex-direction: column;
-            max-width: 50%;
-            margin: 0 auto;
             #hero-name {
-                font-size: 100px;
+                font-size: clamp(70px, 10vw, 100px);
                 font-weight: 300;
                 margin: 0;
                 text-transform: uppercase;
@@ -27,26 +26,24 @@
                 background-clip: text;
             }
             h2 {
-                font-size: 70px;
+                font-size: clamp(35px, 7.5vw, 70px);
                 font-weight: 300;
                 margin: 0;
                 color: var(--theme-body-text);
             }
             h4 {
-                font-size: 40px;
+                font-size: clamp(25px, 5vw, 40px);
                 font-weight: 300;
                 margin: 5px 0;
             }
             p {
-                font-size: 25px;
+                font-size: clamp(18px, 2.5vw, 25px);
                 font-weight: 300;
                 color: var(--theme-nav-grey);
             }
         }
         #hero-btn-wrapper {
             flex-direction: row;
-            width: 50%;
-            margin: sass.$space15 auto 0 auto;
             a:nth-of-type(1) {
                 margin-right: sass.$space50;
             }

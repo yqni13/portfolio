@@ -7,13 +7,11 @@ $card-padding: sass.$space25;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    margin: sass.$space100 0; // media.scss
 
     .experience-content {
-        width: 55vw; // media.scss
         max-width: 1000px; // media.scss
         flex-direction: column;
-        margin: 75px auto 0 auto;
+        margin: 0 auto;
 
         .experience-content-wrapper {
             flex-direction: row;
@@ -70,7 +68,6 @@ $card-padding: sass.$space25;
     border-radius: 20px;
 
     .experience-card-link {
-        align-items: center;
         margin: 0 0 sass.$space15 0;
         a {
             display: flex;
@@ -92,13 +89,12 @@ $card-padding: sass.$space25;
             color: var(--theme-primary);
             backdrop-filter: blur(3px);
         }
-        span {
+        .experience-card-link-type {
             color: var(--theme-nav-grey);
         }
     }
 
     .experience-card-head {
-        align-items: center;
         h4 {
             font-weight: 300;
             font-size: 24px; // media.scss
@@ -106,13 +102,12 @@ $card-padding: sass.$space25;
             color: var(--theme-secondary);
         }
         span {
-            margin-left: auto;
-            color: var(--theme-nav-grey);
+            color: var(--theme-body-text);
+            opacity: 0.6;
         }
     }
 
     ul {
-        padding: 0 0 0 sass.$space25;
         li {
             margin-bottom: 7.5px;
             padding-left: 7.5px;
@@ -127,13 +122,13 @@ $card-padding: sass.$space25;
     }
 
     .experience-card-keys {
+        flex-wrap: wrap;
         span {
             font-size: 14px; // media.scss
             opacity: 0.5;
             border: 1px solid var(--theme-nav-grey);
             border-radius: 10px;
             padding: 5px 10px;
-            margin-right: 7.5px;
         }
     }
 }

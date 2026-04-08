@@ -107,14 +107,14 @@
 }
 
 .uiverse-midnight-sky .moon {
+    $size: clamp(40px, 6vw, 80px);
     position: absolute;
-    top: 15%;
-    right: 15%;
-    width: 80px;
-    height: 80px;
+    top: 12.5%;
+    right: 10%;
+    width: $size;
+    height: $size;
     border-radius: 50%;
     background: transparent;
-    box-shadow: 15px 15px 0 0 #fdfbd3;
     filter: drop-shadow(0 0 15px rgba(253, 251, 211, 0.4));
     z-index: 10;
 }
@@ -165,12 +165,12 @@
     justify-content: end;
 }
 .sun {
-    width: 20vw;
-    height: 20vw;
+    $size: clamp(150px, 20vw, 350px);
+    width: $size;
+    height: $size;
     background: -webkit-linear-gradient(to right, #fcbb04, #fffc00);
     background: linear-gradient(to right, #fcbb04, #fffc00);
     border-radius: 50%;
-    margin: -100px -100px 0 0;
     display: inline;
     position: absolute;
     opacity: 0.4;
