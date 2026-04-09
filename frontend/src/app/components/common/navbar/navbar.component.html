@@ -1,0 +1,82 @@
+<ng-template #menuLinks>
+    <div class="navbar-btn-wrapper">
+        <a href="{{links.github}}" target="_blank" class="navbar-links link-simple">
+            <i
+                class="icon-base icon-GitHub"
+                ngClass="{{selectedTheme === themeEnum.DARK ? 'symbol-dark' : 'symbol-light'}}"
+            ></i>
+        </a>
+        <a href="{{links.linkedin}}" target="_blank" class="navbar-links link-simple">
+            <i
+                class="icon-base icon-LinkedIn"
+                ngClass="{{selectedTheme === themeEnum.DARK ? 'symbol-dark' : 'symbol-light'}}"
+            ></i>
+        </a>
+        <a href="mailto:{{links.mail}}" class="navbar-links link-simple">
+            <i
+                class="icon-base icon-Mail"
+                ngClass="{{selectedTheme === themeEnum.DARK ? 'symbol-dark' : 'symbol-light'}}"
+            ></i>
+        </a>
+    </div>
+    <div class="navbar-menu-wrapper">
+        @for(page of menu; track $index) {
+            <a
+                class="navbar-menu-anchor link-simple"
+                (click)="scrollToHeader('head-' + convertMenuHeader(page.name));closeFullMenuOnMobile()"
+                [ngClass]="activeMenu() === page.id ? 'active-menu-anchor' : ''"
+            >
+                {{page.name}}
+            </a>
+        }
+    </div>
+</ng-template>
+
+<nav class="navbar roboto-custom-font">
+    @if(deviceOption() === deviceEnum.MOBILE) {
+        <div class="navbar-burger-menu">
+            <a class="navbar-links theme-btn">
+                <i
+                    class="icon-base"
+                    ngClass="{{selectedTheme === themeEnum.DARK ? 'icon-darkMode' : 'icon-lightMode'}}"
+                    (click)="setThemeByUser()"
+                    #themeIcon
+                ></i>
+            </a>
+            <a (click)="openFullMenuOnMobile()" class="burger-btn">
+                <i class="icon-base icon-BurgerMenu"></i>
+            </a>
+        </div>
+    } 
+    @if(deviceOption() === deviceEnum.DESKTOP) {
+        <div class="navbar-logo-desktop">
+            <img src="{{logo}}" alt="yqni13 logo" (click)="scrollToTop()">
+        </div>
+        <div class="navbar-content-wrapper">
+            <a class="navbar-links link-simple theme-btn">
+                <i
+                    class="icon-base"
+                    ngClass="{{selectedTheme === themeEnum.DARK ? 'icon-darkMode' : 'icon-lightMode'}}"
+                    (click)="setThemeByUser()"
+                    #themeIcon
+                ></i>
+            </a>
+            <ng-container 
+                *ngTemplateOutlet="menuLinks"
+            ></ng-container>
+        </div>
+    }
+</nav>
+@if(deviceOption() === deviceEnum.MOBILE && activeMobileMenu) {
+    <div class="navbar-mobile-menu roboto-custom-font">
+        <div class="navbar-logo-mobile">
+            <img src="{{logo}}" alt="yqni13 logo" (click)="scrollToTop();closeFullMenuOnMobile()">
+        </div>
+        <ng-container 
+            *ngTemplateOutlet="menuLinks"
+        ></ng-container>
+        <a class="btn-close" (click)="closeFullMenuOnMobile()">
+            <i class="icon-base icon-Close"></i>
+        </a>
+    </div>
+}

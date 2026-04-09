@@ -1,0 +1,29 @@
+@use '../../../../stylesheets/utilities' as sass;
+
+
+.badge {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 1px solid var(--theme-grey);
+    border-radius: 10px;
+    background-color: var(--theme-component);
+    text-decoration: none;
+    span {
+        font-size: 16px;
+        color: var(--theme-body-text);
+    }
+    @media screen and (width > sass.$device-tablet-landscape) {
+        &:hover {
+            box-shadow: 2px 2px 4px var(--theme-body-text);
+        }
+    }
+}
+
+.GitHub-light {
+    color: sass.$color-rich-black;
+}
+
+.GitHub-dark {
+    color: sass.$color-ice-white;
+}

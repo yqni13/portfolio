@@ -1,0 +1,32 @@
+@use '../../../../../stylesheets/utilities' as sass;
+@use '../abstract.component.scss' as inherit;
+
+
+.selectinput {
+    display: grid;
+    position: relative;
+
+    select {
+        width: 100%;
+        padding: 10px inherit.$icon-padding-error 10px calc(inherit.$icon-padding-custom - 3px);
+        border-radius: calc(sass.$space5 + inherit.$border);
+        text-overflow: ellipsis;
+        border: inherit.$border outset var(--theme-nav-grey);
+        option {
+            text-overflow: ellipsis;
+        }
+    }
+}
+
+#custom-icon {
+    top: calc((inherit.$icon-size-custom / 2) + 2px);
+    align-self: auto;
+}
+
+#error-icon {
+    bottom: 5px;
+}
+
+.warning-input-text {
+    margin-right: 17.5px;
+}

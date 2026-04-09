@@ -1,0 +1,136 @@
+@use 'stylesheets/utilities' as sass;
+
+@use 'stylesheets/defines.scss';
+@use 'stylesheets/icons.scss';
+@use 'stylesheets/media.scss';
+
+
+html {
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    cursor: context-menu;
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+}
+
+body {
+    color: var(--theme-body-text);
+    background: var(--theme-body-bg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+div,
+section {
+    display: flex;
+}
+
+section {
+    scroll-margin-top: calc(var(--comp-nav-height) + sass.$space25);
+}
+
+h3 {
+    font-size: clamp(45px, 11vw, 55px);
+    font-weight: 300;
+    margin: 0;
+    background: var(--theme-yqni13);
+    color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.head-text {
+    text-align: center;
+    font-size: clamp(20px, 4vw, 25px);
+    font-weight: 300;
+    color: var(--theme-nav-grey);
+}
+
+.page-head-wrapper {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.btn-primary {
+    display: flex;
+    align-items: center;
+    padding: 10px sass.$space25; // media.scss
+    border: 1px outset transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    color: sass.$color-ice-white;
+    background-color: var(--theme-primary);
+    text-decoration: none;
+    @media screen and (width > sass.$device-tablet-landscape) {
+        &:hover {
+            box-shadow: 1px 1px 3px var(--theme-body-text);
+        }
+    }
+    i {
+        margin-left: sass.$space5;
+        width: 25px;
+        height: 25px;
+    }
+}
+
+.btn-secondary {
+    display: flex;
+    align-items: center;
+    padding: 10px sass.$space25; // media.scss
+    border: 1px solid var(--theme-nav-grey);
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--theme-body-text);
+    background-color: var(--theme-component);
+    @media screen and (width > sass.$device-tablet-landscape) {
+        &:hover {
+            box-shadow: 1px 1px 3px var(--theme-nav-grey);
+        }
+    }
+    i {
+        margin-left: sass.$space5;
+        width: 25px;
+        height: 25px;
+    }
+}
+
+.btn-close {
+    text-decoration: none;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    i {
+        $size: 25px;
+        width: $size;
+        height: $size;
+        padding: 5px;
+    }
+}
+
+.link-simple {
+    @media screen and (width > sass.$device-tablet-landscape) {
+        transition: transform 300ms ease-in-out;
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+}
+
+.link-primary {
+    @media screen and (width > sass.$device-tablet-landscape) {
+        transition: transform 300ms ease-in-out;
+        &:hover {
+            transform: scale(1.2);
+            color: var(--theme-primary)!important;
+        }
+    }
+}

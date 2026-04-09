@@ -1,3 +1,6 @@
+# Custom ignores
+desktop.ini
+
 # Angular specific
 /dist/
 /out-tsc/

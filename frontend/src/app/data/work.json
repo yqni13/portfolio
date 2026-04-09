@@ -1,0 +1,72 @@
+[
+    {
+        "thumbnail": "/assets/thumbnail/support.jpg",
+        "name": "Support-Hub",
+        "type": {
+            "stack": "backend",
+            "mandate": "private"
+        },
+        "intro": "Ticketing system, support request platform, helpdesk web application",
+        "description": "Handles feedback, ratings and bug/support tickets including file attachments across multiple applications via REST API.",
+        "impact": [
+            "Designed to handle support requests systematically rather than exposing a personal email to contact",
+            "Built to register users automatically on request and clients on admin permission only",
+            "Advanced database queries using CTEs, JOIN clauses and UNION operators",
+            "Explored rate limiting, penalty handling and advanced testing with ephemeral databases (Testcontainers)",
+            "First integration of Telegram Bot API for event-driven notifications on ticket creation, penalties and alerts",
+            "Potential SaaS extension"
+        ],
+        "techstack": [
+            "Node.js", "Typescript", "Express.js", "PostgreSQL", "Docker", "Jest", "Testcontainers", "Cloudflare R2 (Object Storage)", "CI/CD"
+        ],
+        "links": {
+            "repo": "https://github.com/yqni13/support"
+        }
+    },
+    {
+        "thumbnail": "/assets/thumbnail/taxi-varga.jpg",
+        "name": "Taxi-Varga",
+        "type": {
+            "stack": "full stack",
+            "mandate": "freelance"
+        },
+        "intro": "Service platform, booking & fare calculation (taxi) web application",
+        "description": "Taxi service web application for booking & fare calculations for different categories. Using Google Maps Platform API for real-time data regarding 'Places', 'Routes' and 'Geolocation'.",
+        "impact": [
+            "Integrated Geolocation API for automatic route and cost calculation",
+            "Built custom input components combined with Google Places API for address suggestions based on user input",
+            "Real-time validation and data handling on user input",
+            "Implemented translations for German and English and themes for dark and light mode"
+        ],
+        "techstack": [
+            "Angular", "Node.js", "Google Maps Platform", "RxJS", "Express.js", "i18n", "Jest", "CI/CD"
+        ],
+        "links": {
+            "repo": "https://github.com/yqni13/taxi-varga",
+            "live": "https://taxi-varga.at"
+        }
+    },
+    {
+        "thumbnail": "/assets/thumbnail/artcreation-dv.jpg",
+        "name": "Artcreation-DV",
+        "type": {
+            "stack": "full stack",
+            "mandate": "freelance"
+        },
+        "intro": "Artist showcase platform, gallery/portfolio web application",
+        "description": "Artist portfolio web application and showcase platform to manage and display artwork, news and other resources.",
+        "impact": [
+            "Designed an art gallery component with a showroom atmosphere UI in responsive style",
+            "Implemented custom video and image preloading to improve performance and user experience",
+            "Built file handling with image preview and real-time validation",
+            "Extended translation service to handle dynamic values for validations and context-specific messages (e.g. links, emails, phone numbers)"
+        ],
+        "techstack": [
+            "Angular", "Node.js", "PostgreSQL", "RxJS", "Express.js", "i18n", "Jest", "Cloudflare R2 (Object Storage)", "CI/CD"
+        ],
+        "links": {
+            "repo": "https://github.com/yqni13/artcreation-dv",
+            "live": "https://artcreation-dv.at"
+        }
+    }
+]

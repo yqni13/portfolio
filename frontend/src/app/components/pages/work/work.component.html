@@ -1,0 +1,51 @@
+<ng-template #workCard let-i="i" let-data="data">
+    <div class="workcard-preview" (click)="openDetails(data)">
+        <span id="workcard-preview-type">{{data.type.stack}}</span>
+        <h4>{{data.name}}</h4>
+        <span id="workcard-preview-intro">{{data.intro}}</span>
+        <p>{{data.description}}</p>
+        <a id="workcard-preview-hint">
+            <span>View more details</span>
+            <i class="icon-base icon-Click"></i>
+        </a>
+        <div id="workcard-preview-links">
+            @if(data.links.demo) {
+                <a href="{{data.links.demo}}" target="_blank" class="prevent-details link-primary">
+                    <span class="prevent-details">Demo</span>
+                    <i class="icon-base icon-GoTo prevent-details"></i>
+                </a>
+            }
+            @if(data.links.live) {
+                <a href="{{data.links.live}}" target="_blank" class="prevent-details link-primary">
+                    <span class="prevent-details">Live</span>
+                    <i class="icon-base icon-GoTo prevent-details"></i>
+                </a>
+            }
+            <a href="{{data.links.repo}}" target="_blank" class="prevent-details link-primary">
+                <span class="prevent-details">Repository</span>
+                <i class="icon-base icon-GitHub prevent-details"></i>
+            </a>
+        </div>
+    </div>
+</ng-template>
+
+<section class="work" id="head-work">
+    <div class="page-head-wrapper">
+        <h3>{{data.title}}</h3>
+        <span class="head-text">{{data.subTitle}}</span>
+    </div>
+    <div class="work-content">
+        @for(card of projects; track $index) {
+            <ng-container 
+                *ngTemplateOutlet="workCard; context: { i: $index, data: card }"
+            ></ng-container>
+        }
+    </div>
+    <a href="{{allRepoLink}}" target="_blank" id="work-all-repo-link" class="link-primary">
+        <span>View all projects on GitHub</span>
+        <i class="icon-base icon-GoTo"></i>
+    </a>
+    @if(cardDetails) {
+        <app-workcard [data]="cardDetails" (byChange)="closeDetails($event)"></app-workcard>
+    }
+</section>

@@ -1,0 +1,158 @@
+@use '../../../../../stylesheets/utilities' as sass;
+
+
+.workcard-detail {
+    align-items: center;
+    z-index: 1000;
+    position: fixed;
+    overflow: scroll;
+    scrollbar-width: none;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(3px);
+    .workcard-detail-content {
+        flex-direction: column;
+        width: 75%; // media.scss
+        max-width: 800px; // media.scss
+        margin: 0 auto;
+        border: 1px solid var(--theme-nav-grey);
+        border-radius: 20px;
+        padding: 25px;
+        background-color: var(--theme-component);
+        max-height: 85vh;
+        #workcard-detail-content-head {
+            flex-direction: row;
+            align-items: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--theme-nav-grey);
+            span {
+                text-transform: uppercase;
+                font-weight: 300;
+                font-size: 18px; // media.scss
+                color: var(--theme-body-text);
+            }
+            .workcard-detail-close {
+                display: flex;
+                margin-left: auto;
+                border: 1px solid var(--theme-nav-grey);
+                cursor: pointer;
+                @media screen and (width > sass.$device-tablet-landscape) {
+                    i:hover {
+                        color: var(--theme-error);
+                    }
+                }
+            }
+        }
+        .workcard-detail-content-wrapper {
+            flex-direction: column;
+            padding-top: sass.$space25;
+            overflow: scroll;
+            scrollbar-width: none;
+            #workcard-detail-thumbnail {
+                margin: 0 auto 25px auto;
+                max-height: 250px;
+                border: 1px solid var(--theme-nav-grey);
+                img {
+                    $padding: 15px;
+                    padding: 0 $padding;
+                    object-fit: contain;
+                    width: calc(100% - ($padding * 2));
+                }
+            }
+            .workcard-detail-header {
+                margin-bottom: 10px;
+                .workcard-detail-header-split {
+                    flex-direction: row;
+                    h4 {
+                        font-size: 30px; // media.scss
+                        font-weight: 400;
+                        margin: 0;
+                        color: var(--theme-secondary);
+                    }
+                    a {
+                        display: flex;
+                        align-items: center;
+                        margin-left: 15px;
+                        text-decoration: none;
+                        color: var(--theme-grey);
+                        i {
+                            $size: 25px;
+                            width: $size;
+                            height: $size;
+                        }
+                    }
+                }
+                span {
+                    font-weight: 300;
+                    text-transform: uppercase;
+                    font-size: 13px;
+                    color: var(--theme-body-text);
+                    opacity: 0.8;
+                }
+            }
+            p {
+                margin: 25px 0;
+                color: var(--theme-grey);
+            }
+            .workcard-detail-subheader {
+                color: var(--theme-body-text);
+                text-transform: uppercase;
+                font-weight: 300;
+                font-size: 15px; // media.scss
+                margin-bottom: 12.5px;
+            }
+            ul {
+                border-bottom: 1px solid var(--theme-grey); 
+                margin: 0 0 25px 0;
+                padding: 0 0 15px sass.$space25;
+                li {
+                    margin-bottom: 10px;
+                    padding-left: 7.5px; // distance between marker and span
+                    &::marker {
+                        content: '+';
+                        color: var(--theme-primary);
+                    }
+                    span {
+                        color: var(--theme-grey);
+                    }
+                }
+            }
+            #workcard-detail-techstack {
+                flex-direction: row;
+                flex-wrap: wrap;
+                padding-bottom: 25px;
+                margin-bottom: 28px;
+                border-bottom: 1px solid var(--theme-grey);
+                span {
+                    border: 1px solid var(--theme-grey);
+                    background-color: var(--theme-component);
+                    color: var(--theme-secondary);
+                }
+            }
+            #workcard-detail-links {
+                flex-direction: column;
+                position: relative;
+                align-content: center;
+                flex-wrap: wrap;
+                width: 100%;
+                padding: 0 0 2px 0;
+                min-height: 50px; // media.scss (how does this work on mobile view?)
+                a {
+                    $padding-horizontal: 25px;
+                    $box-shadow-buffer: 4px;
+                    position: absolute;
+                    border-radius: 10px;
+                    padding: 10px $padding-horizontal;
+                    width: calc(100% - ($padding-horizontal * 2) - $box-shadow-buffer);
+                    top: -2px;
+                    left: 0;
+                    right: 0;
+                    margin-inline: auto;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+}

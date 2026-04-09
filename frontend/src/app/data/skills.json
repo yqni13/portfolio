@@ -1,0 +1,199 @@
+[
+    {
+        "title": "Languages",
+        "skills": [
+            {
+                "icon": "icon-Javascript",
+                "name": "JavaScript",
+                "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+            },
+            {
+                "icon": "icon-Typescript",
+                "name": "TypeScript",
+                "link": "https://www.typescriptlang.org/"
+            },
+            {
+                "icon": "icon-CSharp",
+                "name": "C#",
+                "link": "https://dotnet.microsoft.com/en-us/languages/csharp"
+            },
+            {
+                "icon": "icon-HTML5",
+                "name": "HTML5",
+                "link": "https://developer.mozilla.org/en-US/docs/Web/HTML"
+            },
+            {
+                "icon": "icon-CSS3",
+                "name": "CSS3",
+                "link": "https://developer.mozilla.org/en-US/docs/Web/CSS?retiredLocale=de"
+            },
+            {
+                "icon": "icon-Sass",
+                "name": "Sass",
+                "link": "https://sass-lang.com/"
+            }
+        ]
+    },
+    {
+        "title": "Frameworks & Libraries",
+        "skills": [
+            {
+                "icon": "icon-Angular",
+                "name": "Angular",
+                "link": "https://angular.dev/"
+            },
+            {
+                "icon": "icon-NodeJS",
+                "name": "Node.js",
+                "link": "https://nodejs.org/en"
+            },
+            {
+                "icon": "icon-ExpressJS",
+                "name": "Express.js",
+                "link": "https://expressjs.com/"
+            },
+            {
+                "icon": "icon-Jest",
+                "name": "Jest",
+                "link": "https://jestjs.io/"
+            },
+            {
+                "icon": "icon-RxJS",
+                "name": "RxJS",
+                "link": "https://rxjs.dev/"
+            },
+            {
+                "icon": "icon-i18n",
+                "name": "i18n",
+                "link": "https://www.i18next.com/"
+            }
+        ]
+    },
+    {
+        "title": "Tools & Platforms",
+        "skills": [
+            {
+                "icon": "icon-Git",
+                "name": "Git",
+                "link": "https://git-scm.com/"
+            },
+            {
+                "icon": "icon-PostgreSQL",
+                "name": "PostgreSQL",
+                "link": "https://www.postgresql.org/"
+            },
+            {
+                "icon": "icon-Docker",
+                "name": "Docker",
+                "link": "https://www.docker.com/"
+            },
+            {
+                "icon": "icon-GitHub",
+                "name": "GitHub",
+                "link": "https://github.com/",
+                "customStyle": true
+            },
+            {
+                "icon": "icon-GoogleMapsPlatform",
+                "name": "Google Maps Platform",
+                "link": "https://mapsplatform.google.com/maps-products/"
+            },
+            {
+                "icon": "icon-Netlify",
+                "name": "Netlify",
+                "link": "https://github.com/"
+            },
+            {
+                "icon": "icon-Vercel",
+                "name": "Vercel",
+                "link": "https://github.com/"
+            },
+            {
+                "icon": "icon-Render",
+                "name": "Render",
+                "link": "https://github.com/",
+                "customStyle": true
+            },
+            {
+                "icon": "icon-Neon",
+                "name": "Neon",
+                "link": "https://github.com/"
+            },
+            {
+                "icon": "icon-Cloudflare",
+                "name": "Cloudflare",
+                "link": "https://www.cloudflare.com/developer-platform/products/r2/"
+            },
+            {
+                "icon": "icon-VSCode",
+                "name": "VSCode",
+                "link": "https://code.visualstudio.com/"
+            },
+            {
+                "icon": "icon-Testcontainers",
+                "name": "Testcontainers",
+                "link": "https://testcontainers.com/"
+            },
+            {
+                "icon": "icon-Postman",
+                "name": "Postman",
+                "link": "https://www.postman.com/"
+            },
+            {
+                "icon": "icon-Betterstack",
+                "name": "Betterstack",
+                "link": "https://betterstack.com/"
+            },
+            {
+                "icon": "icon-Jira",
+                "name": "Jira",
+                "link": "https://www.atlassian.com/software/jira"
+            },
+            {
+                "icon": "icon-Notion",
+                "name": "Notion",
+                "link": "https://www.notion.com/"
+            },
+            {
+                "icon": "icon-Telegram",
+                "name": "Telegram",
+                "link": "https://core.telegram.org/bots/tutorial"
+            }
+        ]
+    },
+    {
+        "title": "Comfortable with",
+        "skills": [
+            {
+                "icon": "icon-GitLab",
+                "name": "GitLab",
+                "link": "https://about.gitlab.com/"
+            },
+            {
+                "icon": "icon-MySQL",
+                "name": "MySQL",
+                "link": "https://www.mysql.com/"
+            },
+            {
+                "icon": "icon-Bootstrap",
+                "name": "Bootstrap",
+                "link": "https://getbootstrap.com/"
+            },
+            {
+                "icon": "icon-MSQLServer",
+                "name": "Microsoft SQL Server",
+                "link": "https://www.microsoft.com/de-de/sql-server/"
+            },
+            {
+                "icon": "icon-Jenkins",
+                "name": "Jenkins",
+                "link": "https://www.jenkins.io/"
+            },
+            {
+                "icon": "icon-Leaflet",
+                "name": "Leaflet",
+                "link": "https://leafletjs.com"
+            }
+        ]
+    }
+]

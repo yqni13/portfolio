@@ -1,0 +1,16 @@
+@use '../../../../../stylesheets/utilities' as sass;
+@use '../abstract.component.scss' as inherit;
+
+
+.textinput {
+    display: grid;
+    position: relative;
+    input {
+        $indent: calc(inherit.$icon-padding-custom + inherit.$icon-padding-error + (inherit.$border * 2));
+        width: calc(100% - $indent);
+        padding: 10px inherit.$icon-padding-error 10px inherit.$icon-padding-custom;
+        border-radius: calc(sass.$space5 + inherit.$border);
+        text-overflow: ellipsis;
+        border: inherit.$border outset var(--theme-nav-grey);
+    }
+}
