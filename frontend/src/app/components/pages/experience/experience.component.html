@@ -6,19 +6,21 @@
                     href="{{data.institute.link ?? null}}"
                     target="_blank"
                     [ngStyle]="{'cursor': 'pointer'}"
-                    class="cursor-pointer"
+                    class="cursor-pointer link-primary"
                 >
-                    {{data.institute.name}}
-                    @if(data.institute.link) {
-                        <i class="icon-base icon-GoTo"></i>
-                    }
+                    <span class="experience-card-link-institute">
+                        {{data.institute.name}}
+                        @if(data.institute.link) {
+                            <i class="icon-base icon-GoTo"></i>
+                        }
+                    </span>
                 </a>
             } @else {
                 <a [ngStyle]="{'cursor': 'default'}">
                     {{data.institute.name}}
                 </a>
             }
-            <span>{{'| ' + data.type}}</span>
+            <span class="experience-card-link-type">{{'| ' + data.type}}</span>
         </div>
         <div class="experience-card-head">
             <h4>{{data.title}}</h4>
@@ -40,8 +42,10 @@
 </ng-template>
 
 <section class="experience" id="head-experience">
-    <h3>{{data.title}}</h3>
-    <span class="head-text">{{data.subTitle}}</span>
+    <div class="page-head-wrapper">
+        <h3>{{data.title}}</h3>
+        <span class="head-text">{{data.subTitle}}</span>
+    </div>
     <div class="experience-content">
         @for(card of experiences; track $index) {
             <div class="experience-content-wrapper">

@@ -17,7 +17,7 @@
             "Potential SaaS extension"
         ],
         "techstack": [
-            "Node.js", "Typescript", "Express.js", "PostgreSQL", "Cloudflare R2 (Object Storage)", "Docker", "Jest", "Testcontainers", "CI/CD"
+            "Node.js", "Typescript", "Express.js", "PostgreSQL", "Docker", "Jest", "Testcontainers", "Cloudflare R2 (Object Storage)", "CI/CD"
         ],
         "links": {
             "repo": "https://github.com/yqni13/support"
@@ -62,7 +62,7 @@
             "Extended translation service to handle dynamic values for validations and context-specific messages (e.g. links, emails, phone numbers)"
         ],
         "techstack": [
-            "Angular", "Node.js", "PostgreSQL", "RxJS", "Express.js", "i18n", "Jest", "CI/CD", "Cloudflare R2 (Object Storage)"
+            "Angular", "Node.js", "PostgreSQL", "RxJS", "Express.js", "i18n", "Jest", "Cloudflare R2 (Object Storage)", "CI/CD"
         ],
         "links": {
             "repo": "https://github.com/yqni13/artcreation-dv",

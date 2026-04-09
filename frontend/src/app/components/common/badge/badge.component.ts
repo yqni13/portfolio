@@ -5,7 +5,7 @@ import { ThemeOption } from "../../../utils/enums/theme-option.enum";
 @Component({
     selector: 'app-badge',
     template: `
-    <a class="badge-wrapper" href="{{link}}" target="_blank">
+    <a class="badge" href="{{link}}" target="_blank">
         <i class="icon-base" ngClass="{{icon}}" [ngStyle]="customStyle ? customStyle : null"></i>
         <span>{{name}}</span>
     </a>

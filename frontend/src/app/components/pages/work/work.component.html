@@ -10,18 +10,18 @@
         </a>
         <div id="workcard-preview-links">
             @if(data.links.demo) {
-                <a href="{{data.links.demo}}" target="_blank" class="prevent-details">
+                <a href="{{data.links.demo}}" target="_blank" class="prevent-details link-primary">
                     <span class="prevent-details">Demo</span>
                     <i class="icon-base icon-GoTo prevent-details"></i>
                 </a>
             }
             @if(data.links.live) {
-                <a href="{{data.links.live}}" target="_blank" class="prevent-details">
+                <a href="{{data.links.live}}" target="_blank" class="prevent-details link-primary">
                     <span class="prevent-details">Live</span>
                     <i class="icon-base icon-GoTo prevent-details"></i>
                 </a>
             }
-            <a href="{{data.links.repo}}" target="_blank" class="prevent-details">
+            <a href="{{data.links.repo}}" target="_blank" class="prevent-details link-primary">
                 <span class="prevent-details">Repository</span>
                 <i class="icon-base icon-GitHub prevent-details"></i>
             </a>
@@ -30,8 +30,10 @@
 </ng-template>
 
 <section class="work" id="head-work">
-    <h3>{{data.title}}</h3>
-    <span class="head-text">{{data.subTitle}}</span>
+    <div class="page-head-wrapper">
+        <h3>{{data.title}}</h3>
+        <span class="head-text">{{data.subTitle}}</span>
+    </div>
     <div class="work-content">
         @for(card of projects; track $index) {
             <ng-container 
@@ -39,7 +41,7 @@
             ></ng-container>
         }
     </div>
-    <a href="{{allRepoLink}}" target="_blank" id="work-all-repo-link">
+    <a href="{{allRepoLink}}" target="_blank" id="work-all-repo-link" class="link-primary">
         <span>View all projects on GitHub</span>
         <i class="icon-base icon-GoTo"></i>
     </a>

@@ -12,12 +12,14 @@ import { NavigationService } from './services/navigation.service';
 import { NotifyModalComponent } from './components/common/modal/notify-modal/notify-modal.component';
 import { NotifyModalService } from './services/notify-modal.service';
 import { CommonModule } from '@angular/common';
+import { BackgroundComponent } from './components/common/background/background.component';
 
 @Component({
 	selector: 'app-root',
 	templateUrl: './app.html',
 	styleUrl: './app.scss',
 	imports: [
+		BackgroundComponent,
 		CommonModule,
 		Navbar,
 		HeroComponent,

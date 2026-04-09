@@ -1,11 +1,17 @@
 # yqni13 | $\texttt{\color{blueviolet}{PORTFOLIO}}$
-### $\textsf{\color{brown}{v0.8.0}}$
+### $\textsf{\color{brown}{v0.9.0}}$
 
 <br>
 
 <div align="center">
     <a href=""><img src="" alt=""></a>
 </div>
+
+<br>
+
+### $\textsf{\color{teal}Hosting}$
+This project runs live (see link) - hosted via <a href="https://app.netlify.com/">Netlify</a>.<br>
+### visit my <a href="https://yqni13.com">Portfolio LIVE</a>
 
 <br>
 
@@ -36,13 +42,18 @@ Start the application in local environment:
 ```sh
 npm run start:dev
 ```
-which will open automatically on `https://localhost:4200/`.
+which will open automatically on `http://localhost:4200/`.
 
 <br>
 
 ## 📈 $\textsf{\color{salmon}Updates}$
 [see changelog for all updates](./docs/CHANGELOG.md)
 
-$\textsf{[v0.6.0\ =>\ {\textbf{\color{brown}v0.8.0}]}}$ app
-- $\textsf{\color{teal}Addition:}$ Added notification modal component + service.
-- $\textsf{\color{teal}Addition:}$ Added notification api service for sending messages to admin via Telegram API.
+$\textsf{[v0.8.0\ =>\ {\textbf{\color{brown}v0.9.0}]}}$ app
+- $\textsf{\color{teal}Addition:}$ Added responsive design for smartphone portrait-mode size.
+
+### Objectives for next updates
+<dl>
+    <dd>- remove placeholder images for real pictures</dd>
+    <dd>- add responsive design for devices between 500px and 1440px width</dd>
+</dl>

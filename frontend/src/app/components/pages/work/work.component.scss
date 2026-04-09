@@ -5,12 +5,9 @@
     flex-direction: column;
     position: relative;
     align-items: center;
-    margin: sass.$space100 0; // media.scss
 
     .work-content {
-        width: 66vw;
-        max-width: 1200px;
-        margin: 75px 0 sass.$space25 0;
+        margin: 0 0 sass.$space25 0;
     }
     #work-all-repo-link {
         display: flex;
@@ -19,7 +16,6 @@
         text-decoration: none;
         color: var(--theme-body-text);
         font-weight: 300;
-        transition: transform 300ms ease-in-out;
 
         i {
             margin-left: sass.$space5;
@@ -27,15 +23,10 @@
             width: $size;
             height: $size;
         }
-        &:hover {
-            transform: scale(1.1);
-            color: var(--theme-primary);
-        }
     }
 }
 
 .workcard-preview {
-    height: 350px; // media.scss
     width: stretch;
     flex-direction: column;
     border: 1px solid var(--theme-nav-grey);
@@ -58,7 +49,8 @@
     p {
         margin: sass.$space25 0 0 0;
         color: var(--theme-grey);
-        min-height: 60px;
+        height: 60px;
+        line-height: 20px;
         overflow: hidden;
         display: -webkit-box;
         -webkit-line-clamp: 3;
@@ -90,17 +82,12 @@
             margin-top: 10px;
             text-decoration: none;
             color: var(--theme-nav-grey);
-            transition: transform 300ms ease-in-out;
 
             i {
                 margin-left: 5px;
-                $size: 15px;
+                $size: 20px;
                 width: $size;
                 height: $size;
-            }
-            &:hover {
-                transform: scale(1.1);
-                color: var(--theme-primary);
             }
         }
     }

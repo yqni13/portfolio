@@ -9,6 +9,8 @@ const envConfigFile_dev = `import { Environment } from "./environment.model";
 
 export const environment: Environment = {
     ENV_MODE: '', /*select your environment like "development"*/
+    NOTIFY_ADMIN_ID: '', /*your telegram admin id*/
+    NOTIFY_BOT_KEY: '', /*your telegram bot key*/
 };
 `;
 fs_dev.writeFileSync(targetPath_dev, envConfigFile_dev);

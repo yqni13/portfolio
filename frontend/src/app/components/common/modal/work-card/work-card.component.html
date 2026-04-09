@@ -10,14 +10,14 @@
             <div class="workcard-detail-content-wrapper">
                 <div id="workcard-detail-thumbnail">
                     <img src="{{data.thumbnail}}" alt="thumbnail">
-                    <!-- <div id="thumbnail" [ngStyle]="{'background-image': 'url(' + data.thumbnail +')'}"></div> -->
                 </div>
                 <div class="workcard-detail-header">
-                    <h4>{{data.name}}</h4>
-                    <a href="{{data.links.repo}}" target="_blank">
-                        <!-- <span>Repository</span> -->
-                        <i class="icon-base icon-GitHub"></i>
-                    </a>
+                    <div class="workcard-detail-header-split">
+                        <h4>{{data.name}}</h4>
+                        <a href="{{data.links.repo}}" target="_blank" class="link-primary">
+                            <i class="icon-base icon-GitHub"></i>
+                        </a>
+                    </div>
                     <span>type : {{data.type.mandate}}</span>
                 </div>
                 <span id="workcard-detail-intro">{{data.intro}}</span>
@@ -39,13 +39,13 @@
                 @if(data.links.demo || data.links.live) {
                     <div id="workcard-detail-links">
                         @if(data.links.demo) {
-                            <a href="{{data.links.demo}}" target="_blank">
+                            <a href="{{data.links.demo}}" target="_blank" class="btn-primary">
                                 <span>Visit demo</span>
                                 <i class="icon-base icon-GoTo"></i>
                             </a>
                         }
                         @if(data.links.live) {
-                            <a href="{{data.links.live}}" target="_blank">
+                            <a href="{{data.links.live}}" target="_blank" class="btn-primary">
                                 <span>Visit website</span>
                                 <i class="icon-base icon-GoTo"></i>
                             </a>

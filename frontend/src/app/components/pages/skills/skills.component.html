@@ -1,6 +1,8 @@
 <section class="skills" id="head-skills">
-    <h3>{{data.title}}</h3>
-    <span class="head-text">{{data.subTitle}}</span>
+    <div class="page-head-wrapper">
+        <h3>{{data.title}}</h3>
+        <span class="head-text">{{data.subTitle}}</span>
+    </div>
     <div id="skills-content">
         @for(skillset of skills; track $index) {
             <div class="skills-wrapper">

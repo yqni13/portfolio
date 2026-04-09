@@ -1,8 +1,15 @@
 ## 📜 $\textsf{\color{salmon}{List\ of\ updates}}$
 
+### $\textsf{\color{skyblue}2026/04/08}$
+
+$\textsf{[v0.8.0\ =>\ {\textbf{\color{brown}v0.9.0}]}}$ app
+- $\textsf{\color{teal}Addition:}$ Added responsive design for smartphone portrait-mode size.
+
+<br>
+
 ### $\textsf{\color{skyblue}2026/04/07}$
 
-$\textsf{[v0.6.0\ =>\ {\textbf{\color{brown}v0.8.0}]}}$ app
+$\textsf{[v0.6.0\ =>\ v0.8.0]}$ app
 - $\textsf{\color{teal}Addition:}$ Added notification modal component + service.
 - $\textsf{\color{teal}Addition:}$ Added notification api service for sending messages to admin via Telegram API.
 

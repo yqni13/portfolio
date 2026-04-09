@@ -14,7 +14,7 @@
     backdrop-filter: blur(3px);
     .workcard-detail-content {
         flex-direction: column;
-        width: 66%; // media.scss
+        width: 75%; // media.scss
         max-width: 800px; // media.scss
         margin: 0 auto;
         border: 1px solid var(--theme-nav-grey);
@@ -38,8 +38,10 @@
                 margin-left: auto;
                 border: 1px solid var(--theme-nav-grey);
                 cursor: pointer;
-                i:hover {
-                    color: var(--theme-error);
+                @media screen and (width > sass.$device-tablet-landscape) {
+                    i:hover {
+                        color: var(--theme-error);
+                    }
                 }
             }
         }
@@ -61,32 +63,28 @@
             }
             .workcard-detail-header {
                 margin-bottom: 10px;
-                align-items: center;
-                h4 {
-                    font-size: 30px; // media.scss
-                    font-weight: 400;
-                    margin: 0;
-                    color: var(--theme-secondary);
-                }
-                a {
-                    display: flex;
-                    align-items: center;
-                    margin-left: 15px;
-                    text-decoration: none;
-                    transition: transform 300ms ease-in-out;
-                    color: var(--theme-grey);
-                    i {
-                        $size: 25px;
-                        width: $size;
-                        height: $size;
+                .workcard-detail-header-split {
+                    flex-direction: row;
+                    h4 {
+                        font-size: 30px; // media.scss
+                        font-weight: 400;
+                        margin: 0;
+                        color: var(--theme-secondary);
                     }
-                    &:hover {
-                        color: var(--theme-primary);
-                        transform: scale(1.1);
+                    a {
+                        display: flex;
+                        align-items: center;
+                        margin-left: 15px;
+                        text-decoration: none;
+                        color: var(--theme-grey);
+                        i {
+                            $size: 25px;
+                            width: $size;
+                            height: $size;
+                        }
                     }
                 }
                 span {
-                    margin-left: auto;
                     font-weight: 300;
                     text-transform: uppercase;
                     font-size: 13px;
@@ -124,43 +122,35 @@
             #workcard-detail-techstack {
                 flex-direction: row;
                 flex-wrap: wrap;
+                padding-bottom: 25px;
+                margin-bottom: 28px;
+                border-bottom: 1px solid var(--theme-grey);
                 span {
-                    padding: 7.5px 15px;
                     border: 1px solid var(--theme-grey);
                     background-color: var(--theme-component);
                     color: var(--theme-secondary);
-                    margin: 5px 10px 5px 0;
                 }
             }
             #workcard-detail-links {
                 flex-direction: column;
+                position: relative;
                 align-content: center;
                 flex-wrap: wrap;
                 width: 100%;
-                border-top: 1px solid var(--theme-grey);
-                padding-top: 25px;
-                margin-top: 22px;
+                padding: 0 0 2px 0;
+                min-height: 50px; // media.scss (how does this work on mobile view?)
                 a {
-                    background-color: var(--theme-primary);
-                    padding: 15px 0;
-                    display: flex;
-                    width: 100%;
+                    $padding-horizontal: 25px;
+                    $box-shadow-buffer: 4px;
+                    position: absolute;
+                    border-radius: 10px;
+                    padding: 10px $padding-horizontal;
+                    width: calc(100% - ($padding-horizontal * 2) - $box-shadow-buffer);
+                    top: -2px;
+                    left: 0;
+                    right: 0;
+                    margin-inline: auto;
                     justify-content: center;
-                    align-items: center;
-                    text-decoration: none;
-                    color: var(--theme-body-text);
-                    i {
-                        margin-left: 5px;
-                        $size: 15px;
-                        width: $size;
-                        height: $size;
-                    }
-                    &:hover {
-                        filter: brightness(1.05);
-                    }
-                }
-                &:hover {
-                    cursor: pointer;
                 }
             }
         }

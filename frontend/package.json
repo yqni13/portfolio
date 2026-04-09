@@ -1,12 +1,12 @@
 {
   "name": "portfolio",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "scripts": {
     "ng": "ng",
     "start:dev": "node ./set-env.dev.ts && ng serve --open",
     "start:stag": "node set-env.ts && ng serve --configuration staging",
     "start:prod": "node set-env.ts && ng serve --configuration production",
-    "build": "ng build",
+    "build": "ng build && npx serve dist/portfolio/browser",
     "build:stag": "node set-env.ts && ng build --configuration staging",
     "build:prod": "node set-env.ts && ng build --configuration production",
     "watch": "ng build --watch --configuration development",

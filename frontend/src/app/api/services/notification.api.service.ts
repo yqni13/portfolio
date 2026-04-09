@@ -27,7 +27,7 @@ export class NotificationApiService {
             await this.delay(1000);
             this.notifyModal.notify({
                 title: 'Message sent!',
-                text: 'Your message was sent successfully. Usually it takes 24 hours on a work day to reply. Thank you for your message and have a nice day :)',
+                text: 'Your message was sent successfully. I usually reply within 24 hours on business days. Thank you for reaching out and have a nice day!',
                 autoClose: false,
                 type: NotifyModalType.SUCCESS
             });
@@ -35,7 +35,7 @@ export class NotificationApiService {
             console.log("notification_api_notify_error: ", err);
             this.notifyModal.notify({
                 title: 'Technical problem',
-                text: 'Your message was NOT sent due to technical reasons. Please send me a message via Email instead to:',
+                text: 'Your message could not be sent due to a technical issue. Please contact me directly via email:',
                 mail: 'lukas.varga@yqni13.com',
                 type: NotifyModalType.ERROR,
                 autoClose: false,

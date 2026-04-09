@@ -10,6 +10,7 @@ import { NotificationApiService } from "../../../api/services/notification.api.s
 import { NotificationParams } from "../../../api/interfaces/notification.api.interface";
 import { NotifyModalService } from "../../../services/notify-modal.service";
 import { NotifyModalType } from "../../../utils/enums/notify-modal.enum";
+import { LoaderComponent } from "../../common/loader/loader.component";
 
 @Component({
     selector: 'app-contact',
@@ -21,7 +22,8 @@ import { NotifyModalType } from "../../../utils/enums/notify-modal.enum";
         ReactiveFormsModule,
         SelectInputComponent,
         TextInputComponent,
-        TextareaInputComponent
+        TextareaInputComponent,
+        LoaderComponent
     ]
 })
 export class ContactComponent extends BaseComponent implements OnInit {
@@ -88,11 +90,11 @@ export class ContactComponent extends BaseComponent implements OnInit {
     async onSubmit() {
         if(this.contactForm.invalid) {
             this.notifyModal.notify({
-                title: 'Invalid input!',
-                text: 'Check for missing / invalid input and the active validations.',
+                title: 'invalid input',
+                text: 'Please check for missing or invalid fields before submitting.',
                 type: NotifyModalType.WARNING,
                 autoClose: true,
-                displayTimeInMilliseconds: 4000
+                displayTimeInMilliseconds: 3000,
             });
             return;
         }

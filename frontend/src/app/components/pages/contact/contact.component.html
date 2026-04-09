@@ -1,6 +1,8 @@
 <section class="contact" id="head-contact">
-    <h3>{{data.title}}</h3>
-    <span class="head-text">{{data.subTitle}}</span>
+    <div class="page-head-wrapper">
+        <h3>{{data.title}}</h3>
+        <span class="head-text">{{data.subTitle}}</span>
+    </div>
     <div class="contact-content">
         <div class="contact-form-wrapper">
             <h4>Send a message</h4>
@@ -69,4 +71,7 @@
             </form>
         </div>
     </div>
+    @if(isLoading) {
+        <app-loader></app-loader>
+    }
 </section>
