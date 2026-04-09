@@ -22,8 +22,10 @@
 
     .notifymodal-btn-wrapper {
         border-color: var(--theme-error);
-        &:hover {
-            filter: brightness(1.4);
+        @media screen and (width > sass.$device-tablet-landscape) {
+            &:hover {
+                filter: brightness(1.4);
+            }
         }
     }
 }
@@ -37,8 +39,10 @@
 
     .notifymodal-btn-wrapper {
         border-color: var(--theme-info);
-        &:hover {
-            filter: brightness(1.4);
+        @media screen and (width > sass.$device-tablet-landscape) {
+            &:hover {
+                filter: brightness(1.4);
+            }
         }
     }
 }
@@ -52,8 +56,10 @@
 
     .notifymodal-btn-wrapper {
         border-color: var(--theme-success);
-        &:hover {
-            filter: brightness(1.4);
+        @media screen and (width > sass.$device-tablet-landscape) {
+            &:hover {
+                filter: brightness(1.4);
+            }
         }
     }
 }
@@ -67,8 +73,10 @@
 
     .notifymodal-btn-wrapper {
         border-color: var(--theme-warning);
-        &:hover {
-            filter: brightness(1.4);
+        @media screen and (width > sass.$device-tablet-landscape) {
+            &:hover {
+                filter: brightness(1.4);
+            }
         }
     }
 }
@@ -122,9 +130,11 @@
                 margin-right: 5px;
                 color: sass.$color-lightmode-grey;
             }
-            &:hover {
-                cursor: pointer;
-                filter: brightness(1.6);
+            @media screen and (width > sass.$device-tablet-landscape) {
+                &:hover {
+                    cursor: pointer;
+                    filter: brightness(1.6);
+                }
             }
         }
     }

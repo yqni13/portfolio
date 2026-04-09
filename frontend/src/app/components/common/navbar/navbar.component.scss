@@ -104,11 +104,11 @@ nav {
     cursor: pointer;
     font-weight: 400;
     font-size: 22px;
-    transition: transform 300ms ease-in-out;
 }
 .navbar-menu-anchor:hover {
-    color: var(--theme-grey);
-    transform: scale(1.2);
+    @media screen and (width > sass.$device-tablet-landscape) {
+        color: var(--theme-grey);
+    }
 }
 .active-menu-anchor {
     border-bottom: 2px solid var(--theme-primary);

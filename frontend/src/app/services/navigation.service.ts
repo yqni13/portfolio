@@ -1,16 +1,29 @@
-import { Injectable, signal } from "@angular/core";
+import { Injectable, OnDestroy, OnInit, signal } from "@angular/core";
+import { ObservationService } from "./observe.service";
+import { DeviceOption } from "../utils/enums/device-option.enum";
+import { Subscription } from "rxjs";
 
 @Injectable({
     providedIn: 'root'
 })
-export class NavigationService {
+export class NavigationService implements OnInit, OnDestroy {
 
     private observer!: IntersectionObserver;
     private activeSection = signal<string>('home');
     activeSection$ = this.activeSection.asReadonly();
 
-    constructor() {
-        //
+    private subscriptionDeviceOption$: Subscription;
+    private activeDeviceOption: DeviceOption;
+
+    constructor(private readonly observeService: ObservationService) {
+        this.subscriptionDeviceOption$ = new Subscription();
+        this.activeDeviceOption = DeviceOption.MOBILE;
+    }
+
+    ngOnInit() {
+        this.subscriptionDeviceOption$ = this.observeService.deviceOption$.subscribe(val => {
+            this.activeDeviceOption = val;
+        })
     }
 
     navigateToTop(document: Document) {
@@ -33,7 +46,8 @@ export class NavigationService {
                 });
             },
             {
-                threshold: 0.4, // Define how much of section must be visible to trigger (0.4 => 40%).
+                // Define how much of section must be visible to trigger (0.4 => 40%).
+                threshold: this.activeDeviceOption === DeviceOption.MOBILE ? 0.1 : 0.4,
                 rootMargin: '0px'
             }
         );
@@ -47,5 +61,9 @@ export class NavigationService {
 
     disconnect() {
         this.observer?.disconnect();
+    }
+
+    ngOnDestroy() {
+        this.subscriptionDeviceOption$.unsubscribe();
     }
 }

@@ -94,7 +94,7 @@ export class ContactComponent extends BaseComponent implements OnInit {
                 text: 'Please check for missing or invalid fields before submitting.',
                 type: NotifyModalType.WARNING,
                 autoClose: true,
-                displayTimeInMilliseconds: 4000,
+                displayTimeInMilliseconds: 3000,
             });
             return;
         }

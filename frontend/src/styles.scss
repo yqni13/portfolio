@@ -69,8 +69,10 @@ h3 {
     color: sass.$color-ice-white;
     background-color: var(--theme-primary);
     text-decoration: none;
-    &:hover {
-        box-shadow: 1px 1px 3px var(--theme-body-text);
+    @media screen and (width > sass.$device-tablet-landscape) {
+        &:hover {
+            box-shadow: 1px 1px 3px var(--theme-body-text);
+        }
     }
     i {
         margin-left: sass.$space5;
@@ -89,8 +91,10 @@ h3 {
     text-decoration: none;
     color: var(--theme-body-text);
     background-color: var(--theme-component);
-    &:hover {
-        box-shadow: 1px 1px 3px var(--theme-nav-grey);
+    @media screen and (width > sass.$device-tablet-landscape) {
+        &:hover {
+            box-shadow: 1px 1px 3px var(--theme-nav-grey);
+        }
     }
     i {
         margin-left: sass.$space5;
@@ -109,5 +113,24 @@ h3 {
         width: $size;
         height: $size;
         padding: 5px;
+    }
+}
+
+.link-simple {
+    @media screen and (width > sass.$device-tablet-landscape) {
+        transition: transform 300ms ease-in-out;
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+}
+
+.link-primary {
+    @media screen and (width > sass.$device-tablet-landscape) {
+        transition: transform 300ms ease-in-out;
+        &:hover {
+            transform: scale(1.2);
+            color: var(--theme-primary)!important;
+        }
     }
 }

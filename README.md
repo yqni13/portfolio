@@ -9,6 +9,12 @@
 
 <br>
 
+### $\textsf{\color{teal}Hosting}$
+This project runs live (see link) - hosted via <a href="https://app.netlify.com/">Netlify</a>.<br>
+### visit my <a href="https://yqni13.com">Portfolio LIVE</a>
+
+<br>
+
 ## 🪄 $\textsf{\color{salmon}Getting started}$
 
 ### $\textsf{\color{teal}Prerequisites}$
@@ -36,7 +42,7 @@ Start the application in local environment:
 ```sh
 npm run start:dev
 ```
-which will open automatically on `https://localhost:4200/`.
+which will open automatically on `http://localhost:4200/`.
 
 <br>
 
@@ -45,3 +51,9 @@ which will open automatically on `https://localhost:4200/`.
 
 $\textsf{[v0.8.0\ =>\ {\textbf{\color{brown}v0.9.0}]}}$ app
 - $\textsf{\color{teal}Addition:}$ Added responsive design for smartphone portrait-mode size.
+
+### Objectives for next updates
+<dl>
+    <dd>- remove placeholder images for real pictures</dd>
+    <dd>- add responsive design for devices between 500px and 1440px width</dd>
+</dl>

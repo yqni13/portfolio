@@ -14,7 +14,7 @@
                 <div class="workcard-detail-header">
                     <div class="workcard-detail-header-split">
                         <h4>{{data.name}}</h4>
-                        <a href="{{data.links.repo}}" target="_blank">
+                        <a href="{{data.links.repo}}" target="_blank" class="link-primary">
                             <i class="icon-base icon-GitHub"></i>
                         </a>
                     </div>
@@ -39,13 +39,13 @@
                 @if(data.links.demo || data.links.live) {
                     <div id="workcard-detail-links">
                         @if(data.links.demo) {
-                            <a href="{{data.links.demo}}" target="_blank">
+                            <a href="{{data.links.demo}}" target="_blank" class="btn-primary">
                                 <span>Visit demo</span>
                                 <i class="icon-base icon-GoTo"></i>
                             </a>
                         }
                         @if(data.links.live) {
-                            <a href="{{data.links.live}}" target="_blank">
+                            <a href="{{data.links.live}}" target="_blank" class="btn-primary">
                                 <span>Visit website</span>
                                 <i class="icon-base icon-GoTo"></i>
                             </a>

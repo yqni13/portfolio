@@ -7,6 +7,7 @@ import { CommonModule } from "@angular/common";
 import { NavigationService } from "../../../services/navigation.service";
 import { NavMenu } from "../../../utils/interfaces/nav-menu.interface";
 import { default as menuData } from "../../../data/menu.json";
+import { ObservationService } from "../../../services/observe.service";
 
 @Component({
     selector: 'app-navbar',
@@ -37,6 +38,7 @@ export class Navbar implements OnInit, AfterViewInit{
     constructor(
         private readonly navigate: NavigationService,
         @Inject(DOCUMENT) private document: Document,
+        private readonly observe: ObservationService,
         private readonly themeHandler: ThemeHandlerService,
     ) {
         this.selectedTheme = this.themeHandler.checkThemeSettings();
@@ -95,9 +97,11 @@ export class Navbar implements OnInit, AfterViewInit{
         if(width > this.maxMobileScreenWidth) {
             this.document.body.setAttribute("data-nav", 'desktopMode');
             this.deviceOption.update(_ => DeviceOption.DESKTOP);
+            this.observe.setDeviceOption(DeviceOption.DESKTOP);
         } else {
             this.document.body.setAttribute("data-nav", 'mobileMode');
             this.deviceOption.update(_ => DeviceOption.MOBILE);
+            this.observe.setDeviceOption(DeviceOption.MOBILE);
         }
     }
 

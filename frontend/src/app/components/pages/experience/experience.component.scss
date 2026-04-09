@@ -76,7 +76,6 @@ $card-padding: sass.$space25;
             color: var(--theme-body-text);
             margin-right: sass.$space5;
             opacity: 0.85;
-            transition: transform 300ms ease-in-out;
             i {
                 $size: 15px;
                 width: $size;
@@ -85,8 +84,6 @@ $card-padding: sass.$space25;
             }
         }
         .cursor-pointer:hover {
-            transform: scale(1.1);
-            color: var(--theme-primary);
             backdrop-filter: blur(3px);
         }
         .experience-card-link-type {

@@ -13,8 +13,10 @@
         font-size: 16px;
         color: var(--theme-body-text);
     }
-    &:hover {
-        box-shadow: 2px 2px 4px var(--theme-body-text);
+    @media screen and (width > sass.$device-tablet-landscape) {
+        &:hover {
+            box-shadow: 2px 2px 4px var(--theme-body-text);
+        }
     }
 }
 

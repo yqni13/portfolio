@@ -16,19 +16,12 @@
         text-decoration: none;
         color: var(--theme-body-text);
         font-weight: 300;
-        transition: transform 300ms ease-in-out;
 
         i {
             margin-left: sass.$space5;
             $size: 15px;
             width: $size;
             height: $size;
-        }
-        &:hover {
-            @media screen and (width > sass.$device-tablet-landscape) {
-                transform: scale(1.1);
-                color: var(--theme-primary);
-            }
         }
     }
 }
@@ -89,19 +82,12 @@
             margin-top: 10px;
             text-decoration: none;
             color: var(--theme-nav-grey);
-            transition: transform 300ms ease-in-out;
 
             i {
                 margin-left: 5px;
                 $size: 20px;
                 width: $size;
                 height: $size;
-            }
-            &:hover {
-                @media screen and (width > sass.$device-tablet-landscape) {
-                    transform: scale(1.1);
-                    color: var(--theme-primary);
-                }
             }
         }
     }
