@@ -87,9 +87,11 @@
                 span {
                     font-weight: 300;
                     text-transform: uppercase;
-                    font-size: 13px;
+                    font-size: 12px;
                     color: var(--theme-body-text);
                     opacity: 0.8;
+                    border: 1px solid var(--theme-grey);
+                    padding: 7.5px;
                 }
             }
             p {
@@ -122,9 +124,6 @@
             #workcard-detail-techstack {
                 flex-direction: row;
                 flex-wrap: wrap;
-                padding-bottom: 25px;
-                margin-bottom: 28px;
-                border-bottom: 1px solid var(--theme-grey);
                 span {
                     border: 1px solid var(--theme-grey);
                     background-color: var(--theme-component);
@@ -137,16 +136,22 @@
                 align-content: center;
                 flex-wrap: wrap;
                 width: 100%;
-                padding: 0 0 2px 0;
+                margin-top: 23px;
+                border-top: 1px solid var(--theme-grey);
+                padding: 25px 0 2px 0;
                 min-height: 50px; // media.scss (how does this work on mobile view?)
                 a {
                     $padding-horizontal: 25px;
                     $box-shadow-buffer: 4px;
-                    position: absolute;
+                    $techstack-buffer: 3px;
                     border-radius: 10px;
                     padding: 10px $padding-horizontal;
                     width: calc(100% - ($padding-horizontal * 2) - $box-shadow-buffer);
-                    top: -2px;
+
+                    /* Overflow:scroll disturbs margin-bottom on last element which hides box-shadow on bottom of element => use position:absolute + top:number to place button for target visible effect */
+                    position: absolute;
+                    top: calc($padding-horizontal + $techstack-buffer);
+
                     left: 0;
                     right: 0;
                     margin-inline: auto;

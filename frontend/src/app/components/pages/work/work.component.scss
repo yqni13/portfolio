@@ -8,6 +8,8 @@
 
     .work-content {
         margin: 0 0 sass.$space25 0;
+        flex-wrap: wrap;
+        justify-content: center;
     }
     #work-all-repo-link {
         display: flex;

@@ -1,6 +1,10 @@
 @use '../../../../stylesheets/utilities' as sass;
 
 
+section {
+    margin-top: 0!important;
+}
+
 .hero {
     flex-direction: row; // media.scss
     width: 100%;

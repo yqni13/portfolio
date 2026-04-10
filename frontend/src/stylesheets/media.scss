@@ -15,6 +15,9 @@
     }
     .page-head-wrapper {
         margin-bottom: 75px;
+        h4, span {
+            padding: 0 12.5vw;
+        }
     }
     .hero {
         #hero-header-wrapper {
@@ -34,10 +37,11 @@
     }
     .work {
         .work-content {
-            width: 66vw;
-            max-width: 1200px;
+            width: 80vw;
+            max-width: 1440px;
             .workcard-preview {
                 height: 350px;
+                max-width: 350px;
             }
         }
     }
@@ -138,30 +142,237 @@
     section {
         margin-top: 150px;
     }
+    .page-head-wrapper {
+        margin-bottom: 67.5px;
+        h4, span {
+            padding: 0 12.5vw;
+        }
+    }
+    .hero {
+        #hero-header-wrapper {
+            max-width: 75%;
+            margin: 0 auto;
+            h2, h4, p {
+                padding-left: 5px; // Adapt to extra space of font on h1.
+            }
+            p {
+                line-height: 35px;
+            }
+        }
+        #hero-btn-wrapper {
+            width: 75%;
+            margin: sass.$space15 auto 0 auto;
+        }
+    }
+    .work {
+        .work-content {
+            width: 90vw;
+            max-width: 1000px;
+            .workcard-preview {
+                height: 350px;
+                max-width: 275px;
+            }
+        }
+    }
+    .workcard-detail {
+        .workcard-detail-header {
+            flex-direction: row;
+            align-items: center;
+            span {
+                margin-left: auto;
+            }
+        }
+        #workcard-detail-techstack {
+            span {
+                padding: 7.5px 15px;
+                margin: 5px 10px 5px 0;
+            }
+        }
+    }
+    .skills {
+        #skills-content {
+            width: 75vw;
+            app-badge {
+                margin: 5px 15px 5px 0;
+            }
+        }
+    }
+    .badge {
+        padding: 10px 15px;
+        i {
+            $size: 25px;
+            width: $size;
+            height: $size;
+            margin-right: 12.5px;
+        }
+    }
+    .about {
+        .about-content {
+            flex-direction: row;
+            width: 90vw;
+            .about-content-img {
+                width: 40%;
+            }
+            .about-content-description {
+                width: 60%;
+                #description-wrapper {
+                    width: 90%;
+                    margin-left: auto;
+                    p, #hint-wrapper {
+                        line-height: 22px;
+                    }
+                }
+            }
+        }
+    }
+    .experience {
+        .experience-content {
+            width: 75vw;
+            .experience-card {
+                .experience-card-link {
+                    align-items: center;
+                    flex-direction: row;
+                }
+                .experience-card-head {
+                    flex-direction: row;
+                    align-items: center;
+                    span {
+                        margin-left: auto;
+                    }
+                }
+                ul {
+                    padding: 0 0 0 25px;
+                }
+                .experience-card-keys {
+                    span {
+                        margin: 5px 15px 5px 0;
+                    }
+                }
+            }
+        }
+    }
+    .background-darkmode {
+        .moon {
+            box-shadow: 12px 12px 0 0 #fdfbd3;
+        }
+    }
+    .background-lightmode {
+        .sun {
+            margin: -85px -85px 0 0;
+        }
+    }
+    footer {
+        margin-top: 60px;
+    }
 }
 
 /* 768px > width <= 1024px */
-@media screen and (width <= sass.$device-tablet-landscape) {}
-
-/* 500px > width <= 768px */
-@media screen and (width <= sass.$device-phone-landscape) {}
-
-/* width <= 500px */
-@media screen and (width <= sass.$device-phone-portrait) {
+@media screen and (width <= sass.$device-tablet-landscape) {
     section {
-        margin-top: 100px;
+        margin-top: 135px;
     }
     .page-head-wrapper {
-        margin-bottom: 40px;
+        margin-bottom: 60px;
+    }
+    .work {
+        .work-content {
+            max-width: none;
+            .workcard-preview {
+                height: 325px;
+                max-width: 250px;
+            }
+        }
+    }
+    .badge {
+        padding: 7.5px 10px;
+        i {
+            $size: 20px;
+            width: $size;
+            height: $size;
+            margin-right: 8px;
+        }
+    }
+    .about {
+        .about-content {
+            flex-direction: column;
+            align-items: center;
+            width: calc(100% - 100px);
+            .about-content-img {
+                width: 40%;
+            }
+            .about-content-description {
+                width: 75%;
+                #description-wrapper {
+                    width: 100%;
+                    margin-left: 0;
+                    p, #hint-wrapper {
+                        line-height: 24px;
+                    }
+                }
+            }
+        }
+    }
+    .experience {
+        .experience-content {
+            width: 75%;
+            .experience-card {
+                .experience-card-link {
+                    align-items: start;
+                    flex-direction: column;
+                    .experience-card-link-institute {
+                        margin-bottom: 5px;
+                    }
+                }
+                .experience-card-head {
+                    flex-direction: column;
+                    align-items: start;
+                    span {
+                        margin-left: 0;
+                        margin-top: 5px;
+                    }
+                }
+                ul {
+                    padding: 0 0 0 7.5px;
+                }
+                .experience-card-keys {
+                    span {
+                        margin: 5px 10px 5px 0;
+                    }
+                }
+            }
+        }
+    }
+    .background-darkmode {
+        .moon {
+            box-shadow: 10px 10px 0 0 #fdfbd3;
+        }
+    }
+    .background-lightmode {
+        .sun {
+            margin: -63px -63px 0 0;
+        }
+    }
+}
+
+/* 500px > width <= 768px */
+@media screen and (width <= sass.$device-phone-landscape) {
+    section {
+        margin-top: 115px;
+    }
+    .page-head-wrapper {
+        margin-bottom: 50px;
+        h4, span {
+            padding: 0;
+        }
     }
     .main {
-        margin: 0 15px;
+        margin: 0 35px;
     }
     .hero {
         #hero-header-wrapper {
             max-width: none;
             h2, h4, p {
-                padding-left: 2.5px; // Adapt to extra space of font on h1.
+                padding-left: 3.5px; // Adapt to extra space of font on h1.
             }
             p {
                 line-height: 25px;
@@ -177,6 +388,7 @@
             flex-wrap: wrap;
             .workcard-preview {
                 height: 325px;
+                max-width: 400px;
             }
         }
     }
@@ -206,31 +418,14 @@
             }
         }
     }
-    .badge {
-        padding: 7.5px 10px;
-        i {
-            $size: 20px;
-            width: $size;
-            height: $size;
-            margin-right: 8px;
-        }
-    }
     .about {
         .about-content {
-            flex-direction: column;
             width: 100%;
             .about-content-img {
-                width: 100%;
+                width: 66%;
             }
             .about-content-description {
                 width: 100%;
-                #description-wrapper {
-                    width: 100%;
-                    margin-left: 0;
-                    p, #hint-wrapper {
-                        line-height: 24px;
-                    }
-                }
             }
         }
     }
@@ -238,28 +433,55 @@
         .experience-content {
             width: 100%;
             .experience-card {
-                .experience-card-link {
-                    align-items: start;
-                    flex-direction: column;
-                    .experience-card-link-institute {
-                        margin-bottom: 5px;
-                    }
-                }
-                .experience-card-head {
-                    flex-direction: column;
-                    align-items: start;
-                    span {
-                        margin-left: 0;
-                    }
-                }
-                ul {
-                    padding: 0 0 0 7.5px;
-                }
                 .experience-card-keys {
                     span {
                         margin: 4px 7.5px 4px 0;
                     }
                 }
+            }
+        }
+    }
+    .background-darkmode {
+        .moon {
+            box-shadow: 7.5px 7.5px 0 0 #fdfbd3;
+        }
+    }
+    .background-lightmode {
+        .sun {
+            margin: -51px -51px 0 0;
+        }
+    }
+}
+
+/* width <= 500px */
+@media screen and (width <= sass.$device-phone-portrait) {
+    section {
+        margin-top: 100px;
+    }
+    .page-head-wrapper {
+        margin-bottom: 40px;
+    }
+    .main {
+        margin: 0 15px;
+    }
+    .hero {
+        #hero-header-wrapper {
+            h2, h4, p {
+                padding-left: 2.5px; // Adapt to extra space of font on h1.
+            }
+        }
+    }
+    .work {
+        .work-content {
+            .workcard-preview {
+                max-width: 300px;
+            }
+        }
+    }
+    .about {
+        .about-content {
+            .about-content-img {
+                width: 100%;
             }
         }
     }
