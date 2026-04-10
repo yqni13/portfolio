@@ -1,5 +1,5 @@
 # yqni13 | $\texttt{\color{blueviolet}{PORTFOLIO}}$
-### $\textsf{\color{brown}{v0.9.0}}$
+### $\textsf{\color{brown}{v0.10.0}}$
 
 <br>
 
@@ -49,11 +49,10 @@ which will open automatically on `http://localhost:4200/`.
 ## 📈 $\textsf{\color{salmon}Updates}$
 [see changelog for all updates](./docs/CHANGELOG.md)
 
-$\textsf{[v0.8.0\ =>\ {\textbf{\color{brown}v0.9.0}]}}$ app
-- $\textsf{\color{teal}Addition:}$ Added responsive design for smartphone portrait-mode size.
+$\textsf{[v0.9.0\ =>\ {\textbf{\color{brown}v0.10.0}]}}$ app
+- $\textsf{\color{teal}Addition:}$ Added responsive design for devices with 500px > width <= 1440px.
 
 ### Objectives for next updates
 <dl>
     <dd>- remove placeholder images for real pictures</dd>
-    <dd>- add responsive design for devices between 500px and 1440px width</dd>
 </dl>
