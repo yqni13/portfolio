@@ -37,7 +37,7 @@
     }
     .work {
         .work-content {
-            width: 80vw;
+            width: 80%;
             max-width: 1440px;
             .workcard-preview {
                 height: 350px;
@@ -61,8 +61,9 @@
         }
     }
     .skills {
+        max-width: 1440px;
         #skills-content {
-            width: 66vw;
+            width: 80%;
             app-badge {
                 margin: 5px 15px 5px 0;
             }
@@ -80,7 +81,7 @@
     .about {
         .about-content {
             flex-direction: row;
-            width: 80vw;
+            width: 80%;
             .about-content-img {
                 width: 34%;
             }
@@ -98,7 +99,7 @@
     }
     .experience {
         .experience-content {
-            width: 55vw;
+            width: 55%;
             .experience-card {
                 .experience-card-link {
                     align-items: center;
@@ -166,7 +167,7 @@
     }
     .work {
         .work-content {
-            width: 90vw;
+            width: 90%;
             max-width: 1000px;
             .workcard-preview {
                 height: 350px;
@@ -190,6 +191,7 @@
         }
     }
     .skills {
+        max-width: 1000px;
         #skills-content {
             width: 75vw;
             app-badge {
@@ -209,7 +211,7 @@
     .about {
         .about-content {
             flex-direction: row;
-            width: 90vw;
+            width: 90%;
             .about-content-img {
                 width: 40%;
             }
@@ -227,7 +229,7 @@
     }
     .experience {
         .experience-content {
-            width: 75vw;
+            width: 75%;
             .experience-card {
                 .experience-card-link {
                     align-items: center;
@@ -321,6 +323,9 @@
                     flex-direction: column;
                     .experience-card-link-institute {
                         margin-bottom: 5px;
+                    }
+                    .experience-card-link-type {
+                        margin-top: 5px;
                     }
                 }
                 .experience-card-head {

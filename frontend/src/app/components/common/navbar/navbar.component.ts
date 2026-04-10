@@ -96,11 +96,11 @@ export class Navbar implements OnInit, AfterViewInit{
     private setNavWidthDynamically(width: number) {
         if(width > this.maxMobileScreenWidth) {
             this.document.body.setAttribute("data-nav", 'desktopMode');
-            this.deviceOption.update(_ => DeviceOption.DESKTOP);
+            this.deviceOption.set(DeviceOption.DESKTOP);
             this.observe.setDeviceOption(DeviceOption.DESKTOP);
         } else {
             this.document.body.setAttribute("data-nav", 'mobileMode');
-            this.deviceOption.update(_ => DeviceOption.MOBILE);
+            this.deviceOption.set(DeviceOption.MOBILE);
             this.observe.setDeviceOption(DeviceOption.MOBILE);
         }
     }

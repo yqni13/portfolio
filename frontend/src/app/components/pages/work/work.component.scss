@@ -5,7 +5,7 @@
     flex-direction: column;
     position: relative;
     align-items: center;
-
+    width: 100%;
     .work-content {
         margin: 0 0 sass.$space25 0;
         flex-wrap: wrap;
@@ -20,10 +20,10 @@
         font-weight: 300;
 
         i {
-            margin-left: sass.$space5;
-            $size: 15px;
+            $size: sass.$space15;
             width: $size;
             height: $size;
+            margin-left: sass.$space5;
         }
     }
 }
@@ -41,7 +41,7 @@
     h4 {
         font-size: 26px;
         font-weight: 300;
-        margin: 15px 0;
+        margin: sass.$space15 0;
         color: var(--theme-secondary);
     }
     #workcard-preview-intro {
@@ -55,6 +55,7 @@
         line-height: 20px;
         overflow: hidden;
         display: -webkit-box;
+        line-clamp: 3;
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
         text-overflow: ellipsis;
@@ -63,15 +64,15 @@
         margin: 0 auto;
         display: flex;
         align-items: center;
-        margin-top: 15px;
+        margin-top: sass.$space15;
         color: var(--theme-primary);
         opacity: 0.85;
         font-weight: 300;
         i {
-            margin-left: 5px;
-            $size: 15px;
+            $size: sass.$space15;
             width: $size;
             height: $size;
+            margin-left: 5px;
         }
     }
     #workcard-preview-links {

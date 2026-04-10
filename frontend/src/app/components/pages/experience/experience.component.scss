@@ -9,7 +9,7 @@ $card-padding: sass.$space25;
     width: 100%;
 
     .experience-content {
-        max-width: 1000px; // media.scss
+        max-width: 1000px;
         flex-direction: column;
         margin: 0 auto;
 
@@ -18,7 +18,7 @@ $card-padding: sass.$space25;
 
             .experience-timeline {
                 position: relative;
-                margin-right: 25px;
+                margin-right: sass.$space25;
                 opacity: 0.6;
                 &::before {
                     content: '';
@@ -76,8 +76,11 @@ $card-padding: sass.$space25;
             color: var(--theme-body-text);
             margin-right: sass.$space5;
             opacity: 0.85;
+            span {
+                display: contents;
+            }
             i {
-                $size: 15px;
+                $size: sass.$space15;
                 width: $size;
                 height: $size;
                 margin-left: sass.$space5;
@@ -94,7 +97,7 @@ $card-padding: sass.$space25;
     .experience-card-head {
         h4 {
             font-weight: 300;
-            font-size: 24px; // media.scss
+            font-size: 24px;
             margin: 0;
             color: var(--theme-secondary);
         }
@@ -121,7 +124,7 @@ $card-padding: sass.$space25;
     .experience-card-keys {
         flex-wrap: wrap;
         span {
-            font-size: 14px; // media.scss
+            font-size: 14px;
             opacity: 0.5;
             border: 1px solid var(--theme-nav-grey);
             border-radius: 10px;

@@ -14,8 +14,8 @@
     backdrop-filter: blur(3px);
     .workcard-detail-content {
         flex-direction: column;
-        width: 75%; // media.scss
-        max-width: 800px; // media.scss
+        width: 75%;
+        max-width: 800px;
         margin: 0 auto;
         border: 1px solid var(--theme-nav-grey);
         border-radius: 20px;
@@ -30,7 +30,7 @@
             span {
                 text-transform: uppercase;
                 font-weight: 300;
-                font-size: 18px; // media.scss
+                font-size: 18px;
                 color: var(--theme-body-text);
             }
             .workcard-detail-close {
@@ -66,7 +66,7 @@
                 .workcard-detail-header-split {
                     flex-direction: row;
                     h4 {
-                        font-size: 30px; // media.scss
+                        font-size: 30px;
                         font-weight: 400;
                         margin: 0;
                         color: var(--theme-secondary);
@@ -102,7 +102,7 @@
                 color: var(--theme-body-text);
                 text-transform: uppercase;
                 font-weight: 300;
-                font-size: 15px; // media.scss
+                font-size: 15px;
                 margin-bottom: 12.5px;
             }
             ul {
@@ -139,7 +139,7 @@
                 margin-top: 23px;
                 border-top: 1px solid var(--theme-grey);
                 padding: 25px 0 2px 0;
-                min-height: 50px; // media.scss (how does this work on mobile view?)
+                min-height: 50px; // "height" cuts off box-shadow
                 a {
                     $padding-horizontal: 25px;
                     $box-shadow-buffer: 4px;
