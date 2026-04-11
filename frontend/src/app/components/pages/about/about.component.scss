@@ -18,9 +18,9 @@
             border-radius: 20px;
             #signature-img {
                 position: absolute;
-                bottom: sass.$space15;
+                bottom: -15px;
+                right: 0;
                 rotate: -15deg;
-                right: sass.$space15;
                 width: 50%;
                 filter: var(--theme-signature);
             }
