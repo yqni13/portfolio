@@ -1,16 +1,10 @@
 # yqni13 | $\texttt{\color{blueviolet}{PORTFOLIO}}$
-### $\textsf{\color{brown}{v0.10.0}}$
-
-<br>
-
-<div align="center">
-    <a href=""><img src="" alt=""></a>
-</div>
+### $\textsf{\color{brown}{v1.0.0}}$
 
 <br>
 
 ### $\textsf{\color{teal}Hosting}$
-This project runs live (see link) - hosted via <a href="https://app.netlify.com/">Netlify</a>.<br>
+My portfolio is live (see link) - hosted via <a href="https://app.netlify.com/">Netlify</a>.<br>
 ### visit my <a href="https://yqni13.com">Portfolio LIVE</a>
 
 <br>
@@ -49,10 +43,5 @@ which will open automatically on `http://localhost:4200/`.
 ## 📈 $\textsf{\color{salmon}Updates}$
 [see changelog for all updates](./docs/CHANGELOG.md)
 
-$\textsf{[v0.9.0\ =>\ {\textbf{\color{brown}v0.10.0}]}}$ app
-- $\textsf{\color{teal}Addition:}$ Added responsive design for devices with 500px > width <= 1440px.
-
-### Objectives for next updates
-<dl>
-    <dd>- remove placeholder images for real pictures</dd>
-</dl>
+$\textsf{[v0.10.0\ =>\ {\textbf{\color{brown}v1.0.0}]}}$ app
+- $\textsf{\color{teal}Addition:}$ Added cv for download and final about image format.
