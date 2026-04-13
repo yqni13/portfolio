@@ -4,12 +4,12 @@ dotenv.config();
 let targetPath;
 switch(process.env['ENV_MODE']) {
     case('staging'): {
-        targetPath = "./src/environment/environment.stag.ts";
+        targetPath = "./src/environments/environment.stag.ts";
         break;
     }
     case('production'):
     default: {
-        targetPath = "./src/environment/environment.prod.ts";
+        targetPath = "./src/environments/environment.prod.ts";
     }
 }
 
