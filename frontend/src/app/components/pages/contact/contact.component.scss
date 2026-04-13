@@ -21,8 +21,8 @@
 
             h4 {
                 font-weight: 300;
-                font-size: 26px; // media.scss
-                margin: 0 auto 25px auto;
+                font-size: 26px;
+                margin: 0 auto sass.$space25 auto;
                 color: var(--theme-secondary);
             }
 
@@ -32,7 +32,7 @@
                 app-select-input {
                     display: block;
                     width: 100%;
-                    margin-bottom: 25px;
+                    margin-bottom: sass.$space25;
                 }
                 app-textarea-input {
                     display: block;
@@ -46,10 +46,10 @@
                 .btn-primary {
                     justify-content: center;
                     align-items: center;
-                    margin-top: 25px;
+                    margin-top: sass.$space25;
                     border-radius: 7px; // consistent with input components
                     i {
-                        $size: 15px;
+                        $size: sass.$space15;
                         width: $size;
                         height: $size;
                         margin-left: 7.5px;

@@ -62,7 +62,7 @@ h3 {
 .btn-primary {
     display: flex;
     align-items: center;
-    padding: 10px sass.$space25; // media.scss
+    padding: 10px sass.$space25;
     border: 1px outset transparent;
     border-radius: 10px;
     cursor: pointer;
@@ -75,16 +75,17 @@ h3 {
         }
     }
     i {
+        $size: sass.$space25;
         margin-left: sass.$space5;
-        width: 25px;
-        height: 25px;
+        width: $size;
+        height: $size;
     }
 }
 
 .btn-secondary {
     display: flex;
     align-items: center;
-    padding: 10px sass.$space25; // media.scss
+    padding: 10px sass.$space25;
     border: 1px solid var(--theme-nav-grey);
     border-radius: 10px;
     cursor: pointer;
@@ -97,19 +98,20 @@ h3 {
         }
     }
     i {
+        $size: sass.$space25;
         margin-left: sass.$space5;
-        width: 25px;
-        height: 25px;
+        width: $size;
+        height: $size;
     }
 }
 
 .btn-close {
     text-decoration: none;
     position: absolute;
-    top: 15px;
-    right: 15px;
+    top: sass.$space15;
+    right: sass.$space15;
     i {
-        $size: 25px;
+        $size: sass.$space25;
         width: $size;
         height: $size;
         padding: 5px;

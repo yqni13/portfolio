@@ -23,7 +23,7 @@ export class HeroComponent {
             text: 'I build scalable end-to-end applications with Angular, Node.js, Express.js, and PostgreSQL. My focus is on clean architecture, maintainability, testability and production-ready quality.'
         };
         this.cv = {
-            path: 'assets/pdf/CV_LukasVarga_portfolio.pdf',
+            path: '/assets/pdf/CV_LukasVarga_portfolio.pdf',
             name: 'CV_LukasVarga'
         }
     }

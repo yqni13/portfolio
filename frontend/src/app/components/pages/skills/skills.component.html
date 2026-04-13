@@ -6,7 +6,7 @@
     <div id="skills-content">
         @for(skillset of skills; track $index) {
             <div class="skills-wrapper">
-                <h4>{{skillset.title}}</h4>
+                <h4 [ngClass]="'skills-h4-' + $index">{{skillset.title}}</h4>
                 <div class="skills-badge-wrapper">
                     @for(skill of skillset.skills; track $index) {
                         <app-badge

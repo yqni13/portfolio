@@ -15,12 +15,12 @@
             /* Background-image dynamically set in .ts theme-subscription */
             background-size: cover;
             background-repeat: no-repeat;
-            border-radius: 25px;
+            border-radius: 20px;
             #signature-img {
                 position: absolute;
-                bottom: 15px;
+                bottom: -15px;
+                right: 0;
                 rotate: -15deg;
-                right: 15px;
                 width: 50%;
                 filter: var(--theme-signature);
             }

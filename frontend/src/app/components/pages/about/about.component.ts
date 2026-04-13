@@ -42,9 +42,9 @@ export class AboutComponent extends BaseComponent implements OnInit, OnDestroy {
     ngOnInit() {
         this.subscriptionTheme$ = this.observe.themeOption$.subscribe(theme => {
             if(theme === ThemeOption.LIGHT) {
-                this.imgByTheme = {'background-image': 'url(\"/assets/img/placeholder_about_light.jpg\")'};
+                this.imgByTheme = {'background-image': 'url(\"/assets/img/about_light.webp\")'};
             } else {
-                this.imgByTheme = {'background-image': 'url(\"/assets/img/placeholder_about_dark.jpg\")'};
+                this.imgByTheme = {'background-image': 'url(\"/assets/img/about_dark.webp\")'};
             }
         })
     }

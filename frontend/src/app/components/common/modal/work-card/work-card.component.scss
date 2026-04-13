@@ -14,8 +14,8 @@
     backdrop-filter: blur(3px);
     .workcard-detail-content {
         flex-direction: column;
-        width: 75%; // media.scss
-        max-width: 800px; // media.scss
+        width: 75%;
+        max-width: 800px;
         margin: 0 auto;
         border: 1px solid var(--theme-nav-grey);
         border-radius: 20px;
@@ -30,7 +30,7 @@
             span {
                 text-transform: uppercase;
                 font-weight: 300;
-                font-size: 18px; // media.scss
+                font-size: 18px;
                 color: var(--theme-body-text);
             }
             .workcard-detail-close {
@@ -66,7 +66,7 @@
                 .workcard-detail-header-split {
                     flex-direction: row;
                     h4 {
-                        font-size: 30px; // media.scss
+                        font-size: 30px;
                         font-weight: 400;
                         margin: 0;
                         color: var(--theme-secondary);
@@ -87,9 +87,11 @@
                 span {
                     font-weight: 300;
                     text-transform: uppercase;
-                    font-size: 13px;
+                    font-size: 12px;
                     color: var(--theme-body-text);
                     opacity: 0.8;
+                    border: 1px solid var(--theme-grey);
+                    padding: 7.5px;
                 }
             }
             p {
@@ -100,7 +102,7 @@
                 color: var(--theme-body-text);
                 text-transform: uppercase;
                 font-weight: 300;
-                font-size: 15px; // media.scss
+                font-size: 15px;
                 margin-bottom: 12.5px;
             }
             ul {
@@ -122,9 +124,6 @@
             #workcard-detail-techstack {
                 flex-direction: row;
                 flex-wrap: wrap;
-                padding-bottom: 25px;
-                margin-bottom: 28px;
-                border-bottom: 1px solid var(--theme-grey);
                 span {
                     border: 1px solid var(--theme-grey);
                     background-color: var(--theme-component);
@@ -137,16 +136,22 @@
                 align-content: center;
                 flex-wrap: wrap;
                 width: 100%;
-                padding: 0 0 2px 0;
-                min-height: 50px; // media.scss (how does this work on mobile view?)
+                margin-top: 23px;
+                border-top: 1px solid var(--theme-grey);
+                padding: 25px 0 2px 0;
+                min-height: 50px; // "height" cuts off box-shadow
                 a {
                     $padding-horizontal: 25px;
                     $box-shadow-buffer: 4px;
-                    position: absolute;
+                    $techstack-buffer: 3px;
                     border-radius: 10px;
                     padding: 10px $padding-horizontal;
                     width: calc(100% - ($padding-horizontal * 2) - $box-shadow-buffer);
-                    top: -2px;
+
+                    /* Overflow:scroll disturbs margin-bottom on last element which hides box-shadow on bottom of element => use position:absolute + top:number to place button for target visible effect */
+                    position: absolute;
+                    top: calc($padding-horizontal + $techstack-buffer);
+
                     left: 0;
                     right: 0;
                     margin-inline: auto;
