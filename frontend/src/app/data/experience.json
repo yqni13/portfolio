@@ -27,7 +27,7 @@
         "core": [
             "Attributed to development of terminal operating system 'smartTOS' from early development to production release",
             "Used Leaflet for outdoor storage administration via custom map images",
-            "Assisting team in code reviews and manual testing (Usability, UI, Functional)"
+            "Supporting the team through code reviews and manual testing (Usability, UI, Functional)"
         ],
         "keys": ["Angular", "C#", "Docker", "MySQL", "Agile", "Jira", "GitLab", "Testing"]
     },
