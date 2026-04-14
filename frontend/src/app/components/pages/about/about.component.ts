@@ -4,6 +4,7 @@ import { Subscription } from "rxjs";
 import { ObservationService } from "../../../services/observe.service";
 import { ThemeOption } from "../../../utils/enums/theme-option.enum";
 import { CommonModule } from "@angular/common";
+import { environment } from "../../../../environments/environment";
 
 @Component({
     selector: 'app-about',
@@ -17,6 +18,7 @@ export class AboutComponent extends BaseComponent implements OnInit, OnDestroy {
     protected imgByTheme: { [key: string]: string };
 
     private subscriptionTheme$: Subscription;
+    private cdnUrlBase = environment.API_STORAGE_URL;
 
     constructor(
         private readonly observe: ObservationService,
@@ -42,9 +44,13 @@ export class AboutComponent extends BaseComponent implements OnInit, OnDestroy {
     ngOnInit() {
         this.subscriptionTheme$ = this.observe.themeOption$.subscribe(theme => {
             if(theme === ThemeOption.LIGHT) {
-                this.imgByTheme = {'background-image': 'url(\"/assets/img/about_light.webp\")'};
+                this.imgByTheme = {
+                    'background-image': `url(${this.cdnUrlBase}/container/portfolio/portrait/about_light.webp)`
+                };
             } else {
-                this.imgByTheme = {'background-image': 'url(\"/assets/img/about_dark.webp\")'};
+                this.imgByTheme = {
+                    'background-image': `url(${this.cdnUrlBase}/container/portfolio/portrait/about_dark.webp)`
+                };
             }
         })
     }

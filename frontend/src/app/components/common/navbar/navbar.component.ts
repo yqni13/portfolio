@@ -41,7 +41,7 @@ export class Navbar implements OnInit, AfterViewInit{
         private readonly observe: ObservationService,
         private readonly themeHandler: ThemeHandlerService,
     ) {
-        this.selectedTheme = this.themeHandler.checkThemeSettings();
+        this.selectedTheme = this.themeHandler.getThemeSetting();
         this.themeHandler.setThemeSettings(this.selectedTheme);
         this.activeMenu = this.navigate.activeSection$;
         this.activeMobileMenu = false;

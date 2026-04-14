@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, Output } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { Project } from "../../../../utils/interfaces/work.interface";
 import { ProjectMandate } from "../../../../utils/enums/work.enum";
+import { environment } from "../../../../../environments/environment";
 
 @Component({
     selector: 'app-workcard',
@@ -20,6 +21,8 @@ export class WorkCardComponent {
     @Input() data: Project;
     @Output() byChange: EventEmitter<any>;
 
+    protected cdnUrlBase: string;
+
     constructor() {
         this.data = {
             thumbnail: '',
@@ -35,6 +38,8 @@ export class WorkCardComponent {
             techstack: []
         };
         this.byChange = new EventEmitter<any>();
+
+        this.cdnUrlBase = environment.API_STORAGE_URL;
     }
 
     closeDetails() {
