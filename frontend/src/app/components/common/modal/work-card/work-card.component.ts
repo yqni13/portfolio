@@ -1,8 +1,10 @@
-import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { Project } from "../../../../utils/interfaces/work.interface";
 import { ProjectMandate } from "../../../../utils/enums/work.enum";
 import { environment } from "../../../../../environments/environment";
+import { PreloadService } from "../../../../services/preload.service";
+import { ResourceOption } from "../../../../utils/enums/resource-option.enum";
 
 @Component({
     selector: 'app-workcard',
@@ -16,14 +18,16 @@ import { environment } from "../../../../../environments/environment";
         '(document:keydown.escape)': 'closeDetails()'
     }
 })
-export class WorkCardComponent {
+export class WorkCardComponent implements OnInit {
 
     @Input() data: Project;
     @Output() byChange: EventEmitter<any>;
 
     protected cdnUrlBase: string;
 
-    constructor() {
+    constructor(
+        private readonly preload: PreloadService,
+    ) {
         this.data = {
             thumbnail: '',
             name: '',
@@ -40,6 +44,13 @@ export class WorkCardComponent {
         this.byChange = new EventEmitter<any>();
 
         this.cdnUrlBase = environment.API_STORAGE_URL;
+    }
+
+    async ngOnInit() {
+        await this.preload.preloadSingle({
+            option: ResourceOption.IMG,
+            url: `${environment.API_STORAGE_URL}${this.data.thumbnail}`
+        });
     }
 
     closeDetails() {

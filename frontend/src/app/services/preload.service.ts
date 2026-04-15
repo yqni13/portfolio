@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { ResourceOption } from "../utils/enums/resource-option.enum";
-import { PreloadData, VideoData } from "../utils/interfaces/preload.interface";
+import { PreloadData, VideoDetails } from "../utils/interfaces/preload.interface";
 
 @Injectable({
     providedIn: 'root'
@@ -32,7 +32,7 @@ export class PreloadService {
         })
     }
 
-    private loadVideo(url: string, option: VideoData): Promise<void> {
+    private loadVideo(url: string, option: VideoDetails): Promise<void> {
         return new Promise((resolve, reject) => {
             const video = document.createElement('video');
             video.preload = option.preload;
