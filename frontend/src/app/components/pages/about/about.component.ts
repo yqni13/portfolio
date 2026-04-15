@@ -5,6 +5,8 @@ import { ObservationService } from "../../../services/observe.service";
 import { ThemeOption } from "../../../utils/enums/theme-option.enum";
 import { CommonModule } from "@angular/common";
 import { environment } from "../../../../environments/environment";
+import { PreloadService } from "../../../services/preload.service";
+import { ResourceOption } from "../../../utils/enums/resource-option.enum";
 
 @Component({
     selector: 'app-about',
@@ -18,9 +20,10 @@ export class AboutComponent extends BaseComponent implements OnInit, OnDestroy {
     protected imgByTheme: { [key: string]: string };
 
     private subscriptionTheme$: Subscription;
-    private cdnUrlBase = environment.API_STORAGE_URL;
+    private portraitPaths: Record<string, string>;
 
     constructor(
+        private readonly preload: PreloadService,
         private readonly observe: ObservationService,
     ) {
         super();
@@ -39,17 +42,26 @@ export class AboutComponent extends BaseComponent implements OnInit, OnDestroy {
         this.imgByTheme = {};
 
         this.subscriptionTheme$ = new Subscription();
+        this.portraitPaths = {
+            light: `${environment.API_STORAGE_URL}/container/portfolio/portrait/about_light.webp`,
+            dark: `${environment.API_STORAGE_URL}/container/portfolio/portrait/about_dark.webp`
+        };
     }
 
-    ngOnInit() {
+    async ngOnInit() {
+        await this.preload.preloadMultiple([
+            { option: ResourceOption.IMG, url: this.portraitPaths['light'] },
+            { option: ResourceOption.IMG, url: this.portraitPaths['dark'] },
+        ]);
+
         this.subscriptionTheme$ = this.observe.themeOption$.subscribe(theme => {
             if(theme === ThemeOption.LIGHT) {
                 this.imgByTheme = {
-                    'background-image': `url(${this.cdnUrlBase}/container/portfolio/portrait/about_light.webp)`
+                    'background-image': `url(${this.portraitPaths['light']})`
                 };
             } else {
                 this.imgByTheme = {
-                    'background-image': `url(${this.cdnUrlBase}/container/portfolio/portrait/about_dark.webp)`
+                    'background-image': `url(${this.portraitPaths['dark']})`
                 };
             }
         })

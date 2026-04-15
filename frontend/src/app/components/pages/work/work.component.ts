@@ -1,10 +1,13 @@
-import { Component, DOCUMENT, Inject } from "@angular/core";
+import { Component, DOCUMENT, Inject, OnInit } from "@angular/core";
 import { BaseComponent } from "../base.component";
 import { default as projectData } from "../../../data/work.json";
 import { Project } from "../../../utils/interfaces/work.interface";
 import { CommonModule } from "@angular/common";
 import { WorkCardComponent } from "../../common/modal/work-card/work-card.component";
 import { ProjectMandate } from "../../../utils/enums/work.enum";
+import { PreloadService } from "../../../services/preload.service";
+import { ResourceOption } from "../../../utils/enums/resource-option.enum";
+import { environment } from "../../../../environments/environment";
 
 @Component({
     selector: 'app-work',
@@ -18,13 +21,16 @@ import { ProjectMandate } from "../../../utils/enums/work.enum";
         '(click)': 'preventOpenDetails($event)'
     }
 })
-export class WorkComponent extends BaseComponent {
+export class WorkComponent extends BaseComponent implements OnInit {
 
     protected projects: Project[];
     protected allRepoLink: string;
     protected cardDetails: Project | null;
 
-    constructor(@Inject(DOCUMENT) private document: Document,) {
+    constructor(
+        private readonly preload: PreloadService,
+        @Inject(DOCUMENT) private document: Document
+    ) {
         super();
         this.data = {
             title: 'Selected Work',
@@ -33,6 +39,15 @@ export class WorkComponent extends BaseComponent {
         this.projects = this.toProjectArray(projectData);
         this.allRepoLink = 'https://github.com/yqni13?tab=repositories';
         this.cardDetails = null;
+    }
+
+    async ngOnInit() {
+        for(const project of this.projects) {
+            await this.preload.preloadSingle({
+                option: ResourceOption.IMG,
+                url: `${environment.API_STORAGE_URL}${project.thumbnail}`
+            });
+        }
     }
 
     openDetails(data: Project) {

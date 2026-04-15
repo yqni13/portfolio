@@ -1,8 +1,18 @@
 ## 📜 $\textsf{\color{salmon}{List\ of\ updates}}$
 
+### $\textsf{\color{skyblue}2026/04/15}$
+
+$\textsf{[v1.0.0\ =>\ {\textbf{\color{brown}v1.1.2}]}}$ app
+- $\textsf{\color{teal}Addition:}$ Added preload service for differnt resources (img, video).
+- $\textsf{\color{orange}Patch:}$ Updated:
+  + images to be loaded from cdn instead of in-memory
+  + init root with dark theme to avoid delay of style-loading on refresh
+
+<br>
+
 ### $\textsf{\color{skyblue}2026/04/13}$
 
-$\textsf{[v0.10.0\ =>\ {\textbf{\color{brown}v1.0.0}]}}$ app
+$\textsf{[v0.10.0\ =>\ v1.0.0]}$ app
 - $\textsf{\color{teal}Addition:}$ Added cv for download and final about image format.
 
 <br>
