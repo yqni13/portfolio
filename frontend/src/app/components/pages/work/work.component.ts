@@ -24,7 +24,9 @@ export class WorkComponent extends BaseComponent {
     protected allRepoLink: string;
     protected cardDetails: Project | null;
 
-    constructor(@Inject(DOCUMENT) private document: Document,) {
+    constructor(
+        @Inject(DOCUMENT) private document: Document
+    ) {
         super();
         this.data = {
             title: 'Selected Work',

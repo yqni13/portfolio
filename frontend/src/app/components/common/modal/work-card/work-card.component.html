@@ -1,58 +1,60 @@
-@if(data) {
-    <div class="workcard-detail">
-        <div class="workcard-detail-content">
-            <div id="workcard-detail-content-head">
-                <span>Project details</span>
-                <a class="workcard-detail-close" (click)="closeDetails()">
-                    <i class="icon-base icon-Close"></i>
-                </a>
-            </div>
-            <div class="workcard-detail-content-wrapper">
-                <div id="workcard-detail-thumbnail">
-                    <img src="{{data.thumbnail}}" alt="thumbnail">
+@defer {
+    @if(data) {
+        <div class="workcard-detail">
+            <div class="workcard-detail-content">
+                <div id="workcard-detail-content-head">
+                    <span>Project details</span>
+                    <a class="workcard-detail-close" (click)="closeDetails()">
+                        <i class="icon-base icon-Close"></i>
+                    </a>
                 </div>
-                <div class="workcard-detail-header">
-                    <div class="workcard-detail-header-split">
-                        <h4>{{data.name}}</h4>
-                        <a href="{{data.links.repo}}" target="_blank" class="link-primary">
-                            <i class="icon-base icon-GitHub"></i>
-                        </a>
+                <div class="workcard-detail-content-wrapper">
+                    <div id="workcard-detail-thumbnail">
+                        <img src="{{cdnUrlBase + data.thumbnail}}" alt="thumbnail">
                     </div>
-                    <span>type : {{data.type.mandate}}</span>
-                </div>
-                <span id="workcard-detail-intro">{{data.intro}}</span>
-                <p>{{data.description}}</p>
-                <span class="workcard-detail-subheader">Impact</span>
-                <ul>
-                    @for(listing of data.impact; track $index) {
-                        <li>
-                            <span>{{listing}}</span>
-                        </li>
-                    }
-                </ul>
-                <span class="workcard-detail-subheader">Tech stack</span>
-                <div id="workcard-detail-techstack">
-                    @for(item of data.techstack; track $index) {
-                        <span class="workcard-detail-techstack-item">{{item}}</span>
-                    }
-                </div>
-                @if(data.links.demo || data.links.live) {
-                    <div id="workcard-detail-links">
-                        @if(data.links.demo) {
-                            <a href="{{data.links.demo}}" target="_blank" class="btn-primary">
-                                <span>Visit demo</span>
-                                <i class="icon-base icon-GoTo"></i>
+                    <div class="workcard-detail-header">
+                        <div class="workcard-detail-header-split">
+                            <h4>{{data.name}}</h4>
+                            <a href="{{data.links.repo}}" target="_blank" class="link-primary">
+                                <i class="icon-base icon-GitHub"></i>
                             </a>
+                        </div>
+                        <span>type : {{data.type.mandate}}</span>
+                    </div>
+                    <span id="workcard-detail-intro">{{data.intro}}</span>
+                    <p>{{data.description}}</p>
+                    <span class="workcard-detail-subheader">Impact</span>
+                    <ul>
+                        @for(listing of data.impact; track $index) {
+                            <li>
+                                <span>{{listing}}</span>
+                            </li>
                         }
-                        @if(data.links.live) {
-                            <a href="{{data.links.live}}" target="_blank" class="btn-primary">
-                                <span>Visit website</span>
-                                <i class="icon-base icon-GoTo"></i>
-                            </a>
+                    </ul>
+                    <span class="workcard-detail-subheader">Tech stack</span>
+                    <div id="workcard-detail-techstack">
+                        @for(item of data.techstack; track $index) {
+                            <span class="workcard-detail-techstack-item">{{item}}</span>
                         }
                     </div>
-                }
+                    @if(data.links.demo || data.links.live) {
+                        <div id="workcard-detail-links">
+                            @if(data.links.demo) {
+                                <a href="{{data.links.demo}}" target="_blank" class="btn-primary">
+                                    <span>Visit demo</span>
+                                    <i class="icon-base icon-GoTo"></i>
+                                </a>
+                            }
+                            @if(data.links.live) {
+                                <a href="{{data.links.live}}" target="_blank" class="btn-primary">
+                                    <span>Visit website</span>
+                                    <i class="icon-base icon-GoTo"></i>
+                                </a>
+                            }
+                        </div>
+                    }
+                </div>
             </div>
         </div>
-    </div>
+    }
 }
