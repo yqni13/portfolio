@@ -47,4 +47,6 @@ $\textsf{[v1.0.0\ =>\ {\textbf{\color{brown}v1.1.2}]}}$ app
 - $\textsf{\color{teal}Addition:}$ Added preload service for differnt resources (img, video).
 - $\textsf{\color{orange}Patch:}$ Updated:
   + images to be loaded from cdn instead of in-memory
-  + init root with dark theme to avoid delay of style-loading on refresh
+  + init root with respective theme background-color (backup styling on loading/refresh)
+  + use @defer to lazy load rendering in browser for stylesheet loading delay (temp solution for Angular flickering issue)
+  => https://stackoverflow.com/questions/79207839/angular-flickering-issue
