@@ -1,8 +1,29 @@
 ## 📜 $\textsf{\color{salmon}{List\ of\ updates}}$
 
+### $\textsf{\color{skyblue}2026/04/16}$
+
+$\textsf{[v1.1.2\ =>\ {\textbf{\color{brown}v1.1.4}]}}$ app
+- $\textsf{\color{orange}Patch:}$ Updated:
+  + moved observation of navigation from "app" to "navbar" component
+  + use delay by setTimeout to prevent highlighted button flickering while loading work-card for better UX
+
+<br>
+
+### $\textsf{\color{skyblue}2026/04/15}$
+
+$\textsf{[v1.0.0\ =>\ v1.1.2]}$ app
+- $\textsf{\color{teal}Addition:}$ Added preload service for differnt resources (img, video).
+- $\textsf{\color{orange}Patch:}$ Updated:
+  + images to be loaded from cdn instead of in-memory
+  + init root with respective theme background-color (backup styling on loading/refresh)
+  + use @defer to lazy load rendering in browser for stylesheet loading delay (temp solution for Angular flickering issue)
+  => https://stackoverflow.com/questions/79207839/angular-flickering-issue
+
+<br>
+
 ### $\textsf{\color{skyblue}2026/04/13}$
 
-$\textsf{[v0.10.0\ =>\ {\textbf{\color{brown}v1.0.0}]}}$ app
+$\textsf{[v0.10.0\ =>\ v1.0.0]}$ app
 - $\textsf{\color{teal}Addition:}$ Added cv for download and final about image format.
 
 <br>
