@@ -1,4 +1,4 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Navbar } from './components/common/navbar/navbar.component';
 import { AboutComponent } from './components/pages/about/about.component';
@@ -8,7 +8,6 @@ import { WorkComponent } from './components/pages/work/work.component';
 import { SkillsComponent } from './components/pages/skills/skills.component';
 import { ExperienceComponent } from './components/pages/experience/experience.component';
 import { ContactComponent } from './components/pages/contact/contact.component';
-import { NavigationService } from './services/navigation.service';
 import { NotifyModalComponent } from './components/common/modal/notify-modal/notify-modal.component';
 import { NotifyModalService } from './services/notify-modal.service';
 import { CommonModule } from '@angular/common';
@@ -33,19 +32,13 @@ import { BackgroundComponent } from './components/common/background/background.c
 		NotifyModalComponent
 	],
 })
-export class App implements OnInit {
+export class App {
 
 	protected readonly title = signal('portfolio');
-	private sectionIds: string[];
 
 	constructor(
-		public readonly notifyModal: NotifyModalService,
-		private readonly navigate: NavigationService
+		public readonly notifyModal: NotifyModalService
 	) {
-		this.sectionIds = ["head-home", "head-work", "head-skills", "head-about", "head-experience", "head-contact"];
-	}
-
-	ngOnInit() {
-		this.navigate.observe(this.sectionIds);
+		//
 	}
 }
