@@ -19,6 +19,7 @@ export const environment: Environment = {
     ENV_MODE: '${process.env['ENV_MODE']}',
     NOTIFY_ADMIN_ID: '${process.env['NOTIFY_ADMIN_ID']}',
     NOTIFY_BOT_KEY: '${process.env['NOTIFY_BOT_KEY']}',
+    API_STORAGE_URL: '${process.env['API_STORAGE_URL']}'
 };
 `;
 fs.writeFileSync(targetPath, envConfigFile);

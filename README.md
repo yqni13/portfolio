@@ -1,5 +1,5 @@
 # yqni13 | $\texttt{\color{blueviolet}{PORTFOLIO}}$
-### $\textsf{\color{brown}{v1.0.0}}$
+### $\textsf{\color{brown}{v1.1.2}}$
 
 <br>
 
@@ -43,5 +43,10 @@ which will open automatically on `http://localhost:4200/`.
 ## 📈 $\textsf{\color{salmon}Updates}$
 [see changelog for all updates](./docs/CHANGELOG.md)
 
-$\textsf{[v0.10.0\ =>\ {\textbf{\color{brown}v1.0.0}]}}$ app
-- $\textsf{\color{teal}Addition:}$ Added cv for download and final about image format.
+$\textsf{[v1.0.0\ =>\ {\textbf{\color{brown}v1.1.2}]}}$ app
+- $\textsf{\color{teal}Addition:}$ Added preload service for differnt resources (img, video).
+- $\textsf{\color{orange}Patch:}$ Updated:
+  + images to be loaded from cdn instead of in-memory
+  + init root with respective theme background-color (backup styling on loading/refresh)
+  + use @defer to lazy load rendering in browser for stylesheet loading delay (temp solution for Angular flickering issue)
+  => https://stackoverflow.com/questions/79207839/angular-flickering-issue
