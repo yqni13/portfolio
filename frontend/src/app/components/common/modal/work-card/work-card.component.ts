@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
+import { ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { Project } from "../../../../utils/interfaces/work.interface";
 import { ProjectMandate } from "../../../../utils/enums/work.enum";
@@ -24,9 +24,11 @@ export class WorkCardComponent implements OnInit {
     @Output() byChange: EventEmitter<any>;
 
     protected cdnUrlBase: string;
+    protected isLoadingDelay: boolean;
 
     constructor(
         private readonly preload: PreloadService,
+        private readonly cdRef: ChangeDetectorRef,
     ) {
         this.data = {
             thumbnail: '',
@@ -44,6 +46,7 @@ export class WorkCardComponent implements OnInit {
         this.byChange = new EventEmitter<any>();
 
         this.cdnUrlBase = environment.API_STORAGE_URL;
+        this.isLoadingDelay = true;
     }
 
     async ngOnInit() {
@@ -51,6 +54,11 @@ export class WorkCardComponent implements OnInit {
             option: ResourceOption.IMG,
             url: `${environment.API_STORAGE_URL}${this.data.thumbnail}`
         });
+
+        setTimeout(() => {
+            this.isLoadingDelay = false;
+            this.cdRef.detectChanges(); // Avoid colored button flickering for better UX
+        }, 0)
     }
 
     closeDetails() {
