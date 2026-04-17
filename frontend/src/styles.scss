@@ -26,6 +26,10 @@ body {
     padding: 0;
 }
 
+:root {
+    background-color: var(--theme-body-bg);
+}
+
 div,
 section {
     display: flex;

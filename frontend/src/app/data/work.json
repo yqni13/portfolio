@@ -1,6 +1,6 @@
 [
     {
-        "thumbnail": "/assets/thumbnail/support.jpg",
+        "thumbnail": "/container/portfolio/projects/support.jpg",
         "name": "Support-Hub",
         "type": {
             "stack": "backend",
@@ -24,7 +24,7 @@
         }
     },
     {
-        "thumbnail": "/assets/thumbnail/taxi-varga.jpg",
+        "thumbnail": "/container/portfolio/projects/taxi-varga.jpg",
         "name": "Taxi-Varga",
         "type": {
             "stack": "full stack",
@@ -47,7 +47,7 @@
         }
     },
     {
-        "thumbnail": "/assets/thumbnail/artcreation-dv.jpg",
+        "thumbnail": "/container/portfolio/projects/artcreation-dv.jpg",
         "name": "Artcreation-DV",
         "type": {
             "stack": "full stack",

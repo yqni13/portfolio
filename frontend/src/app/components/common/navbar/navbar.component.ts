@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, DOCUMENT, ElementRef, Inject, OnInit, signal, ViewChild } from "@angular/core";
+import { AfterViewInit, Component, DOCUMENT, ElementRef, Inject, OnDestroy, OnInit, signal, ViewChild } from "@angular/core";
 import { ThemeOption } from "../../../utils/enums/theme-option.enum";
 import _ from "underscore";
 import { ThemeHandlerService } from "../../../services/theme.service";
@@ -17,7 +17,7 @@ import { ObservationService } from "../../../services/observe.service";
         CommonModule
     ]
 })
-export class Navbar implements OnInit, AfterViewInit{
+export class Navbar implements OnInit, AfterViewInit, OnDestroy {
 
     @ViewChild("themeIcon") themeIcon!: ElementRef;
 
@@ -33,6 +33,7 @@ export class Navbar implements OnInit, AfterViewInit{
     protected logo: any;
 
     private maxMobileScreenWidth: number;
+    private sectionIds: string[];
     private window: any;
 
     constructor(
@@ -41,7 +42,7 @@ export class Navbar implements OnInit, AfterViewInit{
         private readonly observe: ObservationService,
         private readonly themeHandler: ThemeHandlerService,
     ) {
-        this.selectedTheme = this.themeHandler.checkThemeSettings();
+        this.selectedTheme = this.themeHandler.getThemeSetting();
         this.themeHandler.setThemeSettings(this.selectedTheme);
         this.activeMenu = this.navigate.activeSection$;
         this.activeMobileMenu = false;
@@ -54,6 +55,7 @@ export class Navbar implements OnInit, AfterViewInit{
         this.logo = new Image().src = 'yqni13_logo256.ico';
 
         this.maxMobileScreenWidth = 1024;
+        this.sectionIds = ["head-home", "head-work", "head-skills", "head-about", "head-experience", "head-contact"];
         this.window = this.document.defaultView;
     }
 
@@ -74,6 +76,8 @@ export class Navbar implements OnInit, AfterViewInit{
             this.setNavWidthDynamically(this.document.body.clientWidth);
         }, 250)
         this.window.addEventListener("resize", clientWidthRequestSlowedDown, false);
+
+        this.navigate.observe(this.sectionIds);
     }
 
     ngAfterViewInit() {
@@ -125,5 +129,9 @@ export class Navbar implements OnInit, AfterViewInit{
     closeFullMenuOnMobile() {
         this.activeMobileMenu = false;
         this.document.body.style.setProperty('overflow', 'auto');
+    }
+
+    ngOnDestroy() {
+        this.navigate.disconnect();
     }
 }

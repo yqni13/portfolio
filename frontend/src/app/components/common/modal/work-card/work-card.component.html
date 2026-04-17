@@ -9,7 +9,7 @@
             </div>
             <div class="workcard-detail-content-wrapper">
                 <div id="workcard-detail-thumbnail">
-                    <img src="{{data.thumbnail}}" alt="thumbnail">
+                    <img src="{{cdnUrlBase + data.thumbnail}}" alt="thumbnail">
                 </div>
                 <div class="workcard-detail-header">
                     <div class="workcard-detail-header-split">
@@ -36,7 +36,7 @@
                         <span class="workcard-detail-techstack-item">{{item}}</span>
                     }
                 </div>
-                @if(data.links.demo || data.links.live) {
+                @if((data.links.demo || data.links.live) && !isLoadingDelay) {
                     <div id="workcard-detail-links">
                         @if(data.links.demo) {
                             <a href="{{data.links.demo}}" target="_blank" class="btn-primary">

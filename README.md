@@ -1,5 +1,5 @@
 # yqni13 | $\texttt{\color{blueviolet}{PORTFOLIO}}$
-### $\textsf{\color{brown}{v1.0.0}}$
+### $\textsf{\color{brown}{v1.1.4}}$
 
 <br>
 
@@ -43,5 +43,7 @@ which will open automatically on `http://localhost:4200/`.
 ## 📈 $\textsf{\color{salmon}Updates}$
 [see changelog for all updates](./docs/CHANGELOG.md)
 
-$\textsf{[v0.10.0\ =>\ {\textbf{\color{brown}v1.0.0}]}}$ app
-- $\textsf{\color{teal}Addition:}$ Added cv for download and final about image format.
+$\textsf{[v1.1.2\ =>\ {\textbf{\color{brown}v1.1.4}]}}$ app
+- $\textsf{\color{orange}Patch:}$ Updated:
+  + moved observation of navigation from "app" to "navbar" component
+  + use delay by setTimeout to prevent highlighted button flickering while loading work-card for better UX
