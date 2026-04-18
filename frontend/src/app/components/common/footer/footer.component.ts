@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { default as metaData } from "../../../../../package.json";
 
 @Component({
     selector: 'app-footer',
@@ -8,7 +9,9 @@ import { Component } from "@angular/core";
 })
 export class Footer {
 
+    protected version: string;
+
     constructor() {
-        //
+        this.version = metaData.version;
     }
 }
