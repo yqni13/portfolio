@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from "@angular/core";
+import { ChangeDetectorRef, Component, OnDestroy, OnInit } from "@angular/core";
 import { BaseComponent } from "../base.component";
 import { Subscription } from "rxjs";
 import { ObservationService } from "../../../services/observe.service";
@@ -24,6 +24,7 @@ export class AboutComponent extends BaseComponent implements OnInit, OnDestroy {
 
     constructor(
         private readonly preload: PreloadService,
+        private readonly cdRef: ChangeDetectorRef,
         private readonly observe: ObservationService,
     ) {
         super();
@@ -64,6 +65,7 @@ export class AboutComponent extends BaseComponent implements OnInit, OnDestroy {
                     'background-image': `url(${this.portraitPaths['dark']})`
                 };
             }
+            this.cdRef.detectChanges();
         })
     }
 
