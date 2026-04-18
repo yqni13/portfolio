@@ -1,5 +1,5 @@
 # yqni13 | $\texttt{\color{blueviolet}{PORTFOLIO}}$
-### $\textsf{\color{brown}{v1.1.4}}$
+### $\textsf{\color{brown}{v1.1.6}}$
 
 <br>
 
@@ -43,7 +43,6 @@ which will open automatically on `http://localhost:4200/`.
 ## 📈 $\textsf{\color{salmon}Updates}$
 [see changelog for all updates](./docs/CHANGELOG.md)
 
-$\textsf{[v1.1.2\ =>\ {\textbf{\color{brown}v1.1.4}]}}$ app
-- $\textsf{\color{orange}Patch:}$ Updated:
-  + moved observation of navigation from "app" to "navbar" component
-  + use delay by setTimeout to prevent highlighted button flickering while loading work-card for better UX
+$\textsf{[v1.1.4\ =>\ {\textbf{\color{brown}v1.1.6}]}}$ app
+- $\textsf{\color{orange}Patch:}$ Updated 'footer' to display current version.
+- $\textsf{\color{red}Bugfix:}$ Images in section 'about' are now shown after loading. [Before: Preload of images and initialization of theme setting had different timing which lead to loading but not showing the images. Fixed by adding manual change detection after setting the images.]
