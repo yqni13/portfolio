@@ -1,13 +1,13 @@
 import { CommonModule } from "@angular/common";
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, input, OnInit } from "@angular/core";
 import { ThemeOption } from "../../../utils/enums/theme-option.enum";
 
 @Component({
     selector: 'app-badge',
     template: `
-    <a class="badge" href="{{link}}" target="_blank">
-        <i class="icon-base" ngClass="{{icon}}" [ngStyle]="customStyle ? customStyle : null"></i>
-        <span>{{name}}</span>
+    <a class="badge" href="{{link()}}" target="_blank">
+        <i class="icon-base" ngClass="{{icon()}}" [ngStyle]="customStyle ? customStyle : null"></i>
+        <span>{{name()}}</span>
     </a>
     `,
     styleUrl: './badge.component.scss',
@@ -15,26 +15,16 @@ import { ThemeOption } from "../../../utils/enums/theme-option.enum";
 })
 export class BadgeComponent implements OnInit {
 
-    @Input() icon: string;
-    @Input() name: string;
-    @Input() link: string;
-    @Input() hasBlackWhiteBg: boolean;
+    icon = input.required<string>();
+    name = input.required<string>();
+    link = input.required<string>();
+    bgBlackAndWhite = input<boolean>(false);
 
-    protected selectedTheme: ThemeOption;
+    protected selectedTheme: ThemeOption = ThemeOption.DARK;
     protected customStyle?: Record<string, string>;
 
-
-    constructor() {
-        this.icon = '';
-        this.name = '';
-        this.link = '';
-        this.hasBlackWhiteBg = false;
-
-        this.selectedTheme = ThemeOption.DARK;
-    }
-
     ngOnInit() {
-        if(this.hasBlackWhiteBg) {
+        if(this.bgBlackAndWhite()) {
             this.customStyle = {'color': 'var(--theme-body-text)'};
         }
     }

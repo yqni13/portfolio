@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, Output } from "@angular/core";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { Component, input, output, } from "@angular/core";
 import { ControlValueAccessor, FormControl } from "@angular/forms";
 
 @Component({
@@ -6,33 +7,20 @@ import { ControlValueAccessor, FormControl } from "@angular/forms";
 })
 export class AbstractInputComponent implements ControlValueAccessor {
 
-    @Input() fieldName: string;
-    @Input() formControl: FormControl;
-    @Input() placeholder: string;
-    @Input() name: string;
-    @Input() ngClass: string;
-    @Input() customStyle: any;
+    fieldName = input.required<string>();
+    formControl = input.required<FormControl>();
+    placeholder = input<string>();
+    name = input<string>();
+    ngClass = input<string>();
+    customStyle = input<any>();
 
-    @Output() byChange: EventEmitter<any>;
+    readonly byChange = output<any>();
 
     private onChange!: (value: unknown) => void;
     private onTouch!: (value: unknown) => void;
 
     input!: unknown;
-    isFocused: boolean;
-
-    constructor() {
-        this.fieldName = '';
-        this.formControl = new FormControl();
-        this.placeholder = '';
-        this.name = '';
-        this.ngClass = '';
-        this.customStyle = {};
-
-        this.byChange = new EventEmitter<any>();
-
-        this.isFocused = false;
-    }
+    isFocused = false;
 
     writeValue(input: unknown) {
         this.input = input;

@@ -1,4 +1,5 @@
-import { Component, forwardRef, Input, OnDestroy, OnInit } from "@angular/core";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { Component, forwardRef, input, OnDestroy, OnInit } from "@angular/core";
 import { NG_VALUE_ACCESSOR, ReactiveFormsModule } from "@angular/forms";
 import { AbstractInputComponent } from "../abstract.component";
 import { CommonModule } from "@angular/common";
@@ -7,15 +8,15 @@ import { Subscription } from "rxjs";
 
 @Component({
     selector: 'app-select-input',
-    templateUrl: './select-input.component.html',
-    styleUrls: [
-        '../abstract.component.scss',
-        './select-input.component.scss'
-    ],
     imports: [
         CommonModule,
         ReactiveFormsModule,
         ValidationInputComponent
+    ],
+    templateUrl: './select-input.component.html',
+    styleUrls: [
+        '../abstract.component.scss',
+        './select-input.component.scss'
     ],
     providers: [
         {
@@ -31,27 +32,20 @@ import { Subscription } from "rxjs";
 })
 export class SelectInputComponent extends AbstractInputComponent implements OnInit, OnDestroy {
 
-    @Input() readonlyStyle: any;
-    @Input() options: any;
-    @Input() icon: string;
+    readonlyStyle = input<any>({});
+    options = input<any>();
+    icon = input<string>('');
 
-    protected isSelected: boolean;
+    protected isSelected = false;
 
-    private subscription$: Subscription;
+    private subscription$: Subscription = new Subscription();
 
     constructor() {
         super();
-        this.readonlyStyle = {};
-        this.options = [];
-        this.icon = '';
-
-        this.isSelected = false;
-
-        this.subscription$ = new Subscription();
     }
 
     ngOnInit() {
-        this.subscription$ = this.formControl.valueChanges.subscribe(val => {
+        this.subscription$ = this.formControl().valueChanges.subscribe(val => {
             if(!val || val === '') {
                 this.isSelected = false;
             }

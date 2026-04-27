@@ -1,25 +1,25 @@
-<div class="selectinput" ngClass="{{ngClass}}">
+<div class="selectinput" ngClass="{{ngClass()}}">
     <i
         id="custom-icon"
         class="icon-base"
-        ngClass="{{'icon-' + icon}}"
+        ngClass="{{'icon-' + icon()}}"
     ></i>
     <select
-        id="{{'custom-form-' + fieldName}}"
-        name="{{name}}"
-        [formControl]="formControl"
+        id="{{'custom-form-' + fieldName()}}"
+        name="{{name()}}"
+        [formControl]="formControl()"
         (change)="selectOption($event)"
-        [ngStyle]="isSelected ? customStyle : readonlyStyle"
+        [ngStyle]="isSelected ? customStyle() : readonlyStyle()"
     >
-        <option id="option-placeholder" value="" disabled>{{placeholder}}</option>
+        <option id="option-placeholder" value="" disabled>{{placeholder()}}</option>
         <hr>
-        @for(option of options | keyvalue; track $index) {
+        @for(option of options() | keyvalue; track $index) {
             <option
                 value="{{option.value}}"
             >{{option.value}}</option>
         }
     </select>
-    @if(formControl.invalid && (formControl.dirty || formControl.touched)) {
+    @if(formControl().invalid && (formControl().dirty || formControl().touched)) {
         <i
             id="error-icon"
             class="icon-base icon-Warning"
@@ -28,6 +28,6 @@
     }
 </div>
 <app-validation-input
-    [ngControl]="formControl"
-    [fieldName]="fieldName"
+    [ngControl]="formControl()"
+    [fieldName]="fieldName()"
 ></app-validation-input>

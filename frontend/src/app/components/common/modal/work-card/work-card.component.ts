@@ -1,18 +1,18 @@
-import { ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { Component, inject, input, OnInit, output, signal } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { Project } from "../../../../utils/interfaces/work.interface";
-import { ProjectMandate } from "../../../../utils/enums/work.enum";
 import { environment } from "../../../../../environments/environment";
 import { PreloadService } from "../../../../services/preload.service";
 import { ResourceOption } from "../../../../utils/enums/resource-option.enum";
 
 @Component({
     selector: 'app-workcard',
-    templateUrl: './work-card.component.html',
-    styleUrl: "./work-card.component.scss",
     imports: [
         CommonModule
     ],
+    templateUrl: './work-card.component.html',
+    styleUrl: "./work-card.component.scss",
     host: {
         '(click)': 'closeDetailsByOutsideTouch($event)',
         '(document:keydown.escape)': 'closeDetails()'
@@ -20,45 +20,19 @@ import { ResourceOption } from "../../../../utils/enums/resource-option.enum";
 })
 export class WorkCardComponent implements OnInit {
 
-    @Input() data: Project;
-    @Output() byChange: EventEmitter<any>;
+    data = input.required<Project>();
+    readonly byChange = output<boolean>();
 
-    protected cdnUrlBase: string;
-    protected isLoadingDelay: boolean;
+    private readonly preload = inject(PreloadService);
 
-    constructor(
-        private readonly preload: PreloadService,
-        private readonly cdRef: ChangeDetectorRef,
-    ) {
-        this.data = {
-            thumbnail: '',
-            name: '',
-            type: {
-                stack: '',
-                mandate: '' as ProjectMandate
-            },
-            intro: '',
-            description: '',
-            impact: [],
-            links: { repo: '' },
-            techstack: []
-        };
-        this.byChange = new EventEmitter<any>();
+    protected cdnUrlBase = environment.API_STORAGE_URL.trim();
+    protected readonly isLoading = signal(true);
 
-        this.cdnUrlBase = environment.API_STORAGE_URL;
-        this.isLoadingDelay = true;
-    }
-
-    async ngOnInit() {
-        await this.preload.preloadSingle({
+    ngOnInit() {
+        this.preload.preloadSingle({
             option: ResourceOption.IMG,
-            url: `${environment.API_STORAGE_URL}${this.data.thumbnail}`
-        });
-
-        setTimeout(() => {
-            this.isLoadingDelay = false;
-            this.cdRef.detectChanges(); // Avoid colored button flickering for better UX
-        }, 0)
+            url: `${environment.API_STORAGE_URL}${this.data().thumbnail}`
+        }).then(() => this.isLoading.set(false));
     }
 
     closeDetails() {

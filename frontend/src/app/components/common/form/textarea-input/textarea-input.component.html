@@ -1,20 +1,20 @@
-<div class="textareainput" ngClass="{{ngClass}}">
+<div class="textareainput" ngClass="{{ngClass()}}">
     <i
         id="custom-icon"
         class="icon-base"
-        ngClass="{{'icon-' + icon}}"
+        ngClass="{{'icon-' + icon()}}"
     ></i>
     <textarea
-        id="{{'custom-form-' + fieldName}}"
-        name="{{name}}"
+        id="{{'custom-form-' + fieldName()}}"
+        name="{{name()}}"
         class="roboto-custom-font"
-        [formControl]="formControl"
-        placeholder="{{placeholder}}"
-        [ngStyle]="customStyle"
-        rows="{{rows}}"
-        maxlength="{{maxLength}}"
+        [formControl]="formControl()"
+        placeholder="{{placeholder()}}"
+        [ngStyle]="customStyle()"
+        rows="{{rows()}}"
+        maxlength="{{maxLength()}}"
     ></textarea>
-    @if(formControl.invalid && (formControl.dirty || formControl.touched)) {
+    @if(formControl().invalid && (formControl().dirty || formControl().touched)) {
         <i
             id="error-icon"
             class="icon-base icon-Warning"
@@ -23,6 +23,6 @@
     }
 </div>
 <app-validation-input
-    [ngControl]="formControl"
-    [fieldName]="fieldName"
+    [ngControl]="formControl()"
+    [fieldName]="fieldName()"
 ></app-validation-input>
