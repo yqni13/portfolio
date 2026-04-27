@@ -69,14 +69,14 @@ export class ContactComponent extends BaseComponent implements OnInit {
         });
     }
 
-    getCustomInputStyle(): { [key: string]: string } {
+    getCustomInputStyle(): Record<string, string> {
         return {
             'background-color': 'var(--theme-body-bg)',
             'color': 'var(--theme-body-text)'
         };
     }
 
-    getCustomReadonlyStyle(): { [key: string]: string } {
+    getCustomReadonlyStyle(): Record<string, string> {
         return {
             'background-color': 'var(--theme-body-bg)',
             'color': 'var(--theme-grey)'
@@ -85,6 +85,7 @@ export class ContactComponent extends BaseComponent implements OnInit {
 
     async onSubmit() {
         if(this.contactForm.invalid) {
+            this.contactForm.markAllAsTouched();
             this.notifyModal.notify({
                 title: 'invalid input',
                 text: 'Please check for missing or invalid fields before submitting.',

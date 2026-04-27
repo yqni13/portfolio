@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { NotifyModalType } from "../enums/notify-modal.enum";
 
 export interface NotifyModalMessage {

@@ -10,7 +10,7 @@ export class ThemeHandlerService {
     private readonly observe = inject(ObservationService);
 
     private isLocalStorageAvailable = typeof localStorage !== 'undefined';
-    private url: string = "yqni13.com";
+    private url = "yqni13.com";
 
     initTheme() {
         const theme: ThemeOption = this.getThemeSetting();

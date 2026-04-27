@@ -1,4 +1,5 @@
-import { Injectable } from "@angular/core";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { inject, Injectable } from "@angular/core";
 import { NotificationParams } from "../interfaces/notification.api.interface";
 import axios from "axios";
 import { environment } from "../../../environments/environment";
@@ -10,13 +11,9 @@ import { NotifyModalType } from "../../utils/enums/notify-modal.enum";
 })
 export class NotificationApiService {
 
-    private delay: any;
+    private readonly notifyModal = inject(NotifyModalService);
 
-    constructor(
-        private readonly notifyModal: NotifyModalService
-    ) {
-        this.delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
-    }
+    private delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
     private async notify(data: string) {
         try {

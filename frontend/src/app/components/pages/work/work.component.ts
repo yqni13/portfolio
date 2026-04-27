@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Component } from "@angular/core";
 import { BaseComponent } from "../base.component";
 import { default as projectData } from "../../../data/work.json";
@@ -21,7 +22,7 @@ import { ProjectMandate } from "../../../utils/enums/work.enum";
 export class WorkComponent extends BaseComponent {
 
     protected projects: Project[] = this.toProjectArray(projectData);
-    protected allRepoLink: string = 'https://github.com/yqni13?tab=repositories';
+    protected allRepoLink = 'https://github.com/yqni13?tab=repositories';
     protected cardDetails: Project | null = null;
 
     constructor() {

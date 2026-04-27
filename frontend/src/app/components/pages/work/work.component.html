@@ -1,5 +1,10 @@
 <ng-template #workCard let-i="i" let-data="data">
-    <div class="workcard-preview" (click)="openDetails(data)">
+    <div
+        class="workcard-preview"
+        (click)="openDetails(data)"
+        (keydown.enter)="openDetails(data)"
+        [tabindex]="0"
+    >
         <span id="workcard-preview-type">{{data.type.stack}}</span>
         <h4>{{data.name}}</h4>
         <span id="workcard-preview-intro">{{data.intro}}</span>

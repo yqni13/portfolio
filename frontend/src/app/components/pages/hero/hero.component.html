@@ -7,7 +7,12 @@
             <p>{{data['text']}}</p>
         </div>
         <div id="hero-btn-wrapper">
-            <a class="btn-primary" (click)="scrollToHeader('head-work')">
+            <a
+                class="btn-primary"
+                (click)="scrollToHeader('head-work')"
+                (keydown.enter)="scrollToHeader('head-work')"
+                [tabindex]="0"
+            >
                 <span>Projects</span>
                 <i class="icon-base icon-Chevron"></i>
             </a>

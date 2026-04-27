@@ -1,9 +1,13 @@
-import { Directive, Input, TemplateRef, ViewContainerRef } from "@angular/core";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { Directive, inject, Input, TemplateRef, ViewContainerRef } from "@angular/core";
 
 @Directive({
     selector: '[yqni13Var]'
 })
 export class VarDirective {
+    private readonly templateRef = inject(TemplateRef<any>);
+    private readonly vcRef = inject(ViewContainerRef);
+
     @Input()
     set yqni13Var(context: unknown) {
         this.context.$implicit = this.context.yqni13Var = context;
@@ -23,9 +27,4 @@ export class VarDirective {
     };
 
     private hasView = false;
-
-    constructor(
-        private templateRef: TemplateRef<any>,
-        private vcRef: ViewContainerRef
-    ) {}
 }
