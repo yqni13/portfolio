@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, inject, OnInit, signal } from "@angular/core";
 import { BaseComponent } from "../base.component";
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from "@angular/forms";
 import { CastFormControlPipe } from "../../../utils/pipes/form-control.pipe";
@@ -14,8 +14,6 @@ import { LoaderComponent } from "../../common/loader/loader.component";
 
 @Component({
     selector: 'app-contact',
-    templateUrl: './contact.component.html',
-    styleUrl: './contact.component.scss',
     imports: [
         CommonModule,
         CastFormControlPipe,
@@ -24,28 +22,26 @@ import { LoaderComponent } from "../../common/loader/loader.component";
         TextInputComponent,
         TextareaInputComponent,
         LoaderComponent
-    ]
+    ],
+    templateUrl: './contact.component.html',
+    styleUrl: './contact.component.scss'
 })
 export class ContactComponent extends BaseComponent implements OnInit {
 
-    protected contactForm: FormGroup;
-    protected messageLength: number;
-    protected isLoading: boolean;
+    private readonly fb = inject(FormBuilder);
+    private readonly notifyModal = inject(NotifyModalService);
+    private readonly notifyApi = inject(NotificationApiService);
 
-    constructor(
-        private readonly fb: FormBuilder,
-        private readonly notifyModal: NotifyModalService,
-        private readonly notifyApi: NotificationApiService
-    ) {
+    protected contactForm: FormGroup = new FormGroup({});
+    protected messageLength = 1500;
+    protected readonly isLoading = signal(false);
+
+    constructor() {
         super();
         this.data = {
             title: 'Contact',
             subTitle: 'Get in touch.'
         };
-
-        this.contactForm = new FormGroup({});
-        this.messageLength = 1500;
-        this.isLoading = false;
     }
 
     ngOnInit() {
@@ -98,11 +94,11 @@ export class ContactComponent extends BaseComponent implements OnInit {
             });
             return;
         }
-        this.isLoading = true;
+        this.isLoading.set(true);
         const params: NotificationParams = this.notifyApi.toNotificationParams(this.contactForm.getRawValue());
         await this.notifyApi.sendMessage(params).finally(() => {
             this.reset();
-            this.isLoading = false;
+            this.isLoading.set(false);
         });
     }
 

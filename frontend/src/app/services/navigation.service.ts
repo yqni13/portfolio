@@ -1,4 +1,4 @@
-import { Injectable, OnDestroy, OnInit, signal } from "@angular/core";
+import { inject, Injectable, OnDestroy, OnInit, signal } from "@angular/core";
 import { ObservationService } from "./observe.service";
 import { DeviceOption } from "../utils/enums/device-option.enum";
 import { Subscription } from "rxjs";
@@ -8,20 +8,17 @@ import { Subscription } from "rxjs";
 })
 export class NavigationService implements OnInit, OnDestroy {
 
+    private readonly observeService = inject(ObservationService);
+
     private observer!: IntersectionObserver;
+    private subscriptionDeviceOption$: Subscription = new Subscription();
+    private activeDeviceOption: DeviceOption = DeviceOption.MOBILE;
     private activeSection = signal<string>('home');
+
     activeSection$ = this.activeSection.asReadonly();
 
-    private subscriptionDeviceOption$: Subscription;
-    private activeDeviceOption: DeviceOption;
-
-    constructor(private readonly observeService: ObservationService) {
-        this.subscriptionDeviceOption$ = new Subscription();
-        this.activeDeviceOption = DeviceOption.MOBILE;
-    }
-
     ngOnInit() {
-        this.subscriptionDeviceOption$ = this.observeService.deviceOption$.subscribe(val => {
+        this.subscriptionDeviceOption$ = this.observeService.deviceOption$.subscribe((val: any) => {
             this.activeDeviceOption = val;
         })
     }

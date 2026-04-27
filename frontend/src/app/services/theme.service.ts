@@ -1,5 +1,4 @@
-import { Inject, Injectable } from "@angular/core";
-import { DOCUMENT } from "@angular/common";
+import { inject, Injectable } from "@angular/core";
 import { ObservationService } from "./observe.service";
 import { ThemeOption } from "../utils/enums/theme-option.enum";
 
@@ -8,16 +7,10 @@ import { ThemeOption } from "../utils/enums/theme-option.enum";
 })
 export class ThemeHandlerService {
 
-    private isLocalStorageAvailable: any;
-    private url: string;
-    
-    constructor(
-        @Inject(DOCUMENT) private document: Document,
-        private readonly observe: ObservationService,
-    ) {
-        this.isLocalStorageAvailable = typeof localStorage !== 'undefined';
-        this.url = 'yqni13.com';
-    }
+    private readonly observe = inject(ObservationService);
+
+    private isLocalStorageAvailable = typeof localStorage !== 'undefined';
+    private url: string = "yqni13.com";
 
     initTheme() {
         const theme: ThemeOption = this.getThemeSetting();
@@ -41,14 +34,14 @@ export class ThemeHandlerService {
         if(this.isLocalStorageAvailable) {
             if(theme) {
                 localStorage.setItem(`${this.url}-theme`, theme);
-                this.document.body.setAttribute("data-theme", theme);
+                document.body.setAttribute("data-theme", theme);
                 this.observe.setThemeOption(theme);
                 return;
             }
         }
         
         this.observe.setThemeOption(ThemeOption.DARK);
-        this.document.body.setAttribute("data-theme", 'darkMode');
+        document.body.setAttribute("data-theme", 'darkMode');
     }
 
     switchTheme(theme: ThemeOption): ThemeOption {
