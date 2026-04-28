@@ -6,9 +6,9 @@ import { Experience } from "../../../utils/interfaces/experience.interface";
 
 @Component({
     selector: 'app-experience',
+    imports: [CommonModule],
     templateUrl: './experience.component.html',
     styleUrl: './experience.component.scss',
-    imports: [CommonModule]
 })
 export class ExperienceComponent extends BaseComponent {
 

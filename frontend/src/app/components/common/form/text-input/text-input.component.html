@@ -1,18 +1,18 @@
-<div class="textinput" ngClass="{{ngClass}}">
+<div class="textinput" ngClass="{{ngClass()}}">
     <i
         id="custom-icon"
         class="icon-base"
-        ngClass="{{'icon-' + icon}}"
+        ngClass="{{'icon-' + icon()}}"
     ></i>
     <input
-        type="{{inputType}}"
-        id="{{'custom-form-' + fieldName}}"
-        placeholder="{{placeholder}}"
-        [formControl]="formControl"
-        name="{{name}}"
-        [ngStyle]="customStyle"
+        type="{{inputType()}}"
+        id="{{'custom-form-' + fieldName()}}"
+        placeholder="{{placeholder()}}"
+        [formControl]="formControl()"
+        name="{{name()}}"
+        [ngStyle]="customStyle()"
     >
-    @if(formControl.invalid && (formControl.dirty || formControl.touched)) {
+    @if(formControl().invalid && (formControl().dirty || formControl().touched)) {
         <i
             id="error-icon"
             class="icon-base icon-Warning"
@@ -21,6 +21,6 @@
     }
 </div>
 <app-validation-input
-    [ngControl]="formControl"
-    [fieldName]="fieldName"
+    [ngControl]="formControl()"
+    [fieldName]="fieldName()"
 ></app-validation-input>
