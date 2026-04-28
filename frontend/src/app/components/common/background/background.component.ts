@@ -19,7 +19,7 @@ export class BackgroundComponent implements OnInit, OnDestroy{
     protected activeTheme: ThemeOption = ThemeOption.DARK;
     protected themeEnum = ThemeOption;
 
-    private subscriptionTheme$: Subscription = new Subscription();
+    private subscriptionTheme$ = new Subscription();
 
     ngOnInit() {
         this.subscriptionTheme$ = this.observe.themeOption$.subscribe(theme => {

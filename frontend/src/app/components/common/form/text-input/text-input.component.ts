@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { CommonModule } from "@angular/common";
 import { Component, forwardRef, input, OnDestroy, OnInit } from "@angular/core";
 import { NG_VALUE_ACCESSOR, ReactiveFormsModule } from "@angular/forms";
@@ -32,17 +31,17 @@ import { Subscription } from "rxjs";
 })
 export class TextInputComponent extends AbstractInputComponent implements OnInit, OnDestroy {
 
-    inputType = input<string>('');
-    icon = input<string>('');
+    readonly inputType = input('');
+    readonly icon = input('');
 
-    private subscription$: Subscription = new Subscription();
+    private subscription$ = new Subscription();
 
     constructor() {
         super();
     }
 
     ngOnInit() {
-        this.subscription$ = this.formControl().valueChanges.subscribe((change: any) => {
+        this.subscription$ = this.formControl().valueChanges.subscribe((change: unknown) => {
             this.byChange.emit(change);
             this.isFocused = true;
         })

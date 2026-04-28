@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Component, forwardRef, input, OnDestroy, OnInit } from "@angular/core";
 import { NG_VALUE_ACCESSOR, ReactiveFormsModule } from "@angular/forms";
 import { AbstractInputComponent } from "../abstract.component";
@@ -32,13 +31,13 @@ import { Subscription } from "rxjs";
 })
 export class SelectInputComponent extends AbstractInputComponent implements OnInit, OnDestroy {
 
-    readonlyStyle = input<any>({});
-    options = input<any>();
-    icon = input<string>('');
+    readonly readonlyStyle = input<Record<string, string>>({});
+    readonly options = input<unknown>({});
+    readonly icon = input('');
 
     protected isSelected = false;
 
-    private subscription$: Subscription = new Subscription();
+    private subscription$ = new Subscription();
 
     constructor() {
         super();

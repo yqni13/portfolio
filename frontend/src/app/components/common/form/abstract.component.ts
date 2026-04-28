@@ -7,14 +7,14 @@ import { ControlValueAccessor, FormControl } from "@angular/forms";
 })
 export class AbstractInputComponent implements ControlValueAccessor {
 
-    fieldName = input.required<string>();
-    formControl = input.required<FormControl>();
-    placeholder = input<string>();
-    name = input<string>();
-    ngClass = input<string>();
-    customStyle = input<any>();
+    readonly fieldName = input.required<string>();
+    readonly formControl = input.required<FormControl>();
+    readonly placeholder = input<string>();
+    readonly name = input<string>();
+    readonly ngClass = input<string>();
+    readonly customStyle = input<Record<string, string>>();
 
-    readonly byChange = output<any>();
+    readonly byChange = output<unknown>();
 
     private onChange!: (value: unknown) => void;
     private onTouch!: (value: unknown) => void;
@@ -32,16 +32,18 @@ export class AbstractInputComponent implements ControlValueAccessor {
         this.onTouch = fn;
     }
 
-    clickOutside($event: any) {
-        if($event.target?.id === `custom-form-${this.fieldName}`) {
+    clickOutside(event: MouseEvent) {
+        const target = event.target as HTMLElement;
+        if(target.id === `custom-form-${this.fieldName}`) {
             this.isFocused = true;
         } else {
             this.isFocused = false;
         }
     }
 
-    tabOutside($event: any) {
-        if($event.key === 'Tab' && ($event.target?.id === `custom-form-${this.fieldName}`)) {
+    tabOutside(event: KeyboardEvent) {
+        const target = event.target as HTMLElement;
+        if(event.key === 'Tab' && (target.id === `custom-form-${this.fieldName}`)) {
             this.isFocused = false;
         }
     }

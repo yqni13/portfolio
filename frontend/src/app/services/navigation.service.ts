@@ -12,12 +12,13 @@ export class NavigationService implements OnDestroy {
 
     private observer!: IntersectionObserver;
     private activeDeviceOption: DeviceOption = DeviceOption.MOBILE;
-    private activeSection = signal<string>('home');
+    private readonly activeSection = signal<string>('home');
     private subscriptionDeviceOption$: Subscription = 
     this.observeService.deviceOption$.subscribe((val: DeviceOption) => {
         this.activeDeviceOption = val;
     });
 
+    // Prevent updating value outside of this environment => can be updated with public readonly signal.
     activeSection$ = this.activeSection.asReadonly();
 
     navigateToTop(document: Document) {

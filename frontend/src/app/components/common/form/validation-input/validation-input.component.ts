@@ -17,8 +17,8 @@ import { Validation } from "../../../../utils/interfaces/validation.interface";
 })
 export class ValidationInputComponent {
 
-    ngControl = input<FormControl>(new FormControl());
-    fieldName = input<string>();
+    readonly ngControl = input(new FormControl());
+    readonly fieldName = input('');
 
     protected validations: Validation[] = validationList;
 
@@ -31,13 +31,13 @@ export class ValidationInputComponent {
         return msg;
     }
 
-    getErrorMappingValue(id: string): any {
+    getErrorMappingValue(id: string): string {
         switch(id) {
             case('fieldName'): 
                 return this.fieldName();
             case('fieldMax'): {
                 const control = this.ngControl() as any;
-                return control.errors.maxlength.requiredLength;
+                return String(control.errors.maxlength.requiredLength);
             }
             default: 
                 return this.ngControl().value;

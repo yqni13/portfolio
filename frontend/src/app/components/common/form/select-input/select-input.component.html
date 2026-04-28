@@ -13,7 +13,7 @@
     >
         <option id="option-placeholder" value="" disabled>{{placeholder()}}</option>
         <hr>
-        @for(option of options() | keyvalue; track $index) {
+        @for(option of options() ?? {} | keyvalue; track $index) {
             <option
                 value="{{option.value}}"
             >{{option.value}}</option>

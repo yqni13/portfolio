@@ -1,11 +1,10 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Directive, inject, Input, TemplateRef, ViewContainerRef } from "@angular/core";
 
 @Directive({
     selector: '[yqni13Var]'
 })
 export class VarDirective {
-    private readonly templateRef = inject(TemplateRef<any>);
+    private readonly templateRef = inject(TemplateRef<unknown>);
     private readonly vcRef = inject(ViewContainerRef);
 
     @Input()

@@ -23,14 +23,14 @@ export class Navbar implements OnInit, AfterViewInit, OnDestroy {
     private readonly observe = inject(ObservationService);
     private readonly themeHandler = inject(ThemeHandlerService);
 
-    themeIcon = viewChild<ElementRef>('');
+    readonly themeIcon = viewChild<ElementRef>('');
 
     activeMenu = this.navigate.activeSection$;
 
     protected themeEnum = ThemeOption;
-    protected selectedTheme: ThemeOption = this.themeHandler.getThemeSetting();
-    protected deviceOption = signal<DeviceOption>(DeviceOption.MOBILE);
     protected deviceEnum = DeviceOption;
+    protected selectedTheme: ThemeOption = this.themeHandler.getThemeSetting();
+    protected readonly deviceOption = signal<DeviceOption>(DeviceOption.MOBILE);
     protected activeMobileMenu = false;
     protected menu: NavMenu[] = menuData;
     protected logo = new Image().src = 'yqni13_logo256.ico';

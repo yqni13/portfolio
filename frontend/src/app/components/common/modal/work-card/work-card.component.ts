@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Component, inject, input, OnInit, output, signal } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { Project } from "../../../../utils/interfaces/work.interface";
@@ -39,8 +38,9 @@ export class WorkCardComponent implements OnInit {
         this.byChange.emit(true);
     }
 
-    closeDetailsByOutsideTouch($event: any) {
-        if($event.target.className === 'workcard-detail') {
+    closeDetailsByOutsideTouch(event: MouseEvent) {
+        const target = event.target as HTMLElement;
+        if(target.className === 'workcard-detail') {
             this.closeDetails();
         }
     }

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Component, forwardRef, input, OnDestroy, OnInit } from "@angular/core";
 import { NG_VALUE_ACCESSOR, ReactiveFormsModule } from "@angular/forms";
 import { AbstractInputComponent } from "../abstract.component";
@@ -32,18 +31,18 @@ import { ValidationInputComponent } from "../validation-input/validation-input.c
 })
 export class TextareaInputComponent extends AbstractInputComponent implements OnInit, OnDestroy {
 
-    rows = input<number>(0);
-    icon = input<string>('');
-    maxLength = input<number>(0);
+    readonly rows = input(0);
+    readonly icon = input('');
+    readonly maxLength = input(0);
 
-    private subscription$: Subscription = new Subscription();
+    private subscription$ = new Subscription();
 
     constructor() {
         super();
     }
 
     ngOnInit() {
-        this.subscription$ = this.formControl().valueChanges.subscribe((change: any) => {
+        this.subscription$ = this.formControl().valueChanges.subscribe((change: unknown) => {
             this.byChange.emit(change);
             this.isFocused = true;
         })
