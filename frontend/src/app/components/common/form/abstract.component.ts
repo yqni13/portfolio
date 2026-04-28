@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, Output } from "@angular/core";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { Component, input, output, } from "@angular/core";
 import { ControlValueAccessor, FormControl } from "@angular/forms";
 
 @Component({
@@ -6,33 +7,20 @@ import { ControlValueAccessor, FormControl } from "@angular/forms";
 })
 export class AbstractInputComponent implements ControlValueAccessor {
 
-    @Input() fieldName: string;
-    @Input() formControl: FormControl;
-    @Input() placeholder: string;
-    @Input() name: string;
-    @Input() ngClass: string;
-    @Input() customStyle: any;
+    readonly fieldName = input.required<string>();
+    readonly formControl = input.required<FormControl>();
+    readonly placeholder = input<string>();
+    readonly name = input<string>();
+    readonly ngClass = input<string>();
+    readonly customStyle = input<Record<string, string>>();
 
-    @Output() byChange: EventEmitter<any>;
+    readonly byChange = output<unknown>();
 
     private onChange!: (value: unknown) => void;
     private onTouch!: (value: unknown) => void;
 
     input!: unknown;
-    isFocused: boolean;
-
-    constructor() {
-        this.fieldName = '';
-        this.formControl = new FormControl();
-        this.placeholder = '';
-        this.name = '';
-        this.ngClass = '';
-        this.customStyle = {};
-
-        this.byChange = new EventEmitter<any>();
-
-        this.isFocused = false;
-    }
+    isFocused = false;
 
     writeValue(input: unknown) {
         this.input = input;
@@ -44,16 +32,18 @@ export class AbstractInputComponent implements ControlValueAccessor {
         this.onTouch = fn;
     }
 
-    clickOutside($event: any) {
-        if($event.target?.id === `custom-form-${this.fieldName}`) {
+    clickOutside(event: MouseEvent) {
+        const target = event.target as HTMLElement;
+        if(target.id === `custom-form-${this.fieldName}`) {
             this.isFocused = true;
         } else {
             this.isFocused = false;
         }
     }
 
-    tabOutside($event: any) {
-        if($event.key === 'Tab' && ($event.target?.id === `custom-form-${this.fieldName}`)) {
+    tabOutside(event: KeyboardEvent) {
+        const target = event.target as HTMLElement;
+        if(event.key === 'Tab' && (target.id === `custom-form-${this.fieldName}`)) {
             this.isFocused = false;
         }
     }

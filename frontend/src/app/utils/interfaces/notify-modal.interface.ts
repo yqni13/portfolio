@@ -8,5 +8,5 @@ export interface NotifyModalMessage {
     autoClose?: boolean,
     type: NotifyModalType,
     displayTimeInMilliseconds?: number,
-    displayHandler?: any
+    displayHandler?: unknown
 }

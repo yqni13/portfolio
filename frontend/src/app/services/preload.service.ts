@@ -37,8 +37,8 @@ export class PreloadService {
             const video = document.createElement('video');
             video.preload = option.preload;
             video.src = url;
-            video.muted = option.muted,
-            video.playsInline = option.playsInline
+            video.muted = option.muted;
+            video.playsInline = option.playsInline;
 
             const cleanup = () => {
                 video.removeEventListener('loadeddata', onDataLoad);

@@ -3,17 +3,10 @@ import { BaseComponentData } from "../../utils/interfaces/base-data.interface";
 
 @Component({
     selector: 'app-base',
-    template: ``,
-    imports: []
+    template: ``
 })
 export class BaseComponent {
 
-    protected data: BaseComponentData;
+    protected data: BaseComponentData = { title: '', subTitle: '' };
 
-    constructor() {
-        this.data = {
-            title: '',
-            subTitle: ''
-        };
-    }
 }

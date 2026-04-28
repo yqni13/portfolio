@@ -158,6 +158,11 @@
                 "icon": "icon-Telegram",
                 "name": "Telegram",
                 "link": "https://core.telegram.org/bots/tutorial"
+            },
+            {
+                "icon": "icon-ESLint",
+                "name": "ESLint",
+                "link": "https://eslint.org/"
             }
         ]
     },

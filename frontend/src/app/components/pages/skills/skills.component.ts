@@ -7,12 +7,12 @@ import { CommonModule } from "@angular/common";
 
 @Component({
     selector: 'app-skills',
-    templateUrl: './skills.component.html',
-    styleUrl: './skills.component.scss',
     imports: [
         CommonModule,
         BadgeComponent
-    ]
+    ],
+    templateUrl: './skills.component.html',
+    styleUrl: './skills.component.scss'
 })
 export class SkillsComponent extends BaseComponent {
 

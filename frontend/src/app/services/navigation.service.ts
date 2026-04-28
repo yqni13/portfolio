@@ -1,4 +1,4 @@
-import { Injectable, OnDestroy, OnInit, signal } from "@angular/core";
+import { inject, Injectable, OnDestroy, signal } from "@angular/core";
 import { ObservationService } from "./observe.service";
 import { DeviceOption } from "../utils/enums/device-option.enum";
 import { Subscription } from "rxjs";
@@ -6,25 +6,20 @@ import { Subscription } from "rxjs";
 @Injectable({
     providedIn: 'root'
 })
-export class NavigationService implements OnInit, OnDestroy {
+export class NavigationService implements OnDestroy {
+
+    private readonly observeService = inject(ObservationService);
 
     private observer!: IntersectionObserver;
-    private activeSection = signal<string>('home');
+    private activeDeviceOption: DeviceOption = DeviceOption.MOBILE;
+    private readonly activeSection = signal<string>('home');
+    private subscriptionDeviceOption$: Subscription = 
+    this.observeService.deviceOption$.subscribe((val: DeviceOption) => {
+        this.activeDeviceOption = val;
+    });
+
+    // Prevent updating value outside of this environment => can be updated with public readonly signal.
     activeSection$ = this.activeSection.asReadonly();
-
-    private subscriptionDeviceOption$: Subscription;
-    private activeDeviceOption: DeviceOption;
-
-    constructor(private readonly observeService: ObservationService) {
-        this.subscriptionDeviceOption$ = new Subscription();
-        this.activeDeviceOption = DeviceOption.MOBILE;
-    }
-
-    ngOnInit() {
-        this.subscriptionDeviceOption$ = this.observeService.deviceOption$.subscribe(val => {
-            this.activeDeviceOption = val;
-        })
-    }
 
     navigateToTop(document: Document) {
         if(document.scrollingElement !== null) {
