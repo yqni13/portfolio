@@ -1,8 +1,30 @@
 ## 📜 $\textsf{\color{salmon}{List\ of\ updates}}$
 
+$\textsf{[v1.1.6\ =>\ {\textbf{\color{brown}v1.1.9}]}}$ app
+- $\textsf{\color{teal}Addition:}$ Added ESLint to check code against rules and guidelines.
+- $\textsf{\color{orange}Patch:}$ Updated
+  + 'work-card' component to use signal for displaying content only when preload is finished
+  + all modules/pages/services/forms/etc on the following ESLint rulesets from (https://github.com/angular-eslint/angular-eslint/tree/main/packages/eslint-plugin/docs/rules):
+    * no-async-lifecycle-method
+    * no-input-rename
+    * prefer-output-readonly
+    * prefer-inject
+    * prefer-signals
+    * sort-keys-in-type-decorator
+
+<br>
+
+### $\textsf{\color{skyblue}2026/04/19}$
+
+$\textsf{[v1.1.4\ =>\ v1.1.6]}$ app
+- $\textsf{\color{orange}Patch:}$ Updated 'footer' to display current version.
+- $\textsf{\color{red}Bugfix:}$ Images in section 'about' are now shown after loading. [Before: Preload of images and initialization of theme setting had different timing which lead to loading but not showing the images. Fixed by adding manual change detection after setting the images.]
+
+<br>
+
 ### $\textsf{\color{skyblue}2026/04/16}$
 
-$\textsf{[v1.1.2\ =>\ {\textbf{\color{brown}v1.1.4}]}}$ app
+$\textsf{[v1.1.2\ =>\ v1.1.4]}$ app
 - $\textsf{\color{orange}Patch:}$ Updated:
   + moved observation of navigation from "app" to "navbar" component
   + use delay by setTimeout to prevent highlighted button flickering while loading work-card for better UX

@@ -1,4 +1,4 @@
-import { Injectable } from "@angular/core";
+import { inject, Injectable } from "@angular/core";
 import { NotificationParams } from "../interfaces/notification.api.interface";
 import axios from "axios";
 import { environment } from "../../../environments/environment";
@@ -10,13 +10,9 @@ import { NotifyModalType } from "../../utils/enums/notify-modal.enum";
 })
 export class NotificationApiService {
 
-    private delay: any;
+    private readonly notifyModal = inject(NotifyModalService);
 
-    constructor(
-        private readonly notifyModal: NotifyModalService
-    ) {
-        this.delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
-    }
+    private delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
     private async notify(data: string) {
         try {
@@ -31,7 +27,7 @@ export class NotificationApiService {
                 autoClose: false,
                 type: NotifyModalType.SUCCESS
             });
-        } catch(err: any) {
+        } catch(err: unknown) {
             console.log("notification_api_notify_error: ", err);
             this.notifyModal.notify({
                 title: 'Technical problem',
@@ -49,13 +45,13 @@ export class NotificationApiService {
         await this.notify(message);
     }
 
-    toNotificationParams(data: any): NotificationParams {
+    toNotificationParams(data: Record<string, string>): NotificationParams {
         return {
-            salutation: data.salutation,
-            name: data.name,
-            email: data.email,
-            subject: data.subject,
-            message: data.message
+            salutation: data['salutation'],
+            name: data['name'],
+            email: data['email'],
+            subject: data['subject'],
+            message: data['message']
         };
     }
 }
