@@ -6,7 +6,7 @@ import { NotifyModalMessage } from "../utils/interfaces/notify-modal.interface";
 })
 export class NotifyModalService {
 
-    notifications = signal<NotifyModalMessage[]>([]);
+    readonly notifications = signal<NotifyModalMessage[]>([]);
     isActive = computed(() => this.notifications().length > 0);
 
     notify(notification: NotifyModalMessage) {

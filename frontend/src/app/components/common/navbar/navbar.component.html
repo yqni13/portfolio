@@ -1,18 +1,18 @@
 <ng-template #menuLinks>
     <div class="navbar-btn-wrapper">
-        <a href="{{links.github}}" target="_blank" class="navbar-links link-simple">
+        <a href="{{links['github']}}" target="_blank" class="navbar-links link-simple">
             <i
                 class="icon-base icon-GitHub"
                 ngClass="{{selectedTheme === themeEnum.DARK ? 'symbol-dark' : 'symbol-light'}}"
             ></i>
         </a>
-        <a href="{{links.linkedin}}" target="_blank" class="navbar-links link-simple">
+        <a href="{{links['linkedin']}}" target="_blank" class="navbar-links link-simple">
             <i
                 class="icon-base icon-LinkedIn"
                 ngClass="{{selectedTheme === themeEnum.DARK ? 'symbol-dark' : 'symbol-light'}}"
             ></i>
         </a>
-        <a href="mailto:{{links.mail}}" class="navbar-links link-simple">
+        <a href="mailto:{{links['mail']}}" class="navbar-links link-simple">
             <i
                 class="icon-base icon-Mail"
                 ngClass="{{selectedTheme === themeEnum.DARK ? 'symbol-dark' : 'symbol-light'}}"
@@ -24,6 +24,8 @@
             <a
                 class="navbar-menu-anchor link-simple"
                 (click)="scrollToHeader('head-' + convertMenuHeader(page.name));closeFullMenuOnMobile()"
+                (keydown.enter)="scrollToHeader('head-' + convertMenuHeader(page.name));closeFullMenuOnMobile()"
+                [tabindex]="0"
                 [ngClass]="activeMenu() === page.id ? 'active-menu-anchor' : ''"
             >
                 {{page.name}}
@@ -40,17 +42,30 @@
                     class="icon-base"
                     ngClass="{{selectedTheme === themeEnum.DARK ? 'icon-darkMode' : 'icon-lightMode'}}"
                     (click)="setThemeByUser()"
+                    (keydown.enter)="setThemeByUser()"
+                    [tabindex]="0"
                     #themeIcon
                 ></i>
             </a>
-            <a (click)="openFullMenuOnMobile()" class="burger-btn">
+            <a
+                class="burger-btn"
+                (click)="openFullMenuOnMobile()"
+                (keydown.enter)="openFullMenuOnMobile()"
+                [tabindex]="0"
+            >
                 <i class="icon-base icon-BurgerMenu"></i>
             </a>
         </div>
     } 
     @if(deviceOption() === deviceEnum.DESKTOP) {
         <div class="navbar-logo-desktop">
-            <img src="{{logo}}" alt="yqni13 logo" (click)="scrollToTop()">
+            <img
+                src="{{logo}}"
+                alt="yqni13 logo"
+                (click)="scrollToTop()"
+                (keydown.enter)="scrollToTop()"
+                [tabindex]="0"
+            >
         </div>
         <div class="navbar-content-wrapper">
             <a class="navbar-links link-simple theme-btn">
@@ -58,6 +73,8 @@
                     class="icon-base"
                     ngClass="{{selectedTheme === themeEnum.DARK ? 'icon-darkMode' : 'icon-lightMode'}}"
                     (click)="setThemeByUser()"
+                    (keydown.enter)="setThemeByUser()"
+                    [tabindex]="0"
                     #themeIcon
                 ></i>
             </a>
@@ -70,12 +87,23 @@
 @if(deviceOption() === deviceEnum.MOBILE && activeMobileMenu) {
     <div class="navbar-mobile-menu roboto-custom-font">
         <div class="navbar-logo-mobile">
-            <img src="{{logo}}" alt="yqni13 logo" (click)="scrollToTop();closeFullMenuOnMobile()">
+            <img
+                src="{{logo}}"
+                alt="yqni13 logo"
+                (click)="scrollToTop();closeFullMenuOnMobile()"
+                (keydown.enter)="scrollToTop();closeFullMenuOnMobile()"
+                [tabindex]="0"
+            >
         </div>
         <ng-container 
             *ngTemplateOutlet="menuLinks"
         ></ng-container>
-        <a class="btn-close" (click)="closeFullMenuOnMobile()">
+        <a
+            class="btn-close"
+            (click)="closeFullMenuOnMobile()"
+            (keydown.enter)="closeFullMenuOnMobile()"
+            [tabindex]="0"
+        >
             <i class="icon-base icon-Close"></i>
         </a>
     </div>

@@ -1,4 +1,5 @@
-import { Component, Input } from "@angular/core";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { Component, input } from "@angular/core";
 import { VarDirective } from "../../../../utils/directives/ng-var.directive";
 import { FormControl } from "@angular/forms";
 import { CommonModule } from "@angular/common";
@@ -7,26 +8,19 @@ import { Validation } from "../../../../utils/interfaces/validation.interface";
 
 @Component({
     selector: 'app-validation-input',
-    templateUrl: './validation-input.component.html',
-    styleUrl: './validation-input.component.scss',
     imports: [
         VarDirective,
         CommonModule
-    ]
+    ],
+    templateUrl: './validation-input.component.html',
+    styleUrl: './validation-input.component.scss',
 })
 export class ValidationInputComponent {
 
-    @Input() ngControl: FormControl;
-    @Input() fieldName: string;
+    readonly ngControl = input(new FormControl());
+    readonly fieldName = input('');
 
-    protected validations: Validation[];
-
-    constructor() {
-        this.ngControl = new FormControl();
-        this.fieldName = '';
-
-        this.validations = validationList;
-    }
+    protected validations: Validation[] = validationList;
 
     mapErrorValues(msg: string, ids: string[]): string {
         let i = 0;
@@ -37,16 +31,16 @@ export class ValidationInputComponent {
         return msg;
     }
 
-    getErrorMappingValue(id: string): any {
+    getErrorMappingValue(id: string): string {
         switch(id) {
             case('fieldName'): 
-                return this.fieldName;
+                return this.fieldName();
             case('fieldMax'): {
-                const control = this.ngControl as any;
-                return control.errors.maxlength.requiredLength;
+                const control = this.ngControl() as any;
+                return String(control.errors.maxlength.requiredLength);
             }
             default: 
-                return this.ngControl.value;
+                return this.ngControl().value;
         }
     }
 }

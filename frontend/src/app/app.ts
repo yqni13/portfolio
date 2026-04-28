@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Navbar } from './components/common/navbar/navbar.component';
 import { AboutComponent } from './components/pages/about/about.component';
@@ -34,11 +34,7 @@ import { BackgroundComponent } from './components/common/background/background.c
 })
 export class App {
 
-	protected readonly title = signal('portfolio');
+	readonly notifyModal = inject(NotifyModalService);
 
-	constructor(
-		public readonly notifyModal: NotifyModalService
-	) {
-		//
-	}
+	protected readonly title = signal('portfolio');
 }
