@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { AfterContentChecked, Component, inject, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Navbar } from './components/common/navbar/navbar.component';
 import { AboutComponent } from './components/pages/about/about.component';
@@ -12,6 +12,9 @@ import { NotifyModalComponent } from './components/common/modal/notify-modal/not
 import { NotifyModalService } from './services/notify-modal.service';
 import { CommonModule } from '@angular/common';
 import { BackgroundComponent } from './components/common/background/background.component';
+import { ScrollDownIndicatorComponent } from './components/common/indicator/scroll-down/scroll-down.indicator.component';
+import { NavigationService } from './services/navigation.service';
+import { IndicatorOption } from './utils/enums/indicator-option.enum';
 
 @Component({
 	selector: 'app-root',
@@ -29,12 +32,28 @@ import { BackgroundComponent } from './components/common/background/background.c
 		ContactComponent,
 		Footer,
 		RouterOutlet,
-		NotifyModalComponent
+		NotifyModalComponent,
+		ScrollDownIndicatorComponent
 	],
 })
-export class App {
+export class App implements AfterContentChecked {
 
 	readonly notifyModal = inject(NotifyModalService);
+	private readonly navigation = inject(NavigationService);
 
 	protected readonly title = signal('portfolio');
+	protected readonly scrolledToBottom = signal(false);
+	protected readonly IndicatorOptionEnum = IndicatorOption;
+
+	ngAfterContentChecked() {
+		const scrollMaxHeight = this.navigation.getScrollMaxHeight();
+		window.onscroll = () => {
+			if (Math.ceil(document.documentElement.scrollTop) >= scrollMaxHeight || 
+			Math.ceil(document.body.scrollTop) >= scrollMaxHeight) {
+				this.scrolledToBottom.set(true);
+			} else {
+				this.scrolledToBottom.set(false);
+			}
+		};
+	}
 }

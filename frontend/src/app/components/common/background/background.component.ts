@@ -17,7 +17,7 @@ export class BackgroundComponent implements OnInit, OnDestroy{
     private readonly observe = inject(ObservationService);
 
     protected activeTheme: ThemeOption = ThemeOption.DARK;
-    protected themeEnum = ThemeOption;
+    protected readonly ThemeOptionEnum = ThemeOption;
 
     private subscriptionTheme$ = new Subscription();
 

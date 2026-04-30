@@ -3,19 +3,19 @@
         <a href="{{links['github']}}" target="_blank" class="navbar-links link-simple">
             <i
                 class="icon-base icon-GitHub"
-                ngClass="{{selectedTheme === themeEnum.DARK ? 'symbol-dark' : 'symbol-light'}}"
+                ngClass="{{selectedTheme === ThemeOptionEnum.DARK ? 'symbol-dark' : 'symbol-light'}}"
             ></i>
         </a>
         <a href="{{links['linkedin']}}" target="_blank" class="navbar-links link-simple">
             <i
                 class="icon-base icon-LinkedIn"
-                ngClass="{{selectedTheme === themeEnum.DARK ? 'symbol-dark' : 'symbol-light'}}"
+                ngClass="{{selectedTheme === ThemeOptionEnum.DARK ? 'symbol-dark' : 'symbol-light'}}"
             ></i>
         </a>
         <a href="mailto:{{links['mail']}}" class="navbar-links link-simple">
             <i
                 class="icon-base icon-Mail"
-                ngClass="{{selectedTheme === themeEnum.DARK ? 'symbol-dark' : 'symbol-light'}}"
+                ngClass="{{selectedTheme === ThemeOptionEnum.DARK ? 'symbol-dark' : 'symbol-light'}}"
             ></i>
         </a>
     </div>
@@ -35,12 +35,12 @@
 </ng-template>
 
 <nav class="navbar roboto-custom-font">
-    @if(deviceOption() === deviceEnum.MOBILE) {
+    @if(deviceOption() === DeviceOptionEnum.MOBILE) {
         <div class="navbar-burger-menu">
             <a class="navbar-links theme-btn">
                 <i
                     class="icon-base"
-                    ngClass="{{selectedTheme === themeEnum.DARK ? 'icon-darkMode' : 'icon-lightMode'}}"
+                    ngClass="{{selectedTheme === ThemeOptionEnum.DARK ? 'icon-darkMode' : 'icon-lightMode'}}"
                     (click)="setThemeByUser()"
                     (keydown.enter)="setThemeByUser()"
                     [tabindex]="0"
@@ -57,7 +57,7 @@
             </a>
         </div>
     } 
-    @if(deviceOption() === deviceEnum.DESKTOP) {
+    @if(deviceOption() === DeviceOptionEnum.DESKTOP) {
         <div class="navbar-logo-desktop">
             <img
                 src="{{logo}}"
@@ -71,7 +71,7 @@
             <a class="navbar-links link-simple theme-btn">
                 <i
                     class="icon-base"
-                    ngClass="{{selectedTheme === themeEnum.DARK ? 'icon-darkMode' : 'icon-lightMode'}}"
+                    ngClass="{{selectedTheme === ThemeOptionEnum.DARK ? 'icon-darkMode' : 'icon-lightMode'}}"
                     (click)="setThemeByUser()"
                     (keydown.enter)="setThemeByUser()"
                     [tabindex]="0"
@@ -84,7 +84,7 @@
         </div>
     }
 </nav>
-@if(deviceOption() === deviceEnum.MOBILE && activeMobileMenu) {
+@if(deviceOption() === DeviceOptionEnum.MOBILE && activeMobileMenu) {
     <div class="navbar-mobile-menu roboto-custom-font">
         <div class="navbar-logo-mobile">
             <img

@@ -20,6 +20,9 @@
 				}
 			</div>
 		}
+		@if (!scrolledToBottom()) {
+			<app-scrolldown-indicator [option]="IndicatorOptionEnum.MAIN"></app-scrolldown-indicator>
+		}
 	</main>
 	<app-footer></app-footer>
 }

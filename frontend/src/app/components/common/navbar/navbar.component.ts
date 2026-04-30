@@ -27,8 +27,8 @@ export class Navbar implements OnInit, AfterViewInit, OnDestroy {
 
     activeMenu = this.navigate.activeSection$;
 
-    protected themeEnum = ThemeOption;
-    protected deviceEnum = DeviceOption;
+    protected readonly ThemeOptionEnum = ThemeOption;
+    protected readonly DeviceOptionEnum = DeviceOption;
     protected selectedTheme: ThemeOption = this.themeHandler.getThemeSetting();
     protected readonly deviceOption = signal<DeviceOption>(DeviceOption.MOBILE);
     protected activeMobileMenu = false;
