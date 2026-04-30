@@ -20,7 +20,7 @@
 				}
 			</div>
 		}
-		@if (!scrolledToBottom()) {
+		@if (!scrolledToBottom() && !observe.activeModal()) {
 			<app-scrolldown-indicator [option]="IndicatorOptionEnum.MAIN"></app-scrolldown-indicator>
 		}
 	</main>

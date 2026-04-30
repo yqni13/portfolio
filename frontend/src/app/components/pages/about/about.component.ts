@@ -1,6 +1,5 @@
-import { ChangeDetectorRef, Component, inject, OnDestroy, OnInit } from "@angular/core";
+import { Component, effect, inject, OnInit, signal } from "@angular/core";
 import { BaseComponent } from "../base.component";
-import { Subscription } from "rxjs";
 import { ObservationService } from "../../../services/observe.service";
 import { ThemeOption } from "../../../utils/enums/theme-option.enum";
 import { CommonModule } from "@angular/common";
@@ -14,19 +13,17 @@ import { ResourceOption } from "../../../utils/enums/resource-option.enum";
     styleUrl: './about.component.scss',
     imports: [CommonModule]
 })
-export class AboutComponent extends BaseComponent implements OnInit, OnDestroy {
+export class AboutComponent extends BaseComponent implements OnInit {
 
     private readonly preload = inject(PreloadService);
-    private readonly cdRef = inject(ChangeDetectorRef);
     private readonly observe = inject(ObservationService);
 
-    private subscriptionTheme$ = new Subscription();
     private portraitPaths: Record<string, string> = {
         light: `${environment.API_STORAGE_URL}/container/portfolio/portrait/about_light.webp`,
         dark: `${environment.API_STORAGE_URL}/container/portfolio/portrait/about_dark.webp`
     };
 
-    protected imgByTheme: Record<string, string> = {};
+    protected readonly imgByTheme = signal<Record<string, string>>({});
     protected myInfo: Record<string, string> = {
         alias: 'yqni13',
         intro: 'I\'m Lukas, from Austria. After a career in Transportation & Logistics in my mid 20s, I discovered my passion for software development and its endless possibilities.',
@@ -40,7 +37,10 @@ export class AboutComponent extends BaseComponent implements OnInit, OnDestroy {
         this.data = {
             title: 'About',
             subTitle: 'Who am I?'
-        }
+        };
+        effect(() => {
+            this.handleSelectedThemeObservation();
+        })
     }
 
     ngOnInit() {
@@ -48,22 +48,17 @@ export class AboutComponent extends BaseComponent implements OnInit, OnDestroy {
             { option: ResourceOption.IMG, url: this.portraitPaths['light'] },
             { option: ResourceOption.IMG, url: this.portraitPaths['dark'] },
         ]);
-
-        this.subscriptionTheme$ = this.observe.themeOption$.subscribe(theme => {
-            if(theme === ThemeOption.LIGHT) {
-                this.imgByTheme = {
-                    'background-image': `url(${this.portraitPaths['light']})`
-                };
-            } else {
-                this.imgByTheme = {
-                    'background-image': `url(${this.portraitPaths['dark']})`
-                };
-            }
-            this.cdRef.detectChanges();
-        })
     }
 
-    ngOnDestroy() {
-        this.subscriptionTheme$.unsubscribe();
+    private handleSelectedThemeObservation() {
+        if(this.observe.selectedThemeOption() === ThemeOption.LIGHT) {
+            this.imgByTheme.set({
+                'background-image': `url(${this.portraitPaths['light']})`
+            });
+        } else {
+            this.imgByTheme.set({
+                'background-image': `url(${this.portraitPaths['dark']})`
+            });
+        }
     }
 }

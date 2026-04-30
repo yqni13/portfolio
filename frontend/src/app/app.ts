@@ -15,6 +15,7 @@ import { BackgroundComponent } from './components/common/background/background.c
 import { ScrollDownIndicatorComponent } from './components/common/indicator/scroll-down/scroll-down.indicator.component';
 import { NavigationService } from './services/navigation.service';
 import { IndicatorOption } from './utils/enums/indicator-option.enum';
+import { ObservationService } from './services/observe.service';
 
 @Component({
 	selector: 'app-root',
@@ -38,6 +39,7 @@ import { IndicatorOption } from './utils/enums/indicator-option.enum';
 })
 export class App implements AfterContentChecked {
 
+	readonly observe = inject(ObservationService);
 	readonly notifyModal = inject(NotifyModalService);
 	private readonly navigation = inject(NavigationService);
 

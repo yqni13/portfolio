@@ -23,7 +23,7 @@ export class Navbar implements OnInit, AfterViewInit, OnDestroy {
     private readonly observe = inject(ObservationService);
     private readonly themeHandler = inject(ThemeHandlerService);
 
-    readonly themeIcon = viewChild<ElementRef>('');
+    readonly themeIcon = viewChild<ElementRef>('themeIcon');
 
     activeMenu = this.navigate.activeSection$;
 
@@ -88,11 +88,11 @@ export class Navbar implements OnInit, AfterViewInit, OnDestroy {
         if(width > this.maxMobileScreenWidth) {
             document.body.setAttribute("data-nav", 'desktopMode');
             this.deviceOption.set(DeviceOption.DESKTOP);
-            this.observe.setDeviceOption(DeviceOption.DESKTOP);
+            this.observe.selectedDeviceOption.set(DeviceOption.DESKTOP);
         } else {
             document.body.setAttribute("data-nav", 'mobileMode');
             this.deviceOption.set(DeviceOption.MOBILE);
-            this.observe.setDeviceOption(DeviceOption.MOBILE);
+            this.observe.selectedDeviceOption.set(DeviceOption.MOBILE);
         }
     }
 

@@ -35,12 +35,12 @@ export class ThemeHandlerService {
             if(theme) {
                 localStorage.setItem(`${this.url}-theme`, theme);
                 document.body.setAttribute("data-theme", theme);
-                this.observe.setThemeOption(theme);
+                this.observe.selectedThemeOption.set(theme);
                 return;
             }
         }
         
-        this.observe.setThemeOption(ThemeOption.DARK);
+        this.observe.selectedThemeOption.set(ThemeOption.DARK);
         document.body.setAttribute("data-theme", 'darkMode');
     }
 

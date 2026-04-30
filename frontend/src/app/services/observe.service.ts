@@ -1,5 +1,4 @@
-import { Injectable } from "@angular/core";
-import { BehaviorSubject } from "rxjs";
+import { Injectable, signal } from "@angular/core";
 import { ThemeOption } from "../utils/enums/theme-option.enum";
 import { DeviceOption } from "../utils/enums/device-option.enum";
 
@@ -8,17 +7,8 @@ import { DeviceOption } from "../utils/enums/device-option.enum";
 })
 export class ObservationService {
 
-    private themeOptionSubject = new BehaviorSubject<ThemeOption>(ThemeOption.DARK);
-    themeOption$ = this.themeOptionSubject.asObservable();
+    readonly activeModal = signal(false);
+    readonly selectedDeviceOption = signal<DeviceOption>(DeviceOption.DESKTOP);
+    readonly selectedThemeOption = signal<ThemeOption>(ThemeOption.DARK);
 
-    private deviceOptionSubject = new BehaviorSubject<DeviceOption>(DeviceOption.MOBILE);
-    deviceOption$ = this.deviceOptionSubject.asObservable();
-
-    setThemeOption(theme: ThemeOption) {
-        this.themeOptionSubject.next(theme);
-    }
-
-    setDeviceOption(device: DeviceOption) {
-        this.deviceOptionSubject.next(device);
-    }
 }

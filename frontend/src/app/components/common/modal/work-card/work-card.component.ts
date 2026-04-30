@@ -1,4 +1,4 @@
-import { Component, effect, EffectCleanupRegisterFn, ElementRef, inject, input, OnInit, output, signal, viewChild } from "@angular/core";
+import { Component, effect, EffectCleanupRegisterFn, ElementRef, inject, input, OnDestroy, OnInit, output, signal, viewChild } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { Project } from "../../../../utils/interfaces/work.interface";
 import { environment } from "../../../../../environments/environment";
@@ -6,6 +6,7 @@ import { PreloadService } from "../../../../services/preload.service";
 import { ResourceOption } from "../../../../utils/enums/resource-option.enum";
 import { ScrollDownIndicatorComponent } from "../../indicator/scroll-down/scroll-down.indicator.component";
 import { IndicatorOption } from "../../../../utils/enums/indicator-option.enum";
+import { ObservationService } from "../../../../services/observe.service";
 
 @Component({
     selector: 'app-workcard',
@@ -20,9 +21,10 @@ import { IndicatorOption } from "../../../../utils/enums/indicator-option.enum";
         '(document:keydown.escape)': 'closeDetails()'
     }
 })
-export class WorkCardComponent implements OnInit {
+export class WorkCardComponent implements OnInit, OnDestroy {
 
     private readonly preload = inject(PreloadService);
+    private readonly observe = inject(ObservationService);
 
     readonly data = input.required<Project>();
     readonly byChange = output<boolean>();
@@ -30,7 +32,7 @@ export class WorkCardComponent implements OnInit {
 
     protected readonly isLoading = signal(true);
     protected readonly scrolledToBottom = signal(false);
-    protected cdnUrlBase = environment.API_STORAGE_URL.trim();
+    protected readonly cdnUrlBase = environment.API_STORAGE_URL.trim();
     protected readonly IndicatorOptionEnum = IndicatorOption;
 
     constructor() {
@@ -43,7 +45,10 @@ export class WorkCardComponent implements OnInit {
         this.preload.preloadSingle({
             option: ResourceOption.IMG,
             url: `${environment.API_STORAGE_URL}${this.data().thumbnail}`
-        }).then(() => this.isLoading.set(false));
+        }).then(() => {
+            this.isLoading.set(false);
+            this.observe.activeModal.set(true);
+        });
     }
 
     private handleScrollDownIndicator(onCleanUp: EffectCleanupRegisterFn) {
@@ -51,12 +56,10 @@ export class WorkCardComponent implements OnInit {
         if(!element) {
             return;
         }
+
         const scrollHandler = () => {
             const { scrollTop, scrollHeight, clientHeight } = element;
-            const height = Math.ceil(scrollTop) + clientHeight;
-            console.log("height: ", height);
-            console.log("scrollHeight: ", scrollHeight);
-            this.scrolledToBottom.set(height >= scrollHeight);
+            this.scrolledToBottom.set(Math.ceil(scrollTop) + clientHeight >= scrollHeight);
         };
         element.addEventListener('scroll', scrollHandler);
         onCleanUp(() => {
@@ -73,5 +76,9 @@ export class WorkCardComponent implements OnInit {
         if(target.className === 'workcard-detail') {
             this.closeDetails();
         }
+    }
+
+    ngOnDestroy() {
+        this.observe.activeModal.set(false);
     }
 }
