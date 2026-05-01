@@ -1,5 +1,4 @@
-import { inject, Injectable } from "@angular/core";
-import { ObservationService } from "./observe.service";
+import { Injectable, signal } from "@angular/core";
 import { ThemeOption } from "../utils/enums/theme-option.enum";
 
 @Injectable({
@@ -7,10 +6,10 @@ import { ThemeOption } from "../utils/enums/theme-option.enum";
 })
 export class ThemeHandlerService {
 
-    private readonly observe = inject(ObservationService);
-
     private isLocalStorageAvailable = typeof localStorage !== 'undefined';
     private url = "yqni13.com";
+
+    readonly activeTheme = signal<ThemeOption>(ThemeOption.DARK);
 
     initTheme() {
         const theme: ThemeOption = this.getThemeSetting();
@@ -35,12 +34,12 @@ export class ThemeHandlerService {
             if(theme) {
                 localStorage.setItem(`${this.url}-theme`, theme);
                 document.body.setAttribute("data-theme", theme);
-                this.observe.selectedThemeOption.set(theme);
+                this.activeTheme.set(theme);
                 return;
             }
         }
-        
-        this.observe.selectedThemeOption.set(ThemeOption.DARK);
+
+        this.activeTheme.set(ThemeOption.DARK);
         document.body.setAttribute("data-theme", 'darkMode');
     }
 

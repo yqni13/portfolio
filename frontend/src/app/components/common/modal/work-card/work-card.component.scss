@@ -11,7 +11,7 @@
     height: 100vh;
     backdrop-filter: blur(3px);
     .workcard-detail-content {
-        $padding: 25px;
+        $padding: sass.$space25;
         flex-direction: column;
         position: relative;
         scrollbar-width: none;
@@ -19,12 +19,12 @@
         width: 75%;
         max-width: 800px;
         margin: 0 auto;
-        margin-top: var(--comp-nav-height);
         border: 1px solid var(--theme-nav-grey);
         border-radius: 20px;
         padding: $padding;
         background-color: var(--theme-component);
-        max-height: calc(100vh - ((var(--comp-nav-height) * 2) + $padding));
+        margin-top: 0;
+        max-height: calc(100vh - sass.$space100);
         #workcard-detail-content-head {
             flex-direction: row;
             align-items: center;

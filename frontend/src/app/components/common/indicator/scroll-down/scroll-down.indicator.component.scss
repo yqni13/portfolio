@@ -13,8 +13,8 @@
             border-bottom: 1px solid var(--theme-primary);
             -webkit-transform: rotate(-45deg);
             transform: rotate(-45deg);
-            -webkit-animation: scrolling 2s infinite;
-            animation: scrolling 2s infinite;
+            -webkit-animation: scrollAnimation 2s infinite;
+            animation: scrollAnimation 2s infinite;
             opacity: 0;
             box-sizing: border-box;
         }
@@ -37,9 +37,9 @@
     .a-option-small {
         padding-top: 40px;
         .span-option-small {
-            width: 13px;
-            height: 13px;
-            margin-left: 15px;
+            width: 8px;
+            height: 8px;
+            margin-left: 18px;
         }
     }
 
@@ -62,7 +62,7 @@
     }
 }
 
-@-webkit-keyframes scrolling {
+@-webkit-keyframes scrollAnimation {
     0% {
         opacity: 0;
     }
@@ -74,7 +74,7 @@
     }
 }
 
-@keyframes scrolling {
+@keyframes scrollAnimation {
     0% {
         opacity: 0;
     }

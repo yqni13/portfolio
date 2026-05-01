@@ -35,7 +35,7 @@
 </ng-template>
 
 <nav class="navbar roboto-custom-font">
-    @if(deviceOption() === DeviceOptionEnum.MOBILE) {
+    @if(observe.activeDevice() === DeviceOptionEnum.MOBILE) {
         <div class="navbar-burger-menu">
             <a class="navbar-links theme-btn">
                 <i
@@ -57,7 +57,7 @@
             </a>
         </div>
     } 
-    @if(deviceOption() === DeviceOptionEnum.DESKTOP) {
+    @if(observe.activeDevice() === DeviceOptionEnum.DESKTOP) {
         <div class="navbar-logo-desktop">
             <img
                 src="{{logo}}"
@@ -84,7 +84,7 @@
         </div>
     }
 </nav>
-@if(deviceOption() === DeviceOptionEnum.MOBILE && activeMobileMenu) {
+@if(observe.activeDevice() === DeviceOptionEnum.MOBILE && activeMobileMenu) {
     <div class="navbar-mobile-menu roboto-custom-font">
         <div class="navbar-logo-mobile">
             <img

@@ -1,5 +1,4 @@
 import { Injectable, signal } from "@angular/core";
-import { ThemeOption } from "../utils/enums/theme-option.enum";
 import { DeviceOption } from "../utils/enums/device-option.enum";
 
 @Injectable({
@@ -7,8 +6,14 @@ import { DeviceOption } from "../utils/enums/device-option.enum";
 })
 export class ObservationService {
 
+    /**
+     * @description Observe if ANY modal is active as this value is used to hide indicators or other components.
+     */
     readonly activeModal = signal(false);
-    readonly selectedDeviceOption = signal<DeviceOption>(DeviceOption.DESKTOP);
-    readonly selectedThemeOption = signal<ThemeOption>(ThemeOption.DARK);
+
+    /**
+     * @description Observe for active device option (seperate service not necessary).
+     */
+    readonly activeDevice = signal<DeviceOption>(DeviceOption.DESKTOP);
 
 }

@@ -1,4 +1,4 @@
-import { AfterContentChecked, Component, inject, signal } from '@angular/core';
+import { afterNextRender, Component, inject, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Navbar } from './components/common/navbar/navbar.component';
 import { AboutComponent } from './components/pages/about/about.component';
@@ -37,7 +37,7 @@ import { ObservationService } from './services/observe.service';
 		ScrollDownIndicatorComponent
 	],
 })
-export class App implements AfterContentChecked {
+export class App {
 
 	readonly observe = inject(ObservationService);
 	readonly notifyModal = inject(NotifyModalService);
@@ -47,15 +47,20 @@ export class App implements AfterContentChecked {
 	protected readonly scrolledToBottom = signal(false);
 	protected readonly IndicatorOptionEnum = IndicatorOption;
 
-	ngAfterContentChecked() {
-		const scrollMaxHeight = this.navigation.getScrollMaxHeight();
-		window.onscroll = () => {
-			if (Math.ceil(document.documentElement.scrollTop) >= scrollMaxHeight || 
-			Math.ceil(document.body.scrollTop) >= scrollMaxHeight) {
-				this.scrolledToBottom.set(true);
-			} else {
-				this.scrolledToBottom.set(false);
-			}
+	constructor() {
+		afterNextRender(() => {
+			this.handleScrollDownIndicator();
+		})
+	}
+
+	private handleScrollDownIndicator() {
+		const scrollHandler = () => {
+			const max = this.navigation.getScrollMaxHeight();
+			const scrolled = Math.max(document.documentElement.scrollTop, document.body.scrollTop);
+			this.scrolledToBottom.set(Math.ceil(scrolled) >= max);
 		};
+
+		window.addEventListener('scroll', scrollHandler, { passive: true });
+		// No cleanup/destroyref necessary as root component does not get destroyed.
 	}
 }

@@ -1,22 +1,24 @@
 import { Component, effect, inject, OnInit, signal } from "@angular/core";
 import { BaseComponent } from "../base.component";
-import { ObservationService } from "../../../services/observe.service";
 import { ThemeOption } from "../../../utils/enums/theme-option.enum";
 import { CommonModule } from "@angular/common";
 import { environment } from "../../../../environments/environment";
 import { PreloadService } from "../../../services/preload.service";
 import { ResourceOption } from "../../../utils/enums/resource-option.enum";
+import { ThemeHandlerService } from "../../../services/theme.service";
 
 @Component({
     selector: 'app-about',
+    imports: [
+        CommonModule
+    ],
     templateUrl: './about.component.html',
     styleUrl: './about.component.scss',
-    imports: [CommonModule]
 })
 export class AboutComponent extends BaseComponent implements OnInit {
 
     private readonly preload = inject(PreloadService);
-    private readonly observe = inject(ObservationService);
+    private readonly themeHandler = inject(ThemeHandlerService);
 
     private portraitPaths: Record<string, string> = {
         light: `${environment.API_STORAGE_URL}/container/portfolio/portrait/about_light.webp`,
@@ -38,9 +40,7 @@ export class AboutComponent extends BaseComponent implements OnInit {
             title: 'About',
             subTitle: 'Who am I?'
         };
-        effect(() => {
-            this.handleSelectedThemeObservation();
-        })
+        effect(() => this.setImgByTheme());
     }
 
     ngOnInit() {
@@ -50,8 +50,8 @@ export class AboutComponent extends BaseComponent implements OnInit {
         ]);
     }
 
-    private handleSelectedThemeObservation() {
-        if(this.observe.selectedThemeOption() === ThemeOption.LIGHT) {
+    private setImgByTheme() {
+        if(this.themeHandler.activeTheme() === ThemeOption.LIGHT) {
             this.imgByTheme.set({
                 'background-image': `url(${this.portraitPaths['light']})`
             });

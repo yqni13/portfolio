@@ -13,9 +13,7 @@ export class NotifyModalService {
     isActive = computed(() => this.notifications().length > 0);
 
     constructor() {
-        effect(() => {
-            this.handleActiveModalObservation();
-        })
+        effect(() => this.observe.activeModal.set(this.notifications().length > 0));
     }
 
     notify(notification: NotifyModalMessage) {
@@ -39,14 +37,5 @@ export class NotifyModalService {
 
     close(notification: NotifyModalMessage) {
         this.notifications.update(current => current.filter(entry => entry !== notification));
-    }
-
-    private handleActiveModalObservation() {
-        const collection = this.notifications();
-        if(collection.length > 0) {
-            this.observe.activeModal.set(true);
-        } else {
-            this.observe.activeModal.set(false);
-        }
     }
 }

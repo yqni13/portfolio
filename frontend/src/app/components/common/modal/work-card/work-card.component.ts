@@ -45,7 +45,7 @@ export class WorkCardComponent implements OnInit, OnDestroy {
         this.preload.preloadSingle({
             option: ResourceOption.IMG,
             url: `${environment.API_STORAGE_URL}${this.data().thumbnail}`
-        }).then(() => {
+        }).finally(() => {
             this.isLoading.set(false);
             this.observe.activeModal.set(true);
         });

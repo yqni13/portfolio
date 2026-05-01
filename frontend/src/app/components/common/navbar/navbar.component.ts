@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, inject, OnDestroy, OnInit, signal, viewChild } from "@angular/core";
+import { AfterViewInit, Component, ElementRef, inject, OnDestroy, OnInit, viewChild } from "@angular/core";
 import { ThemeOption } from "../../../utils/enums/theme-option.enum";
 import _ from "underscore";
 import { ThemeHandlerService } from "../../../services/theme.service";
@@ -19,8 +19,8 @@ import { ObservationService } from "../../../services/observe.service";
 })
 export class Navbar implements OnInit, AfterViewInit, OnDestroy {
 
+    protected readonly observe = inject(ObservationService);
     private readonly navigate = inject(NavigationService);
-    private readonly observe = inject(ObservationService);
     private readonly themeHandler = inject(ThemeHandlerService);
 
     readonly themeIcon = viewChild<ElementRef>('themeIcon');
@@ -30,7 +30,6 @@ export class Navbar implements OnInit, AfterViewInit, OnDestroy {
     protected readonly ThemeOptionEnum = ThemeOption;
     protected readonly DeviceOptionEnum = DeviceOption;
     protected selectedTheme: ThemeOption = this.themeHandler.getThemeSetting();
-    protected readonly deviceOption = signal<DeviceOption>(DeviceOption.MOBILE);
     protected activeMobileMenu = false;
     protected menu: NavMenu[] = menuData;
     protected logo = new Image().src = 'yqni13_logo256.ico';
@@ -87,12 +86,10 @@ export class Navbar implements OnInit, AfterViewInit, OnDestroy {
     private setNavWidthDynamically(width: number) {
         if(width > this.maxMobileScreenWidth) {
             document.body.setAttribute("data-nav", 'desktopMode');
-            this.deviceOption.set(DeviceOption.DESKTOP);
-            this.observe.selectedDeviceOption.set(DeviceOption.DESKTOP);
+            this.observe.activeDevice.set(DeviceOption.DESKTOP);
         } else {
             document.body.setAttribute("data-nav", 'mobileMode');
-            this.deviceOption.set(DeviceOption.MOBILE);
-            this.observe.selectedDeviceOption.set(DeviceOption.MOBILE);
+            this.observe.activeDevice.set(DeviceOption.MOBILE);
         }
     }
 

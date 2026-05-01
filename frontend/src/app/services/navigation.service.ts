@@ -35,7 +35,7 @@ export class NavigationService {
             },
             {
                 // Define how much of section must be visible to trigger (0.4 => 40%).
-                threshold: this.observeService.selectedDeviceOption() === DeviceOption.MOBILE ? 0.1 : 0.4,
+                threshold: this.observeService.activeDevice() === DeviceOption.MOBILE ? 0.1 : 0.4,
                 rootMargin: '0px'
             }
         );
@@ -48,16 +48,13 @@ export class NavigationService {
     }
 
     getScrollMaxHeight(): number {
-        const body = document.body;
-        const html = document.documentElement;
         const documentHeight = Math.max(
-            body.scrollHeight,
-			body.offsetHeight,
-            body.clientHeight,
-            html.clientHeight,
-            html.scrollHeight,
-            html.clientHeight,
-			html.offsetHeight,
+            document.body.scrollHeight,
+			document.body.offsetHeight,
+            document.body.clientHeight,
+            document.documentElement.scrollHeight,
+			document.documentElement.offsetHeight,
+            document.documentElement.clientHeight,
         );
         const windowHeight = window.innerHeight;
 

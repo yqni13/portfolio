@@ -1,7 +1,7 @@
 import { CommonModule } from "@angular/common";
-import { Component, effect, inject } from "@angular/core";
-import { ObservationService } from "../../../services/observe.service";
+import { Component, inject } from "@angular/core";
 import { ThemeOption } from "../../../utils/enums/theme-option.enum";
+import { ThemeHandlerService } from "../../../services/theme.service";
 
 @Component({
     selector: 'app-background',
@@ -13,12 +13,7 @@ import { ThemeOption } from "../../../utils/enums/theme-option.enum";
 })
 export class BackgroundComponent {
 
-    private readonly observe = inject(ObservationService);
+    protected readonly themeHandler = inject(ThemeHandlerService);
 
-    protected activeTheme: ThemeOption = ThemeOption.DARK;
     protected readonly ThemeOptionEnum = ThemeOption;
-
-    constructor() {
-        effect(() => this.activeTheme = this.observe.selectedThemeOption());
-    }
 }
