@@ -1,23 +1,16 @@
-import { inject, Injectable, OnDestroy, signal } from "@angular/core";
+import { inject, Injectable, signal } from "@angular/core";
 import { ObservationService } from "./observe.service";
 import { DeviceOption } from "../utils/enums/device-option.enum";
-import { Subscription } from "rxjs";
 
 @Injectable({
     providedIn: 'root'
 })
-export class NavigationService implements OnDestroy {
+export class NavigationService {
 
     private readonly observeService = inject(ObservationService);
 
     private observer!: IntersectionObserver;
-    private activeDeviceOption: DeviceOption = DeviceOption.MOBILE;
     private readonly activeSection = signal<string>('home');
-    private subscriptionDeviceOption$: Subscription = 
-    this.observeService.deviceOption$.subscribe((val: DeviceOption) => {
-        this.activeDeviceOption = val;
-    });
-
     // Prevent updating value outside of this environment => can be updated with public readonly signal.
     activeSection$ = this.activeSection.asReadonly();
 
@@ -42,7 +35,7 @@ export class NavigationService implements OnDestroy {
             },
             {
                 // Define how much of section must be visible to trigger (0.4 => 40%).
-                threshold: this.activeDeviceOption === DeviceOption.MOBILE ? 0.1 : 0.4,
+                threshold: this.observeService.activeDevice() === DeviceOption.MOBILE ? 0.1 : 0.4,
                 rootMargin: '0px'
             }
         );
@@ -54,11 +47,21 @@ export class NavigationService implements OnDestroy {
         });
     }
 
-    disconnect() {
-        this.observer?.disconnect();
+    getScrollMaxHeight(): number {
+        const documentHeight = Math.max(
+            document.body.scrollHeight,
+			document.body.offsetHeight,
+            document.body.clientHeight,
+            document.documentElement.scrollHeight,
+			document.documentElement.offsetHeight,
+            document.documentElement.clientHeight,
+        );
+        const windowHeight = window.innerHeight;
+
+        return documentHeight - windowHeight;
     }
 
-    ngOnDestroy() {
-        this.subscriptionDeviceOption$.unsubscribe();
+    disconnect() {
+        this.observer?.disconnect();
     }
 }

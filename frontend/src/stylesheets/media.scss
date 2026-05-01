@@ -19,6 +19,16 @@
             padding: 0 12.5vw;
         }
     }
+    app-scrolldown-indicator {
+        .a-option-main {
+            padding-top: 80px;
+            .span-option-main {
+                width: 24px;
+                height: 24px;
+                margin-left: -12px;
+            }
+        }
+    }
     .hero {
         #hero-header-wrapper {
             max-width: 50%;
@@ -149,6 +159,16 @@
             padding: 0 12.5vw;
         }
     }
+    app-scrolldown-indicator {
+        .a-option-main {
+            padding-top: 80px;
+            .span-option-main {
+                width: 24px;
+                height: 24px;
+                margin-left: -12px;
+            }
+        }
+    }
     .hero {
         #hero-header-wrapper {
             max-width: 75%;
@@ -276,6 +296,16 @@
     .page-head-wrapper {
         margin-bottom: 60px;
     }
+    app-scrolldown-indicator {
+        .a-option-main {
+            padding-top: 55px;
+            .span-option-main {
+                width: 18px;
+                height: 18px;
+                margin-left: 5px;
+            }
+        }
+    }
     .work {
         .work-content {
             max-width: none;
@@ -368,6 +398,16 @@
         margin-bottom: 50px;
         h4, span {
             padding: 0;
+        }
+    }
+    app-scrolldown-indicator {
+        .a-option-main {
+            padding-top: 50px;
+            .span-option-main {
+                width: 13px;
+                height: 13px;
+                margin-left: 15px;
+            }
         }
     }
     .main {
@@ -466,8 +506,17 @@
     .page-head-wrapper {
         margin-bottom: 40px;
     }
+    app-scrolldown-indicator {
+        .a-option-main {
+            .span-option-main {
+                width: 8px;
+                height: 8px;
+                margin-left: 25px;
+            }
+        }
+    }
     .main {
-        margin: 0 15px;
+        margin: 0 20px;
     }
     .hero {
         #hero-header-wrapper {

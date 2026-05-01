@@ -1,5 +1,5 @@
 # yqni13 | $\texttt{\color{blueviolet}{PORTFOLIO}}$
-### $\textsf{\color{brown}{v1.1.9}}$
+### $\textsf{\color{brown}{v1.2.0}}$
 
 <br>
 
@@ -57,14 +57,5 @@ ng lint
 ## 📈 $\textsf{\color{salmon}Updates}$
 [see changelog for all updates](./docs/CHANGELOG.md)
 
-$\textsf{[v1.1.6\ =>\ {\textbf{\color{brown}v1.1.9}]}}$ app
-- $\textsf{\color{teal}Addition:}$ Added ESLint to check code against rules and guidelines.
-- $\textsf{\color{orange}Patch:}$ Updated
-  + 'work-card' component to use signal for displaying content only when preload is finished
-  + all modules/pages/services/forms/etc on the following ESLint rulesets from (https://github.com/angular-eslint/angular-eslint/tree/main/packages/eslint-plugin/docs/rules):
-    * no-async-lifecycle-method
-    * no-input-rename
-    * prefer-output-readonly
-    * prefer-inject
-    * prefer-signals
-    * sort-keys-in-type-decorator
+$\textsf{[v1.1.9\ =>\ {\textbf{\color{brown}v1.2.0}]}}$ app
+- $\textsf{\color{teal}Addition:}$ Added scroll-down indicator for main website and work-card.

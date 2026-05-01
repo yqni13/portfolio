@@ -1,13 +1,20 @@
-import { computed, Injectable, signal } from "@angular/core";
+import { computed, effect, inject, Injectable, signal } from "@angular/core";
 import { NotifyModalMessage } from "../utils/interfaces/notify-modal.interface";
+import { ObservationService } from "./observe.service";
 
 @Injectable({
     providedIn: 'root'
 })
 export class NotifyModalService {
 
+    private readonly observe = inject(ObservationService);
+
     readonly notifications = signal<NotifyModalMessage[]>([]);
     isActive = computed(() => this.notifications().length > 0);
+
+    constructor() {
+        effect(() => this.observe.activeModal.set(this.notifications().length > 0));
+    }
 
     notify(notification: NotifyModalMessage) {
         if(notification.autoClose && !notification.displayTimeInMilliseconds) {

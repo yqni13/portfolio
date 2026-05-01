@@ -12,3 +12,19 @@
     height: 100%;
     backdrop-filter: contrast(0.7) blur(3px);
 }
+
+main {
+    position: relative;
+}
+
+app-navbar {
+    position: relative;
+    z-index: 999;
+}
+
+app-scrolldown-indicator {
+    position: fixed;
+    z-index: -1;
+    bottom: 10px;
+    right: 40px;
+}

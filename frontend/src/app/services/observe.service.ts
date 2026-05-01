@@ -1,6 +1,4 @@
-import { Injectable } from "@angular/core";
-import { BehaviorSubject } from "rxjs";
-import { ThemeOption } from "../utils/enums/theme-option.enum";
+import { Injectable, signal } from "@angular/core";
 import { DeviceOption } from "../utils/enums/device-option.enum";
 
 @Injectable({
@@ -8,17 +6,14 @@ import { DeviceOption } from "../utils/enums/device-option.enum";
 })
 export class ObservationService {
 
-    private themeOptionSubject = new BehaviorSubject<ThemeOption>(ThemeOption.DARK);
-    themeOption$ = this.themeOptionSubject.asObservable();
+    /**
+     * @description Observe if ANY modal is active as this value is used to hide indicators or other components.
+     */
+    readonly activeModal = signal(false);
 
-    private deviceOptionSubject = new BehaviorSubject<DeviceOption>(DeviceOption.MOBILE);
-    deviceOption$ = this.deviceOptionSubject.asObservable();
+    /**
+     * @description Observe for active device option (seperate service not necessary).
+     */
+    readonly activeDevice = signal<DeviceOption>(DeviceOption.DESKTOP);
 
-    setThemeOption(theme: ThemeOption) {
-        this.themeOptionSubject.next(theme);
-    }
-
-    setDeviceOption(device: DeviceOption) {
-        this.deviceOptionSubject.next(device);
-    }
 }

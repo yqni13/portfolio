@@ -12,7 +12,7 @@
                     <i class="icon-base icon-Close"></i>
                 </a>
             </div>
-            <div class="workcard-detail-content-wrapper">
+            <div class="workcard-detail-content-wrapper" #contentWrapper>
                 <div id="workcard-detail-thumbnail">
                     <img src="{{cdnUrlBase + data().thumbnail}}" alt="thumbnail">
                 </div>
@@ -58,6 +58,9 @@
                     </div>
                 }
             </div>
+            @if (!scrolledToBottom()) {
+                <app-scrolldown-indicator [option]="IndicatorOptionEnum.SMALL"></app-scrolldown-indicator>
+            }
         </div>
     </div>
 }
