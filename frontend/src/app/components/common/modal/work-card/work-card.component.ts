@@ -57,6 +57,11 @@ export class WorkCardComponent implements OnInit, OnDestroy {
             return;
         }
 
+        // Immediately set true when page is displayed in full height on big screen.
+        if(element.clientHeight === element.scrollHeight) {
+            this.scrolledToBottom.set(true);
+        }
+
         const scrollHandler = () => {
             const { scrollTop, scrollHeight, clientHeight } = element;
             this.scrolledToBottom.set(Math.ceil(scrollTop) + clientHeight >= scrollHeight);
