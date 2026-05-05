@@ -1,6 +1,15 @@
 ## 📜 $\textsf{\color{salmon}{List\ of\ updates}}$
 
-$\textsf{[v1.1.6\ =>\ {\textbf{\color{brown}v1.1.9}]}}$ app
+### $\textsf{\color{skyblue}2026/04/30}$
+
+$\textsf{[v1.1.9\ =>\ {\textbf{\color{brown}v1.2.0}]}}$ app
+- $\textsf{\color{teal}Addition:}$ Added scroll-down indicator for main website and work-card.
+
+<br>
+
+### $\textsf{\color{skyblue}2026/04/28}$
+
+$\textsf{[v1.1.6\ =>\ v1.1.9]}$ app
 - $\textsf{\color{teal}Addition:}$ Added ESLint to check code against rules and guidelines.
 - $\textsf{\color{orange}Patch:}$ Updated
   + 'work-card' component to use signal for displaying content only when preload is finished

@@ -5,23 +5,26 @@
     align-items: center;
     z-index: 1000;
     position: fixed;
-    overflow: scroll;
-    scrollbar-width: none;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
     backdrop-filter: blur(3px);
     .workcard-detail-content {
+        $padding: sass.$space25;
         flex-direction: column;
+        position: relative;
+        scrollbar-width: none;
+        overflow-y: auto;
         width: 75%;
         max-width: 800px;
         margin: 0 auto;
         border: 1px solid var(--theme-nav-grey);
         border-radius: 20px;
-        padding: 25px;
+        padding: $padding;
         background-color: var(--theme-component);
-        max-height: 85vh;
+        margin-top: 0;
+        max-height: calc(100vh - sass.$space100);
         #workcard-detail-content-head {
             flex-direction: row;
             align-items: center;
@@ -160,4 +163,9 @@
             }
         }
     }
+}
+app-scrolldown-indicator {
+    position: absolute;
+    bottom: 40px;
+    right: 35px;
 }

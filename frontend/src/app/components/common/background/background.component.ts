@@ -1,8 +1,7 @@
 import { CommonModule } from "@angular/common";
-import { Component, inject, OnDestroy, OnInit } from "@angular/core";
-import { ObservationService } from "../../../services/observe.service";
-import { Subscription } from "rxjs";
+import { Component, inject } from "@angular/core";
 import { ThemeOption } from "../../../utils/enums/theme-option.enum";
+import { ThemeHandlerService } from "../../../services/theme.service";
 
 @Component({
     selector: 'app-background',
@@ -12,22 +11,9 @@ import { ThemeOption } from "../../../utils/enums/theme-option.enum";
     templateUrl: './background.component.html',
     styleUrl: './background.component.scss',
 })
-export class BackgroundComponent implements OnInit, OnDestroy{
+export class BackgroundComponent {
 
-    private readonly observe = inject(ObservationService);
+    protected readonly themeHandler = inject(ThemeHandlerService);
 
-    protected activeTheme: ThemeOption = ThemeOption.DARK;
-    protected themeEnum = ThemeOption;
-
-    private subscriptionTheme$ = new Subscription();
-
-    ngOnInit() {
-        this.subscriptionTheme$ = this.observe.themeOption$.subscribe(theme => {
-            this.activeTheme = theme;
-        })
-    }
-
-    ngOnDestroy() {
-        this.subscriptionTheme$.unsubscribe();
-    }
+    protected readonly ThemeOptionEnum = ThemeOption;
 }
