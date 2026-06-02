@@ -8,6 +8,10 @@ $card-padding: sass.$space25;
     align-items: center;
     width: 100%;
 
+    app-toggle {
+        margin-bottom: sass.$space15;
+    }
+
     .experience-content {
         max-width: 1000px;
         flex-direction: column;
@@ -61,6 +65,7 @@ $card-padding: sass.$space25;
 
 .experience-card {
     flex-direction: column;
+    position: relative;
     width: 100%;
     padding: $card-padding;
     margin-bottom: sass.$space25;
@@ -95,6 +100,16 @@ $card-padding: sass.$space25;
     }
 
     .experience-card-head {
+        i {
+            position: absolute;
+            top: sass.$space15;
+            right: sass.$space15;
+            $size: 24px;
+            width: $size;
+            height: $size;
+            color: var(--theme-primary);
+            margin-right: sass.$space5;
+        }
         h4 {
             font-weight: 300;
             font-size: 24px;

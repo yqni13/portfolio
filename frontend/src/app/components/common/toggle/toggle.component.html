@@ -1,0 +1,9 @@
+<div class="toggle-wrapper">
+    <label class="toggle">
+        <span class="icon-wrapper"><i class="icon-base left" ngClass="icon-{{enabledIcon()}}"></i></span>
+        <span class="icon-wrapper"><i class="icon-base right" ngClass="icon-{{disabledIcon()}}"></i></span>
+        <input type="checkbox" value="{{initValue()}}" (change)="emitStatus($event)" class="input">
+        <span class="slider"></span>
+    </label>
+    <span class="description">{{description()}}</span>
+</div>

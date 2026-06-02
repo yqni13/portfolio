@@ -1,0 +1,94 @@
+@use '../../../../stylesheets/utilities' as sass;
+
+
+$toggle-padding: 2.5px;
+
+.toggle-wrapper {
+    width: fit-content;
+    align-items: center;
+}
+
+.toggle {
+    display: flex;
+    position: relative;
+    align-items: center;
+    width: 70px;
+    height: 34px;
+    border: 1px solid var(--theme-toggle);
+    padding: 0 $toggle-padding;
+    border-radius: 25px;
+}
+
+.icon-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle i {
+    $size: 24px;
+    width: $size;
+    height: $size;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--theme-body-bg);
+    transition: .3s;
+    border-radius: 30px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 30px;
+    width: 30px;
+    border-radius: 20px;
+    left: 2px;
+    bottom: 2px;
+    z-index: 2;
+    background-color: var(--theme-toggle);
+    transition: .3s;
+}
+
+.left {
+    position: absolute;
+    left: 7.5px;
+    z-index: 1;
+    color: var(--theme-primary);
+}
+
+.right {
+    position: absolute;
+    right: 5px; // Closer to end because icon needs a bit more space.
+    z-index: 1;
+    color: var(--theme-grey);
+}
+
+.input:checked + .slider {
+    background-color: var(--theme-body-bg);
+}
+
+.input:checked + .slider:before {
+    transform: translateX(calc(36px + ($toggle-padding * 2)));
+}
+
+.description {
+    margin-left: sass.$space15;
+    opacity: 0.75;
+    font-weight: 300;
+    font-size: 18px;
+}
