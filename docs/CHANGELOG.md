@@ -1,8 +1,15 @@
 ## 📜 $\textsf{\color{salmon}{List\ of\ updates}}$
 
+### $\textsf{\color{skyblue}2026/06/02}$
+
+$\textsf{[v1.2.0\ =>\ {\textbf{\color{brown}v1.3.0}]}}$ app
+- $\textsf{\color{teal}Addition:}$ Added certification filter for "experience" listing.
+
+<br>
+
 ### $\textsf{\color{skyblue}2026/04/30}$
 
-$\textsf{[v1.1.9\ =>\ {\textbf{\color{brown}v1.2.0}]}}$ app
+$\textsf{[v1.1.9\ =>\ v1.2.0]}$ app
 - $\textsf{\color{teal}Addition:}$ Added scroll-down indicator for main website and work-card.
 
 <br>
