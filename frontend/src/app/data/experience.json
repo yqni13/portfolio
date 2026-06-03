@@ -2,6 +2,7 @@
     {
         "title": "Full-Stack Developer",
         "time": "Mar 2024 - now",
+        "certificate": false,
         "institute": {
             "name": "Freelance"
         },
@@ -19,6 +20,7 @@
     {
         "title": "Junior Software Developer",
         "time": "Jul 2022 - Dec 2023",
+        "certificate": false,
         "institute": {
             "name": "Evolit GmbH",
             "link": "https://evolit.com/"
@@ -34,6 +36,7 @@
     {
         "title": "Bachelor of Science in Computer Science",
         "time": "Sep 2020 - Jun 2023",
+        "certificate": false,
         "institute": {
             "name": "University of Applied Sciences Vienna | FH Technikum Wien",
             "link": "https://www.technikum-wien.at/en/programs/bachelor-computer-science/"
