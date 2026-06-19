@@ -9,9 +9,9 @@ export class AbstractInputComponent implements ControlValueAccessor {
 
     readonly fieldName = input.required<string>();
     readonly formControl = input.required<FormControl>();
-    readonly placeholder = input<string>();
-    readonly name = input<string>();
-    readonly ngClass = input<string>();
+    readonly placeholder = input('');
+    readonly name = input('');
+    readonly ngClass = input('');
     readonly customStyle = input<Record<string, string>>();
 
     readonly byChange = output<unknown>();

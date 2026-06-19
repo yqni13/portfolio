@@ -1,0 +1,11 @@
+<div>
+    <input
+        [formField]="field"
+        [type]="inputType()"
+    >
+</div>
+@if(field().invalid() && (field().dirty() || field().touched())) {
+    <span>
+        {{field().errors()[0].message}}
+    </span>
+}

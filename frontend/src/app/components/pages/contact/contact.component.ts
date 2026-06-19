@@ -3,7 +3,6 @@ import { BaseComponent } from "../base.component";
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from "@angular/forms";
 import { CastFormControlPipe } from "../../../utils/pipes/form-control.pipe";
 import { TextInputComponent } from "../../common/form/text-input/text-input.component";
-import { CommonModule } from "@angular/common";
 import { TextareaInputComponent } from "../../common/form/textarea-input/textarea-input.component";
 import { SelectInputComponent } from "../../common/form/select-input/select-input.component";
 import { NotificationApiService } from "../../../api/services/notification.api.service";
@@ -11,6 +10,7 @@ import { NotificationParams } from "../../../api/interfaces/notification.api.int
 import { NotifyModalService } from "../../../services/notify-modal.service";
 import { NotifyModalType } from "../../../utils/enums/notify-modal.enum";
 import { LoaderComponent } from "../../common/loader/loader.component";
+import { CommonModule } from "@angular/common";
 
 @Component({
     selector: 'app-contact',

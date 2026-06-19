@@ -16,6 +16,7 @@ import { ScrollDownIndicatorComponent } from './components/common/indicator/scro
 import { NavigationService } from './services/navigation.service';
 import { IndicatorOption } from './utils/enums/indicator-option.enum';
 import { ObservationService } from './services/observe.service';
+import { TestComponent } from './components/pages/test/test.component';
 
 @Component({
 	selector: 'app-root',
@@ -34,7 +35,8 @@ import { ObservationService } from './services/observe.service';
 		Footer,
 		RouterOutlet,
 		NotifyModalComponent,
-		ScrollDownIndicatorComponent
+		ScrollDownIndicatorComponent,
+		TestComponent
 	],
 })
 export class App {
