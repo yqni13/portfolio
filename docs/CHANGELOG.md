@@ -1,8 +1,15 @@
 ## 📜 $\textsf{\color{salmon}{List\ of\ updates}}$
 
+### $\textsf{\color{skyblue}2026/06/23}$
+
+$\textsf{[v1.3.0\ =>\ {\textbf{\color{brown}v1.3.1}]}}$ app
+- $\textsf{\color{teal}Addition:}$ Added script call to track meta data (visitor counter).
+
+<br>
+
 ### $\textsf{\color{skyblue}2026/06/02}$
 
-$\textsf{[v1.2.0\ =>\ {\textbf{\color{brown}v1.3.0}]}}$ app
+$\textsf{[v1.2.0\ =>\ v1.3.0]}$ app
 - $\textsf{\color{teal}Addition:}$ Added certification filter for "experience" listing.
 
 <br>
