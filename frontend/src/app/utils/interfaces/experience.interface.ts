@@ -1,6 +1,7 @@
 export interface Experience {
     title: string,
     time: string,
+    certificate: boolean,
     institute: Institute,
     type: string,
     core: string[],

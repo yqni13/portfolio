@@ -23,6 +23,9 @@
             <span class="experience-card-link-type">{{'| ' + data.type}}</span>
         </div>
         <div class="experience-card-head">
+            @if(data.certificate) {
+                <i class="icon-base icon-Certificate"></i>
+            }
             <h4>{{data.title}}</h4>
             <span>{{data.time}}</span>
         </div>
@@ -46,16 +49,25 @@
         <h3>{{data.title}}</h3>
         <span class="head-text">{{data.subTitle}}</span>
     </div>
+    <app-toggle
+        [enabledIcon]="'Certificate'"
+        [disabledIcon]="'NoCertificate'"
+        [initValue]="showCertifications()"
+        [description]="'Show additional certificates.'"
+        (byChange)="mapExperienceList($event)"
+    ></app-toggle>
     <div class="experience-content">
         @for(card of experiences; track $index) {
-            <div class="experience-content-wrapper">
-                <div class="experience-timeline">
-                    <div class="timeline-marker"></div>
+            @if (!card.certificate || (card.certificate && showCertifications())) {
+                <div class="experience-content-wrapper">
+                    <div class="experience-timeline">
+                        <div class="timeline-marker"></div>
+                    </div>
+                    <ng-container 
+                        *ngTemplateOutlet="expCard; context: { i: $index, data: card }"
+                    ></ng-container>
                 </div>
-                <ng-container 
-                    *ngTemplateOutlet="expCard; context: { i: $index, data: card }"
-                ></ng-container>
-            </div>
+            }
         }
     </div>
 </section>
