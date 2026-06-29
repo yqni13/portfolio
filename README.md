@@ -1,5 +1,5 @@
 # yqni13 | $\texttt{\color{blueviolet}{PORTFOLIO}}$
-### $\textsf{\color{brown}{v1.3.1}}$
+### $\textsf{\color{brown}{v1.3.2}}$
 
 <br>
 
@@ -57,5 +57,5 @@ ng lint
 ## 📈 $\textsf{\color{salmon}Updates}$
 [see changelog for all updates](./docs/CHANGELOG.md)
 
-$\textsf{[v1.3.0\ =>\ {\textbf{\color{brown}v1.3.1}]}}$ app
-- $\textsf{\color{teal}Addition:}$ Added script call to track meta data (visitor counter).
+$\textsf{[v1.3.1\ =>\ {\textbf{\color{brown}v1.3.2}]}}$ app
+- $\textsf{\color{orange}Patch:}$ Updated 'experiences' with new certificates.
