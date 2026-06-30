@@ -1,8 +1,15 @@
 ## 📜 $\textsf{\color{salmon}{List\ of\ updates}}$
 
+### $\textsf{\color{skyblue}2026/06/30}$
+
+$\textsf{[v1.3.1\ =>\ {\textbf{\color{brown}v1.3.2}]}}$ app
+- $\textsf{\color{orange}Patch:}$ Updated 'experiences' with new certificates.
+
+<br>
+
 ### $\textsf{\color{skyblue}2026/06/23}$
 
-$\textsf{[v1.3.0\ =>\ {\textbf{\color{brown}v1.3.1}]}}$ app
+$\textsf{[v1.3.0\ =>\ v1.3.1]}$ app
 - $\textsf{\color{teal}Addition:}$ Added script call to track meta data (visitor counter).
 
 <br>

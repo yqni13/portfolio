@@ -1,5 +1,20 @@
 [
     {
+        "title": "Google AI Certificates",
+        "time": "Jun 2026",
+        "certificate": true,
+        "institute": {
+            "name": "Coursera",
+            "link": "https://www.coursera.org/professional-certificates/google-ai"
+        },
+        "type": "Remote",
+        "core": [
+            "Google AI Essentials",
+            "Google AI - including 'Fundamentals', 'AI for Brainstorming and Planning', 'AI for Research and Insights', 'AI for Writing and Communicating', 'AI for Content Creation', 'AI for Data Analysis' and 'AI for App Building'"
+        ],
+        "keys": ["Google", "AI", "Gemini", "Antigravity", "Prompting", "Responsibilites", "GenAI"]
+    },
+    {
         "title": "Full-Stack Developer",
         "time": "Mar 2024 - now",
         "certificate": false,
