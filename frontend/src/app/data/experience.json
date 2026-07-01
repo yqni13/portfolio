@@ -1,7 +1,7 @@
 [
     {
-        "title": "Google AI Certificates",
-        "time": "Jun 2026",
+        "title": "Google AI Certificate",
+        "time": "Jun - Jul 2026",
         "certificate": true,
         "institute": {
             "name": "Coursera",
@@ -9,10 +9,24 @@
         },
         "type": "Remote",
         "core": [
-            "Google AI Essentials",
-            "Google AI - including 'Fundamentals', 'AI for Brainstorming and Planning', 'AI for Research and Insights', 'AI for Writing and Communicating', 'AI for Content Creation', 'AI for Data Analysis' and 'AI for App Building'"
+            "All modules: 'Fundamentals', 'AI for Brainstorming and Planning', 'AI for Research and Insights', 'AI for Writing and Communicating', 'AI for Content Creation', 'AI for Data Analysis' and 'AI for App Building'",
+            "Learn efficient and responsible use of AI tools to process data, develop, assist for learning and research"
         ],
-        "keys": ["Google", "AI", "Gemini", "Antigravity", "Prompting", "Responsibilites", "GenAI"]
+        "keys": ["Google", "AI", "Gemini", "Antigravity", "NotebookLM", "Prompting", "Responsibilites", "GenAI", "Gems", "Deep Research", "Brainstorming"]
+    },
+    {
+        "title": "Google AI Essential Certificate",
+        "time": "Jun 2026",
+        "certificate": true,
+        "institute": {
+            "name": "Coursera",
+            "link": "https://www.coursera.org/specializations/ai-essentials-google"
+        },
+        "type": "Remote",
+        "core": [
+            "Learn basics of generative AI and how to efficiently use it"
+        ],
+        "keys": ["Google", "AI", "Gemini", "Prompting", "GenAI"]
     },
     {
         "title": "Full-Stack Developer",

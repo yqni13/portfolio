@@ -163,6 +163,22 @@
                 "icon": "icon-ESLint",
                 "name": "ESLint",
                 "link": "https://eslint.org/"
+            },
+            {
+                "icon": "icon-Gemini",
+                "name": "Gemini",
+                "link": "https://gemini.google.com/app"
+            },
+            {
+                "icon": "icon-Antigravity",
+                "name": "Antigravity",
+                "link": "https://antigravity.google/"
+            },
+            {
+                "icon": "icon-NotebookLM",
+                "name": "NotebookLM",
+                "link": "https://notebooklm.google.com/",
+                "customStyle": true
             }
         ]
     },
