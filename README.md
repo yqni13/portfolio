@@ -1,5 +1,5 @@
 # yqni13 | $\texttt{\color{blueviolet}{PORTFOLIO}}$
-### $\textsf{\color{brown}{v1.2.0}}$
+### $\textsf{\color{brown}{v1.3.3}}$
 
 <br>
 
@@ -57,5 +57,5 @@ ng lint
 ## 📈 $\textsf{\color{salmon}Updates}$
 [see changelog for all updates](./docs/CHANGELOG.md)
 
-$\textsf{[v1.1.9\ =>\ {\textbf{\color{brown}v1.2.0}]}}$ app
-- $\textsf{\color{teal}Addition:}$ Added scroll-down indicator for main website and work-card.
+$\textsf{[v1.3.2\ =>\ {\textbf{\color{brown}v1.3.3}]}}$ app
+- $\textsf{\color{orange}Patch:}$ Updated 'skills' and refactored newly added certificates to display all separately instead.

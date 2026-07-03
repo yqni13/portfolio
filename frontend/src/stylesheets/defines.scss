@@ -26,6 +26,7 @@
     --theme-yqni13-pink: #{sass.$yqni13-lightmode-pink};
     --theme-grey: #{sass.$color-lightmode-grey};
     --theme-component: #{sass.$color-lightmode-comp-grey};
+    --theme-toggle: #{sass.$color-lightmode-grey};
     --theme-signature: #{sass.$signature-black};
     --theme-loader1: #{sass.$color-lightmode-primary};
     --theme-loader2: #{sass.$color-loader-teal};
@@ -47,6 +48,7 @@
     --theme-yqni13-pink: #{sass.$yqni13-darkmode-pink};
     --theme-grey: #{sass.$color-darkmode-grey};
     --theme-component: #{sass.$color-darkmode-comp-grey};
+    --theme-toggle: #{sass.$color-light-grey};
     --theme-signature: #{sass.$signature-white};
     --theme-loader1: #{sass.$yqni13-darkmode-pink};
     --theme-loader2: #{sass.$yqni13-lightmode-purple};

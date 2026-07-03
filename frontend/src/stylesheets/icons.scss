@@ -304,6 +304,21 @@
     -webkit-mask-image: var(--svg);
     mask-image: var(--svg);
 }
+.icon-Certificate {
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='black' d='M4 3a2 2 0 0 0-2 2v3.671c.285-.352.622-.66 1-.913V5a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H9.242a5 5 0 0 1-.242.329V15h7a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm1 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m.5 8.5a3.5 3.5 0 1 1 0-7a3.5 3.5 0 0 1 0 7m-2.5.242A4.5 4.5 0 0 0 5.5 16c.925 0 1.785-.28 2.5-.758V18a.5.5 0 0 1-.8.4l-1.4-1.05a.5.5 0 0 0-.6 0L3.8 18.4A.5.5 0 0 1 3 18zM10.5 10a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1z'/%3E%3C/svg%3E");
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+}
+.icon-NoCertificate {
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='black' d='M6 14.499a.5.5 0 0 1-.264.441a.5.5 0 0 1-.513-.024L4 14.1l-1.223.815A.498.498 0 0 1 2 14.5v-2.057A3.96 3.96 0 0 0 4 13a3.96 3.96 0 0 0 2-.556zM1.146 1.147a.5.5 0 0 1 .708 0l13 13a.5.5 0 1 1-.707.707L11.293 12H7v-.354q.263-.3.465-.646h2.828L2.455 3.162A1 1 0 0 0 2 4v1.535a4 4 0 0 0-1 .82V4c0-.627.29-1.185.741-1.552l-.595-.594a.5.5 0 0 1 0-.707M4 6a3 3 0 1 1 0 6a3 3 0 0 1 0-6m9-4a2 2 0 0 1 2 2v6c0 .78-.447 1.452-1.097 1.782l-.789-.789A1 1 0 0 0 14 10V4a1 1 0 0 0-1-1H5.121l-1-1zm-1.5 3a.5.5 0 0 1 0 1H8.121l-1-1z'/%3E%3C/svg%3E");
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+}
+.icon-NotebookLM {
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23fff' d='M256 68.3C114.6 68.3 0 181.9 0 322.2v121.5h47.2v-12.1c0-56.9 46.5-103 103.8-103s103.8 46.1 103.8 103v12.1H302v-12.1c0-82.7-67.6-149.7-151-149.7c-32.5 0-62.5 10.1-87.2 27.5c25.8-50.8 78.8-85.7 140.1-85.7c86.6 0 156.7 69.6 156.7 155.5v64.6h47.2v-64.6c0-111.7-91.3-202.3-203.9-202.3c-50.7 0-97 18.3-132.6 48.6c35-65.7 104.6-110.4 184.7-110.4c115.3 0 208.8 92.7 208.8 207.1v121.5H512V322.2c0-140.3-114.6-253.9-256-253.9'/%3E%3C/svg%3E");
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+}
 .icon-Leaflet {
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -321,6 +336,18 @@
     background-size: 100% 100%;
     background-color: transparent;
     background-image: url("/assets/icons/Google_Maps_Platform.png");
+}
+.icon-Antigravity {
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-color: transparent;
+    background-image: url("/assets/icons/Antigravity.png");
+}
+.icon-Gemini {
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-color: transparent;
+    background-image: url("/assets/icons/Gemini.png");
 }
 // .icon-XY {
 //     background-repeat: no-repeat;
