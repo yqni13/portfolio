@@ -1,10 +1,14 @@
-import { Component, effect, input } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { Component, effect, input, output } from "@angular/core";
 import { Field, FieldState, FormField } from "@angular/forms/signals";
+import { ValidationInputComponent } from "../validation-input/validation-input.component";
 
 @Component({
     selector: 'app-test-input',
     imports: [
-        FormField
+        CommonModule,
+        FormField,
+        ValidationInputComponent
     ],
     templateUrl: './test-input.component.html',
 })
@@ -18,6 +22,8 @@ export class TestInputComponent {
     readonly customStyle = input<Record<string, string>>();
     readonly icon = input('');
 
+    readonly byChange = output<unknown>();
+
     protected isFocused = false;
 
     get field(): Field<string> {
@@ -26,11 +32,14 @@ export class TestInputComponent {
 
     constructor() {
         effect(() => {
-            this.handleInputChanges(); // Track certain value by signal().value()
+            const fieldInput = this.field().value();
+            this.handleInputChanges(fieldInput);
         });
     }
 
-    handleInputChanges() {
+    handleInputChanges(value: string) {
+        console.log("fieldState: ", this.fieldState())
         this.isFocused = true;
+        this.byChange.emit(value);
     }
 }

@@ -1,11 +1,25 @@
 <div>
+    <i
+        id="custom-icon"
+        class="icon-base"
+        ngClass="{{'icon-' + icon()}}"
+    ></i>
     <input
-        [formField]="field"
         [type]="inputType()"
+        id="{{'custom-form' + fieldName()}}"
+        [formField]="field"
+        placeholder="{{placeholder()}}"
+        [ngStyle]="customStyle()"
     >
+    @if(field().invalid() && (field().dirty() || field().touched())) {
+        <i
+            id="error-icon"
+            class="icon-base icon-Warning"
+            ngClass="warning-input-text"
+        ></i>
+    }
 </div>
-@if(field().invalid() && (field().dirty() || field().touched())) {
-    <span>
-        {{field().errors()[0].message}}
-    </span>
-}
+<app-validation-input
+    [fieldState]="fieldState()"
+    [fieldName]="fieldName()"
+></app-validation-input>

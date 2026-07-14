@@ -7,7 +7,7 @@ import { HeroComponent } from './components/pages/hero/hero.component';
 import { WorkComponent } from './components/pages/work/work.component';
 import { SkillsComponent } from './components/pages/skills/skills.component';
 import { ExperienceComponent } from './components/pages/experience/experience.component';
-import { ContactComponent } from './components/pages/contact/contact.component';
+// import { ContactComponent } from './components/pages/contact/contact.component';
 import { NotifyModalComponent } from './components/common/modal/notify-modal/notify-modal.component';
 import { NotifyModalService } from './services/notify-modal.service';
 import { CommonModule } from '@angular/common';
@@ -31,7 +31,7 @@ import { TestComponent } from './components/pages/test/test.component';
 		SkillsComponent,
 		AboutComponent,
 		ExperienceComponent,
-		ContactComponent,
+		// ContactComponent,
 		Footer,
 		RouterOutlet,
 		NotifyModalComponent,

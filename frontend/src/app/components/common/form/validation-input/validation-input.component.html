@@ -1,4 +1,17 @@
-<ng-container *yqni13Var="ngControl() as control">
+<ng-container *yqni13Var="field() as field">
+    @if(field.invalid() && (field.dirty() || field.touched())) {
+        <div class="validation-errors">
+            @for(entry of validations; track $index) {
+                @if(field.getError(entry.error)) {
+                    <div class="validation-message">
+                        {{entry.mapping ? mapErrorValues(entry.msg, entry.mapping) : entry.msg}}
+                    </div>
+                }
+            }
+        </div>
+    }
+</ng-container>
+<!-- <ng-container *yqni13Var="ngControl() as control">
     @if(control.invalid && (control.dirty || control.touched)) {
         <div class="validation-errors">
             @for(entry of validations; track $index) {
@@ -10,4 +23,4 @@
             }
         </div>
     }
-</ng-container>
+</ng-container> -->

@@ -1,6 +1,7 @@
-import { Component, effect, signal } from "@angular/core";
-import { form, max, required } from "@angular/forms/signals";
+import { Component, signal } from "@angular/core";
+import { form, required } from "@angular/forms/signals";
 import { TestInputComponent } from "../../common/form/test-input/test-input.component";
+import * as CustomValidator from "../../../utils/helper/custom-validators";
 
 interface TestData {
     demoInput: string,
@@ -22,17 +23,12 @@ export class TestComponent {
     });
 
     protected testForm = form(this.testModel, (schemaPath) => {
-        required(schemaPath.demoInput, {message: 'I am required'});
-        // maxLength(schemaPath.demoInput, 2, {message: 'I am too long'});
-        max(schemaPath.testInput, 3, {message: 'too high number'});
+        required(schemaPath.demoInput);
+        CustomValidator.maxLength(schemaPath.demoInput, {max: 2});
     });
 
-    constructor() {
-        effect(() => { this.handleFormChanges(); })
-    }
-
-    handleFormChanges() {
-        console.log("form: ", this.testForm());
+    handleFormChanges(event: unknown) {
+        console.log("form: ", event);
     }
 
     onSubmit() {

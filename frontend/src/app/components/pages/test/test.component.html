@@ -4,6 +4,7 @@
             [fieldState]="testForm.demoInput()"
             [inputType]="'text'"
             [fieldName]="'demoInput'"
+            (byChange)="handleFormChanges($event)"
         ></app-test-input>
         <a (keydown)="onSubmit()" [tabindex]="0" (click)="onSubmit()">Submit</a>
     </form>
