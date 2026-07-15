@@ -1,35 +1,25 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Component, input, output, } from "@angular/core";
-import { ControlValueAccessor, FormControl } from "@angular/forms";
+import { Field, FieldState } from "@angular/forms/signals";
 
 @Component({
     template: ''
 })
-export class AbstractInputComponent implements ControlValueAccessor {
+export class AbstractInputComponent {
 
+    readonly fieldState = input.required<FieldState<string | number>>();
     readonly fieldName = input.required<string>();
-    readonly formControl = input.required<FormControl>();
     readonly placeholder = input('');
     readonly name = input('');
     readonly ngClass = input('');
     readonly customStyle = input<Record<string, string>>();
+    readonly icon = input('');
 
     readonly byChange = output<unknown>();
 
-    private onChange!: (value: unknown) => void;
-    private onTouch!: (value: unknown) => void;
-
-    input!: unknown;
     isFocused = false;
 
-    writeValue(input: unknown) {
-        this.input = input;
-    }
-    registerOnChange(fn: any) {
-        this.onChange = fn;
-    }
-    registerOnTouched(fn: any) {
-        this.onTouch = fn;
+    get field(): Field<string> {
+        return this.fieldState().fieldTree as unknown as Field<string>;
     }
 
     clickOutside(event: MouseEvent) {
