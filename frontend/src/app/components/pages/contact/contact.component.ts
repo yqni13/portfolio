@@ -1,8 +1,6 @@
-import { Component, inject, OnInit, signal } from "@angular/core";
+import { Component, inject, signal } from "@angular/core";
 import { BaseComponent } from "../base.component";
-import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from "@angular/forms";
-import { CastFormControlPipe } from "../../../utils/pipes/form-control.pipe";
-// import { TextInputComponent } from "../../common/form/text-input/text-input.component";
+import { TextInputComponent } from "../../common/form/text-input/text-input.component";
 import { TextareaInputComponent } from "../../common/form/textarea-input/textarea-input.component";
 import { SelectInputComponent } from "../../common/form/select-input/select-input.component";
 import { NotificationApiService } from "../../../api/services/notification.api.service";
@@ -11,30 +9,32 @@ import { NotifyModalService } from "../../../services/notify-modal.service";
 import { NotifyModalType } from "../../../utils/enums/notify-modal.enum";
 import { LoaderComponent } from "../../common/loader/loader.component";
 import { CommonModule } from "@angular/common";
+import { email, FieldTree, form, maxLength, required } from "@angular/forms/signals";
+import * as CustomValidators from "../../../utils/helper/custom-validators";
 
 @Component({
     selector: 'app-contact',
     imports: [
         CommonModule,
-        CastFormControlPipe,
-        ReactiveFormsModule,
         SelectInputComponent,
-        // TextInputComponent,
+        TextInputComponent,
         TextareaInputComponent,
-        LoaderComponent
+        LoaderComponent,
     ],
     templateUrl: './contact.component.html',
     styleUrl: './contact.component.scss'
 })
-export class ContactComponent extends BaseComponent implements OnInit {
+export class ContactComponent extends BaseComponent {
 
-    private readonly fb = inject(FormBuilder);
     private readonly notifyModal = inject(NotifyModalService);
     private readonly notifyApi = inject(NotificationApiService);
 
-    protected contactForm: FormGroup = new FormGroup({});
-    protected messageLength = 1500;
+    protected lengthValidation = { name: 100, email: 100, subject: 100, message: 1500 };
+
     protected readonly isLoading = signal(false);
+
+    private contactModel = signal<NotificationParams>(this.initEmptyForm());
+    protected contactForm = this.setForm();
 
     constructor() {
         super();
@@ -44,28 +44,37 @@ export class ContactComponent extends BaseComponent implements OnInit {
         };
     }
 
-    ngOnInit() {
-        this.initEdit();
-    }
-
-    private initForm() {
-        this.contactForm = this.fb.group({
-            salutation: new FormControl('', Validators.required),
-            name: new FormControl('', [Validators.required, Validators.maxLength(100)]),
-            email: new FormControl('', [Validators.required, Validators.email, Validators.maxLength(100)]),
-            subject: new FormControl('', [Validators.required, Validators.maxLength(100)]),
-            message: new FormControl('', [Validators.required, Validators.maxLength(this.messageLength)])
-        });
-    }
-
-    private initEdit() {
-        this.initForm();
-        this.contactForm.patchValue({
+    private initEmptyForm(): NotificationParams {
+        return {
             salutation: '',
             name: '',
             email: '',
             subject: '',
             message: ''
+        };
+    }
+
+    private setForm(): FieldTree<NotificationParams> {
+        // Combination of default and custom maxLength to enable +1 user input over limit to display error message. 
+        return form(this.contactModel, (schemaPath) => {
+            required(schemaPath.salutation);
+
+            required(schemaPath.name);
+            maxLength(schemaPath.name, this.lengthValidation.name+1);
+            CustomValidators.customMaxLength(schemaPath.name, {max: this.lengthValidation.name});
+
+            required(schemaPath.email);
+            email(schemaPath.email);
+            maxLength(schemaPath.email, this.lengthValidation.email+1);
+            CustomValidators.customMaxLength(schemaPath.email, {max: this.lengthValidation.email});
+
+            required(schemaPath.subject);
+            maxLength(schemaPath.subject, this.lengthValidation.subject+1);
+            CustomValidators.customMaxLength(schemaPath.subject, {max: this.lengthValidation.subject});
+
+            required(schemaPath.message);
+            maxLength(schemaPath.message, this.lengthValidation.message+1);
+            CustomValidators.customMaxLength(schemaPath.message, {max: this.lengthValidation.message});
         });
     }
 
@@ -84,8 +93,8 @@ export class ContactComponent extends BaseComponent implements OnInit {
     }
 
     async onSubmit() {
-        if(this.contactForm.invalid) {
-            this.contactForm.markAllAsTouched();
+        if(this.contactForm().invalid()) {
+            this.contactForm().markAsTouched();
             this.notifyModal.notify({
                 title: 'invalid input',
                 text: 'Please check for missing or invalid fields before submitting.',
@@ -96,7 +105,7 @@ export class ContactComponent extends BaseComponent implements OnInit {
             return;
         }
         this.isLoading.set(true);
-        const params: NotificationParams = this.notifyApi.toNotificationParams(this.contactForm.getRawValue());
+        const params: NotificationParams = this.notifyApi.toNotificationParams(this.contactForm().value() as unknown as Record<string, string>);
         await this.notifyApi.sendMessage(params).finally(() => {
             this.reset();
             this.isLoading.set(false);
@@ -104,7 +113,7 @@ export class ContactComponent extends BaseComponent implements OnInit {
     }
 
     private reset() {
-        this.contactForm.reset();
-        this.initEdit();
+        this.contactModel.set(this.initEmptyForm());
+        this.contactForm().reset();
     }
 }

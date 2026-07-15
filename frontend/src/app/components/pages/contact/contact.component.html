@@ -6,10 +6,10 @@
     <div class="contact-content">
         <div class="contact-form-wrapper">
             <h4>Send a message</h4>
-            <form [formGroup]="contactForm">
+            <form>
                 <app-select-input
+                    [fieldState]="contactForm.salutation()"
                     [name]="'contactForm-salutation'"
-                    [formControl]="contactForm.get('salutation') | controlCast"
                     [placeholder]="'How should I address you?*'"
                     [fieldName]="'salutation'"
                     [options]="{female: 'Ms.', male: 'Mr.'}"
@@ -17,8 +17,8 @@
                     [readonlyStyle]="getCustomReadonlyStyle()"
                     [icon]="'Salutation'"
                 ></app-select-input>
-                <!-- <app-text-input
-                    [formControl]="contactForm.get('name') | controlCast"
+                <app-text-input
+                    [fieldState]="contactForm.name()"
                     [placeholder]="'Your name*'"
                     [fieldName]="'name'"
                     [name]="'contactForm-name'"
@@ -26,7 +26,7 @@
                     [icon]="'User'"
                 ></app-text-input>
                 <app-text-input
-                    [formControl]="contactForm.get('email') | controlCast"
+                    [fieldState]="contactForm.email()"
                     [placeholder]="'Your email*'"
                     [fieldName]="'email'"
                     [name]="'contactForm-email'"
@@ -34,26 +34,25 @@
                     [icon]="'MailThin'"
                 ></app-text-input>
                 <app-text-input
-                    [formControl]="contactForm.get('subject') | controlCast"
+                    [fieldState]="contactForm.subject()"
                     [placeholder]="'What topic is it about?*'"
                     [fieldName]="'subject'"
                     [name]="'contactForm-subject'"
                     [customStyle]="getCustomInputStyle()"
                     [icon]="'Subject'"
-                ></app-text-input> -->
+                ></app-text-input>
                 <app-textarea-input
+                    [fieldState]="contactForm.message()"
                     [name]="'contactForm-message'"
                     [fieldName]="'message'"
-                    [formControl]="contactForm.get('message') | controlCast"
                     [placeholder]="'What are we talking about?*'"
                     [customStyle]="getCustomInputStyle()"
                     [icon]="'Message'"
                     [rows]="7"
-                    [maxLength]="messageLength+1"
                 ></app-textarea-input>
-                @if(contactForm.get('message')?.value.length <= messageLength) {
+                @if(contactForm.message().value().length <= lengthValidation.message) {
                     <span id="contact-message-length">
-                        {{(messageLength - contactForm.get('message')?.value.length) + ' / ' + messageLength}}
+                        {{(lengthValidation.message - contactForm.message().value().length) + ' / ' + lengthValidation.message}}
                     </span>
                 }
                 <a
