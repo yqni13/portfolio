@@ -9,7 +9,6 @@
             <form>
                 <app-select-input
                     [fieldState]="contactForm.salutation()"
-                    [name]="'contactForm-salutation'"
                     [placeholder]="'How should I address you?*'"
                     [fieldName]="'salutation'"
                     [options]="{female: 'Ms.', male: 'Mr.'}"
@@ -21,7 +20,6 @@
                     [fieldState]="contactForm.name()"
                     [placeholder]="'Your name*'"
                     [fieldName]="'name'"
-                    [name]="'contactForm-name'"
                     [customStyle]="getCustomInputStyle()"
                     [icon]="'User'"
                 ></app-text-input>
@@ -29,7 +27,6 @@
                     [fieldState]="contactForm.email()"
                     [placeholder]="'Your email*'"
                     [fieldName]="'email'"
-                    [name]="'contactForm-email'"
                     [customStyle]="getCustomInputStyle()"
                     [icon]="'MailThin'"
                 ></app-text-input>
@@ -37,13 +34,11 @@
                     [fieldState]="contactForm.subject()"
                     [placeholder]="'What topic is it about?*'"
                     [fieldName]="'subject'"
-                    [name]="'contactForm-subject'"
                     [customStyle]="getCustomInputStyle()"
                     [icon]="'Subject'"
                 ></app-text-input>
                 <app-textarea-input
                     [fieldState]="contactForm.message()"
-                    [name]="'contactForm-message'"
                     [fieldName]="'message'"
                     [placeholder]="'What are we talking about?*'"
                     [customStyle]="getCustomInputStyle()"
