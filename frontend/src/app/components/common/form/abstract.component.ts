@@ -9,7 +9,6 @@ export class AbstractInputComponent {
     readonly fieldState = input.required<FieldState<string | number>>();
     readonly fieldName = input.required<string>();
     readonly placeholder = input('');
-    readonly name = input('');
     readonly ngClass = input('');
     readonly customStyle = input<Record<string, string>>();
     readonly icon = input('');

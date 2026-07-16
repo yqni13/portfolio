@@ -34,7 +34,7 @@ import { ObservationService } from './services/observe.service';
 		Footer,
 		RouterOutlet,
 		NotifyModalComponent,
-		ScrollDownIndicatorComponent,
+		ScrollDownIndicatorComponent
 	],
 })
 export class App {

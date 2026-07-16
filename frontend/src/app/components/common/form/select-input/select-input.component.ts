@@ -31,8 +31,7 @@ export class SelectInputComponent extends AbstractInputComponent {
     constructor() {
         super();
         effect(() => {
-            const fieldInput = this.field().value();
-            this.handleSelectionChanges(fieldInput);
+            this.handleSelectionChanges(this.field().value());
         });
     }
 

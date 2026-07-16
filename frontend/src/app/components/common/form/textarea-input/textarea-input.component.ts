@@ -28,8 +28,7 @@ export class TextareaInputComponent extends AbstractInputComponent {
     constructor() {
         super();
         effect(() => {
-            const fieldInput = this.field().value();
-            this.handleInputChanges(fieldInput);
+            this.handleInputChanges(this.field().value());
         });
     }
 
