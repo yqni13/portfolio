@@ -1,5 +1,5 @@
 # yqni13 | $\texttt{\color{blueviolet}{PORTFOLIO}}$
-### $\textsf{\color{brown}{v1.3.3}}$
+### $\textsf{\color{brown}{v2.2.0}}$
 
 <br>
 
@@ -14,7 +14,7 @@ My portfolio is live (see link) - hosted via <a href="https://app.netlify.com/">
 ### $\textsf{\color{teal}Prerequisites}$
 
 - node: v22+
-- Angular v21
+- Angular v22
 
 <br>
 
@@ -40,6 +40,12 @@ which will open automatically on `http://localhost:4200/`.
 
 <br>
 
+### $\textsf{\color{teal}Angular Signal-Form}$
+
+With the update to Angular v22, Angular's new Signal Forms have been integrated into my custom form components: text-input, select-input, textarea and validation [(see form components)](./frontend/src/app/components/common/form).<br>The form on the 'contact' page allows visitors to write and send me a message [(see contact)](./frontend/src/app/components/pages/contact).
+
+<br>
+
 ### $\textsf{\color{teal}Angular ESLint}$
 
 Using Angular ESLint to test for keeping rulesets and guidelines within the code for easier maintenance and first bug prevention.<br>
@@ -57,5 +63,8 @@ ng lint
 ## 📈 $\textsf{\color{salmon}Updates}$
 [see changelog for all updates](./docs/CHANGELOG.md)
 
-$\textsf{[v1.3.2\ =>\ {\textbf{\color{brown}v1.3.3}]}}$ app
-- $\textsf{\color{orange}Patch:}$ Updated 'skills' and refactored newly added certificates to display all separately instead.
+$\textsf{[v1.3.3\ =>\ {\textbf{\color{brown}v2.2.0}]}}$ app
+- $\textsf{\color{green}Change:}$ Upgraded Angular framework from v21 to v22.
+- $\textsf{\color{orange}Patch:}$ Updated:
+  + customized input components to use Angular Signal-Form
+  + 'contact' component to use new Angular Signal-Form
