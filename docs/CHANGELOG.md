@@ -9,7 +9,7 @@ $\textsf{[v2.2.0\ =>\ {\textbf{\color{brown}v2.2.1}]}}$ app
 
 ### $\textsf{\color{skyblue}2026/07/15}$
 
-$\textsf{[v1.3.3\ =>\ {\textbf{\color{brown}v2.2.0}]}}$ app
+$\textsf{[v1.3.3\ =>\ v2.2.0]}$ app
 - $\textsf{\color{green}Change:}$ Upgraded Angular framework from v21 to v22.
 - $\textsf{\color{orange}Patch:}$ Updated:
   + customized input components to use Angular Signal-Form
