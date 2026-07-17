@@ -1,15 +1,14 @@
-import { Component, forwardRef, input, OnDestroy, OnInit } from "@angular/core";
-import { NG_VALUE_ACCESSOR, ReactiveFormsModule } from "@angular/forms";
+import { Component, effect, input } from "@angular/core";
 import { AbstractInputComponent } from "../abstract.component";
-import { Subscription } from "rxjs";
 import { CommonModule } from "@angular/common";
 import { ValidationInputComponent } from "../validation-input/validation-input.component";
+import { FormField } from "@angular/forms/signals";
 
 @Component({
     selector: 'app-textarea-input',
     imports: [
         CommonModule,
-        ReactiveFormsModule,
+        FormField,
         ValidationInputComponent
     ],
     templateUrl: './textarea-input.component.html',
@@ -17,38 +16,24 @@ import { ValidationInputComponent } from "../validation-input/validation-input.c
         '../abstract.component.scss',
         './textarea-input.component.scss'
     ],
-    providers: [
-        {
-            provide: NG_VALUE_ACCESSOR,
-            useExisting: forwardRef(() => TextareaInputComponent),
-            multi: true,
-        }
-    ],
     host: {
         '(click)': 'clickOutside($event)',
         '(document:keydown)': 'tabOutside($event)'
     }
 })
-export class TextareaInputComponent extends AbstractInputComponent implements OnInit, OnDestroy {
+export class TextareaInputComponent extends AbstractInputComponent {
 
     readonly rows = input(0);
-    readonly icon = input('');
-    readonly maxLength = input(0);
-
-    private subscription$ = new Subscription();
 
     constructor() {
         super();
+        effect(() => {
+            this.handleInputChanges(this.field().value());
+        });
     }
 
-    ngOnInit() {
-        this.subscription$ = this.formControl().valueChanges.subscribe((change: unknown) => {
-            this.byChange.emit(change);
-            this.isFocused = true;
-        })
-    }
-
-    ngOnDestroy() {
-        this.subscription$.unsubscribe();
+    handleInputChanges(value: string) {
+        this.byChange.emit(value);
+        this.isFocused = true;
     }
 }

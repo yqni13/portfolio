@@ -1,15 +1,14 @@
-import { Component, forwardRef, input, OnDestroy, OnInit } from "@angular/core";
-import { NG_VALUE_ACCESSOR, ReactiveFormsModule } from "@angular/forms";
+import { Component, effect, input } from "@angular/core";
 import { AbstractInputComponent } from "../abstract.component";
 import { CommonModule } from "@angular/common";
 import { ValidationInputComponent } from "../validation-input/validation-input.component";
-import { Subscription } from "rxjs";
+import { FormField } from "@angular/forms/signals";
 
 @Component({
     selector: 'app-select-input',
     imports: [
         CommonModule,
-        ReactiveFormsModule,
+        FormField,
         ValidationInputComponent
     ],
     templateUrl: './select-input.component.html',
@@ -17,47 +16,34 @@ import { Subscription } from "rxjs";
         '../abstract.component.scss',
         './select-input.component.scss'
     ],
-    providers: [
-        {
-            provide: NG_VALUE_ACCESSOR,
-            useExisting: forwardRef(() => SelectInputComponent),
-            multi: true,
-        }
-    ],
     host: {
         '(click)': 'clickOutside($event)',
         '(document:keydown)': 'tabOutside($event)'
     }
 })
-export class SelectInputComponent extends AbstractInputComponent implements OnInit, OnDestroy {
+export class SelectInputComponent extends AbstractInputComponent {
 
     readonly readonlyStyle = input<Record<string, string>>({});
     readonly options = input<unknown>({});
-    readonly icon = input('');
 
     protected isSelected = false;
 
-    private subscription$ = new Subscription();
-
     constructor() {
         super();
+        effect(() => {
+            this.handleSelectionChanges(this.field().value());
+        });
     }
 
-    ngOnInit() {
-        this.subscription$ = this.formControl().valueChanges.subscribe(val => {
-            if(!val || val === '') {
-                this.isSelected = false;
-            }
-        })
+    handleSelectionChanges(value: string) {
+        if(!value || value === '') {
+            this.isSelected = false;
+        }
     }
 
     selectOption(event: Event) {
         this.byChange.emit(event);
         this.isFocused = false;
         this.isSelected = true;
-    }
-
-    ngOnDestroy() {
-        this.subscription$.unsubscribe();
     }
 }
