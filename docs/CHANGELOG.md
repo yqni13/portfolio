@@ -1,8 +1,53 @@
 ## 📜 $\textsf{\color{salmon}{List\ of\ updates}}$
 
+### $\textsf{\color{skyblue}2026/07/17}$
+
+$\textsf{[v2.2.0\ =>\ {\textbf{\color{brown}v2.2.1}]}}$ app
+- $\textsf{\color{red}Bugfix:}$ Builds application with correct node package information. [Before: package-lock.json file was on .gitignore and cached git data on node package dependencies failed Netlify build on merge to 'stag' environment.]
+
+<br>
+
+### $\textsf{\color{skyblue}2026/07/15}$
+
+$\textsf{[v1.3.3\ =>\ v2.2.0]}$ app
+- $\textsf{\color{green}Change:}$ Upgraded Angular framework from v21 to v22.
+- $\textsf{\color{orange}Patch:}$ Updated:
+  + customized input components to use Angular Signal-Form
+  + 'contact' component to use new Angular Signal-Form
+
+<br>
+
+### $\textsf{\color{skyblue}2026/07/01}$
+
+$\textsf{[v1.3.2\ =>\ v1.3.3]}$ app
+- $\textsf{\color{orange}Patch:}$ Updated 'skills' and refactored newly added certificates to display all separately instead.
+
+<br>
+
+### $\textsf{\color{skyblue}2026/06/30}$
+
+$\textsf{[v1.3.1\ =>\ v1.3.2]}$ app
+- $\textsf{\color{orange}Patch:}$ Updated 'experiences' with new certificates.
+
+<br>
+
+### $\textsf{\color{skyblue}2026/06/23}$
+
+$\textsf{[v1.3.0\ =>\ v1.3.1]}$ app
+- $\textsf{\color{teal}Addition:}$ Added script call to track meta data (visitor counter).
+
+<br>
+
+### $\textsf{\color{skyblue}2026/06/02}$
+
+$\textsf{[v1.2.0\ =>\ v1.3.0]}$ app
+- $\textsf{\color{teal}Addition:}$ Added certification filter for "experience" listing.
+
+<br>
+
 ### $\textsf{\color{skyblue}2026/04/30}$
 
-$\textsf{[v1.1.9\ =>\ {\textbf{\color{brown}v1.2.0}]}}$ app
+$\textsf{[v1.1.9\ =>\ v1.2.0]}$ app
 - $\textsf{\color{teal}Addition:}$ Added scroll-down indicator for main website and work-card.
 
 <br>

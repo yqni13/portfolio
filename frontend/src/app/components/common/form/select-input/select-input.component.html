@@ -6,8 +6,7 @@
     ></i>
     <select
         id="{{'custom-form-' + fieldName()}}"
-        name="{{name()}}"
-        [formControl]="formControl()"
+        [formField]="field"
         (change)="selectOption($event)"
         [ngStyle]="isSelected ? customStyle() : readonlyStyle()"
     >
@@ -19,7 +18,7 @@
             >{{option.value}}</option>
         }
     </select>
-    @if(formControl().invalid && (formControl().dirty || formControl().touched)) {
+    @if(field().invalid() && (field().dirty() || field().touched())) {
         <i
             id="error-icon"
             class="icon-base icon-Warning"
@@ -28,6 +27,6 @@
     }
 </div>
 <app-validation-input
-    [ngControl]="formControl()"
+    [fieldState]="fieldState()"
     [fieldName]="fieldName()"
 ></app-validation-input>

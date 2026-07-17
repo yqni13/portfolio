@@ -19,8 +19,8 @@ app-validation-input {
     $size: 20px;
     position: absolute;
     align-self: center;
-    width: 20px;
-    height: 20px;
+    width: $size;
+    height: $size;
     margin: 0 $icon-margin-custom 0 calc($icon-margin-custom + $border);
     color: var(--theme-grey);
 }

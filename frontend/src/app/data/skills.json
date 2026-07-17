@@ -48,6 +48,11 @@
                 "link": "https://nodejs.org/en"
             },
             {
+                "icon": "icon-DotNet",
+                "name": ".NET",
+                "link": "https://dotnet.microsoft.com/en-us/"
+            },
+            {
                 "icon": "icon-ExpressJS",
                 "name": "Express.js",
                 "link": "https://expressjs.com/"
@@ -163,6 +168,22 @@
                 "icon": "icon-ESLint",
                 "name": "ESLint",
                 "link": "https://eslint.org/"
+            },
+            {
+                "icon": "icon-Gemini",
+                "name": "Gemini",
+                "link": "https://gemini.google.com/app"
+            },
+            {
+                "icon": "icon-Antigravity",
+                "name": "Antigravity",
+                "link": "https://antigravity.google/"
+            },
+            {
+                "icon": "icon-NotebookLM",
+                "name": "NotebookLM",
+                "link": "https://notebooklm.google.com/",
+                "customStyle": true
             }
         ]
     },

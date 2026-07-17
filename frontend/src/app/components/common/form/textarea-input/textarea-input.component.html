@@ -6,15 +6,13 @@
     ></i>
     <textarea
         id="{{'custom-form-' + fieldName()}}"
-        name="{{name()}}"
         class="roboto-custom-font"
-        [formControl]="formControl()"
+        [formField]="field"
         placeholder="{{placeholder()}}"
         [ngStyle]="customStyle()"
         rows="{{rows()}}"
-        maxlength="{{maxLength()}}"
     ></textarea>
-    @if(formControl().invalid && (formControl().dirty || formControl().touched)) {
+    @if(field().invalid() && (field().dirty() || field().touched())) {
         <i
             id="error-icon"
             class="icon-base icon-Warning"
@@ -23,6 +21,6 @@
     }
 </div>
 <app-validation-input
-    [ngControl]="formControl()"
+    [fieldState]="fieldState()"
     [fieldName]="fieldName()"
 ></app-validation-input>

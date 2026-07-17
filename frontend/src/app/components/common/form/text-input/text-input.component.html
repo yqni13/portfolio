@@ -5,14 +5,13 @@
         ngClass="{{'icon-' + icon()}}"
     ></i>
     <input
-        type="{{inputType()}}"
         id="{{'custom-form-' + fieldName()}}"
+        [formField]="field"
+        type="{{inputType()}}"
         placeholder="{{placeholder()}}"
-        [formControl]="formControl()"
-        name="{{name()}}"
         [ngStyle]="customStyle()"
     >
-    @if(formControl().invalid && (formControl().dirty || formControl().touched)) {
+    @if(field().invalid() && (field().dirty() || field().touched())) {
         <i
             id="error-icon"
             class="icon-base icon-Warning"
@@ -21,6 +20,6 @@
     }
 </div>
 <app-validation-input
-    [ngControl]="formControl()"
+    [fieldState]="fieldState()"
     [fieldName]="fieldName()"
 ></app-validation-input>

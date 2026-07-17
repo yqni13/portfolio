@@ -15,6 +15,9 @@
         option {
             text-overflow: ellipsis;
         }
+        &:hover {
+            cursor: pointer;
+        }
     }
 }
 

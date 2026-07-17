@@ -1,5 +1,5 @@
 # yqni13 | $\texttt{\color{blueviolet}{PORTFOLIO}}$
-### $\textsf{\color{brown}{v1.2.0}}$
+### $\textsf{\color{brown}{v2.2.1}}$
 
 <br>
 
@@ -14,7 +14,7 @@ My portfolio is live (see link) - hosted via <a href="https://app.netlify.com/">
 ### $\textsf{\color{teal}Prerequisites}$
 
 - node: v22+
-- Angular v21
+- Angular v22
 
 <br>
 
@@ -40,6 +40,12 @@ which will open automatically on `http://localhost:4200/`.
 
 <br>
 
+### $\textsf{\color{teal}Angular Signal-Form}$
+
+With the update to Angular v22, Angular's new Signal Forms have been integrated into the custom form components: text-input, select-input, textarea and validation [(see form components)](./frontend/src/app/components/common/form).<br>The form on the 'contact' page allows visitors to write and send a text message [(see contact)](./frontend/src/app/components/pages/contact).
+
+<br>
+
 ### $\textsf{\color{teal}Angular ESLint}$
 
 Using Angular ESLint to test for keeping rulesets and guidelines within the code for easier maintenance and first bug prevention.<br>
@@ -57,5 +63,5 @@ ng lint
 ## 📈 $\textsf{\color{salmon}Updates}$
 [see changelog for all updates](./docs/CHANGELOG.md)
 
-$\textsf{[v1.1.9\ =>\ {\textbf{\color{brown}v1.2.0}]}}$ app
-- $\textsf{\color{teal}Addition:}$ Added scroll-down indicator for main website and work-card.
+$\textsf{[v2.2.0\ =>\ {\textbf{\color{brown}v2.2.1}]}}$ app
+- $\textsf{\color{red}Bugfix:}$ Builds application with correct node package information. [Before: package-lock.json file was on .gitignore and cached git data on node package dependencies failed Netlify build on merge to 'stag' environment.]
