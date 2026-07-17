@@ -1,5 +1,12 @@
 ## 📜 $\textsf{\color{salmon}{List\ of\ updates}}$
 
+### $\textsf{\color{skyblue}2026/07/17}$
+
+$\textsf{[v2.2.0\ =>\ {\textbf{\color{brown}v2.2.1}]}}$ app
+- $\textsf{\color{red}Bugfix:}$ Builds application with correct node package information. [Before: package-lock.json file was on .gitignore and cached git data on node package dependencies failed Netlify build on merge to 'stag' environment.]
+
+<br>
+
 ### $\textsf{\color{skyblue}2026/07/15}$
 
 $\textsf{[v1.3.3\ =>\ {\textbf{\color{brown}v2.2.0}]}}$ app
