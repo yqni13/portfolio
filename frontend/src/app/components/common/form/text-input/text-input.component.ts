@@ -1,15 +1,14 @@
 import { CommonModule } from "@angular/common";
-import { Component, forwardRef, input, OnDestroy, OnInit } from "@angular/core";
-import { NG_VALUE_ACCESSOR, ReactiveFormsModule } from "@angular/forms";
+import { Component, effect, input } from "@angular/core";
 import { ValidationInputComponent } from "../validation-input/validation-input.component";
 import { AbstractInputComponent } from "../abstract.component";
-import { Subscription } from "rxjs";
+import { FormField } from "@angular/forms/signals";
 
 @Component({
     selector: 'app-text-input',
     imports: [
         CommonModule,
-        ReactiveFormsModule,
+        FormField,
         ValidationInputComponent
     ],
     templateUrl: './text-input.component.html',
@@ -17,37 +16,24 @@ import { Subscription } from "rxjs";
         '../abstract.component.scss',
         './text-input.component.scss'
     ],
-    providers: [
-        {
-            provide: NG_VALUE_ACCESSOR,
-            useExisting: forwardRef(() => TextInputComponent),
-            multi: true,
-        }
-    ],
     host: {
         '(click)': 'clickOutside($event)',
         '(document:keydown)': 'tabOutside($event)'
     }
 })
-export class TextInputComponent extends AbstractInputComponent implements OnInit, OnDestroy {
+export class TextInputComponent extends AbstractInputComponent {
 
-    readonly inputType = input('');
-    readonly icon = input('');
-
-    private subscription$ = new Subscription();
+    readonly inputType = input('text');
 
     constructor() {
         super();
+        effect(() => {
+            this.handleInputChanges(this.field().value());
+        });
     }
 
-    ngOnInit() {
-        this.subscription$ = this.formControl().valueChanges.subscribe((change: unknown) => {
-            this.byChange.emit(change);
-            this.isFocused = true;
-        })
-    }
-
-    ngOnDestroy() {
-        this.subscription$.unsubscribe();
+    handleInputChanges(value: string) {
+        this.byChange.emit(value);
+        this.isFocused = true;
     }
 }

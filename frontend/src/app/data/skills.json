@@ -48,6 +48,11 @@
                 "link": "https://nodejs.org/en"
             },
             {
+                "icon": "icon-DotNet",
+                "name": ".NET",
+                "link": "https://dotnet.microsoft.com/en-us/"
+            },
+            {
                 "icon": "icon-ExpressJS",
                 "name": "Express.js",
                 "link": "https://expressjs.com/"
