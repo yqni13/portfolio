@@ -1,5 +1,5 @@
 # yqni13 | $\texttt{\color{blueviolet}{PORTFOLIO}}$
-### $\textsf{\color{brown}{v2.2.0}}$
+### $\textsf{\color{brown}{v2.2.1}}$
 
 <br>
 
@@ -42,7 +42,7 @@ which will open automatically on `http://localhost:4200/`.
 
 ### $\textsf{\color{teal}Angular Signal-Form}$
 
-With the update to Angular v22, Angular's new Signal Forms have been integrated into my custom form components: text-input, select-input, textarea and validation [(see form components)](./frontend/src/app/components/common/form).<br>The form on the 'contact' page allows visitors to write and send me a message [(see contact)](./frontend/src/app/components/pages/contact).
+With the update to Angular v22, Angular's new Signal Forms have been integrated into the custom form components: text-input, select-input, textarea and validation [(see form components)](./frontend/src/app/components/common/form).<br>The form on the 'contact' page allows visitors to write and send a text message [(see contact)](./frontend/src/app/components/pages/contact).
 
 <br>
 
@@ -63,8 +63,5 @@ ng lint
 ## 📈 $\textsf{\color{salmon}Updates}$
 [see changelog for all updates](./docs/CHANGELOG.md)
 
-$\textsf{[v1.3.3\ =>\ {\textbf{\color{brown}v2.2.0}]}}$ app
-- $\textsf{\color{green}Change:}$ Upgraded Angular framework from v21 to v22.
-- $\textsf{\color{orange}Patch:}$ Updated:
-  + customized input components to use Angular Signal-Form
-  + 'contact' component to use new Angular Signal-Form
+$\textsf{[v2.2.0\ =>\ {\textbf{\color{brown}v2.2.1}]}}$ app
+- $\textsf{\color{red}Bugfix:}$ Builds application with correct node package information. [Before: package-lock.json file was on .gitignore and cached git data on node package dependencies failed Netlify build on merge to 'stag' environment.]
