@@ -11,7 +11,7 @@
         placeholder="{{placeholder()}}"
         [ngStyle]="customStyle()"
     >
-    @if(field().invalid() && (field().dirty() || field().touched())) {
+    @if (showValidation()) {
         <i
             id="error-icon"
             class="icon-base icon-Warning"
@@ -19,7 +19,10 @@
         ></i>
     }
 </div>
-<app-validation-input
-    [fieldState]="fieldState()"
-    [fieldName]="fieldName()"
-></app-validation-input>
+@if (showValidation()) {
+    <app-validation-input
+        [fieldState]="fieldState()"
+        [fieldName]="fieldName()"
+        [isFocused]="isFocused()"
+    ></app-validation-input>
+}

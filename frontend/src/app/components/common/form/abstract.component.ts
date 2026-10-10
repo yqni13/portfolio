@@ -1,8 +1,12 @@
-import { Component, input, output, } from "@angular/core";
+import { Component, computed, input, output, signal, } from "@angular/core";
 import { Field, FieldState } from "@angular/forms/signals";
 
 @Component({
-    template: ''
+    template: '',
+    host: {
+        '(focusin)': 'onFocusIn()',
+        '(focusout)': 'onFocusOut($event)'
+    }
 })
 export class AbstractInputComponent {
 
@@ -15,25 +19,22 @@ export class AbstractInputComponent {
 
     readonly byChange = output<unknown>();
 
-    isFocused = false;
+    readonly isFocused = signal(false);
 
     get field(): Field<string> {
         return this.fieldState().fieldTree as unknown as Field<string>;
     }
 
-    clickOutside(event: MouseEvent) {
-        const target = event.target as HTMLElement;
-        if(target.id === `custom-form-${this.fieldName}`) {
-            this.isFocused = true;
-        } else {
-            this.isFocused = false;
-        }
+    readonly showValidation = computed(() => !this.isFocused() && this.field().invalid() && (this.field().dirty() || this.field().touched()));
+
+    onFocusIn() {
+        this.isFocused.set(true);
     }
 
-    tabOutside(event: KeyboardEvent) {
-        const target = event.target as HTMLElement;
-        if(event.key === 'Tab' && (target.id === `custom-form-${this.fieldName}`)) {
-            this.isFocused = false;
+    onFocusOut(event: FocusEvent) {
+        const host = event.currentTarget as HTMLElement;
+        if (!host.contains(event.relatedTarget as Node | null)) {
+            this.isFocused.set(false);
         }
     }
 }
