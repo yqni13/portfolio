@@ -29,7 +29,8 @@ export class ContactComponent extends BaseComponent {
     private readonly notifyModal = inject(NotifyModalService);
     private readonly notifyApi = inject(NotificationApiService);
 
-    protected lengthValidation = { name: 100, email: 100, subject: 100, message: 1500 };
+    protected maxLengthValidation = { name: 100, email: 100, subject: 100, message: 1500 };
+    protected minLengthValidation = { email: 5 };
 
     protected readonly isLoading = signal(false);
 
@@ -56,25 +57,27 @@ export class ContactComponent extends BaseComponent {
 
     private setForm(): FieldTree<NotificationParams> {
         // Combination of default and custom maxLength to enable +1 user input over limit to display error message. 
+        // IMPORTANT: order of added validations follows a reason as only 1 validation is shown at a time.
         return form(this.contactModel, (schemaPath) => {
             required(schemaPath.salutation);
 
             required(schemaPath.name);
-            maxLength(schemaPath.name, this.lengthValidation.name+1);
-            CustomValidators.customMaxLength(schemaPath.name, {max: this.lengthValidation.name});
+            maxLength(schemaPath.name, this.maxLengthValidation.name+1);
+            CustomValidators.customMaxLength(schemaPath.name, {max: this.maxLengthValidation.name});
 
             required(schemaPath.email);
+            maxLength(schemaPath.email, this.maxLengthValidation.email+1);
+            CustomValidators.customMinLength(schemaPath.email, {min: this.minLengthValidation.email});
+            CustomValidators.customMaxLength(schemaPath.email, {max: this.maxLengthValidation.email});
             email(schemaPath.email);
-            maxLength(schemaPath.email, this.lengthValidation.email+1);
-            CustomValidators.customMaxLength(schemaPath.email, {max: this.lengthValidation.email});
 
             required(schemaPath.subject);
-            maxLength(schemaPath.subject, this.lengthValidation.subject+1);
-            CustomValidators.customMaxLength(schemaPath.subject, {max: this.lengthValidation.subject});
+            maxLength(schemaPath.subject, this.maxLengthValidation.subject+1);
+            CustomValidators.customMaxLength(schemaPath.subject, {max: this.maxLengthValidation.subject});
 
             required(schemaPath.message);
-            maxLength(schemaPath.message, this.lengthValidation.message+1);
-            CustomValidators.customMaxLength(schemaPath.message, {max: this.lengthValidation.message});
+            maxLength(schemaPath.message, this.maxLengthValidation.message+1);
+            CustomValidators.customMaxLength(schemaPath.message, {max: this.maxLengthValidation.message});
         });
     }
 

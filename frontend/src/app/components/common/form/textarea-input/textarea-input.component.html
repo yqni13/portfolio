@@ -1,4 +1,4 @@
-<div class="textareainput" ngClass="{{ngClass()}}">
+<div class="textareainput custom-input" ngClass="{{ngClass()}}">
     <i
         id="custom-icon"
         class="icon-base"
@@ -12,18 +12,26 @@
         [ngStyle]="customStyle()"
         rows="{{rows()}}"
     ></textarea>
-    @if (showValidation()) {
+    @if (((isFocused() && hasErrorOnFocus()) || !isFocused()) && hasError()) {
         <i
             id="error-icon"
             class="icon-base icon-Warning"
             ngClass="warning-input-text"
         ></i>
     }
+    @if (hasError()) {
+        <app-validation-input
+            [fieldState]="fieldState()"
+            [fieldName]="fieldName()"
+            [isFocused]="isFocused()"
+            [errOnFocusList]="errorOnFocusList"
+        ></app-validation-input>
+    }
+    @if (lengthLimit() !== 0 && field().value().length <= lengthLimit()) {
+        <span id="textareainput-length">
+            {{(lengthLimit()
+            - field().value().length)
+            + ' / ' + lengthLimit()}}
+        </span>
+    }
 </div>
-@if (showValidation()) {
-    <app-validation-input
-        [fieldState]="fieldState()"
-        [fieldName]="fieldName()"
-        [isFocused]="isFocused()"
-    ></app-validation-input>
-}

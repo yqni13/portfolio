@@ -15,6 +15,14 @@
         border: inherit.$border outset var(--theme-nav-grey);
         scrollbar-width: none;
     }
+
+    #textareainput-length {
+        position: absolute;
+        bottom: -1.3em;
+        right: 0.5em;
+        font-size: 0.75em;
+        color: var(--theme-grey);
+    }
 }
 
 #custom-icon {

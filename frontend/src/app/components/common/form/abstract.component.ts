@@ -20,12 +20,28 @@ export class AbstractInputComponent {
     readonly byChange = output<unknown>();
 
     readonly isFocused = signal(false);
+    readonly hasErrorOnFocus = computed(() => this.hasErrorOnFocusList());
+
+    readonly errorOnFocusList = ['maxlength']; // Add validators to display within input focus.
+
+    readonly hasError = computed(() => 
+        this.field().invalid()
+        && (this.field().dirty() || this.field().touched())
+    );
 
     get field(): Field<string> {
         return this.fieldState().fieldTree as unknown as Field<string>;
     }
 
-    readonly showValidation = computed(() => !this.isFocused() && this.field().invalid() && (this.field().dirty() || this.field().touched()));
+    hasErrorOnFocusList(): boolean {
+        let hasErrorFromList = false;
+        this.field().errors().forEach((entry) => {
+            if(this.errorOnFocusList.includes(entry.kind)) {
+                hasErrorFromList = true;
+            }
+        })
+        return hasErrorFromList;
+    }
 
     onFocusIn() {
         this.isFocused.set(true);

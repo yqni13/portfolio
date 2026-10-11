@@ -20,6 +20,7 @@ import { FormField } from "@angular/forms/signals";
 export class TextareaInputComponent extends AbstractInputComponent {
 
     readonly rows = input(0);
+    readonly lengthLimit = input(0);
 
     constructor() {
         super();
