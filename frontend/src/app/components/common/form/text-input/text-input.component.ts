@@ -15,11 +15,7 @@ import { FormField } from "@angular/forms/signals";
     styleUrls: [
         '../abstract.component.scss',
         './text-input.component.scss'
-    ],
-    host: {
-        '(click)': 'clickOutside($event)',
-        '(document:keydown)': 'tabOutside($event)'
-    }
+    ]
 })
 export class TextInputComponent extends AbstractInputComponent {
 
@@ -34,6 +30,5 @@ export class TextInputComponent extends AbstractInputComponent {
 
     handleInputChanges(value: string) {
         this.byChange.emit(value);
-        this.isFocused = true;
     }
 }

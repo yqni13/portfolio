@@ -9,9 +9,14 @@ $icon-padding-custom: calc(($icon-margin-custom * 2) + $icon-size-custom);
 $icon-padding-error: calc(($icon-margin-error * 2) + $icon-size-warning);
 $border: 2px;
 
-app-validation-input {
+.custom-input {
     position: relative;
-    bottom: 0;
+    margin-bottom: 20px;
+}
+
+app-validation-input {
+    position: absolute;
+    bottom: -1em;
     left: 0;
 }
 

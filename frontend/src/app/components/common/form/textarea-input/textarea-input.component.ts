@@ -15,15 +15,12 @@ import { FormField } from "@angular/forms/signals";
     styleUrls: [
         '../abstract.component.scss',
         './textarea-input.component.scss'
-    ],
-    host: {
-        '(click)': 'clickOutside($event)',
-        '(document:keydown)': 'tabOutside($event)'
-    }
+    ]
 })
 export class TextareaInputComponent extends AbstractInputComponent {
 
     readonly rows = input(0);
+    readonly lengthLimit = input(0);
 
     constructor() {
         super();
@@ -34,6 +31,5 @@ export class TextareaInputComponent extends AbstractInputComponent {
 
     handleInputChanges(value: string) {
         this.byChange.emit(value);
-        this.isFocused = true;
     }
 }

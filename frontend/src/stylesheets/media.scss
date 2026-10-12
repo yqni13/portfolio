@@ -144,7 +144,11 @@
         }
     }
     footer {
-        margin-top: 75px;
+        margin: 40px 0 0 0;
+        height: 150px;
+        #footnote {
+            font-size: 1em;
+        }
     }
 }
 
@@ -284,7 +288,11 @@
         }
     }
     footer {
-        margin-top: 60px;
+        margin: 40px 0 0 0;
+        height: 135px;
+        #footnote {
+            font-size: 1em;
+        }
     }
 }
 
@@ -539,6 +547,9 @@
             }
         }
     }
+    app-validation-input {
+        backdrop-filter: blur(10px);
+    }
     .background-darkmode {
         .moon {
             box-shadow: 5px 5px 0 0 #fdfbd3a7;
@@ -550,6 +561,10 @@
         }
     }
     footer {
-        margin-top: 40px;
+        margin: 25px 20px 0 20px;
+        height: 120px;
+        #footnote {
+            font-size: clamp(0.75em, 3.25vw, 1em);
+        }
     }
 }

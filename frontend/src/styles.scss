@@ -48,6 +48,9 @@ h3 {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+
+    /* Text alignment is necessary for small display resolutions => center if not enough space for 1-line. */
+    text-align: center;
 }
 
 .head-text {

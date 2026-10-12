@@ -25,6 +25,9 @@ nav {
     a {
         display: flex;
         margin: 0 15px;
+        &:hover {
+            cursor: pointer;
+        }
     }
     .burger-btn {
         margin-left: auto;
