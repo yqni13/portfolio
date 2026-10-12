@@ -15,11 +15,7 @@ import { FormField } from "@angular/forms/signals";
     styleUrls: [
         '../abstract.component.scss',
         './select-input.component.scss'
-    ],
-    host: {
-        '(click)': 'clickOutside($event)',
-        '(document:keydown)': 'tabOutside($event)'
-    }
+    ]
 })
 export class SelectInputComponent extends AbstractInputComponent {
 
@@ -38,12 +34,13 @@ export class SelectInputComponent extends AbstractInputComponent {
     handleSelectionChanges(value: string) {
         if(!value || value === '') {
             this.isSelected = false;
+            this.isFocused.set(false);
         }
     }
 
     selectOption(event: Event) {
         this.byChange.emit(event);
-        this.isFocused = false;
+        this.isFocused.set(false);
         this.isSelected = true;
     }
 }

@@ -43,13 +43,9 @@
                     [placeholder]="'What are we talking about?*'"
                     [customStyle]="getCustomInputStyle()"
                     [icon]="'Message'"
+                    [lengthLimit]="maxLengthValidation.message"
                     [rows]="7"
                 ></app-textarea-input>
-                @if(contactForm.message().value().length <= lengthValidation.message) {
-                    <span id="contact-message-length">
-                        {{(lengthValidation.message - contactForm.message().value().length) + ' / ' + lengthValidation.message}}
-                    </span>
-                }
                 <a
                     class="btn-primary"
                     (click)="onSubmit()"
