@@ -30,5 +30,7 @@
 }
 
 #error-icon {
-    bottom: 5px;
+    /* Switched from bottom to top due to space buffer.
+    => 2-line validation messages on small display devices cut over content */
+    top: 5px;
 }

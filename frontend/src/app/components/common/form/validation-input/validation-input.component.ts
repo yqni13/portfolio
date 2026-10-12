@@ -34,6 +34,7 @@ export class ValidationInputComponent {
     mapErrorValues(err: string): string {
         const index = this.validations.findIndex((entry) => entry.error === err);
         if (index < 0) {
+            console.log(`Undefined Error: ${err}`);
             return 'Undefined Error';
         }
 
@@ -44,6 +45,7 @@ export class ValidationInputComponent {
             msg = msg.replace(`{{VAL_${i}}}`, this.getErrorMappingValue(mapVal, err));
             i++;
         })
+
         return msg;
     }
 

@@ -22,7 +22,7 @@ export class AbstractInputComponent {
     readonly isFocused = signal(false);
     readonly hasErrorOnFocus = computed(() => this.hasErrorOnFocusList());
 
-    readonly errorOnFocusList = ['maxlength']; // Add validators to display within input focus.
+    readonly errorOnFocusList = ['maxlength']; // Add validators to display on input focus.
 
     readonly hasError = computed(() => 
         this.field().invalid()
@@ -40,6 +40,7 @@ export class AbstractInputComponent {
                 hasErrorFromList = true;
             }
         })
+
         return hasErrorFromList;
     }
 

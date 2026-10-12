@@ -57,7 +57,7 @@ export class ContactComponent extends BaseComponent {
 
     private setForm(): FieldTree<NotificationParams> {
         // Combination of default and custom maxLength to enable +1 user input over limit to display error message. 
-        // IMPORTANT: order of added validations follows a reason as only 1 validation is shown at a time.
+        // IMPORTANT: Order of added validations follows a reason as only 1 validation is shown at a time.
         return form(this.contactModel, (schemaPath) => {
             required(schemaPath.salutation);
 
