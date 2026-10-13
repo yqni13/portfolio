@@ -135,6 +135,11 @@
                 "link": "https://code.visualstudio.com/"
             },
             {
+                "icon": "icon-VisualStudio",
+                "name": "Visual Studio",
+                "link": "https://visualstudio.microsoft.com/"
+            },
+            {
                 "icon": "icon-Testcontainers",
                 "name": "Testcontainers",
                 "link": "https://testcontainers.com/"

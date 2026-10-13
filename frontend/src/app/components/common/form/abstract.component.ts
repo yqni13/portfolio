@@ -1,8 +1,12 @@
-import { Component, input, output, } from "@angular/core";
+import { Component, computed, input, output, signal, } from "@angular/core";
 import { Field, FieldState } from "@angular/forms/signals";
 
 @Component({
-    template: ''
+    template: '',
+    host: {
+        '(focusin)': 'onFocusIn()',
+        '(focusout)': 'onFocusOut($event)'
+    }
 })
 export class AbstractInputComponent {
 
@@ -15,25 +19,39 @@ export class AbstractInputComponent {
 
     readonly byChange = output<unknown>();
 
-    isFocused = false;
+    readonly isFocused = signal(false);
+    readonly hasErrorOnFocus = computed(() => this.hasErrorOnFocusList());
+
+    readonly errorOnFocusList = ['maxlength']; // Add validators to display on input focus.
+
+    readonly hasError = computed(() => 
+        this.field().invalid()
+        && (this.field().dirty() || this.field().touched())
+    );
 
     get field(): Field<string> {
         return this.fieldState().fieldTree as unknown as Field<string>;
     }
 
-    clickOutside(event: MouseEvent) {
-        const target = event.target as HTMLElement;
-        if(target.id === `custom-form-${this.fieldName}`) {
-            this.isFocused = true;
-        } else {
-            this.isFocused = false;
-        }
+    hasErrorOnFocusList(): boolean {
+        let hasErrorFromList = false;
+        this.field().errors().forEach((entry) => {
+            if(this.errorOnFocusList.includes(entry.kind)) {
+                hasErrorFromList = true;
+            }
+        })
+
+        return hasErrorFromList;
     }
 
-    tabOutside(event: KeyboardEvent) {
-        const target = event.target as HTMLElement;
-        if(event.key === 'Tab' && (target.id === `custom-form-${this.fieldName}`)) {
-            this.isFocused = false;
+    onFocusIn() {
+        this.isFocused.set(true);
+    }
+
+    onFocusOut(event: FocusEvent) {
+        const host = event.currentTarget as HTMLElement;
+        if (!host.contains(event.relatedTarget as Node | null)) {
+            this.isFocused.set(false);
         }
     }
 }

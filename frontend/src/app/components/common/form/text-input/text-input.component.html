@@ -1,4 +1,4 @@
-<div class="textinput" ngClass="{{ngClass()}}">
+<div class="textinput custom-input" ngClass="{{ngClass()}}">
     <i
         id="custom-icon"
         class="icon-base"
@@ -11,15 +11,19 @@
         placeholder="{{placeholder()}}"
         [ngStyle]="customStyle()"
     >
-    @if(field().invalid() && (field().dirty() || field().touched())) {
+    @if (((isFocused() && hasErrorOnFocus()) || !isFocused()) && hasError()) {
         <i
             id="error-icon"
             class="icon-base icon-Warning"
             ngClass="warning-input-text"
         ></i>
     }
+    @if (hasError()) {
+        <app-validation-input
+            [fieldState]="fieldState()"
+            [fieldName]="fieldName()"
+            [isFocused]="isFocused()"
+            [errOnFocusList]="errorOnFocusList"
+        ></app-validation-input>
+    }
 </div>
-<app-validation-input
-    [fieldState]="fieldState()"
-    [fieldName]="fieldName()"
-></app-validation-input>
