@@ -1,8 +1,19 @@
 ## 📜 $\textsf{\color{salmon}{List\ of\ updates}}$
 
+### $\textsf{\color{skyblue}2026/10/11}$
+
+$\textsf{[v2.2.1\ =>\ {\textbf{\color{brown}v2.3.3}]}}$ app
+- $\textsf{\color{green}Change:}$ Changed custom input logic to display validation message + styling on different focus state regarding error.
+- $\textsf{\color{orange}Patch:}$ Updated:
+  + working focus detection of input fields by mouse/keyboard navigation
+  + display limit for active validation messages
+  + fixed space under input fields for validation message
+
+<br>
+
 ### $\textsf{\color{skyblue}2026/07/17}$
 
-$\textsf{[v2.2.0\ =>\ {\textbf{\color{brown}v2.2.1}]}}$ app
+$\textsf{[v2.2.0\ =>\ v2.2.1]}$ app
 - $\textsf{\color{red}Bugfix:}$ Builds application with correct node package information. [Before: package-lock.json file was on .gitignore and cached git data on node package dependencies failed Netlify build on merge to 'stag' environment.]
 
 <br>

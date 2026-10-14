@@ -8,3 +8,12 @@ export function customMaxLength(path: SchemaPath<string>, options: {max: number}
         return null;
     })
 }
+
+export function customMinLength(path: SchemaPath<string>, options: {min: number}) {
+    validate(path, ({value}) => {
+        if(value().length < options?.min) {
+            return { kind: 'minlength', message: String(options.min) };
+        }
+        return null;
+    })
+}
