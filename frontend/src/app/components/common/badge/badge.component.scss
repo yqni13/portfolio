@@ -10,7 +10,7 @@
     background-color: var(--theme-component);
     text-decoration: none;
     span {
-        font-size: 16px;
+        font-size: 1rem;
         color: var(--theme-body-text);
     }
     @media screen and (width > sass.$device-tablet-landscape) {
