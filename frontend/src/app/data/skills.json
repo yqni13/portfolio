@@ -145,6 +145,16 @@
                 "link": "https://testcontainers.com/"
             },
             {
+                "icon": "icon-Jira",
+                "name": "Jira",
+                "link": "https://www.atlassian.com/software/jira"
+            },
+            {
+                "icon": "icon-Confluence",
+                "name": "Confluence",
+                "link": "https://www.atlassian.com/software/confluence"
+            },
+            {
                 "icon": "icon-Postman",
                 "name": "Postman",
                 "link": "https://www.postman.com/"
@@ -153,11 +163,6 @@
                 "icon": "icon-Betterstack",
                 "name": "Betterstack",
                 "link": "https://betterstack.com/"
-            },
-            {
-                "icon": "icon-Jira",
-                "name": "Jira",
-                "link": "https://www.atlassian.com/software/jira"
             },
             {
                 "icon": "icon-Notion",
@@ -189,6 +194,11 @@
                 "name": "NotebookLM",
                 "link": "https://notebooklm.google.com/",
                 "customStyle": true
+            },
+            {
+                "icon": "icon-Windows",
+                "name": "Windows",
+                "link": "https://www.microsoft.com/en-us"
             }
         ]
     },
@@ -211,11 +221,6 @@
                 "link": "https://getbootstrap.com/"
             },
             {
-                "icon": "icon-MSQLServer",
-                "name": "Microsoft SQL Server",
-                "link": "https://www.microsoft.com/de-de/sql-server/"
-            },
-            {
                 "icon": "icon-Jenkins",
                 "name": "Jenkins",
                 "link": "https://www.jenkins.io/"
@@ -224,6 +229,16 @@
                 "icon": "icon-Leaflet",
                 "name": "Leaflet",
                 "link": "https://leafletjs.com"
+            },
+            {
+                "icon": "icon-Linux",
+                "name": "Linux",
+                "link": "https://www.linux.org/pages/download/"
+            },
+            {
+                "icon": "icon-MSQLServer",
+                "name": "Microsoft SQL Server",
+                "link": "https://www.microsoft.com/de-de/sql-server/"
             }
         ]
     }

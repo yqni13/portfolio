@@ -17,6 +17,11 @@ $toggle-padding: 2.5px;
     border: 1px solid var(--theme-toggle);
     padding: 0 $toggle-padding;
     border-radius: 25px;
+    @media screen and (width > sass.$device-tablet-landscape) {
+        &:hover {
+            box-shadow: var(--theme-primary) 0 2px 15px;
+        }
+    }
 }
 
 .icon-wrapper {
@@ -90,5 +95,5 @@ $toggle-padding: 2.5px;
     margin-left: sass.$space15;
     opacity: 0.75;
     font-weight: 300;
-    font-size: 18px;
+    font-size: 1rem;
 }

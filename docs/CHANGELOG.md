@@ -1,8 +1,17 @@
 ## 📜 $\textsf{\color{salmon}{List\ of\ updates}}$
 
+### $\textsf{\color{skyblue}2026/11/01}$
+
+$\textsf{[v2.3.3\ =>\ {\textbf{\color{brown}v2.3.5}]}}$ app
+- $\textsf{\color{orange}Patch:}$ Updated:
+  + basic font-size headers and paragraphs
+  + skills content
+
+<br>
+
 ### $\textsf{\color{skyblue}2026/10/11}$
 
-$\textsf{[v2.2.1\ =>\ {\textbf{\color{brown}v2.3.3}]}}$ app
+$\textsf{[v2.2.1\ =>\ v2.3.3]}$ app
 - $\textsf{\color{green}Change:}$ Changed custom input logic to display validation message + styling on different focus state regarding error.
 - $\textsf{\color{orange}Patch:}$ Updated:
   + working focus detection of input fields by mouse/keyboard navigation
