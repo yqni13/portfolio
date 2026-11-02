@@ -96,7 +96,11 @@ h3 {
     text-decoration: none;
     @media screen and (width > sass.$device-tablet-landscape) {
         &:hover {
-            box-shadow: 1px 1px 3px var(--theme-body-text);
+            box-shadow: var(--theme-body-text) 0 1px 10px;
+        }
+        &:active {
+            box-shadow: var(--theme-body-text) 0 2px 15px;
+            transform: scale(0.975);
         }
     }
     i {
@@ -104,6 +108,7 @@ h3 {
         margin-left: sass.$space5;
         width: $size;
         height: $size;
+        color: var(--theme-body-text);
     }
 }
 
@@ -119,7 +124,13 @@ h3 {
     background-color: var(--theme-component);
     @media screen and (width > sass.$device-tablet-landscape) {
         &:hover {
-            box-shadow: 1px 1px 3px var(--theme-nav-grey);
+            box-shadow: var(--theme-nav-grey) 0 1px 10px;
+        }
+        &:active {
+            box-shadow: var(--theme-primary) 0 2px 15px;
+            border: 1px outset var(--theme-primary);
+            transform: scale(0.975);
+            color: var(--theme-primary);
         }
     }
     i {
@@ -147,7 +158,7 @@ h3 {
     @media screen and (width > sass.$device-tablet-landscape) {
         transition: transform 300ms ease-in-out;
         &:hover {
-            transform: scale(1.2);
+            transform: scale(1.15);
         }
     }
 }
@@ -156,7 +167,7 @@ h3 {
     @media screen and (width > sass.$device-tablet-landscape) {
         transition: transform 300ms ease-in-out;
         &:hover {
-            transform: scale(1.2);
+            transform: scale(1.075);
             color: var(--theme-primary)!important;
         }
     }
