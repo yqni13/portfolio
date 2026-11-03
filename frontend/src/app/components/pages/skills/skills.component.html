@@ -1,12 +1,12 @@
 <section class="skills" id="head-skills">
     <div class="page-head-wrapper">
-        <h3>{{data.title}}</h3>
-        <span class="head-text">{{data.subTitle}}</span>
+        <h2 class="yqni13-highlight">{{data.title}}</h2>
+        <p class="head-text">{{data.subTitle}}</p>
     </div>
     <div id="skills-content">
         @for(skillset of skills; track $index) {
             <div class="skills-wrapper">
-                <h4 [ngClass]="'skills-h4-' + $index">{{skillset.title}}</h4>
+                <h3 [ngClass]="'skills-h4-' + $index">{{skillset.title}}</h3>
                 <div class="skills-badge-wrapper">
                     @for(skill of skillset.skills; track $index) {
                         <app-badge

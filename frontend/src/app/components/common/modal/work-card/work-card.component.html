@@ -18,7 +18,7 @@
                 </div>
                 <div class="workcard-detail-header">
                     <div class="workcard-detail-header-split">
-                        <h4>{{data().name}}</h4>
+                        <h2>{{data().name}}</h2>
                         <a href="{{data().links.repo}}" target="_blank" class="link-primary">
                             <i class="icon-base icon-GitHub"></i>
                         </a>
@@ -31,7 +31,7 @@
                 <ul>
                     @for(listing of data().impact; track $index) {
                         <li>
-                            <span>{{listing}}</span>
+                            <p>{{listing}}</p>
                         </li>
                     }
                 </ul>

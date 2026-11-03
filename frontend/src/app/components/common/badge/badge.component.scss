@@ -10,12 +10,22 @@
     background-color: var(--theme-component);
     text-decoration: none;
     span {
-        font-size: 16px;
+        font-size: 1rem;
         color: var(--theme-body-text);
     }
     @media screen and (width > sass.$device-tablet-landscape) {
         &:hover {
-            box-shadow: 2px 2px 4px var(--theme-body-text);
+            box-shadow: var(--theme-body-text) 0 1px 10px;
+            cursor: pointer;
+        }
+        &:active {
+            box-shadow: var(--theme-primary) 0 2px 15px;
+            border: 1px outset var(--theme-primary);
+            transform: scale(0.975);
+        }
+        &:active span,
+        span:active {
+            color: var(--theme-primary);
         }
     }
 }

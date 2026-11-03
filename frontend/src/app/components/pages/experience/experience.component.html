@@ -26,13 +26,13 @@
             @if(data.certificate) {
                 <i class="icon-base icon-Certificate"></i>
             }
-            <h4>{{data.title}}</h4>
+            <h3>{{data.title}}</h3>
             <span>{{data.time}}</span>
         </div>
         <ul class="experience-card-core">
             @for(element of data.core; track $index) {
                 <li>
-                    <span>{{element}}</span>
+                    <p>{{element}}</p>
                 </li>
             }
         </ul>
@@ -46,8 +46,8 @@
 
 <section class="experience" id="head-experience">
     <div class="page-head-wrapper">
-        <h3>{{data.title}}</h3>
-        <span class="head-text">{{data.subTitle}}</span>
+        <h2 class="yqni13-highlight">{{data.title}}</h2>
+        <p class="head-text">{{data.subTitle}}</p>
     </div>
     <app-toggle
         [enabledIcon]="'Certificate'"

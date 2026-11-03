@@ -19,9 +19,7 @@ section {
         #hero-header-wrapper {
             flex-direction: column;
             #hero-name {
-                font-size: clamp(70px, 10vw, 100px);
                 font-weight: 300;
-                margin: 0;
                 text-transform: uppercase;
                 background: var(--theme-yqni13);
                 -webkit-background-clip: text;
@@ -32,7 +30,7 @@ section {
                 font-size: clamp(35px, 7.5vw, 70px);
                 font-weight: 300;
                 margin: 0;
-                color: var(--theme-body-text);
+                text-align: start;
             }
             h4 {
                 font-size: clamp(25px, 5vw, 40px);
