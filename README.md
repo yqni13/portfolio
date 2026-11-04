@@ -1,5 +1,5 @@
 # yqni13 | $\texttt{\color{blueviolet}{PORTFOLIO}}$
-### $\textsf{\color{brown}{v2.3.3}}$
+### $\textsf{\color{brown}{v2.3.5}}$
 
 <br>
 
@@ -63,9 +63,7 @@ ng lint
 ## 📈 $\textsf{\color{salmon}Updates}$
 [see changelog for all updates](./docs/CHANGELOG.md)
 
-$\textsf{[v2.2.1\ =>\ {\textbf{\color{brown}v2.3.3}]}}$ app
-- $\textsf{\color{green}Change:}$ Changed custom input logic to display validation message + styling on different focus state regarding error.
+$\textsf{[v2.3.3\ =>\ {\textbf{\color{brown}v2.3.5}]}}$ app
 - $\textsf{\color{orange}Patch:}$ Updated:
-  + working focus detection of input fields by mouse/keyboard navigation
-  + display limit for active validation messages
-  + fixed space under input fields for validation message
+  + basic font-size headers and paragraphs
+  + skills content

@@ -6,7 +6,7 @@
         [tabindex]="0"
     >
         <span id="workcard-preview-type">{{data.type.stack}}</span>
-        <h4>{{data.name}}</h4>
+        <h3>{{data.name}}</h3>
         <span id="workcard-preview-intro">{{data.intro}}</span>
         <p>{{data.description}}</p>
         <a id="workcard-preview-hint">
@@ -36,8 +36,8 @@
 
 <section class="work" id="head-work">
     <div class="page-head-wrapper">
-        <h3>{{data.title}}</h3>
-        <span class="head-text">{{data.subTitle}}</span>
+        <h2 class="yqni13-highlight">{{data.title}}</h2>
+        <p class="head-text">{{data.subTitle}}</p>
     </div>
     <div class="work-content">
         @for(card of projects; track $index) {
