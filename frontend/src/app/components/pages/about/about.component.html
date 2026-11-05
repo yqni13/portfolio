@@ -1,7 +1,7 @@
 <section class="about" id="head-about">
     <div class="page-head-wrapper">
-        <h3>{{data.title}}</h3>
-        <span class="head-text">{{data.subTitle}}</span>
+        <h2 class="yqni13-highlight">{{data.title}}</h2>
+        <p class="head-text">{{data.subTitle}}</p>
     </div>
     <div class="about-content">
         <div class="about-content-img" [ngStyle]="imgByTheme()">
@@ -9,10 +9,14 @@
         </div>
         <div class="about-content-description">
             <div id="description-wrapper">
-                <h4>{{myInfo['intro']}}</h4>
+                <h3>{{myInfo['intro']}}</h3>
                 <p>{{myInfo['text']}}</p>
                 <div id="hint-wrapper">
-                    <span>{{myInfo['hint1']}}<a>{{myInfo['alias']}}</a>{{myInfo['hint2']}}</span>
+                    <span>
+                        {{myInfo['hint1']}}
+                        <a>{{myInfo['alias']}}</a>
+                        {{myInfo['hint2']}}
+                    </span>
                 </div>
             </div>
         </div>
