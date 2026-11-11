@@ -1,5 +1,5 @@
 # yqni13 | $\texttt{\color{blueviolet}{PORTFOLIO}}$
-### $\textsf{\color{brown}{v2.3.5}}$
+### $\textsf{\color{brown}{v2.3.7}}$
 
 <br>
 
@@ -63,7 +63,7 @@ ng lint
 ## 📈 $\textsf{\color{salmon}Updates}$
 [see changelog for all updates](./docs/CHANGELOG.md)
 
-$\textsf{[v2.3.3\ =>\ {\textbf{\color{brown}v2.3.5}]}}$ app
+$\textsf{[v2.3.5\ =>\ {\textbf{\color{brown}v2.3.7}]}}$ app
 - $\textsf{\color{orange}Patch:}$ Updated:
-  + basic font-size headers and paragraphs
-  + skills content
+  + light mode colors from cold to warm tone
+  + missing paddings/distance buffers

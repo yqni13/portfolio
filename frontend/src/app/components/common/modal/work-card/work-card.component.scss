@@ -22,7 +22,8 @@
         border: 1px solid var(--theme-nav-grey);
         border-radius: 20px;
         padding: $padding;
-        background-color: var(--theme-component);
+        background: var(--theme-component-gradient);
+
         margin-top: 0;
         max-height: calc(100vh - sass.$space100);
         #workcard-detail-content-head {
@@ -102,7 +103,7 @@
                     font-size: 0.75rem;
                     color: var(--theme-body-text);
                     opacity: 0.8;
-                    border: 1px solid var(--theme-grey);
+                    border: 1px inset var(--theme-grey);
                     padding: 7.5px;
                 }
             }
@@ -140,6 +141,7 @@
                 flex-wrap: wrap;
                 span {
                     border: 1px solid var(--theme-grey);
+                    border-radius: 10px;
                     background-color: var(--theme-component);
                     color: var(--theme-secondary);
                 }
@@ -170,6 +172,13 @@
                     right: 0;
                     margin-inline: auto;
                     justify-content: center;
+
+                    i {
+                        $size: 20px;
+                        color: sass.$color-ice-white;
+                        width: $size;
+                        height: $size;
+                    }
                 }
             }
         }
