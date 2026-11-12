@@ -13,20 +13,28 @@ export class ThemeHandlerService {
 
     initTheme() {
         const theme: ThemeOption = this.getThemeSetting();
-        this.setThemeSettings(theme ? theme : ThemeOption.DARK);
+        this.setThemeSettings(theme ? theme : ThemeOption.LIGHT);
+    }
+
+    switchTheme() {
+        const next = this.activeTheme() === ThemeOption.LIGHT
+            ? ThemeOption.DARK
+            : ThemeOption.LIGHT;
+
+        this.setThemeSettings(next);
     }
 
     getThemeSetting(): ThemeOption {
         if(this.isLocalStorageAvailable) {
             const theme = localStorage.getItem(`${this.url}-theme`);
             if(!theme) {
-                return ThemeOption.DARK;
+                return ThemeOption.LIGHT;
             }
 
             return String(theme) === 'lightMode' ? ThemeOption.LIGHT : ThemeOption.DARK;
         }
 
-        return ThemeOption.DARK;
+        return ThemeOption.LIGHT;
     }
 
     setThemeSettings(theme: ThemeOption) {
@@ -39,23 +47,8 @@ export class ThemeHandlerService {
             }
         }
 
-        this.activeTheme.set(ThemeOption.DARK);
-        document.body.setAttribute("data-theme", 'darkMode');
-    }
-
-    switchTheme(theme: ThemeOption): ThemeOption {
-        if(this.isLocalStorageAvailable) {
-            if (theme === ThemeOption.DARK) {
-                theme = ThemeOption.LIGHT;
-            } else {
-                theme = ThemeOption.DARK
-            }
-
-            this.setThemeSettings(theme);
-            return theme;
-        }
-
-        this.setThemeSettings(ThemeOption.DARK);
-        return ThemeOption.DARK;
+        // Default
+        this.activeTheme.set(ThemeOption.LIGHT);
+        document.body.setAttribute("data-theme", 'lightMode');
     }
 }

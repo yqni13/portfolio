@@ -31,7 +31,7 @@ $color-theme-moon: #888888c3;
 $color-lightmode-comp-grey: #fff4e2d2;
 $color-darkmode-comp-grey: #1d2029;
 
-$color-lightmode-gradient-comp: linear-gradient(66deg,rgba(255, 245, 226, .7) 60%, rgba(255, 251, 212, .7) 100%);
+$color-lightmode-gradient-comp: linear-gradient(66deg,rgba(255, 245, 226, .8) 60%, rgba(255, 251, 212, .8) 100%);
 $color-darkmode-gradient-comp: linear-gradient(32deg, rgba(29, 32, 41, .8) 40%, rgba(49, 49, 49, 0.9) 100%);
 
 $color-lightmode-grey: #818283;
@@ -40,11 +40,9 @@ $color-darkmode-grey: #5e5f63;
 
 /* HIGHLIGHT COLORS */
 $color-lightmode-primary: rgb(161, 59, 39);
-// $color-lightmode-primary: #0ba56f;
 $color-darkmode-primary: $yqni13-darkmode-pink;
 
 $color-lightmode-secondary: #df9d6d;
-// $color-lightmode-secondary: #0b6da5;
 $color-darkmode-secondary: #723a88;
 
 
