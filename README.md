@@ -53,7 +53,7 @@ With the update to Angular v22, Angular's new Signal Forms have been integrated 
 Inspired by an Instagram post, I updated my light-mode colors and sought a more soothing and engaging transition for the theme switch. Using the View Transition API and some calculation logic (sponsored by AI), a snapshot creates the effect of the newly selected theme gliding over the old one [(see transition service)](./frontend/src/app/services/transition.service.ts).
 
 <div align="center">
-    <img src="frontend/public/assets/doc-videos/theme_transition_about.gif" alt="&nbsp;theme transition transition">
+    <img src="frontend/public/assets/doc-videos/theme_transition.gif" alt="&nbsp;theme transition transition">
     Figure 1 - Theme switch transition, v2.3.8
 </div>
 
