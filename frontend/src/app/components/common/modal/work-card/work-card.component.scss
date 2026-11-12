@@ -175,7 +175,7 @@
 
                     i {
                         $size: 20px;
-                        color: sass.$color-ice-white;
+                        color: var(--theme-fixed-white);
                         width: $size;
                         height: $size;
                     }
