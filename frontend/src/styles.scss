@@ -27,6 +27,15 @@ body {
     padding: 0;
 }
 
+/* Must stay in global position as comp-based styling stay encapsulated 
+   => no reach to view-transition-pseudo-elements */
+::view-transition-old(root),
+::view-transition-new(root) {
+    -webkit-animation: none;
+    animation: none;
+    mix-blend-mode: normal;
+}
+
 :root {
     background-color: var(--theme-body-bg);
 }
@@ -82,6 +91,7 @@ h3 {
     flex-direction: column;
     align-items: center;
     width: 100%;
+    max-width: 90vw;
 }
 
 .btn-primary {
@@ -91,7 +101,7 @@ h3 {
     border: 1px outset transparent;
     border-radius: 10px;
     cursor: pointer;
-    color: sass.$color-ice-white;
+    color: sass.$color-warm-white;
     background-color: var(--theme-primary);
     text-decoration: none;
     @media screen and (width > sass.$device-tablet-landscape) {

@@ -98,7 +98,7 @@
             font-size: 1rem;
         }
         h4 {
-            color: sass.$color-ice-white;
+            color: var(--theme-fixed-white);
             padding: 0 sass.$space15;
             margin-block: 0;
             margin-inline: 0;

@@ -7,15 +7,15 @@ $device-small-any: 400px;
 
 
 /* CUSTOM COLORS */
-$color-lightmode-bg: #dcdcfa;
+$color-lightmode-bg: #fcf7ec;
 $color-darkmode-bg: #0d101b;
 
 $color-ice-white: #f0f8ff;
+$color-warm-white: #fff4e2;
 $color-rich-black: #020d19;
 $color-deep-blue: #011222;
-// $color-special-blue: #0b0c0d;
 $color-special-blue: #0f1320;
-$color-dark-grey: rgb(162, 161, 161);
+$color-dark-grey: rgb(119, 117, 117);
 $color-light-grey: rgb(75, 75, 75);
 $color-loader-teal: #119d8d;
 $color-loader-blue: #11889d;
@@ -29,18 +29,21 @@ $yqni13-darkmode-pink: #d82a67;
 $color-theme-sun: rgb(219, 166, 5);
 $color-theme-moon: #888888c3;
 
-$color-lightmode-comp-grey: #e4e4f6;
+$color-lightmode-comp-grey: #fff4e2d2;
 $color-darkmode-comp-grey: #1d2029;
+
+$color-lightmode-gradient-comp: linear-gradient(66deg,rgba(255, 245, 226, .8) 60%, rgba(255, 251, 212, .8) 100%);
+$color-darkmode-gradient-comp: linear-gradient(32deg, rgba(29, 32, 41, .8) 40%, rgba(49, 49, 49, 0.9) 100%);
 
 $color-lightmode-grey: #818283;
 $color-darkmode-grey: #5e5f63;
 
 
 /* HIGHLIGHT COLORS */
-$color-lightmode-primary: #0ba56f;
+$color-lightmode-primary: #a13b27;
 $color-darkmode-primary: $yqni13-darkmode-pink;
 
-$color-lightmode-secondary: #0b6da5;
+$color-lightmode-secondary: #df9d6d;
 $color-darkmode-secondary: #723a88;
 
 

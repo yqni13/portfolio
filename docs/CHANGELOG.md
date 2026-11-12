@@ -1,8 +1,18 @@
 ## 📜 $\textsf{\color{salmon}{List\ of\ updates}}$
 
+### $\textsf{\color{skyblue}2026/11/11}$
+
+$\textsf{[v2.3.5\ =>\ {\textbf{\color{brown}v2.3.8}]}}$ app
+- $\textsf{\color{teal}Addition:}$ Added animation for theme switch transition.
+- $\textsf{\color{orange}Patch:}$ Updated:
+  + light mode colors from cold to warm tone
+  + missing paddings/distance buffers
+
+<br>
+
 ### $\textsf{\color{skyblue}2026/11/01}$
 
-$\textsf{[v2.3.3\ =>\ {\textbf{\color{brown}v2.3.5}]}}$ app
+$\textsf{[v2.3.3\ =>\ v2.3.5]}$ app
 - $\textsf{\color{orange}Patch:}$ Updated:
   + basic font-size headers and paragraphs
   + skills content

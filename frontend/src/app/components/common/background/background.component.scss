@@ -26,7 +26,7 @@
     height: 100%;
     position: absolute;
     inset: 0;
-    background: var(--theme-body-bg);
+    background-color: var(--theme-body-bg);
 }
 
 /* Generic star layer style */
@@ -163,7 +163,9 @@
     z-index: -1;
     align-items: start;
     justify-content: end;
+    background-color: var(--theme-body-bg);
 }
+
 .sun {
     $size: clamp(150px, 20vw, 350px);
     width: $size;
@@ -174,6 +176,7 @@
     display: inline;
     position: absolute;
     opacity: 0.4;
+    z-index: 0;
 }
 .sunshine {
     animation: sunshines 2s infinite;
