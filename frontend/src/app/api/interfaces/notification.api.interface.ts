@@ -1,5 +1,8 @@
+import { SalutationOption } from "../../utils/enums/salutation-option.enum";
+
 export interface NotificationParams {
-    salutation: string,
+    salutation: SalutationOption,
+    selfdesc: string,
     name: string,
     email: string,
     subject: string,

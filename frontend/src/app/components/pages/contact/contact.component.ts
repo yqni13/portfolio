@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Component, inject, signal } from "@angular/core";
 import { BaseComponent } from "../base.component";
 import { TextInputComponent } from "../../common/form/text-input/text-input.component";
@@ -9,8 +10,9 @@ import { NotifyModalService } from "../../../services/notify-modal.service";
 import { NotifyModalType } from "../../../utils/enums/notify-modal.enum";
 import { LoaderComponent } from "../../common/loader/loader.component";
 import { CommonModule } from "@angular/common";
-import { email, FieldTree, form, maxLength, required } from "@angular/forms/signals";
+import { applyWhen, email, FieldTree, form, maxLength, required } from "@angular/forms/signals";
 import * as CustomValidators from "../../../utils/helper/custom-validators";
+import { SalutationOption } from "../../../utils/enums/salutation-option.enum";
 
 @Component({
     selector: 'app-contact',
@@ -29,13 +31,16 @@ export class ContactComponent extends BaseComponent {
     private readonly notifyModal = inject(NotifyModalService);
     private readonly notifyApi = inject(NotificationApiService);
 
-    protected maxLengthValidation = { name: 100, email: 100, subject: 100, message: 1500 };
-    protected minLengthValidation = { email: 5 };
+    protected maxLengthValidation = { selfdesc: 50, name: 100, email: 100, subject: 75, message: 1500 };
+    protected minLengthValidation = { selfdesc: 3, email: 5 };
 
     protected readonly isLoading = signal(false);
+    protected readonly isSelfDesc = signal(false);
 
     private contactModel = signal<NotificationParams>(this.initEmptyForm());
     protected contactForm = this.setForm();
+
+    protected SalutationEnum = SalutationOption;
 
     constructor() {
         super();
@@ -47,7 +52,8 @@ export class ContactComponent extends BaseComponent {
 
     private initEmptyForm(): NotificationParams {
         return {
-            salutation: '',
+            salutation: '' as SalutationOption,
+            selfdesc: '',
             name: '',
             email: '',
             subject: '',
@@ -61,23 +67,30 @@ export class ContactComponent extends BaseComponent {
         return form(this.contactModel, (schemaPath) => {
             required(schemaPath.salutation);
 
+            applyWhen(schemaPath, ({valueOf}) => valueOf(schemaPath.salutation) === SalutationOption.SELFDESC, (schemaPath) => {
+                required(schemaPath.selfdesc);
+                maxLength(schemaPath.selfdesc, this.maxLengthValidation.selfdesc + 1);
+                CustomValidators.customMinLength(schemaPath.selfdesc, { min: this.minLengthValidation.selfdesc });
+                CustomValidators.customMaxLength(schemaPath.selfdesc, { max: this.maxLengthValidation.selfdesc });
+            })
+
             required(schemaPath.name);
-            maxLength(schemaPath.name, this.maxLengthValidation.name+1);
-            CustomValidators.customMaxLength(schemaPath.name, {max: this.maxLengthValidation.name});
+            maxLength(schemaPath.name, this.maxLengthValidation.name + 1);
+            CustomValidators.customMaxLength(schemaPath.name, { max: this.maxLengthValidation.name });
 
             required(schemaPath.email);
-            maxLength(schemaPath.email, this.maxLengthValidation.email+1);
-            CustomValidators.customMinLength(schemaPath.email, {min: this.minLengthValidation.email});
-            CustomValidators.customMaxLength(schemaPath.email, {max: this.maxLengthValidation.email});
+            maxLength(schemaPath.email, this.maxLengthValidation.email + 1);
+            CustomValidators.customMinLength(schemaPath.email, { min: this.minLengthValidation.email });
+            CustomValidators.customMaxLength(schemaPath.email, { max: this.maxLengthValidation.email });
             email(schemaPath.email);
 
             required(schemaPath.subject);
-            maxLength(schemaPath.subject, this.maxLengthValidation.subject+1);
-            CustomValidators.customMaxLength(schemaPath.subject, {max: this.maxLengthValidation.subject});
+            maxLength(schemaPath.subject, this.maxLengthValidation.subject + 1);
+            CustomValidators.customMaxLength(schemaPath.subject, { max: this.maxLengthValidation.subject });
 
             required(schemaPath.message);
-            maxLength(schemaPath.message, this.maxLengthValidation.message+1);
-            CustomValidators.customMaxLength(schemaPath.message, {max: this.maxLengthValidation.message});
+            maxLength(schemaPath.message, this.maxLengthValidation.message + 1);
+            CustomValidators.customMaxLength(schemaPath.message, { max: this.maxLengthValidation.message });
         });
     }
 
@@ -95,6 +108,11 @@ export class ContactComponent extends BaseComponent {
         };
     }
 
+    handleSalutationChange(event: unknown) {
+        const option = (((event as Event).currentTarget) as HTMLSelectElement).value;
+        this.isSelfDesc.set(option === SalutationOption.SELFDESC);
+    }
+
     async onSubmit() {
         if(this.contactForm().invalid()) {
             this.contactForm().markAsTouched();
@@ -108,7 +126,7 @@ export class ContactComponent extends BaseComponent {
             return;
         }
         this.isLoading.set(true);
-        const params: NotificationParams = this.notifyApi.toNotificationParams(this.contactForm().value() as unknown as Record<string, string>);
+        const params: NotificationParams = this.notifyApi.toNotificationParams(this.contactForm().value() as unknown as Record<string, any>);
         await this.notifyApi.sendMessage(params).finally(() => {
             this.reset();
             this.isLoading.set(false);

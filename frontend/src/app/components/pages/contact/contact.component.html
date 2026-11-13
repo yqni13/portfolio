@@ -11,11 +11,21 @@
                     [fieldState]="contactForm.salutation()"
                     [placeholder]="'How should I address you?*'"
                     [fieldName]="'salutation'"
-                    [options]="{female: 'Ms.', male: 'Mr.'}"
+                    [options]="SalutationEnum"
                     [customStyle]="getCustomInputStyle()"
                     [readonlyStyle]="getCustomReadonlyStyle()"
                     [icon]="'Salutation'"
+                    (byChange)="handleSalutationChange($event)"
                 ></app-select-input>
+                @if (isSelfDesc()) {
+                    <app-text-input
+                        [fieldState]="contactForm.selfdesc()"
+                        [placeholder]="'Describe what address to use*'"
+                        [fieldName]="'self-desc'"
+                        [customStyle]="getCustomInputStyle()"
+                        [icon]="'Other'"
+                    ></app-text-input>
+                }
                 <app-text-input
                     [fieldState]="contactForm.name()"
                     [placeholder]="'Your name*'"
