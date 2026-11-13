@@ -24,6 +24,7 @@
                         [fieldName]="'self-desc'"
                         [customStyle]="getCustomInputStyle()"
                         [icon]="'Other'"
+                        (byChange)="updateInputOnForbiddenChars($event, contactForm.selfdesc())"
                     ></app-text-input>
                 }
                 <app-text-input
@@ -32,6 +33,7 @@
                     [fieldName]="'name'"
                     [customStyle]="getCustomInputStyle()"
                     [icon]="'User'"
+                    (byChange)="updateInputOnForbiddenChars($event, contactForm.name())"
                 ></app-text-input>
                 <app-text-input
                     [fieldState]="contactForm.email()"
@@ -39,6 +41,7 @@
                     [fieldName]="'email'"
                     [customStyle]="getCustomInputStyle()"
                     [icon]="'MailThin'"
+                    (byChange)="updateInputOnForbiddenChars($event, contactForm.email())"
                 ></app-text-input>
                 <app-text-input
                     [fieldState]="contactForm.subject()"
@@ -46,6 +49,7 @@
                     [fieldName]="'subject'"
                     [customStyle]="getCustomInputStyle()"
                     [icon]="'Subject'"
+                    (byChange)="updateInputOnForbiddenChars($event, contactForm.subject())"
                 ></app-text-input>
                 <app-textarea-input
                     [fieldState]="contactForm.message()"
@@ -55,6 +59,7 @@
                     [icon]="'Message'"
                     [lengthLimit]="maxLengthValidation.message"
                     [rows]="7"
+                    (byChange)="updateInputOnForbiddenChars($event, contactForm.message())"
                 ></app-textarea-input>
                 <a
                     class="btn-primary"

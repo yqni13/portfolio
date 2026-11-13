@@ -10,7 +10,7 @@ import { NotifyModalService } from "../../../services/notify-modal.service";
 import { NotifyModalType } from "../../../utils/enums/notify-modal.enum";
 import { LoaderComponent } from "../../common/loader/loader.component";
 import { CommonModule } from "@angular/common";
-import { applyWhen, email, FieldTree, form, maxLength, required } from "@angular/forms/signals";
+import { applyWhen, email, FieldState, FieldTree, form, maxLength, required } from "@angular/forms/signals";
 import * as CustomValidators from "../../../utils/helper/custom-validators";
 import { SalutationOption } from "../../../utils/enums/salutation-option.enum";
 
@@ -108,6 +108,14 @@ export class ContactComponent extends BaseComponent {
         };
     }
 
+    updateInputOnForbiddenChars(event: unknown, field: FieldState<string>) {
+        field.reset(); // Need for change of value inside input field or change happens only in form data.
+        field.value.set(event as string);
+        if (field.value() !== '') { // Don't invoke validations on init.
+            field.markAsTouched();
+        }
+    }
+
     handleSalutationChange(event: unknown) {
         const option = (((event as Event).currentTarget) as HTMLSelectElement).value;
         this.isSelfDesc.set(option === SalutationOption.SELFDESC);
@@ -118,10 +126,10 @@ export class ContactComponent extends BaseComponent {
             this.contactForm().markAsTouched();
             this.notifyModal.notify({
                 title: 'invalid input',
-                text: 'Please check for missing or invalid fields before submitting.',
+                text: 'Please check for missing or invalid fields.',
                 type: NotifyModalType.WARNING,
                 autoClose: true,
-                displayTimeInMilliseconds: 3000,
+                displayTimeInMilliseconds: 4000,
             });
             return;
         }
