@@ -11,7 +11,7 @@
     },
     {
         "error": "minlength",
-        "msg": "Content \"{{VAL_0}}\" must be longer than {{VAL_1}} characters.",
+        "msg": "Content \"{{VAL_0}}\" must be at least {{VAL_1}} characters long.",
         "mapping": ["fieldName", "fieldMin"]
     },
     {

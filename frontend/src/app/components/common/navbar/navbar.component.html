@@ -3,19 +3,19 @@
         <a href="{{links['github']}}" target="_blank" class="navbar-links link-simple">
             <i
                 class="icon-base icon-GitHub"
-                ngClass="{{selectedTheme === ThemeOptionEnum.DARK ? 'symbol-dark' : 'symbol-light'}}"
+                ngClass="{{themeHandler.activeTheme() === ThemeOptionEnum.DARK ? 'symbol-dark' : 'symbol-light'}}"
             ></i>
         </a>
         <a href="{{links['linkedin']}}" target="_blank" class="navbar-links link-simple">
             <i
                 class="icon-base icon-LinkedIn"
-                ngClass="{{selectedTheme === ThemeOptionEnum.DARK ? 'symbol-dark' : 'symbol-light'}}"
+                ngClass="{{themeHandler.activeTheme() === ThemeOptionEnum.DARK ? 'symbol-dark' : 'symbol-light'}}"
             ></i>
         </a>
         <a href="mailto:{{links['mail']}}" class="navbar-links link-simple">
             <i
                 class="icon-base icon-Mail"
-                ngClass="{{selectedTheme === ThemeOptionEnum.DARK ? 'symbol-dark' : 'symbol-light'}}"
+                ngClass="{{themeHandler.activeTheme() === ThemeOptionEnum.DARK ? 'symbol-dark' : 'symbol-light'}}"
             ></i>
         </a>
     </div>
@@ -37,12 +37,15 @@
 <nav class="navbar roboto-custom-font">
     @if(observe.activeDevice() === DeviceOptionEnum.MOBILE) {
         <div class="navbar-burger-menu">
-            <a class="navbar-links theme-btn">
+            <a
+                class="navbar-links theme-btn"
+                (click)="setThemeByUser($event)"
+                (keydown.enter)="setThemeByUser()"
+                [attr.aria-disabled]="true"
+            >
                 <i
                     class="icon-base"
-                    ngClass="{{selectedTheme === ThemeOptionEnum.DARK ? 'icon-darkMode' : 'icon-lightMode'}}"
-                    (click)="setThemeByUser()"
-                    (keydown.enter)="setThemeByUser()"
+                    ngClass="{{themeHandler.activeTheme() === ThemeOptionEnum.DARK ? 'icon-darkMode' : 'icon-lightMode'}}"
                     [tabindex]="0"
                     #themeIcon
                 ></i>
@@ -68,13 +71,16 @@
             >
         </div>
         <div class="navbar-content-wrapper">
-            <a class="navbar-links link-simple theme-btn">
+            <a
+                class="navbar-links link-simple theme-btn"
+                [tabIndex]="0"
+                (click)="setThemeByUser($event)"
+                (keydown.enter)="setThemeByUser()"
+                [attr.aria-disabled]="true"
+            >
                 <i
                     class="icon-base"
-                    ngClass="{{selectedTheme === ThemeOptionEnum.DARK ? 'icon-darkMode' : 'icon-lightMode'}}"
-                    (click)="setThemeByUser()"
-                    (keydown.enter)="setThemeByUser()"
-                    [tabindex]="0"
+                    ngClass="{{themeHandler.activeTheme() === ThemeOptionEnum.DARK ? 'icon-darkMode' : 'icon-lightMode'}}"
                     #themeIcon
                 ></i>
             </a>
@@ -84,7 +90,7 @@
         </div>
     }
 </nav>
-@if(observe.activeDevice() === DeviceOptionEnum.MOBILE && activeMobileMenu) {
+@if(observe.activeDevice() === DeviceOptionEnum.MOBILE && activeMobileMenu()) {
     <div class="navbar-mobile-menu roboto-custom-font">
         <div class="navbar-logo-mobile">
             <img

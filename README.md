@@ -1,5 +1,5 @@
 # yqni13 | $\texttt{\color{blueviolet}{PORTFOLIO}}$
-### $\textsf{\color{brown}{v2.3.5}}$
+### $\textsf{\color{brown}{v2.4.1}}$
 
 <br>
 
@@ -30,7 +30,7 @@ git clone https://github.com/yqni13/portfolio
 Create new environment file and fill in your credentials/other env data [(see docs)](./docs/CONFIGURATION.md).
 <br>Navigate/cd into the root path /frontend and install dependencies via npm:
 ```sh
-npm ci
+npm install
 ```
 Start the application in local environment:
 ```sh
@@ -40,9 +40,22 @@ which will open automatically on `http://localhost:4200/`.
 
 <br>
 
+## 🧩 $\textsf{\color{salmon}Features}$
+
 ### $\textsf{\color{teal}Angular Signal-Form}$
 
 With the update to Angular v22, Angular's new Signal Forms have been integrated into the custom form components: text-input, select-input, textarea and validation [(see form components)](./frontend/src/app/components/common/form).<br>The form on the 'contact' page allows visitors to write and send a text message [(see contact)](./frontend/src/app/components/pages/contact).
+
+<br>
+
+### $\textsf{\color{teal}Theme Switch Transition}$
+
+Inspired by an Instagram post, I updated my light-mode colors and sought a more soothing and engaging transition for the theme switch. Using the View Transition API and some calculation logic (sponsored by AI), a snapshot creates the effect of the newly selected theme gliding over the old one [(see transition service)](./frontend/src/app/services/transition.service.ts).
+
+<div align="center">
+    <img src="frontend/public/assets/doc-videos/theme_transition.gif" alt="&nbsp;theme transition transition">
+    Figure 1 - Theme switch transition, v2.3.8
+</div>
 
 <br>
 
@@ -60,10 +73,22 @@ ng lint
 
 <br>
 
+### $\textsf{\color{teal}Cross-browser testing}$
+
+<img src="frontend/public/assets/doc-icons/brave_logo50.ico"> | <img src="frontend/public/assets/doc-icons/edge_logo50.ico"> | <img src="frontend/public/assets/doc-icons/opera_logo50.ico"> | <img src="frontend/public/assets/doc-icons/aloha_logo50.ico"> | <img src="frontend/public/assets/doc-icons/firefox_logo50.ico">
+|:----:|:----:|:------:|:------:|:-------:|
+|Brave | Edge | Opera  | Aloha  | Firefox |
+|Yes   | Yes  | Yes    | Yes    | Yes*    |
+
+<br>
+
+*This browser has problems with some animations.
+
+<br>
+
 ## 📈 $\textsf{\color{salmon}Updates}$
 [see changelog for all updates](./docs/CHANGELOG.md)
 
-$\textsf{[v2.3.3\ =>\ {\textbf{\color{brown}v2.3.5}]}}$ app
-- $\textsf{\color{orange}Patch:}$ Updated:
-  + basic font-size headers and paragraphs
-  + skills content
+$\textsf{[v2.3.8\ =>\ {\textbf{\color{brown}v2.4.1}]}}$ app
+- $\textsf{\color{teal}Addition:}$ Added logic to remove unwanted characters at start and empty spaces at start/end of input.
+- $\textsf{\color{orange}Patch:}$ Updated contact form of an inclusive gender option for self-description.
