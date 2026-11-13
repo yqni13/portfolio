@@ -1,5 +1,5 @@
 # yqni13 | $\texttt{\color{blueviolet}{PORTFOLIO}}$
-### $\textsf{\color{brown}{v2.3.8}}$
+### $\textsf{\color{brown}{v2.4.1}}$
 
 <br>
 
@@ -89,8 +89,6 @@ ng lint
 ## 📈 $\textsf{\color{salmon}Updates}$
 [see changelog for all updates](./docs/CHANGELOG.md)
 
-$\textsf{[v2.3.5\ =>\ {\textbf{\color{brown}v2.3.8}]}}$ app
-- $\textsf{\color{teal}Addition:}$ Added animation for theme switch transition.
-- $\textsf{\color{orange}Patch:}$ Updated:
-  + light mode colors from cold to warm tone
-  + missing paddings/distance buffers
+$\textsf{[v2.3.8\ =>\ {\textbf{\color{brown}v2.4.1}]}}$ app
+- $\textsf{\color{teal}Addition:}$ Added logic to remove unwanted characters at start and empty spaces at start/end of input.
+- $\textsf{\color{orange}Patch:}$ Updated contact form of an inclusive gender option for self-description.
