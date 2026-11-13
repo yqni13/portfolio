@@ -54,4 +54,25 @@ export class AbstractInputComponent {
             this.isFocused.set(false);
         }
     }
+
+    handleInputChanges(value: string) {
+        value = this.removeForbiddenStartChars(value, [" "]);
+        this.byChange.emit(value.length > 1 && !this.isFocused() ? value.trim() : value);
+    }
+
+    /**
+     * @description Remove starting characters as long as equal to defined list found.
+     * @param forbiddenStartChars Define characters to remove, f.g. empty space " ".
+     * @returns
+     */
+    removeForbiddenStartChars(value: string, forbiddenStartChars: string[]): string {
+        while(true) {
+            if (forbiddenStartChars.includes(value[0])) {
+                value = value.slice(1);
+            } else {
+                break;
+            }
+        }
+        return value;
+    }
 }
