@@ -41,10 +41,10 @@ import { ResourceOption } from './utils/enums/resource-option.enum';
 })
 export class App implements OnInit {
 
-	readonly observe = inject(ObservationService);
 	private readonly preload = inject(PreloadService);
-	readonly notifyModal = inject(NotifyModalService);
 	private readonly navigation = inject(NavigationService);
+	protected readonly observe = inject(ObservationService);
+	protected readonly notifyModal = inject(NotifyModalService);
 
 	protected readonly title = signal('portfolio');
 	protected readonly scrolledToBottom = signal(false);

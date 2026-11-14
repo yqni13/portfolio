@@ -17,7 +17,15 @@
             "Potential SaaS extension"
         ],
         "techstack": [
-            "Node.js", "Typescript", "Express.js", "PostgreSQL", "Docker", "Jest", "Testcontainers", "Cloudflare R2 (Object Storage)", "CI/CD"
+            { "icon": "icon-NodeJS", "link": "https://nodejs.org/en" },
+            { "icon": "icon-TypeScript", "link": "https://www.typescriptlang.org/" },
+            { "icon": "icon-ExpressJS", "link": "https://expressjs.com/" },
+            { "icon": "icon-PostgreSQL", "link": "https://www.postgresql.org/" },
+            { "icon": "icon-Docker", "link": "https://www.docker.com/" },
+            { "icon": "icon-Jest", "link": "https://jestjs.io/" },
+            { "icon": "icon-Testcontainers", "link": "https://testcontainers.com/" },
+            { "icon": "icon-Cloudflare", "link": "https://www.cloudflare.com/developer-platform/products/r2/" },
+            { "icon": "icon-CICD", "link": "https://www.microsoft.com/en-us/software-development-companies/resources/articles/ci-cd-pipeline-guide" }
         ],
         "links": {
             "repo": "https://github.com/yqni13/support"
@@ -39,7 +47,14 @@
             "Implemented translations for German and English and themes for dark and light mode"
         ],
         "techstack": [
-            "Angular", "Node.js", "Google Maps Platform", "RxJS", "Express.js", "i18n", "Jest", "CI/CD"
+            { "icon": "icon-Angular", "link": "https://angular.dev/" },
+            { "icon": "icon-NodeJS", "link": "https://nodejs.org/en" },
+            { "icon": "icon-GoogleMapsPlatform", "link": "https://mapsplatform.google.com/maps-products/" },
+            { "icon": "icon-RxJS", "link": "https://rxjs.dev/" },
+            { "icon": "icon-ExpressJS", "link": "https://expressjs.com/" },
+            { "icon": "icon-i18n", "link": "https://www.i18next.com/" },
+            { "icon": "icon-Jest", "link": "https://jestjs.io/" },
+            { "icon": "icon-CICD", "link": "https://www.microsoft.com/en-us/software-development-companies/resources/articles/ci-cd-pipeline-guide" }
         ],
         "links": {
             "repo": "https://github.com/yqni13/taxi-varga",
@@ -62,7 +77,15 @@
             "Extended translation service to handle dynamic values for validations and context-specific messages (e.g. links, emails, phone numbers)"
         ],
         "techstack": [
-            "Angular", "Node.js", "PostgreSQL", "RxJS", "Express.js", "i18n", "Jest", "Cloudflare R2 (Object Storage)", "CI/CD"
+            { "icon": "icon-Angular", "link": "https://angular.dev/" },
+            { "icon": "icon-NodeJS", "link": "https://nodejs.org/en" },
+            { "icon": "icon-PostgreSQL", "link": "https://www.postgresql.org/" },
+            { "icon": "icon-RxJS", "link": "https://rxjs.dev/" },
+            { "icon": "icon-ExpressJS", "link": "https://expressjs.com/" },
+            { "icon": "icon-i18n", "link": "https://www.i18next.com/" },
+            { "icon": "icon-Jest", "link": "https://jestjs.io/" },
+            { "icon": "icon-Cloudflare", "link": "https://www.cloudflare.com/developer-platform/products/r2/" },
+            { "icon": "icon-CICD", "link": "https://www.microsoft.com/en-us/software-development-companies/resources/articles/ci-cd-pipeline-guide" }
         ],
         "links": {
             "repo": "https://github.com/yqni13/artcreation-dv",

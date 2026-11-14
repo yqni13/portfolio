@@ -23,7 +23,6 @@ footer {
             color: var(--theme-error);
         }
         a {
-            text-decoration: none;
             background: sass.$yqni13-darkmode-gradient;
             color: transparent;
             -webkit-background-clip: text;
@@ -32,19 +31,41 @@ footer {
             margin: 0 1px 0 10px;
         }
     }
-    #footnote {
+    .footer-data {
         align-items: center;
-        color: var(--theme-nav-grey);
-        height: 30%; /* Remaining 10% are auto-used as padding for top and bottom. */
         a {
+            color: var(--theme-nav-grey);
             display: flex;
             align-items: center;
             i {
-                $size: 20px;
-                width: $size;
-                height: $size;
                 margin-right: 5px;
             }
         }
     }
+    #author {
+        a {
+            font-weight: 300;
+            i {
+                $size: 30px;
+                width: $size;
+                height: $size;
+                color: var(--theme-info);
+            }
+        }
+    }
+
+    #footnote {
+        height: 30%; /* Remaining 10% are auto-used as padding for top and bottom. */
+        a {
+            i {
+                $size: 20px;
+                width: $size;
+                height: $size;
+            }
+        }
+    }
+}
+
+a {
+    text-decoration: none;
 }
