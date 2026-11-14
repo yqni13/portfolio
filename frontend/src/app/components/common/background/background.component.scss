@@ -173,11 +173,11 @@
     right:0;
     width: 100vw;
     height: 100vh;
-    filter: opacity(0.2);
+    filter: opacity(0.5);
     background-color: var(--theme-body-bg);
     background-image: url("/assets/img/lightmode_bg.webp");
     background-size: cover;
-    background-position: center;
+    background-position: left;
     background-blend-mode: luminosity;
 }
 

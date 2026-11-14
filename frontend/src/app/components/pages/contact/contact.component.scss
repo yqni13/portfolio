@@ -14,7 +14,7 @@
         padding: sass.$space25;
         border: $border solid var(--theme-grey);
         border-radius: 20px;
-        backdrop-filter: blur(1px);
+        backdrop-filter: blur(3px);
 
         .contact-form-wrapper {
             flex-direction: column;

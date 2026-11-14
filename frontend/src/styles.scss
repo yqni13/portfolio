@@ -106,10 +106,10 @@ h3 {
     text-decoration: none;
     @media screen and (width > sass.$device-tablet-landscape) {
         &:hover {
-            box-shadow: var(--theme-body-text) 0 1px 10px;
+            box-shadow: var(--theme-body-text) 0 1px 6px;
         }
         &:active {
-            box-shadow: var(--theme-body-text) 0 2px 15px;
+            box-shadow: var(--theme-body-text) 0 2px 12px;
             transform: scale(0.975);
         }
     }
