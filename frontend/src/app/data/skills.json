@@ -3,12 +3,12 @@
         "title": "Languages",
         "skills": [
             {
-                "icon": "icon-Javascript",
+                "icon": "icon-JavaScript",
                 "name": "JavaScript",
                 "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
             },
             {
-                "icon": "icon-Typescript",
+                "icon": "icon-TypeScript",
                 "name": "TypeScript",
                 "link": "https://www.typescriptlang.org/"
             },
@@ -178,6 +178,11 @@
                 "icon": "icon-ESLint",
                 "name": "ESLint",
                 "link": "https://eslint.org/"
+            },
+            {
+                "icon": "icon-CICD",
+                "name": "CI/CD",
+                "link": "https://www.microsoft.com/en-us/software-development-companies/resources/articles/ci-cd-pipeline-guide"
             },
             {
                 "icon": "icon-Gemini",
