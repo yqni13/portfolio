@@ -27,8 +27,4 @@ export class TextInputComponent extends AbstractInputComponent {
             this.handleInputChanges(this.field().value());
         });
     }
-
-    handleInputChanges(value: string) {
-        this.byChange.emit(value);
-    }
 }

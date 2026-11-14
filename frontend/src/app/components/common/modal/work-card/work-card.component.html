@@ -38,7 +38,7 @@
                 <span class="workcard-detail-subheader">Tech stack</span>
                 <div id="workcard-detail-techstack">
                     @for(item of data().techstack; track $index) {
-                        <span class="workcard-detail-techstack-item">{{item}}</span>
+                        <app-badge [icon]="item['icon']" [link]="item['link']"></app-badge>
                     }
                 </div>
                 @if((data().links.demo || data().links.live)) {

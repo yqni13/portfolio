@@ -8,7 +8,7 @@ export interface Project {
     description: string,
     impact: string[],
     links: ProjectLinks,
-    techstack: string[]
+    techstack: ProjectTechstack[]
 }
 
 interface ProjectLinks {
@@ -20,4 +20,9 @@ interface ProjectLinks {
 interface ProjectTypes {
     stack: string,
     mandate: ProjectMandate
+}
+
+interface ProjectTechstack {
+    icon: string,
+    link: string
 }

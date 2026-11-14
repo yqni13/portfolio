@@ -1,4 +1,4 @@
-import { afterNextRender, Component, inject, signal } from '@angular/core';
+import { afterNextRender, Component, inject, OnInit, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Navbar } from './components/common/navbar/navbar.component';
 import { Footer } from './components/common/footer/footer.component';
@@ -16,6 +16,8 @@ import { ScrollDownIndicatorComponent } from './components/common/indicator/scro
 import { NavigationService } from './services/navigation.service';
 import { IndicatorOption } from './utils/enums/indicator-option.enum';
 import { ObservationService } from './services/observe.service';
+import { PreloadService } from './services/preload.service';
+import { ResourceOption } from './utils/enums/resource-option.enum';
 
 @Component({
 	selector: 'app-root',
@@ -37,11 +39,12 @@ import { ObservationService } from './services/observe.service';
 		ScrollDownIndicatorComponent
 	],
 })
-export class App {
+export class App implements OnInit {
 
-	readonly observe = inject(ObservationService);
-	readonly notifyModal = inject(NotifyModalService);
+	private readonly preload = inject(PreloadService);
 	private readonly navigation = inject(NavigationService);
+	protected readonly observe = inject(ObservationService);
+	protected readonly notifyModal = inject(NotifyModalService);
 
 	protected readonly title = signal('portfolio');
 	protected readonly scrolledToBottom = signal(false);
@@ -51,6 +54,13 @@ export class App {
 		afterNextRender(() => {
 			this.handleScrollDownIndicator();
 		})
+	}
+
+	ngOnInit() {
+		this.preload.preloadSingle({
+			option: ResourceOption.IMG,
+			url: '/assets/img/lightmode_bg.webp'
+		});
 	}
 
 	private handleScrollDownIndicator() {

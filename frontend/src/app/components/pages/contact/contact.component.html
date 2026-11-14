@@ -11,17 +11,29 @@
                     [fieldState]="contactForm.salutation()"
                     [placeholder]="'How should I address you?*'"
                     [fieldName]="'salutation'"
-                    [options]="{female: 'Ms.', male: 'Mr.'}"
+                    [options]="SalutationEnum"
                     [customStyle]="getCustomInputStyle()"
                     [readonlyStyle]="getCustomReadonlyStyle()"
                     [icon]="'Salutation'"
+                    (byChange)="handleSalutationChange($event)"
                 ></app-select-input>
+                @if (isSelfDesc()) {
+                    <app-text-input
+                        [fieldState]="contactForm.selfdesc()"
+                        [placeholder]="'Describe what address to use*'"
+                        [fieldName]="'self-desc'"
+                        [customStyle]="getCustomInputStyle()"
+                        [icon]="'Other'"
+                        (byChange)="updateInputOnForbiddenChars($event, contactForm.selfdesc())"
+                    ></app-text-input>
+                }
                 <app-text-input
                     [fieldState]="contactForm.name()"
                     [placeholder]="'Your name*'"
                     [fieldName]="'name'"
                     [customStyle]="getCustomInputStyle()"
                     [icon]="'User'"
+                    (byChange)="updateInputOnForbiddenChars($event, contactForm.name())"
                 ></app-text-input>
                 <app-text-input
                     [fieldState]="contactForm.email()"
@@ -29,6 +41,7 @@
                     [fieldName]="'email'"
                     [customStyle]="getCustomInputStyle()"
                     [icon]="'MailThin'"
+                    (byChange)="updateInputOnForbiddenChars($event, contactForm.email())"
                 ></app-text-input>
                 <app-text-input
                     [fieldState]="contactForm.subject()"
@@ -36,6 +49,7 @@
                     [fieldName]="'subject'"
                     [customStyle]="getCustomInputStyle()"
                     [icon]="'Subject'"
+                    (byChange)="updateInputOnForbiddenChars($event, contactForm.subject())"
                 ></app-text-input>
                 <app-textarea-input
                     [fieldState]="contactForm.message()"
@@ -45,6 +59,7 @@
                     [icon]="'Message'"
                     [lengthLimit]="maxLengthValidation.message"
                     [rows]="7"
+                    (byChange)="updateInputOnForbiddenChars($event, contactForm.message())"
                 ></app-textarea-input>
                 <a
                     class="btn-primary"

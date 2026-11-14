@@ -26,7 +26,7 @@
     height: 100%;
     position: absolute;
     inset: 0;
-    background: var(--theme-body-bg);
+    background-color: var(--theme-body-bg);
 }
 
 /* Generic star layer style */
@@ -164,6 +164,23 @@
     align-items: start;
     justify-content: end;
 }
+
+.bg {
+    position: fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    width: 100vw;
+    height: 100vh;
+    filter: opacity(0.5);
+    background-color: var(--theme-body-bg);
+    background-image: url("/assets/img/lightmode_bg.webp");
+    background-size: cover;
+    background-position: left;
+    background-blend-mode: luminosity;
+}
+
 .sun {
     $size: clamp(150px, 20vw, 350px);
     width: $size;
@@ -174,6 +191,8 @@
     display: inline;
     position: absolute;
     opacity: 0.4;
+    z-index: 0;
+    filter: blur(0px);
 }
 .sunshine {
     animation: sunshines 2s infinite;

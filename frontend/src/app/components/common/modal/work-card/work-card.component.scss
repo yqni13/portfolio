@@ -22,7 +22,8 @@
         border: 1px solid var(--theme-nav-grey);
         border-radius: 20px;
         padding: $padding;
-        background-color: var(--theme-component);
+        background: var(--theme-component-gradient);
+
         margin-top: 0;
         max-height: calc(100vh - sass.$space100);
         #workcard-detail-content-head {
@@ -102,8 +103,11 @@
                     font-size: 0.75rem;
                     color: var(--theme-body-text);
                     opacity: 0.8;
-                    border: 1px solid var(--theme-grey);
+                    border: 1px inset var(--theme-grey);
                     padding: 7.5px;
+                    &:hover {
+                        cursor: not-allowed;
+                    }
                 }
             }
             p {
@@ -138,11 +142,6 @@
             #workcard-detail-techstack {
                 flex-direction: row;
                 flex-wrap: wrap;
-                span {
-                    border: 1px solid var(--theme-grey);
-                    background-color: var(--theme-component);
-                    color: var(--theme-secondary);
-                }
             }
             #workcard-detail-links {
                 flex-direction: column;
@@ -154,9 +153,10 @@
                 border-top: 1px solid var(--theme-grey);
                 padding: 25px 0 2px 0;
                 min-height: 50px; // "height" cuts off box-shadow
+
                 a {
                     $padding-horizontal: 25px;
-                    $box-shadow-buffer: 4px;
+                    $box-shadow-buffer: 15px;
                     $techstack-buffer: 3px;
                     border-radius: 10px;
                     padding: 10px $padding-horizontal;
@@ -170,6 +170,21 @@
                     right: 0;
                     margin-inline: auto;
                     justify-content: center;
+
+                    i {
+                        $size: 20px;
+                        color: var(--theme-fixed-white);
+                        width: $size;
+                        height: $size;
+                    }
+                }
+                .btn-primary {
+                    @media screen and (width > sass.$device-tablet-landscape) {
+                        &:active {
+                            box-shadow: var(--theme-body-text) 0 2px 9px;
+                            transform: scale(0.99);
+                        }
+                    }
                 }
             }
         }

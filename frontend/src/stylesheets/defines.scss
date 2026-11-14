@@ -14,6 +14,7 @@
 [data-theme='lightMode'] {
     --theme-body-bg: #{sass.$color-lightmode-bg};
     --theme-body-text: #{sass.$color-deep-blue};
+    --theme-fixed-white: #{sass.$color-warm-white};
     --theme-nav-grey: #{sass.$color-dark-grey};
     --theme-info: #{sass.$color-lightmode-info};
     --theme-error: #{sass.$color-lightmode-error};
@@ -26,6 +27,7 @@
     --theme-yqni13-pink: #{sass.$yqni13-lightmode-pink};
     --theme-grey: #{sass.$color-lightmode-grey};
     --theme-component: #{sass.$color-lightmode-comp-grey};
+    --theme-component-gradient: #{sass.$color-lightmode-gradient-comp};
     --theme-toggle: #{sass.$color-lightmode-grey};
     --theme-signature: #{sass.$signature-black};
     --theme-loader1: #{sass.$color-lightmode-primary};
@@ -36,6 +38,7 @@
 [data-theme='darkMode'] {
     --theme-body-bg: #{sass.$color-darkmode-bg};
     --theme-body-text: #{sass.$color-ice-white};
+    --theme-fixed-white: #{sass.$color-ice-white};
     --theme-nav-grey: #{sass.$color-light-grey};
     --theme-info: #{sass.$color-darkmode-info};
     --theme-error: #{sass.$color-darkmode-error};
@@ -48,6 +51,7 @@
     --theme-yqni13-pink: #{sass.$yqni13-darkmode-pink};
     --theme-grey: #{sass.$color-darkmode-grey};
     --theme-component: #{sass.$color-darkmode-comp-grey};
+    --theme-component-gradient: #{sass.$color-darkmode-gradient-comp};
     --theme-toggle: #{sass.$color-light-grey};
     --theme-signature: #{sass.$signature-white};
     --theme-loader1: #{sass.$yqni13-darkmode-pink};

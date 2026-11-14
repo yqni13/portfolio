@@ -71,6 +71,7 @@ $card-padding: sass.$space25;
     margin-bottom: sass.$space25;
     border: 1px solid var(--theme-nav-grey);
     border-radius: 20px;
+    backdrop-filter: blur(3px);
 
     .experience-card-link {
         margin: 0 0 sass.$space15 0;
