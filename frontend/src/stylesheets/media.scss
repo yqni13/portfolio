@@ -64,9 +64,8 @@
             }
         }
         #workcard-detail-techstack {
-            span {
-                padding: 7.5px 15px;
-                margin: 5px 10px 5px 0;
+            app-badge {
+                padding: 7.5px;
             }
         }
     }
@@ -85,7 +84,9 @@
             $size: 25px;
             width: $size;
             height: $size;
-            margin-right: 12.5px;
+        }
+        span {
+            margin-left: 12.5px;
         }
     }
     .about {
@@ -143,10 +144,11 @@
             margin: -100px -100px 0 0;
         }
     }
+    .footer-darkmode { height: 150px }
+    .footer-lightmode { height: 175px }
     footer {
         margin: 40px 0 0 0;
-        height: 150px;
-        #footnote {
+        .footer-data {
             font-size: 1rem;
         }
     }
@@ -208,9 +210,8 @@
             }
         }
         #workcard-detail-techstack {
-            span {
-                padding: 7.5px 15px;
-                margin: 5px 10px 5px 0;
+            app-badge {
+                padding: 7.5px;
             }
         }
     }
@@ -229,7 +230,9 @@
             $size: 25px;
             width: $size;
             height: $size;
-            margin-right: 12.5px;
+        }
+        span {
+            margin-left: 12.5px;
         }
     }
     .about {
@@ -287,10 +290,11 @@
             margin: -85px -85px 0 0;
         }
     }
+    .footer-darkmode { height: 150px }
+    .footer-lightmode { height: 175px }
     footer {
         margin: 40px 0 0 0;
-        height: 135px;
-        #footnote {
+        .footer-data {
             font-size: 1rem;
         }
     }
@@ -325,11 +329,8 @@
     }
     .badge {
         padding: 7.5px 10px;
-        i {
-            $size: 20px;
-            width: $size;
-            height: $size;
-            margin-right: 8px;
+        span {
+            margin-left: 7.5px;
         }
     }
     .about {
@@ -456,12 +457,6 @@
                 margin-left: 0;
             }
         }
-        #workcard-detail-techstack {
-            span {
-                padding: 7.5px 10px;
-                margin: 4px 7.5px 4px 0;
-            }
-        }
     }
     .skills {
         #skills-content {
@@ -560,11 +555,12 @@
             margin: -40px -40px 0 0;
         }
     }
+    .footer-darkmode { height: 120px }
+    .footer-lightmode { height: 150px }
     footer {
         margin: 25px 20px 0 20px;
-        height: 120px;
-        #footnote {
-            font-size: clamp(0.75em, 3.25vw, 1em);
+        .footer-data {
+            font-size: clamp(0.75rem, 3.25vw, 1rem);
         }
     }
 }

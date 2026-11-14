@@ -7,10 +7,12 @@ import { ResourceOption } from "../../../../utils/enums/resource-option.enum";
 import { ScrollDownIndicatorComponent } from "../../indicator/scroll-down/scroll-down.indicator.component";
 import { IndicatorOption } from "../../../../utils/enums/indicator-option.enum";
 import { ObservationService } from "../../../../services/observe.service";
+import { BadgeComponent } from "../../badge/badge.component";
 
 @Component({
     selector: 'app-workcard',
     imports: [
+        BadgeComponent,
         CommonModule,
         ScrollDownIndicatorComponent
     ],

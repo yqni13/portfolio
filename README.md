@@ -1,5 +1,5 @@
 # yqni13 | $\texttt{\color{blueviolet}{PORTFOLIO}}$
-### $\textsf{\color{brown}{v2.4.1}}$
+### $\textsf{\color{brown}{v2.4.4}}$
 
 <br>
 
@@ -89,6 +89,8 @@ ng lint
 ## 📈 $\textsf{\color{salmon}Updates}$
 [see changelog for all updates](./docs/CHANGELOG.md)
 
-$\textsf{[v2.3.8\ =>\ {\textbf{\color{brown}v2.4.1}]}}$ app
-- $\textsf{\color{teal}Addition:}$ Added logic to remove unwanted characters at start and empty spaces at start/end of input.
-- $\textsf{\color{orange}Patch:}$ Updated contact form of an inclusive gender option for self-description.
+$\textsf{[v2.4.1\ =>\ {\textbf{\color{brown}v2.4.4}]}}$ app
+- $\textsf{\color{orange}Patch:}$ Updated
+    + background in light-mode to use image instead of color-only
+    + footer to display link for author of background-image in use
+    + Angular version (within v22) & dependency vulnerabilities
