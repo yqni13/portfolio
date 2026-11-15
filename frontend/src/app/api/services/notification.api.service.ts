@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { inject, Injectable } from "@angular/core";
 import { NotificationParams } from "../interfaces/notification.api.interface";
 import axios from "axios";
@@ -40,14 +41,15 @@ export class NotificationApiService {
     }
 
     async sendMessage(data: NotificationParams) {
-        const message = `[portfolio:message]\n[name]: ${data.salutation} ${data.name}\n[email]: ${data.email}\n---------------------\n[subject]: ${data.subject}\n\n[message]: ${data.message}\n---------------------\n[generated]: ${new Date().toLocaleString()}`;
+        const message = `[portfolio:message]\n\n[name]\n${data.selfdesc === '' ? data.salutation : ('"' + data.selfdesc + '"')} ${data.name}\n\n[email]\n${data.email}\n---------------------\n[subject]\n${data.subject}\n\n[message]\n${data.message}\n---------------------\n[generated]\n${new Date().toLocaleString()}`;
 
         await this.notify(message);
     }
 
-    toNotificationParams(data: Record<string, string>): NotificationParams {
+    toNotificationParams(data: Record<string, any>): NotificationParams {
         return {
             salutation: data['salutation'],
+            selfdesc: data['selfdesc'] ?? '',
             name: data['name'],
             email: data['email'],
             subject: data['subject'],

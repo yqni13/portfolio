@@ -20,7 +20,7 @@
         font-weight: 300;
 
         i {
-            $size: sass.$space15;
+            $size: 20px;
             width: $size;
             height: $size;
             margin-left: sass.$space5;
@@ -35,6 +35,7 @@
     border-radius: 20px;
     padding: sass.$space25;
     margin: 7.5px;
+    backdrop-filter: blur(3px);
     #workcard-preview-type {
         color: var(--theme-nav-grey);
     }
@@ -68,7 +69,7 @@
         opacity: 0.85;
         font-weight: 300;
         i {
-            $size: sass.$space15;
+            $size: 15px;
             width: $size;
             height: $size;
             margin-left: 5px;

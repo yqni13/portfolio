@@ -28,8 +28,4 @@ export class TextareaInputComponent extends AbstractInputComponent {
             this.handleInputChanges(this.field().value());
         });
     }
-
-    handleInputChanges(value: string) {
-        this.byChange.emit(value);
-    }
 }

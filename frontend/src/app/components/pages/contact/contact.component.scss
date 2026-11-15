@@ -14,6 +14,7 @@
         padding: sass.$space25;
         border: $border solid var(--theme-grey);
         border-radius: 20px;
+        backdrop-filter: blur(3px);
 
         .contact-form-wrapper {
             flex-direction: column;
@@ -46,6 +47,7 @@
                         width: $size;
                         height: $size;
                         margin-left: 7.5px;
+                        color: var(--theme-fixed-white);
                     }
                 }
                 #contact-hint {
