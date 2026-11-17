@@ -1,5 +1,5 @@
 # yqni13 | $\texttt{\color{blueviolet}{PORTFOLIO}}$
-### $\textsf{\color{brown}{v2.4.4}}$
+### $\textsf{\color{brown}{v2.4.7}}$
 
 <br>
 
@@ -89,8 +89,8 @@ ng lint
 ## 📈 $\textsf{\color{salmon}Updates}$
 [see changelog for all updates](./docs/CHANGELOG.md)
 
-$\textsf{[v2.4.1\ =>\ {\textbf{\color{brown}v2.4.4}]}}$ app
+$\textsf{[v2.4.4\ =>\ {\textbf{\color{brown}v2.4.7}]}}$ app
 - $\textsf{\color{orange}Patch:}$ Updated
-    + background in light-mode to use image instead of color-only
-    + footer to display link for author of background-image in use
-    + Angular version (within v22) & dependency vulnerabilities
+    + preload of work-card thumbnails on app-start instead opening modal
+    + consistent button sizing (hero, mobile, desktop)
+    + transitions on button actions
