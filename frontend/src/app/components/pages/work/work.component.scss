@@ -36,6 +36,7 @@
     padding: sass.$space25;
     margin: 7.5px;
     backdrop-filter: blur(3px);
+    transition: transform 180ms ease-out;
     #workcard-preview-type {
         color: var(--theme-nav-grey);
     }
