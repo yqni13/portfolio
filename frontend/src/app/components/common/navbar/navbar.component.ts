@@ -80,7 +80,7 @@ export class Navbar implements OnInit, AfterViewInit, OnDestroy {
         this.applyThemeClass();
     }
 
-    setThemeByUser(event?: MouseEvent) {
+    setThemeByUser() {
         const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
         if (!document.startViewTransition || reduceMotion) {
             this.themeHandler.switchTheme();
@@ -88,7 +88,6 @@ export class Navbar implements OnInit, AfterViewInit, OnDestroy {
         }
 
         this.transition.applyRippleEffect({
-            event: event,
             trigger: this.themeIcon()?.nativeElement,
             fn: () => this.themeHandler.switchTheme(),
             duration: 5000,
