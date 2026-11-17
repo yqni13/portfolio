@@ -7,8 +7,8 @@ export interface Project {
     intro: string,
     description: string,
     impact: string[],
+    techstack: ProjectTechstack[],
     links: ProjectLinks,
-    techstack: ProjectTechstack[]
 }
 
 interface ProjectLinks {

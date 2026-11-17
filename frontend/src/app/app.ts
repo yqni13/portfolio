@@ -17,7 +17,11 @@ import { NavigationService } from './services/navigation.service';
 import { IndicatorOption } from './utils/enums/indicator-option.enum';
 import { ObservationService } from './services/observe.service';
 import { PreloadService } from './services/preload.service';
+import { default as workData } from './data/work.json';
 import { ResourceOption } from './utils/enums/resource-option.enum';
+import { PreloadData } from './utils/interfaces/preload.interface';
+import { Project } from './utils/interfaces/work.interface';
+import { environment } from '../environments/environment';
 
 @Component({
 	selector: 'app-root',
@@ -48,6 +52,7 @@ export class App implements OnInit {
 
 	protected readonly title = signal('portfolio');
 	protected readonly scrolledToBottom = signal(false);
+
 	protected readonly IndicatorOptionEnum = IndicatorOption;
 
 	constructor() {
@@ -57,10 +62,8 @@ export class App implements OnInit {
 	}
 
 	ngOnInit() {
-		this.preload.preloadSingle({
-			option: ResourceOption.IMG,
-			url: '/assets/img/lightmode_bg.webp'
-		});
+		const thumbnails: PreloadData[] = this.mapPreloadWorkCardThumbnails();
+		this.preload.preloadMultiple(thumbnails);
 	}
 
 	private handleScrollDownIndicator() {
@@ -72,5 +75,16 @@ export class App implements OnInit {
 
 		window.addEventListener('scroll', scrollHandler, { passive: true });
 		// No cleanup/destroyref necessary as root component does not get destroyed.
+	}
+
+	private mapPreloadWorkCardThumbnails(): PreloadData[] {
+		const preloadData: PreloadData[] = [];
+		(workData as Project[]).forEach((entry: Project) => {
+			preloadData.push({
+				option: ResourceOption.IMG,
+				url: `${environment.API_STORAGE_URL}${entry.thumbnail}`
+			});
+		})
+		return preloadData;
 	}
 }
