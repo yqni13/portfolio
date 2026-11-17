@@ -1,8 +1,18 @@
 ## 📜 $\textsf{\color{salmon}{List\ of\ updates}}$
 
+### $\textsf{\color{skyblue}2026/11/17}$
+
+$\textsf{[v2.4.4\ =>\ {\textbf{\color{brown}v2.4.7}]}}$ app
+- $\textsf{\color{orange}Patch:}$ Updated
+    + preload of work-card thumbnails on app-start instead opening modal
+    + consistent button sizing (hero, mobile, desktop)
+    + transitions on button actions
+
+<br>
+
 ### $\textsf{\color{skyblue}2026/11/14}$
 
-$\textsf{[v2.4.1\ =>\ {\textbf{\color{brown}v2.4.4}]}}$ app
+$\textsf{[v2.4.1\ =>\ v2.4.4]}$ app
 - $\textsf{\color{orange}Patch:}$ Updated
     + background in light-mode to use image instead of color-only
     + footer to display link for author of background-image in use
