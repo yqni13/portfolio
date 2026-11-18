@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "version": "2.4.7",
+  "version": "2.5.1",
   "scripts": {
     "ng": "ng",
     "start:dev": "node ./set-env.dev.ts && ng serve --open",

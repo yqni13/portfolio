@@ -1,6 +1,5 @@
 import { AfterViewInit, Component, ElementRef, inject, OnDestroy, OnInit, signal, viewChild } from "@angular/core";
 import { ThemeOption } from "../../../utils/enums/theme-option.enum";
-import _ from "underscore";
 import { ThemeHandlerService } from "../../../services/theme.service";
 import { DeviceOption } from "../../../utils/enums/device-option.enum";
 import { CommonModule } from "@angular/common";
@@ -44,8 +43,6 @@ export class Navbar implements OnInit, AfterViewInit, OnDestroy {
         mail: 'lukas.varga@yqni13.com'
     };
 
-    private maxMobileScreenWidth = 1024;
-    private window = document.defaultView;
     private sectionIds: string[] = ["head-home", "head-work", "head-skills", "head-about", "head-experience", "head-contact"];
 
     ngOnInit() {
@@ -55,23 +52,6 @@ export class Navbar implements OnInit, AfterViewInit, OnDestroy {
             url: '/yqni13_logo256.ico'
         });
 
-        if(this.window?.screen !== undefined) {
-            this.setNavWidthDynamically(this.window.screen.width);
-            this.setNavWidthDynamically(document.body.clientWidth);        
-        }
-
-        // adapt to device screen resolution
-        const screenWidthRequestSlowedDown = _.debounce( () => {
-            this.setNavWidthDynamically(this.window!.screen.width);
-        }, 250)
-        this.window?.addEventListener("resize", screenWidthRequestSlowedDown, false);
-
-        // adapt to zoom level
-        const clientWidthRequestSlowedDown = _.debounce( () => {
-            this.setNavWidthDynamically(document.body.clientWidth);
-        }, 250)
-        this.window?.addEventListener("resize", clientWidthRequestSlowedDown, false);
-
         this.navigate.observe(this.sectionIds);
     }
 
@@ -80,7 +60,7 @@ export class Navbar implements OnInit, AfterViewInit, OnDestroy {
         this.applyThemeClass();
     }
 
-    setThemeByUser(event?: MouseEvent) {
+    setThemeByUser() {
         const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
         if (!document.startViewTransition || reduceMotion) {
             this.themeHandler.switchTheme();
@@ -88,7 +68,6 @@ export class Navbar implements OnInit, AfterViewInit, OnDestroy {
         }
 
         this.transition.applyRippleEffect({
-            event: event,
             trigger: this.themeIcon()?.nativeElement,
             fn: () => this.themeHandler.switchTheme(),
             duration: 5000,
@@ -100,16 +79,6 @@ export class Navbar implements OnInit, AfterViewInit, OnDestroy {
         if(this.themeIcon) {
             this.themeIcon()?.nativeElement.classList.remove(ThemeOption.DARK, ThemeOption.LIGHT);
             this.themeIcon()?.nativeElement.classList.add(this.themeHandler.activeTheme());
-        }
-    }
-
-    private setNavWidthDynamically(width: number) {
-        if(width > this.maxMobileScreenWidth) {
-            document.body.setAttribute("data-nav", 'desktopMode');
-            this.observe.activeDevice.set(DeviceOption.DESKTOP);
-        } else {
-            document.body.setAttribute("data-nav", 'mobileMode');
-            this.observe.activeDevice.set(DeviceOption.MOBILE);
         }
     }
 

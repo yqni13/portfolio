@@ -39,7 +39,7 @@
         <div class="navbar-burger-menu">
             <a
                 class="navbar-links theme-btn"
-                (click)="setThemeByUser($event)"
+                (click)="setThemeByUser()"
                 (keydown.enter)="setThemeByUser()"
                 [attr.aria-disabled]="true"
             >
@@ -74,7 +74,7 @@
             <a
                 class="navbar-links link-simple theme-btn"
                 [tabIndex]="0"
-                (click)="setThemeByUser($event)"
+                (click)="setThemeByUser()"
                 (keydown.enter)="setThemeByUser()"
                 [attr.aria-disabled]="true"
             >

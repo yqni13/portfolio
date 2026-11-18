@@ -14,19 +14,14 @@ export class TransitionService {
      */
 
     applyRippleEffect(data: RippleEffectData) {
-        const trigger = data.trigger;
-        const box = trigger?.getBoundingClientRect();
         let x = 0;
         let y = 0;
 
-        // In case of navigation by key: start from top left.
-        if (data.event) {
-            x = data.event.detail || !box
-                ? data.event.clientX
-                : box.left + box.width / 2;
-            y = data.event.detail || !box
-                ? data.event.clientY
-                : box.top + box.height / 2;
+        if (data.trigger) {
+            const trigger = data.trigger;
+            const box = trigger?.getBoundingClientRect();
+            x = box.left + box.width / 2;
+            y = box.top + box.height / 2;
         }
 
         const radius = Math.hypot(
