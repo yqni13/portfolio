@@ -1,12 +1,12 @@
 @use '../../../../stylesheets/utilities' as sass;
-
 @use 'sass:meta';
 @use 'sass:map';
+
 /* Read and map variables from _utilities.scss (without '$' char). */
 $utils-map: meta.module-variables('sass');
 
+/* List all colors used for mosaic animation. */
 $colors: ();
-
 @for $r from 1 through 8 {
     @for $c from 1 through 8 {
         $key: 'color-init-r#{$r}-c#{$c}';
@@ -65,6 +65,7 @@ section {
     background-color: transparent;
     box-sizing: border-box;
 }
+
 .animated-cell {
     $base-delay: 50ms;
     $base-animation: 750ms;
@@ -97,6 +98,7 @@ section {
 .logo-transition-desktop {
     transition: all 2s cubic-bezier(0.25, 1, 0.5, 1);
 }
+
 .logo-transition-mobile {
     animation: shine 2s ease forwards;
 }
