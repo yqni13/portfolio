@@ -1,0 +1,19 @@
+<section>
+    @if (isMosaikActive()) {
+        <div class="mosaic-loader" [ngClass]="setMosaicSizeClass()">
+            @for (column of [].constructor(8); track column; let i = $index) {
+                @for (row of [].constructor(8); track row; let j = $index) {
+                    <div
+                        class="{{'cell d-' + (i + j)}}"
+                        [ngClass]="initAnimation() ? 'animated-cell' : ''"
+                    ></div>
+                }
+            }
+        </div>
+    }
+    @if (initLogo()) {
+        <div class="init-logo" [ngClass]="movingDirection()" [ngStyle]="setLogoSizeStyle()">
+            <img src="{{logo}}" alt="yqni13 logo">
+        </div>
+    }
+</section>

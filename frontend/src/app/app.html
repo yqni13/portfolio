@@ -1,6 +1,9 @@
 <!-- lazy load rendering in browser to avoid stylesheet delay (temp solution) -->
 <!-- https://stackoverflow.com/questions/79207839/angular-flickering-issue -->
 @defer {
+	@if (!isInitialized()) {
+		<app-init></app-init>
+	}
 	<app-navbar></app-navbar>
 	<main class="main roboto-custom-font">
 		<div class="anchor">

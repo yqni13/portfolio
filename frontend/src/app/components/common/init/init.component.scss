@@ -1,0 +1,200 @@
+@use '../../../../stylesheets/utilities' as sass;
+
+
+section {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: sass.$init-animation-bg;
+    scroll-margin-top: 0;
+    z-index: 1001;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+$colors: (
+    sass.$color-init-r1-c1,
+    sass.$color-init-r1-c2,
+    sass.$color-init-r1-c3,
+    sass.$color-init-r1-c4,
+    sass.$color-init-r1-c5,
+    sass.$color-init-r1-c6,
+    sass.$color-init-r1-c7,
+    sass.$color-init-r1-c8,
+    sass.$color-init-r2-c1,
+    sass.$color-init-r2-c2,
+    sass.$color-init-r2-c3,
+    sass.$color-init-r2-c4,
+    sass.$color-init-r2-c5,
+    sass.$color-init-r2-c6,
+    sass.$color-init-r2-c7,
+    sass.$color-init-r2-c8,
+    sass.$color-init-r3-c1,
+    sass.$color-init-r3-c2,
+    sass.$color-init-r3-c3,
+    sass.$color-init-r3-c4,
+    sass.$color-init-r3-c5,
+    sass.$color-init-r3-c6,
+    sass.$color-init-r3-c7,
+    sass.$color-init-r3-c8,
+    sass.$color-init-r4-c1,
+    sass.$color-init-r4-c2,
+    sass.$color-init-r4-c3,
+    sass.$color-init-r4-c4,
+    sass.$color-init-r4-c5,
+    sass.$color-init-r4-c6,
+    sass.$color-init-r4-c7,
+    sass.$color-init-r4-c8,
+    sass.$color-init-r5-c1,
+    sass.$color-init-r5-c2,
+    sass.$color-init-r5-c3,
+    sass.$color-init-r5-c4,
+    sass.$color-init-r5-c5,
+    sass.$color-init-r5-c6,
+    sass.$color-init-r5-c7,
+    sass.$color-init-r5-c8,
+    sass.$color-init-r6-c1,
+    sass.$color-init-r6-c2,
+    sass.$color-init-r6-c3,
+    sass.$color-init-r6-c4,
+    sass.$color-init-r6-c5,
+    sass.$color-init-r6-c6,
+    sass.$color-init-r6-c7,
+    sass.$color-init-r6-c8,
+    sass.$color-init-r7-c1,
+    sass.$color-init-r7-c2,
+    sass.$color-init-r7-c3,
+    sass.$color-init-r7-c4,
+    sass.$color-init-r7-c5,
+    sass.$color-init-r7-c6,
+    sass.$color-init-r7-c7,
+    sass.$color-init-r7-c8,
+    sass.$color-init-r8-c1,
+    sass.$color-init-r8-c2,
+    sass.$color-init-r8-c3,
+    sass.$color-init-r8-c4,
+    sass.$color-init-r8-c5,
+    sass.$color-init-r8-c6,
+    sass.$color-init-r8-c7,
+    sass.$color-init-r8-c8,
+);
+
+.mosaic-mobile {
+    --cell-size: 26px;
+    --cell-spacing: 3px;
+    --border-width: 1px;
+    --cells: 8;
+    --total-size: calc(var(--cells) * (var(--cell-size) + 2 * var(--cell-spacing)));
+    width: var(--total-size);
+    height: var(--total-size);
+}
+
+.mosaic-desktop {
+    --cell-size: 32px;
+    --cell-spacing: 4px;
+    --border-width: 1px;
+    --cells: 8;
+    --total-size: calc(var(--cells) * (var(--cell-size) + 2 * var(--cell-spacing)));
+    width: var(--total-size);
+    height: var(--total-size);
+}
+
+.mosaic-loader {
+    display: flex;
+    position: relative;
+    z-index: 1003;
+    flex-wrap: wrap;
+}
+
+.cell {
+    --cell-color: white;
+    flex: 0 0 var(--cell-size);
+    margin: var(--cell-spacing);
+    background-color: transparent;
+    box-sizing: border-box;
+    // border: var(--border-width) solid var(--cell-color);
+
+    @for $i from 1 through length($colors) {
+        &:nth-child(#{$i}) {
+            --cell-color: #{nth($colors, $i)};
+        }
+    }
+}
+.animated-cell {
+    $base-delay: 50ms;
+    $base-animation: 750ms;
+    $factor: 2.25;
+    animation: calc($base-animation * $factor) ripple ease;
+
+    $delays: (2 * 8) - 2;
+    @for $i from 1 through $delays {
+        &.d-#{$i} {
+            animation-delay: $i * ($base-delay * $factor);
+        }
+    }
+
+    @for $i from 1 through length($colors) {
+        &:nth-child(#{$i}) {
+            --cell-color: #{nth($colors, $i)};
+        }
+    }
+}
+
+@keyframes ripple {
+    0% {
+        background-color: transparent;
+    }
+
+    30% {
+        background-color: var(--cell-color);
+    }
+
+    60% {
+        background-color: transparent;
+    }
+
+    100% {
+        background-color: transparent;
+    }
+}
+
+.init-logo {
+    position: absolute;
+    z-index: 1002;
+    animation: revealFromLeft 1.125s cubic-bezier(0.1, 0.6, 0.7, 0.2) forwards;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.init-logo-desktop {
+    transition: all 2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+// .init-logo-mobile {
+    // transition: all 2.125s cubic-bezier(0.25, 1, 0.5, 1);
+    // transition: all 0s cubic-bezier(0.25, 1, 0.5, 1);
+// }
+
+.init-logo.move-logo {
+    top: 8px;
+    left: 33px;
+    width: 56px!important;
+    height: 56px!important;
+    transform: translate(0,0);
+}
+
+// .init-logo.vanish-logo {
+//     width: 0px!important;
+//     height: 0px!important;
+// }
+
+@keyframes revealFromLeft {
+    0% { clip-path: inset(0 100% 100% 0); }
+    50% { clip-path: inset(0 50% 50% 0); }
+    100% { clip-path: inset(0 0 0 0); }
+}

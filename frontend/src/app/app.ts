@@ -22,12 +22,17 @@ import { ResourceOption } from './utils/enums/resource-option.enum';
 import { PreloadData } from './utils/interfaces/preload.interface';
 import { Project } from './utils/interfaces/work.interface';
 import { environment } from '../environments/environment';
+import { InitComponent } from './components/common/init/init.component';
+import { TransitionService } from './services/transition.service';
+import { EasingFnOption } from './utils/enums/easing-fn.enum';
+import { DeviceOption } from './utils/enums/device-option.enum';
 
 @Component({
 	selector: 'app-root',
 	templateUrl: './app.html',
 	styleUrl: './app.scss',
 	imports: [
+		InitComponent,
 		BackgroundComponent,
 		CommonModule,
 		Navbar,
@@ -47,13 +52,17 @@ export class App implements OnInit {
 
 	private readonly preload = inject(PreloadService);
 	private readonly navigation = inject(NavigationService);
+	private readonly transition = inject(TransitionService);
 	protected readonly observe = inject(ObservationService);
 	protected readonly notifyModal = inject(NotifyModalService);
 
 	protected readonly title = signal('portfolio');
 	protected readonly scrolledToBottom = signal(false);
+	protected readonly isInitialized = signal(false);
 
 	protected readonly IndicatorOptionEnum = IndicatorOption;
+
+	private delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 	constructor() {
 		afterNextRender(() => {
@@ -61,9 +70,14 @@ export class App implements OnInit {
 		})
 	}
 
-	ngOnInit() {
-		const thumbnails: PreloadData[] = this.mapPreloadWorkCardThumbnails();
-		this.preload.preloadMultiple(thumbnails);
+	async ngOnInit() {
+		const preloadData: PreloadData[] = this.mapPreloadWorkCardThumbnails();
+		preloadData.push({ option: ResourceOption.IMG, url: 'yqni13_logo.png'});
+		this.preload.preloadMultiple(preloadData);
+
+		const delayByDeviceOption = this.observe.activeDevice() === DeviceOption.DESKTOP ? 6250 : 4000;
+		await this.delay(delayByDeviceOption);
+		this.closeInitAnimation();
 	}
 
 	private handleScrollDownIndicator() {
@@ -86,5 +100,19 @@ export class App implements OnInit {
 			});
 		})
 		return preloadData;
+	}
+
+	private closeInitAnimation() {
+		const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+		if (!document.startViewTransition || reduceMotion) {
+			this.isInitialized.set(true);
+			return;
+		}
+
+		this.transition.applyRippleEffect({
+			fn: () => this.isInitialized.set(true),
+			duration: 5000,
+			easing: EasingFnOption.EASE_IN
+		});
 	}
 }
