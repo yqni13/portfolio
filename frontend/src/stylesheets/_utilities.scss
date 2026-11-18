@@ -68,6 +68,8 @@ $yqni13-darkmode-gradient: linear-gradient(160deg, $yqni13-darkmode-purple, $yqn
 $signature-black: invert(3%) sepia(9%) saturate(1336%) hue-rotate(216deg) brightness(94%) contrast(95%);
 $signature-white: invert(100%) sepia(59%) saturate(5190%) hue-rotate(179deg) brightness(107%) contrast(107%);
 
+$init-animation-bg: radial-gradient(circle,rgba(0, 0, 0, 1) 0%, rgb(9, 9, 10) 65%, rgba(20, 21, 28, 1) 100%);
+
 
 /* CUSTOM SIZES */
 $space5: 5px;
@@ -90,3 +92,77 @@ $device-small-any: 400px;
     font-variation-settings: "wdth" 100;
 }
 
+
+/* INIT ANIMATION COLORS */
+/* Not generated via sass-map as I want to map some colors manually. */
+$color-init-r1-c1: #45105b;
+$color-init-r1-c2: #491160;
+$color-init-r1-c3: #4d1266;
+$color-init-r1-c4: #52136c;
+$color-init-r1-c5: #571471;
+$color-init-r1-c6: #5c1577;
+$color-init-r1-c7: #61167d;
+$color-init-r1-c8: #661783;
+
+$color-init-r2-c1: #4a115e;
+$color-init-r2-c2: #501365;
+$color-init-r2-c3: #56156d;
+$color-init-r2-c4: #5c1774;
+$color-init-r2-c5: #63197c;
+$color-init-r2-c6: #691b83;
+$color-init-r2-c7: #6f1d8b;
+$color-init-r2-c8: #751f93;
+
+$color-init-r3-c1: #501362;
+$color-init-r3-c2: #58156a;
+$color-init-r3-c3: #601773;
+$color-init-r3-c4: #68197b;
+$color-init-r3-c5: #701b84;
+$color-init-r3-c6: #781d8c;
+$color-init-r3-c7: #802095;
+$color-init-r3-c8: #88229e;
+
+$color-init-r4-c1: #561466;
+$color-init-r4-c2: #601770;
+$color-init-r4-c3: #691a7a;
+$color-init-r4-c4: #731d84;
+$color-init-r4-c5: #7c208f;
+$color-init-r4-c6: #862399;
+$color-init-r4-c7: #8f26a3;
+$color-init-r4-c8: #9929ad;
+
+$color-init-r5-c1: #5b1669;
+$color-init-r5-c2: #681975;
+$color-init-r5-c3: #731d82;
+$color-init-r5-c4: #7e218f;
+$color-init-r5-c5: #89249c;
+$color-init-r5-c6: #9428a9;
+$color-init-r5-c7: #9f2bb6;
+$color-init-r5-c8: #aa2ec3;
+
+$color-init-r6-c1: #61176d;
+$color-init-r6-c2: #701c7b;
+$color-init-r6-c3: #7e2188;
+$color-init-r6-c4: #8a2595;
+$color-init-r6-c5: #972a9f;
+$color-init-r6-c6: #a42fae;
+$color-init-r6-c7: #b134bc;
+$color-init-r6-c8: #d82ab2;
+
+$color-init-r7-c1: #661970;
+$color-init-r7-c2: #781e80;
+$color-init-r7-c3: #882490;
+$color-init-r7-c4: #9729a0;
+$color-init-r7-c5: #a42eac;
+$color-init-r7-c6: #b334b8;
+$color-init-r7-c7: #d82ab2;
+$color-init-r7-c8: #d82a8a;
+
+$color-init-r8-c1: #6c1a74;
+$color-init-r8-c2: #802186;
+$color-init-r8-c3: #922897;
+$color-init-r8-c4: #a32fa8;
+$color-init-r8-c5: #b235b2;
+$color-init-r8-c6: #d82ab2;
+$color-init-r8-c7: #d82a8a;
+$color-init-r8-c8: #d82a67;

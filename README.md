@@ -1,5 +1,5 @@
 # yqni13 | $\texttt{\color{blueviolet}{PORTFOLIO}}$
-### $\textsf{\color{brown}{v2.4.4}}$
+### $\textsf{\color{brown}{v2.5.1}}$
 
 <br>
 
@@ -89,8 +89,6 @@ ng lint
 ## 📈 $\textsf{\color{salmon}Updates}$
 [see changelog for all updates](./docs/CHANGELOG.md)
 
-$\textsf{[v2.4.1\ =>\ {\textbf{\color{brown}v2.4.4}]}}$ app
-- $\textsf{\color{orange}Patch:}$ Updated
-    + background in light-mode to use image instead of color-only
-    + footer to display link for author of background-image in use
-    + Angular version (within v22) & dependency vulnerabilities
+$\textsf{[v2.4.7\ =>\ {\textbf{\color{brown}v2.5.1}]}}$ app
+- $\textsf{\color{teal}Addition:}$ Added app init animation (mosaic + logo).
+- $\textsf{\color{orange}Patch:}$ Updated device option setting into service and move from navbar to app component.

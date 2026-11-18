@@ -1,8 +1,26 @@
 ## 📜 $\textsf{\color{salmon}{List\ of\ updates}}$
 
+### $\textsf{\color{skyblue}2026/11/18}$
+
+$\textsf{[v2.4.7\ =>\ {\textbf{\color{brown}v2.5.1}]}}$ app
+- $\textsf{\color{teal}Addition:}$ Added app init animation (mosaic + logo).
+- $\textsf{\color{orange}Patch:}$ Updated device option setting into service and move from navbar to app component.
+
+<br>
+
+### $\textsf{\color{skyblue}2026/11/17}$
+
+$\textsf{[v2.4.4\ =>\ v2.4.7]}$ app
+- $\textsf{\color{orange}Patch:}$ Updated
+    + preload of work-card thumbnails on app-start instead of modal opening
+    + consistent button sizing (hero, mobile, desktop)
+    + transitions on button actions
+
+<br>
+
 ### $\textsf{\color{skyblue}2026/11/14}$
 
-$\textsf{[v2.4.1\ =>\ {\textbf{\color{brown}v2.4.4}]}}$ app
+$\textsf{[v2.4.1\ =>\ v2.4.4]}$ app
 - $\textsf{\color{orange}Patch:}$ Updated
     + background in light-mode to use image instead of color-only
     + footer to display link for author of background-image in use

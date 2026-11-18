@@ -2,8 +2,6 @@ import { Component, effect, EffectCleanupRegisterFn, ElementRef, inject, input, 
 import { CommonModule } from "@angular/common";
 import { Project } from "../../../../utils/interfaces/work.interface";
 import { environment } from "../../../../../environments/environment";
-import { PreloadService } from "../../../../services/preload.service";
-import { ResourceOption } from "../../../../utils/enums/resource-option.enum";
 import { ScrollDownIndicatorComponent } from "../../indicator/scroll-down/scroll-down.indicator.component";
 import { IndicatorOption } from "../../../../utils/enums/indicator-option.enum";
 import { ObservationService } from "../../../../services/observe.service";
@@ -25,7 +23,6 @@ import { BadgeComponent } from "../../badge/badge.component";
 })
 export class WorkCardComponent implements OnInit, OnDestroy {
 
-    private readonly preload = inject(PreloadService);
     private readonly observe = inject(ObservationService);
 
     readonly data = input.required<Project>();
@@ -44,13 +41,8 @@ export class WorkCardComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-        this.preload.preloadSingle({
-            option: ResourceOption.IMG,
-            url: `${environment.API_STORAGE_URL}${this.data().thumbnail}`
-        }).finally(() => {
-            this.isLoading.set(false);
-            this.observe.activeModal.set(true);
-        });
+        this.isLoading.set(false);
+        this.observe.activeModal.set(true);
     }
 
     private handleScrollDownIndicator(onCleanUp: EffectCleanupRegisterFn) {

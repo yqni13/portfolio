@@ -1,0 +1,23 @@
+<section>
+    @if (isMosaicActive()) {
+        <div class="mosaic-loader" [ngClass]="setMosaicSizeByClass()">
+            @for (level of [].constructor(matrix['levels']); track $index; let i = $index) {
+                @for (cell of [].constructor(matrix['cells']); track $index; let j = $index) {
+                    <div
+                        class="animated-cell"
+                        [ngClass]="'cell d-' + (i + j)"
+                    ></div>
+                }
+            }
+        </div>
+    }
+    @if (isLogoActive()) {
+        <div
+            class="init-logo"
+            [ngClass]="outro()"
+            [ngStyle]="setLogoSizeByStyle()"
+        >
+            <img src="{{logoPath}}" alt="yqni13 logo">
+        </div>
+    }
+</section>

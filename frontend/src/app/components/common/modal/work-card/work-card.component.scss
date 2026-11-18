@@ -42,6 +42,7 @@
                 margin-left: auto;
                 border: 1px solid var(--theme-nav-grey);
                 border-radius: 8px;
+                transition: transform 180ms ease-out;
                 cursor: pointer;
                 @media screen and (width > sass.$device-tablet-landscape) {
                     i:hover {
@@ -155,11 +156,10 @@
                 min-height: 50px; // "height" cuts off box-shadow
 
                 a {
-                    $padding-horizontal: 25px;
+                    $padding-horizontal: 24px;
                     $box-shadow-buffer: 15px;
                     $techstack-buffer: 3px;
                     border-radius: 10px;
-                    padding: 10px $padding-horizontal;
                     width: calc(100% - ($padding-horizontal * 2) - $box-shadow-buffer);
 
                     /* Overflow:scroll disturbs margin-bottom on last element which hides box-shadow on bottom of element => use position:absolute + top:number to place button for target visible effect */

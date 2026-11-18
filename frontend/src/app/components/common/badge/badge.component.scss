@@ -9,6 +9,7 @@
     border-radius: 10px;
     background-color: var(--theme-component);
     text-decoration: none;
+    transition: transform 180ms ease-out;
     span {
         font-size: 1rem;
         color: var(--theme-body-text);
@@ -27,6 +28,11 @@
         span:active {
             color: var(--theme-primary);
         }
+    }
+    i {
+        $size: 25px;
+        width: $size;
+        height: $size;
     }
 }
 

@@ -16,7 +16,6 @@ export interface RippleOptions {
 }
 
 export interface RippleEffectData {
-    event?: MouseEvent,
     trigger?: HTMLElement,
     duration: number,
     easing: EasingFnOption,

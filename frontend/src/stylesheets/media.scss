@@ -10,6 +10,12 @@
 
 /* width > 1440px */
 @media screen and (width > sass.$device-desktop-xk) {
+    * {
+        .btn-primary,
+        .btn-secondary {
+            padding: 12px 24px;
+        }
+    }
     section {
         margin-top: 200px;
     }
@@ -30,6 +36,10 @@
         }
     }
     .hero {
+        .btn-primary,
+        .btn-secondary {
+            padding: 14.25px 24px; // 50px button size
+        }
         #hero-header-wrapper {
             max-width: 50%;
             margin: 0 auto;
@@ -79,12 +89,7 @@
         }
     }
     .badge {
-        padding: 10px 20px;
-        i {
-            $size: 25px;
-            width: $size;
-            height: $size;
-        }
+        padding: 10px 24px;
         span {
             margin-left: 12.5px;
         }
@@ -156,6 +161,12 @@
 
 /* 1024px > width <= 1440px */
 @media screen and (width <= sass.$device-desktop-xk) {
+    * {
+        .btn-primary,
+        .btn-secondary {
+            padding: 12px 24px;
+        }
+    }
     section {
         margin-top: 150px;
     }
@@ -176,6 +187,10 @@
         }
     }
     .hero {
+        .btn-primary,
+        .btn-secondary {
+            padding: 14.25px 24px; // 50px button size
+        }
         #hero-header-wrapper {
             max-width: 75%;
             margin: 0 auto;
@@ -225,12 +240,7 @@
         }
     }
     .badge {
-        padding: 10px 15px;
-        i {
-            $size: 25px;
-            width: $size;
-            height: $size;
-        }
+        padding: 10px 24px;
         span {
             margin-left: 12.5px;
         }
@@ -328,7 +338,6 @@
         }
     }
     .badge {
-        padding: 7.5px 10px;
         span {
             margin-left: 7.5px;
         }
@@ -400,6 +409,12 @@
 
 /* 500px > width <= 768px */
 @media screen and (width <= sass.$device-phone-landscape) {
+    * {
+        .btn-primary,
+        .btn-secondary {
+            padding: 16px 24px;
+        }
+    }
     section {
         margin-top: 115px;
     }
@@ -423,6 +438,10 @@
         margin: 0 35px;
     }
     .hero {
+        .btn-primary,
+        .btn-secondary {
+            padding: 17.25px 24px; // 56px button size
+        }
         #hero-header-wrapper {
             max-width: none;
             h2, h4, p {
@@ -457,6 +476,9 @@
                 margin-left: 0;
             }
         }
+    }
+    .badge {
+        padding: 12px 24px;
     }
     .skills {
         #skills-content {
