@@ -1,5 +1,19 @@
 @use '../../../../stylesheets/utilities' as sass;
 
+@use 'sass:meta';
+@use 'sass:map';
+/* Read and map variables from _utilities.scss (without '$' char). */
+$utils-map: meta.module-variables('sass');
+
+$colors: ();
+
+@for $r from 1 through 8 {
+    @for $c from 1 through 8 {
+        $key: 'color-init-r#{$r}-c#{$c}';
+        $colors: append($colors, map.get($utils-map, $key), comma);
+    }
+}
+
 
 section {
     display: flex;
@@ -16,73 +30,6 @@ section {
     justify-content: center;
     align-items: center;
 }
-
-$colors: (
-    sass.$color-init-r1-c1,
-    sass.$color-init-r1-c2,
-    sass.$color-init-r1-c3,
-    sass.$color-init-r1-c4,
-    sass.$color-init-r1-c5,
-    sass.$color-init-r1-c6,
-    sass.$color-init-r1-c7,
-    sass.$color-init-r1-c8,
-    sass.$color-init-r2-c1,
-    sass.$color-init-r2-c2,
-    sass.$color-init-r2-c3,
-    sass.$color-init-r2-c4,
-    sass.$color-init-r2-c5,
-    sass.$color-init-r2-c6,
-    sass.$color-init-r2-c7,
-    sass.$color-init-r2-c8,
-    sass.$color-init-r3-c1,
-    sass.$color-init-r3-c2,
-    sass.$color-init-r3-c3,
-    sass.$color-init-r3-c4,
-    sass.$color-init-r3-c5,
-    sass.$color-init-r3-c6,
-    sass.$color-init-r3-c7,
-    sass.$color-init-r3-c8,
-    sass.$color-init-r4-c1,
-    sass.$color-init-r4-c2,
-    sass.$color-init-r4-c3,
-    sass.$color-init-r4-c4,
-    sass.$color-init-r4-c5,
-    sass.$color-init-r4-c6,
-    sass.$color-init-r4-c7,
-    sass.$color-init-r4-c8,
-    sass.$color-init-r5-c1,
-    sass.$color-init-r5-c2,
-    sass.$color-init-r5-c3,
-    sass.$color-init-r5-c4,
-    sass.$color-init-r5-c5,
-    sass.$color-init-r5-c6,
-    sass.$color-init-r5-c7,
-    sass.$color-init-r5-c8,
-    sass.$color-init-r6-c1,
-    sass.$color-init-r6-c2,
-    sass.$color-init-r6-c3,
-    sass.$color-init-r6-c4,
-    sass.$color-init-r6-c5,
-    sass.$color-init-r6-c6,
-    sass.$color-init-r6-c7,
-    sass.$color-init-r6-c8,
-    sass.$color-init-r7-c1,
-    sass.$color-init-r7-c2,
-    sass.$color-init-r7-c3,
-    sass.$color-init-r7-c4,
-    sass.$color-init-r7-c5,
-    sass.$color-init-r7-c6,
-    sass.$color-init-r7-c7,
-    sass.$color-init-r7-c8,
-    sass.$color-init-r8-c1,
-    sass.$color-init-r8-c2,
-    sass.$color-init-r8-c3,
-    sass.$color-init-r8-c4,
-    sass.$color-init-r8-c5,
-    sass.$color-init-r8-c6,
-    sass.$color-init-r8-c7,
-    sass.$color-init-r8-c8,
-);
 
 .mosaic-mobile {
     --cell-size: 26px;
@@ -117,13 +64,6 @@ $colors: (
     margin: var(--cell-spacing);
     background-color: transparent;
     box-sizing: border-box;
-    // border: var(--border-width) solid var(--cell-color);
-
-    @for $i from 1 through length($colors) {
-        &:nth-child(#{$i}) {
-            --cell-color: #{nth($colors, $i)};
-        }
-    }
 }
 .animated-cell {
     $base-delay: 50ms;
@@ -145,42 +85,24 @@ $colors: (
     }
 }
 
-@keyframes ripple {
-    0% {
-        background-color: transparent;
-    }
-
-    30% {
-        background-color: var(--cell-color);
-    }
-
-    60% {
-        background-color: transparent;
-    }
-
-    100% {
-        background-color: transparent;
-    }
-}
-
 .init-logo {
     position: absolute;
     z-index: 1002;
-    animation: revealFromLeft 1.125s cubic-bezier(0.1, 0.6, 0.7, 0.2) forwards;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    animation: revealFromLeft 1.125s cubic-bezier(0.1, 0.6, 0.7, 0.2) forwards;
 }
 
-.init-logo-desktop {
+.logo-transition-desktop {
     transition: all 2s cubic-bezier(0.25, 1, 0.5, 1);
 }
-// .init-logo-mobile {
-    // transition: all 2.125s cubic-bezier(0.25, 1, 0.5, 1);
-    // transition: all 0s cubic-bezier(0.25, 1, 0.5, 1);
-// }
+.logo-transition-mobile {
+    animation: shine 2s ease forwards;
+}
 
 .init-logo.move-logo {
+    /* Move to position on navbar. */
     top: 8px;
     left: 33px;
     width: 56px!important;
@@ -188,13 +110,21 @@ $colors: (
     transform: translate(0,0);
 }
 
-// .init-logo.vanish-logo {
-//     width: 0px!important;
-//     height: 0px!important;
-// }
+@keyframes ripple {
+    0% { background-color: transparent; }
+    30% { background-color: var(--cell-color); }
+    60% { background-color: transparent; }
+    100% { background-color: transparent; }
+}
 
 @keyframes revealFromLeft {
     0% { clip-path: inset(0 100% 100% 0); }
     50% { clip-path: inset(0 50% 50% 0); }
     100% { clip-path: inset(0 0 0 0); }
+}
+
+@keyframes shine {
+    0% { filter: brigthness(1) }
+    50% { filter: brightness(2) }
+    100% { filter: brigthness(1) }
 }
