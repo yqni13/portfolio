@@ -123,7 +123,7 @@ export class App implements OnInit {
 
 		this.transition.applyRippleEffect({
 			fn: () => this.isInitialized.set(true),
-			duration: 6000,
+			duration: 5000,
 			easing: EasingFnOption.EASE_IN
 		});
 	}
