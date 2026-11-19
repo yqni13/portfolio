@@ -37,7 +37,7 @@ body {
 }
 
 :root {
-    background-color: var(--theme-body-bg);
+    background-color: sass.$init-animation-bg;
 }
 
 div,

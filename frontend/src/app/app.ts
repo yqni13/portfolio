@@ -61,6 +61,7 @@ export class App implements OnInit {
 	protected readonly title = signal('portfolio');
 	protected readonly scrolledToBottom = signal(false);
 	protected readonly isInitialized = signal(false);
+	protected readonly isDevEnv = computed(() => environment.ENV_MODE === 'development');
 	private readonly isMobileDevice = computed(() => this.observe.activeDevice() === DeviceOption.MOBILE);
 
 	protected readonly IndicatorOptionEnum = IndicatorOption;
@@ -79,8 +80,10 @@ export class App implements OnInit {
 		const images: PreloadData[] = this.mapImagesToPreload();
 		this.preload.preloadMultiple(images);
 
-		await this.delay(this.isMobileDevice() ? 5750 : 6250);
-		this.closeInitAnimation();
+		if (!this.isDevEnv()) {
+			await this.delay(this.isMobileDevice() ? 5750 : 6250);
+			this.closeInitAnimation();
+		}
 	}
 
 	private handleScrollDownIndicator() {
