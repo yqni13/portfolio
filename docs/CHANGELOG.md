@@ -1,8 +1,17 @@
 ## 📜 $\textsf{\color{salmon}{List\ of\ updates}}$
 
+### $\textsf{\color{skyblue}2026/11/19}$
+
+$\textsf{[v2.5.1\ =>\ {\textbf{\color{brown}v2.5.3}]}}$ app
+- $\textsf{\color{orange}Patch:}$ Updated
+    + experience (certificate) toggle button background pattern
+    + work-card background in light-mode
+
+<br>
+
 ### $\textsf{\color{skyblue}2026/11/18}$
 
-$\textsf{[v2.4.7\ =>\ {\textbf{\color{brown}v2.5.1}]}}$ app
+$\textsf{[v2.4.7\ =>\ v2.5.1]}$ app
 - $\textsf{\color{teal}Addition:}$ Added app init animation (mosaic + logo).
 - $\textsf{\color{orange}Patch:}$ Updated device option setting into service and move from navbar to app component.
 
