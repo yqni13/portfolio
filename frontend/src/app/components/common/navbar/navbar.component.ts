@@ -95,13 +95,8 @@ export class Navbar implements OnInit, AfterViewInit, OnDestroy {
     }
 
     openFullMenuOnMobile() {
-        this.preload.preloadSingle({
-            option: ResourceOption.IMG,
-            url: '/yqni13_logo256.ico'
-        }).finally(() => {
-            this.activeMobileMenu.set(true);
-            document.body.style.setProperty('overflow', 'hidden');
-        });
+        this.activeMobileMenu.set(true);
+        document.body.style.setProperty('overflow', 'hidden');
     }
 
     closeFullMenuOnMobile() {

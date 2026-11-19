@@ -65,7 +65,7 @@ $toggle-padding: 2.5px;
     left: 2px;
     bottom: 2px;
     z-index: 2;
-    background-color: var(--theme-toggle);
+    background: var(--theme-toggle-slider);
     transition: .3s;
 }
 
@@ -78,7 +78,7 @@ $toggle-padding: 2.5px;
 
 .right {
     position: absolute;
-    right: 5px; // Closer to end because icon needs a bit more space.
+    right: 5px; /* Closer to end because icon needs a bit more space. */
     z-index: 1;
     color: var(--theme-grey);
 }
