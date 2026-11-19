@@ -2,15 +2,17 @@
 
 
 .workcard-detail {
-    align-items: center;
-    z-index: 1000;
     position: fixed;
+    z-index: 1000;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    backdrop-filter: blur(3px);
+    align-items: center;
+    backdrop-filter: blur(7px);
+
     .workcard-detail-content {
+        z-index: 1000;
         $padding: sass.$space25;
         flex-direction: column;
         position: relative;
@@ -22,11 +24,25 @@
         border: 1px solid var(--theme-nav-grey);
         border-radius: 20px;
         padding: $padding;
-        background: var(--theme-component-gradient);
-
         margin-top: 0;
         max-height: calc(100vh - sass.$space100);
+
+        .workcard-bg {
+            position: absolute;
+            z-index: 999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--theme-component-gradient);
+            background-size: cover;
+            background-position: center;
+            opacity: var(--theme-workcard-opacity);
+            filter: blur(1px) saturate(.8);
+
+        }
         #workcard-detail-content-head {
+            z-index: 1001;
             flex-direction: row;
             align-items: center;
             padding-bottom: 20px;
@@ -60,6 +76,7 @@
             }
         }
         .workcard-detail-content-wrapper {
+            z-index: 1001;
             flex-direction: column;
             padding-top: sass.$space25;
             overflow: scroll;
