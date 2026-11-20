@@ -1,7 +1,6 @@
 import { CommonModule } from "@angular/common";
-import { Component, computed, inject, OnInit, signal } from "@angular/core";
-import { ObservationService } from "../../../services/observe.service";
-import { DeviceOption } from "../../../utils/enums/device-option.enum";
+import { Component, inject, OnInit, signal } from "@angular/core";
+import { DeviceService } from "../../../services/device.service";
 
 @Component({
     selector: 'app-init',
@@ -13,12 +12,11 @@ import { DeviceOption } from "../../../utils/enums/device-option.enum";
 })
 export class InitComponent implements OnInit {
 
-    protected readonly observe = inject(ObservationService);
+    private readonly device = inject(DeviceService);
 
     protected readonly isMosaicActive = signal(false);
     protected readonly isLogoActive = signal(false);
     protected readonly outro = signal('');
-    protected readonly isMobile = computed(() => this.observe.activeDevice() === DeviceOption.MOBILE);
 
     protected readonly logoPath = 'yqni13_logo.webp';
     protected readonly matrix: Record<string, number> = { levels: 8, cells: 8 };
@@ -31,11 +29,11 @@ export class InitComponent implements OnInit {
     }
 
     setMosaicSizeByClass(): string {
-        return this.isMobile() ? 'mosaic-mobile' : 'mosaic-desktop';
+        return this.device.isMobile() ? 'mosaic-mobile' : 'mosaic-desktop';
     }
 
     setLogoSizeByStyle(): Record<string, string> {
-        return this.isMobile()
+        return this.device.isMobile()
             ? { 'width': this.logoSize.mobile, 'height': this.logoSize.mobile }
             : { 'width': this.logoSize.desktop, 'height': this.logoSize.desktop };
     }
@@ -50,8 +48,8 @@ export class InitComponent implements OnInit {
         await this.delay(2000);
         this.isMosaicActive.set(false);
 
-        await this.delay(this.isMobile() ? 250 : 1250);
-        const direction = this.isMobile()
+        await this.delay(this.device.isMobile() ? 250 : 1250);
+        const direction = this.device.isMobile()
             ? 'logo-transition-mobile'
             : 'logo-transition-desktop move-logo';
 

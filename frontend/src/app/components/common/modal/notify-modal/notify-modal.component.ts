@@ -16,13 +16,13 @@ import { NotifyModalMessage } from "../../../../utils/interfaces/notify-modal.in
 })
 export class NotifyModalComponent {
 
-    readonly notifyModal = inject(NotifyModalService);
+    readonly modal = inject(NotifyModalService);
 
     notification = input.required<NotifyModalMessage>();
 
     closeOnEscape() {
-        if(this.notifyModal.isActive() && !this.notification().autoClose) {
-            this.notifyModal.close(this.notification());
+        if(this.modal.isActive() && !this.notification().autoClose) {
+            this.modal.close(this.notification());
         }
     }
 }

@@ -209,6 +209,7 @@
 }
 app-scrolldown-indicator {
     position: absolute;
+    z-index: 1001;
     bottom: 40px;
     right: 35px;
 }
