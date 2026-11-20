@@ -4,8 +4,8 @@ import { Project } from "../../../../utils/interfaces/work.interface";
 import { environment } from "../../../../../environments/environment";
 import { ScrollDownIndicatorComponent } from "../../indicator/scroll-down/scroll-down.indicator.component";
 import { IndicatorOption } from "../../../../utils/enums/indicator-option.enum";
-import { ObservationService } from "../../../../services/observe.service";
 import { BadgeComponent } from "../../badge/badge.component";
+import { NotifyModalService } from "../../../../services/notify-modal.service";
 
 @Component({
     selector: 'app-workcard',
@@ -23,7 +23,7 @@ import { BadgeComponent } from "../../badge/badge.component";
 })
 export class WorkCardComponent implements OnInit, OnDestroy {
 
-    private readonly observe = inject(ObservationService);
+    private readonly modal = inject(NotifyModalService);
 
     readonly data = input.required<Project>();
     readonly byChange = output<boolean>();
@@ -42,7 +42,7 @@ export class WorkCardComponent implements OnInit, OnDestroy {
 
     ngOnInit() {
         this.isLoading.set(false);
-        this.observe.activeModal.set(true);
+        this.modal.setMockNotification();
     }
 
     private handleScrollDownIndicator(onCleanUp: EffectCleanupRegisterFn) {
@@ -78,6 +78,6 @@ export class WorkCardComponent implements OnInit, OnDestroy {
     }
 
     ngOnDestroy() {
-        this.observe.activeModal.set(false);
+        this.modal.removeMockNotification();
     }
 }

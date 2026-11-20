@@ -1,13 +1,12 @@
 import { inject, Injectable, signal } from "@angular/core";
-import { ObservationService } from "./observe.service";
-import { DeviceOption } from "../utils/enums/device-option.enum";
+import { DeviceService } from "./device.service";
 
 @Injectable({
     providedIn: 'root'
 })
 export class NavigationService {
 
-    private readonly observeService = inject(ObservationService);
+    private readonly device = inject(DeviceService);
 
     private observer!: IntersectionObserver;
     private readonly activeSection = signal<string>('home');
@@ -35,7 +34,7 @@ export class NavigationService {
             },
             {
                 // Define how much of section must be visible to trigger (0.4 => 40%).
-                threshold: this.observeService.activeDevice() === DeviceOption.MOBILE ? 0.1 : 0.4,
+                threshold: this.device.isMobile() ? 0.1 : 0.4,
                 rootMargin: '0px'
             }
         );
