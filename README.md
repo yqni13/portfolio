@@ -1,5 +1,5 @@
 # yqni13 | $\texttt{\color{blueviolet}{PORTFOLIO}}$
-### $\textsf{\color{brown}{v2.5.3}}$
+### $\textsf{\color{brown}{v2.5.4}}$
 
 <br>
 
@@ -89,7 +89,5 @@ ng lint
 ## 📈 $\textsf{\color{salmon}Updates}$
 [see changelog for all updates](./docs/CHANGELOG.md)
 
-$\textsf{[v2.5.1\ =>\ {\textbf{\color{brown}v2.5.3}]}}$ app
-- $\textsf{\color{orange}Patch:}$ Updated
-    + experience (certificate) toggle button background pattern
-    + work-card background in light-mode
+$\textsf{[v2.5.3\ =>\ {\textbf{\color{brown}v2.5.4}]}}$ app
+- $\textsf{\color{orange}Patch:}$ Updated services to handle states themself instead generic observer service.
