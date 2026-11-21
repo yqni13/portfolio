@@ -25,6 +25,8 @@ import { InitComponent } from './components/common/init/init.component';
 import { TransitionService } from './services/transition.service';
 import { EasingFnOption } from './utils/enums/easing-fn.enum';
 import { DeviceService } from './services/device.service';
+import { ScrollIndicatorService } from './services/scroll-indicator.service';
+import { InitService } from './services/init.service';
 
 @Component({
 	selector: 'app-root',
@@ -49,11 +51,13 @@ import { DeviceService } from './services/device.service';
 })
 export class App implements OnInit {
 
+	private readonly init = inject(InitService);
 	private readonly device = inject(DeviceService);
 	private readonly preload = inject(PreloadService);
 	private readonly navigation = inject(NavigationService);
 	private readonly transition = inject(TransitionService);
 	protected readonly modal = inject(NotifyModalService);
+	protected readonly scrollIndicator = inject(ScrollIndicatorService);
 
 	protected readonly title = signal('portfolio');
 	protected readonly scrolledToBottom = signal(false);
@@ -77,7 +81,7 @@ export class App implements OnInit {
 		this.preload.preloadMultiple(images);
 
 		if (!this.isDevEnv()) {
-			await this.delay(this.device.isMobile() ? 5750 : 6250);
+			await this.delay(this.init.delays.total);
 			this.closeInitAnimation();
 		}
 	}
@@ -121,9 +125,10 @@ export class App implements OnInit {
 		}
 
 		this.transition.applyRippleEffect({
+			trigger: document.getElementById('init-logo') as HTMLElement,
 			fn: () => this.isInitialized.set(true),
 			duration: 5000,
-			easing: EasingFnOption.EASE_IN
+			easing: EasingFnOption.EASE_IN_OUT
 		});
 	}
 }

@@ -5,7 +5,7 @@ import { environment } from "../../../../../environments/environment";
 import { ScrollDownIndicatorComponent } from "../../indicator/scroll-down/scroll-down.indicator.component";
 import { IndicatorOption } from "../../../../utils/enums/indicator-option.enum";
 import { BadgeComponent } from "../../badge/badge.component";
-import { NotifyModalService } from "../../../../services/notify-modal.service";
+import { ScrollIndicatorService } from "../../../../services/scroll-indicator.service";
 
 @Component({
     selector: 'app-workcard',
@@ -23,7 +23,7 @@ import { NotifyModalService } from "../../../../services/notify-modal.service";
 })
 export class WorkCardComponent implements OnInit, OnDestroy {
 
-    private readonly modal = inject(NotifyModalService);
+    private readonly scrollIndicator = inject(ScrollIndicatorService);
 
     readonly data = input.required<Project>();
     readonly byChange = output<boolean>();
@@ -37,12 +37,12 @@ export class WorkCardComponent implements OnInit, OnDestroy {
     constructor() {
         effect((onCleanUp) => {
             this.handleScrollDownIndicator(onCleanUp);
-        })
+        });
     }
 
     ngOnInit() {
         this.isLoading.set(false);
-        this.modal.setMockNotification();
+        this.scrollIndicator.disableMainIndicator();
     }
 
     private handleScrollDownIndicator(onCleanUp: EffectCleanupRegisterFn) {
@@ -51,7 +51,7 @@ export class WorkCardComponent implements OnInit, OnDestroy {
             return;
         }
 
-        // Immediately set true when page is displayed in full height on big screen.
+        // Set true when page is displayed in full height on big screen.
         if(element.clientHeight === element.scrollHeight) {
             this.scrolledToBottom.set(true);
         }
@@ -68,6 +68,7 @@ export class WorkCardComponent implements OnInit, OnDestroy {
 
     closeDetails() {
         this.byChange.emit(true);
+
     }
 
     closeDetailsByOutsideTouch(event: MouseEvent) {
@@ -78,6 +79,6 @@ export class WorkCardComponent implements OnInit, OnDestroy {
     }
 
     ngOnDestroy() {
-        this.modal.removeMockNotification();
+        this.scrollIndicator.enableMainIndicator();
     }
 }

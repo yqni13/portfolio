@@ -51,6 +51,6 @@
         <i class="icon-base icon-GoTo"></i>
     </a>
     @if(cardDetails) {
-        <app-workcard [data]="cardDetails" (byChange)="closeDetails($event)"></app-workcard>
+        <app-workcard [data]="cardDetails" (byChange)="closeDetails($event)" [tabIndex]="0"></app-workcard>
     }
 </section>

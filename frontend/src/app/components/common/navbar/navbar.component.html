@@ -45,7 +45,7 @@
             >
                 <i
                     class="icon-base"
-                    ngClass="{{theme.activeTheme() === ThemeOptionEnum.DARK ? 'icon-darkMode' : 'icon-lightMode'}}"
+                    [ngClass]="theme.isDarkMode() ? 'icon-darkMode' : 'icon-lightMode'"
                     [tabindex]="0"
                     #themeIcon
                 ></i>
@@ -80,7 +80,7 @@
             >
                 <i
                     class="icon-base"
-                    ngClass="{{theme.activeTheme() === ThemeOptionEnum.DARK ? 'icon-darkMode' : 'icon-lightMode'}}"
+                    [ngClass]="theme.isDarkMode() ? 'icon-darkMode' : 'icon-lightMode'"
                     #themeIcon
                 ></i>
             </a>

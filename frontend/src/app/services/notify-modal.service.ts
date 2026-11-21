@@ -33,12 +33,4 @@ export class NotifyModalService {
     close(notification: NotifyModalMessage) {
         this.notifications.update(current => current.filter(entry => entry !== notification));
     }
-
-    setMockNotification() {
-        this.hasMockNotification.set(true);
-    }
-
-    removeMockNotification() {
-        this.hasMockNotification.set(false);
-    }
 }
