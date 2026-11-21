@@ -4,8 +4,8 @@ import { Project } from "../../../../utils/interfaces/work.interface";
 import { environment } from "../../../../../environments/environment";
 import { ScrollDownIndicatorComponent } from "../../indicator/scroll-down/scroll-down.indicator.component";
 import { IndicatorOption } from "../../../../utils/enums/indicator-option.enum";
-import { ObservationService } from "../../../../services/observe.service";
 import { BadgeComponent } from "../../badge/badge.component";
+import { ScrollIndicatorService } from "../../../../services/scroll-indicator.service";
 
 @Component({
     selector: 'app-workcard',
@@ -23,7 +23,7 @@ import { BadgeComponent } from "../../badge/badge.component";
 })
 export class WorkCardComponent implements OnInit, OnDestroy {
 
-    private readonly observe = inject(ObservationService);
+    private readonly scrollIndicator = inject(ScrollIndicatorService);
 
     readonly data = input.required<Project>();
     readonly byChange = output<boolean>();
@@ -37,12 +37,12 @@ export class WorkCardComponent implements OnInit, OnDestroy {
     constructor() {
         effect((onCleanUp) => {
             this.handleScrollDownIndicator(onCleanUp);
-        })
+        });
     }
 
     ngOnInit() {
         this.isLoading.set(false);
-        this.observe.activeModal.set(true);
+        this.scrollIndicator.disableMainIndicator();
     }
 
     private handleScrollDownIndicator(onCleanUp: EffectCleanupRegisterFn) {
@@ -51,7 +51,7 @@ export class WorkCardComponent implements OnInit, OnDestroy {
             return;
         }
 
-        // Immediately set true when page is displayed in full height on big screen.
+        // Set true when page is displayed in full height on big screen.
         if(element.clientHeight === element.scrollHeight) {
             this.scrolledToBottom.set(true);
         }
@@ -68,6 +68,7 @@ export class WorkCardComponent implements OnInit, OnDestroy {
 
     closeDetails() {
         this.byChange.emit(true);
+
     }
 
     closeDetailsByOutsideTouch(event: MouseEvent) {
@@ -78,6 +79,6 @@ export class WorkCardComponent implements OnInit, OnDestroy {
     }
 
     ngOnDestroy() {
-        this.observe.activeModal.set(false);
+        this.scrollIndicator.enableMainIndicator();
     }
 }

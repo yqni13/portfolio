@@ -1,8 +1,15 @@
 ## 📜 $\textsf{\color{salmon}{List\ of\ updates}}$
 
+### $\textsf{\color{skyblue}2026/11/20}$
+
+$\textsf{[v2.5.3\ =>\ {\textbf{\color{brown}v2.5.4}]}}$ app
+- $\textsf{\color{orange}Patch:}$ Updated services to handle states themself instead generic observer service.
+
+<br>
+
 ### $\textsf{\color{skyblue}2026/11/19}$
 
-$\textsf{[v2.5.1\ =>\ {\textbf{\color{brown}v2.5.3}]}}$ app
+$\textsf{[v2.5.1\ =>\ v2.5.3]}$ app
 - $\textsf{\color{orange}Patch:}$ Updated
     + experience (certificate) toggle button background pattern
     + work-card background in light-mode

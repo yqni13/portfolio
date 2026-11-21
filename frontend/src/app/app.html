@@ -4,11 +4,14 @@
 	@if (!isDevEnv() && !isInitialized()) {
 		<app-init></app-init>
 	}
+
 	<app-navbar></app-navbar>
 	<main class="main roboto-custom-font">
+
 		<div class="anchor">
 			<app-background></app-background>
 		</div>
+
 		<app-hero></app-hero>
 		<app-work></app-work>
 		<app-skills></app-skills>
@@ -16,14 +19,15 @@
 		<app-experience></app-experience>
 		<app-contact></app-contact>
 
-		@if(notifyModal.notifications().length > 0) {
+		@if(modal.activeNotifications().length > 0) {
 			<div class="main-notifymodal">
-				@for(notification of notifyModal.notifications(); track $index) {
+				@for(notification of modal.activeNotifications(); track $index) {
 					<app-notify-modal [notification]="notification"></app-notify-modal>
 				}
 			</div>
 		}
-		@if (!scrolledToBottom() && !observe.activeModal()) {
+
+		@if (!scrolledToBottom() && !scrollIndicator.isMainActive()) {
 			<app-scrolldown-indicator [option]="IndicatorOptionEnum.MAIN"></app-scrolldown-indicator>
 		}
 	</main>

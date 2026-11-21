@@ -15,7 +15,6 @@ import { BackgroundComponent } from './components/common/background/background.c
 import { ScrollDownIndicatorComponent } from './components/common/indicator/scroll-down/scroll-down.indicator.component';
 import { NavigationService } from './services/navigation.service';
 import { IndicatorOption } from './utils/enums/indicator-option.enum';
-import { ObservationService } from './services/observe.service';
 import { PreloadService } from './services/preload.service';
 import { default as workData } from './data/work.json';
 import { ResourceOption } from './utils/enums/resource-option.enum';
@@ -25,8 +24,9 @@ import { environment } from '../environments/environment';
 import { InitComponent } from './components/common/init/init.component';
 import { TransitionService } from './services/transition.service';
 import { EasingFnOption } from './utils/enums/easing-fn.enum';
-import { DeviceOption } from './utils/enums/device-option.enum';
 import { DeviceService } from './services/device.service';
+import { ScrollIndicatorService } from './services/scroll-indicator.service';
+import { InitService } from './services/init.service';
 
 @Component({
 	selector: 'app-root',
@@ -51,18 +51,18 @@ import { DeviceService } from './services/device.service';
 })
 export class App implements OnInit {
 
+	private readonly init = inject(InitService);
 	private readonly device = inject(DeviceService);
 	private readonly preload = inject(PreloadService);
 	private readonly navigation = inject(NavigationService);
 	private readonly transition = inject(TransitionService);
-	protected readonly observe = inject(ObservationService);
-	protected readonly notifyModal = inject(NotifyModalService);
+	protected readonly modal = inject(NotifyModalService);
+	protected readonly scrollIndicator = inject(ScrollIndicatorService);
 
 	protected readonly title = signal('portfolio');
 	protected readonly scrolledToBottom = signal(false);
 	protected readonly isInitialized = signal(false);
 	protected readonly isDevEnv = computed(() => environment.ENV_MODE === 'development');
-	private readonly isMobileDevice = computed(() => this.observe.activeDevice() === DeviceOption.MOBILE);
 
 	protected readonly IndicatorOptionEnum = IndicatorOption;
 
@@ -81,7 +81,7 @@ export class App implements OnInit {
 		this.preload.preloadMultiple(images);
 
 		if (!this.isDevEnv()) {
-			await this.delay(this.isMobileDevice() ? 5750 : 6250);
+			await this.delay(this.init.delays.total);
 			this.closeInitAnimation();
 		}
 	}
@@ -125,9 +125,10 @@ export class App implements OnInit {
 		}
 
 		this.transition.applyRippleEffect({
+			trigger: document.getElementById('init-logo') as HTMLElement,
 			fn: () => this.isInitialized.set(true),
 			duration: 5000,
-			easing: EasingFnOption.EASE_IN
+			easing: EasingFnOption.EASE_IN_OUT
 		});
 	}
 }
