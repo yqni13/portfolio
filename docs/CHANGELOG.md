@@ -1,8 +1,16 @@
 ## 📜 $\textsf{\color{salmon}{List\ of\ updates}}$
 
+### $\textsf{\color{skyblue}2026/11/21}$
+
+$\textsf{[v2.5.4\ =>\ {\textbf{\color{brown}v2.5.6}]}}$ app
+- $\textsf{\color{orange}Patch:}$ Updated preload on work thumbnails to load on focus/select directly on preview element.
+- $\textsf{\color{red}Bugfix:}$ Work-Card component shows scroll-indicator as expected. [Before: Variying in timing and other conditions, scroll-indicator didn't show correctly when work-card modal was opened.]
+
+<br>
+
 ### $\textsf{\color{skyblue}2026/11/20}$
 
-$\textsf{[v2.5.3\ =>\ {\textbf{\color{brown}v2.5.4}]}}$ app
+$\textsf{[v2.5.3\ =>\ v2.5.4]}$ app
 - $\textsf{\color{orange}Patch:}$ Updated services to handle states themself instead generic observer service.
 
 <br>
