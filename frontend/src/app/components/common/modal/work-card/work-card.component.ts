@@ -1,4 +1,5 @@
-import { Component, effect, EffectCleanupRegisterFn, ElementRef, inject, input, OnDestroy, OnInit, output, signal, viewChild } from "@angular/core";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { afterNextRender, Component, computed, DestroyRef, ElementRef, inject, input, output, signal, viewChild } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { Project } from "../../../../utils/interfaces/work.interface";
 import { environment } from "../../../../../environments/environment";
@@ -21,54 +22,65 @@ import { ScrollIndicatorService } from "../../../../services/scroll-indicator.se
         '(document:keydown.escape)': 'closeDetails()'
     }
 })
-export class WorkCardComponent implements OnInit, OnDestroy {
+export class WorkCardComponent {
 
+    private readonly destroyRef = inject(DestroyRef);
     private readonly scrollIndicator = inject(ScrollIndicatorService);
 
     readonly data = input.required<Project>();
-    readonly byChange = output<boolean>();
+    readonly closed = output<boolean>();
     private readonly contentWrapper = viewChild<ElementRef>('contentWrapper');
 
-    protected readonly isLoading = signal(true);
-    protected readonly scrolledToBottom = signal(false);
+    protected readonly hasOverflow = signal(false);
+    protected readonly isAtBottom = signal(false);
+    protected readonly showScrollIndicator = computed(() => this.hasOverflow() && !this.isAtBottom());
+
     protected readonly cdnUrlBase = environment.API_STORAGE_URL.trim();
     protected readonly IndicatorOptionEnum = IndicatorOption;
 
     constructor() {
-        effect((onCleanUp) => {
-            this.handleScrollDownIndicator(onCleanUp);
-        });
-    }
-
-    ngOnInit() {
-        this.isLoading.set(false);
         this.scrollIndicator.disableMainIndicator();
+        document.body.style.setProperty('overflow', 'hidden');
+        this.destroyRef.onDestroy(() => {
+            this.scrollIndicator.enableMainIndicator();
+            document.body.style.removeProperty('overflow');
+        });
+
+        // afterNextRender => runs once AFTER rendering | effect => runs BEFORE rendering
+        afterNextRender({
+            read: () => this.observeScrollState()
+        });
     }
 
-    private handleScrollDownIndicator(onCleanUp: EffectCleanupRegisterFn) {
+    private observeScrollState() {
         const element = this.contentWrapper()?.nativeElement;
-        if(!element) {
-            return;
-        }
 
-        // Set true when page is displayed in full height on big screen.
-        if(element.clientHeight === element.scrollHeight) {
-            this.scrolledToBottom.set(true);
-        }
-
-        const scrollHandler = () => {
+        const update = () => {
             const { scrollTop, scrollHeight, clientHeight } = element;
-            this.scrolledToBottom.set(Math.ceil(scrollTop) + clientHeight >= scrollHeight);
+            this.hasOverflow.set(scrollHeight - clientHeight > 1);
+            this.isAtBottom.set(Math.ceil(scrollTop) + clientHeight >= scrollHeight - 1);
         };
-        element.addEventListener('scroll', scrollHandler);
-        onCleanUp(() => {
-            element.removeEventListener('scroll', scrollHandler);
+
+        // Key factor to include size of loading thumbnail at right time.
+        const resizeObserver = new ResizeObserver(update);
+
+        // Change in size of viewport/container.
+        resizeObserver.observe(element);
+
+        // Increase of content.
+        Array.from(element.children).forEach((child: any) => resizeObserver.observe(child));
+        element.addEventListener('scroll', update, { passive: true });
+
+        this.destroyRef.onDestroy(() => {
+            resizeObserver.disconnect();
+            element.removeEventListener('scroll', update);
         });
+
+        update();
     }
 
     closeDetails() {
-        this.byChange.emit(true);
-
+        this.closed.emit(true);
     }
 
     closeDetailsByOutsideTouch(event: MouseEvent) {
@@ -76,9 +88,5 @@ export class WorkCardComponent implements OnInit, OnDestroy {
         if(target.className === 'workcard-detail') {
             this.closeDetails();
         }
-    }
-
-    ngOnDestroy() {
-        this.scrollIndicator.enableMainIndicator();
     }
 }

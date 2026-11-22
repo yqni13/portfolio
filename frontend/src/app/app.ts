@@ -16,10 +16,8 @@ import { ScrollDownIndicatorComponent } from './components/common/indicator/scro
 import { NavigationService } from './services/navigation.service';
 import { IndicatorOption } from './utils/enums/indicator-option.enum';
 import { PreloadService } from './services/preload.service';
-import { default as workData } from './data/work.json';
 import { ResourceOption } from './utils/enums/resource-option.enum';
 import { PreloadData } from './utils/interfaces/preload.interface';
-import { Project } from './utils/interfaces/work.interface';
 import { environment } from '../environments/environment';
 import { InitComponent } from './components/common/init/init.component';
 import { TransitionService } from './services/transition.service';
@@ -97,19 +95,8 @@ export class App implements OnInit {
 		// No cleanup/destroyref necessary as root component does not get destroyed.
 	}
 
-	private mapPreloadWorkCardThumbnails(): PreloadData[] {
-		const preloadData: PreloadData[] = [];
-		(workData as Project[]).forEach((entry: Project) => {
-			preloadData.push({
-				option: ResourceOption.IMG,
-				url: `${environment.API_STORAGE_URL}${entry.thumbnail}`
-			});
-		})
-		return preloadData;
-	}
-
 	private mapImagesToPreload(): PreloadData[] {
-		const preloadData = this.mapPreloadWorkCardThumbnails();
+		const preloadData: PreloadData[] = [];
 		preloadData.push({
 			option: ResourceOption.IMG, url: 'yqni13_logo.webp'
 		});
