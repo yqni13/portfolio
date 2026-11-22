@@ -1,4 +1,4 @@
-import { Injectable, signal } from "@angular/core";
+import { computed, Injectable, signal } from "@angular/core";
 import { ThemeOption } from "../utils/enums/theme-option.enum";
 
 @Injectable({
@@ -9,7 +9,9 @@ export class ThemeHandlerService {
     private isLocalStorageAvailable = typeof localStorage !== 'undefined';
     private url = "yqni13.com";
 
-    readonly activeTheme = signal<ThemeOption>(ThemeOption.DARK);
+    private readonly theme = signal<ThemeOption>(ThemeOption.LIGHT);
+    readonly activeTheme = computed(() => this.theme());
+    readonly isDarkMode = computed(() => this.theme() === ThemeOption.DARK);
 
     initTheme() {
         const theme: ThemeOption = this.getThemeSetting();
@@ -42,13 +44,13 @@ export class ThemeHandlerService {
             if(theme) {
                 localStorage.setItem(`${this.url}-theme`, theme);
                 document.body.setAttribute("data-theme", theme);
-                this.activeTheme.set(theme);
+                this.theme.set(theme);
                 return;
             }
         }
 
         // Default
-        this.activeTheme.set(ThemeOption.LIGHT);
+        this.theme.set(ThemeOption.LIGHT);
         document.body.setAttribute("data-theme", 'lightMode');
     }
 }

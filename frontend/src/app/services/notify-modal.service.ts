@@ -1,20 +1,15 @@
-import { computed, effect, inject, Injectable, signal } from "@angular/core";
+import { computed, Injectable, signal } from "@angular/core";
 import { NotifyModalMessage } from "../utils/interfaces/notify-modal.interface";
-import { ObservationService } from "./observe.service";
 
 @Injectable({
     providedIn: 'root'
 })
 export class NotifyModalService {
 
-    private readonly observe = inject(ObservationService);
-
-    readonly notifications = signal<NotifyModalMessage[]>([]);
-    isActive = computed(() => this.notifications().length > 0);
-
-    constructor() {
-        effect(() => this.observe.activeModal.set(this.notifications().length > 0));
-    }
+    private readonly notifications = signal<NotifyModalMessage[]>([]);
+    private readonly hasMockNotification = signal(false);
+    readonly activeNotifications = computed(() => this.notifications());
+    readonly isActive = computed(() => this.notifications().length > 0 || this.hasMockNotification());
 
     notify(notification: NotifyModalMessage) {
         if(notification.autoClose && !notification.displayTimeInMilliseconds) {
@@ -24,7 +19,7 @@ export class NotifyModalService {
         const notificationExists = this.notifications().find((entry) => 
             entry.title === notification.title && entry?.text === notification?.text);
 
-        // Only add notifications that doesn't actively exist.
+        // Add only notifications that doesn't actively exist.
         if(!notificationExists) {
             if(notification.autoClose) {
                 notification.displayHandler = setTimeout(

@@ -1,11 +1,12 @@
-import { Component, effect, EffectCleanupRegisterFn, ElementRef, inject, input, OnDestroy, OnInit, output, signal, viewChild } from "@angular/core";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { afterNextRender, Component, computed, DestroyRef, ElementRef, inject, input, output, signal, viewChild } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { Project } from "../../../../utils/interfaces/work.interface";
 import { environment } from "../../../../../environments/environment";
 import { ScrollDownIndicatorComponent } from "../../indicator/scroll-down/scroll-down.indicator.component";
 import { IndicatorOption } from "../../../../utils/enums/indicator-option.enum";
-import { ObservationService } from "../../../../services/observe.service";
 import { BadgeComponent } from "../../badge/badge.component";
+import { ScrollIndicatorService } from "../../../../services/scroll-indicator.service";
 
 @Component({
     selector: 'app-workcard',
@@ -21,53 +22,65 @@ import { BadgeComponent } from "../../badge/badge.component";
         '(document:keydown.escape)': 'closeDetails()'
     }
 })
-export class WorkCardComponent implements OnInit, OnDestroy {
+export class WorkCardComponent {
 
-    private readonly observe = inject(ObservationService);
+    private readonly destroyRef = inject(DestroyRef);
+    private readonly scrollIndicator = inject(ScrollIndicatorService);
 
     readonly data = input.required<Project>();
-    readonly byChange = output<boolean>();
+    readonly closed = output<boolean>();
     private readonly contentWrapper = viewChild<ElementRef>('contentWrapper');
 
-    protected readonly isLoading = signal(true);
-    protected readonly scrolledToBottom = signal(false);
+    protected readonly hasOverflow = signal(false);
+    protected readonly isAtBottom = signal(false);
+    protected readonly showScrollIndicator = computed(() => this.hasOverflow() && !this.isAtBottom());
+
     protected readonly cdnUrlBase = environment.API_STORAGE_URL.trim();
     protected readonly IndicatorOptionEnum = IndicatorOption;
 
     constructor() {
-        effect((onCleanUp) => {
-            this.handleScrollDownIndicator(onCleanUp);
-        })
-    }
+        this.scrollIndicator.disableMainIndicator();
+        document.body.style.setProperty('overflow', 'hidden');
+        this.destroyRef.onDestroy(() => {
+            this.scrollIndicator.enableMainIndicator();
+            document.body.style.removeProperty('overflow');
+        });
 
-    ngOnInit() {
-        this.isLoading.set(false);
-        this.observe.activeModal.set(true);
-    }
-
-    private handleScrollDownIndicator(onCleanUp: EffectCleanupRegisterFn) {
-        const element = this.contentWrapper()?.nativeElement;
-        if(!element) {
-            return;
-        }
-
-        // Immediately set true when page is displayed in full height on big screen.
-        if(element.clientHeight === element.scrollHeight) {
-            this.scrolledToBottom.set(true);
-        }
-
-        const scrollHandler = () => {
-            const { scrollTop, scrollHeight, clientHeight } = element;
-            this.scrolledToBottom.set(Math.ceil(scrollTop) + clientHeight >= scrollHeight);
-        };
-        element.addEventListener('scroll', scrollHandler);
-        onCleanUp(() => {
-            element.removeEventListener('scroll', scrollHandler);
+        // afterNextRender => runs once AFTER rendering | effect => runs BEFORE rendering
+        afterNextRender({
+            read: () => this.observeScrollState()
         });
     }
 
+    private observeScrollState() {
+        const element = this.contentWrapper()?.nativeElement;
+
+        const update = () => {
+            const { scrollTop, scrollHeight, clientHeight } = element;
+            this.hasOverflow.set(scrollHeight - clientHeight > 1);
+            this.isAtBottom.set(Math.ceil(scrollTop) + clientHeight >= scrollHeight - 1);
+        };
+
+        // Key factor to include size of loading thumbnail at right time.
+        const resizeObserver = new ResizeObserver(update);
+
+        // Change in size of viewport/container.
+        resizeObserver.observe(element);
+
+        // Increase of content.
+        Array.from(element.children).forEach((child: any) => resizeObserver.observe(child));
+        element.addEventListener('scroll', update, { passive: true });
+
+        this.destroyRef.onDestroy(() => {
+            resizeObserver.disconnect();
+            element.removeEventListener('scroll', update);
+        });
+
+        update();
+    }
+
     closeDetails() {
-        this.byChange.emit(true);
+        this.closed.emit(true);
     }
 
     closeDetailsByOutsideTouch(event: MouseEvent) {
@@ -75,9 +88,5 @@ export class WorkCardComponent implements OnInit, OnDestroy {
         if(target.className === 'workcard-detail') {
             this.closeDetails();
         }
-    }
-
-    ngOnDestroy() {
-        this.observe.activeModal.set(false);
     }
 }

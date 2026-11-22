@@ -1,5 +1,5 @@
 # yqni13 | $\texttt{\color{blueviolet}{PORTFOLIO}}$
-### $\textsf{\color{brown}{v2.5.1}}$
+### $\textsf{\color{brown}{v2.5.6}}$
 
 <br>
 
@@ -89,6 +89,6 @@ ng lint
 ## 📈 $\textsf{\color{salmon}Updates}$
 [see changelog for all updates](./docs/CHANGELOG.md)
 
-$\textsf{[v2.4.7\ =>\ {\textbf{\color{brown}v2.5.1}]}}$ app
-- $\textsf{\color{teal}Addition:}$ Added app init animation (mosaic + logo).
-- $\textsf{\color{orange}Patch:}$ Updated device option setting into service and move from navbar to app component.
+$\textsf{[v2.5.4\ =>\ {\textbf{\color{brown}v2.5.6}]}}$ app
+- $\textsf{\color{orange}Patch:}$ Updated preload on work thumbnails to load on focus/select directly on preview element.
+- $\textsf{\color{red}Bugfix:}$ Work-Card component shows scroll-indicator as expected. [Before: Variying in timing and other conditions, scroll-indicator didn't show correctly when work-card modal was opened.]

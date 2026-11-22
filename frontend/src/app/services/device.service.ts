@@ -1,5 +1,4 @@
-import { inject, Injectable } from "@angular/core";
-import { ObservationService } from "./observe.service";
+import { computed, Injectable, signal } from "@angular/core";
 import { DeviceOption } from "../utils/enums/device-option.enum";
 import _ from "underscore";
 
@@ -8,7 +7,9 @@ import _ from "underscore";
 })
 export class DeviceService {
 
-    private readonly observe = inject(ObservationService);
+    private readonly device = signal<DeviceOption>(DeviceOption.MOBILE);
+    readonly activeDevice = computed(() => this.device());
+    readonly isMobile = computed(() => this.device() === DeviceOption.MOBILE)
 
     private readonly maxMobileScreenWidth = 1024;
     private window = document.defaultView;
@@ -25,10 +26,10 @@ export class DeviceService {
     private mapDeviceInfoByWidth(width: number) {
         if(width > this.maxMobileScreenWidth) {
             document.body.setAttribute("data-nav", 'desktopMode');
-            this.observe.activeDevice.set(DeviceOption.DESKTOP);
+            this.device.set(DeviceOption.DESKTOP);
         } else {
             document.body.setAttribute("data-nav", 'mobileMode');
-            this.observe.activeDevice.set(DeviceOption.MOBILE);
+            this.device.set(DeviceOption.MOBILE);
         }
     }
 
