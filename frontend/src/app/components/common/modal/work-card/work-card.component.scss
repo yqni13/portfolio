@@ -2,15 +2,17 @@
 
 
 .workcard-detail {
-    align-items: center;
-    z-index: 1000;
     position: fixed;
+    z-index: 1000;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    backdrop-filter: blur(3px);
+    align-items: center;
+    backdrop-filter: blur(7px);
+
     .workcard-detail-content {
+        z-index: 1000;
         $padding: sass.$space25;
         flex-direction: column;
         position: relative;
@@ -22,11 +24,24 @@
         border: 1px solid var(--theme-nav-grey);
         border-radius: 20px;
         padding: $padding;
-        background: var(--theme-component-gradient);
-
         margin-top: 0;
         max-height: calc(100vh - sass.$space100);
+
+        .workcard-bg {
+            position: absolute;
+            z-index: 999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--theme-work-card-bg);
+            background-size: cover;
+            background-position: center;
+            opacity: var(--theme-workcard-opacity);
+
+        }
         #workcard-detail-content-head {
+            z-index: 1001;
             flex-direction: row;
             align-items: center;
             padding-bottom: 20px;
@@ -42,6 +57,7 @@
                 margin-left: auto;
                 border: 1px solid var(--theme-nav-grey);
                 border-radius: 8px;
+                transition: transform 180ms ease-out;
                 cursor: pointer;
                 @media screen and (width > sass.$device-tablet-landscape) {
                     i:hover {
@@ -59,6 +75,7 @@
             }
         }
         .workcard-detail-content-wrapper {
+            z-index: 1001;
             flex-direction: column;
             padding-top: sass.$space25;
             overflow: scroll;
@@ -155,11 +172,10 @@
                 min-height: 50px; // "height" cuts off box-shadow
 
                 a {
-                    $padding-horizontal: 25px;
+                    $padding-horizontal: 24px;
                     $box-shadow-buffer: 15px;
                     $techstack-buffer: 3px;
                     border-radius: 10px;
-                    padding: 10px $padding-horizontal;
                     width: calc(100% - ($padding-horizontal * 2) - $box-shadow-buffer);
 
                     /* Overflow:scroll disturbs margin-bottom on last element which hides box-shadow on bottom of element => use position:absolute + top:number to place button for target visible effect */
@@ -192,6 +208,7 @@
 }
 app-scrolldown-indicator {
     position: absolute;
+    z-index: 1001;
     bottom: 40px;
     right: 35px;
 }

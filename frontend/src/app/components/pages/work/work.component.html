@@ -3,6 +3,8 @@
         class="workcard-preview"
         (click)="openDetails(data)"
         (keydown.enter)="openDetails(data)"
+        (focus)="preloadThumbnail(data.thumbnail)"
+        (pointerenter)="preloadThumbnail(data.thumbnail)"
         [tabindex]="0"
     >
         <span id="workcard-preview-type">{{data.type.stack}}</span>
@@ -50,7 +52,7 @@
         <span>View all projects on GitHub</span>
         <i class="icon-base icon-GoTo"></i>
     </a>
-    @if(cardDetails) {
-        <app-workcard [data]="cardDetails" (byChange)="closeDetails($event)"></app-workcard>
+    @if(cardDetails(); as details) {
+        <app-workcard [data]="details" (closed)="closeDetails($event)" [tabIndex]="0"></app-workcard>
     }
 </section>

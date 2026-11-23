@@ -1,10 +1,13 @@
-import { Component } from "@angular/core";
+import { Component, inject, signal } from "@angular/core";
 import { BaseComponent } from "../base.component";
 import { default as projectData } from "../../../data/work.json";
 import { Project } from "../../../utils/interfaces/work.interface";
 import { CommonModule } from "@angular/common";
 import { WorkCardComponent } from "../../common/modal/work-card/work-card.component";
 import { ProjectMandate } from "../../../utils/enums/work.enum";
+import { ResourceOption } from "../../../utils/enums/resource-option.enum";
+import { environment } from "../../../../environments/environment";
+import { PreloadService } from "../../../services/preload.service";
 
 @Component({
     selector: 'app-work',
@@ -20,8 +23,11 @@ import { ProjectMandate } from "../../../utils/enums/work.enum";
 })
 export class WorkComponent extends BaseComponent {
 
+    private readonly preload = inject(PreloadService);
+
+    protected readonly cardDetails = signal<Project | null>(null);
+
     protected allRepoLink = 'https://github.com/yqni13?tab=repositories';
-    protected cardDetails: Project | null = null;
     protected projects: Project[] = this.mapProjectData(projectData as unknown as Project[]);
 
     constructor() {
@@ -33,14 +39,12 @@ export class WorkComponent extends BaseComponent {
     }
 
     openDetails(data: Project) {
-        document.body.style.setProperty('overflow', 'hidden');
-        this.cardDetails = data;
+        this.cardDetails.set(data);
     }
 
     closeDetails(isClosing: boolean) {
         if(isClosing) {
-            this.cardDetails = null;
-            document.body.style.setProperty('overflow', 'auto');
+            this.cardDetails.set(null);
         }
     }
 
@@ -64,5 +68,12 @@ export class WorkComponent extends BaseComponent {
                 ...(project.links.live && { live: project.links.live })
             }
         }));
+    }
+
+    preloadThumbnail(path: string) {
+        this.preload.preloadSingle({
+            option: ResourceOption.IMG,
+            url: `${environment.API_STORAGE_URL}${path}`
+        });
     }
 }

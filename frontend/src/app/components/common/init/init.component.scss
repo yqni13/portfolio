@@ -1,0 +1,146 @@
+@use '../../../../stylesheets/utilities' as sass;
+@use 'sass:meta';
+@use 'sass:map';
+@use 'sass:list';
+
+/* Read and map variables from _utilities.scss (without '$' char). */
+$utils-map: meta.module-variables('sass');
+
+/* List all colors used for mosaic animation. */
+$colors: ();
+@for $r from 1 through 8 {
+    @for $c from 1 through 8 {
+        $key: 'color-init-r#{$r}-c#{$c}';
+        $colors: list.append($colors, map.get($utils-map, $key), comma);
+    }
+}
+
+
+section {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: sass.$init-animation-bg;
+    scroll-margin-top: 0;
+    z-index: 1001;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.mosaic-mobile {
+    --cell-size: 26px;
+    --cell-spacing: 3px;
+    --border-width: 1px;
+    --cells: 8;
+    --total-size: calc(var(--cells) * (var(--cell-size) + 2 * var(--cell-spacing)));
+    width: var(--total-size);
+    height: var(--total-size);
+}
+
+.mosaic-desktop {
+    --cell-size: 32px;
+    --cell-spacing: 4px;
+    --border-width: 1px;
+    --cells: 8;
+    --total-size: calc(var(--cells) * (var(--cell-size) + 2 * var(--cell-spacing)));
+    width: var(--total-size);
+    height: var(--total-size);
+}
+
+.mosaic-loader {
+    display: flex;
+    position: relative;
+    z-index: 1003;
+    flex-wrap: wrap;
+}
+
+.cell {
+    --cell-color: white;
+    flex: 0 0 var(--cell-size);
+    margin: var(--cell-spacing);
+    background-color: transparent;
+    box-sizing: border-box;
+}
+
+.animated-cell {
+    $base-delay: 50ms;
+    $base-animation: 750ms;
+    $factor: 2.25;
+    animation: calc($base-animation * $factor) ripple ease;
+
+    $delays: (2 * 8) - 2;
+    @for $i from 1 through $delays {
+        &.d-#{$i} {
+            animation-delay: $i * ($base-delay * $factor);
+        }
+    }
+
+    @for $i from 1 through list.length($colors) {
+        &:nth-child(#{$i}) {
+            --cell-color: #{list.nth($colors, $i)};
+        }
+    }
+}
+
+#init-logo {
+    position: absolute;
+    z-index: 1002;
+}
+
+.logo-animation-intro {
+    animation: revealFromLeft 1.125s cubic-bezier(0.1, 0.6, 0.7, 0.2) forwards;
+}
+
+$outroAnimation: 4.75s;
+
+.logo-animation-outro {
+    $logoShineDuration: 2.5s;
+    $logoDelay: $logoShineDuration;
+    $logoBuffer: 0.25s;
+    $logoVanishDuration: calc($outroAnimation - $logoBuffer - $logoDelay);
+    animation:
+        shine $logoShineDuration ease forwards,
+        vanish $logoVanishDuration ease-out $logoDelay forwards;
+}
+
+.bg-animation-outro {
+    $bgDelay: 2s;
+    $bgDuration: calc($outroAnimation - $bgDelay);
+    animation: bgShade $bgDuration linear $bgDelay forwards;
+}
+
+@keyframes ripple {
+    0% { background-color: transparent; }
+    30% { background-color: var(--cell-color); }
+    60% { background-color: transparent; }
+    100% { background-color: transparent; }
+}
+
+@keyframes revealFromLeft {
+    0% { clip-path: inset(0 100% 100% 0); }
+    50% { clip-path: inset(0 50% 50% 0); }
+    100% { clip-path: inset(0 0 0 0); }
+}
+
+@keyframes shine {
+    0% { filter: brigthness(1) }
+    75% { filter: brightness(2.5) }
+    100% { filter: brigthness(1.75) }
+}
+
+@keyframes vanish {
+    0% { opacity: 1; }
+    25% { opacity: .5; }
+    100% { opacity: 0; }
+}
+
+@keyframes bgShade {
+    0% { background-color: sass.$init-animation-bg; }
+    66% { background-color: var(--theme-body-bg); }
+    100% { background-color: transparent; }
+}
