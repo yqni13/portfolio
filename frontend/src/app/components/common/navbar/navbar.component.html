@@ -93,7 +93,7 @@
 @if(device.isMobile() && activeMobileMenu()) {
     <div class="navbar-mobile-menu roboto-custom-font">
         <app-background></app-background>
-        <div class="navbar-logo-mobile">
+        <div class="navbar-logo-mobile" [ngClass]="logoBrightness()">
             <img
                 src="{{logo}}"
                 alt="yqni13 logo"

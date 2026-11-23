@@ -3,6 +3,6 @@ export interface InitDelays {
     startLogo: number,
     startOutro: number,
     stopMosaic: number,
-    shineAnimation: number,
+    outroAnimation: number,
     total: number
 }

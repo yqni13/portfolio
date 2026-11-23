@@ -34,11 +34,10 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: var(--theme-component-gradient);
+            background: var(--theme-work-card-bg);
             background-size: cover;
             background-position: center;
             opacity: var(--theme-workcard-opacity);
-            filter: blur(1px) saturate(.8);
 
         }
         #workcard-detail-content-head {

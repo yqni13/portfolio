@@ -31,6 +31,9 @@ export class InitComponent implements OnInit {
     protected readonly logoTransition = computed(() =>
         this.isOutroActive() ? 'logo-animation-outro' : 'logo-animation-intro'
     );
+    protected readonly bgTransition = computed(() =>
+        this.isOutroActive() ? 'bg-animation-outro' : ''
+    );
 
     protected readonly logoPath = 'yqni13_logo.webp';
     protected readonly matrix: Record<string, number> = { levels: 8, cells: 8 };

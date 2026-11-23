@@ -18,8 +18,11 @@ $color-darkmode-secondary: #723a88;
 $color-lightmode-bg: #fff4e2;
 $color-darkmode-bg: #0d101b;
 
+$init-animation-bg: black; /* Init animation use only. */
+
 $color-ice-white: #f0f8ff;
 $color-warm-white: #fff4e2;
+$color-sand-white: #D8CBB3;
 $color-rich-black: #020d19;
 $color-deep-blue: #011222;
 $color-special-blue: #0f1320;
@@ -42,9 +45,6 @@ $color-darkmode-comp-grey: #1d2029;
 
 $color-lightmode-grey: #818283;
 $color-darkmode-grey: #5e5f63;
-
-$color-lightmode-gradient-comp: repeating-linear-gradient(45deg, #fff4e2 0px, #fff4e2 10px, #a13b27 10px, #a13b27 11px, #fff4e2 11px, #fff4e2 20px, #df9d6d 20px, #df9d6d 21px);
-$color-darkmode-gradient-comp: linear-gradient(32deg, rgba(29, 32, 41, .8) 40%, rgba(49, 49, 49, 0.9) 100%);
 
 
 /* MODE COLORS */
@@ -76,7 +76,7 @@ $pattern-darkmode-ripple:
     repeating-radial-gradient(circle at 0 0, transparent 0, $color-darkmode-bg 2px),
     repeating-linear-gradient($color-darkmode-primary, $color-darkmode-grey);
 
-$init-animation-bg: radial-gradient(circle,rgba(0, 0, 0, 1) 0%, rgb(9, 9, 10) 65%, rgba(20, 21, 28, 1) 100%);
+$color-darkmode-workcard: linear-gradient(32deg, rgba(29, 32, 41, .8) 40%, rgba(49, 49, 49, 0.9) 100%);
 
 
 /* CUSTOM SIZES */

@@ -2,8 +2,10 @@
 
 ### $\textsf{\color{skyblue}2026/11/23}$
 
-$\textsf{[v2.5.6\ =>\ {\textbf{\color{brown}v2.5.7}]}}$ app
-- $\textsf{\color{orange}Patch:}$ Updated timing of setting background color regarding selected theme.
+$\textsf{[v2.5.6\ =>\ {\textbf{\color{brown}v2.5.8}]}}$ app
+- $\textsf{\color{orange}Patch:}$ Updated:
+  + init component animation background color (from gradient to pure color)
+  + init component outro animation timing
 
 <br>
 
