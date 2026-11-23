@@ -1,4 +1,4 @@
-import { afterNextRender, Component, inject, OnInit, signal } from '@angular/core';
+import { afterNextRender, Component, computed, inject, OnInit, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Navbar } from './components/common/navbar/navbar.component';
 import { Footer } from './components/common/footer/footer.component';
@@ -15,15 +15,21 @@ import { BackgroundComponent } from './components/common/background/background.c
 import { ScrollDownIndicatorComponent } from './components/common/indicator/scroll-down/scroll-down.indicator.component';
 import { NavigationService } from './services/navigation.service';
 import { IndicatorOption } from './utils/enums/indicator-option.enum';
-import { ObservationService } from './services/observe.service';
 import { PreloadService } from './services/preload.service';
 import { ResourceOption } from './utils/enums/resource-option.enum';
+import { PreloadData } from './utils/interfaces/preload.interface';
+import { environment } from '../environments/environment';
+import { InitComponent } from './components/common/init/init.component';
+import { DeviceService } from './services/device.service';
+import { ScrollIndicatorService } from './services/scroll-indicator.service';
+import { InitService } from './services/init.service';
 
 @Component({
 	selector: 'app-root',
 	templateUrl: './app.html',
 	styleUrl: './app.scss',
 	imports: [
+		InitComponent,
 		BackgroundComponent,
 		CommonModule,
 		Navbar,
@@ -41,14 +47,21 @@ import { ResourceOption } from './utils/enums/resource-option.enum';
 })
 export class App implements OnInit {
 
+	private readonly init = inject(InitService);
+	private readonly device = inject(DeviceService);
 	private readonly preload = inject(PreloadService);
 	private readonly navigation = inject(NavigationService);
-	protected readonly observe = inject(ObservationService);
-	protected readonly notifyModal = inject(NotifyModalService);
+	protected readonly modal = inject(NotifyModalService);
+	protected readonly scrollIndicator = inject(ScrollIndicatorService);
 
 	protected readonly title = signal('portfolio');
 	protected readonly scrolledToBottom = signal(false);
+	protected readonly isInitialized = signal(false);
+	protected readonly isDevEnv = computed(() => environment.ENV_MODE === 'development');
+
 	protected readonly IndicatorOptionEnum = IndicatorOption;
+
+	private delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 	constructor() {
 		afterNextRender(() => {
@@ -56,11 +69,16 @@ export class App implements OnInit {
 		})
 	}
 
-	ngOnInit() {
-		this.preload.preloadSingle({
-			option: ResourceOption.IMG,
-			url: '/assets/img/lightmode_bg.webp'
-		});
+	async ngOnInit() {
+		this.device.setDeviceInfo();
+
+		const images: PreloadData[] = this.mapImagesToPreload();
+		this.preload.preloadMultiple(images);
+
+		if (!this.isDevEnv()) {
+			await this.delay(this.init.delays.total);
+			this.closeInitAnimation();
+		}
 	}
 
 	private handleScrollDownIndicator() {
@@ -72,5 +90,18 @@ export class App implements OnInit {
 
 		window.addEventListener('scroll', scrollHandler, { passive: true });
 		// No cleanup/destroyref necessary as root component does not get destroyed.
+	}
+
+	private mapImagesToPreload(): PreloadData[] {
+		const preloadData: PreloadData[] = [];
+		preloadData.push({
+			option: ResourceOption.IMG, url: 'yqni13_logo.webp'
+		});
+
+		return preloadData;
+	}
+
+	private closeInitAnimation() {
+		this.isInitialized.set(true);
 	}
 }
