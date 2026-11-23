@@ -18,7 +18,7 @@ html {
 
 body {
     color: var(--theme-body-text);
-    background: var(--theme-body-bg);
+    background: sass.$init-animation-bg;
     background-attachment: fixed;
     background-repeat: no-repeat;
     width: 100vw;

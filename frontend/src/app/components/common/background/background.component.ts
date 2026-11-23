@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, inject } from "@angular/core";
+import { Component, inject, OnInit } from "@angular/core";
 import { ThemeOption } from "../../../utils/enums/theme-option.enum";
 import { ThemeHandlerService } from "../../../services/theme.service";
 
@@ -11,9 +11,13 @@ import { ThemeHandlerService } from "../../../services/theme.service";
     templateUrl: './background.component.html',
     styleUrl: './background.component.scss',
 })
-export class BackgroundComponent {
+export class BackgroundComponent implements OnInit {
 
     protected readonly themeHandler = inject(ThemeHandlerService);
 
     protected readonly ThemeOptionEnum = ThemeOption;
+
+    ngOnInit() {
+        document.body.style.setProperty('background', 'var(--theme-body-bg)');
+    }
 }
