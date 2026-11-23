@@ -27,14 +27,14 @@
     --theme-yqni13-pink: #{sass.$yqni13-lightmode-pink};
     --theme-grey: #{sass.$color-lightmode-grey};
     --theme-component: #{sass.$color-lightmode-comp-grey};
-    --theme-component-gradient: #{sass.$color-lightmode-gradient-comp};
+    --theme-work-card-bg: #{sass.$color-sand-white};
     --theme-toggle: #{sass.$color-lightmode-grey};
     --theme-toggle-slider: #{sass.$pattern-lightmode-ripple};
     --theme-signature: #{sass.$signature-black};
     --theme-loader1: #{sass.$color-lightmode-primary};
     --theme-loader2: #{sass.$color-loader-teal};
     --theme-loader3: #{sass.$color-loader-blue};
-    --theme-workcard-opacity: #{.175};
+    --theme-workcard-opacity: #{.3};
 }
 
 [data-theme='darkMode'] {
@@ -53,7 +53,7 @@
     --theme-yqni13-pink: #{sass.$yqni13-darkmode-pink};
     --theme-grey: #{sass.$color-darkmode-grey};
     --theme-component: #{sass.$color-darkmode-comp-grey};
-    --theme-component-gradient: #{sass.$color-darkmode-gradient-comp};
+    --theme-work-card-bg: #{sass.$color-darkmode-workcard};
     --theme-toggle: #{sass.$color-light-grey};
     --theme-toggle-slider: #{sass.$pattern-darkmode-ripple};
     --theme-signature: #{sass.$signature-white};

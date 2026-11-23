@@ -11,7 +11,7 @@ export class InitService {
         startLogo: 500,
         stopMosaic: 2000,
         startOutro: 250,
-        shineAnimation: 3000,
+        outroAnimation: 4750,
         total: 0
     };
 
@@ -25,6 +25,6 @@ export class InitService {
             sum += val;
         });
 
-        this.delays.total = sum - 100;
+        this.delays.total = sum;
     }
 }

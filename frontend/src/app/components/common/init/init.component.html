@@ -1,4 +1,4 @@
-<section>
+<section [ngClass]="bgTransition()">
     @if (isMosaicActive()) {
         <div class="mosaic-loader" [ngClass]="mosaicSize()">
             @for (level of [].constructor(matrix['levels']); track $index; let i = $index) {

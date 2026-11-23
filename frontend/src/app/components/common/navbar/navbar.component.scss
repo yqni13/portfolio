@@ -61,6 +61,12 @@ nav {
         max-height: 200px;
         margin-bottom: 15px;
     }
+    .brightness-darkmode-logo {
+        filter: brightness(1.5);
+    }
+    .brightness-lightmode-logo {
+        filter: brightness(2);
+    }
     .navbar-btn-wrapper {
         z-index: 999;
         flex-direction: row;

@@ -25,7 +25,7 @@
             {
                 "icon": "icon-CSS3",
                 "name": "CSS3",
-                "link": "https://developer.mozilla.org/en-US/docs/Web/CSS?retiredLocale=de"
+                "link": "https://developer.mozilla.org/en-US/docs/Web/CSS"
             },
             {
                 "icon": "icon-Sass",
@@ -106,23 +106,23 @@
             {
                 "icon": "icon-Netlify",
                 "name": "Netlify",
-                "link": "https://github.com/"
+                "link": "https://www.netlify.com/"
             },
             {
                 "icon": "icon-Vercel",
                 "name": "Vercel",
-                "link": "https://github.com/"
+                "link": "https://vercel.com/"
             },
             {
                 "icon": "icon-Render",
                 "name": "Render",
-                "link": "https://github.com/",
+                "link": "https://render.com/",
                 "customStyle": true
             },
             {
                 "icon": "icon-Neon",
                 "name": "Neon",
-                "link": "https://github.com/"
+                "link": "https://neon.com/"
             },
             {
                 "icon": "icon-Cloudflare",
@@ -158,6 +158,11 @@
                 "icon": "icon-Postman",
                 "name": "Postman",
                 "link": "https://www.postman.com/"
+            },
+            {
+                "icon": "icon-Bruno",
+                "name": "Bruno",
+                "link": "https://www.usebruno.com/"
             },
             {
                 "icon": "icon-Betterstack",
@@ -211,6 +216,11 @@
         "title": "Comfortable with",
         "skills": [
             {
+                "icon": "icon-Linux",
+                "name": "Linux",
+                "link": "https://www.linux.org/pages/download/"
+            },
+            {
                 "icon": "icon-GitLab",
                 "name": "GitLab",
                 "link": "https://about.gitlab.com/"
@@ -234,11 +244,6 @@
                 "icon": "icon-Leaflet",
                 "name": "Leaflet",
                 "link": "https://leafletjs.com"
-            },
-            {
-                "icon": "icon-Linux",
-                "name": "Linux",
-                "link": "https://www.linux.org/pages/download/"
             },
             {
                 "icon": "icon-MSQLServer",

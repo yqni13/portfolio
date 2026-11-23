@@ -20,8 +20,6 @@ import { ResourceOption } from './utils/enums/resource-option.enum';
 import { PreloadData } from './utils/interfaces/preload.interface';
 import { environment } from '../environments/environment';
 import { InitComponent } from './components/common/init/init.component';
-import { TransitionService } from './services/transition.service';
-import { EasingFnOption } from './utils/enums/easing-fn.enum';
 import { DeviceService } from './services/device.service';
 import { ScrollIndicatorService } from './services/scroll-indicator.service';
 import { InitService } from './services/init.service';
@@ -53,7 +51,6 @@ export class App implements OnInit {
 	private readonly device = inject(DeviceService);
 	private readonly preload = inject(PreloadService);
 	private readonly navigation = inject(NavigationService);
-	private readonly transition = inject(TransitionService);
 	protected readonly modal = inject(NotifyModalService);
 	protected readonly scrollIndicator = inject(ScrollIndicatorService);
 
@@ -105,17 +102,6 @@ export class App implements OnInit {
 	}
 
 	private closeInitAnimation() {
-		const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
-		if (!document.startViewTransition || reduceMotion) {
-			this.isInitialized.set(true);
-			return;
-		}
-
-		this.transition.applyRippleEffect({
-			trigger: document.getElementById('init-logo') as HTMLElement,
-			fn: () => this.isInitialized.set(true),
-			duration: 5000,
-			easing: EasingFnOption.EASE_IN_OUT
-		});
+		this.isInitialized.set(true);
 	}
 }
