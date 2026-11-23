@@ -25,6 +25,6 @@ export class InitService {
             sum += val;
         });
 
-        this.delays.total = sum;
+        this.delays.total = sum - 100;
     }
 }
