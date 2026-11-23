@@ -1,8 +1,15 @@
 ## 📜 $\textsf{\color{salmon}{List\ of\ updates}}$
 
+### $\textsf{\color{skyblue}2026/11/23}$
+
+$\textsf{[v2.5.6\ =>\ {\textbf{\color{brown}v2.5.7}]}}$ app
+- $\textsf{\color{orange}Patch:}$ Updated timing of setting background color regarding selected theme.
+
+<br>
+
 ### $\textsf{\color{skyblue}2026/11/21}$
 
-$\textsf{[v2.5.4\ =>\ {\textbf{\color{brown}v2.5.6}]}}$ app
+$\textsf{[v2.5.4\ =>\ v2.5.6]}$ app
 - $\textsf{\color{orange}Patch:}$ Updated preload on work thumbnails to load on focus/select directly on preview element.
 - $\textsf{\color{red}Bugfix:}$ Work-Card component shows scroll-indicator as expected. [Before: Variying in timing and other conditions, scroll-indicator didn't show correctly when work-card modal was opened.]
 
