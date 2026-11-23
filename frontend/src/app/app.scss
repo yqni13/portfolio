@@ -13,13 +13,15 @@
     backdrop-filter: contrast(0.7) blur(6px);
 }
 
-main {
-    position: relative;
-}
-
 app-navbar {
     position: relative;
     z-index: 999;
+}
+
+app-background {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
 }
 
 app-scrolldown-indicator {

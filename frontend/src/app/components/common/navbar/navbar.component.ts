@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, inject, OnDestroy, OnInit, signal, viewChild } from "@angular/core";
+import { AfterViewInit, Component, computed, ElementRef, inject, OnDestroy, OnInit, signal, viewChild } from "@angular/core";
 import { ThemeOption } from "../../../utils/enums/theme-option.enum";
 import { ThemeHandlerService } from "../../../services/theme.service";
 import { DeviceOption } from "../../../utils/enums/device-option.enum";
@@ -34,6 +34,9 @@ export class Navbar implements OnInit, AfterViewInit, OnDestroy {
 
     activeMenu = this.navigate.activeSection$;
     protected readonly activeMobileMenu = signal(false);
+    protected readonly logoBrightness = computed(() =>
+        this.theme.isDarkMode() ? 'brightness-darkmode-logo' : 'brightness-lightmode-logo'
+    );
 
     protected readonly ThemeOptionEnum = ThemeOption;
     protected readonly DeviceOptionEnum = DeviceOption;

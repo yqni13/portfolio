@@ -1,6 +1,7 @@
 @use '../../../../stylesheets/utilities' as sass;
 @use 'sass:meta';
 @use 'sass:map';
+@use 'sass:list';
 
 /* Read and map variables from _utilities.scss (without '$' char). */
 $utils-map: meta.module-variables('sass');
@@ -10,7 +11,7 @@ $colors: ();
 @for $r from 1 through 8 {
     @for $c from 1 through 8 {
         $key: 'color-init-r#{$r}-c#{$c}';
-        $colors: append($colors, map.get($utils-map, $key), comma);
+        $colors: list.append($colors, map.get($utils-map, $key), comma);
     }
 }
 
@@ -22,7 +23,7 @@ section {
     position: fixed;
     top: 0;
     left: 0;
-    background: sass.$init-animation-bg;
+    background-color: sass.$init-animation-bg;
     scroll-margin-top: 0;
     z-index: 1001;
     margin: 0;
@@ -79,9 +80,9 @@ section {
         }
     }
 
-    @for $i from 1 through length($colors) {
+    @for $i from 1 through list.length($colors) {
         &:nth-child(#{$i}) {
-            --cell-color: #{nth($colors, $i)};
+            --cell-color: #{list.nth($colors, $i)};
         }
     }
 }
@@ -95,8 +96,22 @@ section {
     animation: revealFromLeft 1.125s cubic-bezier(0.1, 0.6, 0.7, 0.2) forwards;
 }
 
+$outroAnimation: 4.75s;
+
 .logo-animation-outro {
-    animation: shine 3s ease forwards;
+    $logoShineDuration: 2.5s;
+    $logoDelay: $logoShineDuration;
+    $logoBuffer: 0.25s;
+    $logoVanishDuration: calc($outroAnimation - $logoBuffer - $logoDelay);
+    animation:
+        shine $logoShineDuration ease forwards,
+        vanish $logoVanishDuration ease-out $logoDelay forwards;
+}
+
+.bg-animation-outro {
+    $bgDelay: 2s;
+    $bgDuration: calc($outroAnimation - $bgDelay);
+    animation: bgShade $bgDuration linear $bgDelay forwards;
 }
 
 @keyframes ripple {
@@ -114,6 +129,18 @@ section {
 
 @keyframes shine {
     0% { filter: brigthness(1) }
-    50% { filter: brightness(2.5) }
-    100% { filter: brigthness(1) }
+    75% { filter: brightness(2.5) }
+    100% { filter: brigthness(1.75) }
+}
+
+@keyframes vanish {
+    0% { opacity: 1; }
+    25% { opacity: .5; }
+    100% { opacity: 0; }
+}
+
+@keyframes bgShade {
+    0% { background-color: sass.$init-animation-bg; }
+    66% { background-color: var(--theme-body-bg); }
+    100% { background-color: transparent; }
 }
