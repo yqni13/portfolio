@@ -6,7 +6,7 @@ import { InitService } from "../../../services/init.service";
 @Component({
     selector: 'app-init',
     imports: [
-        CommonModule,
+        CommonModule
     ],
     templateUrl: './init.component.html',
     styleUrl: './init.component.scss'
@@ -29,10 +29,10 @@ export class InitComponent implements OnInit {
             : { 'width': '256px', 'height': '256px' }
     );
     protected readonly logoTransition = computed(() =>
-        this.isOutroActive() ? 'logo-animation-outro' : 'logo-animation-intro'
+        this.isOutroActive() ? 'logo-outro-animation' : 'logo-intro-animation'
     );
     protected readonly bgTransition = computed(() =>
-        this.isOutroActive() ? 'bg-animation-outro' : ''
+        this.isOutroActive() ? 'bg-outro-animation' : ''
     );
 
     protected readonly logoPath = 'yqni13_logo.webp';

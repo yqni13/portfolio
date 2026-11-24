@@ -7,11 +7,11 @@ import { InitDelays } from "../utils/interfaces/init.interface";
 export class InitService {
 
     readonly delays: InitDelays = {
-        startMosaic: 750,
+        startMosaic: 500,
         startLogo: 500,
         stopMosaic: 2000,
         startOutro: 250,
-        outroAnimation: 4750,
+        outroAnimation: 4000,
         total: 0
     };
 
