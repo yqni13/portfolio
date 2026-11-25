@@ -4,5 +4,6 @@ export const environment: Environment = {
     ENV_MODE: '',
     NOTIFY_ADMIN_ID: '',
     NOTIFY_BOT_KEY: '',
-    API_STORAGE_URL: ''
+    API_STORAGE_URL: '',
+    API_CONTRIBUTION_URL: ''
 }
