@@ -1,0 +1,21 @@
+{{'length: ' + data().annual[0].data.length}} <!-- TODO: yqni13, remove -->
+<div class="contribution-wrapper">
+    <div class="contribution-bg"></div>
+    <div class="contribution-chart">
+        @for (day of data().annual[0].data; track $index) {
+            <div class="cell" [ngClass]="'level' + (day.level)"></div>
+        }
+    </div>
+    <div class="chart-legend">
+        <p id="contribution-info">
+            {{data().annual[0].total}} contributions in the last year
+        </p>
+        <div id="cell-info">
+            <span>Less</span>
+            @for (cell of [].constructor(5); track $index; let i = $index) {
+                <div class="cell" [ngClass]="'level' + i"></div>
+            }
+            <span>More</span>
+        </div>
+    </div>
+</div>

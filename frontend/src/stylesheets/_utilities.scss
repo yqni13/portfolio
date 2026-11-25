@@ -60,6 +60,18 @@ $color-darkmode-warning: #b17a0b;
 $color-lightmode-success: #0ba56f;
 $color-darkmode-success: #118b17;
 
+$color-lightmode-contribution0: $color-sand-white;
+$color-lightmode-contribution1: #ebb690;
+$color-lightmode-contribution2: #e69257;
+$color-lightmode-contribution3: #e6684e;
+$color-lightmode-contribution4: #cf2e0d;
+
+$color-darkmode-contribution0: $color-darkmode-bg;
+$color-darkmode-contribution1: #5f1e34;
+$color-darkmode-contribution2: #942f53;
+$color-darkmode-contribution3: #b3184e;
+$color-darkmode-contribution4: #fc1f6c;
+
 
 /* GRADIENT COLORS */
 $yqni13-lightmode-gradient: linear-gradient(160deg, $color-lightmode-primary, $color-lightmode-secondary 100%);

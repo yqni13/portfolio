@@ -34,6 +34,11 @@
     --theme-loader1: #{sass.$color-lightmode-primary};
     --theme-loader2: #{sass.$color-loader-teal};
     --theme-loader3: #{sass.$color-loader-blue};
+    --theme-contribution-level0: #{sass.$color-lightmode-contribution0};
+    --theme-contribution-level1: #{sass.$color-lightmode-contribution1};
+    --theme-contribution-level2: #{sass.$color-lightmode-contribution2};
+    --theme-contribution-level3: #{sass.$color-lightmode-contribution3};
+    --theme-contribution-level4: #{sass.$color-lightmode-contribution4};
     --theme-workcard-opacity: #{.3};
 }
 
@@ -60,5 +65,10 @@
     --theme-loader1: #{sass.$yqni13-darkmode-pink};
     --theme-loader2: #{sass.$yqni13-lightmode-purple};
     --theme-loader3: #{sass.$yqni13-darkmode-purple};
+    --theme-contribution-level0: #{sass.$color-darkmode-contribution0};
+    --theme-contribution-level1: #{sass.$color-darkmode-contribution1};
+    --theme-contribution-level2: #{sass.$color-darkmode-contribution2};
+    --theme-contribution-level3: #{sass.$color-darkmode-contribution3};
+    --theme-contribution-level4: #{sass.$color-darkmode-contribution4};
     --theme-workcard-opacity: #{1};
 }

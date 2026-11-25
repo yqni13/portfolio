@@ -55,4 +55,8 @@
     @if(cardDetails(); as details) {
         <app-workcard [data]="details" (closed)="closeDetails($event)" [tabIndex]="0"></app-workcard>
     }
+
+    <div class="contribution-chart-wrapper">
+        <app-contribution [data]="contributionData()" [isLoaded]="isContributionLoaded()"></app-contribution>
+    </div>
 </section>

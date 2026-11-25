@@ -1,4 +1,4 @@
-import { Component, inject, signal } from "@angular/core";
+import { Component, inject, OnInit, signal } from "@angular/core";
 import { BaseComponent } from "../base.component";
 import { default as projectData } from "../../../data/work.json";
 import { Project } from "../../../utils/interfaces/work.interface";
@@ -8,11 +8,16 @@ import { ProjectMandate } from "../../../utils/enums/work.enum";
 import { ResourceOption } from "../../../utils/enums/resource-option.enum";
 import { environment } from "../../../../environments/environment";
 import { PreloadService } from "../../../services/preload.service";
+import { GitHubApiService } from "../../../api/services/github.api.service";
+import { default as githubData } from "../../../data/contribution-demo.json";
+import { ExtendedContributionData } from "../../../api/interfaces/github.api.interface";
+import { ContributionComponent } from "../../common/contribution/contribution.component";
 
 @Component({
     selector: 'app-work',
     imports: [
         CommonModule,
+        ContributionComponent,
         WorkCardComponent
     ],
     templateUrl: './work.component.html',
@@ -21,11 +26,14 @@ import { PreloadService } from "../../../services/preload.service";
         '(window:click)': 'preventOpenDetails($event)'
     }
 })
-export class WorkComponent extends BaseComponent {
+export class WorkComponent extends BaseComponent implements OnInit {
 
     private readonly preload = inject(PreloadService);
+    private readonly github = inject(GitHubApiService);
 
     protected readonly cardDetails = signal<Project | null>(null);
+    protected readonly contributionData = signal<ExtendedContributionData>(this.github.mapContributionData(githubData));
+    protected readonly isContributionLoaded = signal(false);
 
     protected allRepoLink = 'https://github.com/yqni13?tab=repositories';
     protected projects: Project[] = this.mapProjectData(projectData as unknown as Project[]);
@@ -36,6 +44,11 @@ export class WorkComponent extends BaseComponent {
             title: 'Selected Work',
             subTitle: 'High-impact applications built with precision and care.'
         }
+    }
+
+    ngOnInit() {
+        // TODO: yqni13, remove dummy data and add api load
+        this.isContributionLoaded.set(true);
     }
 
     openDetails(data: Project) {
