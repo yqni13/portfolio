@@ -28,8 +28,8 @@ $\textsf{[v2.5.3\ =>\ v2.5.4]}$ app
 
 $\textsf{[v2.5.1\ =>\ v2.5.3]}$ app
 - $\textsf{\color{orange}Patch:}$ Updated
-    + experience (certificate) toggle button background pattern
-    + work-card background in light-mode
+  + experience (certificate) toggle button background pattern
+  + work-card background in light-mode
 
 <br>
 
@@ -45,9 +45,9 @@ $\textsf{[v2.4.7\ =>\ v2.5.1]}$ app
 
 $\textsf{[v2.4.4\ =>\ v2.4.7]}$ app
 - $\textsf{\color{orange}Patch:}$ Updated
-    + preload of work-card thumbnails on app-start instead of modal opening
-    + consistent button sizing (hero, mobile, desktop)
-    + transitions on button actions
+  + preload of work-card thumbnails on app-start instead of modal opening
+  + consistent button sizing (hero, mobile, desktop)
+  + transitions on button actions
 
 <br>
 
@@ -55,9 +55,9 @@ $\textsf{[v2.4.4\ =>\ v2.4.7]}$ app
 
 $\textsf{[v2.4.1\ =>\ v2.4.4]}$ app
 - $\textsf{\color{orange}Patch:}$ Updated
-    + background in light-mode to use image instead of color-only
-    + footer to display link for author of background-image in use
-    + Angular version (within v22) & dependency vulnerabilities
+  + background in light-mode to use image instead of color-only
+  + footer to display link for author of background-image in use
+  + Angular version (within v22) & dependency vulnerabilities
 
 <br>
 

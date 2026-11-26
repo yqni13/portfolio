@@ -64,6 +64,10 @@
                 max-width: 350px;
             }
         }
+        .contribution-chart-wrapper {
+            width: fit-content;
+            max-width: none;
+        }
     }
     .workcard-detail {
         .workcard-detail-header {
@@ -149,6 +153,37 @@
             margin: -100px -100px 0 0;
         }
     }
+    .contribution-wrapper {
+        $cell-size: 12.5px;
+        thead {
+            font-size: 0.825rem;
+            th {
+                padding-bottom: 5px;
+                text-align: left;
+                white-space: nowrap;
+            }
+        }
+        .cell,
+        .cell-empty {
+            width: $cell-size;
+            min-width: $cell-size;
+            height: $cell-size;
+        }
+        .chart-legend {
+            flex-direction: row;
+            font-size: 0.875rem;
+            margin-top: 8px;
+            #contribution-info {
+                width: auto;
+                margin: 0;
+            }
+            #cell-info {
+                width: auto;
+                justify-content: end;
+                margin: 0 0 0 auto;
+            }
+        }
+    }
     .footer-darkmode { height: 150px }
     .footer-lightmode { height: 175px }
     footer {
@@ -214,6 +249,10 @@
                 height: 350px;
                 max-width: 275px;
             }
+        }
+        .contribution-chart-wrapper {
+            width: fit-content;
+            max-width: none;
         }
     }
     .workcard-detail {
@@ -300,6 +339,37 @@
             margin: -85px -85px 0 0;
         }
     }
+    .contribution-wrapper {
+        $cell-size: 12.5px;
+        thead {
+            font-size: 0.825rem;
+            th {
+                padding-bottom: 5px;
+                text-align: left;
+                white-space: nowrap;
+            }
+        }
+        .cell,
+        .cell-empty {
+            width: $cell-size;
+            min-width: $cell-size;
+            height: $cell-size;
+        }
+        .chart-legend {
+            flex-direction: row;
+            font-size: 0.875rem;
+            margin-top: 5px;
+            #contribution-info {
+                width: auto;
+                margin: 0;
+            }
+            #cell-info {
+                width: auto;
+                justify-content: end;
+                margin: 0 0 0 auto;
+            }
+        }
+    }
     .footer-darkmode { height: 150px }
     .footer-lightmode { height: 175px }
     footer {
@@ -335,6 +405,9 @@
                 height: 325px;
                 max-width: 250px;
             }
+        }
+        .contribution-chart-wrapper {
+            max-width: 80vw;
         }
     }
     .badge {
@@ -464,6 +537,10 @@
                 max-width: 400px;
             }
         }
+        .contribution-chart-wrapper {
+            width: 100%;
+            max-width: none;
+        }
     }
     .workcard-detail {
         .workcard-detail-header {
@@ -575,6 +652,32 @@
     .background-lightmode {
         .sun {
             margin: -40px -40px 0 0;
+        }
+    }
+    .contribution-wrapper {
+        $cell-size: 10px;
+        thead {
+            font-size: 0.75rem;
+        }
+        .cell,
+        .cell-empty {
+            width: $cell-size;
+            min-width: $cell-size;
+            height: $cell-size;
+        }
+        .chart-legend {
+            flex-direction: column;
+            font-size: 0.75rem;
+            margin-top: 0;
+            #contribution-info {
+                width: 100%;
+                margin: 5px 0 0 0;
+            }
+            #cell-info {
+                width: 100%;
+                justify-content: end;
+                margin: 7.5px 0 0 0;
+            }
         }
     }
     .footer-darkmode { height: 120px }

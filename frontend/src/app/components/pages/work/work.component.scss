@@ -27,7 +27,12 @@
         }
     }
     .contribution-chart-wrapper {
-        margin-top: 50px; /* TODO: yqni13, needs responsive setting */
+        margin-top: 50px;
+        min-width: 0;
+        justify-content: center;
+        app-contribution {
+            width: 100%;
+        }
     }
 }
 

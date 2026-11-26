@@ -1,10 +1,35 @@
 {{'length: ' + data().annual[0].data.length}} <!-- TODO: yqni13, remove -->
 <div class="contribution-wrapper">
     <div class="contribution-bg"></div>
-    <div class="contribution-chart">
-        @for (day of data().annual[0].data; track $index) {
-            <div class="cell" [ngClass]="'level' + (day.level)"></div>
-        }
+    <div class="contribution-chart scrollbar-target scrollbar-horizontal-target">
+        <table>
+            <thead>
+                <tr class="chart-head">
+                    @for (header of monthHeaders(); track header.month) {
+                        <th [attr.colspan]="header.colspan">
+                            {{dt.monthNameShort[header.month]}}
+                        </th>
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                @for (row of rows(); track $index; let weekday = $index) {
+                    <tr>
+                        @for (day of row; track $index) {
+                            @if (day) {
+                                <td class="cell contribution-tooltip" [ngClass]="'level' + day.level">
+                                    <span class="cell-tooltip">
+                                        {{mapTooltipInfo(day.count, day.date)}}
+                                    </span>
+                                </td>
+                            } @else {
+                                <td class="cell-empty contribution-tooltip"></td>
+                            }
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
     </div>
     <div class="chart-legend">
         <p id="contribution-info">

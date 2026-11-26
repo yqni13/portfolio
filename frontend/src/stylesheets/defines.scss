@@ -30,6 +30,8 @@
     --theme-work-card-bg: #{sass.$color-sand-white};
     --theme-toggle: #{sass.$color-lightmode-grey};
     --theme-toggle-slider: #{sass.$pattern-lightmode-ripple};
+    --theme-scrollbar-thumb: #{sass.$color-sand-white};
+    --theme-tooltip-bg: #{sass.$color-loader-teal};
     --theme-signature: #{sass.$signature-black};
     --theme-loader1: #{sass.$color-lightmode-primary};
     --theme-loader2: #{sass.$color-loader-teal};
@@ -61,6 +63,8 @@
     --theme-work-card-bg: #{sass.$color-darkmode-workcard};
     --theme-toggle: #{sass.$color-light-grey};
     --theme-toggle-slider: #{sass.$pattern-darkmode-ripple};
+    --theme-scrollbar-thumb: #{sass.$color-darkmode-grey};
+    --theme-tooltip-bg: #{sass.$color-loader-blue};
     --theme-signature: #{sass.$signature-white};
     --theme-loader1: #{sass.$yqni13-darkmode-pink};
     --theme-loader2: #{sass.$yqni13-lightmode-purple};

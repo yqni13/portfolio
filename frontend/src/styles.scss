@@ -183,3 +183,18 @@ h3 {
         }
     }
 }
+
+.scrollbar-horizontal-target::-webkit-scrollbar {
+    height: 5px;
+}
+.scrollbar-vertical-target::-webkit-scrollbar {
+    width: 5px;
+}
+
+.scrollbar-target::-webkit-scrollbar-track {
+    background: var(--theme-body-bg);
+}
+.scrollbar-target::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background: var(--theme-scrollbar-thumb);
+}
